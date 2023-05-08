@@ -1,0 +1,68 @@
+{% macro pagination(last, current, url, nearby = 4) %}
+    {% if last > 1 %}
+      <nav role="navigation"">
+        <ul class="pagination">
+          {% if current > 1 %}
+            <li class="page-item" class="page-item">
+              <a class="page-link" href="{{url}}">
+                <span>« First</span>
+              </a>
+            </li>
+          {% endif %}
+
+          {% if current > 1 %}
+            <li class="page-item">
+              <a class="page-link" href="{{url}}{{current-1}}">
+                <span>‹ Previous</span>
+              </a>
+            </li>
+          {% endif %}
+
+          {% if current-nearby > 1%}
+            <li class="page-item"><span class="page-link">&hellip;</span></li>
+          {% endif %}
+
+        {% set rng = 0 %}
+        {% if current == 1 %}
+            {% set rng = range(1,2*nearby) %}
+        {% elseif current == last %}
+            {% set rng = range(current-2*nearby,last) %}
+        {% else %}
+            {% set rng = range(current-nearby,current-1+nearby+1) %}
+        {% endif %}
+          
+        {% for page in rng %}
+            <li class="page-item{{ current == key ? ' is-active' : '' }}">
+              <a class="page-link" href="{{url}}{{page}}">
+                {{page}}
+              </a>
+            </li>
+          {% endfor %}
+         
+          
+          {% if  last-nearby > current %}
+            <li class="page-item"><span class="page-link">&hellip;<span></li>
+          {% endif %}
+          
+          
+          {% if current < last %}
+            <li class="page-item">
+              {% set next = current - 1 %}
+              <a class="page-link" href="{{url}}{{next+2}}">
+                <span>Next ›</span>
+              </a>
+            </li>
+          {% endif %}
+          
+          {% if current < last %}
+            <li class="page-item">
+              <a class="page-link" href="{{url}}{{last}}">
+                <span>Last »</span>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    {% endif %}
+
+{% endmacro %}

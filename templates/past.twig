@@ -1,0 +1,24 @@
+{% extends "index.twig" %}
+{% import "_pagination.twig" as pagination %}
+
+{% block content %}
+<table class="table mt-4">
+  <thead>
+    <tr>
+      {% for field in fields %}
+        <th scope="col">{{ field.name }} </th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+      <tr>
+        {% for column in row %}
+          <td>{{ column }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{{ pagination.pagination(total, current, url) }}
+{% endblock %}

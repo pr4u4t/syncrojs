@@ -1,0 +1,5 @@
+{% extends "index.twig" %}
+{% import "_order_add.twig" as order_add %}
+{% block content %}
+{{ order_add.order_add(url) }}
+{% endblock %}

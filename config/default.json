@@ -1,0 +1,17 @@
+{
+    "server": {
+      "host": "0.0.0.0",
+      "port": 80
+    },
+    "db": {
+      "host": "192.168.0.142",
+      "port": 5432,
+      "database": "syncro_db_3892",
+      "user": "postgres",
+      "password": "ozdan"
+    },
+    "syncro": {
+      "host": "192.168.0.142",
+      "port": 13000
+    }
+}
