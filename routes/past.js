@@ -6,7 +6,7 @@ const router = new Router()
 module.exports = router
 
 router.get('/', async (req,res) => {
-    const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute  FROM syncro_db_3892.pastorders LIMIT 25 ORDER BY begintime DESC')
+    const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute  FROM syncro_db_3892.pastorders ORDER BY begintime DESC LIMIT 25')
     const result = await db.query('SELECT count(*) FROM syncro_db_3892.pastorders')
     template.render('past.twig', {
         'rows': rows, 
@@ -22,7 +22,7 @@ router.get('/', async (req,res) => {
 router.get('/:page([0-9]+)', async (req,res) => {
     const current = req.params.page
     const offset = (req.params.page-1)*25
-    const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders OFFSET '+offset+' LIMIT 25 ORDER BY begintime DESC')
+    const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders ORDER BY begintime DESC OFFSET '+offset+' LIMIT 25')
     const result = await db.query('SELECT count(*) FROM syncro_db_3892.pastorders')
     template.render('past.twig', {
         'rows': rows, 
