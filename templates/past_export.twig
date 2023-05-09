@@ -1,23 +1,25 @@
 {% extends "index.twig" %}
 {% import "_past_export.twig" as past_export %}
 {% block content %}
-<table class="table mt-4">
-  <thead>
-    <tr>
-      {% for field in fields %}
-        <th scope="col">{{ field.name }} </th>
-      {% endfor %}
-    </tr>
-  </thead>
-  <tbody>
-    {% for row in rows %}
+<div style="overflow-x:scroll;">
+  <table class="table mt-4 table-striped">
+    <thead>
       <tr>
-        {% for column in row %}
-          <td>{{ column }}</td>
+        {% for field in fields %}
+          <th scope="col">{{ field.name }} </th>
         {% endfor %}
       </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+        <tr>
+          {% for column in row %}
+            <td>{{ column }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {{ past_export.past_export(url) }}
 {% endblock %}

@@ -1,0 +1,35 @@
+{% extends "index.twig" %}
+{% import "_pagination.twig" as pagination %}
+
+{% block content %}
+<div style="overflow-x:scroll;">
+  <table class="table mt-4 table-striped">
+    <thead>
+      <tr>
+        {% for field in fields %}
+          <th scope="col">{{ field }} </th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+        <tr>
+          {% for column in row %}
+            <td>{{ column }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{{ pagination.pagination(total, current, url) }}
+<form method="post" action="{{url}}" enctype="multipart/form-data">
+  <div class="row">
+    <div class="col-md-9"></div>
+    <div class="col-md-3">
+      <button type="submit" class="btn btn-success mt-1 float-end" name="accept">Accept</button>
+      <button type="submit" class="btn btn-danger mt-1 float-end me-2" name="deny">Deny</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

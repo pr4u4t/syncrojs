@@ -1,12 +1,14 @@
 {% macro order_add(url) %}
 <div class="row mt-4">
-    <h2 class="mt-4"> Import orders</h2>
-    <form action="{{url}}/add" method="post" enctype="multipart/form-data">
-        <div class="mb-3">
-            <label for="formFile" class="form-label">Order file input</label>
-            <input class="form-control" type="file" id="orderFile" name="orderFile">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
+    <div class="col-md-6">
+        <h2 class="mt-4"> Import orders</h2>
+        <form action="{{url}}add" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Order file input</label>
+                <input class="form-control" type="file" id="orderFile" name="orderFile">
+                <button type="submit" class="btn btn-primary mt-1">Submit</button>
+            </div>
+        </form>
+    </div>
 </div> 
 {% endmacro %}

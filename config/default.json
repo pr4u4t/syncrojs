@@ -1,7 +1,8 @@
 {
     "server": {
       "host": "0.0.0.0",
-      "port": 80
+      "port": 80,
+      "secret": "thisismysecrctekeyfhrgfgrfrty84fwir767"
     },
     "db": {
       "host": "192.168.0.142",
