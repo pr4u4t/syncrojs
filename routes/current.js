@@ -9,12 +9,12 @@ const multer  = require('multer')
 const upload = multer({ dest: './uploads/' })
 const { XMLParser } = require("fast-xml-parser")
 const parser = new XMLParser()
-const fs = require('fs');
-const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require('constants');
+const fs = require('fs')
+var net = require('net')
+
 module.exports = router
 
 router.get('/', async (req,res) => {
-    var net = require('net')
     var client = new net.Socket()
     var xmlbuff = ''
     client.connect(port,host,function(){
@@ -83,43 +83,51 @@ router.post('/add', upload.single('orderFile'), async (req,res) => {
 })
 
 router.post('/add/confirm', upload.none(), async (req,res) => {
-    var title = ''
-    var msg = ''
-    var link = ''
-    var lnktxt = ''
-    var cnt = 0 
-    
     if(typeof req.body.accept !== undefined){
-        for(let i = 0; i < req.session.current.length; ++i){
-            console.log(req.session.current[i])
-            ++cnt
-        }
-        title = "Adding order list approved"
-        if(cnt != req.session.current){
-            msg = "New orders were successfully transfered to syncro server"
-            link = "/current"
-            lnktxt = "Go to Order List"
-        } else {
-            msg = "Failed to transfer new orders to syncro server"
-            link = "/current/add"
-            lnktxt = "Go to Order Add"
-        }
+        req.session.step = 0
+        template.render('current_progress.twig', {
+            'next': "/current",
+            'txt': "Go to Orders"
+        }).then((output) => {
+            res.end(output);
+        })
     }else{
-        title = "Adding order list denied"
-        msg = "Refused to upload new orders list"
-        link = "/"
-        lnktxt = "Go to Home"
         req.session.current = null
+        
+        template.render('current_result.twig', {
+            'title': "Adding order list denied",
+            'message': "Refused to upload new orders list",
+            'next': "/",
+            'txt': "Go to Home"
+        }).then((output) => {
+            res.end(output);
+        })
     }
     
-    req.session.current = 0
     
-    template.render('current_result.twig', {
-        'title': title,
-        'message': msg,
-        'next': link,
-        'txt': lnktxt
-    }).then((output) => {
-        res.end(output);
+})
+
+router.get('/add/batch/:step', async (req,res) => {
+    var steps = req.session.current.length
+    var current = ++req.session.step
+    
+    if(steps == current){
+        req.session.current = null
+        req.session.step = null
+    }
+    
+    var client = new net.Socket()
+
+    client.connect(port,host,function(){
+        //client.write('GetOrders')
+        
+    })  
+    client.on('data', function(data){
+        if(data.toString() != "ok"){
+            current = -1
+        }
+    })  
+    client.on('close', function(){
+        res.json({ current: current, steps: steps })
     })
 })
