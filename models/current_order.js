@@ -21,7 +21,7 @@ var mac_parse = function(data){
     return rows
 } 
 
-var m2s_serilize = function(sync){
+var m2s_serialize = function(sync){
     const sep = '\u241E'
     var ret = "Order.Add("+sep
     
@@ -34,22 +34,27 @@ var m2s_serilize = function(sync){
     return ret
 }
 
-var mac2syncro = function(mac){
+var mac2syncro = function(mac, papers){
     var ret = []
     const delivery = "1 01 01 0001 08 00 00 0"
     
+    const {quality} = papers.papers_params_by_id(mac[3])
+    const qualityWeight = quality[0].weightfactoruwg_m      //635
+    const qualityThickness = quality[0].thickness_uddmm     //45 
+    const qualityGap = quality[0].scoregap_uddmm            //30
+    
     /**	
      * HEADER
-     */
+    */
     
     ret.push(mac[2])                                        //SetupID
     ret.push(mac[5])                                        //WebWidth
     ret.push(0)                                             //TrimType
-    ret.push(30)                                            //ScoreGap - od rodzaju tektury
+    ret.push(qualityGap)                                    //ScoreGap - od rodzaju tektury
     ret.push(mac[3])                                        //QualityID
     ret.push(mac[4])                                        //FluteID
-    ret.push(635)                                           //QualityWeight - sprawdzic skad sie to bierze
-    ret.push(45)                                            //QualityThickness
+    ret.push(qualityWeight)                                 //QualityWeight - sprawdzic skad sie to bierze  //
+    ret.push(qualityThickness)                              //QualityThickness                              //
     ret.push(2000)                                          //Trim - trzeba zweryfikowac
     
     /**
@@ -168,6 +173,6 @@ var fields = ["program number", "scheduled papers", "fosber ID", "flute", "flute
 module.exports = {
     fields,
     mac_parse,
-    m2s_serilize,
+    m2s_serialize,
     mac2syncro
 }

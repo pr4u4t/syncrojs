@@ -6,7 +6,7 @@ const papers_all = async function(){
 }
 
 const papers_params_by_id = async function(id){
-    const {rows,fields} = await db.query('SELECT qualitytext, weightfactoruwg_m, thickness_uddmm FROM syncro_db_3892.quality WHERE qualityid = \''+id+'\'')
+    const {rows,fields} = await db.query('SELECT qualitytext, weightfactoruwg_m, thickness_uddmm, scoregap_uddmm FROM syncro_db_3892.quality WHERE qualityid = \''+id+'\'')
     return {rows,fields}
 }
 

@@ -12,6 +12,7 @@ const parser = new XMLParser()
 const fs = require('fs')
 var net = require('net')
 const ordmac = require('../models/current_order.js')
+const papers = require('../models/papers.js')
 
 module.exports = router
 
@@ -19,7 +20,7 @@ router.get('/', async (req,res) => {
     var client = new net.Socket()
     var xmlbuff = ''
     client.connect(port,host,function(){
-        client.write('GetOrders')
+        client.write('Orders.Get')
     })  
     client.on('data', function(data){
         xmlbuff += data.toString();
@@ -103,10 +104,10 @@ router.get('/add/batch/:step', async (req,res) => {
         req.session.step = null
     }
     
-    console.log(ordmac.mac2syncro(req.session.current[req.session.step-1]));
-    console.log(ordmac.m2s_serilize(ordmac.mac2syncro(req.session.current[req.session.step-1])))
+    console.log(ordmac.mac2syncro(req.session.current[req.session.step-1],papers));
+    console.log(ordmac.m2s_serialize(ordmac.mac2syncro(req.session.current[req.session.step-1])))
     
-    var client = new net.Socket()
+    //var client = new net.Socket()
 
     /*client.connect(port,host,function(){
         data = mac2syncro(req.session.current[req.session.step-1])
