@@ -23,7 +23,7 @@
           {% endif %}
 
         {% set rng = 0 %}
-        {% if current == 1 %}
+        {% if current <= nearby %}
             {% set rng = range(1,2*nearby) %}
         {% elseif current == last %}
             {% set rng = range(current-2*nearby,last) %}
