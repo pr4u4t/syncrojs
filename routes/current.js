@@ -28,7 +28,7 @@ router.get('/', async (req,res) => {
     client.on('close', function(){
         let jml = parser.parse(xmlbuff)
         template.render('current.twig', {
-            'rows': jml.NewDataSet.DryEndList, 
+            'rows': (Array.isArray(jml.NewDataSet.DryEndList)) ? jml.NewDataSet.DryEndList : [ jml.NewDataSet.DryEndList ], 
             'fields': [], 
             'total': 1,  
             'current': 1,
