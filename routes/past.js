@@ -1,5 +1,4 @@
 const Router = require('express-promise-router')
-const db = require('../db')
 const template = require('../templates')
 const router = new Router()
 const past = require('../models/past_orders.js')

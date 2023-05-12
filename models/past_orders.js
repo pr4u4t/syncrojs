@@ -1,3 +1,5 @@
+const db = require('../db')
+
 const past_all = async function(){
     const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute  FROM syncro_db_3892.pastorders ORDER BY begintime DESC LIMIT 25')
 
