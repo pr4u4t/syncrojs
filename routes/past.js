@@ -2,12 +2,14 @@ const Router = require('express-promise-router')
 const db = require('../db')
 const template = require('../templates')
 const router = new Router()
+const past = require('../models/past_orders.js')
 
 module.exports = router
 
 router.get('/', async (req,res) => {
-    const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute  FROM syncro_db_3892.pastorders ORDER BY begintime DESC LIMIT 25')
-    const result = await db.query('SELECT count(*) FROM syncro_db_3892.pastorders')
+    const {rows,fields} = await past.past_all()
+    const result = await past.past_count()
+    
     template.render('past.twig', {
         'rows': rows, 
         'fields': fields, 
@@ -22,8 +24,9 @@ router.get('/', async (req,res) => {
 router.get('/:page([0-9]+)', async (req,res) => {
     const current = req.params.page
     const offset = (req.params.page-1)*25
-    const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders ORDER BY begintime DESC OFFSET '+offset+' LIMIT 25')
-    const result = await db.query('SELECT count(*) FROM syncro_db_3892.pastorders')
+    const {rows,fields} = await past.past_paginated_all(offset)
+    const result = await past.past_count()
+    
     template.render('past.twig', {
         'rows': rows, 
         'fields': fields, 
@@ -36,7 +39,8 @@ router.get('/:page([0-9]+)', async (req,res) => {
 })
 
 router.get('/export', async (req,res) => {
-    const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders WHERE begintime >= now()::date ORDER BY begintime DESC')
+    const {rows,fields} = await past.past_export_csv()
+    
     template.render('past_export.twig', {
         'rows': rows, 
         'fields': fields, 
@@ -47,7 +51,7 @@ router.get('/export', async (req,res) => {
 })
 
 router.post('/export.csv', async (req,res) => {
-    const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders WHERE begintime >= now()::date ORDER BY begintime DESC')
+    const {rows,fields} = await past.past_export_csv()
     res.set('Content-Type', 'application/octet-stream');
     var ret = '';
     for (row in rows){
