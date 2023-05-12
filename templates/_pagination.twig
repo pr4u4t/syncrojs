@@ -26,9 +26,9 @@
         {% if current <= nearby %}
             {% set rng = range(1,2*nearby) %}
         {% elseif current == last %}
-            {% set rng = range(current-2*nearby,last) %}
+            {% set rng = range(current-2*nearby <= 0 ? 1 : current-2*nearby,last) %}
         {% else %}
-            {% set rng = range(current-nearby,current-1+nearby+1) %}
+            {% set rng = range(current-nearby <= 0 ? 1 : current-nearby, current-1+nearby+1 > last ? last : current-1+nearby+1) %}
         {% endif %}
           
         {% for page in rng %}
