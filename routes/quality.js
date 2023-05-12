@@ -6,8 +6,8 @@ const quality = require('../models/quality.js')
 module.exports = router
 
 router.get('/', async (req,res) => {
-    const {rows,fields} = await quality.papers_all()
-    const result = await quality.papers_count()
+    const {rows,fields} = await quality.quality_all()
+    const result = await quality.quality_count()
     
     template.render('quality.twig', {
         'rows': rows, 
@@ -23,8 +23,8 @@ router.get('/', async (req,res) => {
 router.get('/:page([0-9]+)', async (req,res) => {
     const current = req.params.page
     const offset = (req.params.page-1)*25
-    const {rows,fields} = await quality.papers_paginated_all(offset)
-    const result = await quality.papers_count()
+    const {rows,fields} = await quality.quality_paginated_all(offset)
+    const result = await quality.quality_count()
     
     template.render('quality.twig', {
         'rows': rows, 
