@@ -123,3 +123,16 @@ router.get('/add/batch/:step', async (req,res) => {
         res.json({ current: current, steps: steps })
     })*/
 })
+
+router.post('/clear', upload.none(), async (req,res) => {
+    var client = new net.Socket()
+    client.connect(port,host,function(){
+        client.write('Orders.Delete')
+    })  
+    client.on('data', function(data){
+        console.log("Delete: "+data)
+    })  
+    client.on('close', function(){
+        res.redirect('/current/')
+    })
+})
