@@ -1,6 +1,7 @@
 const past = require('./past.js')
 const current = require('./current.js')
 const papers = require('./papers.js')
+const quality = require('./quality.js')
 const Router = require('express-promise-router')
 const router = new Router()
 const template = require('../templates')
@@ -17,5 +18,6 @@ module.exports = (app) => {
     app.use('/current',current),
     app.use('/past',past),
     app.use('/papers',papers)
+    app.use('/quality',quality)
     app.use('/',router)
 }
