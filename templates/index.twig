@@ -39,8 +39,11 @@
             <li class="nav-item">
               <a class="nav-link {% if url starts with '/papers' %}active{% endif %}" {% if url starts with '/papers' %} aria-current="page" {% endif %}  href="/papers">Papers</a>
             </li>
-             <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link {% if url starts with '/quality' %}active{% endif %}" {% if url starts with '/quality' %} aria-current="page" {% endif %}  href="/quality">Quality</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if url starts with '/flute' %}active{% endif %}" {% if url starts with '/flute' %} aria-current="page" {% endif %}  href="/flute">Quality</a>
             </li>
           </ul>
         </div>
@@ -105,7 +108,23 @@
         <div class="col mb-3">
           <h5>Papers</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="/papers" class="nav-link p-0 text-muted">Quality</a></li>
+            <li class="nav-item mb-2"><a href="/papers" class="nav-link p-0 text-muted">Papers</a></li>
+            {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
+          </ul>
+        </div>
+
+        <div class="col mb-3">
+          <h5>Papers</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/quality" class="nav-link p-0 text-muted">Quality</a></li>
+            {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
+          </ul>
+        </div>
+        
+        <div class="col mb-3">
+          <h5>Papers</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/flute" class="nav-link p-0 text-muted">Flute</a></li>
             {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
           </ul>
         </div>
