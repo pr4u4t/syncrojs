@@ -45,6 +45,9 @@
             <li class="nav-item">
               <a class="nav-link {% if url starts with '/flute' %}active{% endif %}" {% if url starts with '/flute' %} aria-current="page" {% endif %}  href="/flute">Flute</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link {% if url starts with '/shift' %}active{% endif %}" {% if url starts with '/shift' %} aria-current="page" {% endif %}  href="/shift">Shift</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -114,7 +117,7 @@
         </div>
 
         <div class="col mb-3">
-          <h5>Papers</h5>
+          <h5>Quality</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="/quality" class="nav-link p-0 text-muted">Quality</a></li>
             {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
@@ -125,6 +128,14 @@
           <h5>Flute</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><a href="/flute" class="nav-link p-0 text-muted">Flute</a></li>
+            {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
+          </ul>
+        </div>
+        
+        <div class="col mb-3">
+          <h5>Shift</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/shift" class="nav-link p-0 text-muted">Shift</a></li>
             {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
           </ul>
         </div>
