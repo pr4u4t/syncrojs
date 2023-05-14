@@ -13,6 +13,7 @@ const shift_all = async function(){
     var result = await psocket.connect(port,host)
     result = await psocket.write('Shift.List')
     xmlbuff = await psocket.readAll()
+    xmlbuff = xmlbuff.toString()
     let jml = parser.parse(xmlbuff)
     
     return (Array.isArray(jml.NewDataSet.ShiftList)) ? jml.NewDataSet.ShiftList : [ jml.NewDataSet.ShiftList ]
@@ -23,6 +24,7 @@ const shift_state = async function(){
     var result = await psocket.connect(port,host)
     result = await psocket.write('Shift.State')
     result = await psocket.readAll()
+    result = result.toString()
     return result
 }
 
