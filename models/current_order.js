@@ -80,7 +80,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(mac[8])                                        //CustomerName0 
     ret.push(mac[11])                                       //SheetWidth0
     ret.push(mac[20])                                       //Outs0
-    ret.push(mac[12]+" "+mac[14]+" "+((mac[15] == '') ? '0' : mac[15])+" "+((mac[16] == '') ? '0' : mac[16]))   //ScoreMeasures0 roznica 4 i 5
+    ret.push(mac[12]+" "+mac[14]+" "+mac[15]+" "+mac[16])   //ScoreMeasures0 roznica 4 i 5
     ret.push("A")                                           //ScoreType0
     ret.push(2)                                             //PositType0
     ret.push(" ")                                           //TeleTwinOffset0 - puste
@@ -95,15 +95,14 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(" ") 
     ret.push(" ") 
     ret.push(" ")
-    ret.push(" ")
-    ret.push(" ")
-    ret.push(" ")
+    ret.push("")
     ret.push("False")
     ret.push("False")
     ret.push(" ") 
     ret.push(" ")                                           //Address
     ret.push(" ")                                           //Next Machine
     ret.push(" ")
+    ret.push("0")
     ret.push(84)
     ret.push("False")
     
@@ -116,7 +115,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(mac[22])                                       //CustomerName1 
     ret.push(mac[26])                                       //SheetWidth1
     ret.push(mac[35])                                       //Outs1
-    ret.push(mac[27]+" "+mac[28]+" "+((mac[29] == '') ? '0' : mac[29])+" "+((mac[30] == '') ? '0' : mac[30]))   //ScoreMeasures1
+    ret.push(mac[27]+" "+mac[28]+" "+mac[29]+" "+mac[30])   //ScoreMeasures1
     ret.push("A")                                           //ScoreType1
     ret.push(2)                                             //PositType1
     ret.push(" ")                                           //TeleTwinOffset1 - puste
@@ -125,21 +124,20 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(mac[33])                                       //sheetLenght1
     ret.push(mac[34])                                       //segmentSheetCount1
     ret.push(mac[32])                                       //sheetsPerStack1
-    ret.push(1)                                             //stacksPerPallet1
-    ret.push(84)                                            //Sending1
+    ret.push(1)                                             //stacksPerPallet0
+    ret.push(84)                                            //Sending0
     ret.push("False")
     ret.push(" ") 
     ret.push(" ") 
     ret.push(" ")
-    ret.push(" ")
-    ret.push(" ")
-    ret.push(" ")
+    ret.push("")
     ret.push("False")
     ret.push("False")
     ret.push(" ") 
-    ret.push(" ")                                            
-    ret.push(" ")                                           
+    ret.push(" ")                                           //Address
+    ret.push(" ")                                           //Next Machine
     ret.push(" ")
+    ret.push("0")
     ret.push(84)
     ret.push("False")
     
@@ -161,22 +159,21 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(" ") 
     ret.push(" ") 
     ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ") 
+    ret.push(" ")                                             //stacksPerPallet0
+    ret.push(" ")                                            //Sending0
     ret.push("False")
-    ret.push(" ") 
-    ret.push(" ") 
     ret.push(" ") 
     ret.push(" ") 
     ret.push(" ")
-    ret.push(" ") 
+    ret.push("")
     ret.push("False")
     ret.push("False")
     ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ") 
+    ret.push(" ")                                           //Address
+    ret.push(" ")                                           //Next Machine
+    ret.push(" ")
+    ret.push(" ")
+    ret.push(" ")
     ret.push("False")
     
     return ret  
