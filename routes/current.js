@@ -92,8 +92,10 @@ router.get('/add/batch/:step', async (req,res) => {
         req.session.step = null
     }
     
-    console.log(await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute));
-    console.log(ordmac.m2s_serialize(ordmac.mac2syncro(req.session.current[req.session.step-1])))
+    let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute)
+    
+    console.log(transformed)
+    console.log(ordmac.m2s_serialize(transformed))
     
     //var client = new net.Socket()
 
