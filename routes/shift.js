@@ -11,8 +11,8 @@ module.exports = router
 
 router.get('/', async (req,res) => {
     template.render('shift.twig', {
-        'state': shift.shift_state(),
-        'rows': shift.shift_all(), 
+        'state': await shift.shift_state(),
+        'rows': await shift.shift_all(), 
         'fields': [], 
         'total': 1,  
         'current': 1,
