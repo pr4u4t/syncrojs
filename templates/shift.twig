@@ -2,8 +2,8 @@
 {% import "_pagination.twig" as pagination %}
 
 {% block content %}
-<div class="alert {% if state == 'idle' %} alert-danger {% else %} alert-success {% endif %}" role="alert">
-  {{ state }}
+<div class="alert mt-4 {% if state == 'idle' %} alert-danger {% else %} alert-success {% endif %}" role="alert">
+  Shift: {{ state }}
 </div>
 
 <table class="table table-striped mt-4">
