@@ -4,6 +4,9 @@ const fs = require('fs')
 var net = require('net')
 const db = require('../db')
 const {PromiseSocket, TimeoutError} = require("promise-socket")
+const config = require('config')
+const port = config.get('syncro.port')
+const host = config.get('syncro.host')
 
 var mac_parse = function(data){
     var rows = []
