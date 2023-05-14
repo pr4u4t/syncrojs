@@ -51,17 +51,17 @@ var mac2syncro = async function(mac,papers,quality,flute){
     console.log(mac)
     
     console.log('quality: '+mac[3])
-    console.log('flute: '+mac[4])
+    console.log('flute: '+mac[4]+' changing to: B')
     
     const quality_row = await quality.quality_params_by_id(mac[3])
-    const flute_row = await flute.flute_params_by_id(mac[4])
+    const flute_row = await flute.flute_params_by_id('B')
     
     console.log(quality_row)
     console.log(flute_row)
     
-    const qualityWeight = quality[0].weightfactoruwg_m      //635
-    const qualityThickness = quality[0].thickness_uddmm     //45 
-    const qualityGap = quality[0].scoregap_uddmm            //30
+    const qualityWeight = quality_row[0].weightfactoruwg_m      //635
+    const qualityThickness = quality_row[0].thickness_uddmm     //45 
+    const qualityGap = quality_row[0].scoregap_uddmm            //30
     
     /**	
      * HEADER
@@ -72,7 +72,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(0)                                             //TrimType
     ret.push(qualityGap)                                    //ScoreGap - od rodzaju tektury
     ret.push(mac[3])                                        //QualityID
-    ret.push(mac[4])                                        //FluteID
+    ret.push(/*mac[4]*/'B')                                  //FluteID
     ret.push(qualityWeight)                                 //QualityWeight - sprawdzic skad sie to bierze  //
     ret.push(qualityThickness)                              //QualityThickness                              //
     ret.push(2000)                                          //Trim - trzeba zweryfikowac
