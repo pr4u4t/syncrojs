@@ -16,7 +16,7 @@ const shift_all = async function(){
     xmlbuff = xmlbuff.toString()
     let jml = parser.parse(xmlbuff)
     
-    return (Array.isArray(jml.NewDataSet.ShiftList)) ? jml.NewDataSet.ShiftList : [ jml.NewDataSet.ShiftList ]
+    return ((Array.isArray(jml.NewDataSet.ShiftList)) ? jml.NewDataSet.ShiftList : [ jml.NewDataSet.ShiftList ]).reverse()
 }
 
 const shift_state = async function(){
