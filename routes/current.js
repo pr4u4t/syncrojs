@@ -1,5 +1,4 @@
 const Router = require('express-promise-router')
-const db = require('../db')
 const config = require('config');
 const port = config.get('syncro.port');
 const host = config.get('syncro.host');
@@ -7,35 +6,22 @@ const template = require('../templates')
 const router = new Router()
 const multer  = require('multer')
 const upload = multer({ dest: './uploads/' })
-const { XMLParser } = require("fast-xml-parser")
-const parser = new XMLParser()
-const fs = require('fs')
-var net = require('net')
 const ordmac = require('../models/current_order.js')
 const papers = require('../models/papers.js')
+const fs = require('fs')
 
 module.exports = router
 
 router.get('/', async (req,res) => {
-    var client = new net.Socket()
-    var xmlbuff = ''
-    client.connect(port,host,function(){
-        client.write('Orders.Get')
-    })  
-    client.on('data', function(data){
-        xmlbuff += data.toString();
-    })  
-    client.on('close', function(){
-        let jml = parser.parse(xmlbuff)
-        template.render('current.twig', {
-            'rows': (Array.isArray(jml.NewDataSet.DryEndList)) ? jml.NewDataSet.DryEndList : [ jml.NewDataSet.DryEndList ], 
-            'fields': [], 
-            'total': 1,  
-            'current': 1,
-            'url': '/current/'
-        }).then((output) => {
-            res.end(output);
-        })
+    
+    template.render('current.twig', {
+        'rows': await ordmac.orders_all(), 
+        'fields': [], 
+        'total': 1,  
+        'current': 1,
+        'url': '/current/'
+    }).then((output) => {
+        res.end(output);
     })
 })
 

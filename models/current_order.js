@@ -1,3 +1,9 @@
+const { XMLParser } = require("fast-xml-parser")
+const parser = new XMLParser()
+const fs = require('fs')
+var net = require('net')
+const db = require('../db')
+
 var mac_parse = function(data){
     var rows = []
     const re = /(.{587})/g
@@ -170,9 +176,22 @@ var mac2syncro = function(mac, papers){
 
 var fields = ["program number", "scheduled papers", "fosber ID", "flute", "flute type", "rollsize", "linear meters", "G", "customer name 1", "customer code 1", "order number 1", "sheet width 1", "1 score", "2 score", "3 score", "4 score", "5 score", "sheets per stack 1", "sheet length 1", "quantity of sheets 1", "outs 1", "linear meters 1", "20", "customer name 2", "customer code 2", "order number 2", "sheet width 2", "1 score", "2 score", "3 score", "4 score", "5 score", "sheets per stack 2", "sheet length 2", "quantity of sheets 2", "outs 2", "linear meters 2", "10"]
 
+var orders_all = async function(){
+    var xmlbuff = ''
+    const psocket = new PromiseSocket()
+    var result = await psocket.connect(port,host)
+    result = await psocket.write('Orders.Get')
+    xmlbuff = await psocket.readAll()
+    xmlbuff = xmlbuff.toString()
+    let jml = parser.parse(xmlbuff)
+        
+    return (Array.isArray(jml.NewDataSet.DryEndList)) ? jml.NewDataSet.DryEndList : [ jml.NewDataSet.DryEndList ]
+}
+
 module.exports = {
     fields,
     mac_parse,
     m2s_serialize,
-    mac2syncro
+    mac2syncro,
+    orders_all
 }
