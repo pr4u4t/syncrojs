@@ -8,6 +8,8 @@ const multer  = require('multer')
 const upload = multer({ dest: './uploads/' })
 const ordmac = require('../models/current_order.js')
 const papers = require('../models/papers.js')
+const quality = require('../models/quality.js')
+const flute = require('../models/flute.js')
 const fs = require('fs')
 
 module.exports = router
@@ -90,7 +92,7 @@ router.get('/add/batch/:step', async (req,res) => {
         req.session.step = null
     }
     
-    console.log(ordmac.mac2syncro(req.session.current[req.session.step-1],papers));
+    console.log(await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute));
     console.log(ordmac.m2s_serialize(ordmac.mac2syncro(req.session.current[req.session.step-1])))
     
     //var client = new net.Socket()

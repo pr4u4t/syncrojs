@@ -44,11 +44,11 @@ var m2s_serialize = function(sync){
     return ret
 }
 
-var mac2syncro = function(mac, papers){
+var mac2syncro = async function(mac, papers){
     var ret = []
     const delivery = "1 01 01 0001 08 00 00 0"
     
-    const {quality} = papers.papers_params_by_id(mac[3])
+    const {quality} = await papers.papers_params_by_id(mac[3])
     const qualityWeight = quality[0].weightfactoruwg_m      //635
     const qualityThickness = quality[0].thickness_uddmm     //45 
     const qualityGap = quality[0].scoregap_uddmm            //30

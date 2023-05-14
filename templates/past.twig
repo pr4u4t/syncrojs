@@ -4,10 +4,10 @@
 {% block content %}
 <div style="overflow-x:scroll;">
   <table class="table mt-4 table-striped">
-    <thead>
+    <thead class="table-header thead-dark">
       <tr>
         {% for field in fields %}
-          <th scope="col">{{ field.name }} </th>
+          <th class="table-header" scope="col">{{ field.name }} </th>
         {% endfor %}
       </tr>
     </thead>
