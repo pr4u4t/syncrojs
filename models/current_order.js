@@ -67,7 +67,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
      * HEADER
     */
     
-    ret.push(mac[2])                                        //SetupID
+    ret.push(mac[2]+'.2')                                   //SetupID glueing SEQ to setup ID
     ret.push(mac[5])                                        //WebWidth
     ret.push(0)                                             //TrimType
     ret.push(qualityGap)                                    //ScoreGap - od rodzaju tektury
@@ -212,11 +212,22 @@ var orders_delete_all = async function(){
     return result
 }
 
+var orders_add = async function(data){
+    let cmd = m2s_serialize(data)
+    const psocket = new PromiseSocket()
+    var result = await psocket.connect(port,host)
+    result = await psocket.write(cmd)
+    result = await psocket.readAll()
+    result = result.toString()
+    return result
+}
+
 module.exports = {
     fields,
     mac_parse,
     m2s_serialize,
     mac2syncro,
     orders_all,
-    orders_delete_all
+    orders_delete_all,
+    orders_add
 }

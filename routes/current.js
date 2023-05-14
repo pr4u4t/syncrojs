@@ -95,23 +95,9 @@ router.get('/add/batch/:step', async (req,res) => {
     let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute)
     
     console.log(transformed)
-    console.log(ordmac.m2s_serialize(transformed))
+    console.log(await ordmac.orders_add(transformed))
     
-    //var client = new net.Socket()
-
-    /*client.connect(port,host,function(){
-        data = mac2syncro(req.session.current[req.session.step-1])
-        //client.write('GetOrders')
-        
-    })  
-    client.on('data', function(data){
-        if(data.toString() != "ok"){
-            current = -1
-        }
-    })  
-    client.on('close', function(){
-        res.json({ current: current, steps: steps })
-    })*/
+    //res.json({ current: current, steps: steps })
 })
 
 router.post('/clear', upload.none(), async (req,res) => {
