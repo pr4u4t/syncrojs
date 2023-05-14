@@ -50,14 +50,8 @@ var mac2syncro = async function(mac,papers,quality,flute){
     
     console.log(mac)
     
-    console.log('quality: '+mac[3])
-    console.log('flute: '+mac[4]+' changing to: B')
-    
     const quality_row = await quality.quality_params_by_id(mac[3])
     const flute_row = await flute.flute_params_by_id('B')
-    
-    console.log(quality_row)
-    console.log(flute_row)
     
     const qualityWeight = quality_row.rows[0].weightfactoruwg_m      //635
     const qualityThickness = quality_row.rows[0].thickness_uddmm     //45 
@@ -217,6 +211,7 @@ var orders_add = async function(data){
     const psocket = new PromiseSocket()
     var result = await psocket.connect(port,host)
     result = await psocket.write(cmd)
+    console.log(cmd)
     result = await psocket.readAll()
     result = result.toString()
     return result
