@@ -11,6 +11,7 @@
     "multer": "^1.4.5-lts.1",
     "net": "^1.0.2",
     "pg": "^8.10.0",
+    "promise-socket": "^7.0.0",
     "twing": "^6.0.0-alpha.1"
   }
 }
