@@ -10,7 +10,7 @@ const host = config.get('syncro.host')
 const shift_all = async function(){
     var xmlbuff = ''
     const psocket = new PromiseSocket()
-    const result = await psocket.connect(port,host)
+    var result = await psocket.connect(port,host)
     result = await psocket.write('Shift.List')
     xmlbuff = await psocket.readAll()
     let jml = parser.parse(xmlbuff)
@@ -20,7 +20,7 @@ const shift_all = async function(){
 
 const shift_state = async function(){
     const psocket = new PromiseSocket()
-    const result = await psocket.connect(port,host)
+    var result = await psocket.connect(port,host)
     result = await psocket.write('Shift.State')
     result = await psocket.readAll()
     return result
