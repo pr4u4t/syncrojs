@@ -1,7 +1,7 @@
 const { XMLParser } = require("fast-xml-parser")
 const parser = new XMLParser()
 const fs = require('fs')
-var net = require('net')
+const net = require('net')
 const db = require('../db')
 const {PromiseSocket, TimeoutError} = require("promise-socket")
 const config = require('config')
@@ -192,10 +192,21 @@ var orders_all = async function(){
     return (Array.isArray(jml.NewDataSet.DryEndList)) ? jml.NewDataSet.DryEndList : [ jml.NewDataSet.DryEndList ]
 }
 
+var orders_delete_all = async function(){
+    const psocket = new PromiseSocket()
+    var result = await psocket.connect(port,host)
+    result = await psocket.write('Orders.Delete')
+    result = await psocket.readAll()
+    result = result.toString()
+    
+    return result
+}
+
 module.exports = {
     fields,
     mac_parse,
     m2s_serialize,
     mac2syncro,
-    orders_all
+    orders_all,
+    orders_delete_all
 }
