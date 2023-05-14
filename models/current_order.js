@@ -3,6 +3,7 @@ const parser = new XMLParser()
 const fs = require('fs')
 var net = require('net')
 const db = require('../db')
+const {PromiseSocket, TimeoutError} = require("promise-socket")
 
 var mac_parse = function(data){
     var rows = []
