@@ -142,7 +142,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(mac[34])                                       //segmentSheetCount1
     ret.push(mac[32] == '0' ? '1' : mac[32])                //sheetsPerStack1
     ret.push(1)                                             //stacksPerPallet0
-    //ret.push(84)                                            //Sending0
+    ret.push(" ")                                           //Sending0
     ret.push("False")
     ret.push(" ") 
     ret.push(" ") 
@@ -190,6 +190,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(" ") 
     ret.push(" ")                                           //Address
     ret.push(" ")                                           //Next Machine
+    ret.push(" ")
     ret.push(" ")
     ret.push(" ")
     ret.push("False")
