@@ -79,7 +79,7 @@ var syncro_header = function(setupid,webwidth,trimtype,scoregap,qualityid,flutei
 var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scoreType,posType,twinOffset,scoreGap,level,sheetLength,sheetCount,sheetsStack,stacks,sending){
     var ret = []
     
-    ret.push(onumber,)                                      //OrderNumber0
+    ret.push(onumber)                                       //OrderNumber0
     ret.push(delivery)                                      //Delivery0 - jakas liczba niewiadomego pochodzenia
     ret.push(cname)                                         //CustomerName0 
     ret.push(sheetWidth)                                    //SheetWidth0
