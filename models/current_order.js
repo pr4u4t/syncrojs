@@ -44,6 +44,22 @@ var m2s_serialize = function(sync){
     return ret
 }
 
+var scorer = function(sc1,sc2,sc3,sc4){
+    var ret = ''
+    ret += sc1
+    ret +=" "+sc2
+    
+    if(sc3 != '0'){
+        ret += " "+sc3
+    }
+    
+    if(sc4 != '0'){
+        ret += " "+sc4
+    }
+    
+    return ret
+}
+
 var mac2syncro = async function(mac,papers,quality,flute){
     var ret = []
     const delivery = "1 01 01 0001 08 00 00 0"
@@ -80,14 +96,14 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(mac[8])                                        //CustomerName0 
     ret.push(mac[11])                                       //SheetWidth0
     ret.push(mac[20])                                       //Outs0
-    ret.push(mac[12]+" "+mac[14]+" "+mac[15]+" "+mac[16])   //ScoreMeasures0 roznica 4 i 5
+    ret.push(scorer(mac[12],mac[13],mac[14],mac[15]))       //ScoreMeasures0 roznica 4 i 5
     ret.push("A")                                           //ScoreType0
     ret.push(2)                                             //PositType0
     ret.push(" ")                                           //TeleTwinOffset0 - puste
     ret.push(" ")                                           //ScoreGap0
     ret.push("2")                                           //LevelName0 - dol 2, gora 3
     ret.push(mac[18])                                       //sheetLenght0
-    ret.push(mac[19])                                       //segmentSheetCount0
+    ret.push(mac[19] == '0' ? 1 : mac[19])                  //segmentSheetCount0
     ret.push(mac[17])                                       //sheetsPerStack0
     ret.push(1)                                             //stacksPerPallet0
     ret.push(84)                                            //Sending0
@@ -95,7 +111,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(" ") 
     ret.push(" ") 
     ret.push(" ")
-    ret.push("")
+    ret.push(" ")
     ret.push("False")
     ret.push("False")
     ret.push(" ") 
@@ -115,7 +131,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(mac[22])                                       //CustomerName1 
     ret.push(mac[26])                                       //SheetWidth1
     ret.push(mac[35])                                       //Outs1
-    ret.push(mac[27]+" "+mac[28]+" "+mac[29]+" "+mac[30])   //ScoreMeasures1
+    ret.push(scorer(mac[27],mac[28],mac[29],mac[30]))        //ScoreMeasures1
     ret.push("A")                                           //ScoreType1
     ret.push(2)                                             //PositType1
     ret.push(" ")                                           //TeleTwinOffset1 - puste
@@ -123,14 +139,14 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(3)                                             //LevelName1 - dol 2, gora 3
     ret.push(mac[33])                                       //sheetLenght1
     ret.push(mac[34])                                       //segmentSheetCount1
-    ret.push(mac[32])                                       //sheetsPerStack1
+    ret.push(mac[32] == '0' ? '1' : mac[32])                //sheetsPerStack1
     ret.push(1)                                             //stacksPerPallet0
     ret.push(84)                                            //Sending0
     ret.push("False")
     ret.push(" ") 
     ret.push(" ") 
     ret.push(" ")
-    ret.push("")
+    ret.push(" ")
     ret.push("False")
     ret.push("False")
     ret.push(" ") 
