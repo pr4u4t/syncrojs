@@ -87,12 +87,13 @@ router.get('/add/batch/:step', async (req,res) => {
     var steps = req.session.current.length
     var current = ++req.session.step
     
+    let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute)
+    
     if(steps == current){
         req.session.current = null
         req.session.step = null
+        
     }
-    
-    let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute)
     
     //console.log(transformed)
     console.log(await ordmac.orders_add(transformed))
