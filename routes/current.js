@@ -97,7 +97,7 @@ router.get('/add/batch/:step', async (req,res) => {
     //console.log(transformed)
     console.log(await ordmac.orders_add(transformed))
     
-    //res.json({ current: current, steps: steps })
+    res.json({ current: current, steps: steps })
 })
 
 router.post('/clear', upload.none(), async (req,res) => {
