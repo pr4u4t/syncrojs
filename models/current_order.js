@@ -162,13 +162,17 @@ var mac2syncro = async function(mac,papers,quality,flute){
     /**
      * ORDER 2
      */
-    //var order2 = syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," ")
+    var order2 = syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," ")
     
-    //ret = header.concat(order0)
-    //ret = ret.concat(order1)
-    //ret = ret.concat(order2)
+    var header = syncro_header("7734","22200","0","30","FALA A",'B',"285","27",2000)
+    var order0 = syncro_order("Z2702300041",delivery,"ERKAR","5000","2",scorer("2000","3000"),"A","2"," "," ","3","16960","1000","200","4","84")
+    var order1 = syncro_order("1",delivery,"1","5100","2",scorer("1000","1000","1000","2100"),"A","2"," "," ","1","12000","1412","340","2"," ")
     
-    ret = syncro_default_order()
+    ret = header.concat(order0)
+    ret = ret.concat(order1)
+    ret = ret.concat(order2)
+    
+    //ret = syncro_default_order()
     
     return ret  
 }
