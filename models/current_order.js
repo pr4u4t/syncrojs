@@ -129,7 +129,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     
     ret.push(mac[25] == '' ? "1" : mac[25])                 //OrderNumber1
     ret.push(delivery)                                      //Delivery1 - jakas liczba niewiadomego pochodzenia
-    ret.push(mac[22])                                       //CustomerName1 
+    ret.push(mac[23])                                       //CustomerName1 
     ret.push(mac[26])                                       //SheetWidth1
     ret.push(mac[35])                                       //Outs1
     ret.push(scorer(mac[27],mac[28],mac[29],mac[30]))        //ScoreMeasures1
@@ -142,7 +142,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(mac[34])                                       //segmentSheetCount1
     ret.push(mac[32] == '0' ? '1' : mac[32])                //sheetsPerStack1
     ret.push(1)                                             //stacksPerPallet0
-    ret.push(84)                                            //Sending0
+    //ret.push(84)                                            //Sending0
     ret.push("False")
     ret.push(" ") 
     ret.push(" ") 
