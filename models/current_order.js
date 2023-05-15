@@ -151,12 +151,12 @@ var mac2syncro = async function(mac,papers,quality,flute){
     /**
      * ORDER 0  
      */
-    var order0 = syncro_order(mac[10],delivery,mac[8],mac[11],mac[20],scorer(mac[12],mac[13],mac[14],mac[15]),"A","2"," "," ","2",mac[18],mac[19],mac[17],1,84)
+    var order0 = syncro_order(mac[10],delivery,mac[8],mac[11],mac[20],scorer(mac[12],mac[13],mac[14],mac[15]),"A","2"," "," ","3",mac[18],mac[19],mac[17],1,84)
    
     /**
      * ORDER 1
      */
-    var order1 = syncro_order(mac[25],delivery,mac[23],mac[26],mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","3",mac[33],mac[34],mac[32],1," ")
+    var order1 = syncro_order(mac[25],delivery,mac[23],mac[26],mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","1",mac[33],mac[34],mac[32],1," ")
     
     /**
      * ORDER 2
