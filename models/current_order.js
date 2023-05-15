@@ -156,7 +156,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     /**
      * ORDER 1
      */
-    var order1 = syncro_order(mac[25],delivery,mac[23],mac[26],mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","1",mac[33],mac[34],parseInt(mac[32])/2,1," ")
+    var order1 = (mac[25].trim() == "") ? syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," ") : syncro_order(mac[25],delivery,mac[23],mac[26],mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","1",mac[33],mac[34],parseInt(mac[32])/2,1," ")
     
     /**
      * ORDER 2

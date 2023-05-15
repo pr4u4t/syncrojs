@@ -60,7 +60,7 @@ router.post('/add', upload.single('orderFile'), async (req,res) => {
 
 router.post('/add/confirm', upload.none(), async (req,res) => {
     if(typeof req.body.accept !== undefined){
-        req.session.step = 3
+        req.session.step = 1
         template.render('current_progress.twig', {
             'next': "/current",
             'txt': "Go to Orders"
