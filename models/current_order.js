@@ -49,11 +49,11 @@ var scorer = function(sc1,sc2,sc3,sc4){
     ret += sc1
     ret +=" "+sc2
     
-    if(sc3 != '0'){
+    if(sc3 !== undefined && sc3 != '0'){
         ret += " "+sc3
     }
     
-    if(sc4 != '0'){
+    if(sc4 !== undefined && sc4 != '0'){
         ret += " "+sc4
     }
     
