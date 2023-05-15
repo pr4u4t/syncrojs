@@ -116,6 +116,7 @@ var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scor
 
 var syncro_default_order = function(){
     var ret = []
+    const delivery = "1 01 01 0001 08 00 00 0"
     
     var header = syncro_header("7734","22200","0","30","FALA A",'B',"285","27",2000)
     var order0 = syncro_order("Z2702300041",delivery,"ERKAR","5000","2",scorer("2000","3000"),"A","2"," "," ","3","16960","1000","200","4","84")
@@ -132,7 +133,7 @@ var syncro_default_order = function(){
 var mac2syncro = async function(mac,papers,quality,flute){
     var ret
     
-    const delivery = "1 01 01 0001 08 00 00 0"
+    
     const quality_row = await quality.quality_params_by_id(mac[3])
     const flute_row = await flute.flute_params_by_id('B')
     
