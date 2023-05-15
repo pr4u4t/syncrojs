@@ -112,12 +112,12 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(" ") 
     ret.push(" ")
     ret.push(" ")
+    ret.push(" ")
     ret.push("False")
     ret.push("False")
     ret.push(" ") 
     ret.push(" ")                                           //Address
     ret.push(" ")                                           //Next Machine
-    ret.push(" ")
     ret.push("0")
     ret.push(84)
     ret.push("False")
@@ -147,12 +147,12 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(" ") 
     ret.push(" ")
     ret.push(" ")
+    ret.push(" ")
     ret.push("False")
     ret.push("False")
     ret.push(" ") 
     ret.push(" ")                                           //Address
     ret.push(" ")                                           //Next Machine
-    ret.push(" ")
     ret.push("0")
     ret.push(84)
     ret.push("False")
@@ -181,13 +181,12 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret.push(" ") 
     ret.push(" ") 
     ret.push(" ")
-    ret.push("")
+    ret.push(" ")
     ret.push("False")
     ret.push("False")
     ret.push(" ") 
     ret.push(" ")                                           //Address
     ret.push(" ")                                           //Next Machine
-    ret.push(" ")
     ret.push(" ")
     ret.push(" ")
     ret.push("False")
