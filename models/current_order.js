@@ -132,7 +132,7 @@ var syncro_default_order = function(){
 
 var mac2syncro = async function(mac,papers,quality,flute){
     var ret
-    
+    const delivery = "1 01 01 0001 08 00 00 0"
     
     const quality_row = await quality.quality_params_by_id(mac[3])
     const flute_row = await flute.flute_params_by_id('B')
