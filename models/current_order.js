@@ -142,7 +142,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
     
     console.log(mac)
-    const trim = parseInt(mac[5])-/*parseInt(mac[11])*parseInt(mac[20])*/5000*2-5100*2
+    const trim = parseInt(mac[5])-parseInt(mac[11])*parseInt(mac[20])-parseInt(mac[26])*parseInt(mac[35])
     /**	
      * HEADER
     */
@@ -151,14 +151,13 @@ var mac2syncro = async function(mac,papers,quality,flute){
     /**
      * ORDER 0  
      */
-    //var order0 = syncro_order(mac[10],delivery,mac[8],mac[11],mac[20],scorer(mac[12],mac[13],mac[14],mac[15]),"A","2"," "," ","2",mac[18],mac[19],mac[17],1,84)
-    var order0 = syncro_order("Z2702300041",delivery,"ERKAR","5000","2",scorer("2000","3000"),"A","2"," "," ","3","16960","1000","200","4","84")
+    var order0 = syncro_order(mac[10],delivery,mac[8],mac[11],mac[20],scorer(mac[12],mac[13],mac[14],mac[15]),"A","2"," "," ","2",mac[18],mac[19],mac[17],1,84)
+   
     /**
      * ORDER 1
      */
+    var order1 = syncro_order(mac[25],delivery,mac[23],mac[26],mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","3",mac[33],mac[34],mac[32],1," ")
     
-    //var order1 = syncro_order(mac[25],delivery,mac[23],mac[26],mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","3",mac[33],mac[34],mac[32],1," ")
-    var order1 = syncro_order("1",delivery,"1","5100","2",scorer("1000","1000","1000","2100"),"A","2"," "," ","1","12000","1412","340","2"," ")
     /**
      * ORDER 2
      */
