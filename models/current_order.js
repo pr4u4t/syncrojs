@@ -142,7 +142,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
     
     console.log(mac)
-    const trim = parseInt(mac[5])-parseInt(mac[11])*parseInt(mac[20])-parseInt(mac[26])*parseInt(mac[35])
+    const trim = parseInt(mac[5])-parseInt(mac[11])*parseInt(mac[20])-parseInt(mac[26])*parseInt(mac[35]) 
     /**	
      * HEADER
     */
