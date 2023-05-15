@@ -152,7 +152,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
      * ORDER 0  
      */
     //var order0 = syncro_order(mac[10],delivery,mac[8],mac[11],mac[20],scorer(mac[12],mac[13],mac[14],mac[15]),"A","2"," "," ","2",mac[18],mac[19],mac[17],1,84)
-    //var order0 = syncro_order("Z2702300041",delivery,"ERKAR","5000","2",scorer("2000","3000"),"A","2"," "," ","3","16960","1000","200","4","84")
+    var order0 = syncro_order("Z2702300041",delivery,"ERKAR","5000","2",scorer("2000","3000"),"A","2"," "," ","3","16960","1000","200","4","84")
     /**
      * ORDER 1
      */
