@@ -127,7 +127,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
      * ORDER 1
      */
     
-    ret.push(mac[25])                                       //OrderNumber1
+    ret.push(mac[25] == '' ? "1" : mac[25])                 //OrderNumber1
     ret.push(delivery)                                      //Delivery1 - jakas liczba niewiadomego pochodzenia
     ret.push(mac[22])                                       //CustomerName1 
     ret.push(mac[26])                                       //SheetWidth1
@@ -164,7 +164,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
      */
     
     ret.push(" ") 
-    ret.push("1 01 01 0001 08 00 00 0")
+    ret.push(delivery)
     ret.push(" ") 
     ret.push(" ") 
     ret.push(" ") 
