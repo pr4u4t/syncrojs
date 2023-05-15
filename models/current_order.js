@@ -60,12 +60,79 @@ var scorer = function(sc1,sc2,sc3,sc4){
     return ret
 }
 
-var mac2syncro = async function(mac,papers,quality,flute){
+var syncro_header = function(setupid,webwidth,trimtype,scoregap,qualityid,fluteid,qweight,qthickness,trim){
     var ret = []
+    
+    ret.push(setupid+'.2')                                  //SetupID glueing SEQ to setup ID
+    ret.push(webwidth)                                      //WebWidth
+    ret.push(trimtype)                                      //TrimType
+    ret.push(scoregap)                                      //ScoreGap - od rodzaju tektury
+    ret.push(qualityid)                                     //QualityID
+    ret.push(fluteid)                                       //FluteID
+    ret.push(qweight)                                       //QualityWeight - sprawdzic skad sie to bierze  //
+    ret.push(qthickness)                                    //QualityThickness                              //
+    ret.push(trim)                                          //Trim - trzeba zweryfikowac
+    
+    return ret
+}
+
+var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scoreType,posType,twinOffset,scoreGap,level,sheetLength,sheetCount,sheetsStack,stacks,sending){
+    var ret = []
+    
+    ret.push(onumber,)                                      //OrderNumber0
+    ret.push(delivery)                                      //Delivery0 - jakas liczba niewiadomego pochodzenia
+    ret.push(cname)                                         //CustomerName0 
+    ret.push(sheetWidth)                                    //SheetWidth0
+    ret.push(outs)                                          //Outs0
+    ret.push(measures)                                      //ScoreMeasures0 roznica 4 i 5
+    ret.push(scoreType)                                     //ScoreType0
+    ret.push(posType)                                       //PositType0
+    ret.push(twinOffset)                                    //TeleTwinOffset0 - puste
+    ret.push(scoreGap)                                      //ScoreGap0
+    ret.push(level)                                         //LevelName0 - dol 2, gora 3
+    ret.push(sheetLength)                                   //sheetLenght0
+    ret.push(sheetCount)                                    //segmentSheetCount0
+    ret.push(sheetsStack)                                   //sheetsPerStack0
+    ret.push(stacks)                                        //stacksPerPallet0
+    ret.push(sending)                                       //Sending0
+    ret.push("False")
+    ret.push(" ") 
+    ret.push(" ") 
+    ret.push(" ")
+    ret.push(" ")
+    ret.push(" ")
+    ret.push("False")
+    ret.push("False")
+    ret.push(" ") 
+    ret.push(" ") 
+    ret.push(" ")                                           //Address
+    ret.push(" ")                                           //Next Machine
+    ret.push("0")
+    ret.push(sending)
+    ret.push("False")
+    
+    return ret
+}
+
+var syncro_default_order = function(){
+    var ret = []
+    
+    var header = syncro_header("7734","22200","0","30","FALA A",'B',"285","27",2000)
+    var order0 = syncro_order("Z2702300041",delivery,"ERKAR","5000","2",scorer("2000","3000"),"A","2"," "," ","3","16960","1000","200","4","84")
+    var order1 = syncro_order("1",delivery,"1","5100","2",scorer("1000","1000","1000","2100"),"A","2"," "," ","1","1200","1412","340","2"," ")
+    var order2 = syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," ")
+    
+    ret = header.concat(order0)
+    ret = ret.concat(order1)
+    ret = ret.concat(order2)
+    
+    return ret
+}
+
+var mac2syncro = async function(mac,papers,quality,flute){
+    var ret
+    
     const delivery = "1 01 01 0001 08 00 00 0"
-    
-    console.log(mac)
-    
     const quality_row = await quality.quality_params_by_id(mac[3])
     const flute_row = await flute.flute_params_by_id('B')
     
@@ -73,128 +140,34 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const qualityThickness = quality_row.rows[0].thickness_uddmm     //45 
     const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
     
+    console.log(mac)
+    
     /**	
      * HEADER
     */
-    
-    ret.push(mac[2]+'.2')                                   //SetupID glueing SEQ to setup ID
-    ret.push(mac[5])                                        //WebWidth
-    ret.push(0)                                             //TrimType
-    ret.push(qualityGap)                                    //ScoreGap - od rodzaju tektury
-    ret.push(mac[3])                                        //QualityID
-    ret.push(/*mac[4]*/'B')                                  //FluteID
-    ret.push(qualityWeight)                                 //QualityWeight - sprawdzic skad sie to bierze  //
-    ret.push(qualityThickness)                              //QualityThickness                              //
-    ret.push(2000)                                          //Trim - trzeba zweryfikowac
+    //var header = syncro_header(mac[2],mac[5],0,qualityGap,mac[3],'B',qualityWeight,qualityThickness,2000)
     
     /**
      * ORDER 0  
      */
-    
-    ret.push(mac[10])                                       //OrderNumber0
-    ret.push(delivery)                                      //Delivery0 - jakas liczba niewiadomego pochodzenia
-    ret.push(mac[8])                                        //CustomerName0 
-    ret.push(mac[11])                                       //SheetWidth0
-    ret.push(mac[20])                                       //Outs0
-    ret.push(scorer(mac[12],mac[13],mac[14],mac[15]))       //ScoreMeasures0 roznica 4 i 5
-    ret.push("A")                                           //ScoreType0
-    ret.push(2)                                             //PositType0
-    ret.push(" ")                                           //TeleTwinOffset0 - puste
-    ret.push(" ")                                           //ScoreGap0
-    ret.push("2")                                           //LevelName0 - dol 2, gora 3
-    ret.push(mac[18])                                       //sheetLenght0
-    ret.push(mac[19] == '0' ? 1 : mac[19])                  //segmentSheetCount0
-    ret.push(mac[17])                                       //sheetsPerStack0
-    ret.push(1)                                             //stacksPerPallet0
-    ret.push(84)                                            //Sending0
-    ret.push("False")
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ")
-    ret.push(" ")
-    ret.push(" ")
-    ret.push("False")
-    ret.push("False")
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ")                                           //Address
-    ret.push(" ")                                           //Next Machine
-    ret.push("0")
-    ret.push(84)
-    ret.push("False")
+    //var order0 = syncro_order(mac[10],delivery,mac[8],mac[11],mac[20],scorer(mac[12],mac[13],mac[14],mac[15]),"A","2"," "," ","2",mac[18],mac[19],mac[17],1,84)
     
     /**
      * ORDER 1
      */
     
-    ret.push(mac[25] == '' ? "1" : mac[25])                 //OrderNumber1
-    ret.push(delivery)                                      //Delivery1 - jakas liczba niewiadomego pochodzenia
-    ret.push(mac[23])                                       //CustomerName1 
-    ret.push(mac[26])                                       //SheetWidth1
-    ret.push(mac[35])                                       //Outs1
-    ret.push(scorer(mac[27],mac[28],mac[29],mac[30]))        //ScoreMeasures1
-    ret.push("A")                                           //ScoreType1
-    ret.push(2)                                             //PositType1
-    ret.push(" ")                                           //TeleTwinOffset1 - puste
-    ret.push(" ")                                           //ScoreGap1
-    ret.push(3)                                             //LevelName1 - dol 2, gora 3
-    ret.push(mac[33])                                       //sheetLenght1
-    ret.push(mac[34])                                       //segmentSheetCount1
-    ret.push(mac[32] == '0' ? '1' : mac[32])                //sheetsPerStack1
-    ret.push(1)                                             //stacksPerPallet0
-    ret.push(" ")                                           //Sending0
-    ret.push(" ")
-    ret.push("False")
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ")
-    ret.push(" ")
-    ret.push(" ")
-    ret.push("False")
-    ret.push("False")
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ")                                           //Address
-    ret.push(" ")                                           //Next Machine
-    ret.push("0")
-    ret.push(84)
-    ret.push("False")
+    //var order1 = syncro_order(mac[25],delivery,mac[23],mac[26],mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","3",mac[33],mac[34],mac[32],1,84)
     
     /**
      * ORDER 2
      */
+    //var order2 = syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," ")
     
-    ret.push(" ") 
-    ret.push(delivery)
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(0)
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ")                                             //stacksPerPallet0
-    ret.push(" ")                                            //Sending0
-    ret.push("False")
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ")
-    ret.push(" ")
-    ret.push(" ")
-    ret.push("False")
-    ret.push("False")
-    ret.push(" ") 
-    ret.push(" ")                                           //Address
-    ret.push(" ")                                           //Next Machine
-    ret.push(" ")
-    ret.push(" ")
-    ret.push(" ")
-    ret.push("False")
+    //ret = header.concat(order0)
+    //ret = ret.concat(order1)
+    //ret = ret.concat(order2)
+    
+    ret = syncro_default_order()
     
     return ret  
 }
