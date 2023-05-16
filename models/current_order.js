@@ -130,6 +130,20 @@ var syncro_default_order = function(){
     return ret
 }
 
+var calculate_trim = function(webWidth,width0,outs0,width1,outs1){
+    var ret = parseInt(webWidth)
+    
+    if(width0 !== undefined && outs0 !== undefined){
+        ret -= parseInt(width0)*pareInt(outs0)
+    }
+
+    if(width1 !== undefined && outs1 !== undefined){
+        ret -= parseInt(width1)*parseInt(outs1)
+    }
+    
+    return ret
+}
+
 var mac2syncro = async function(mac,papers,quality,flute){
     var ret
     const delivery = "1 01 01 0001 08 00 00 0"
@@ -142,7 +156,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
     
     console.log(mac)
-    const trim = parseInt(mac[5])-parseInt(mac[11])*parseInt(mac[20])-parseInt(mac[26])*parseInt(mac[35]) 
+    const trim = calculate_trim(mac[5],mac[11],mac[20],mac[26],mac[35])
     /**	
      * HEADER
     */
