@@ -4,6 +4,7 @@ const fs = require('fs')
 const net = require('net')
 const db = require('../db')
 const {PromiseSocket, TimeoutError} = require("promise-socket")
+const log = require('../utils/log.js')
 const config = require('config')
 const port = config.get('syncro.port')
 const host = config.get('syncro.host')
@@ -189,36 +190,64 @@ var mac2syncro = async function(mac,papers,quality,flute){
 var fields = ["program number", "scheduled papers", "fosber ID", "flute", "flute type", "rollsize", "linear meters", "G", "customer name 1", "customer code 1", "order number 1", "sheet width 1", "1 score", "2 score", "3 score", "4 score", "5 score", "sheets per stack 1", "sheet length 1", "quantity of sheets 1", "outs 1", "linear meters 1", "20", "customer name 2", "customer code 2", "order number 2", "sheet width 2", "1 score", "2 score", "3 score", "4 score", "5 score", "sheets per stack 2", "sheet length 2", "quantity of sheets 2", "outs 2", "linear meters 2", "10"]
 
 var orders_all = async function(){
-    var xmlbuff = ''
-    const psocket = new PromiseSocket()
-    var result = await psocket.connect(port,host)
-    result = await psocket.write('Orders.Get')
-    xmlbuff = await psocket.readAll()
-    xmlbuff = xmlbuff.toString()
-    let jml = parser.parse(xmlbuff)
-        
-    return (Array.isArray(jml.NewDataSet.DryEndList)) ? jml.NewDataSet.DryEndList : [ jml.NewDataSet.DryEndList ]
+    const cmd = 'Orders.Get'
+    
+    try{
+        var xmlbuff
+        const psocket = new PromiseSocket()
+        await psocket.connect(port,host)
+        result = await psocket.write(cmd)
+        if(result != cmd.length){
+            log.error('Command send failed',new Error())
+            return null
+        }
+        xmlbuff = await psocket.readAll()
+        xmlbuff = xmlbuff.toString()
+        let jml = parser.parse(xmlbuff)
+            
+        return (Array.isArray(jml.NewDataSet.DryEndList)) ? jml.NewDataSet.DryEndList : [ jml.NewDataSet.DryEndList ]
+    }catch(error){
+        log.error('Failed to obtain orders',error)
+        return null
+    }
 }
 
 var orders_delete_all = async function(){
-    const psocket = new PromiseSocket()
-    var result = await psocket.connect(port,host)
-    result = await psocket.write('Orders.Delete')
-    result = await psocket.readAll()
-    result = result.toString()
+    const cmd = 'Orders.Delete'
+    try{
+        const psocket = new PromiseSocket()
+        await psocket.connect(port,host)
+        var result = await psocket.write(cmd)
+        if(result != cmd.length){
+            log.error('Command send failed',new Error())
+            return null
+        }
+        result = await psocket.readAll()
+        result = result.toString()
+        return result
+    }catch(error){
+        log.error('Failed to delete orders',error)
+        return null
+    }
     
-    return result
 }
 
 var orders_add = async function(data){
-    let cmd = m2s_serialize(data)
-    const psocket = new PromiseSocket()
-    var result = await psocket.connect(port,host)
-    result = await psocket.write(cmd)
-    console.log(cmd)
-    result = await psocket.readAll()
-    result = result.toString()
-    return result
+    try{
+        let cmd = m2s_serialize(data)
+        const psocket = new PromiseSocket()
+        await psocket.connect(port,host)
+        result = await psocket.write(cmd)
+        if(result != cmd.length){
+            log.error()
+        }
+        result = await psocket.readAll()
+        result = result.toString()
+        return result
+    }catch(error){
+        log.error('Failed to add order',error)
+        return null
+    }
 }
 
 module.exports = {

@@ -1,27 +1,52 @@
 const db = require('../db')
+const log = require('../utils/log.js')
 
 const past_all = async function(){
-    const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute  FROM syncro_db_3892.pastorders ORDER BY begintime DESC LIMIT 25')
-
-    return {rows,fields}
+    const query = 'SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute  FROM syncro_db_3892.pastorders ORDER BY begintime DESC LIMIT 25'
+    
+    try{
+        const {rows,fields} = await db.query(query)
+        return {rows,fields}
+    }catch(error){
+        log.error('Failed to obtain past orders',error)
+        return null
+    }
 }
 
 const past_count = async function() {
-    let count = await db.query('SELECT count(*) FROM syncro_db_3892.pastorders')
+    const query = 'SELECT count(*) FROM syncro_db_3892.pastorders'
     
-    return count
+    try{
+        let count = await db.query(query)
+        return count
+    }catch(error){
+        log.error('Failed to obtain past orders',error)
+        return null
+    }
 }
 
 const past_paginated_all = async function(offset){
-    const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders ORDER BY begintime DESC OFFSET '+offset+' LIMIT 25')
+    const query = 'SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders ORDER BY begintime DESC OFFSET '+offset+' LIMIT 25'
     
-    return {rows,fields}
+    try{
+        const {rows,fields} = await db.query(query)
+        return {rows,fields}
+    }catch(error){
+        log.error('Failed to obtain ',error)
+        return null
+    }
 }
 
 const past_export_csv = async function(){
-    const {rows,fields} = await db.query('SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders WHERE begintime >= now()::date ORDER BY begintime DESC')
+    const query = 'SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders WHERE begintime >= now()::date ORDER BY begintime DESC'
     
-    return {rows,fields}
+    try{
+        const {rows,fields} = await db.query(query)
+        return {rows,fields}
+    }catch(error){
+        log.error('Failed to obtain past orders in csv layout',error)
+        return null
+    }
 }
 
 module.exports = {

@@ -7,9 +7,12 @@ const shift = require('./shift.js')
 const Router = require('express-promise-router')
 const router = new Router()
 const template = require('../templates')
+const home = require('../models/home.js')
 
 router.get('/', async (req,res) => {
+    const info = home.home_info()
     template.render('index.twig', {
+        'home': info,
         'url': '/'
     }).then((output) => {
         res.end(output);
