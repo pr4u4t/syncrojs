@@ -1,0 +1,20 @@
+{% macro home() %}    
+    <div class="row">
+        <div class="card mt-5 me-2" style="width:18rem;">
+            <img src="/images/orders-current.png" class="card-img-top" alt="current">
+            <div class="card-body">
+              <h5 class="card-title">Current Orders</h5>
+              <p class="card-text" style="height:2em;">View and import current orders</p>
+              <a href="/current" class="btn btn-primary">Go to current</a>
+            </div>
+        </div>
+        <div class="card mt-5 me-2" style="width:18rem;">
+            <img src="/images/orders-past.png" class="card-img-top" alt="past">
+            <div class="card-body">
+              <h5 class="card-title">Past Orders</h5>
+              <p class="card-text" style="height:2em;">View and export past orders</p>
+              <a href="/past/1" class="btn btn-primary">Go to past</a>
+            </div>
+        </div>
+    </div> 
+{% endmacro %}

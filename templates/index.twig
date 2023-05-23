@@ -15,40 +15,15 @@
 
     <main class="container mt-5">
       {% block content %}
-      <div class="row">
-          <div class="card mt-5 me-2" style="width:18rem;">
-            <img src="/images/orders-current.png" class="card-img-top" alt="current">
-            <div class="card-body">
-              <h5 class="card-title">Current Orders</h5>
-              <p class="card-text" style="height:2em;">View and import current orders</p>
-              <a href="/current" class="btn btn-primary">Go to current</a>
-            </div>
-          </div>
-          <div class="card mt-5 me-2" style="width:18rem;">
-            <img src="/images/orders-past.png" class="card-img-top" alt="past">
-            <div class="card-body">
-              <h5 class="card-title">Past Orders</h5>
-              <p class="card-text" style="height:2em;">View and export past orders</p>
-              <a href="/past/1" class="btn btn-primary">Go to past</a>
-            </div>
-          </div>
-      </div>
+        {% import "_home.twig" as home %}
+        {{ home.home() }}
       {% endblock %}
     </main>
     <div class="container">
       {% import "_footer.twig" as footer %}
       {{ footer.footer("Syncro Orders") }}
     </div>
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
   </body>
 </html>
 
