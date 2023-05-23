@@ -10,47 +10,8 @@
     <title>Orders</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Syncro Orders</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link {% if url == '/' %}active{% endif %}" {% if url == '/' %} aria-current="page" {% endif %} href="/">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link {% if url starts with '/past' %}active{% endif %} dropdown-toggle" {% if url starts with '/past' %} aria-current="page" {% endif %} href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">Past</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/past/1">Show</a></li>
-                <li><a class="dropdown-item" href="/past/export">Export</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link {% if url starts with '/current' %}active{% endif %} dropdown-toggle" {% if url starts with '/current' %} aria-current="page" {% endif %} href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">Current</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/current">Show</a></li>
-                <li><a class="dropdown-item" href="/current/add">Import</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if url starts with '/papers' %}active{% endif %}" {% if url starts with '/papers' %} aria-current="page" {% endif %}  href="/papers">Papers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if url starts with '/quality' %}active{% endif %}" {% if url starts with '/quality' %} aria-current="page" {% endif %}  href="/quality">Quality</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if url starts with '/flute' %}active{% endif %}" {% if url starts with '/flute' %} aria-current="page" {% endif %}  href="/flute">Flute</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if url starts with '/shift' %}active{% endif %}" {% if url starts with '/shift' %} aria-current="page" {% endif %}  href="/shift">Shift</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    {% import "_navbar.twig" as navbar %}
+    {{ navbar.nav("Syncro Orders") }}
 
     <main class="container mt-5">
       {% block content %}
@@ -75,71 +36,8 @@
       {% endblock %}
     </main>
     <div class="container">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
-        <div class="col mb-3">
-          <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
-            Syncro Orders
-          </a>
-        </div>
-
-        {# <div class="col mb-3"></div> #}
-
-        <div class="col mb-3">
-          <h5>Home</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-muted">Back to Home</a></li>
-          </ul>
-        </div>
-
-        <div class="col mb-3">
-          <h5>Past</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="/past/show/1" class="nav-link p-0 text-muted">Show</a></li>
-            <li class="nav-item mb-2"><a href="/past/export" class="nav-link p-0 text-muted">Export</a></li>
-          </ul>
-        </div>
-
-        <div class="col mb-3">
-          <h5>Current</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="/current" class="nav-link p-0 text-muted">Show</a></li>
-            <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li>
-          </ul>
-        </div>
-        
-        <div class="col mb-3">
-          <h5>Papers</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="/papers" class="nav-link p-0 text-muted">Papers</a></li>
-            {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
-          </ul>
-        </div>
-
-        <div class="col mb-3">
-          <h5>Quality</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="/quality" class="nav-link p-0 text-muted">Quality</a></li>
-            {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
-          </ul>
-        </div>
-        
-        <div class="col mb-3">
-          <h5>Flute</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="/flute" class="nav-link p-0 text-muted">Flute</a></li>
-            {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
-          </ul>
-        </div>
-        
-        <div class="col mb-3">
-          <h5>Shift</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="/shift" class="nav-link p-0 text-muted">Shift</a></li>
-            {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
-          </ul>
-        </div>
-        
-      </footer>
+      {% import "_footer.twig" as footer %}
+      {{ footer.footer("Syncro Orders") }}
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
 

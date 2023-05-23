@@ -32,7 +32,7 @@ const past_paginated_all = async function(offset){
         const {rows,fields} = await db.query(query)
         return {rows,fields}
     }catch(error){
-        log.error('Failed to obtain ',error)
+        log.error('Failed to obtain past orders paginated',error)
         return null
     }
 }

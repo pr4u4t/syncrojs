@@ -2,8 +2,10 @@ const db = require('../db')
 const log = require('../utils/log.js')
 
 const quality_all = async function(){
+    const query = 'SELECT * FROM syncro_db_3892.quality'
+    
     try{
-        const {rows,fields} = await db.query('SELECT * FROM syncro_db_3892.quality')
+        const {rows,fields} = await db.query(query)
         return {rows,fields}
     }catch(error){
         log.error('Failed to obtain quality',error)
@@ -12,8 +14,10 @@ const quality_all = async function(){
 }
 
 const quality_params_by_id = async function(id){
+    const query = 'SELECT qualitytext, weightfactoruwg_m, thickness_uddmm, scoregap_uddmm FROM syncro_db_3892.quality WHERE qualityid = \''+id+'\''
+    
     try{
-        const {rows,fields} = await db.query('SELECT qualitytext, weightfactoruwg_m, thickness_uddmm, scoregap_uddmm FROM syncro_db_3892.quality WHERE qualityid = \''+id+'\'')
+        const {rows,fields} = await db.query(query)
         return {rows,fields}
     }catch(error){
         log.error('Failed to find quality by id',error)
@@ -22,8 +26,10 @@ const quality_params_by_id = async function(id){
 }
 
 const quality_paginated_all = async function(offset){
+    const query = 'SELECT * FROM syncro_db_3892.quality OFFSET '+offset+' LIMIT 25'
+    
     try{
-        const {rows,fields} = await db.query('SELECT * FROM syncro_db_3892.quality OFFSET '+offset+' LIMIT 25')
+        const {rows,fields} = await db.query(query)
         return {rows,fields}
     }catch(error){
         log.error('Failed to obtain quality paginated',error)
@@ -32,8 +38,10 @@ const quality_paginated_all = async function(offset){
 }
 
 const quality_count = async function(){
+    const query = 'SELECT count(*) FROM syncro_db_3892.quality'
+    
     try{
-        let count = await db.query('SELECT count(*) FROM syncro_db_3892.quality')
+        let count = await db.query(query)
         return count
     }catch(error){
         log.error('Failed to obtain quality count')

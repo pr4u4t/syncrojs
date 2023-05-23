@@ -16,9 +16,11 @@ app.use(sessions({
   cookie: { maxAge: oneDay },
   resave: false 
 }))
+
 app.use(cookieParser())
 mountRoutes(app)
 app.use(express.static('public'))
+
 app.listen(port, host, () => {
   console.log('Node.js Express server listening on :'+host+":"+port);
 });

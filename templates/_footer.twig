@@ -1,0 +1,67 @@
+{% macro footer(title) %}
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+        <div class="col mb-3">
+          <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+            {{title}}
+          </a>
+        </div>
+
+        {# <div class="col mb-3"></div> #}
+
+        <div class="col mb-3">
+          <h5>Home</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-muted">Back to Home</a></li>
+          </ul>
+        </div>
+
+        <div class="col mb-3">
+          <h5>Past</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/past/show/1" class="nav-link p-0 text-muted">Show</a></li>
+            <li class="nav-item mb-2"><a href="/past/export" class="nav-link p-0 text-muted">Export</a></li>
+          </ul>
+        </div>
+
+        <div class="col mb-3">
+          <h5>Current</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/current" class="nav-link p-0 text-muted">Show</a></li>
+            <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li>
+          </ul>
+        </div>
+        
+        <div class="col mb-3">
+          <h5>Papers</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/papers" class="nav-link p-0 text-muted">Papers</a></li>
+            {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
+          </ul>
+        </div>
+
+        <div class="col mb-3">
+          <h5>Quality</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/quality" class="nav-link p-0 text-muted">Quality</a></li>
+            {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
+          </ul>
+        </div>
+        
+        <div class="col mb-3">
+          <h5>Flute</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/flute" class="nav-link p-0 text-muted">Flute</a></li>
+            {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
+          </ul>
+        </div>
+        
+        <div class="col mb-3">
+          <h5>Shift</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="/shift" class="nav-link p-0 text-muted">Shift</a></li>
+            {# <li class="nav-item mb-2"><a href="/current/add" class="nav-link p-0 text-muted">Import</a></li> #}
+          </ul>
+        </div>
+        
+    </footer> 
+{% endmacro %}

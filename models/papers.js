@@ -2,8 +2,10 @@ const db = require('../db')
 const log = require('../utils/log.js')
 
 const papers_all = async function(){
+    const query = 'SELECT * FROM syncro_db_3892.papers'
+    
     try{
-        const {rows,fields} = await db.query('SELECT * FROM syncro_db_3892.papers')
+        const {rows,fields} = await db.query(query)
         return {rows,fields}
     }catch(error){
         log.error('Failed to obtain papers',error)
@@ -12,8 +14,10 @@ const papers_all = async function(){
 }
 
 const papers_params_by_id = async function(id){
+    const query = 'SELECT qualitytext, weightfactoruwg_m, thickness_uddmm, scoregap_uddmm FROM syncro_db_3892.papers WHERE paperid = \''+id+'\''
+    
     try{
-        const {rows,fields} = await db.query('SELECT qualitytext, weightfactoruwg_m, thickness_uddmm, scoregap_uddmm FROM syncro_db_3892.papers WHERE paperid = \''+id+'\'')
+        const {rows,fields} = await db.query(query)
         return {rows,fields}
     }catch(error){
         log.error('Failed to obtain paper by id',error)
@@ -22,8 +26,10 @@ const papers_params_by_id = async function(id){
 }
 
 const papers_paginated_all = async function(offset){
+    const query = 'SELECT * FROM syncro_db_3892.papers OFFSET '+offset+' LIMIT 25'
+    
     try{
-        const {rows,fields} = await db.query('SELECT * FROM syncro_db_3892.papers OFFSET '+offset+' LIMIT 25')
+        const {rows,fields} = await db.query(query)
         return {rows,fields}
     }catch(error){
         log.error('failed to paginate papers',error)
@@ -33,6 +39,7 @@ const papers_paginated_all = async function(offset){
 
 const papers_count = async function(){
     const query = 'SELECT count(*) FROM syncro_db_3892.papers'
+    
     try{
         let count = await db.query(query)
         return count
