@@ -10,7 +10,7 @@ const template = require('../templates')
 const home = require('../models/home.js')
 
 router.get('/', async (req,res) => {
-    const info = home.home_info()
+    const info = await home.home_info()
     template.render('index.twig', {
         'home': info,
         'url': '/'
