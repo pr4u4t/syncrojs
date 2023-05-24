@@ -29,9 +29,30 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{{ data.Order0.Customer }}</td>
-                        <td>{{ data.Order1.Customer }}</td>
-                        <td>{{ data.Order2.Customer }}</td>
+                        <td>
+                            <p>{{ data.Orders.Order0.Customer }}</p>
+                            <p>
+                                <span>Required: {{data.Orders.Order0.Sheets}}</span>
+                                <span>Good: {{data.Orders.Order0.GoodSheets}}</span>
+                                <span>Bad: {{data.Orders.Order0.BadSheets}}</span>
+                            </p>
+                        </td>
+                        <td>
+                            <p>{{ data.Orders.Order1.Customer }}</p>
+                            <p>
+                                <span>Required: {{data.Orders.Order1.Sheets}}</span>
+                                <span>Good: {{data.Orders.Order1.GoodSheets}}</span>
+                                <span>Bad: {{data.Orders.Order1.BadSheets}}</span>
+                            </p>
+                        </td>
+                        <td>
+                            <p>{{ data.Orders.Order2.Customer }}</p>
+                            <p>
+                                <span>Required: {{data.Orders.Order2.Sheets}}</span>
+                                <span>Good: {{data.Orders.Order2.GoodSheets}}</span>
+                                <span>Bad: {{data.Orders.Order2.BadSheets}}</span>
+                            </p>
+                        </td>
                     </tr>
                 </tbody>
             </table>
