@@ -18,7 +18,7 @@ const home_info = async function(){
         xmlbuff = await psocket.readAll()
         xmlbuff = xmlbuff.toString()
         let jml = parser.parse(xmlbuff)
-        return (Array.isArray(jml.NewDataSet.Home)) ? jml.NewDataSet.Home : [ jml.NewDataSet.Home ]
+        return jml.NewDataSet.Home
     }catch(error){
         log.error(error)
         return null
