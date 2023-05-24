@@ -18,8 +18,8 @@
       <h1>Home Dashboard</h1>
       {% endblock %}
       {% block content %}
-        {% import "_home.twig" as home %}
-        {{ home.home() }}
+        {% import "_home.twig" as dashboard %}
+        {{ dashboard.home(home) }}
       {% endblock %}
     </main>
     <div class="container">
