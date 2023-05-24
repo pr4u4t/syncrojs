@@ -7,13 +7,16 @@
 
     <!-- Bootstrap CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <title>Orders</title>
+    <title>{% block title %} Orders {% endblock %}</title>
   </head>
   <body>
     {% import "_navbar.twig" as navbar %}
     {{ navbar.nav("Syncro Orders") }}
 
     <main class="container mt-5">
+      {% block header %}
+      Home Dashboard
+      {% endblock %}
       {% block content %}
         {% import "_home.twig" as home %}
         {{ home.home() }}
