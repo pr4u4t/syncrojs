@@ -2,6 +2,7 @@ const express = require('express')
 const config = require('config')
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
+const template = require('./templates')
 
 const port = config.get('server.port') || "127.0.0.1"
 const host = config.get('server.host') || 80
@@ -21,6 +22,24 @@ app.use(cookieParser())
 mountRoutes(app)
 app.use(express.static('public'))
 
+app.use(function(req,res,next){
+  template.render('error.twig', {
+    'title': 'HTTP 404 Not Found',
+    'msg': 'Page not found'
+  }).then((output) => {
+    res.end(output);
+  })
+})
+
+app.use(function(err,req,res,next){
+  template.render('error.twig', {
+    'title': 'HTTP 500 Internal Error',
+    'msg': 'Fatal error occurred, please contact support'
+  }).then((output) => {
+    res.end(output);
+  })
+})
+
 app.listen(port, host, () => {
   console.log('Node.js Express server listening on :'+host+":"+port);
-});
+})

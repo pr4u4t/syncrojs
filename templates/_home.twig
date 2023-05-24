@@ -1,4 +1,42 @@
-{% macro home() %}    
+{% macro home(data) %}
+    <div class="row">
+        <div style="overflow-x:scroll;">
+            <h3> Shift </h3>
+            <table class="table mt-4 table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col"> ID </th>
+                        <th scope="col"> Start Time </th>
+                        <th scope="col"> End Time </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> {{ data.Home.Shift.ID }}</td>
+                        <td> {{ data.Home.Shift.StartTime }} </td>
+                        <td> {{ data.Home.Shift.EndTime }} </td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3> Dry End </h3>
+            <table class="table mt-4 table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col"> Order Level 0 </th>
+                        <th scope="col"> Order Level 1 </th>
+                        <th scope="col"> Order Level 2 </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ data.Home.Order0.Customer }}</td>
+                        <td>{{ data.Home.Order1.Customer }}</td>
+                        <td>{{ data.Home.Order2.Customer }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <div class="row">
         <div class="card mt-5 me-2" style="width:18rem;">
             <img src="/images/orders-current.png" class="card-img-top" alt="current">
