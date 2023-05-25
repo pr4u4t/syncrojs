@@ -1,11 +1,19 @@
 {% extends "index.twig" %}
 {% import "_pagination.twig" as pagination %}
 
+{% block title %}
+Shift Start
+{% endblock %}
+
+{% block header %}
+Shift Start
+{% endblock %}
+
 {% block content %}
 
 <div class="row mt-4">
     <div class="col-md-6">
-        <h2 class="mt-4">Start Shift</h2>
+        <h2 class="mt-4">New Shift</h2>
         <form action="{{url}}start" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="ID" class="form-label">ID</label>
