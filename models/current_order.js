@@ -162,14 +162,16 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const quality_row = await quality.quality_params_by_id(mac[3])
     const flute_row = await flute.flute_params_by_id('B')
     
-    console.log(quality_row)
-    console.log(flute_row)
+    if(quality_row == null || flute_row == null){
+        log.error("mac2syncro failed to fetch parameters", new Error())
+        return null
+    }
     
     const qualityWeight = quality_row.rows[0].weightfactoruwg_m      //635
     const qualityThickness = quality_row.rows[0].thickness_uddmm     //45 
     const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
     
-    //console.log(mac)
+    
     
     const trim = calculate_trim(mac[5],mac[11],mac[20],mac[26],mac[35])
     if(isNan(trim) || trim > 230){
@@ -288,7 +290,9 @@ var validate = async function(rows,papers,quality,flute){
     var ret = []
     
     log.debug("Validation started")
+    console.log(rows.length)
     for(let i = 0; i < rows.length; ++i){
+        console.log("validation step")
         let result = await mac2syncro(rows[i],papers,quality,flute)
         console.log(result)
     }

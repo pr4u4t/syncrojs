@@ -44,7 +44,7 @@ router.post('/add', upload.single('orderFile'), async (req,res) => {
     try {
         const data = fs.readFileSync(req.file.path, 'utf8')
         rows = ordmac.mac_parse(data)
-        val = ordmac.validate(rows,papers,quality,flute)
+        val = await ordmac.validate(rows,papers,quality,flute)
         req.session.current = rows
     } catch (err) {
         log.error("order add post",err)
