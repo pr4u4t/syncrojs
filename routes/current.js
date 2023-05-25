@@ -39,19 +39,21 @@ router.get('/add', async (req,res) => {
 
 router.post('/add', upload.single('orderFile'), async (req,res) => {
     var rows
+    var val
     
     try {
         const data = fs.readFileSync(req.file.path, 'utf8')
         rows = ordmac.mac_parse(data)
+        val = ordmac.validate(rows,papers,quality,flute)
+        req.session.current = rows
     } catch (err) {
-        console.log(err)
+        log.error("order add post",err)
     }
 
-    req.session.current = rows
-    
     template.render('current_confirm.twig', {
         'rows': rows, 
-        'fields': ordmac.fields, 
+        'fields': ordmac.fields,
+        'invalid': val,
         'total': 1,  
         'current': 1,
         'url': '/current/add/confirm'

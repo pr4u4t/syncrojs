@@ -1,19 +1,33 @@
 {% extends "index.twig" %}
 {% import "_pagination.twig" as pagination %}
 
+{% block title %}
+Orders Import Confirm
+{% endblock %}
+
+{% block header %}
+Orders Validation Result
+{% endblock %}
+
 {% block content %}
 <div style="overflow-x:scroll;">
   <table class="table mt-4 table-striped">
     <thead class="table-dark">
       <tr>
+        <th scope="col">#</th>
         {% for field in fields %}
           <th scope="col">{{ field }} </th>
         {% endfor %}
+        <th scope="col">unused</th>
+        <th scope="col">unused</th>
+        <th scope="col">unused</th>
+        <th scope="col">unused</th>
       </tr>
     </thead>
     <tbody>
       {% for row in rows %}
         <tr>
+          <td> {{ loop.index }} </td>
           {% for column in row %}
             <td>{{ column }}</td>
           {% endfor %}

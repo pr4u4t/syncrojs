@@ -162,11 +162,15 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const quality_row = await quality.quality_params_by_id(mac[3])
     const flute_row = await flute.flute_params_by_id('B')
     
+    console.log(quality_row)
+    console.log(flute_row)
+    
     const qualityWeight = quality_row.rows[0].weightfactoruwg_m      //635
     const qualityThickness = quality_row.rows[0].thickness_uddmm     //45 
     const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
     
-    console.log(mac)
+    //console.log(mac)
+    
     const trim = calculate_trim(mac[5],mac[11],mac[20],mac[26],mac[35])
     if(isNan(trim) || trim > 230){
         log.error("Invalid trim value "+trim,new Error())
@@ -280,6 +284,18 @@ var orders_add = async function(data){
     }
 }
 
+var validate = async function(rows,papers,quality,flute){
+    var ret = []
+    
+    log.debug("Validation started")
+    for(let i = 0; i < rows.length; ++i){
+        let result = await mac2syncro(rows[i],papers,quality,flute)
+        console.log(result)
+    }
+    log.debug("Validation ended")
+    return ret
+}
+
 module.exports = {
     fields,
     mac_parse,
@@ -287,5 +303,6 @@ module.exports = {
     mac2syncro,
     orders_all,
     orders_delete_all,
-    orders_add
+    orders_add,
+    validate
 }
