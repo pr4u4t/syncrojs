@@ -24,7 +24,7 @@ mountRoutes(app)
 app.use(express.static('public'))
 
 app.use(function(req,res,next){
-  log.error("HTTP 404")
+  log.error("HTTP 404",req)
   template.render('error.twig', {
     'title': 'HTTP 404 Not Found',
     'msg': 'Page not found'
