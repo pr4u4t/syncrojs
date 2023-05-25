@@ -11,7 +11,7 @@ router.get('/', async (req,res) => {
     
     template.render('quality.twig', {
         'title': "Quality List",
-        'header_title': "Flute List",
+        'header_title': "Quality List",
         'rows': rows, 
         'fields': fields, 
         'total': Math.ceil(result.rows[0].count/25),
@@ -30,7 +30,7 @@ router.get('/:page([0-9]+)', async (req,res) => {
     
     template.render('quality.twig', {
         'title': "Quality List",
-        'header_title': "Flute List",
+        'header_title': "Quality List",
         'rows': rows, 
         'fields': fields, 
         'total': Math.ceil(result.rows[0].count/25), 
