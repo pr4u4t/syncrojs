@@ -10,6 +10,8 @@ router.get('/', async (req,res) => {
     const result = await flute.flute_count()
     
     template.render('flute.twig', {
+        'title': "Flute List",
+        'header_title': "Flute List",
         'rows': rows, 
         'fields': fields, 
         'total': Math.ceil(result.rows[0].count/25),
@@ -27,6 +29,8 @@ router.get('/:page([0-9]+)', async (req,res) => {
     const result = await flute.flute_count()
     
     template.render('flute.twig', {
+        'title': "Flute List",
+        'header_title': "Flute List",
         'rows': rows, 
         'fields': fields, 
         'total': Math.ceil(result.rows[0].count/25), 
