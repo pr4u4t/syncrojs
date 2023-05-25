@@ -56,7 +56,7 @@ const shift_count = async function(){
 const shift_end = async function(){
     const cmd = 'Shift.Stop()'
     
-    if(dry){
+    if(dry === true){
         log.debug("shift_end",cmd)
         return true
     }
@@ -78,7 +78,7 @@ const shift_new = async function(id,manager,people){
     const sep = '\u241E'
     const cmd = "Shift.Shift("+ id + sep + manager + sep + people + ")"
     
-    if(dry){
+    if(dry === true){
         log.debug("shift_new",cmd)
         return true
     }

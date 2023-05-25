@@ -235,7 +235,7 @@ var orders_all = async function(){
 var orders_delete_all = async function(){
     const cmd = 'Orders.Delete'
     
-    if(dry){
+    if(dry === true){
         log.debug("orders_delete_all",cmd)
         return true
     }
@@ -266,7 +266,7 @@ var orders_add = async function(data){
         return false
     }
     
-    if(dry){
+    if(dry === true){
         log.debug("orders_add",cmd)
         return true
     }
