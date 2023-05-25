@@ -1,5 +1,12 @@
 {% extends "index.twig" %}
 {% import "_order_add.twig" as order_add %}
+{% block title %}
+Current Order Import
+{% endblock %}
+
+{% block header %}
+Current Order Import
+{% endblock %}
 {% block content %}
 {{ order_add.order_add(url) }}
 {% endblock %}
