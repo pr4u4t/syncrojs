@@ -168,6 +168,10 @@ var mac2syncro = async function(mac,papers,quality,flute){
     
     console.log(mac)
     const trim = calculate_trim(mac[5],mac[11],mac[20],mac[26],mac[35])
+    if(isNan(trim) || trim > 230){
+        log.error("Invalid trim value "+trim,new Error())
+        return null
+    }
     /**	
      * HEADER
     */
@@ -191,8 +195,6 @@ var mac2syncro = async function(mac,papers,quality,flute){
     ret = header.concat(order0)
     ret = ret.concat(order1)
     ret = ret.concat(order2)
-    
-    //ret = syncro_default_order()
     
     return ret  
 }
@@ -250,6 +252,11 @@ var orders_delete_all = async function(){
 
 var orders_add = async function(data){
     let cmd = m2s_serialize(data)
+    
+    if(cmd === null){
+        log.error("Failed to parse "+data,new Error())
+        return false
+    }
     
     if(dry){
         log.debug("orders_add",cmd)
