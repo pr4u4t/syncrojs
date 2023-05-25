@@ -170,8 +170,9 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const qualityWeight = quality_row.rows[0].weightfactoruwg_m      //635
     const qualityThickness = quality_row.rows[0].thickness_uddmm     //45 
     const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
+    const webWidth = parseInt(mac[5])/10
     
-    const trim = calculate_trim(mac[5],mac[11],mac[20],mac[26],mac[35])
+    const trim = calculate_trim(webWidth,mac[11],mac[20],mac[26],mac[35])
     if(isNaN(trim) || trim > 230){
         log.error("Invalid trim value "+trim,new Error())
         return null
@@ -180,7 +181,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     /**	
      * HEADER
     */
-    var header = syncro_header(mac[2],mac[5],0,qualityGap,mac[3],'B',qualityWeight,qualityThickness,trim)
+    var header = syncro_header(mac[2],webWidth,0,qualityGap,mac[3],'B',qualityWeight,qualityThickness,trim)
     
     /**
      * ORDER 0  

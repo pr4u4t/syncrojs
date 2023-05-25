@@ -30,7 +30,7 @@ router.get('/', async (req,res) => {
 })
 
 router.get('/import', async (req,res) => {
-    template.render('order_add.twig', {
+    template.render('order_import.twig', {
         'url': '/current/'
     }).then((output) => {
         res.end(output);
