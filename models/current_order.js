@@ -48,15 +48,18 @@ var m2s_serialize = function(sync){
 
 var scorer = function(sc1,sc2,sc3,sc4){
     var ret = ''
-    ret += sc1
-    ret +=" "+sc2
+    ret += parseInt(sc1)/10
     
-    if(sc3 !== undefined && sc3 != '0'){
-        ret += " "+sc3
+    if(sc2 !== 'undefined' && sc2 != '0'){
+        ret += " "+parseInt(sc2)/10
     }
     
-    if(sc4 !== undefined && sc4 != '0'){
-        ret += " "+sc4
+    if(sc3 !== 'undefined' && sc3 != '0'){
+        ret += " "+parseInt(sc3)/10
+    }
+    
+    if(sc4 !== 'undefined' && sc4 != '0'){
+        ret += " "+parseInt(sc4)/10
     }
     
     return ret
