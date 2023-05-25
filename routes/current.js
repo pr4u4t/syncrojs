@@ -1,8 +1,10 @@
 const Router = require('express-promise-router')
-const config = require('config');
-const port = config.get('syncro.port');
-const host = config.get('syncro.host');
+const config = require('config')
+const port = config.get('syncro.port')
+const host = config.get('syncro.host')
+const shift_skip = config.get('orders.shift')
 const template = require('../templates')
+const log = require('../utils/log.js')
 const router = new Router()
 const multer  = require('multer')
 const upload = multer({ dest: './uploads/' })
@@ -10,6 +12,7 @@ const ordmac = require('../models/current_order.js')
 const papers = require('../models/papers.js')
 const quality = require('../models/quality.js')
 const flute = require('../models/flute.js')
+const shift = require('../models/shift.js')
 const fs = require('fs')
 
 module.exports = router
@@ -59,7 +62,14 @@ router.post('/add', upload.single('orderFile'), async (req,res) => {
 
 router.post('/add/confirm', upload.none(), async (req,res) => {
     if(typeof req.body.accept !== undefined){
-        req.session.step = 1
+        const shift_state = await shift.shift_state()
+        
+        if(shift_state == 'idle'){
+            req.session.step = shift_skip.skip_idle
+        }else{
+            req.session.step = shift_skip.skip_working
+        }
+        
         template.render('current_progress.twig', {
             'next': "/current",
             'txt': "Go to Orders"
@@ -93,9 +103,6 @@ router.get('/add/batch/:step', async (req,res) => {
         req.session.step = null
         
     }
-    
-    //console.log(transformed)
-    console.log(await ordmac.orders_add(transformed))
     
     res.json({ current: current, steps: steps })
 })

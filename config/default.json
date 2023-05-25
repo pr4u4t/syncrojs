@@ -14,5 +14,11 @@
     "syncro": {
       "host": "192.168.0.148",
       "port": 13000
+    },
+    "orders":{
+      "shift":{
+        "skip_working": 0,
+        "skip_idle": 0
+      }
     }
 }
