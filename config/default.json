@@ -23,6 +23,6 @@
     },
     "app": {
       "debug": true,
-      "dry": true
+      "dry": false
     }
 }
