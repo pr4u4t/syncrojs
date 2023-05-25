@@ -135,7 +135,7 @@ var calculate_trim = function(webWidth,width0,outs0,width1,outs1){
     var ret = parseInt(webWidth)
     
     if(width0 !== undefined && outs0 !== undefined){
-        ret -= parseInt(width0)*pareInt(outs0)
+        ret -= parseInt(width0)*parseInt(outs0)
     }
 
     if(width1 !== undefined && outs1 !== undefined){
