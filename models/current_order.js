@@ -132,7 +132,7 @@ var syncro_default_order = function(){
 }
 
 var calculate_trim = function(webWidth,width0,outs0,width1,outs1){
-    log.debug("trim calculation",webWidth,width0,outs0,width1,outs1)
+    log.debug("trim calculation","web",webWidth,"w0",width0,"o0",outs0,"w1",width1,"o1",outs1)
     
     var ret = parseInt(webWidth)
 
