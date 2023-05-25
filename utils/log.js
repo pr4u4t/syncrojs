@@ -7,8 +7,22 @@ var fname = function getFuncName() {
 
 var log_error = function(msg,err){
     console.log(new Date().toJSON()+" "+msg)
-    if(typeof err !== undefined){
-        console.log(err.stack)
+    switch(typeof err){
+        case 'object':
+            if(typeof err.stack === "function"){
+                console.log(err.stack())
+                return
+            }
+            
+            console.log(err)
+            
+        case 'undefined':
+            return
+                
+        default:
+            console.log(err)
+            return
+
     }
 }
 
