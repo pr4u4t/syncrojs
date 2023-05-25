@@ -1,6 +1,14 @@
 {% extends "index.twig" %}
 {% import "_pagination.twig" as pagination %}
 
+{% block title %}
+Shift List
+{% endblock %}
+
+{% block header %}
+Shift List
+{% endblock %}
+
 {% block content %}
 <div class="alert mt-4 {% if state == 'idle' %} alert-danger {% elseif state == 'working' %} alert-success {% else %} alert-warning {% endif %}" role="alert">
   Shift: {% if state is empty %} unknow {% else %} {{ state }} {% endif %}
