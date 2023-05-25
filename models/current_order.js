@@ -224,7 +224,7 @@ var orders_delete_all = async function(){
         }
         result = await psocket.readAll()
         result = result.toString()
-        return result
+        return result.toLowerCase() == 'ok'
     }catch(error){
         log.error('Failed to delete orders',error)
         return null
@@ -243,7 +243,7 @@ var orders_add = async function(data){
         }
         result = await psocket.readAll()
         result = result.toString()
-        return result
+        return result.toLowerCase() == "ok"
     }catch(error){
         log.error('Failed to add order',error)
         return null

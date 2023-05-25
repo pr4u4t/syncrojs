@@ -98,6 +98,14 @@ router.get('/add/batch/:step', async (req,res) => {
     
     let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute)
     
+    if(transformed == null){
+        log.log_error("Failed to parse order",new Error())
+        res.status(500).send('Internal Server Error')
+        return
+    }
+    
+    const result = await ordmac.orders_add(transformed)
+    
     if(steps == current){
         req.session.current = null
         req.session.step = null

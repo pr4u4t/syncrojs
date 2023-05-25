@@ -17,6 +17,9 @@
       {% block header %}
       <h1>Home Dashboard</h1>
       {% endblock %}
+      {% block alert%}
+      
+      {% endblock %}
       {% block content %}
         {% import "_home.twig" as dashboard %}
         {{ dashboard.home(home) }}

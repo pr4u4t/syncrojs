@@ -33,8 +33,12 @@
             <li class="nav-item">
               <a class="nav-link {% if url starts with '/flute' %}active{% endif %}" {% if url starts with '/flute' %} aria-current="page" {% endif %}  href="/flute">Flute</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link {% if url starts with '/shift' %}active{% endif %}" {% if url starts with '/shift' %} aria-current="page" {% endif %}  href="/shift">Shift</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link {% if url starts with '/shift' %}active{% endif %} dropdown-toggle" {% if url starts with '/shift' %} aria-current="page" {% endif %} href="#" data-bs-toggle="dropdown" role="button" aria-expanded="false">Shift</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/Shift">Show</a></li>
+                <li><a class="dropdown-item" href="/shift/start">Start</a></li>
+              </ul>
             </li>
           </ul>
         </div>

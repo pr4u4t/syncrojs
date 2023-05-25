@@ -53,12 +53,33 @@ const shift_count = async function(){
 }
 
 const shift_end = async function(){
-    
-    
+    try{
+        const psocket = new PromiseSocket()
+        await psocket.connect(port,host)
+        var result = await psocket.write('Shift.Stop()')
+        result = await psocket.readAll()
+        result = result.toString()
+        return result.toLowerCase() == 'ok'
+    }catch(error){
+        log.error('Error getting shift state',error)
+        return null
+    }
 }
 
-const shift_new = async function(){
-    
+const shift_new = async function(id,manager,people){
+    const sep = '\u241E'
+    const cmd = "Shift.Shift("+ id + sep + manager + sep + people + ")"
+    try{
+        const psocket = new PromiseSocket()
+        await psocket.connect(port,host)
+        var result = await psocket.write(cmd)
+        result = await psocket.readAll()
+        result = result.toString()
+        return result.toLowerCase() == 'ok'
+    }catch(error){
+        log.error('Error getting shift state',error)
+        return null
+    }
 }
 
 module.exports = {
