@@ -6,7 +6,7 @@ var fname = function getFuncName() {
 }
 
 var log_error = function(msg,err){
-    console.log(msg)
+    console.log(new Date().toJSON()+" "+msg)
     if(typeof err !== undefined){
         console.log(err.stack)
     }

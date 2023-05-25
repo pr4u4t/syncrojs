@@ -65,7 +65,7 @@ router.post('/start', upload.none(), async (req,res) => {
         
         let result = shift.shift_new(id,manager,people)
         log.debug("shift add:",result)
-        
+        res.redirect('/shift/')
     }else{
         log.debug("requestd shift start but form data empty")
         res.redirect('/shift/')
