@@ -266,7 +266,7 @@ var orders_add = async function(data){
     try{
         const psocket = new PromiseSocket()
         await psocket.connect(port,host)
-        result = await psocket.write(cmd)
+        var result = await psocket.write(cmd)
         if(result != cmd.length){
             log.error('Failed to send command to syncro', new Error())
             return null
