@@ -145,7 +145,7 @@ var calculate_trim = function(webWidth,width0,outs0,width1,outs1){
     log.debug("trim",ret)
     
     if(width1 !== 'undefined' && outs1 !== 'undefined' && !isNaN(width1) && !isNaN(outs1)){
-        log.debug("trim calc",parseInt(width1)*parseInt(outs1))
+        log.debug("trim calc",parseInt(width1),parseInt(outs1),parseInt(width1)*parseInt(outs1))
         ret -= parseInt(width1)*parseInt(outs1)
     }
     
