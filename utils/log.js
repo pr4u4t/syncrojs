@@ -17,7 +17,7 @@ var log_debug = function(){
         return
     }
     
-    let msg = new Date().toJSON()+" "+arguments.join(" ")
+    let msg = new Date().toJSON()+" "+Array.prototype.slice.call(arguments).join(" ")
     console.log(msg)
 }
 
