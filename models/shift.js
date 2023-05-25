@@ -6,6 +6,7 @@ const {PromiseSocket, TimeoutError} = require("promise-socket")
 const config = require('config')
 const log = require('../utils/log.js')
 
+const dry = config.get('app.dry')
 const port = config.get('syncro.port')
 const host = config.get('syncro.host')
  
@@ -53,10 +54,17 @@ const shift_count = async function(){
 }
 
 const shift_end = async function(){
+    const cmd = 'Shift.Stop()'
+    
+    if(dry){
+        log.debug("shift_end",cmd)
+        return true
+    }
+    
     try{
         const psocket = new PromiseSocket()
         await psocket.connect(port,host)
-        var result = await psocket.write('Shift.Stop()')
+        var result = await psocket.write(cmd)
         result = await psocket.readAll()
         result = result.toString()
         return result.toLowerCase() == 'ok'
@@ -69,6 +77,12 @@ const shift_end = async function(){
 const shift_new = async function(id,manager,people){
     const sep = '\u241E'
     const cmd = "Shift.Shift("+ id + sep + manager + sep + people + ")"
+    
+    if(dry){
+        log.debug("shift_new",cmd)
+        return true
+    }
+    
     try{
         const psocket = new PromiseSocket()
         await psocket.connect(port,host)

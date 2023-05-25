@@ -22,6 +22,7 @@
       }
     },
     "app": {
-      "debug": true
+      "debug": true,
+      "dry": true
     }
 }

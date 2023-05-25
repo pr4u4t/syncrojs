@@ -8,6 +8,7 @@ const log = require('../utils/log.js')
 const config = require('config')
 const port = config.get('syncro.port')
 const host = config.get('syncro.host')
+const dry = config.get('app.dry')
 
 var mac_parse = function(data){
     var rows = []
@@ -223,6 +224,12 @@ var orders_all = async function(){
 
 var orders_delete_all = async function(){
     const cmd = 'Orders.Delete'
+    
+    if(dry){
+        log.debug("orders_delete_all",cmd)
+        return true
+    }
+    
     try{
         const psocket = new PromiseSocket()
         await psocket.connect(port,host)
@@ -242,8 +249,14 @@ var orders_delete_all = async function(){
 }
 
 var orders_add = async function(data){
+    let cmd = m2s_serialize(data)
+    
+    if(dry){
+        log.debug("orders_add",cmd)
+        return true
+    }
+    
     try{
-        let cmd = m2s_serialize(data)
         const psocket = new PromiseSocket()
         await psocket.connect(port,host)
         result = await psocket.write(cmd)
