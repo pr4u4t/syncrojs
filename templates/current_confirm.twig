@@ -37,6 +37,10 @@ Orders Validation Result
   </table>
 </div>
 {{ pagination.pagination(total, current, url) }}
+<div>
+  <h3> Summary: </h3>
+  <p>Total/Failed:  {{rowss|length}}/{{invalid|length}}</p>
+</div>
 <form method="post" action="{{url}}" enctype="multipart/form-data">
   <div class="row">
     <div class="col-md-9"></div>
