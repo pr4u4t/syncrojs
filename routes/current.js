@@ -37,7 +37,7 @@ router.get('/add', async (req,res) => {
     })
 })
 
-router.post('/add', upload.single('orderFile'), async (req,res) => {
+router.post('/import', upload.single('orderFile'), async (req,res) => {
     var rows
     var val
     
@@ -56,13 +56,13 @@ router.post('/add', upload.single('orderFile'), async (req,res) => {
         'invalid': val,
         'total': 1,  
         'current': 1,
-        'url': '/current/add/confirm'
+        'url': '/current/import/confirm'
     }).then((output) => {
         res.end(output);
     })
 })
 
-router.post('/add/confirm', upload.none(), async (req,res) => {
+router.post('/import/confirm', upload.none(), async (req,res) => {
     if(typeof req.body.accept !== undefined){
         const shift_state = await shift.shift_state()
         
@@ -94,7 +94,7 @@ router.post('/add/confirm', upload.none(), async (req,res) => {
     
 })
 
-router.get('/add/batch/:step', async (req,res) => {
+router.get('/import/batch/:step', async (req,res) => {
     var steps = req.session.current.length
     var current = ++req.session.step
     
@@ -121,4 +121,51 @@ router.get('/add/batch/:step', async (req,res) => {
 router.post('/clear', upload.none(), async (req,res) => {
     let result = await ordmac.orders_delete_all()
     res.redirect('/current/')
+})
+
+router.get('/add', upload.none(), async (req,res) => {
+     
+    /*let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute)
+    
+    if(transformed == null){
+        log.error("Failed to parse order",new Error())
+        res.status(500).send('Internal Server Error')
+        return
+    }
+    
+    log.debug(transformed)
+    
+    const result = await ordmac.orders_add(transformed)
+    
+    if(steps == current){
+        req.session.current = null
+        req.session.step = null
+    }
+    
+    res.json({ current: current, steps: steps })
+    */
+})
+
+router.post('/add', async (req,res) => {
+    var steps = req.session.current.length
+    var current = ++req.session.step
+    
+    let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute)
+    
+    if(transformed == null){
+        log.error("Failed to parse order",new Error())
+        res.status(500).send('Internal Server Error')
+        return
+    }
+    
+    log.debug(transformed)
+    
+    const result = await ordmac.orders_add(transformed)
+    
+    if(steps == current){
+        req.session.current = null
+        req.session.step = null
+    }
+    
+    res.json({ current: current, steps: steps })
 })

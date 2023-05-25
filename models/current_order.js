@@ -152,7 +152,7 @@ var calculate_trim = function(webWidth,width0,outs0,width1,outs1){
     
     log.debug("trim2",ret)
     
-    return ret/2
+    return ret
 }
 
 var mac2syncro = async function(mac,papers,quality,flute){
