@@ -171,13 +171,12 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const qualityThickness = quality_row.rows[0].thickness_uddmm     //45 
     const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
     
-    
-    
     const trim = calculate_trim(mac[5],mac[11],mac[20],mac[26],mac[35])
-    if(isNan(trim) || trim > 230){
+    if(isNaN(trim) || trim > 230){
         log.error("Invalid trim value "+trim,new Error())
         return null
     }
+    
     /**	
      * HEADER
     */
