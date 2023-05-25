@@ -293,7 +293,9 @@ var validate = async function(rows,papers,quality,flute){
     for(let i = 0; i < rows.length; ++i){
         console.log("validation step")
         let result = await mac2syncro(rows[i],papers,quality,flute)
-        console.log(result)
+        if(result === null){
+            ret.push(i)
+        }
     }
     log.debug("Validation ended")
     return ret
