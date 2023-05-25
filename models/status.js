@@ -23,7 +23,7 @@ const status = async function(){
         ret = [ buff ]
         return ret
     }catch(error){
-        log.error(error)
+        log.error("Failed to fetch Status",error)
         return null
     }
 }

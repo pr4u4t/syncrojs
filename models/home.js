@@ -10,17 +10,18 @@ const port = config.get('syncro.port')
 const host = config.get('syncro.host')
 
 const home_info = async function(){
+    const cmd = "Home.Info"
     try {
         var xmlbuff
         const psocket = new PromiseSocket()
         await psocket.connect(port,host)
-        result = await psocket.write('Home.Info')
+        result = await psocket.write(cmd)
         xmlbuff = await psocket.readAll()
         xmlbuff = xmlbuff.toString()
         let jml = parser.parse(xmlbuff)
         return jml.NewDataSet.Home
     }catch(error){
-        log.error(error)
+        log.error('Failed to fetch Home Info',error)
         return null
     }
     
