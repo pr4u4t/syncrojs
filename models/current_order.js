@@ -62,6 +62,8 @@ var scorer = function(sc1,sc2,sc3,sc4){
         ret += " "+parseInt(sc4)/10
     }
     
+    log.debug("Scorer:",ret)
+    
     return ret
 }
 
@@ -176,6 +178,9 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const webWidth = parseInt(mac[5])/10
     const sheetWidth0 = parseInt(mac[11])/10
     const sheetWidth1 = parseInt(mac[26])/10
+    
+    log.debug("WebWidth:",webWidth)
+    log.debug("Sheet Width:",sheetWidth0,sheetWidth1)
     
     const trim = calculate_trim(webWidth,sheetWidth0,mac[20],sheetWidth1,mac[35])
     if(isNaN(trim) || trim > 230 || trim < 0){
