@@ -175,7 +175,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const sheetWidth1 = parseInt(mac[26])/10
     
     const trim = calculate_trim(webWidth,sheetWidth0,mac[20],sheetWidth1,mac[35])
-    if(isNaN(trim) || trim > 230){
+    if(isNaN(trim) || trim > 230 || trim < 0){
         log.error("Invalid trim value "+trim,new Error())
         return null
     }
