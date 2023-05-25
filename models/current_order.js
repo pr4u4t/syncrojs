@@ -108,7 +108,7 @@ var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scor
     ret.push(" ") 
     ret.push(" ")                                           //Address
     ret.push(" ")                                           //Next Machine
-    ret.push(" ")
+    ret.push(empty)
     ret.push(sending)
     ret.push("False")
     
