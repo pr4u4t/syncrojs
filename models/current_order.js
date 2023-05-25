@@ -77,7 +77,7 @@ var syncro_header = function(setupid,webwidth,trimtype,scoregap,qualityid,flutei
     return ret
 }
 
-var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scoreType,posType,twinOffset,scoreGap,level,sheetLength,sheetCount,sheetsStack,stacks,sending){
+var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scoreType,posType,twinOffset,scoreGap,level,sheetLength,sheetCount,sheetsStack,stacks,empty,sending){
     var ret = []
     
     ret.push(onumber)                                       //OrderNumber0
@@ -108,7 +108,7 @@ var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scor
     ret.push(" ") 
     ret.push(" ")                                           //Address
     ret.push(" ")                                           //Next Machine
-    ret.push("0")
+    ret.push(" ")
     ret.push(sending)
     ret.push("False")
     
@@ -134,11 +134,11 @@ var syncro_default_order = function(){
 var calculate_trim = function(webWidth,width0,outs0,width1,outs1){
     var ret = parseInt(webWidth)
     
-    if(width0 !== undefined && outs0 !== undefined){
+    if(width0 !== 'undefined' && outs0 !== 'undefined'){
         ret -= parseInt(width0)*parseInt(outs0)
     }
 
-    if(width1 !== undefined && outs1 !== undefined){
+    if(width1 !== 'undefined' && outs1 !== 'undefined'){
         ret -= parseInt(width1)*parseInt(outs1)
     }
     
@@ -166,17 +166,17 @@ var mac2syncro = async function(mac,papers,quality,flute){
     /**
      * ORDER 0  
      */
-    var order0 = syncro_order(mac[10],delivery,mac[8],mac[11],mac[20],scorer(mac[12],mac[13],mac[14],mac[15]),"A","2"," "," ","3",mac[18],mac[19],parseInt(mac[17])/2,1,84)
+    var order0 = syncro_order(mac[10],delivery,mac[8],mac[11],mac[20],scorer(mac[12],mac[13],mac[14],mac[15]),"A","2"," "," ","3",mac[18],mac[19],parseInt(mac[17])/2,1,0,84)
    
     /**
      * ORDER 1
      */
-    var order1 = (mac[25].trim() == "") ? syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," ") : syncro_order(mac[25],delivery,mac[23],mac[26],mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","1",mac[33],mac[34],parseInt(mac[32])/2,1," ")
+    var order1 = (mac[25].trim() == "") ? syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," ") : syncro_order(mac[25],delivery,mac[23],mac[26],mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","1",mac[33],mac[34],parseInt(mac[32])/2,1,0,84)
     
     /**
      * ORDER 2
      */
-    var order2 = syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," ")
+    var order2 = syncro_order(" ",delivery," "," "," ","0"," "," "," "," "," "," "," "," "," "," "," ")
     
     ret = header.concat(order0)
     ret = ret.concat(order1)
