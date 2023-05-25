@@ -171,8 +171,10 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const qualityThickness = quality_row.rows[0].thickness_uddmm     //45 
     const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
     const webWidth = parseInt(mac[5])/10
+    const sheetWidth0 = parseInt(mac[11])/10
+    const sheetWidth1 = parseInt(mac[26])/10
     
-    const trim = calculate_trim(webWidth,mac[11],mac[20],mac[26],mac[35])
+    const trim = calculate_trim(webWidth,sheetWidth0,mac[20],sheetWidth1,mac[35])
     if(isNaN(trim) || trim > 230){
         log.error("Invalid trim value "+trim,new Error())
         return null
@@ -186,12 +188,12 @@ var mac2syncro = async function(mac,papers,quality,flute){
     /**
      * ORDER 0  
      */
-    var order0 = syncro_order(mac[10],delivery,mac[8],mac[11],mac[20],scorer(mac[12],mac[13],mac[14],mac[15]),"A","2"," "," ","3",mac[18],mac[19],parseInt(mac[17])/2,1,0,84)
+    var order0 = syncro_order(mac[10],delivery,mac[8],sheetWidth0,mac[20],scorer(mac[12],mac[13],mac[14],mac[15]),"A","2"," "," ","3",mac[18],mac[19],parseInt(mac[17])/2,1,0,84)
    
     /**
      * ORDER 1
      */
-    var order1 = (mac[25].trim() == "") ? syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ") : syncro_order(mac[25],delivery,mac[23],mac[26],mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","1",mac[33],mac[34],parseInt(mac[32])/2,1,0,84)
+    var order1 = (mac[25].trim() == "") ? syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ") : syncro_order(mac[25],delivery,mac[23],sheetWidth1,mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","1",mac[33],mac[34],parseInt(mac[32])/2,1,0,84)
     
     /**
      * ORDER 2
