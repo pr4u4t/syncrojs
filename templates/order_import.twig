@@ -1,5 +1,5 @@
 {% extends "index.twig" %}
-{% import "_order_add.twig" as order_add %}
+{% import "_order_import.twig" as order_import %}
 {% block title %}
 Current Order Import
 {% endblock %}
@@ -8,5 +8,5 @@ Current Order Import
 Current Order Import
 {% endblock %}
 {% block content %}
-{{ order_add.order_add(url) }}
+{{ order_import.order_add(url) }}
 {% endblock %}

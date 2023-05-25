@@ -29,7 +29,7 @@ router.get('/', async (req,res) => {
     })
 })
 
-router.get('/add', async (req,res) => {
+router.get('/import', async (req,res) => {
     template.render('order_add.twig', {
         'url': '/current/'
     }).then((output) => {
