@@ -46,7 +46,7 @@ var m2s_serialize = function(sync){
     return ret
 }
 
-var scorer = function(sc1,sc2,sc3,sc4){
+var scorer = function(sc1,sc2,sc3,sc4,sc5){
     var ret = ''
     ret += parseInt(sc1)
     
@@ -60,6 +60,10 @@ var scorer = function(sc1,sc2,sc3,sc4){
     
     if(sc4 !== 'undefined' && sc4 != '0'){
         ret += " "+parseInt(sc4)
+    }
+
+    if(sc5 !== 'undefined' && sc5 != '0'){
+        ret += " "+parseInt(sc5)
     }
     
     log.debug("Scorer:",ret)
@@ -196,12 +200,12 @@ var mac2syncro = async function(mac,papers,quality,flute){
     /**
      * ORDER 0  
      */
-    var order0 = syncro_order(mac[10],delivery,mac[8],sheetWidth0,mac[20],scorer(mac[12],mac[13],mac[14],mac[15]),"A","2"," "," ","3",mac[18],mac[19],parseInt(mac[17])/2,1,0,84)
+    var order0 = syncro_order(mac[10],delivery,mac[8],sheetWidth0,mac[20],scorer(mac[12],mac[13],mac[14],mac[15],mac[16]),"A","2"," "," ","3",mac[18],mac[19],parseInt(mac[17])/2,1,0,84)
    
     /**
      * ORDER 1
      */
-    var order1 = (mac[25].trim() == "") ? syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ") : syncro_order(mac[25],delivery,mac[23],sheetWidth1,mac[35],scorer(mac[27],mac[28],mac[29],mac[30]),"A","2"," "," ","1",mac[33],mac[34],parseInt(mac[32])/2,1,0,84)
+    var order1 = (mac[25].trim() == "") ? syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ") : syncro_order(mac[25],delivery,mac[23],sheetWidth1,mac[35],scorer(mac[27],mac[28],mac[29],mac[30],mac[31]),"A","2"," "," ","1",mac[33],mac[34],parseInt(mac[32])/2,1,0,84)
     
     /**
      * ORDER 2
