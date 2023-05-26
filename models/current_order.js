@@ -50,9 +50,9 @@ var scorer = function(sc1,sc2,sc3,sc4){
     var ret = ''
     ret += parseInt(sc1)/10
     
-    if(sc2 !== 'undefined' && sc2 != '0'){
-        ret += " "+parseInt(sc2)/10
-    }
+    //if(sc2 !== 'undefined' && sc2 != '0'){
+    ret += " "+parseInt(sc2)/10
+    //}
     
     if(sc3 !== 'undefined' && sc3 != '0'){
         ret += " "+parseInt(sc3)/10
@@ -191,7 +191,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     /**	
      * HEADER
     */
-    var header = syncro_header(mac[2],webWidth,0,qualityGap,mac[3],'B',qualityWeight,qualityThickness,trim/2)
+    var header = syncro_header(mac[2],webWidth,0,qualityGap,mac[3],'B',qualityWeight,qualityThickness,trim)
     
     /**
      * ORDER 0  
