@@ -48,18 +48,18 @@ var m2s_serialize = function(sync){
 
 var scorer = function(sc1,sc2,sc3,sc4){
     var ret = ''
-    ret += parseInt(sc1)/10
+    ret += parseInt(sc1)
     
-    //if(sc2 !== 'undefined' && sc2 != '0'){
-    ret += " "+parseInt(sc2)/10
-    //}
+    if(sc2 !== 'undefined' && sc2 != '0'){
+        ret += " "+parseInt(sc2)
+    }
     
     if(sc3 !== 'undefined' && sc3 != '0'){
-        ret += " "+parseInt(sc3)/10
+        ret += " "+parseInt(sc3)
     }
     
     if(sc4 !== 'undefined' && sc4 != '0'){
-        ret += " "+parseInt(sc4)/10
+        ret += " "+parseInt(sc4)
     }
     
     log.debug("Scorer:",ret)
@@ -175,15 +175,15 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const qualityWeight = quality_row.rows[0].weightfactoruwg_m      //635
     const qualityThickness = quality_row.rows[0].thickness_uddmm     //45 
     const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
-    const webWidth = parseInt(mac[5])/10
-    const sheetWidth0 = parseInt(mac[11])/10
-    const sheetWidth1 = parseInt(mac[26])/10
+    const webWidth = parseInt(mac[5])
+    const sheetWidth0 = parseInt(mac[11])
+    const sheetWidth1 = parseInt(mac[26])
     
     log.debug("WebWidth:",webWidth)
     log.debug("Sheet Width:",sheetWidth0,sheetWidth1)
     
     const trim = calculate_trim(webWidth,sheetWidth0,mac[20],sheetWidth1,mac[35])
-    if(isNaN(trim) || trim > 230 || trim < 0){
+    if(isNaN(trim) || trim > 2300 || trim < 0){
         log.error("Invalid trim value "+trim,new Error())
         return null
     }
