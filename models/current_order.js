@@ -191,7 +191,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     /**	
      * HEADER
     */
-    var header = syncro_header(mac[2],webWidth,0,qualityGap,mac[3],'B',qualityWeight,qualityThickness,trim)
+    var header = syncro_header(mac[2],webWidth,0,qualityGap,mac[3],'B',qualityWeight,qualityThickness,trim/2)
     
     /**
      * ORDER 0  
