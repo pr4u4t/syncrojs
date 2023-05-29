@@ -23,10 +23,15 @@ const quality_all = async function(){
 
 const quality_params_by_id = async function(id){
     const query = 'SELECT qualitytext, weightfactoruwg_m, thickness_uddmm, scoregap_uddmm FROM syncro_db_3892.quality WHERE qualityid = \''+id+'\''
-    
+    value = myCache.get( "quality.by_id."+id );
+    if ( value !== undefined ){
+        return value;
+    }
+
     try{
         const {rows,fields} = await db.query(query)
-        return {rows,fields}
+        cache.set( "quality.by_id."+id, {rows,fields});
+	return {rows,fields}
     }catch(error){
         log.error('Failed to find quality by id',error)
         return null
