@@ -1,12 +1,20 @@
 const db = require('../db')
 const log = require('../utils/log.js')
+const NodeCache = require( "node-cache" );
+const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 });
 
 const quality_all = async function(){
     const query = 'SELECT * FROM syncro_db_3892.quality'
-    
+   
+    value = myCache.get( "quality.all" );
+    if ( value !== undefined ){
+    	return value;
+    }
+
     try{
         const {rows,fields} = await db.query(query)
-        return {rows,fields}
+        cache.set( "quality.all", {rows,fields});
+	return {rows,fields}
     }catch(error){
         log.error('Failed to obtain quality',error)
         return null
