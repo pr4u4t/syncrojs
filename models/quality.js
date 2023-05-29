@@ -6,7 +6,7 @@ const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 });
 const quality_all = async function(){
     const query = 'SELECT * FROM syncro_db_3892.quality'
    
-    value = myCache.get( "quality.all" );
+    value = cache.get( "quality.all" );
     if ( value !== undefined ){
     	return value;
     }
@@ -23,7 +23,7 @@ const quality_all = async function(){
 
 const quality_params_by_id = async function(id){
     const query = 'SELECT qualitytext, weightfactoruwg_m, thickness_uddmm, scoregap_uddmm FROM syncro_db_3892.quality WHERE qualityid = \''+id+'\''
-    value = myCache.get( "quality.by_id."+id );
+    value = cache.get( "quality.by_id."+id );
     if ( value !== undefined ){
         return value;
     }
