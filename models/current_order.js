@@ -175,7 +175,9 @@ var mac2syncro = async function(mac,papers,quality,flute){
         log.error("mac2syncro failed to fetch parameters", new Error())
         return null
     }
-    
+   
+    console.log(quality_row)	
+
     const qualityWeight = quality_row.rows[0].weightfactoruwg_m      //635
     const qualityThickness = quality_row.rows[0].thickness_uddmm     //45 
     const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
