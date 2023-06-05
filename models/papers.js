@@ -1,5 +1,7 @@
 const db = require('../db')
 const log = require('../utils/log.js')
+const NodeCache = require( "node-cache" )
+
 const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 })
 
 const papers_all = async function(){
