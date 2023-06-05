@@ -56,10 +56,18 @@ router.get('/export', async (req,res) => {
 router.post('/export.csv', async (req,res) => {
     const {rows,fields} = await past.past_export_csv()
     res.set('Content-Type', 'application/octet-stream');
-    var ret = '';
-    for (row in rows){
-        for(field in row){
-            ret += field+','
+    var ret = ''
+   
+    for(let field of fields){
+	console.log(field)
+	ret += field.name+','
+    }	
+
+    ret += '\n'
+
+    for (let row of rows){
+        for(const property in row){
+            ret += `${row[property]}`+','
         }
         ret += '\n'
     }
