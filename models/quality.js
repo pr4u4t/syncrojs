@@ -1,20 +1,21 @@
 const db = require('../db')
 const log = require('../utils/log.js')
 const NodeCache = require( "node-cache" );
-const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 });
+const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 })
 
 const quality_all = async function(){
     const query = 'SELECT * FROM syncro_db_3892.quality'
-   
-    value = cache.get( "quality.all" );
+    const key = 'quality.all'
+    
+    value = cache.get(key)
     if ( value !== undefined ){
-    	return value;
+    	return value
     }
 
     try{
         const {rows,fields} = await db.query(query)
-        cache.set( "quality.all", {rows,fields});
-	return {rows,fields}
+        cache.set(key, {rows,fields})
+        return {rows,fields}
     }catch(error){
         log.error('Failed to obtain quality',error)
         return null
@@ -23,15 +24,17 @@ const quality_all = async function(){
 
 const quality_params_by_id = async function(id){
     const query = 'SELECT qualitytext, weightfactoruwg_m, thickness_uddmm, scoregap_uddmm FROM syncro_db_3892.quality WHERE qualityid = \''+id+'\''
-    value = cache.get( "quality.by_id."+id );
+    const key = 'quality.by_id.'+id
+    
+    value = cache.get(key)
     if ( value !== undefined ){
-        return value;
+        return value
     }
 
     try{
         const {rows,fields} = await db.query(query)
-        cache.set( "quality.by_id."+id, {rows,fields});
-	return {rows,fields}
+        cache.set(key, {rows,fields})
+        return {rows,fields}
     }catch(error){
         log.error('Failed to find quality by id',error)
         return null
@@ -40,9 +43,16 @@ const quality_params_by_id = async function(id){
 
 const quality_paginated_all = async function(offset){
     const query = 'SELECT * FROM syncro_db_3892.quality OFFSET '+offset+' LIMIT 25'
+    const key = 'quality.offset.'+offset
+    
+    value = cache.get(key)
+    if ( value !== undefined ){
+        return value
+    }
     
     try{
         const {rows,fields} = await db.query(query)
+        cache.set(key, {rows,fields})
         return {rows,fields}
     }catch(error){
         log.error('Failed to obtain quality paginated',error)
@@ -52,9 +62,16 @@ const quality_paginated_all = async function(offset){
 
 const quality_count = async function(){
     const query = 'SELECT count(*) FROM syncro_db_3892.quality'
+    const key = 'quality.count'
+    
+    value = cache.get(key)
+    if ( value !== undefined ){
+        return value
+    }
     
     try{
         let count = await db.query(query)
+        cache.set(key, count)
         return count
     }catch(error){
         log.error('Failed to obtain quality count')

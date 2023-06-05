@@ -1,11 +1,20 @@
 const db = require('../db')
 const log = require('../utils/log.js')
+const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 })
 
 const past_all = async function(){
     const query = 'SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute  FROM syncro_db_3892.pastorders ORDER BY begintime DESC LIMIT 25'
+
+    const key = 'past.all'
+    
+    value = cache.get(key)
+    if ( value !== undefined ){
+        return value
+    }
     
     try{
         const {rows,fields} = await db.query(query)
+        cache.set(key, {rows,fields})
         return {rows,fields}
     }catch(error){
         log.error('Failed to obtain past orders',error)
@@ -16,8 +25,16 @@ const past_all = async function(){
 const past_count = async function() {
     const query = 'SELECT count(*) FROM syncro_db_3892.pastorders'
     
+    const key = 'past.count'
+    
+    value = cache.get(key)
+    if ( value !== undefined ){
+        return value
+    }
+    
     try{
         let count = await db.query(query)
+        cache.set(key, count)
         return count
     }catch(error){
         log.error('Failed to obtain past orders',error)
@@ -28,8 +45,16 @@ const past_count = async function() {
 const past_paginated_all = async function(offset){
     const query = 'SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders ORDER BY begintime DESC OFFSET '+offset+' LIMIT 25'
     
+    const key = 'past.offset.'+offset
+    
+    value = cache.get(key)
+    if ( value !== undefined ){
+        return value
+    }
+    
     try{
         const {rows,fields} = await db.query(query)
+        cache.set(key, {rows,fields})
         return {rows,fields}
     }catch(error){
         log.error('Failed to obtain past orders paginated',error)
