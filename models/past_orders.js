@@ -65,7 +65,7 @@ const past_paginated_all = async function(offset){
 }
 
 const past_export_csv = async function(){
-    const query = 'SELECT begintime, finishtime, cutsproduced0, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders WHERE begintime >= now()::date ORDER BY begintime DESC'
+    const query = 'SELECT begintime, finishtime, ordernumber0,cutsproduced0, ordernumber1, cutsproduced1, cutsproduced2, customerorderid0, sheetlength0, sheetwidth0, outs0, scoremeasures0, customerorderid1, sheetlength1, sheetwidth1, outs1, ordernumber2, customername2, outs2, scoremeasures2, flute FROM syncro_db_3892.pastorders WHERE begintime >= now()::date ORDER BY begintime DESC'
     
     try{
         const {rows,fields} = await db.query(query)
