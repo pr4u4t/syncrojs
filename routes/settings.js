@@ -71,7 +71,8 @@ router.post('/save', upload.none(), async (req,res) => {
        config_set(conf,key,value)
     }
     
-    
+    let data = JSON.stringify(conf);
+    fs.writeFileSync('../config/default.json', data)
     
     res.redirect('/settings')
 })
