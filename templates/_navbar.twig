@@ -6,7 +6,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0" style="width:100%">
             <li class="nav-item">
               <a class="nav-link {% if url == '/' %}active{% endif %}" {% if url == '/' %} aria-current="page" {% endif %} href="/">Home</a>
             </li>
@@ -41,7 +41,12 @@
             <li class="nav-item">
               <a class="nav-link {% if url starts with '/flute' %}active{% endif %}" {% if url starts with '/flute' %} aria-current="page" {% endif %}  href="/flute">Flute</a>
             </li>
+            <li class="nav-item ms-md-auto">
+              <a class="nav-link btn btn-danger d-inline-block"  href="/flush_cache">Flush Cache</a>
+            </li>
           </ul>
+          
+          
         </div>
     </div>
 </nav> 

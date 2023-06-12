@@ -8,6 +8,7 @@ const Router = require('express-promise-router')
 const router = new Router()
 const template = require('../templates')
 const home = require('../models/home.js')
+const NodeCache = require( "node-cache" )
 
 router.get('/', async (req,res) => {
     const info = await home.home_info()
@@ -17,6 +18,11 @@ router.get('/', async (req,res) => {
     }).then((output) => {
         res.end(output);
     })
+})
+
+router.get('/flush_cache', async (req,res) => {
+    NodeCache.flushAll()
+    res.redirect(req.headers.referer)
 })
 
 module.exports = (app) => {

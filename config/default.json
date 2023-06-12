@@ -23,7 +23,8 @@
     },
     "app": {
       "debug": true,
-      "dry": false
+      "dry": false,
+      "pagination": 50
     },
     "cache": {
       "ttl": 100,
