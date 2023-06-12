@@ -3,7 +3,7 @@ const log = require('../utils/log.js')
 const NodeCache = require( "node-cache" )
 
 const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 })
-const csvquery = "select finishtime, cutsproduced0*outs0 as produced0, ordernumber0, customername0, outs0, sheetwidth0/10 as width0, sheetlength0/10 as length0, scoremeasures0, cutsproduced1*outs1 as produced1, ordernumber1, customername1, outs1, sheetwidth1/10 as width1, sheetlength1/10 as length1, scoremeasures1, cutsproduced2*outs2 as produced2, ordernumber2, customername2, outs2, sheetwidth2/10 as width2, sheetlength2/10 as length2, scoremeasures2 from syncro_db_3892.pastorders"
+const csvquery = "select finishtime, cutsproduced0*outs0 as produced0, ordernumber0, customername0, outs0, sheetwidth0/10 as width0, sheetlength0/10 as length0, scoremeasures0, cutsproduced1*outs1 as produced1, ordernumber1, customername1, outs1, sheetwidth1/10 as width1, sheetlength1/10 as length1, scoremeasures1, cutsproduced2*outs2 as produced2, ordernumber2, customername2, outs2, sheetwidth2/10 as width2, sheetlength2/10 as length2, scoremeasures2 from syncro_db_3892.pastorders "
 
 const past_all = async function(){
     const query = csvquery + 'order by finishtime desc LIMIT 25'
@@ -66,7 +66,7 @@ const past_paginated_all = async function(offset){
 }
 
 const past_export_csv = async function(){
-    const query = csvquery + ' WHERE begintime >= now()::date ORDER BY begintime DESC'
+    const query = csvquery + 'WHERE begintime >= now()::date ORDER BY begintime DESC'
     
     try{
         const {rows,fields} = await db.query(query)
