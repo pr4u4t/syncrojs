@@ -1,6 +1,9 @@
 const Router = require('express-promise-router')
 const config = require('config')
 const template = require('../templates')
+const multer  = require('multer')
+const upload = multer({ dest: './uploads/' })
+const fs = require('fs')
 const router = new Router()
 
 module.exports = router
@@ -33,6 +36,23 @@ const config_to_fields = function(conf){
     return ret
 }
 
+const config_set = function(obj, path, value){
+    var schema = obj  // a moving reference to internal objects within obj
+    var pList = path.split('.')
+    var len = pList.length
+        
+    for(var i = 0; i < len-1; i++) {
+        var elem = pList[i]
+        if( !schema[elem] ){
+            schema[elem] = {}
+        }
+        
+        schema = schema[elem];
+    }
+        
+    schema[pList[len-1]] = value;
+}
+
 router.get('/', async (req,res) => {
     template.render('settings.twig', {
         'title': "Settings",
@@ -44,6 +64,14 @@ router.get('/', async (req,res) => {
     })
 })
 
-router.post('/save', async (req,res) => {
+router.post('/save', upload.none(), async (req,res) => {
+    var conf = JSON.parse(JSON.stringify(config));
     
+    for(const [key,value] of Object.entries(req.body)){
+       config_set(conf,key,value)
+    }
+    
+    
+    
+    res.redirect('/settings')
 })

@@ -11,7 +11,11 @@
 
 {% block content %}
 
-<form action="{{url}}save" method="post">
+<div class="alert alert-warning" role="alert">
+  Warning some of the changes may require manual service restart from terminal
+</div>
+
+<form action="{{url}}save" method="post" enctype="multipart/form-data">
   {% for field in fields %}
 
     <div class="mb-3">
