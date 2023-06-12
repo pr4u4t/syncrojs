@@ -66,7 +66,7 @@ const past_paginated_all = async function(offset){
 }
 
 const past_export_csv = async function(){
-    const query = csvquery + 'WHERE begintime >= now()::date ORDER BY begintime DESC'
+    const query = csvquery + 'WHERE finishtime >= now()::date ORDER BY finishtime DESC'
     
     try{
         const {rows,fields} = await db.query(query)
