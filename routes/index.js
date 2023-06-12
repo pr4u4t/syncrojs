@@ -4,6 +4,7 @@ const papers = require('./papers.js')
 const quality = require('./quality.js')
 const flute = require('./flute.js')
 const shift = require('./shift.js')
+const settings = require('./settings.js')
 const Router = require('express-promise-router')
 const router = new Router()
 const template = require('../templates')
@@ -32,5 +33,6 @@ module.exports = (app) => {
     app.use('/quality',quality),
     app.use('/flute',flute),
     app.use('/shift',shift),
+    app.use('/settings',settings),
     app.use('/',router)
 }
