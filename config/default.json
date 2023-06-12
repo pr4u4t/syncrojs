@@ -24,5 +24,9 @@
     "app": {
       "debug": true,
       "dry": false
+    },
+    "cache": {
+      "ttl": 100,
+      "period": 120
     }
 }
