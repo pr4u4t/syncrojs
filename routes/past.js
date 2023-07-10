@@ -2,6 +2,7 @@ const Router = require('express-promise-router')
 const template = require('../templates')
 const router = new Router()
 const past = require('../models/past_orders.js')
+const {csv_to_xslx} = require('../utils/convert.js')
 
 module.exports = router
 
@@ -54,22 +55,11 @@ router.get('/export', async (req,res) => {
 })
 
 router.post('/export.csv', async (req,res) => {
-    const {rows,fields} = await past.past_export_csv()
     res.set('Content-Type', 'application/octet-stream');
-    var ret = ''
-   
-    for(let field of fields){
-	console.log(field)
-	ret += field.name+','
-    }	
+    res.send(await past.past_export_csv())
+})
 
-    ret += '\n'
-
-    for (let row of rows){
-        for(const property in row){
-            ret += `${row[property]}`+','
-        }
-        ret += '\n'
-    }
-    res.send(ret)
+router.post('/export.xlsx', async (req,res) => {
+    res.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    res.send(csv_to_xlsx(await past.past_export_csv()))
 })

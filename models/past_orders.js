@@ -70,7 +70,21 @@ const past_export_csv = async function(){
     
     try{
         const {rows,fields} = await db.query(query)
-        return {rows,fields}
+        var ret = ''
+        
+        for(let field of fields){
+            ret += field.name+','
+        }	
+        
+        ret += '\n'
+        
+        for (let row of rows){
+            for(const property in row){
+                ret += `${row[property]}`+','
+            }
+            ret += '\n'
+        }
+        return ret
     }catch(error){
         log.error('Failed to obtain past orders in csv layout',error)
         return null
