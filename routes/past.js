@@ -42,7 +42,7 @@ router.get('/:page([0-9]+)', async (req,res) => {
 })
 
 router.get('/export', async (req,res) => {
-    const {rows,fields} = await past.past_export_csv()
+    const {rows,fields} = await past.past_export()
     
     template.render('past_export.twig', {
         'rows': rows, 

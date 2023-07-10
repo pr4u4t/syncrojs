@@ -66,6 +66,18 @@ const past_paginated_all = async function(offset){
     }
 }
 
+const past_export = async function(){
+    const query = csvquery + 'WHERE finishtime >= now()::date ORDER BY finishtime DESC'
+    
+    try{
+        const {rows,fields} = await db.query(query)
+        return {rows,fields}
+    }catch(error){
+        log.error('Failed to obtain past orders in csv layout',error)
+        return null
+    }
+}
+
 const past_export_csv = async function(){
     const query = csvquery + 'WHERE finishtime >= now()::date ORDER BY finishtime DESC'
     
@@ -85,7 +97,7 @@ const past_export_csv = async function(){
             }
             ret += '\n'
         }
-        return csv2xlsx(ret)
+        return csv_to_xlsx(ret)
     }catch(error){
         log.error('Failed to obtain past orders in csv layout',error)
         return null
@@ -96,5 +108,6 @@ module.exports = {
     past_all,
     past_paginated_all,
     past_count,
-    past_export_csv
+    past_export_csv,
+    past_export
 }
