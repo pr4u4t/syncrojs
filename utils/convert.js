@@ -1,7 +1,7 @@
 const {convertCsvToXlsx} = require('@aternus/csv-to-xlsx')
 
 const csv2xlsx = function(buffer){
-    return convertCsvToXlsx(buffer, "", false)
+    return convertCsvToXlsx(buffer, "",{ sheetName:'', overwrite: false }, false)
 }
 
 module.exports = {
