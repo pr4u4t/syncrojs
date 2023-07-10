@@ -13,7 +13,7 @@ Shift List
 <div class="alert mt-4 {% if state == 'idle' %} alert-danger {% elseif state == 'working' %} alert-success {% else %} alert-warning {% endif %}" role="alert">
   Shift: {% if state is empty %} unknow {% else %} {{ state }} {% endif %}
 </div>
-<div style="overflow-x:scroll;">
+<div id="shift_list" style="overflow-x:scroll;">
 	<table class="table table-striped mt-4">
 	<thead class="table-dark">
 		<tr>

@@ -2,95 +2,96 @@
 {% import "_pagination.twig" as pagination %}
 
 {% block content %}
-<form action="/current/clear" method="post" enctype="multipart/form-data">
-  <button type="submit" class="btn btn-danger mt-1">Clear Orders</button>
-</form>
+<div id="current_orders">
+	<form action="/current/clear" method="post" enctype="multipart/form-data">
+	<button type="submit" class="btn btn-danger mt-1">Clear Orders</button>
+	</form>
 
-{% for row in rows %}
-<table class="table table-bordered mt-4">
-  {#<thead>
-    <tr>
-      {% for field in fields %}
-        <th scope="col">{{ field.name }} </th>
-      {% endfor %}
-    </tr>
-  </thead>#}
-  <tbody>
-    <tr>
-    	<td>{{ row.Position }}</td>
-		<td>{{ row.SetupCode }}</td>
-		<td>SEQ</td>
-		<td>{{ row.Flute }} </td>
-		<td>{{ row.QualityID }}</td>
-		<td> </td>
-		<td> </td>
-	</tr>
-	<tr>
-		<td>{{ row.WebWidth }}</td>
-		<td>SETUP LENGTH</td>
-		<td>{{ row.ScoreGap }}</td>
-		<td>{{ row.TrimType }}</td>
-		<td>{{ row.Trim }}</td>
-		<td> </td>
-	</tr>
-	<tr> 
-		<td colspan="2"> ORDER 1</td>
-		<td colspan="2"> ORDER 2</td>
-		<td colspan="2"> ORDER 3</td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<table class="table table-bordered">
-				<tr>
-					<td>{{row.OrderNumber0}}</td>
-					<td>{{row.LevelName0}}</td>
-				</tr>
-				<tr>
-					<td>{{row.CustomerName0}}</td>
-					<td>{{row.PositType0}}</td>
-				</tr>
-				<tr>
-					<td>{{row.CustAddress0}}</td>
-					<td>{{row.ScoreType0}}</td>
-				</tr>
-			</table>
-		</td>
-        <td colspan="2">
-			<table class="table table-bordered">     
-                <tr>
-                    <td>{{row.OrderNumber1}}</td>
-                    <td>{{row.LevelName1}}</td>
-                </tr>
-                <tr>
-                    <td>{{row.CustomerName1}}</td>
-                    <td>{{row.PositType1}}</td>
-                </tr>
-                <tr>
-                    <td>{{row.CustAddress1}}</td>
-                    <td>{{row.ScoreType1}}</td>
-                </tr>
-            </table>
-		</td>
-        <td colspan="2">
-			<table class="table table-bordered">     
-                <tr>
-                    <td>{{row.OrderNumber2}}</td>
-                    <td>{{row.LevelName2}}</td>
-                </tr>
-                <tr>
-                    <td>{{row.CustomerName2}}</td>
-                    <td>{{row.PositType2}}</td>
-                </tr>
-                <tr>
-                    <td>{{row.CustAddress2}}</td>
-                    <td>{{row.ScoreType2}}</td>
-                </tr>
-            </table>
-		</td>
-	</tr>
-  </tbody>
-</table>
-{% endfor %}
-{{ pagination.pagination(total, current, url) }}
-
+	{% for row in rows %}
+	<table class="table table-bordered mt-4">
+	{#<thead>
+		<tr>
+		{% for field in fields %}
+			<th scope="col">{{ field.name }} </th>
+		{% endfor %}
+		</tr>
+	</thead>#}
+	<tbody>
+		<tr>
+			<td>{{ row.Position }}</td>
+			<td>{{ row.SetupCode }}</td>
+			<td>SEQ</td>
+			<td>{{ row.Flute }} </td>
+			<td>{{ row.QualityID }}</td>
+			<td> </td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td>{{ row.WebWidth }}</td>
+			<td>SETUP LENGTH</td>
+			<td>{{ row.ScoreGap }}</td>
+			<td>{{ row.TrimType }}</td>
+			<td>{{ row.Trim }}</td>
+			<td> </td>
+		</tr>
+		<tr> 
+			<td colspan="2"> ORDER 1</td>
+			<td colspan="2"> ORDER 2</td>
+			<td colspan="2"> ORDER 3</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<table class="table table-bordered">
+					<tr>
+						<td>{{row.OrderNumber0}}</td>
+						<td>{{row.LevelName0}}</td>
+					</tr>
+					<tr>
+						<td>{{row.CustomerName0}}</td>
+						<td>{{row.PositType0}}</td>
+					</tr>
+					<tr>
+						<td>{{row.CustAddress0}}</td>
+						<td>{{row.ScoreType0}}</td>
+					</tr>
+				</table>
+			</td>
+			<td colspan="2">
+				<table class="table table-bordered">     
+					<tr>
+						<td>{{row.OrderNumber1}}</td>
+						<td>{{row.LevelName1}}</td>
+					</tr>
+					<tr>
+						<td>{{row.CustomerName1}}</td>
+						<td>{{row.PositType1}}</td>
+					</tr>
+					<tr>
+						<td>{{row.CustAddress1}}</td>
+						<td>{{row.ScoreType1}}</td>
+					</tr>
+				</table>
+			</td>
+			<td colspan="2">
+				<table class="table table-bordered">     
+					<tr>
+						<td>{{row.OrderNumber2}}</td>
+						<td>{{row.LevelName2}}</td>
+					</tr>
+					<tr>
+						<td>{{row.CustomerName2}}</td>
+						<td>{{row.PositType2}}</td>
+					</tr>
+					<tr>
+						<td>{{row.CustAddress2}}</td>
+						<td>{{row.ScoreType2}}</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	{% endfor %}
+	{{ pagination.pagination(total, current, url) }}
+</div>
 {% endblock %}
