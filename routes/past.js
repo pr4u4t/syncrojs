@@ -60,6 +60,5 @@ router.post('/export.csv', async (req,res) => {
 
 router.post('/export.xlsx', async (req,res) => {
     res.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    console.log(await past.past_export_csv())
     res.send(await past.past_export_csv())
 })
