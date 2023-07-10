@@ -98,9 +98,9 @@ const past_export_csv = async function(){
             ret += '\n'
         }
         
+        const W = csv_to_xlsx(ret)
         console.log(ret)
-        
-        return 0
+        return "0"
     }catch(error){
         log.error('Failed to obtain past orders in csv layout',error)
         return null
