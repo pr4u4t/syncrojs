@@ -79,7 +79,7 @@ const past_export = async function(today){
 }
 
 const past_export_csv = async function(today){
-    const query = csvquery + "WHERE to_char(finishtime, 'YYYY-MM-DD') = "+today+" ORDER BY finishtime DESC"
+    const query = csvquery + "WHERE to_char(finishtime, 'YYYY-MM-DD') = '"+today+"' ORDER BY finishtime DESC"
     
     try{
         const {rows,fields} = await db.query(query)
