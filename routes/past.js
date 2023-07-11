@@ -48,7 +48,8 @@ router.get('/export', async (req,res) => {
     
     let date_ob = new Date(ts);
     let date = date_ob.getDate() < 10 ? '0'+date_ob.getDate() : date_ob.getDate();
-    let month = date_ob.getMonth() + 1;
+    let month = date_ob.getMonth() + 1
+    month = month < 10 ? '0'+month : month
     let year = date_ob.getFullYear();
     
     template.render('past_export.twig', {
