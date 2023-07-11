@@ -1,9 +1,10 @@
-{% macro past_export(url) %}
+{% macro past_export(url,today) %}
 <div id="past_export_form" class="row mt-4">
     <div class="col-12 col-md-6 col-lg-4">
         <h2 class="mt-4">Export past orders as CSV</h2>
         <form action="{{url}}.csv" method="post" enctype="multipart/form-data">
             <div class="mb-3">
+                <input type="hidden" name="date" value="{{today}}">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
@@ -12,6 +13,7 @@
         <h2 class="mt-4">Export past orders as XLSX</h2>
         <form action="{{url}}.xlsx" method="post" enctype="multipart/form-data">
             <div class="mb-3">
+                <input type="hidden" name="date" value="{{today}}">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>

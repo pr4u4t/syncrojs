@@ -51,12 +51,13 @@ router.get('/export', async (req,res) => {
     let month = date_ob.getMonth() + 1
     month = month < 10 ? '0'+month : month
     let year = date_ob.getFullYear();
+    let today = year + "-" + month + "-" + date
     
     template.render('past_export.twig', {
         'rows': rows, 
         'fields': fields, 
         'url': '/past/export',
-        'today': year + "-" + month + "-" + date
+        'today': today
     }).then((output) => {
         res.end(output)
     })
