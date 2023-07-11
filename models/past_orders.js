@@ -98,11 +98,15 @@ const past_export_csv = async function(){
             ret += '\n'
         }
         
-        return csv_to_xlsx(ret)
+        return ret
     }catch(error){
         log.error('Failed to obtain past orders in csv layout',error)
         return null
     }
+}
+
+const past_export_xlsx = async function(){
+    return csv_to_xlsx(await past_export_csv())
 }
 
 module.exports = {
@@ -110,5 +114,6 @@ module.exports = {
     past_paginated_all,
     past_count,
     past_export_csv,
+    past_export_xlsx,
     past_export
 }
