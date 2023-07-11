@@ -44,10 +44,18 @@ router.get('/:page([0-9]+)', async (req,res) => {
 router.get('/export', async (req,res) => {
     const {rows,fields} = await past.past_export()
     
+    let ts = Date.now();
+    
+    let date_ob = new Date(ts);
+    let date = date_ob.getDate();
+    let month = date_ob.getMonth() + 1;
+    let year = date_ob.getFullYear();
+    
     template.render('past_export.twig', {
         'rows': rows, 
         'fields': fields, 
-        'url': '/past/export'
+        'url': '/past/export',
+        'today': year + "-" + month + "-" + date
     }).then((output) => {
         res.end(output)
     })
