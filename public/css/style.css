@@ -58,4 +58,8 @@
   body #past_export *{
     font-size:0.5rem;
   }
+  
+  #go-to-date{
+    display:none;
+  }
 }
