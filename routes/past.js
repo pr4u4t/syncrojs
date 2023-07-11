@@ -2,6 +2,8 @@ const Router = require('express-promise-router')
 const template = require('../templates')
 const router = new Router()
 const past = require('../models/past_orders.js')
+const multer  = require('multer')
+const upload = multer({ dest: './uploads/' })
 
 module.exports = router
 
@@ -70,12 +72,12 @@ router.get('/export', async (req,res) => {
     })
 })
 
-router.post('/export.csv', async (req,res) => {
+router.post('/export.csv', upload.none(), async (req,res) => {
     res.set('Content-Type', 'application/octet-stream')
     res.send(await past.past_export_csv(req.body.date))
 })
 
-router.post('/export.xlsx', async (req,res) => {
+router.post('/export.xlsx',  upload.none(), async (req,res) => {
     res.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     console.log(req.body.data)
     res.send(await past.past_export_xlsx(req.body.date))
