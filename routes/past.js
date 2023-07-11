@@ -45,8 +45,8 @@ router.get('/export', async (req,res) => {
     
     let today = ''
     
-    if(res.query.date !== undefined){
-        today = res.query.date
+    if(req.query.date !== undefined){
+        today = req.query.date
     }else{
         let ts = Date.now();
         let date_ob = new Date(ts);
