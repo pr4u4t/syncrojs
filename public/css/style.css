@@ -2,13 +2,14 @@
   body > nav.navbar{
     display:none;
   }
+  
   body > .container > footer{
     display:none;
   }
+  
   body{
     margin:0;
     padding:0;
-    border:1px solid red;
   }
   
   body > main.mt-5{
@@ -31,5 +32,30 @@
   
   body > main > h1{
     margin-top:.5em;
+  }
+  
+  body  #past_export_form{
+    display:none;
+  }
+  
+  body #past_export th:nth-child(16),
+  body #past_export th:nth-child(17),
+  body #past_export th:nth-child(18),
+  body #past_export th:nth-child(19),
+  body #past_export th:nth-child(20),
+  body #past_export th:nth-child(21),
+  body #past_export th:nth-child(22),
+  body #past_export td:nth-child(16),
+  body #past_export td:nth-child(17),
+  body #past_export td:nth-child(18),
+  body #past_export td:nth-child(19),
+  body #past_export td:nth-child(20),
+  body #past_export td:nth-child(21),
+  body #past_export td:nth-child(22){
+    display:none;
+  }
+  
+  body #past_export *{
+    font-size:0.5rem;
   }
 }
