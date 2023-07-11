@@ -105,8 +105,8 @@ const past_export_csv = async function(today){
     }
 }
 
-const past_export_xlsx = async function(){
-    return csv_to_xlsx(await past_export_csv())
+const past_export_xlsx = async function(today){
+    return csv_to_xlsx(await past_export_csv(today))
 }
 
 module.exports = {
