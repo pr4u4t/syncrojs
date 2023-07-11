@@ -42,16 +42,22 @@ router.get('/:page([0-9]+)', async (req,res) => {
 })
 
 router.get('/export', async (req,res) => {
-    const {rows,fields} = await past.past_export()
     
-    let ts = Date.now();
+    let today = ''
     
-    let date_ob = new Date(ts);
-    let date = date_ob.getDate() < 10 ? '0'+date_ob.getDate() : date_ob.getDate();
-    let month = date_ob.getMonth() + 1
-    month = month < 10 ? '0'+month : month
-    let year = date_ob.getFullYear();
-    let today = year + "-" + month + "-" + date
+    if(res.query.date !== undefined){
+        today = res.query.date
+    }else{
+        let ts = Date.now();
+        let date_ob = new Date(ts);
+        let date = date_ob.getDate() < 10 ? '0'+date_ob.getDate() : date_ob.getDate();
+        let month = date_ob.getMonth() + 1
+        month = month < 10 ? '0'+month : month
+        let year = date_ob.getFullYear();
+        let today = year + "-" + month + "-" + date
+    }
+    
+    const {rows,fields} = await past.past_export(today)
     
     template.render('past_export.twig', {
         'rows': rows, 
@@ -64,11 +70,13 @@ router.get('/export', async (req,res) => {
 })
 
 router.post('/export.csv', async (req,res) => {
-    res.set('Content-Type', 'application/octet-stream');
+    res.set('Content-Type', 'application/octet-stream')
+    console.log(req.body)
     res.send(await past.past_export_csv())
 })
 
 router.post('/export.xlsx', async (req,res) => {
-    res.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    res.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    console.log(req.body)
     res.send(await past.past_export_xlsx())
 })
