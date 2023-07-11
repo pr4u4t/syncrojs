@@ -5,5 +5,5 @@ const csv2xlsx = function(buffer){
 }
 
 module.exports = {
-    csv_to_xlsx: csv2xlsx
+    csv_to_xlsx: csv2xlsx  
 } 
