@@ -15,5 +15,8 @@
     "pg": "^8.10.0",
     "promise-socket": "^7.0.0",
     "twing": "^6.0.0-alpha.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
