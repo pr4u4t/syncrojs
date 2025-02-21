@@ -9,6 +9,34 @@ const {
     validate
 } = require('../../models/current_order.js');
 
+const fs = require('node:fs');
+const path = require('path');
+
 test('fields', () => {
-    expect(1).toBe(1);
+    expect(fields.length).toBeGreaterThan(0);
+});
+
+test('mac_parse', () => {
+    let macs = fs.readdirSync('tests/models');
+    macs = macs.filter(file => {
+        const ext = path.extname(file).toLowerCase();
+        return ext === '.dat';
+    });
+
+
+    for(let i = 0; i < macs.length; i++){
+        const data = fs.readFileSync('tests/models/'+macs[i], 'utf8');
+        expect(mac_parse(data).length).toBeGreaterThan(0);
+    }
+});
+
+test('validate', () => {
+    let macs = fs.readdirSync('tests/models');
+    macs = macs.filter(file => {
+        const ext = path.extname(file).toLowerCase();
+        return ext === '.dat';
+    });
+
+    
+
 });
