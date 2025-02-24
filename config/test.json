@@ -5,11 +5,11 @@
       "secret": "thisismysecrctekeyfhrgfgrfrty84fwir767"
     },
     "db": {
-      "host": "192.168.0.148",
+      "host": "127.0.0.1",
       "port": 5432,
       "database": "postgres",
       "user": "postgres",
-      "password": "ozdan"
+      "password": "dupa"
     },
     "syncro": {
       "host": "192.168.0.148",

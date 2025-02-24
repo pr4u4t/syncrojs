@@ -12,6 +12,10 @@ const {
 const fs = require('node:fs');
 const path = require('path');
 
+const papers = require('../models/papers.js')
+const quality = require('../models/quality.js')
+const flute = require('../models/flute.js')
+
 test('fields', () => {
     expect(fields.length).toBeGreaterThan(0);
 });
@@ -37,6 +41,6 @@ test('validate', () => {
         return ext === '.dat';
     });
 
-    
+    validate(mac_parse(macs), papers, quality, flute);
 
 });
