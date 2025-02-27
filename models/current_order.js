@@ -1,222 +1,227 @@
-const { XMLParser } = require("fast-xml-parser")
-const parser = new XMLParser()
-const fs = require('fs')
-const net = require('net')
-const db = require('../db')
-const {PromiseSocket, TimeoutError} = require("promise-socket")
-const log = require('../utils/log.js')
-const config = require('config')
-const port = config.get('syncro.port')
-const host = config.get('syncro.host')
-const dry = config.get('app.dry')
+const { XMLParser } = require("fast-xml-parser");
+const parser = new XMLParser();
+const fs = require('fs');
+const net = require('net');
+const db = require('../db');
+const {PromiseSocket, TimeoutError} = require("promise-socket");
+const log = require('../utils/log.js');
+const config = require('config');
+const port = config.get('syncro.port');
+const host = config.get('syncro.host');
+const dry = config.get('app.dry');
+const logger = require('pino')();
 
 var mac_parse = function(data){
-    var rows = []
+    logger.debug("mac_parse");
+    var rows = [];
     const re = /(.{587})/g
     const rec = /(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/
     
     const matches = data.matchAll(re);
     
     for (const match of matches) {
-        var str = match[0]
-        if(str.length>0 && str.replace(/\s/g, '').length==0){  
+        var str = match[0];
+        const r = str.replace(/\s/g, '');
+        if(str.length>0 && r.length==0){
+            logger.error("mac_parse: order line empty");
             continue;
         }
         
-        var row = str.match(rec)
-        rows.push(row.slice(1,43))
+        var row = str.match(rec);
+        rows.push(row.slice(1,43));
+
         for(let i = 0; i < rows[rows.length-1].length;++i){
-            rows[rows.length-1][i] = rows[rows.length-1][i].replace(/  +/g, ' ').trim()
+            rows[rows.length-1][i] = rows[rows.length-1][i].replace(/  +/g, ' ').trim();
         }
     }
     
-    return rows
+    return rows;
 } 
 
 var m2s_serialize = function(sync){
-    const sep = '\u241E'
-    var ret = "Order.Add( "+sep
+    logger.debug("m2s_serialize");
+    const sep = '\u241E';
+    var ret = "Order.Add( "+sep;
     
     for(let i = 0; i < sync.length; ++i){
-        ret += sync[i]+sep
+        ret += sync[i]+sep;
     }
     
-    ret += ")"
+    ret += ")";
     
     return ret
 }
 
-var scorer = function(sc1,sc2,sc3,sc4,sc5){
-    var ret = ''
-    ret += parseInt(sc1)
+var scorer = function(sc1, sc2, sc3, sc4, sc5){
+    logger.debug("Scorer:", sc1, sc2, sc3, sc4, sc5);
+    var ret = '';
+    ret += parseInt(sc1);
     
     if(sc2 !== 'undefined' && sc2 != '0'){
-        ret += " "+parseInt(sc2)
+        ret += " "+parseInt(sc2);
     }
     
     if(sc3 !== 'undefined' && sc3 != '0'){
-        ret += " "+parseInt(sc3)
+        ret += " "+parseInt(sc3);
     }
     
     if(sc4 !== 'undefined' && sc4 != '0'){
-        ret += " "+parseInt(sc4)
+        ret += " "+parseInt(sc4);
     }
 
     if(sc5 !== 'undefined' && sc5 != '0'){
-        ret += " "+parseInt(sc5)
+        ret += " "+parseInt(sc5);
     }
     
-    log.debug("Scorer:",ret)
+    logger.debug("Scorer:", ret);
     
-    return ret
+    return ret;
 }
 
-var syncro_header = function(setupid,webwidth,trimtype,scoregap,qualityid,fluteid,qweight,qthickness,trim){
-    var ret = []
+var syncro_header = function(setupid, webwidth, trimtype, scoregap, qualityid, fluteid, qweight, qthickness, trim){
+    logger.debug("syncro_header",setupid, webwidth, trimtype, scoregap, qualityid, fluteid, qweight, qthickness, trim);
+    var ret = [];
     
-    ret.push(setupid+'.2')                                  //SetupID glueing SEQ to setup ID
-    ret.push(webwidth)                                      //WebWidth
-    ret.push(trimtype)                                      //TrimType
-    ret.push(scoregap)                                      //ScoreGap - od rodzaju tektury
-    ret.push(qualityid)                                     //QualityID
-    ret.push(fluteid)                                       //FluteID
-    ret.push(qweight)                                       //QualityWeight - sprawdzic skad sie to bierze  //
-    ret.push(qthickness)                                    //QualityThickness                              //
-    ret.push(trim)                                          //Trim - trzeba zweryfikowac
+    ret.push(setupid+'.2');                                  //SetupID glueing SEQ to setup ID
+    ret.push(webwidth);                                      //WebWidth
+    ret.push(trimtype);                                      //TrimType
+    ret.push(scoregap);                                      //ScoreGap - od rodzaju tektury
+    ret.push(qualityid);                                     //QualityID
+    ret.push(fluteid);                                       //FluteID
+    ret.push(qweight);                                       //QualityWeight - sprawdzic skad sie to bierze  //
+    ret.push(qthickness);                                    //QualityThickness                              //
+    ret.push(trim);                                          //Trim - trzeba zweryfikowac
     
     return ret
 }
 
 var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scoreType,posType,twinOffset,scoreGap,level,sheetLength,sheetCount,sheetsStack,stacks,empty,sending){
-    var ret = []
+    var ret = [];
+    logger.debug("syncro_order",onumber,delivery,cname,sheetWidth,outs,measures,scoreType,posType,twinOffset,scoreGap,level,sheetLength,sheetCount,sheetsStack,stacks,empty,sending);
+
+    ret.push(onumber);                                       //OrderNumber0
+    ret.push(delivery);                                      //Delivery0 - jakas liczba niewiadomego pochodzenia
+    ret.push(cname);                                         //CustomerName0 
+    ret.push(sheetWidth);                                    //SheetWidth0
+    ret.push(outs);                                          //Outs0
+    ret.push(measures);                                      //ScoreMeasures0 roznica 4 i 5
+    ret.push(scoreType);                                     //ScoreType0
+    ret.push(posType);                                       //PositType0
+    ret.push(twinOffset);                                    //TeleTwinOffset0 - puste
+    ret.push(scoreGap);                                      //ScoreGap0
+    ret.push(level);                                         //LevelName0 - dol 2, gora 3
+    ret.push(sheetLength);                                   //sheetLenght0
+    ret.push(sheetCount);                                    //segmentSheetCount0
+    ret.push(sheetsStack);                                   //sheetsPerStack0
+    ret.push(stacks);                                        //stacksPerPallet0
+    ret.push(sending);                                       //Sending0
+    ret.push("False");
+    ret.push(" "); 
+    ret.push(" "); 
+    ret.push(" ");
+    ret.push(" ");
+    ret.push(" ");
+    ret.push("False");
+    ret.push("False");
+    ret.push(" "); 
+    ret.push(" "); 
+    ret.push(" ");                                           //Address
+    ret.push(" ");                                           //Next Machine
+    ret.push(empty);
+    ret.push(sending);
+    ret.push("False");
     
-    ret.push(onumber)                                       //OrderNumber0
-    ret.push(delivery)                                      //Delivery0 - jakas liczba niewiadomego pochodzenia
-    ret.push(cname)                                         //CustomerName0 
-    ret.push(sheetWidth)                                    //SheetWidth0
-    ret.push(outs)                                          //Outs0
-    ret.push(measures)                                      //ScoreMeasures0 roznica 4 i 5
-    ret.push(scoreType)                                     //ScoreType0
-    ret.push(posType)                                       //PositType0
-    ret.push(twinOffset)                                    //TeleTwinOffset0 - puste
-    ret.push(scoreGap)                                      //ScoreGap0
-    ret.push(level)                                         //LevelName0 - dol 2, gora 3
-    ret.push(sheetLength)                                   //sheetLenght0
-    ret.push(sheetCount)                                    //segmentSheetCount0
-    ret.push(sheetsStack)                                   //sheetsPerStack0
-    ret.push(stacks)                                        //stacksPerPallet0
-    ret.push(sending)                                       //Sending0
-    ret.push("False")
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ")
-    ret.push(" ")
-    ret.push(" ")
-    ret.push("False")
-    ret.push("False")
-    ret.push(" ") 
-    ret.push(" ") 
-    ret.push(" ")                                           //Address
-    ret.push(" ")                                           //Next Machine
-    ret.push(empty)
-    ret.push(sending)
-    ret.push("False")
-    
-    return ret
+    return ret;
 }
 
 var syncro_default_order = function(){
     var ret = []
-    const delivery = "1 01 01 0001 08 00 00 0"
+    logger.debug("syncro_default_order");
+    const delivery = "1 01 01 0001 08 00 00 0";
     
-    var header = syncro_header("7734","22200","0","30","FALA A",'B',"285","27",2000)
-    var order0 = syncro_order("Z2702300041",delivery,"ERKAR","5000","2",scorer("2000","3000"),"A","2"," "," ","3","16960","1000","200","4","84")
-    var order1 = syncro_order("1",delivery,"1","5100","2",scorer("1000","1000","1000","2100"),"A","2"," "," ","1","12000","1412","340","2"," ")
-    var order2 = syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," ")
+    var header = syncro_header("7734","22200","0","30","FALA A",'B',"285","27",2000);
+    var order0 = syncro_order("Z2702300041",delivery,"ERKAR","5000","2",scorer("2000","3000"),"A","2"," "," ","3","16960","1000","200","4","84");
+    var order1 = syncro_order("1",delivery,"1","5100","2",scorer("1000","1000","1000","2100"),"A","2"," "," ","1","12000","1412","340","2"," ");
+    var order2 = syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," ");
     
-    ret = header.concat(order0)
-    ret = ret.concat(order1)
-    ret = ret.concat(order2)
+    ret = header.concat(order0);
+    ret = ret.concat(order1);
+    ret = ret.concat(order2);
     
-    return ret
+    return ret;
 }
 
-var calculate_trim = function(webWidth,width0,outs0,width1,outs1){
-    log.debug("trim calculation","web",webWidth,"w0",width0,"o0",outs0,"w1",width1,"o1",outs1)
+var calculate_trim = function(webWidth, width0, outs0, width1, outs1){
+    logger.debug("calculate_trim",webWidth,width0,outs0,width1,outs1);
     
-    var ret = parseInt(webWidth)
-
-    log.debug("trim0",ret)
+    var ret = parseInt(webWidth);
     
     if(width0 !== 'undefined' && outs0 !== 'undefined' && !isNaN(parseInt(width0)) && !isNaN(parseInt(outs0))){
-        ret -= parseInt(width0)*parseInt(outs0)
+        ret -= parseInt(width0)*parseInt(outs0);
     }
 
-    log.debug("trim1",ret)
     
     if(width1 !== 'undefined' && outs1 !== 'undefined' && !isNaN(parseInt(width1)) && !isNaN(parseInt(outs1))){
-        log.debug("trim calc",parseInt(width1),parseInt(outs1),parseInt(width1)*parseInt(outs1))
-        ret -= parseInt(width1)*parseInt(outs1)
+        logger.debug("trim calc",parseInt(width1),parseInt(outs1),parseInt(width1)*parseInt(outs1));
+        ret -= parseInt(width1)*parseInt(outs1);
     }
     
-    log.debug("trim2",ret)
-    
-    return ret
+    return ret;
 }
 
 var mac2syncro = async function(mac,papers,quality,flute){
-    var ret
-    const delivery = "1 01 01 0001 08 00 00 0"
+    var ret;
+    const delivery = "1 01 01 0001 08 00 00 0";
     
-    const quality_row = await quality.quality_params_by_id(mac[3])
-    const flute_row = await flute.flute_params_by_id('B')
+    const quality_row = await quality.quality_params_by_id(mac[3]);
+    const flute_row = await flute.flute_params_by_id('B');
     
     if(quality_row == null || flute_row == null){
-        log.error("mac2syncro failed to fetch parameters", new Error())
-        return null
+        logger.error("mac2syncro failed to fetch parameters");
+        return null;
     }
    
-    console.log(quality_row)	
+    logger.info(quality_row);
 
-    const qualityWeight = quality_row.rows[0].weightfactoruwg_m      //635
-    const qualityThickness = quality_row.rows[0].thickness_uddmm     //45 
-    const qualityGap = quality_row.rows[0].scoregap_uddmm            //30
-    const webWidth = parseInt(mac[5])
-    const sheetWidth0 = parseInt(mac[11])
-    const sheetWidth1 = parseInt(mac[26])
+    const qualityWeight = quality_row.rows[0].weightfactoruwg_m;      //635
+    const qualityThickness = quality_row.rows[0].thickness_uddmm;     //45 
+    const qualityGap = quality_row.rows[0].scoregap_uddmm;            //30
+    const webWidth = parseInt(mac[5]);
+    const sheetWidth0 = parseInt(mac[11]);
+    const sheetWidth1 = parseInt(mac[26]);
     
-    log.debug("WebWidth:",webWidth)
-    log.debug("Sheet Width:",sheetWidth0,sheetWidth1)
+    logger.debug("WebWidth:",webWidth);
+    logger.debug("Sheet Width:",sheetWidth0,sheetWidth1);
     
-    const trim = calculate_trim(webWidth,sheetWidth0,mac[20],sheetWidth1,mac[35])
+    const trim = calculate_trim(webWidth,sheetWidth0,mac[20],sheetWidth1,mac[35]);
     if(isNaN(trim) || trim > 2300 || trim < 0){
-        log.error("Invalid trim value "+trim,new Error())
-        return null
+        logger.error("Invalid trim value "+trim);
+        return null;
     }
     
     /**	
      * HEADER
     */
-    var header = syncro_header(mac[2],webWidth,0,qualityGap,mac[3],'B',qualityWeight,qualityThickness,trim)
+    var header = syncro_header(mac[2],webWidth,0,qualityGap,mac[3],'B',qualityWeight,qualityThickness,trim);
     
     /**
      * ORDER 0  
      */
-    var order0 = syncro_order(mac[10],delivery,mac[8],sheetWidth0,mac[20],scorer(mac[12],mac[13],mac[14],mac[15],mac[16]),"A","2"," "," ","3",mac[18],mac[19],parseInt(mac[17])/2,1,0,84)
+    var order0 = syncro_order(mac[10],delivery,mac[8],sheetWidth0,mac[20],scorer(mac[12],mac[13],mac[14],mac[15],mac[16]),"A","2"," "," ","3",mac[18],mac[19],parseInt(mac[17])/2,1,0,84);
    
     /**
      * ORDER 1
      */
-    var order1 = (mac[25].trim() == "") ? syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ") : syncro_order(mac[25],delivery,mac[23],sheetWidth1,mac[35],scorer(mac[27],mac[28],mac[29],mac[30],mac[31]),"A","2"," "," ","1",mac[33],mac[34],parseInt(mac[32])/2,1,0,84)
+    var order1 = (mac[25].trim() == "") ? syncro_order(" ",delivery," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ") : syncro_order(mac[25],delivery,mac[23],sheetWidth1,mac[35],scorer(mac[27],mac[28],mac[29],mac[30],mac[31]),"A","2"," "," ","1",mac[33],mac[34],parseInt(mac[32])/2,1,0,84);
     
     /**
      * ORDER 2
      */
-    var order2 = syncro_order(" ",delivery," "," "," ","0"," "," "," "," "," "," "," "," "," "," "," ")
+    var order2 = syncro_order(" ",delivery," "," "," ","0"," "," "," "," "," "," "," "," "," "," "," ");
     
-    ret = header.concat(order0)
-    ret = ret.concat(order1)
-    ret = ret.concat(order2)
+    ret = header.concat(order0);
+    ret = ret.concat(order1);
+    ret = ret.concat(order2);
     
     return ret  
 }
@@ -247,75 +252,78 @@ var orders_all = async function(){
 }
 
 var orders_delete_all = async function(){
-    const cmd = 'Orders.Delete'
+    const cmd = 'Orders.Delete';
     
     if(dry === true){
-        log.debug("orders_delete_all",cmd)
-        return true
+        logger.debug("orders_delete_all",cmd);
+        return true;
     }
     
     try{
-        const psocket = new PromiseSocket()
-        await psocket.connect(port,host)
-        var result = await psocket.write(cmd)
+        const psocket = new PromiseSocket();
+        await psocket.connect(port,host);
+        var result = await psocket.write(cmd);
         if(result != cmd.length){
-            log.error('Command send failed',new Error())
-            return null
+            logger.error('Command send failed');
+            return null;
         }
-        result = await psocket.readAll()
-        result = result.toString()
-        return result.toLowerCase() == 'ok'
+        result = await psocket.readAll();
+        result = result.toString();
+        return result.toLowerCase() == 'ok';
     }catch(error){
-        log.error('Failed to delete orders',error)
-        return null
+        logger.error('Failed to delete orders',error);
+        return null;
     }
     
 }
 
 var orders_add = async function(data){
-    let cmd = m2s_serialize(data)
+    let cmd = m2s_serialize(data);
     
     if(cmd === null){
-        log.error("Failed to parse "+data,new Error())
-        return false
+        logger.error("Failed to parse "+data);
+        return false;
     }
     
     if(dry === true){
-        log.debug("orders_add",cmd)
-        return true
+        logger.debug("orders_add",cmd);
+        return true;
     }
     
     try{
-        const psocket = new PromiseSocket()
-        await psocket.connect(port,host)
-        var result = await psocket.write(cmd)
+        const psocket = new PromiseSocket();
+        await psocket.connect(port,host);
+        var result = await psocket.write(cmd);
         if(result != cmd.length){
-            log.error('Failed to send command to syncro', new Error())
-            return null
+            logger.error('Failed to send command to syncro');
+            return null;
         }
-        result = await psocket.readAll()
-        result = result.toString()
-        return result.toLowerCase() == "ok"
+        result = await psocket.readAll();
+        result = result.toString();
+        return result.toLowerCase() == "ok";
     }catch(error){
-        log.error('Failed to add order',error)
-        return null
+        logger.error('Failed to add order',error);
+        return null;
     }
 }
 
 var validate = async function(rows,papers,quality,flute){
-    var ret = []
+    var ret = [];
     
-    log.debug("Validation started")
-    console.log(rows.length)
+    logger.debug("Validation started");
+    logger.info(rows.length);
+
     for(let i = 0; i < rows.length; ++i){
-        console.log("validation step")
-        let result = await mac2syncro(rows[i],papers,quality,flute)
+        logger.info("validation step");
+        let result = await mac2syncro(rows[i],papers,quality,flute);
         if(result === null){
-            ret.push(i)
+            ret.push(i);
         }
     }
-    log.debug("Validation ended")
-    return ret
+
+    logger.debug("Validation ended");
+    
+    return ret;
 }
 
 module.exports = {

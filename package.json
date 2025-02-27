@@ -14,6 +14,7 @@
     "net": "^1.0.2",
     "node-cache": "^5.1.2",
     "pg": "^8.10.0",
+    "pino": "^9.6.0",
     "promise-socket": "^7.0.0",
     "twing": "^6.0.0-alpha.1"
   },

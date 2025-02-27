@@ -12,9 +12,9 @@ const {
 const fs = require('node:fs');
 const path = require('path');
 
-const papers = require('../models/papers.js')
-const quality = require('../models/quality.js')
-const flute = require('../models/flute.js')
+const papers = require('../../models/papers.js')
+const quality = require('../../models/quality.js')
+const flute = require('../../models/flute.js')
 
 test('fields', () => {
     expect(fields.length).toBeGreaterThan(0);
@@ -34,13 +34,21 @@ test('mac_parse', () => {
     }
 });
 
-test('validate', () => {
+test('validate', async () => {
     let macs = fs.readdirSync('tests/models');
     macs = macs.filter(file => {
         const ext = path.extname(file).toLowerCase();
         return ext === '.dat';
     });
 
-    validate(mac_parse(macs), papers, quality, flute);
+    for(let i = 0; i < macs.length; i++){
+        const data = fs.readFileSync('tests/models/'+macs[i], 'utf8');
+        //expect(
+            let parsed = mac_parse(data);
+            let res = await validate(parsed, papers, quality, flute);
+        //.toBeGreaterThan(0);
+    }
+    
+
 
 });
