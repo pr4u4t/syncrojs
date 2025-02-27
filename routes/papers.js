@@ -6,8 +6,8 @@ const papers = require('../models/papers.js')
 module.exports = router
 
 router.get('/', async (req,res) => {
-    const {rows,fields} = await papers.papers_all()
-    const result = await papers.papers_count()
+    const {rows,fields} = await papers.papers_all();
+    const result = await papers.papers_count();
     
     template.render('papers.twig', {
         'title': "Paper List",
@@ -18,15 +18,15 @@ router.get('/', async (req,res) => {
         'current': 1,
         'url': '/papers/'        
     }).then((output) => {
-        res.end(output)
+        res.end(output);
     })
 })
 
 router.get('/:page([0-9]+)', async (req,res) => {
-    const current = req.params.page
-    const offset = (req.params.page-1)*25
-    const {rows,fields} = await papers.papers_paginated_all(offset)
-    const result = await papers.papers_count()
+    const current = req.params.page;
+    const offset = (req.params.page-1)*25;
+    const {rows,fields} = await papers.papers_paginated_all(offset);
+    const result = await papers.papers_count();
     
     template.render('papers.twig', {
         'title': "Paper List",

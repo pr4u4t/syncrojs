@@ -1,29 +1,29 @@
-const past = require('./past.js')
-const current = require('./current.js')
-const papers = require('./papers.js')
-const quality = require('./quality.js')
-const flute = require('./flute.js')
-const shift = require('./shift.js')
-const settings = require('./settings.js')
-const Router = require('express-promise-router')
-const router = new Router()
-const template = require('../templates')
-const home = require('../models/home.js')
-const NodeCache = require( "node-cache" )
+const past = require('./past.js');
+const current = require('./current.js');
+const papers = require('./papers.js');
+const quality = require('./quality.js');
+const flute = require('./flute.js');
+const shift = require('./shift.js');
+const settings = require('./settings.js');
+const Router = require('express-promise-router');
+const router = new Router();
+const template = require('../templates');
+const home = require('../models/home.js');
+const NodeCache = require( "node-cache" );
 
 router.get('/', async (req,res) => {
-    const info = await home.home_info()
+    const info = await home.home_info();
     template.render('index.twig', {
         'home': info,
         'url': '/'
     }).then((output) => {
         res.end(output);
-    })
+    });
 })
 
 router.get('/flush_cache', async (req,res) => {
-    NodeCache.flushAll()
-    res.redirect(req.headers.referer)
+    NodeCache.flushAll();
+    res.redirect(req.headers.referer);
 })
 
 module.exports = (app) => {

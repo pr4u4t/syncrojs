@@ -1,7 +1,7 @@
-const db = require('../db')
-const NodeCache = require( "node-cache" )
+const db = require('../db');
+const NodeCache = require( "node-cache" );
 const logger = require('pino')();
-const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 })
+const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 });
 
 const quality_all = async function(){
     const query = 'SELECT * FROM syncro_db_3892.quality';
