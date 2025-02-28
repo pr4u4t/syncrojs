@@ -4,7 +4,6 @@ const fs = require('fs');
 const net = require('net');
 const db = require('../db');
 const {PromiseSocket, TimeoutError} = require("promise-socket");
-const log = require('../utils/log.js');
 const config = require('config');
 const port = config.get('syncro.port');
 const host = config.get('syncro.host');
