@@ -1,27 +1,28 @@
-const express = require('express')
-const config = require('config')
+const express = require('express');
+const config = require('config');
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
-const template = require('./templates')
-const log = require('./utils/log.js')
+const template = require('./templates');
+const logger = require('pino')();
 
-const port = config.get('server.port') || "127.0.0.1"
-const host = config.get('server.host') || 80
-const mountRoutes = require('./routes')
-const secret = config.get('server.secret')
+const port = config.get('server.port') || "127.0.0.1";
+const host = config.get('server.host') || 80;
+const mountRoutes = require('./routes');
+const secret = config.get('server.secret');
 
-const app = express()
-const oneDay = 1000 * 60 * 60 * 24
+const app = express();
+const oneDay = 1000 * 60 * 60 * 24;
+
 app.use(sessions({
   secret: secret,
   saveUninitialized:true,
   cookie: { maxAge: oneDay },
   resave: false 
-}))
+}));
 
-app.use(cookieParser())
-mountRoutes(app)
-app.use(express.static('public'))
+app.use(cookieParser());
+mountRoutes(app);
+app.use(express.static('public'));
 
 app.use(function(req,res,next){
   log.error("HTTP 404",req)
@@ -30,7 +31,7 @@ app.use(function(req,res,next){
     'msg': 'Page not found'
   }).then((output) => {
     res.end(output);
-  })
+  });
 })
 
 app.use(function(err,req,res,next){
@@ -40,9 +41,9 @@ app.use(function(err,req,res,next){
     'msg': 'Fatal error occurred, please contact support'
   }).then((output) => {
     res.end(output);
-  })
+  });
 })
 
 app.listen(port, host, () => {
-  log.debug('Node.js Express server listening on ',host,":",port)
+  logger.debug('Node.js Express server listening on ',host,":",port)
 })
