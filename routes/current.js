@@ -154,14 +154,14 @@ router.post('/add', async (req,res) => {
     let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute);
     
     if(transformed == null){
-        log.error("Failed to parse order",new Error())
+        logger.error("Failed to parse order",new Error());
         res.status(500).send('Internal Server Error')
-        return
+        return;
     }
     
-    logger.debug(transformed)
+    logger.debug(transformed);
     
-    const result = await ordmac.orders_add(transformed)
+    const result = await ordmac.orders_add(transformed);
     
     logger.info("Order added",result);
 
