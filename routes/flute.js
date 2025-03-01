@@ -3,7 +3,7 @@ const template = require('../templates');
 const router = new Router();
 const flute = require('../models/flute.js');
 
-module.exports = router
+module.exports = router;
 
 router.get('/', async (req,res) => {
     const {rows,fields} = await flute.flute_all();
@@ -20,7 +20,7 @@ router.get('/', async (req,res) => {
     }).then((output) => {
         res.end(output);
     });
-})
+});
 
 router.get('/:page([0-9]+)', async (req,res) => {
     const current = req.params.page;
@@ -39,4 +39,4 @@ router.get('/:page([0-9]+)', async (req,res) => {
     }).then((output) => {
         res.end(output);
     });
-})
+});

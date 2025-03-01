@@ -27,7 +27,7 @@ router.get('/', async (req,res) => {
     }).then((output) => {
         res.end(output);
     });
-})
+});
 
 router.get('/import', async (req,res) => {
     template.render('order_import.twig', {
@@ -35,7 +35,7 @@ router.get('/import', async (req,res) => {
     }).then((output) => {
         res.end(output);
     });
-})
+});
 
 router.post('/import', upload.single('orderFile'), async (req,res) => {
     var rows;
@@ -60,16 +60,16 @@ router.post('/import', upload.single('orderFile'), async (req,res) => {
     }).then((output) => {
         res.end(output);
     });
-})
+});
 
 router.post('/import/confirm', upload.none(), async (req,res) => {
     if(typeof req.body.accept !== undefined){
         const shift_state = await shift.shift_state();
         
         if(shift_state == 'idle'){
-            req.session.step = shift_skip.skip_idle
+            req.session.step = shift_skip.skip_idle;
         }else{
-            req.session.step = shift_skip.skip_working
+            req.session.step = shift_skip.skip_working;
         }
         
         template.render('current_progress.twig', {
@@ -77,7 +77,7 @@ router.post('/import/confirm', upload.none(), async (req,res) => {
             'txt': "Go to Orders"
         }).then((output) => {
             res.end(output);
-        })
+        });
     }else{
         req.session.current = null;
         
@@ -90,7 +90,7 @@ router.post('/import/confirm', upload.none(), async (req,res) => {
             res.end(output);
         });
     }
-})
+});
 
 router.get('/import/batch/:step', async (req,res) => {
     var steps = req.session.current.length;
@@ -104,7 +104,7 @@ router.get('/import/batch/:step', async (req,res) => {
         return;
     }
     
-    log.debug(transformed);
+    logger.debug(transformed);
     
     const result = await ordmac.orders_add(transformed);
     
@@ -145,7 +145,7 @@ router.get('/add', upload.none(), async (req,res) => {
     
     res.json({ current: current, steps: steps })
     */
-})
+});
 
 router.post('/add', async (req,res) => {
     var steps = req.session.current.length;
@@ -171,4 +171,4 @@ router.post('/add', async (req,res) => {
     }
     
     res.json({ current: current, steps: steps });
-})
+});

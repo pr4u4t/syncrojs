@@ -1,21 +1,21 @@
-const Router = require('express-promise-router')
-const db = require('../db')
-const config = require('config')
-const template = require('../templates')
-const router = new Router()
-const multer  = require('multer')
-const upload = multer({ dest: './uploads/' })
-const shift = require('../models/shift.js')
-const log = require('../utils/log.js')
+const Router = require('express-promise-router');
+const db = require('../db');
+const config = require('config');
+const template = require('../templates');
+const router = new Router();
+const multer  = require('multer');
+const upload = multer({ dest: './uploads/' });
+const shift = require('../models/shift.js');
+const logger = require('pino')();
 
-module.exports = router
+module.exports = router;
 
 function isNumeric(str) {
     if (typeof str != "string"){
-        return false
+        return false;
     }
     
-    return !isNaN(str) && !isNaN(parseFloat(str))
+    return !isNaN(str) && !isNaN(parseFloat(str));
 }
 
 router.get('/', async (req,res) => {
@@ -28,52 +28,52 @@ router.get('/', async (req,res) => {
         'url': '/shift/'
     }).then((output) => {
         res.end(output);
-    })
-})
+    });
+});
 
 router.get('/start', async (req,res) => {
     template.render('shift_new.twig', {
         'url': '/shift/'
     }).then((output) => {
         res.end(output);
-    })
-})
+    });
+});
 
 router.post('/start', upload.none(), async (req,res) => {
     if(typeof req.body !== undefined){
         if(!isNumeric(req.body.ID)){
-            log.debug("shift add invalid ID value")
-            res.redirect('/shift/')
-            return
+            logger.debug("shift add invalid ID value");
+            res.redirect('/shift/');
+            return;
         }
         
         if(req.body.manager.length == 0){
-            log.debug("shift add invalid manager value")
-            res.redirect('/shift/')
-            return
+            logger.debug("shift add invalid manager value");
+            res.redirect('/shift/');
+            return;
         }
         
         if(!isNumeric(req.body.people)){
-            log.debug("shift add invalid people count")
-            res.redirect('/shift/')
-            return
+            log.debug("shift add invalid people count");
+            res.redirect('/shift/');
+            return;
         }
         
-        const id = req.body.ID
-        const manager = req.body.manager
-        const people = req.body.people
+        const id = req.body.ID;
+        const manager = req.body.manager;
+        const people = req.body.people;
         
-        let result = shift.shift_new(id,manager,people)
-        log.debug("shift add:",result)
-        res.redirect('/shift/')
+        let result = shift.shift_new(id,manager,people);
+        logger.debug("shift add:",result);
+        res.redirect('/shift/');
     }else{
-        log.debug("requestd shift start but form data empty")
-        res.redirect('/shift/')
+        logger.debug("requestd shift start but form data empty");
+        res.redirect('/shift/');
     }
-})
+});
 
 router.get('/stop', async (req,res) => {
-    let result = await shift.shift_end()
-    log.debug("shift stop:",result)
-    res.redirect('/shift/')
-})
+    let result = await shift.shift_end();
+    logger.debug("shift stop:",result);
+    res.redirect('/shift/');
+});

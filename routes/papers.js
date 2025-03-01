@@ -3,7 +3,7 @@ const template = require('../templates')
 const router = new Router()
 const papers = require('../models/papers.js')
 
-module.exports = router
+module.exports = router;
 
 router.get('/', async (req,res) => {
     const {rows,fields} = await papers.papers_all();
@@ -19,7 +19,7 @@ router.get('/', async (req,res) => {
         'url': '/papers/'        
     }).then((output) => {
         res.end(output);
-    })
+    });
 })
 
 router.get('/:page([0-9]+)', async (req,res) => {
@@ -37,6 +37,6 @@ router.get('/:page([0-9]+)', async (req,res) => {
         'current': current,
         'url': '/papers/'
     }).then((output) => {
-        res.end(output)
-    })
-})
+        res.end(output);
+    });
+});

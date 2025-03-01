@@ -19,12 +19,12 @@ router.get('/', async (req,res) => {
     }).then((output) => {
         res.end(output);
     });
-})
+});
 
 router.get('/flush_cache', async (req,res) => {
     NodeCache.flushAll();
     res.redirect(req.headers.referer);
-})
+});
 
 module.exports = (app) => {
     app.use('/current',current),
