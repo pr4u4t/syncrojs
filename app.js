@@ -25,7 +25,7 @@ mountRoutes(app);
 app.use(express.static('public'));
 
 app.use(function(req,res,next){
-  log.error("HTTP 404",req)
+  logger.error("HTTP 404",req)
   template.render('error.twig', {
     'title': 'HTTP 404 Not Found',
     'msg': 'Page not found'
@@ -35,7 +35,7 @@ app.use(function(req,res,next){
 })
 
 app.use(function(err,req,res,next){
-  log.error("HTTP 500",err)
+  logger.error("HTTP 500",err)
   template.render('error.twig', {
     'title': 'HTTP 500 Internal Error',
     'msg': 'Fatal error occurred, please contact support'
