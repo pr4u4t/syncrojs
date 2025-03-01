@@ -1,0 +1,33 @@
+{
+    "server": {
+      "host": "0.0.0.0",
+      "port": 80,
+      "secret": "thisismysecrctekeyfhrgfgrfrty84fwir767"
+    },
+    "db": {
+      "host": "172.16.0.102",
+      "port": 5432,
+      "database": "postgres",
+      "user": "postgres",
+      "password": "dupa"
+    },
+    "syncro": {
+      "host": "192.168.0.148",
+      "port": 13000
+    },
+    "orders": {
+      "shift": {
+        "skip_working": 0,
+        "skip_idle": 0
+      }
+    },
+    "app": {
+      "debug": true,
+      "dry": false,
+      "pagination": 50
+    },
+    "cache": {
+      "ttl": 100,
+      "period": 120
+    }
+}
