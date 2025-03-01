@@ -1,13 +1,13 @@
-const { XMLParser } = require("fast-xml-parser")
-const parser = new XMLParser()
-const fs = require('fs')
-var net = require('net')
-const {PromiseSocket, TimeoutError} = require("promise-socket")
-const config = require('config')
-const log = require('../utils/log.js')
+const { XMLParser } = require("fast-xml-parser");
+const parser = new XMLParser();
+const fs = require('fs');
+var net = require('net');
+const {PromiseSocket, TimeoutError} = require("promise-socket");
+const config = require('config');
+const logger = require('pino')();
 
-const port = config.get('syncro.port')
-const host = config.get('syncro.host')
+const port = config.get('syncro.port');
+const host = config.get('syncro.host');
 
 const home_info = async function(){
     const cmd = "Home.Info";
