@@ -5,7 +5,8 @@
 const {createEnvironment, createFilesystemLoader} = require('twing');
 const fs = require('fs');
 
-const loader = createFilesystemLoader('./templates', fs);
+const loader = createFilesystemLoader(fs);
+loader.addPath('./templates', 'templates');
 const twing = createEnvironment(loader);
 
 module.exports = {
