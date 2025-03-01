@@ -3,7 +3,7 @@
 //let twing = new TwingEnvironment(loader);
 
 const {createEnvironment, createFilesystemLoader} = require('twing');
-import * as fs from "fs";
+const fs = require('fs');
 
 const loader = createFilesystemLoader('./templates', fs);
 const twing = createEnvironment(loader);
