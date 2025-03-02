@@ -25,7 +25,7 @@
       {% endblock %}
       {% block content %}
         <script defer>
-          const elem = document.getElementById("home_info");
+          
           const fetch_home = async (elem) => {
             const request = async (url) => {
               const response = await fetch(origin+url);
@@ -36,8 +36,10 @@
             const req = await request('/home_info');
             elem.innerHTML = req;
           };
-
-          fetch_home(elem);
+          window.addEventListener("DOMContentLoaded", function() {
+            const elem = document.getElementById("home_info");
+            fetch_home(elem);
+          });
         </script>
         <div id="home_info">
           <div class="d-flex justify-content-center">
