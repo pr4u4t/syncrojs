@@ -12,9 +12,9 @@ const home = require('../models/home.js');
 const NodeCache = require( "node-cache" );
 
 router.get('/', async (req,res) => {
-    const info = await home.home_info();
+    //const info = await home.home_info();
     template.render('index.twig', {
-        'home': info,
+        'home': null,
         'url': '/'
     }).then((output) => {
         res.end(output);
@@ -23,7 +23,7 @@ router.get('/', async (req,res) => {
 
 router.get('/home/info', async (req,res) => {
     const info = await home.home_info();
-    
+
     if(req.headers['content-type'] == 'application/json') {
         res.json(info);
         return;
