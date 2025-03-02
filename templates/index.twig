@@ -36,11 +36,9 @@
             const req = request('/home/info');
             elem.insertAdjacentHTML("beforebegin",req);
           };
-          
+
           fetch(elem);
         </script>
-        {% import "_home.twig" as dashboard %}
-        {{ dashboard.home(home) }}
       {% endblock %}
     </main>
     <div class="container">
