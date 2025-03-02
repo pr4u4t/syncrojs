@@ -21,7 +21,8 @@ const home_info = async function(){
         let jml = parser.parse(xmlbuff);
         return jml.NewDataSet.Home;
     }catch(error){
-        logger.error('Failed to fetch Home Info',error);
+        logger.error('Failed to fetch Home Info');
+        logger.error(error);
         return null;
     }
 }
