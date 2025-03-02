@@ -33,7 +33,7 @@
               return ret;
             };
             
-            const req = request('/home/info');
+            const req = await request('/home/info');
             elem.insertAdjacentHTML("beforebegin",req);
           };
 
