@@ -21,7 +21,7 @@ router.get('/', async (req,res) => {
     });
 });
 
-router.get('/home/info', async (req,res) => {
+router.get('/home_info', async (req,res) => {
     const info = await home.home_info();
 
     if(req.headers['content-type'] == 'application/json') {
