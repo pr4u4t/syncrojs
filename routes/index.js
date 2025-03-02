@@ -21,6 +21,22 @@ router.get('/', async (req,res) => {
     });
 });
 
+router.get('/home/info', async (req,res) => {
+    const info = await home.home_info();
+    
+    if(req.headers['content-type'] == 'application/json') {
+        res.json(info);
+        return;
+    }
+
+    template.render('home.twig', {
+        'home': info,
+        'url': '/home'
+    }).then((output) => {
+        res.end(output);
+    });
+});
+
 router.get('/flush_cache', async (req,res) => {
     NodeCache.flushAll();
     res.redirect(req.headers.referer);

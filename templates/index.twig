@@ -14,7 +14,7 @@
     {% import "_navbar.twig" as navbar %}
     {{ navbar.nav("Syncro Orders") }}
 
-    <main class="container mt-5">
+    <main class="container mt-5" id="main">
       <h1>
       {% block header %}
       Home Dashboard
@@ -24,6 +24,19 @@
       
       {% endblock %}
       {% block content %}
+        <script defer>
+          const elem = document.getElementById("main");
+          const fetch = async (elem) => {
+            const request = async (url) => {
+              const response = await fetch(origin+url);
+              const ret = await response.text();
+              return ret;
+            };
+            
+            const req = request('/home/info');
+            elem.insertAdjacentHTML("beforebegin",req);
+          };
+        </script>
         {% import "_home.twig" as dashboard %}
         {{ dashboard.home(home) }}
       {% endblock %}
