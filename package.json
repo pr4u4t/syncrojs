@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@aternus/csv-to-xlsx": "github:pr4u4t/csv-to-xlsx",
+    "@aternus/csv-to-xlsx": "^2.1.5",
     "config": "^3.3.9",
     "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
