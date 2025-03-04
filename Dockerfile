@@ -9,7 +9,7 @@
 ARG IMG_VERSION=20.18-alpine3.20
 FROM node:${IMG_VERSION}
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 WORKDIR /usr/src/app
    
@@ -40,4 +40,4 @@ COPY . .
 EXPOSE 3000
 
 # Run the application.
-CMD npm start
+CMD [ "npm", "start" ]
