@@ -34,21 +34,34 @@ test('mac_parse', () => {
     }
 });
 
-test('validate', async () => {
-    let macs = fs.readdirSync('tests/models');
-    macs = macs.filter(file => {
-        const ext = path.extname(file).toLowerCase();
-        return ext === '.dat';
-    });
+test('validate_5_bigs', async () => {
+    const data = fs.readFileSync('tests/models/Ord_mac 5 bigow.dat', 'utf8');
+    //expect(
+    let parsed = mac_parse(data);
+    let res = await validate(parsed, papers, quality, flute);
+    //.toBeGreaterThan(0);
+});
 
-    for(let i = 0; i < macs.length; i++){
-        const data = fs.readFileSync('tests/models/'+macs[i], 'utf8');
-        //expect(
-            let parsed = mac_parse(data);
-            let res = await validate(parsed, papers, quality, flute);
-        //.toBeGreaterThan(0);
-    }
-    
+test('validate_10_belts_0_trimm', async () => {
+    const data = fs.readFileSync('tests/models/Ord_mac 10 pasow 0 trimm.dat', 'utf8');
+    //expect(
+    let parsed = mac_parse(data);
+    let res = await validate(parsed, papers, quality, flute);
+    //.toBeGreaterThan(0);
+});
 
+test('validate_12_belts', async () => {
+    const data = fs.readFileSync('tests/models/Ord_mac 12 pasow.dat', 'utf8');
+    //expect(
+    let parsed = mac_parse(data);
+    let res = await validate(parsed, papers, quality, flute);
+    //.toBeGreaterThan(0);
+});
 
+test('validate_single', async () => {
+    const data = fs.readFileSync('tests/models/Ord_mac 1 zam.dat', 'utf8');
+    //expect(
+    let parsed = mac_parse(data);
+    let res = await validate(parsed, papers, quality, flute);
+    //.toBeGreaterThan(0);
 });

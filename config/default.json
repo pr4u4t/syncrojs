@@ -19,6 +19,9 @@
       "shift": {
         "skip_working": 0,
         "skip_idle": 0
+      },
+      "parser":{
+        "type": "classic"
       }
     },
     "app": {

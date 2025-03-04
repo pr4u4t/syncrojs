@@ -52,7 +52,13 @@ var m2s_serialize = function(sync){
 }
 
 var scorer = function(sc1, sc2, sc3, sc4, sc5){
-    logger.debug("Scorer:", sc1, sc2, sc3, sc4, sc5);
+    logger.debug("Scorer:");
+    logger.debug(sc1);
+    logger.debug(sc2);
+    logger.debug(sc3);
+    logger.debug(sc4); 
+    logger.debug(sc5);
+
     var ret = '';
     ret += parseInt(sc1);
     
@@ -78,7 +84,17 @@ var scorer = function(sc1, sc2, sc3, sc4, sc5){
 }
 
 var syncro_header = function(setupid, webwidth, trimtype, scoregap, qualityid, fluteid, qweight, qthickness, trim){
-    logger.debug("syncro_header",setupid, webwidth, trimtype, scoregap, qualityid, fluteid, qweight, qthickness, trim);
+    logger.debug("syncro_header")
+    logger.debug(setupid);
+    logger.debug(webwidth);
+    logger.debug(trimtype)
+    logger.debug(scoregap);
+    logger.debug(qualityid);
+    logger.debug(fluteid);
+    logger.debug(qweight);
+    logger.debug(qthickness);
+    logger.debug(trim);
+
     var ret = [];
     
     ret.push(setupid+'.2');                                  //SetupID glueing SEQ to setup ID
@@ -151,7 +167,12 @@ var syncro_default_order = function(){
 }
 
 var calculate_trim = function(webWidth, width0, outs0, width1, outs1){
-    logger.debug("calculate_trim",webWidth,width0,outs0,width1,outs1);
+    logger.debug("calculate_trim");
+    logger.debug(webWidth);
+    logger.debug(width0);
+    logger.debug(outs0);
+    logger.debug(width1);
+    logger.debug(outs1);
     
     var ret = parseInt(webWidth);
     
@@ -189,8 +210,11 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const sheetWidth0 = parseInt(mac[11]);
     const sheetWidth1 = parseInt(mac[26]);
     
-    logger.debug("WebWidth:",webWidth);
-    logger.debug("Sheet Width:",sheetWidth0,sheetWidth1);
+    logger.debug("WebWidth:");
+    logger.debug(webWidth);
+    logger.debug("Sheet Width:");
+    logger.debug(sheetWidth0);
+    logger.debug(sheetWidth1);
     
     const trim = calculate_trim(webWidth,sheetWidth0,mac[20],sheetWidth1,mac[35]);
     if(isNaN(trim) || trim > 2300 || trim < 0){
@@ -228,25 +252,26 @@ var mac2syncro = async function(mac,papers,quality,flute){
 var fields = ["program number", "scheduled papers", "fosber ID", "flute", "flute type", "rollsize", "linear meters", "G", "customer name 1", "customer code 1", "order number 1", "sheet width 1", "1 score", "2 score", "3 score", "4 score", "5 score", "sheets per stack 1", "sheet length 1", "quantity of sheets 1", "outs 1", "linear meters 1", "20", "customer name 2", "customer code 2", "order number 2", "sheet width 2", "1 score", "2 score", "3 score", "4 score", "5 score", "sheets per stack 2", "sheet length 2", "quantity of sheets 2", "outs 2", "linear meters 2", "10"]
 
 var orders_all = async function(){
-    const cmd = 'Orders.Get'
+    const cmd = 'Orders.Get';
     
     try{
-        var xmlbuff
-        const psocket = new PromiseSocket()
-        await psocket.connect(port,host)
-        result = await psocket.write(cmd)
+        var xmlbuff;
+        const psocket = new PromiseSocket();
+        await psocket.connect(port,host);
+        result = await psocket.write(cmd);
         if(result != cmd.length){
-            log.error('Command send failed',new Error())
-            return null
+            logger.error('Command send failed');
+            return null;
         }
-        xmlbuff = await psocket.readAll()
-        xmlbuff = xmlbuff.toString()
-        let jml = parser.parse(xmlbuff)
+        xmlbuff = await psocket.readAll();
+        xmlbuff = xmlbuff.toString();
+        let jml = parser.parse(xmlbuff);
             
-        return (Array.isArray(jml.NewDataSet.DryEndList)) ? jml.NewDataSet.DryEndList : [ jml.NewDataSet.DryEndList ]
+        return (Array.isArray(jml.NewDataSet.DryEndList)) ? jml.NewDataSet.DryEndList : [ jml.NewDataSet.DryEndList ];
     }catch(error){
-        log.error('Failed to obtain orders',error)
-        return null
+        logger.error('Failed to obtain orders');
+        logger.error(error);
+        return null;
     }
 }
 
@@ -285,7 +310,7 @@ var orders_add = async function(data){
     }
     
     if(dry === true){
-        logger.debug("orders_add",cmd);
+        logger.debug("orders_add");
         return true;
     }
     
@@ -301,7 +326,8 @@ var orders_add = async function(data){
         result = result.toString();
         return result.toLowerCase() == "ok";
     }catch(error){
-        logger.error('Failed to add order',error);
+        logger.error('Failed to add order');
+        logger.error(error);
         return null;
     }
 }
