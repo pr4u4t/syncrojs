@@ -149,7 +149,7 @@ router.post('/clear', upload.none(), async (req, res) => {
 })
 
 router.get('/add', upload.none(), async (req, res) => {
-     
+    logger.debug("get /current/add");
     /*let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute)
     
     if(transformed == null){
