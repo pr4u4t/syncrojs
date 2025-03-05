@@ -1,4 +1,6 @@
 {% extends "layout.twig" %}
+{% block title %} Current Orders {% endblock %}
+{% block header %} Current Orders {% endblock %}
 {% block content %}
 	<script type="text/javascript" defer>
         const fetch_orders = async (elem) => {
@@ -17,6 +19,7 @@
             fetch_orders(elem);
         });
 	</script>
+	<hr>
 	<form action="/current/clear" method="post" enctype="multipart/form-data">
 		<button type="submit" class="btn btn-danger mt-1">Clear Orders</button>
 	</form>
