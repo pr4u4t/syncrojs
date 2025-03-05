@@ -1,7 +1,7 @@
-{% extends "index.twig" %}
+{% extends "layout.twig" %}
 {% import "_order_import.twig" as order_import %}
 {% block title %}
-Current Order Import
+    Current Order Import
 {% endblock %}
 
 {% block header %}
@@ -9,6 +9,6 @@ Current Order Import
 {% endblock %}
 {% block content %}
 <div id="order_import">
-{{ order_import.order_add(url) }}
+    {{ order_import.order_add(url) }}
 </div>
 {% endblock %}

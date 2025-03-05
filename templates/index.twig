@@ -1,48 +1,30 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "layout.twig" %}
+{% block title %}
+    Home Dashboard
+{% endblock %}
 
-    <!-- Bootstrap CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-    <title>{% block title %} Orders {% endblock %}</title>
-  </head>
-  <body>
-    {% import "_navbar.twig" as navbar %}
-    {{ navbar.nav("Syncro Orders") }}
-
-    <main class="container mt-5" id="main">
-      <h1>
-      {% block header %}
-      Home Dashboard
-      {% endblock %}
-      </h1>
-      <hr/>
-      
-      {% block alert%}
-      
-      {% endblock %}
-      {% block content %}
-        <script defer>
-          
-          const fetch_home = async (elem) => {
+{% block header %}
+    Home dashboard
+{% endblock %}
+{% block content %}
+    <script type="text/javascript" defer>
+        const fetch_home = async (elem) => {
             const request = async (url) => {
-              const response = await fetch(origin+url);
-              const ret = await response.text();
-              return ret;
+                const response = await fetch(origin+url);
+                const ret = await response.text();
+                return ret;
             };
-            
+                
+                
             const req = await request('/home_info');
             elem.innerHTML = req;
-          };
-          window.addEventListener("DOMContentLoaded", function() {
+        };
+            
+        window.addEventListener("DOMContentLoaded", function() {
             const elem = document.getElementById("home_info");
             fetch_home(elem);
-          });
-        </script>
+        });
+    </script>
         <div id="home_info">
           <div class="d-flex justify-content-center">
             <div class="spinner-border" role="status">
@@ -68,13 +50,4 @@
                 </div>
             </div>
         </div>
-      {% endblock %}
-    </main>
-    <div class="container">
-      {% import "_footer.twig" as footer %}
-      {{ footer.footer("Syncro Orders") }}
-    </div>
-    <script src="/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
-
+{% endblock %}
