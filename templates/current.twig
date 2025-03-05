@@ -23,5 +23,11 @@
 	<form action="/current/clear" method="post" enctype="multipart/form-data">
 		<button type="submit" class="btn btn-danger mt-1">Clear Orders</button>
 	</form>
-	<div id="orders_all"></div>
+	<div id="orders_all">
+		<div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+	</div>
 {% endblock %}
