@@ -18,6 +18,7 @@ const fs = require('fs');
 module.exports = router;
 
 router.get('/', async (req, res) => {
+    logger.debug("get /current");
     template.render('current.twig', {
         'rows': null,
         'fields': [], 
@@ -30,6 +31,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/orders', async(req, res) => {
+    logger.debug("get /current/orders");
     const orders = await ordmac.orders_all();
     if(req.headers['content-type'] == 'application/json') {
         res.json(orders);
@@ -48,6 +50,7 @@ router.get('/orders', async(req, res) => {
 });
 
 router.get('/import', async (req, res) => {
+    logger.debug("get /current/import");
     template.render('order_import.twig', {
         'url': '/current/'
     }).then((output) => {
@@ -58,7 +61,7 @@ router.get('/import', async (req, res) => {
 router.post('/import', upload.single('orderFile'), async (req, res) => {
     var rows;
     var val;
-    
+    logger.debug("post /current/import");
     try {
         const data = fs.readFileSync(req.file.path, 'utf8')
         rows = ordmac.mac_parse(data)
@@ -81,6 +84,7 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
 });
 
 router.post('/import/confirm', upload.none(), async (req, res) => {
+    logger.debug("post /current/import/confirm");
     if(typeof req.body.accept !== undefined){
         const shift_state = await shift.shift_state();
         
@@ -113,7 +117,7 @@ router.post('/import/confirm', upload.none(), async (req, res) => {
 router.get('/import/batch/:step', async (req, res) => {
     var steps = req.session.current.length;
     var current = ++req.session.step;
-    
+    logger.debug("get /current/batch/"+req.params.step);
     let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute);
     
     if(transformed == null){
@@ -137,6 +141,7 @@ router.get('/import/batch/:step', async (req, res) => {
 })
 
 router.post('/clear', upload.none(), async (req, res) => {
+    logger.debug("get /current/clear");
     let result = await ordmac.orders_delete_all();
     logger.info("Orders cleared",result);
     res.redirect('/current/');
@@ -168,7 +173,7 @@ router.get('/add', upload.none(), async (req, res) => {
 router.post('/add', async (req, res) => {
     var steps = req.session.current.length;
     var current = ++req.session.step;
-    
+    logger.debug("post /current/add");
     let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute);
     
     if(transformed == null){
