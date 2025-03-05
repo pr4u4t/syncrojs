@@ -17,9 +17,9 @@ const fs = require('fs');
 
 module.exports = router;
 
-router.get('/', async (req,res) => {
+router.get('/', async (req, res) => {
     template.render('current.twig', {
-        'rows': await ordmac.orders_all(), 
+        'rows': null,
         'fields': [], 
         'total': 1,  
         'current': 1,
@@ -29,7 +29,25 @@ router.get('/', async (req,res) => {
     });
 });
 
-router.get('/import', async (req,res) => {
+router.get('/orders', async(req, res) => {
+    const orders = await ordmac.orders_all();
+    if(req.headers['content-type'] == 'application/json') {
+        res.json(orders);
+        return;
+    }
+    
+    template.render('current_orders.twig', {
+        'rows': orders,
+        'url': '/current',
+        'total': 1,
+        'current': 1,
+        'fields': []
+    }).then((output) => {
+        res.end(output);
+    });
+});
+
+router.get('/import', async (req, res) => {
     template.render('order_import.twig', {
         'url': '/current/'
     }).then((output) => {
@@ -37,7 +55,7 @@ router.get('/import', async (req,res) => {
     });
 });
 
-router.post('/import', upload.single('orderFile'), async (req,res) => {
+router.post('/import', upload.single('orderFile'), async (req, res) => {
     var rows;
     var val;
     
@@ -62,7 +80,7 @@ router.post('/import', upload.single('orderFile'), async (req,res) => {
     });
 });
 
-router.post('/import/confirm', upload.none(), async (req,res) => {
+router.post('/import/confirm', upload.none(), async (req, res) => {
     if(typeof req.body.accept !== undefined){
         const shift_state = await shift.shift_state();
         
@@ -92,7 +110,7 @@ router.post('/import/confirm', upload.none(), async (req,res) => {
     }
 });
 
-router.get('/import/batch/:step', async (req,res) => {
+router.get('/import/batch/:step', async (req, res) => {
     var steps = req.session.current.length;
     var current = ++req.session.step;
     
@@ -118,13 +136,13 @@ router.get('/import/batch/:step', async (req,res) => {
     res.json({ current: current, steps: steps });
 })
 
-router.post('/clear', upload.none(), async (req,res) => {
+router.post('/clear', upload.none(), async (req, res) => {
     let result = await ordmac.orders_delete_all();
     logger.info("Orders cleared",result);
     res.redirect('/current/');
 })
 
-router.get('/add', upload.none(), async (req,res) => {
+router.get('/add', upload.none(), async (req, res) => {
      
     /*let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute)
     
@@ -147,7 +165,7 @@ router.get('/add', upload.none(), async (req,res) => {
     */
 });
 
-router.post('/add', async (req,res) => {
+router.post('/add', async (req, res) => {
     var steps = req.session.current.length;
     var current = ++req.session.step;
     
