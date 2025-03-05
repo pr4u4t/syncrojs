@@ -4,6 +4,9 @@ const router = new Router();
 const past = require('../models/past_orders.js');
 const multer  = require('multer');
 const upload = multer({ dest: './uploads/' });
+const config = require('config');
+const loglevel = config.get("log.level") || "info";
+const logger = require('pino')({"level": loglevel});
 
 module.exports = router;
 

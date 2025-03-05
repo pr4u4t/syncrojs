@@ -32,5 +32,8 @@
     "cache": {
       "ttl": 100,
       "period": 120
+    },
+    "log":{
+      "level": "debug"
     }
 }

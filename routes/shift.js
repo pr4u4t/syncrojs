@@ -1,12 +1,14 @@
 const Router = require('express-promise-router');
 const db = require('../db');
 const config = require('config');
+const loglevel = config.get("log.level") || "info";
+const logger = require('pino')({"level": loglevel});
 const template = require('../templates');
 const router = new Router();
 const multer  = require('multer');
 const upload = multer({ dest: './uploads/' });
 const shift = require('../models/shift.js');
-const logger = require('pino')();
+
 
 module.exports = router;
 

@@ -10,6 +10,9 @@ const router = new Router();
 const template = require('../templates');
 const home = require('../models/home.js');
 const NodeCache = require( "node-cache" );
+const config = require('config');
+const loglevel = config.get("log.level") || "info";
+const logger = require('pino')({"level": loglevel});
 
 router.get('/', async (req,res) => {
     //const info = await home.home_info();

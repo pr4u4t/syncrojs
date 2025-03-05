@@ -2,6 +2,9 @@ const Router = require('express-promise-router')
 const template = require('../templates')
 const router = new Router()
 const papers = require('../models/papers.js')
+const config = require('config');
+const loglevel = config.get("log.level") || "info";
+const logger = require('pino')({"level": loglevel});
 
 module.exports = router;
 

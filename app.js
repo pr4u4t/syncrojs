@@ -1,9 +1,10 @@
 const express = require('express');
 const config = require('config');
+const loglevel = config.get("log.level") || "info";
+const logger = require('pino')({"level": loglevel});
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
 const template = require('./templates');
-const logger = require('pino')();
 
 const port = config.get('server.port') || "127.0.0.1";
 const host = config.get('server.host') || 80;
@@ -48,5 +49,5 @@ app.use(function(err,req,res,next){
 })
 
 app.listen(port, host, () => {
-  logger.debug('Node.js Express server listening on ',host,":",port)
+  logger.debug('Node.js Express server listening on '+host+":"+port)
 })
