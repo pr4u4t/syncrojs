@@ -1,9 +1,5 @@
 {% import "_pagination.twig" as pagination %}
 <div id="current_orders">
-	<form action="/current/clear" method="post" enctype="multipart/form-data">
-	<button type="submit" class="btn btn-danger mt-1">Clear Orders</button>
-	</form>
-
 	{% for row in rows %}
 	<table class="table table-bordered mt-4">
 	{#<thead>
