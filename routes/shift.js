@@ -22,12 +22,33 @@ function isNumeric(str) {
 
 router.get('/', async (req,res) => {
     template.render('shift.twig', {
-        'state': await shift.shift_state(),
-        'rows': await shift.shift_all(), 
+        'state': null,
+        'rows': null, 
         'fields': [], 
         'total': 1,  
         'current': 1,
         'url': '/shift/'
+    }).then((output) => {
+        res.end(output);
+    });
+});
+
+router.get('/info', async (req,res) => {
+    const state = await shift.shift_state();
+    const rows = await shift.shift_all();
+
+    if(req.headers['content-type'] == 'application/json') {
+        res.json({"state": state, "rows": rows});
+        return;
+    }
+   
+    template.render('shift_info.twig', {
+        'state': state,
+        'rows': rows,
+        'url': '/shift',
+        'fields': [], 
+        'total': 1,  
+        'current': 1
     }).then((output) => {
         res.end(output);
     });

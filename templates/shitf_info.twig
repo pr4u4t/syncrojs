@@ -1,0 +1,45 @@
+{% import "_pagination.twig" as pagination %}
+<div class="alert mt-4 {% if state == 'idle' %} alert-danger {% elseif state == 'working' %} alert-success {% else %} alert-warning {% endif %}" role="alert">
+  Shift: {% if state is empty %} unknow {% else %} {{ state }} {% endif %}
+</div>
+<div id="shift_list" style="overflow-x:scroll;">
+	<table class="table table-striped mt-4">
+	<thead class="table-dark">
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">StartTime</th>
+			<th scope="col">FinishTime</th>
+			<th scope="col">RunTime</th>
+			<th scope="col">StopTime</th>
+			<th scope="col">NumberOfStop</th>
+			<th scope="col">SetupChanges</th>
+			<th scope="col">QualityChanges</th>
+			<th scope="col">ShiftManager</th>
+			<th scope="col">People</th>
+			<th scope="col">AvgSpeed</th>
+			<th scope="col">Job</th>
+			<th scope="col">Comm</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for row in rows %}
+		<tr>
+			<td>{{ row.ID }}</td>
+			<td>{{ row.StartTime }}</td>
+			<td>{{ row.FinishTime }}</td>
+			<td>{{ row.RunTime }}</td>
+			<td>{{ row.StopTime }}</td>
+			<td>{{ row.NumberOfStop }}</td>
+			<td>{{ row.SetupChanges }}</td>
+			<td>{{ row.QualityChanges }}</td>
+			<td>{{ row.ShiftManager }}</td>
+			<td>{{ row.People }}</td>
+			<td>{{ row.AvgSpeed }}</td>
+			<td>{{ row.Job }}</td>
+			<td>{{ row.Comm }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+</div>
+{{ pagination.pagination(total, current, url) }}
