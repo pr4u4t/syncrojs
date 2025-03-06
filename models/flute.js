@@ -1,5 +1,6 @@
 const db = require('../db');
 const NodeCache = require("node-cache");
+const config = require('config');
 const loglevel = config.get("log.level") || "info";
 const logger = require('pino')({"level": loglevel});
 const ttl = config.get("cache.ttl") || 100;
