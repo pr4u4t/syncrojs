@@ -76,6 +76,7 @@ router.post('/start', upload.none(), async (req,res) => {
 
 router.get('/stop', async (req,res) => {
     let result = await shift.shift_end();
-    logger.debug("shift stop:",result);
+    logger.debug("shift stop:");
+    logger.debug(result);
     res.redirect('/shift/');
 });

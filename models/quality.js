@@ -1,7 +1,11 @@
 const db = require('../db');
 const NodeCache = require( "node-cache" );
-const logger = require('pino')();
-const cache = new NodeCache({ stdTTL: 100, checkperiod: 120 });
+const config = require('config');
+const loglevel = config.get("log.level") || "info";
+const logger = require('pino')({"level": loglevel});
+const ttl = config.get("cache.ttl") || 100;
+const period = config.get("cache.period") || 120;
+const cache = new NodeCache({ stdTTL: ttl, checkperiod: period });
 
 const quality_all = async function(){
     const query = 'SELECT * FROM syncro_db_3892.quality';

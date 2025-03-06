@@ -1,5 +1,7 @@
 const db = require('../db');
-const logger = require('pino')();
+const config = require('config');
+const loglevel = config.get("log.level") || "info";
+const logger = require('pino')({"level": loglevel});
 const NodeCache = require( "node-cache" );
 const {csv_to_xlsx} = require('../utils/convert.js');
 
