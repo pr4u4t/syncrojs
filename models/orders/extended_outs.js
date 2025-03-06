@@ -228,9 +228,9 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const sheetWidth0 = parseInt(mac[11]);
     const sheetWidth1 = parseInt(mac[26]);
     
-    logger.debug("WebWidth:");
+    logger.debug("extended_outs: WebWidth:");
     logger.debug(webWidth);
-    logger.debug("Sheet Width:");
+    logger.debug("extended_outs: Sheet Width:");
     logger.debug(sheetWidth0);
     logger.debug(sheetWidth1);
     

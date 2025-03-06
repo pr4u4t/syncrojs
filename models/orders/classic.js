@@ -12,7 +12,7 @@ const loglevel = config.get("log.level") || "info";
 const logger = require('pino')({"level": loglevel});
 
 var mac_parse = function(data){
-    logger.debug("mac_parse");
+    logger.debug("classic: mac_parse");
     var rows = [];
     const re = /(.{587})/g
     const rec = /(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/
@@ -23,7 +23,7 @@ var mac_parse = function(data){
         var str = match[0];
         const r = str.replace(/\s/g, '');
         if(str.length>0 && r.length==0){
-            logger.error("mac_parse: order line empty");
+            logger.error("classic: mac_parse: order line empty");
             continue;
         }
         
@@ -53,7 +53,7 @@ var m2s_serialize = function(sync){
 };
 
 var scorer = function(sc1, sc2, sc3, sc4, sc5){
-    logger.debug("Scorer:");
+    logger.debug("classic: Scorer:");
     logger.debug(sc1);
     logger.debug(sc2);
     logger.debug(sc3);
@@ -79,13 +79,13 @@ var scorer = function(sc1, sc2, sc3, sc4, sc5){
         ret += " "+parseInt(sc5);
     }
     
-    logger.debug("Scorer:", ret);
+    logger.debug("classic: Scorer:", ret);
     
     return ret;
 };
 
 var syncro_header = function(setupid, webwidth, trimtype, scoregap, qualityid, fluteid, qweight, qthickness, trim){
-    logger.debug("syncro_header")
+    logger.debug("classic: syncro_header")
     logger.debug(setupid);
     logger.debug(webwidth);
     logger.debug(trimtype)
@@ -113,7 +113,24 @@ var syncro_header = function(setupid, webwidth, trimtype, scoregap, qualityid, f
 
 var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scoreType,posType,twinOffset,scoreGap,level,sheetLength,sheetCount,sheetsStack,stacks,empty,sending){
     var ret = [];
-    logger.debug("syncro_order",onumber,delivery,cname,sheetWidth,outs,measures,scoreType,posType,twinOffset,scoreGap,level,sheetLength,sheetCount,sheetsStack,stacks,empty,sending);
+    logger.debug("classic: syncro_order");
+    logger.debug(onumber);
+    logger.debug(delivery);
+    logger.debug(cname);
+    logger.debug(sheetWidth);
+    logger.debug(outs);
+    logger.debug(measures);
+    logger.debug(scoreType);
+    logger.debug(posType);
+    logger.debug(twinOffset);
+    logger.debug(scoreGap);
+    logger.debug(level);
+    logger.debug(sheetLength);
+    logger.debug(sheetCount);
+    logger.debug(sheetsStack);
+    logger.debug(stacks);
+    logger.debug(empty);
+    logger.debug(sending);
 
     ret.push(onumber);                                       //OrderNumber0
     ret.push(delivery);                                      //Delivery0 - jakas liczba niewiadomego pochodzenia
@@ -152,7 +169,7 @@ var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scor
 
 var syncro_default_order = function(){
     var ret = []
-    logger.debug("syncro_default_order");
+    logger.debug("classic: syncro_default_order");
     const delivery = "1 01 01 0001 08 00 00 0";
     
     var header = syncro_header("7734","22200","0","30","FALA A",'B',"285","27",2000);
@@ -168,7 +185,7 @@ var syncro_default_order = function(){
 };
 
 var calculate_trim = function(webWidth, width0, outs0, width1, outs1){
-    logger.debug("calculate_trim");
+    logger.debug("classic: calculate_trim");
     logger.debug(webWidth);
     logger.debug(width0);
     logger.debug(outs0);
@@ -183,7 +200,7 @@ var calculate_trim = function(webWidth, width0, outs0, width1, outs1){
 
     
     if(width1 !== 'undefined' && outs1 !== 'undefined' && !isNaN(parseInt(width1)) && !isNaN(parseInt(outs1))){
-        logger.debug("trim calc",parseInt(width1),parseInt(outs1),parseInt(width1)*parseInt(outs1));
+        logger.debug("classic: trim calc",parseInt(width1),parseInt(outs1),parseInt(width1)*parseInt(outs1));
         ret -= parseInt(width1)*parseInt(outs1);
     }
     
@@ -198,7 +215,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const flute_row = await flute.flute_params_by_id('B');
     
     if(quality_row == null || flute_row == null){
-        logger.error("mac2syncro failed to fetch parameters");
+        logger.error("classic: mac2syncro failed to fetch parameters");
         return null;
     }
    
@@ -211,15 +228,15 @@ var mac2syncro = async function(mac,papers,quality,flute){
     const sheetWidth0 = parseInt(mac[11]);
     const sheetWidth1 = parseInt(mac[26]);
     
-    logger.debug("WebWidth:");
+    logger.debug("classic: WebWidth:");
     logger.debug(webWidth);
-    logger.debug("Sheet Width:");
+    logger.debug("classic: Sheet Width:");
     logger.debug(sheetWidth0);
     logger.debug(sheetWidth1);
     
     const trim = calculate_trim(webWidth,sheetWidth0,mac[20],sheetWidth1,mac[35]);
     if(isNaN(trim) || trim > 2300 || trim < 0){
-        logger.error("Invalid trim value "+trim);
+        logger.error("classic: Invalid trim value "+trim);
         return null;
     }
     
@@ -261,7 +278,7 @@ var orders_all = async function(){
         await psocket.connect(port,host);
         result = await psocket.write(cmd);
         if(result != cmd.length){
-            logger.error('Command send failed');
+            logger.error('classic: command send failed');
             return null;
         }
         xmlbuff = await psocket.readAll();
@@ -270,7 +287,7 @@ var orders_all = async function(){
             
         return (Array.isArray(jml.NewDataSet.DryEndList)) ? jml.NewDataSet.DryEndList : [ jml.NewDataSet.DryEndList ];
     }catch(error){
-        logger.error('Failed to obtain orders');
+        logger.error('classic: failed to obtain orders');
         logger.error(error);
         return null;
     }
@@ -280,7 +297,7 @@ var orders_delete_all = async function(){
     const cmd = 'Orders.Delete';
     
     if(dry === true){
-        logger.debug("orders_delete_all",cmd);
+        logger.debug("classic: orders_delete_all",cmd);
         return true;
     }
     
@@ -289,14 +306,14 @@ var orders_delete_all = async function(){
         await psocket.connect(port,host);
         var result = await psocket.write(cmd);
         if(result != cmd.length){
-            logger.error('Command send failed');
+            logger.error('classic: command send failed');
             return null;
         }
         result = await psocket.readAll();
         result = result.toString();
         return result.toLowerCase() == 'ok';
     }catch(error){
-        logger.error('Failed to delete orders',error);
+        logger.error('classic: failed to delete orders',error);
         return null;
     }  
 };
@@ -305,12 +322,12 @@ var orders_add = async function(data){
     let cmd = m2s_serialize(data);
     
     if(cmd === null){
-        logger.error("Failed to parse "+data);
+        logger.error("classic: failed to parse "+data);
         return false;
     }
     
     if(dry === true){
-        logger.debug("orders_add");
+        logger.debug("classic: orders_add");
         return true;
     }
     
@@ -319,14 +336,14 @@ var orders_add = async function(data){
         await psocket.connect(port,host);
         var result = await psocket.write(cmd);
         if(result != cmd.length){
-            logger.error('Failed to send command to syncro');
+            logger.error('classic: Failed to send command to syncro');
             return null;
         }
         result = await psocket.readAll();
         result = result.toString();
         return result.toLowerCase() == "ok";
     }catch(error){
-        logger.error('Failed to add order');
+        logger.error('classic: Failed to add order');
         logger.error(error);
         return null;
     }
@@ -335,18 +352,18 @@ var orders_add = async function(data){
 var validate = async function(rows,papers,quality,flute){
     var ret = [];
     
-    logger.debug("Validation started");
+    logger.debug("classic: Validation started");
     logger.info(rows.length);
 
     for(let i = 0; i < rows.length; ++i){
-        logger.info("validation step");
+        logger.info("classic: validation step");
         let result = await mac2syncro(rows[i],papers,quality,flute);
         if(result === null){
             ret.push(i);
         }
     }
 
-    logger.debug("Validation ended");
+    logger.debug("classic: validation ended");
     
     return ret;
 };
