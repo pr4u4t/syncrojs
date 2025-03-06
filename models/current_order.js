@@ -3,11 +3,16 @@ const loglevel = config.get("log.level") || "info";
 const logger = require('pino')({"level": loglevel});
 const backend = config.get("parser.type") || "classic";
 
-const choose = function(){
+const choose = function(back = null){
     logger.debug("Attempting to choose orders backend");
     var ret = null;
 
-    switch(backend){
+    if(back == null){
+        logger.debug('backend parameter is null using config value');
+        back = backend;
+    }
+
+    switch(back){
         case 'classic':
             logger.debug('selecting classic parser');
             ret = require('./orders/classic');
@@ -26,4 +31,7 @@ const choose = function(){
     return ret;
 };
 
-module.exports = choose();
+var modexp = choose();
+modexp['chooser'] = choose;
+
+module.exports = modexp;
