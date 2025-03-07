@@ -7,7 +7,7 @@ const {
     orders_delete_all,
     orders_add,
     validate
-} = require('../../models/current_order.js');
+} = require('../../models/orders/classic.js');
 
 const fs = require('node:fs');
 const path = require('path');

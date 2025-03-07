@@ -4,6 +4,9 @@ dev:
 production:
 	docker build -t syncrojs-prod --build-arg NODE_ENV=production .
 
+test:
+	docker build -t syncrojs-test --build-arg NODE_ENV=test .
+
 run-dev:
 	docker kill syncrojs-dev
 	docker rm syncrojs-dev
@@ -13,3 +16,7 @@ run-prod:
 	docker kill syyncrojs-prod
 	docker rm syncrojs-prod
 	docker run --name syncrojs-prod -d -p 3000:3000 syncrojs-prod
+
+run-test:
+	docker rm syncrojs-test
+	docker run --name syncrojs-test syncrojs-test
