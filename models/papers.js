@@ -1,10 +1,7 @@
 const db = require('../db');
-const NodeCache = require("node-cache");
-const config = require('config');
+//const config = require('config');
 const logger = require('../utils/logger');
-const ttl = config.get("cache.ttl") || 100;
-const period = config.get("cache.period") || 120;
-const cache = new NodeCache({ stdTTL: ttl, checkperiod: period });
+const cache = require('../utils/cache');
 
 const papers_all = async function(){
     const query = 'SELECT * FROM syncro_db_3892.papers';

@@ -34,6 +34,6 @@
       "period": 120
     },
     "log":{
-      "level": "debug"
+      "level": "none"
     }
 }
