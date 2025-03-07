@@ -20,18 +20,32 @@ test('fields', () => {
     expect(fields.length).toBeGreaterThan(0);
 });
 
-test('mac_parse', () => {
-    let macs = fs.readdirSync('tests/models');
-    macs = macs.filter(file => {
-        const ext = path.extname(file).toLowerCase();
-        return ext === '.dat';
-    });
+test('mac_parse_5_bigs', () => {
+    const data = fs.readFileSync('tests/models/Ord_mac 5 bigow.dat', 'utf8');
+    expect(data.length).toBeGreaterThan(0);
+    const parsed = mac_parse(data);
+    expect(parsed.length).toEqual(2);
+    const order1 = parsed[0];
+    const order2 = parsed[1];
+    expect(parseInt(order1[20])).toEqual(2); //number of outs 1 to be equal 2
+});
 
+test('mac_parse_10_belts_0_trimm', () => {
+    const data = fs.readFileSync('tests/models/Ord_mac 10 pasow 0 trimm.dat', 'utf8');
+    const parsed = mac_parse(data);
+    expect(parsed.length).toBeGreaterThan(0);
+});
 
-    for(let i = 0; i < macs.length; i++){
-        const data = fs.readFileSync('tests/models/'+macs[i], 'utf8');
-        expect(mac_parse(data).length).toBeGreaterThan(0);
-    }
+test('mac_parse_12_belts', () => {
+    const data = fs.readFileSync('tests/models/Ord_mac 12 pasow.dat', 'utf8');
+    const parsed = mac_parse(data);
+    expect(parsed.length).toBeGreaterThan(0);
+});
+
+test('mac_parse_single', () => {
+    const data = fs.readFileSync('tests/models/Ord_mac 1 zam.dat', 'utf8');
+    const parsed = mac_parse(data);
+    expect(parsed.length).toBeGreaterThan(0);
 });
 
 test('validate_5_bigs', async () => {

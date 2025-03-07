@@ -1,7 +1,6 @@
 const Router = require('express-promise-router');
 const config = require('config');
-const loglevel = config.get("log.level") || "info";
-const logger = require('pino')({"level": loglevel});
+const logger = require('../utils/logger');
 const template = require('../templates');
 const multer  = require('multer');
 const upload = multer({ dest: './uploads/' });

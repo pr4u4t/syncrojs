@@ -1,6 +1,5 @@
 const config = require('config');
-const loglevel = config.get("log.level") || "info";
-const logger = require('pino')({"level": loglevel});
+const logger = require('../utils/logger');
 const backend = config.get("parser.type") || "classic";
 
 const choose = function(back = null){

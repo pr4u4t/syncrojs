@@ -3,8 +3,7 @@ const template = require('../templates');
 const router = new Router();
 const quality = require('../models/quality.js');
 const config = require('config');
-const loglevel = config.get("log.level") || "info";
-const logger = require('pino')({"level": loglevel});
+const logger = require('../utils/logger');
 
 module.exports = router;
 

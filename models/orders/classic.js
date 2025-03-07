@@ -8,10 +8,55 @@ const config = require('config');
 const port = config.get('syncro.port');
 const host = config.get('syncro.host');
 const dry = config.get('app.dry');
-const loglevel = config.get("log.level") || "info";
-const logger = require('pino')({"level": loglevel});
+const logger = require('../../utils/logger');
 
-var mac_parse = function(data){
+const fields = [
+    //header fields
+    "program number", 
+    "scheduled papers", 
+    "fosber ID", 
+    "flute", 
+    "flute type", 
+    "rollsize", 
+    "linear meters", 
+    "G",
+    //order 1 fields
+    "customer name 1", 
+    "customer code 1", 
+    "order number 1", 
+    "sheet width 1", 
+    "1 score 1", 
+    "2 score 1", 
+    "3 score 1", 
+    "4 score 1", 
+    "5 score 1", 
+    "sheets per stack 1", 
+    "sheet length 1", 
+    "quantity of sheets 1", 
+    "outs 1", 
+    "linear meters 1", 
+    "20",
+    //order 2 fields
+    "customer name 2", 
+    "customer code 2", 
+    "order number 2", 
+    "sheet width 2", 
+    "1 score 2", 
+    "2 score 2", 
+    "3 score 2", 
+    "4 score 2", 
+    "5 score 2", 
+    "sheets per stack 2", 
+    "sheet length 2", 
+    "quantity of sheets 2", 
+    "outs 2", 
+    "linear meters 2", 
+    "10"
+];
+
+
+
+const mac_parse = function(data){
     logger.debug("classic: mac_parse");
     var rows = [];
     const re = /(.{587})/g
@@ -38,7 +83,7 @@ var mac_parse = function(data){
     return rows;
 };
 
-var m2s_serialize = function(sync){
+const m2s_serialize = function(sync){
     logger.debug("m2s_serialize");
     const sep = '\u241E';
     var ret = "Order.Add( "+sep;
@@ -52,7 +97,7 @@ var m2s_serialize = function(sync){
     return ret
 };
 
-var scorer = function(sc1, sc2, sc3, sc4, sc5){
+const scorer = function(sc1, sc2, sc3, sc4, sc5){
     logger.debug("classic: Scorer:");
     logger.debug(sc1);
     logger.debug(sc2);
@@ -84,7 +129,7 @@ var scorer = function(sc1, sc2, sc3, sc4, sc5){
     return ret;
 };
 
-var syncro_header = function(setupid, webwidth, trimtype, scoregap, qualityid, fluteid, qweight, qthickness, trim){
+const syncro_header = function(setupid, webwidth, trimtype, scoregap, qualityid, fluteid, qweight, qthickness, trim){
     logger.debug("classic: syncro_header")
     logger.debug(setupid);
     logger.debug(webwidth);
@@ -111,7 +156,7 @@ var syncro_header = function(setupid, webwidth, trimtype, scoregap, qualityid, f
     return ret
 };
 
-var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scoreType,posType,twinOffset,scoreGap,level,sheetLength,sheetCount,sheetsStack,stacks,empty,sending){
+const syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scoreType,posType,twinOffset,scoreGap,level,sheetLength,sheetCount,sheetsStack,stacks,empty,sending){
     var ret = [];
     logger.debug("classic: syncro_order");
     logger.debug(onumber);
@@ -167,7 +212,7 @@ var syncro_order = function(onumber,delivery,cname,sheetWidth,outs,measures,scor
     return ret;
 };
 
-var syncro_default_order = function(){
+const syncro_default_order = function(){
     var ret = []
     logger.debug("classic: syncro_default_order");
     const delivery = "1 01 01 0001 08 00 00 0";
@@ -184,7 +229,7 @@ var syncro_default_order = function(){
     return ret;
 };
 
-var calculate_trim = function(webWidth, width0, outs0, width1, outs1){
+const calculate_trim = function(webWidth, width0, outs0, width1, outs1){
     logger.debug("classic: calculate_trim");
     logger.debug(webWidth);
     logger.debug(width0);
@@ -207,7 +252,7 @@ var calculate_trim = function(webWidth, width0, outs0, width1, outs1){
     return ret;
 };
 
-var mac2syncro = async function(mac,papers,quality,flute){
+const mac2syncro = async function(mac,papers,quality,flute){
     var ret;
     const delivery = "1 01 01 0001 08 00 00 0";
     
@@ -267,9 +312,7 @@ var mac2syncro = async function(mac,papers,quality,flute){
     return ret  
 };
 
-var fields = ["program number", "scheduled papers", "fosber ID", "flute", "flute type", "rollsize", "linear meters", "G", "customer name 1", "customer code 1", "order number 1", "sheet width 1", "1 score", "2 score", "3 score", "4 score", "5 score", "sheets per stack 1", "sheet length 1", "quantity of sheets 1", "outs 1", "linear meters 1", "20", "customer name 2", "customer code 2", "order number 2", "sheet width 2", "1 score", "2 score", "3 score", "4 score", "5 score", "sheets per stack 2", "sheet length 2", "quantity of sheets 2", "outs 2", "linear meters 2", "10"];
-
-var orders_all = async function(){
+const orders_all = async function(){
     const cmd = 'Orders.Get';
     
     try{
@@ -293,7 +336,7 @@ var orders_all = async function(){
     }
 };
 
-var orders_delete_all = async function(){
+const orders_delete_all = async function(){
     const cmd = 'Orders.Delete';
     
     if(dry === true){
@@ -318,7 +361,7 @@ var orders_delete_all = async function(){
     }  
 };
 
-var orders_add = async function(data){
+const orders_add = async function(data){
     let cmd = m2s_serialize(data);
     
     if(cmd === null){
@@ -349,7 +392,7 @@ var orders_add = async function(data){
     }
 };
 
-var validate = async function(rows,papers,quality,flute){
+const validate = async function(rows,papers,quality,flute){
     var ret = [];
     
     logger.debug("classic: Validation started");

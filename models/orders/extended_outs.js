@@ -8,8 +8,7 @@ const config = require('config');
 const port = config.get('syncro.port');
 const host = config.get('syncro.host');
 const dry = config.get('app.dry');
-const loglevel = config.get("log.level") || "info";
-const logger = require('pino')({"level": loglevel});
+const logger = require('../../utils/logger');
 
 var mac_parse = function(data){
     logger.debug("extended_outs: mac_parse");

@@ -1,8 +1,7 @@
 const db = require('../db');
 const NodeCache = require("node-cache");
 const config = require('config');
-const loglevel = config.get("log.level") || "info";
-const logger = require('pino')({"level": loglevel});
+const logger = require('../utils/logger');
 const ttl = config.get("cache.ttl") || 100;
 const period = config.get("cache.period") || 120;
 const cache = new NodeCache({ stdTTL: ttl, checkperiod: period });

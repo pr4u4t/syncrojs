@@ -4,8 +4,7 @@ const fs = require('fs');
 var net = require('net');
 const {PromiseSocket, TimeoutError} = require("promise-socket");
 const config = require('config');
-const loglevel = config.get("log.level") || "info";
-const logger = require('pino')({"level": loglevel});
+const logger = require('../utils/logger');
 
 const dry = config.get('app.dry');
 const port = config.get('syncro.port');
