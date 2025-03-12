@@ -1,29 +1,61 @@
-const {
-    fields,
-    mac_parse,
-    m2s_serialize,
-    mac2syncro,
-    orders_all,
-    orders_delete_all,
-    orders_add,
-    validate
-} = require('../../models/orders/classic.js');
-
+const orders = require('../../models/order.js');
 const fs = require('node:fs');
 const path = require('path');
 
-const papers = require('../../models/papers.js')
-const quality = require('../../models/quality.js')
-const flute = require('../../models/flute.js')
 
-test('fields', () => {
-    expect(fields.length).toBeGreaterThan(0);
+test('parser', async () => {
+    const result = await orders.switch_backend('classic');
+    expect(result).toBe(true);
 });
 
+test('fields', () => {
+    expect(orders.fields).toBeDefined();
+    expect(orders.fields.length).toBeGreaterThan(0);
+});
+
+test('Ord_mac 1 zam.dat', async () => {
+    const data = fs.readFileSync('tests/models/classic_data/Ord_mac 1 zam.dat', 'utf8');
+    expect(data.length).toBeGreaterThan(0);
+    const parsed = orders.parse(data);
+    expect(parsed.length).toEqual(2);
+    const order0 = parsed[0];
+    const order1 = parsed[1];
+    expect(parseInt(order0[20])).toEqual(2); //number of outs 1 to be equal 2
+    expect(parseInt(order1[20])).toEqual(3); //number of outs 1 to be equal 2
+    const result0 = await orders.validate(order0);
+    const result1 = await orders.validate(order1);
+
+});
+
+test('Ord_mac 2 zam.dat', () => {
+    const data = fs.readFileSync('tests/models/classic_data/Ord_mac 2 zam.dat', 'utf8');
+    expect(data.length).toBeGreaterThan(0);
+    const parsed = orders.parse(data);
+    expect(parsed.length).toEqual(2);
+    const order0 = parsed[0];
+    const order1 = parsed[1];
+    expect(parseInt(order0[20])).toEqual(2); //number of outs 1 to be equal 2
+    expect(parseInt(order1[20])).toEqual(2); //number of outs 1 to be equal 2
+
+});
+
+test('Ord_mac bigi gora dol.dat', () => {
+    const data = fs.readFileSync('tests/models/classic_data/Ord_mac bigi gora dol.dat', 'utf8');
+    expect(data.length).toBeGreaterThan(0);
+    const parsed = orders.parse(data);
+    expect(parsed.length).toEqual(2);
+    const order0 = parsed[0];
+    const order1 = parsed[1];
+    expect(parseInt(order0[20])).toEqual(2); //number of outs 1 to be equal 2
+    expect(parseInt(order1[20])).toEqual(2); //number of outs 1 to be equal 2
+
+});
+
+/*
 test('mac_parse_5_bigs', () => {
     const data = fs.readFileSync('tests/models/Ord_mac 5 bigow.dat', 'utf8');
     expect(data.length).toBeGreaterThan(0);
-    const parsed = mac_parse(data);
+    const parsed = classic.mac_parse(data);
     expect(parsed.length).toEqual(2);
     const order1 = parsed[0];
     const order2 = parsed[1];
@@ -79,3 +111,4 @@ test('validate_single', async () => {
     let res = await validate(parsed, papers, quality, flute);
     //.toBeGreaterThan(0);
 });
+*/

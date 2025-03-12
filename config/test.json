@@ -13,7 +13,8 @@
     },
     "syncro": {
       "host": "192.168.0.148",
-      "port": 13000
+      "port": 13000,
+      "timeout": 30000
     },
     "orders": {
       "shift": {
@@ -22,7 +23,8 @@
       },
       "parser":{
         "type": "classic"
-      }
+      },
+      "max_trim": 2300
     },
     "app": {
       "debug": true,
@@ -34,6 +36,6 @@
       "period": 120
     },
     "log":{
-      "level": "none"
+      "level": "silent"
     }
 }
