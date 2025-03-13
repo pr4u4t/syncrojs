@@ -92,14 +92,14 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
 router.post('/import/confirm', upload.none(), async (req, res) => {
     logger.debug("post /current/import/confirm");
     if(typeof req.body.accept !== undefined){
-        const shift_state = await shift.shift_state();
-        
-        if(shift_state == 'idle'){
-            req.session.step = shift_skip.skip_idle;
-        }else{
-            req.session.step = shift_skip.skip_working;
+        if(shift_skip.check_skip === true){
+            const shift_state = await shift.shift_state();
+            if(shift_state == 'idle'){
+                req.session.step = shift_skip.skip_idle;
+            } else {
+                req.session.step = shift_skip.skip_working;
+            }
         }
-        
         template.render('current_progress.twig', {
             'next': "/current",
             'txt': "Go to Orders"

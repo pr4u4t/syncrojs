@@ -19,7 +19,8 @@
     "orders": {
       "shift": {
         "skip_working": 0,
-        "skip_idle": 0
+        "skip_idle": 0,
+        "check_on_add": false
       },
       "parser":{
         "type": "classic"
