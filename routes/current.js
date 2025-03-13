@@ -68,9 +68,9 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
         rows = await ordmac.parse(data);
         for(let i = 0;  i < rows.length; ++i){
             const tmp = await ordmac.validate(rows[i], papers, quality, flute);
-	    if(tmp.result === null || tmp.result === undefined){
-            	val[i] = tmp;
-	    }
+            if(tmp.result === null || tmp.result === undefined){
+                val[i] = tmp;
+            }
         }
         req.session.current = rows;
     } catch (err) {
