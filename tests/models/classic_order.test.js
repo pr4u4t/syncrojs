@@ -4,6 +4,10 @@ const path = require('path');
 const config = require('config');
 const timeout = config.get("syncro.timeout") || 30000;
 
+beforeAll(async () => {
+    await orders.switch_backend('classic');
+});
+
 // positive tests
 test('parser', async () => {
     const result = await orders.switch_backend('classic');

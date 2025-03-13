@@ -74,38 +74,38 @@ async function syncroConnect(){
 
 const chooser = function(back = null){
     logger.debug("Attempting to choose orders backend");
-    var ret = null;
 
     if(back == null){
         logger.debug('backend parameter is null using config value');
         back = backtype;
     }
+
     try{
         switch(back){
             case 'classic':
                 logger.debug('selecting classic parser');
-                ret = require('./orders/classic');
+                backend = require('./orders/classic');
                 current = 'classic';
                 break;
 
             case 'extended_outs':
                 logger.debug('selecting extended outs parser');
-                ret = require('./orders/extended_outs');
+                backend = require('./orders/extended_outs');
                 current = 'extended_outs';
                 break;
 
             default:
                 logger.debug('no valid parser configured, defaulting to classic');
-                ret = require('./orders/classic');
+                backend = require('./orders/classic');
                 current = 'classic';
         }
 
-        return Object.assign({}, ret, {"type": back});
+        return true;
     }catch(error){
         logger.error(error);
     }
 
-    return null;
+    return false;
 };
 
 const m2s_serialize = function(sync){
@@ -549,8 +549,7 @@ const switch_backend = async function(back){
         return false;
     }
 
-    back = chooser(back);
-    return true;
+    return chooser(back);
 };
 
 const default_backend = function(){
@@ -603,7 +602,7 @@ const dump = function(data){
 };
 //------------------------------------------------------------------------------
 
-backend = chooser();
+chooser();
 
 module.exports = {
     fields,
