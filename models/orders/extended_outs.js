@@ -30,20 +30,16 @@ var mac_parse = function(data){
 };
 
 var validate = async function(rows, papers, quality, flute){
-    var ret = [];
+    logger.debug("classic: Validation started");
+    logger.info(`classic: mac rows: ${data.length}`);
     
-    logger.debug("extended_outs: validation started");
-    logger.info(rows.length);
-
-    for(let i = 0; i < rows.length; ++i){
-        logger.info("extended_outs: validation step");
-        let result = await mac2syncro(rows[i], papers, quality, flute);
-        if(result === null){
-            ret.push(i);
-        }
+    if(isFlatArray(data) !== true){
+        const err = 'invalid data parameter should be flat array containing one order in mac format';
+        logger.error(err);
+        return {result: null, error: err};
     }
-
-    logger.debug("extended_outs: validation ended");
+    
+    const ret = await parent.mac2syncro(data, papers, quality, flute);
     
     return ret;
 };

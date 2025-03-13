@@ -2,6 +2,10 @@ const config = require('config');
 const dry = config.get('app.dry');
 const logger = require('../../utils/logger');
 
+function isFlatArray(arr) {
+    return Array.isArray(arr) && arr.every(item => !Array.isArray(item));
+  }
+
 const mac_parse = function(data, parent){
     logger.debug("classic: mac_parse");
     var rows = [];
@@ -29,24 +33,17 @@ const mac_parse = function(data, parent){
     return rows;
 };
 
-
-
-const validate = async function(rows, papers, quality, flute, parent){
-    var ret = [];
-    
+const validate = async function(data, papers, quality, flute, parent){
     logger.debug("classic: Validation started");
-    logger.info(`classic: rows: ${rows.length}`);
+    logger.info(`classic: mac rows: ${data.length}`);
 
-    for(let i = 0; i < rows.length; ++i){
-        logger.info("classic: validation step");
-        let result = await parent.mac2syncro(rows[i],papers,quality,flute);
-        if(result === null){
-            ret.push(i);
-        }
+    if(isFlatArray(data) !== true){
+        logger.error('invalid data parameter should be flat array containing one order in mac format');
+        return false;
     }
 
-    logger.debug("classic: validation ended");
-    
+    const ret = await parent.mac2syncro(data, papers, quality, flute);
+
     return ret;
 };
 

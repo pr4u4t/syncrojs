@@ -12,8 +12,12 @@ const pgpool = new Pool({
     database: db,
     password: pass,
     port: port,
-})
+});
+
+const query = async function(text, params){
+    return await pgpool.query(text,params);
+};
 
 module.exports = {
-    query: (text, params) => pgpool.query(text,params),
+    query
 }

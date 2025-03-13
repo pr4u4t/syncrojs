@@ -17,46 +17,46 @@ var backend = null;
 
 const fields = [
     //header fields
-    "program number", 
-    "scheduled papers", 
-    "fosber ID", 
-    "flute", 
-    "flute type", 
-    "rollsize", 
-    "linear meters", 
-    "G",
+    "program number",           //0
+    "scheduled papers",         //1
+    "fosber ID",                //2
+    "flute",                    //3
+    "flute type",               //4
+    "rollsize",                 //5
+    "linear meters",            //6
+    "G",                        //7
     //order 1 fields
-    "customer name 1", 
-    "customer code 1", 
-    "order number 1", 
-    "sheet width 1", 
-    "1 score 1", 
-    "2 score 1", 
-    "3 score 1", 
-    "4 score 1", 
-    "5 score 1", 
-    "sheets per stack 1", 
-    "sheet length 1", 
-    "quantity of sheets 1", 
-    "outs 1", 
-    "linear meters 1", 
-    "20",
+    "customer name 1",          //8
+    "customer code 1",          //9
+    "order number 1",           //10
+    "sheet width 1",            //11
+    "1 score 1",                //12
+    "2 score 1",                //13
+    "3 score 1",                //14
+    "4 score 1",                //15
+    "5 score 1",                //16
+    "sheets per stack 1",       //17
+    "sheet length 1",           //18
+    "quantity of sheets 1",     //19
+    "outs 1",                   //20
+    "linear meters 1",          //21
+    "20",                       //22
     //order 2 fields
-    "customer name 2", 
-    "customer code 2", 
-    "order number 2", 
-    "sheet width 2", 
-    "1 score 2", 
-    "2 score 2", 
-    "3 score 2", 
-    "4 score 2", 
-    "5 score 2", 
-    "sheets per stack 2", 
-    "sheet length 2", 
-    "quantity of sheets 2", 
-    "outs 2", 
-    "linear meters 2", 
-    "10"
+    "customer name 2",          //23
+    "customer code 2",          //24
+    "order number 2",           //25
+    "sheet width 2",            //26
+    "1 score 2",                //27
+    "2 score 2",                //28
+    "3 score 2",                //29
+    "4 score 2",                //30
+    "5 score 2",                //31
+    "sheets per stack 2",       //32
+    "sheet length 2",           //33
+    "quantity of sheets 2",     //34
+    "outs 2",                   //35
+    "linear meters 2",          //36
+    "10"                        //37
 ];
 
 function isInteger(value) {
@@ -277,7 +277,7 @@ const calculate_trim = function(webWidth, width0, outs0, width1, outs1){
     }
 
     
-    if(width1 !== undefined && outs1 !== undefined && isIntger(width1) && isInteger(outs1)){
+    if(width1 !== undefined && outs1 !== undefined && isInteger(width1) && isInteger(outs1)){
         const w1 = parseInt(width1);
         const o1 = parseInt(outs1);
         logger.debug(`trim calc 1 ${w1} ${o1} ${w1*o1}`);
@@ -291,10 +291,12 @@ const calculate_trim = function(webWidth, width0, outs0, width1, outs1){
 
 const mac2syncro = async function(mac){
     var ret;
+    var order;
 
-    if(Array.isArray(mac) || mac.length !== 20){
-        logger.error('Invalid mac data');
-        return null;
+    if(Array.isArray(mac) !== true || mac.length !== 42){
+        const err = 'mac2syncro: Invalid mac data mac.length != 42';
+        logger.error(err);
+        return {result: null, error: err};
     }
 
     const delivery = "1 01 01 0001 08 00 00 0";
@@ -302,8 +304,9 @@ const mac2syncro = async function(mac){
     const flute_row = await flute.flute_params_by_id('B');
     
     if(quality_row == null || flute_row == null){
-        logger.error("classic: mac2syncro failed to fetch parameters");
-        return null;
+        const err = "mac2syncro: failed to fetch parameters";
+        logger.error(err);
+        return {result: null, error: err};
     }
    
     logger.info(quality_row);
@@ -327,29 +330,31 @@ const mac2syncro = async function(mac){
     const sheetLength1 = mac[33];
     const sheetCount1 = mac[34];
 
-    logger.debug("classic: WebWidth:");
+    logger.debug("mac2syncro: WebWidth:");
     logger.debug(webWidth);
-    logger.debug("classic: Sheet Width:");
+    logger.debug("mac2syncro: Sheet Width:");
     logger.debug(sheetWidth0);
     logger.debug(sheetWidth1);
     
     const trim = calculate_trim(webWidth, sheetWidth0, outs0, sheetWidth1, outs1);
     if(isNaN(trim) || trim > 2300 || trim < 0){
-        logger.error("classic: Invalid trim value "+trim);
-        return null;
+        const err = `mac2syncro: Invalid trim value ${trim}`;
+        logger.error(err);
+        return {result: null, error: err};
     }
     
     /**	
      * HEADER
     */
     const header = syncro_header(setupid, webWidth, 0, qualityGap, qualityId, 'B', qualityWeight, qualityThickness, trim);
-    
+    ret = header;
+
     /**
      * ORDER 0  
      */
     const sheetsStack0 = parseInt(mac[17]);
     const scorer0 = scorer(mac[12], mac[13], mac[14], mac[15], mac[16]);
-    const order0 = syncro_order(
+    order = syncro_order(
         clientNum0, 
         delivery, 
         clientName0, 
@@ -368,43 +373,44 @@ const mac2syncro = async function(mac){
         0,
         84
     );
-   
+    ret = ret.concat(order);
+
     /**
      * ORDER 1
      */
-    const sheetsStack1 = parseInt(mac[32]);
-    const scorer1 = scorer(mac[27], mac[28], mac[29], mac[30], mac[31]);
-    const order1 = (clientNum1 == "") ? syncro_order(" ", delivery, " ", " ", " ", " ", " ", " "," ", " ", " ", " ", " ", " ", " ", " ", " ") 
-                                      : syncro_order(
-                                        clientNum1, 
-                                        delivery, 
-                                        clientName1, 
-                                        sheetWidth1, 
-                                        outs1, 
-                                        scorer1, 
-                                        "A", 
-                                        "2", 
-                                        " ", 
-                                        " ", 
-                                        "1", 
-                                        sheetLength1, 
-                                        sheetCount0, 
-                                        sheetsStack1/2, 
-                                        1, 
-                                        0, 
-                                        84
-                                    );
-    
+    if(clientNum1 !== ""){
+        const sheetsStack1 = parseInt(mac[32]);
+        const scorer1 = scorer(mac[27], mac[28], mac[29], mac[30], mac[31]);
+        order =  syncro_order(
+            clientNum1, 
+            delivery, 
+            clientName1, 
+            sheetWidth1, 
+            outs1, 
+            scorer1, 
+            "A", 
+            "2", 
+            " ", 
+            " ", 
+            "1", 
+            sheetLength1, 
+            sheetCount1, 
+            sheetsStack1/2, 
+            1, 
+            0, 
+            84
+        );
+    } else {
+        order = syncro_order(" ", delivery, " ", " ", " ", " ", " ", " "," ", " ", " ", " ", " ", " ", " ", " ", " ");
+    }
+    ret = ret.concat(order);
     /**
      * ORDER 2
      */
-    const order2 = syncro_order(" ", delivery, " "," "," ","0"," "," "," "," "," "," "," "," "," "," "," ");
-    
-    ret = header.concat(order0);
-    ret = ret.concat(order1);
-    ret = ret.concat(order2);
-    
-    return ret  
+    order = syncro_order(" ", delivery, " "," "," ","0"," "," "," "," "," "," "," "," "," "," "," ");
+    ret = ret.concat(order);
+
+    return {result: ret, error: null};
 };
 
 const orders_add = async function(data){
