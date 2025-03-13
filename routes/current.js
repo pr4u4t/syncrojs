@@ -81,7 +81,7 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
         'invalid': val,
         'total': 1,  
         'current': 1,
-        'url': '/current/import/confirm'
+        'url': '/current/import'
     }).then((output) => {
         res.end(output);
     });
