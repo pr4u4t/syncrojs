@@ -39,7 +39,7 @@ Orders Validation Result
 {{ pagination.pagination(total, current, url) }}
 <div>
   <h3> Summary: </h3>
-  <p>Total/Failed:  {{rows|length}}/{{invalid|length}}</p>
+  <p>Total/Success/Failed:  {{rows|length}}/{{rows|length - invalid|length}}/{{invalid|length}}</p>
 </div>
 <form method="post" action="{{url}}" enctype="multipart/form-data">
   <div class="row">
@@ -50,4 +50,18 @@ Orders Validation Result
     </div>
   </div>
 </form>
+  {% if invalid|length > 0 %} 
+    <div class="row">
+    {% for inv in invalid %}
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Failed to parse</h4>
+        <p>{{ inv.error }}</p>
+        {# 
+          <hr>
+          <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+        #}
+      </div>
+    {%endfor%}
+    </div>
+  {% endif %}
 {% endblock %}
