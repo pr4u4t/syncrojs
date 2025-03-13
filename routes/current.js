@@ -76,8 +76,7 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
     } catch (err) {
         logger.error(`order add post ${err}`);
     }
-logger.info(`LENGTH: ${val.length}`);
-logger.info(val);
+
     template.render('current_confirm.twig', {
         'rows': rows, 
         'fields': ordmac.fields,
