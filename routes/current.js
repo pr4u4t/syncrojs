@@ -64,15 +64,17 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
 
     logger.debug("post /current/import");
     try {
-        const data = fs.readFileSync(req.file.path, 'utf8')
-        rows = ordmac.mac_parse(data);
-        for(var row in rows){
-            const tmp = await ordmac.validate(row, papers, quality, flute);
-            val.push(tmp);
+        const data = fs.readFileSync(req.file.path, 'utf8');
+        rows = await ordmac.parse(data);
+        for(let i = 0;  i < rows.length; ++i){
+            const tmp = await ordmac.validate(rows[i], papers, quality, flute);
+	    if(tmp.result === null || tmp.result === undefined){
+            	val[i] = tmp;
+	    }
         }
         req.session.current = rows;
     } catch (err) {
-        logger.error("order add post",err);
+        logger.error(`order add post ${err}`);
     }
 
     template.render('current_confirm.twig', {
