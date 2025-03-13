@@ -59,7 +59,7 @@ Orders Validation Result
   <div class="row">
     <div class="col-md-9"></div>
     <div class="col-md-3">
-      <button type="submit" class="btn btn-success mt-1 float-end" name="accept" {% if invalid|keys|length > 0 || rows|length - invalid|keys|length == 0 %} disabled {% endif %}>Accept</button>
+      <button type="submit" class="btn btn-success mt-1 float-end" name="accept" {% if invalid|keys|length > 0 or rows|length - invalid|keys|length == 0 %} disabled {% endif %}>Accept</button>
       <a href="{{url}}" class="btn btn-danger mt-1 float-end me-2" name="deny">Deny</a>
     </div>
   </div>
