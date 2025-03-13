@@ -10,6 +10,20 @@ Orders Validation Result
 {% endblock %}
 
 {% block content %}
+  {% if invalid|length > 0 %} 
+    <div class="row">
+    {% for k, inv in invalid %}
+      <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Failed to parse order: {{ k }}</h4>
+        <p>{{ inv.error }}</p>
+        {# 
+          <hr>
+          <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+        #}
+      </div>
+    {%endfor%}
+    </div>
+  {% endif %}
 <div id="current_confirm" style="overflow-x:scroll;">
   <table class="table mt-4 table-striped">
     <thead class="table-dark">
@@ -50,18 +64,4 @@ Orders Validation Result
     </div>
   </div>
 </form>
-  {% if invalid|length > 0 %} 
-    <div class="row">
-    {% for inv in invalid %}
-      <div class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Failed to parse</h4>
-        <p>{{ inv.error }}</p>
-        {# 
-          <hr>
-          <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-        #}
-      </div>
-    {%endfor%}
-    </div>
-  {% endif %}
 {% endblock %}
