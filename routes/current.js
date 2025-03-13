@@ -60,13 +60,17 @@ router.get('/import', async (req, res) => {
 
 router.post('/import', upload.single('orderFile'), async (req, res) => {
     var rows;
-    var val;
+    var val = [];
+
     logger.debug("post /current/import");
     try {
         const data = fs.readFileSync(req.file.path, 'utf8')
-        rows = ordmac.mac_parse(data)
-        val = await ordmac.validate(rows,papers,quality,flute)
-        req.session.current = rows
+        rows = ordmac.mac_parse(data);
+        for(var row in rows){
+            const tmp = await ordmac.validate(row, papers, quality, flute);
+            val.push(tmp);
+        }
+        req.session.current = rows;
     } catch (err) {
         logger.error("order add post",err);
     }
