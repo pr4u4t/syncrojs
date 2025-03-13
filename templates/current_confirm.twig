@@ -40,7 +40,7 @@ Orders Validation Result
     </thead>
     <tbody>
       {% for row in rows %}
-        <tr {% if loop.index0 in invalid %} class="table-danger" {% endif %}>
+        <tr {% if invalid[loop.index0] is defined %} class="table-danger" {% endif %}>
           <td> {{ loop.index }} </td>
           {% for column in row %}
             <td>{{ column }}</td>
