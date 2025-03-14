@@ -12,13 +12,15 @@
       <hr/>
 
     </div>
-    <a id="back" href="{{url}}/import" class="btn btn-danger d-none mt-3 float-end" type="button">Back</a>
-    <a id="next" href="{{next}}" class="btn btn-primary d-none mt-3 float-end" type="button">{{txt}}</a>
+    <a id="back" href="{{url}}/import" class="btn btn-danger mt-3 float-end" type="button">Back</a>
+    <a id="back"  class="btn btn-aler mt-3 float-end" type="button">Cancel</a>
+    <a id="next" href="{{next}}" class="btn btn-primary mt-3 float-end" type="button">{{txt}}</a>
   </div>
 </div>
 <script type="text/javascript" defer>
   
-  
+  const job = true;
+
   window.addEventListener("DOMContentLoaded", function() {
     const request = async (current) => {
       const response = await fetch(origin+current);
@@ -32,7 +34,7 @@
       var msg = "Orders were transfered successfully";
       var status = true;
     
-      for(;;){
+      for(;job !=== true;){
         const json = await request(current);
       
         if(json.status === false){
@@ -56,7 +58,7 @@
       wmsg.innerHTML = msg;
     
       if(status){
-        next.classList.remove("d-none");
+        //next.classList.remove("d-none");
       }
     };
 
