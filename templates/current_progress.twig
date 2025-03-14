@@ -3,6 +3,11 @@
     Orders Adding
 {% endblock %}
 {% block content %}
+<style type="text/css">
+    a[disabled="disabled"] {
+        pointer-events: none;
+    }
+</style>
 <div id="current_progress" class="p-5 mb-4 bg-light rounded-3">
   <div class="container-fluid py-5">
     <h1 id="winTitle" class="display-5 fw-bold">Orders are being added</h1>
@@ -13,7 +18,7 @@
 
     </div>
     <a id="next" href="{{next}}" class="btn btn-primary mt-3 float-end" type="button" disabled="disabled">{{txt}}</a>
-    <a id="cancel" class="btn btn-aler mt-3 float-end" type="button">Cancel</a>
+    <a id="cancel" class="btn btn-alert mt-3 float-end" type="button">Cancel</a>
     <a id="back" href="{{url}}/import" class="btn btn-danger mt-3 float-end" type="button">Back</a>
   </div>
 </div>
