@@ -102,7 +102,8 @@ router.post('/import/confirm', upload.none(), async (req, res) => {
         }
         template.render('current_progress.twig', {
             'next': "/current",
-            'txt': "Go to Orders"
+            'txt': "Go to Orders",
+            'url': "/current"
         }).then((output) => {
             res.end(output);
         });
