@@ -121,37 +121,42 @@ router.post('/import/confirm', upload.none(), async (req, res) => {
 });
 
 router.get('/import/batch/:step', async (req, res) => {
-    var steps = req.session.current.length;
-    var current = ++req.session.step;
-    logger.debug("get /current/batch/"+req.params.step);
-    let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute);
-    
-    if(transformed == null){
-        logger.error("Failed to parse order",new Error());
-        res.status(500).send('Internal Server Error');
-        return;
-    }
-    
-    logger.debug(transformed);
-    
-    const result = await ordmac.orders_add(transformed);
-    
-    logger.info("Order added",result);
+    try{
+        var steps = req.session.current.length;
+        var current = ++req.session.step;
 
-    if(steps == current){
-        req.session.current = null;
-        req.session.step = null;
-    }
+        logger.debug("get /current/batch/"+req.params.step);
+        let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute);
     
-    res.json({ current: current, steps: steps });
-})
+        if(transformed == null){
+            logger.error("Failed to parse order",new Error());
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+    
+        logger.debug(transformed);
+    
+        const result = await ordmac.orders_add(transformed);
+    
+        logger.info("Order added",result);
+
+        if(steps == current){
+            req.session.current = null;
+            req.session.step = null;
+        }
+    
+        res.json({ status: true, current: current, steps: steps, error: null });
+    }catch(error){
+        res.json({ status: false, current: current, steps: steps, error: error });
+    }
+});
 
 router.post('/clear', upload.none(), async (req, res) => {
     logger.debug("get /current/clear");
     let result = await ordmac.orders_delete_all();
     logger.info("Orders cleared",result);
     res.redirect('/current/');
-})
+});
 
 router.get('/add', upload.none(), async (req, res) => {
     logger.debug("get /current/add");
