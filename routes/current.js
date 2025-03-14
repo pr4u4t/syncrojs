@@ -129,8 +129,9 @@ router.get('/import/batch/:step', async (req, res) => {
         let transformed = await ordmac.mac2syncro(req.session.current[req.session.step-1],papers,quality,flute);
     
         if(transformed == null){
-            logger.error("Failed to parse order",new Error());
-            res.status(500).send('Internal Server Error');
+            const err = "Failed to parse order";
+            logger.error(err);
+            res.json({ status: false, current: current, steps: steps, error: err });
             return;
         }
     
@@ -145,7 +146,11 @@ router.get('/import/batch/:step', async (req, res) => {
             req.session.step = null;
         }
     
-        res.json({ status: true, current: current, steps: steps, error: null });
+        if(result === null || result === false){
+            res.json({ status: false, current: current, steps: steps, error: 'Failed to add syncro order' });    
+        } else {
+            res.json({ status: true, current: current, steps: steps, error: null });
+        }
     }catch(error){
         res.json({ status: false, current: current, steps: steps, error: error });
     }
