@@ -11,54 +11,57 @@
     <a id="next" href="{{next}}" class="btn btn-primary d-none mt-3 float-end" type="button">{{txt}}</a>
   </div>
 </div>
-<script defer>
-  const elem = document.getElementById("batchProgress");
-  const wtitle = document.getElementById("winTitle");
-  const wmsg = document.getElementById("winMsg");
-  const next = document.getElementById("next");
-  const origin = window.location.origin+"/current/import/batch/";
+<script type="text/javascript" defer>
   
-  const request = async (current) => {
-    const response = await fetch(origin+current);
-    const json = await response.json();
-    return json;
-  }
   
-  const batch = async (elem, origin,wtitle,wmsg,next) => {
-    var current = 0;
-    var title = "Success";
-    var msg = "Orders were transfered successfully";
-    var status = true;
+  window.addEventListener("DOMContentLoaded", function() {
+    const request = async (current) => {
+      const response = await fetch(origin+current);
+      const json = await response.json();
+      return json;
+    };
     
-    for(;;){
-      const json = await request(current);
+    const batch = async (elem, origin,wtitle,wmsg,next) => {
+      var current = 0;
+      var title = "Success";
+      var msg = "Orders were transfered successfully";
+      var status = true;
+    
+      for(;;){
+        const json = await request(current);
       
-      if(json.current == -1){
-        status = false;
-        title = "Failed";
-        msg = "Orders transfer failed at: "+(current+1);
-        break;
+        if(json.current == -1){
+          status = false;
+          title = "Failed";
+          msg = "Orders transfer failed at: "+(current+1);
+          break;
+        }
+      
+        current = json.current;
+      
+        elem.style.width = Math.floor(json.current/json.steps*100)+'%';
+        elem.innerHTML = Math.floor(json.current/json.steps*100)+'%'
+      
+        if(json.current == json.steps){
+          break;
+        }
       }
-      
-      current = json.current;
-      
-      elem.style.width = Math.floor(json.current/json.steps*100)+'%';
-      elem.innerHTML = Math.floor(json.current/json.steps*100)+'%'
-      
-      if(json.current == json.steps){
-        break;
+    
+      wtitle.innerHTML = title;
+      wmsg.innerHTML = msg;
+    
+      if(status){
+        next.classList.remove("d-none");
       }
-    }
+    };
+
+    const elem = document.getElementById("batchProgress");
+    const wtitle = document.getElementById("winTitle");
+    const wmsg = document.getElementById("winMsg");
+    const next = document.getElementById("next");
+    const origin = window.location.origin+"/current/import/batch/";
     
-    wtitle.innerHTML = title;
-    wmsg.innerHTML = msg;
-    
-    if(status){
-      next.classList.remove("d-none");
-    }
-  }
-  
-  batch(elem,origin,wtitle,wmsg,next);
-  
+    batch(elem,origin,wtitle,wmsg,next);
+  });
 </script>
 {% endblock %}
