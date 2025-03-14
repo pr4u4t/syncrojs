@@ -152,7 +152,7 @@ router.get('/import/batch/:step', async (req, res) => {
             res.json({ status: true, current: current, steps: steps, error: null });
         }
     }catch(error){
-        res.json({ status: false, current: current, steps: steps, error: error });
+        res.json({ status: false, current: current, steps: steps, error: error.message });
     }
 });
 
