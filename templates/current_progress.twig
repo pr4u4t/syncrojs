@@ -32,7 +32,7 @@
       for(;;){
         const json = await request(current);
       
-        if(json.current == -1){
+        if(json.status === false){
           status = false;
           title = "Failed";
           msg = "Orders transfer failed at: "+(current+1);
