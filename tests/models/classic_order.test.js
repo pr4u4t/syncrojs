@@ -197,7 +197,8 @@ test('mac_parse_12_belts', async () => {
     const result0 = await orders.validate(order1);
     expect(Array.isArray(result0.result)).toEqual(true);
     const result1 = await orders.validate(order2);
-    expect(result1.result === null && result1.error !== null).toEqual(true); //this test should fail as number of outs is invalid
+    expect(result1.result === null).toEqual(true); //this test should fail as number of outs is invalid
+    expect(result1.error).toBeDefined();
 }, timeout);
 
 test('mac_parse_10_belts', async () => {
@@ -212,5 +213,6 @@ test('mac_parse_10_belts', async () => {
     const result0 = await orders.validate(order1);
     expect(Array.isArray(result0.result)).toEqual(true);
     const result1 = await orders.validate(order2);
-    expect(result1.result === null && result1.error !== null).toEqual(true); //this test should fail as number of outs is invalid
+    expect(result1.result === null).toEqual(true); //this test should fail as number of outs is invalid
+    expect(result1.error).toBeDefined();
 }, timeout);

@@ -35,9 +35,9 @@ test('switch backend', async () => {
     expect(current).toEqual('extended_outs');
 });
 
-test('mac2syncro', () => {
-
-});
+//test('mac2syncro', () => {
+//
+//});
 
 test('orders_delete_all', async () => {
     const dall = await orders.orders_delete_all();
