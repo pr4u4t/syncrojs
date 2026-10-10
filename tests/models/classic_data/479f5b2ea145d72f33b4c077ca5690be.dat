@@ -1,0 +1,1 @@
+Select Z.asort,A.Nazwa,Z.dlugosc,Z.szerokosc,Z.bigi,Z.ilosc,z.ilosc_zd,Z.ilosc2jm as ilosc_M2,K.NAZWA As NazwaOdbiorcy,z.kod,Z.Data,Z.Nr_zamow,Z.Termin_Dostawy,z.lp,z.anul from ZamSprz Z LEFT JOIN KARTOD K ON Z.KOD=K.KOD LEFT JOIN KARTAS2021 A ON Z.Asort=A.Asort where Z.WSK<>1 and z.ilosc>z.ilosc_zd+z.ilosc*2/100 Order by Z.Data,Z.NR_ZAMOW

@@ -1,0 +1,12 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      secrets:
+        - extra_ca
+    volumes:
+      - syncrojs-node-modules-dev:/usr/src/app/node_modules
+
+volumes:
+  syncrojs-node-modules-dev:

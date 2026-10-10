@@ -1,24 +1,35 @@
 {
     "server": {
       "host": "0.0.0.0",
-      "port": 80,
-      "secret": "thisismysecrctekeyfhrgfgrfrty84fwir767"
-    },
-    "db": {
-      "host": "192.168.0.148",
-      "port": 5432,
-      "database": "postgres",
-      "user": "postgres",
-      "password": "ozdan"
+      "port": 3000
     },
     "syncro": {
       "host": "192.168.0.148",
-      "port": 13000
+      "port": 13000,
+      "connect_timeout": 3000,
+      "timeout": 30000
     },
     "orders": {
       "shift": {
         "skip_working": 0,
-        "skip_idle": 0
+        "skip_idle": 0,
+        "check_on_add": false
+      },
+      "max_trim": 2300,
+      "validation": {
+        "max_total_outs": 14,
+        "knife_level_count": 3,
+        "min_cut_length_tenths_mm": 5000,
+        "max_cut_length_tenths_mm": [49000, 35000, 51500],
+        "min_setup_length_mm": 29380,
+        "max_web_width_tenths_mm": 25430,
+        "min_setup_width_tenths_mm": 10000,
+        "min_trim_tenths_mm": 160,
+        "max_trim_tenths_mm": 2300,
+        "allow_narrow_trim": false
+      },
+      "parser":{
+        "type": "classic"
       }
     },
     "app": {
@@ -29,5 +40,8 @@
     "cache": {
       "ttl": 100,
       "period": 120
+    },
+    "log":{
+      "level": "info"
     }
 }

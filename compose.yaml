@@ -1,0 +1,81 @@
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker Compose reference guide at
+# https://docs.docker.com/go/compose-spec-reference/
+
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose
+services:
+  server:
+    build:
+      context: .
+    environment:
+      NODE_ENV: development #production
+      SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET in .env}
+      PGHOST: ${PGHOST:?Set PGHOST in .env}
+      PGPORT: ${PGPORT:-5432}
+      PGDATABASE: ${PGDATABASE:-postgres}
+      PGUSER: ${PGUSER:?Set PGUSER in .env}
+      PGPASSWORD: ${PGPASSWORD:?Set PGPASSWORD in .env}
+      CLASSIC_GENERATOR_SOCKET: /run/syncrojs/classic-generator.sock
+    ports:
+      - 80:3000
+    depends_on:
+      classic-generator:
+        condition: service_healthy
+    volumes:
+      - .:/usr/src/app
+      - syncrojs-node-modules-v3:/usr/src/app/node_modules
+      - syncrojs-uploads:/usr/src/app/uploads
+      - syncrojs-classic-generator-socket:/run/syncrojs
+  classic-generator:
+    build:
+      context: .
+      dockerfile: tools/classic_generator.Dockerfile
+    restart: unless-stopped
+    volumes:
+      - syncrojs-classic-generator-socket:/run/syncrojs
+    healthcheck:
+      test: ["CMD-SHELL", "test -S /run/syncrojs/classic-generator.sock"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+# The commented out section below is an example of how to define a PostgreSQL
+# database that your application can use. `depends_on` tells Docker Compose to
+# start the database before your application. The `db-data` volume persists the
+# database data between container restarts. The `db-password` secret is used
+# to set the database password. You must create `db/password.txt` and add
+# a password of your choosing to it before running `docker-compose up`.
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#   db:
+#     image: postgres
+#     restart: always
+#     user: postgres
+#     secrets:
+#       - db-password
+#     volumes:
+#       - db-data:/var/lib/postgresql/data
+#     environment:
+#       - POSTGRES_DB=example
+#       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
+#     expose:
+#       - 5432
+#     healthcheck:
+#       test: [ "CMD", "pg_isready" ]
+#       interval: 10s
+#       timeout: 5s
+#       retries: 5
+volumes:
+  syncrojs-node-modules-v3:
+  syncrojs-uploads:
+  syncrojs-classic-generator-socket:
+secrets:
+  extra_ca:
+    file: ${EXTRA_CA_FILE:-/dev/null}
+# secrets:
+#   db-password:
+#     file: db/password.txt

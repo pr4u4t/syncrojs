@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{44C2DD84-652B-4712-AB5B-881CED79D6ED}</ProjectGuid>
+    <RootNamespace>SyncroS</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)_Server\Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)_Server\Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>$(SolutionDir)Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Mswsock.lib;Utility.lib;S_Validation.lib;ctc_dsp.lib;aio.lib;dio.lib;ite.lib;PortXP.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)S_SyncroS.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>Debug/SyncroS.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <StackReserveSize>8388608</StackReserveSize>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo F | xcopy $(SolutionDir)\_Server\Debug\S_SyncroS.exe $(SolutionDir)\_Server\Debug\S_SyncroS1.exe
+echo F | xcopy $(SolutionDir)\_Server\Debug\S_SyncroS.exe $(SolutionDir)\_Server\Debug\S_SyncroS2.exe
+echo F | xcopy $(SolutionDir)\_Server\Debug\S_SyncroS.exe $(SolutionDir)\_Server\Debug\S_SyncroS3.exe</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OmitFramePointers>true</OmitFramePointers>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Mswsock.lib;Utility.lib;S_Validation.lib;ctc_dsp.lib;aio.lib;dio.lib;ite.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)S_SyncroS.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>Release/SyncroS.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <StackReserveSize>0</StackReserveSize>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Dbms\C_SMOrder.cpp" />
+    <ClCompile Include="..\Rtc\C_SMState.cpp" />
+    <ClCompile Include="..\shared\C_Logger.cpp" />
+    <ClCompile Include="..\shared\C_SMLineConfig.cpp" />
+    <ClCompile Include="..\Shared\C_SMPrc.cpp" />
+    <ClCompile Include="..\shared\C_SMTaskSettings.cpp" />
+    <ClCompile Include="..\shared\StrType.cpp" />
+    <ClCompile Include="C_CommunicationManager.cpp" />
+    <ClCompile Include="C_DBManager.cpp" />
+    <ClCompile Include="C_NamedPipeClient.cpp" />
+    <ClCompile Include="C_PageManager.cpp" />
+    <ClCompile Include="C_RTCManager.cpp" />
+    <ClCompile Include="C_SocketTCP.cpp" />
+    <ClCompile Include="MachineCommands\C_AlarmHistoryCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_DoubleBackerCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_ExternWECCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_GenericCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_GlueUnitCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_IncDecCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_KnifeCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_MthCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_PreHeatersTernCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_ProcessControlCommands.cpp" />
+    <ClCompile Include="machinecommands\C_RotaryCommands.cpp" />
+    <ClCompile Include="machinecommands\C_RotaryFormatCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_ScorerProfileCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_SimulationCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_SingleFacerCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_SlitterScorerCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_SplicerCommands.cpp" />
+    <ClCompile Include="machinecommands\C_StackerCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_StarterCommands.cpp" />
+    <ClCompile Include="MachineCommands\C_Twin400Commands.cpp" />
+    <ClCompile Include="MachineCommands\C_WebDirectorCommands.cpp" />
+    <ClCompile Include="pagefunction\C_DebugGroup.cpp" />
+    <ClCompile Include="pagefunction\C_DoubleBackerGroup.cpp" />
+    <ClCompile Include="pagefunction\C_DryEndSupervisorGroup.cpp" />
+    <ClCompile Include="pagefunction\C_GlueUnitGroup.cpp" />
+    <ClCompile Include="pagefunction\C_KnifeGroup.cpp" />
+    <ClCompile Include="pagefunction\C_LateralBar.cpp" />
+    <ClCompile Include="pagefunction\C_PreHeaterTernGroup.cpp" />
+    <ClCompile Include="pagefunction\C_ProductionGroup.cpp" />
+    <ClCompile Include="pagefunction\C_SettingsGroup.cpp" />
+    <ClCompile Include="pagefunction\C_ShearGroup.cpp" />
+    <ClCompile Include="pagefunction\C_SingleFacerGroup.cpp" />
+    <ClCompile Include="pagefunction\C_SlitterScorerGroup.cpp" />
+    <ClCompile Include="pagefunction\C_SplicerGroup.cpp" />
+    <ClCompile Include="pagefunction\C_StackerGroup.cpp" />
+    <ClCompile Include="pagefunction\C_StatisticsGroup.cpp" />
+    <ClCompile Include="pagefunction\C_StatusBar.cpp" />
+    <ClCompile Include="pagefunction\C_SyncroSystemGroup.cpp" />
+    <ClCompile Include="pagefunction\C_Twin400Group.cpp" />
+    <ClCompile Include="pagefunction\C_WetEndSupervisorGroup.cpp" />
+    <ClCompile Include="SyncroS.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Dbms\C_SMOrder.h" />
+    <ClInclude Include="..\include\DBMSPipe.h" />
+    <ClInclude Include="..\Include\DownTime.h" />
+    <ClInclude Include="..\include\Flute.h" />
+    <ClInclude Include="..\include\Global.h" />
+    <ClInclude Include="..\Include\Messages\T_PrinterCodes.h" />
+    <ClInclude Include="..\Include\messages\T_SyncroCCodes.h" />
+    <ClInclude Include="..\Include\Messages\T_SyncroSCodes.h" />
+    <ClInclude Include="..\Include\Namespace\Network.h" />
+    <ClInclude Include="..\Include\Namespace\Utility.h" />
+    <ClInclude Include="..\include\Paper.h" />
+    <ClInclude Include="..\include\PastOrder.h" />
+    <ClInclude Include="..\Include\PastRollsData.h" />
+    <ClInclude Include="..\include\ProgramData.h" />
+    <ClInclude Include="..\include\Quality.h" />
+    <ClInclude Include="..\include\RTCPipe.h" />
+    <ClInclude Include="..\include\ScorerProfile.h" />
+    <ClInclude Include="..\include\SetupData.h" />
+    <ClInclude Include="..\include\SharedMemory\StateSM.h" />
+    <ClInclude Include="..\Include\ShiftData.h" />
+    <ClInclude Include="..\include\TrashOrder.h" />
+    <ClInclude Include="..\Rtc\C_SMState.h" />
+    <ClInclude Include="..\shared\C_Logger.h" />
+    <ClInclude Include="..\shared\C_SMLineConfig.h" />
+    <ClInclude Include="..\Shared\C_SMPrc.h" />
+    <ClInclude Include="..\shared\C_SMTaskSettings.h" />
+    <ClInclude Include="..\shared\StrType.h" />
+    <ClInclude Include="C_CommunicationManager.h" />
+    <ClInclude Include="C_DBManager.h" />
+    <ClInclude Include="C_NamedPipeClient.h" />
+    <ClInclude Include="C_PageManager.h" />
+    <ClInclude Include="C_RTCManager.h" />
+    <ClInclude Include="MachineCommands\C_AlarmHistoryCommands.h" />
+    <ClInclude Include="MachineCommands\C_DoubleBackerCommands.h" />
+    <ClInclude Include="MachineCommands\C_ExternWECCommands.h" />
+    <ClInclude Include="MachineCommands\C_GenericCommands.h" />
+    <ClInclude Include="MachineCommands\C_GlueUnitCommands.h" />
+    <ClInclude Include="MachineCommands\C_IncDecCommands.h" />
+    <ClInclude Include="MachineCommands\C_KnifeCommands.h" />
+    <ClInclude Include="MachineCommands\C_MthCommands.h" />
+    <ClInclude Include="MachineCommands\C_PreHeatersTernCommands.h" />
+    <ClInclude Include="MachineCommands\C_ProcessControlCommands.h" />
+    <ClInclude Include="machinecommands\C_RotaryCommands.h" />
+    <ClInclude Include="machinecommands\C_RotaryFormatCommands.h" />
+    <ClInclude Include="MachineCommands\C_ScorerProfileCommands.h" />
+    <ClInclude Include="MachineCommands\C_SimulationCommands.h" />
+    <ClInclude Include="MachineCommands\C_SingleFacerCommands.h" />
+    <ClInclude Include="MachineCommands\C_SlitterScorerCommands.h" />
+    <ClInclude Include="MachineCommands\C_SplicerCommands.h" />
+    <ClInclude Include="machinecommands\C_StackerCommands.h" />
+    <ClInclude Include="MachineCommands\C_StarterCommands.h" />
+    <ClInclude Include="MachineCommands\C_Twin400Commands.h" />
+    <ClInclude Include="MachineCommands\C_WebDirectorCommands.h" />
+    <ClInclude Include="pagefunction\C_DebugGroup.h" />
+    <ClInclude Include="pagefunction\C_DoubleBackerGroup.h" />
+    <ClInclude Include="pagefunction\C_DryEndSupervisorGroup.h" />
+    <ClInclude Include="pagefunction\C_GlueUnitGroup.h" />
+    <ClInclude Include="pagefunction\C_KnifeGroup.h" />
+    <ClInclude Include="pagefunction\C_LateralBar.h" />
+    <ClInclude Include="pagefunction\C_PreHeaterTernGroup.h" />
+    <ClInclude Include="pagefunction\C_ProductionGroup.h" />
+    <ClInclude Include="pagefunction\C_SettingsGroup.h" />
+    <ClInclude Include="pagefunction\C_ShearGroup.h" />
+    <ClInclude Include="pagefunction\C_SingleFacerGroup.h" />
+    <ClInclude Include="pagefunction\C_SlitterScorerGroup.h" />
+    <ClInclude Include="pagefunction\C_SplicerGroup.h" />
+    <ClInclude Include="pagefunction\C_StackerGroup.h" />
+    <ClInclude Include="pagefunction\C_StatisticsGroup.h" />
+    <ClInclude Include="pagefunction\C_StatusBar.h" />
+    <ClInclude Include="pagefunction\C_SyncroSystemGroup.h" />
+    <ClInclude Include="pagefunction\C_Twin400Group.h" />
+    <ClInclude Include="pagefunction\C_WetEndSupervisorGroup.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utility\Utility.vcxproj">
+      <Project>{75e266e5-e926-40a6-aff3-207c50c8b567}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\Validation\Validation.vcxproj">
+      <Project>{298373cc-432d-47d6-a036-d152db0742b9}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

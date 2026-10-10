@@ -1,19 +1,36 @@
 {
   "dependencies": {
-    "@aternus/csv-to-xlsx": "github:pr4u4t/csv-to-xlsx",
+    "@aternus/csv-to-xlsx": "^2.1.5",
     "config": "^3.3.9",
     "cookie-parser": "^1.4.6",
+    "esbuild": "^0.28.2",
     "express": "^4.18.2",
     "express-promise-router": "^4.1.1",
     "express-session": "^1.17.3",
     "fast-xml-parser": "^4.2.2",
     "formidable": "^2.1.1",
     "fs": "^0.0.1-security",
+    "i18next": "^24.2.2",
+    "i18next-fs-backend": "^2.6.0",
+    "i18next-http-middleware": "^3.7.1",
+    "jest-editor-support": "^32.0.0-beta.1",
     "multer": "^1.4.5-lts.1",
     "net": "^1.0.2",
     "node-cache": "^5.1.2",
     "pg": "^8.10.0",
+    "pg-copy-streams": "^7.0.0",
+    "pino": "^9.6.0",
     "promise-socket": "^7.0.0",
-    "twing": "^6.0.0-alpha.1"
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "build:client": "esbuild client/main.jsx --bundle --minify --outfile=public/js/app.js --jsx=automatic",
+    "start": "npm run build:client && node app.js",
+    "dev": "npm run build:client && NODE_ENV=development node app.js"
   }
 }

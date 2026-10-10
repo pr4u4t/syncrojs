@@ -1,0 +1,3 @@
+web_width_mm,quality_id,flute,order_number,customer_name,customer_code,sheet_width_mm,sheet_length_mm,quantity_sheets,sheets_per_stack,score1,score2,score3,score4,score5
+2300,FALA A,A,ORDER-3712-1,Customer One,C001,550,1035,933,100,100,0,0,0,0
+2300,FALA A,A,ORDER-3712-2,Customer Two,C002,600,1635,196,100,100,0,0,0,0

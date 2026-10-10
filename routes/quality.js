@@ -1,42 +1,30 @@
-const Router = require('express-promise-router')
-const template = require('../templates')
-const router = new Router()
-const quality = require('../models/quality.js')
+const Router = require('express-promise-router');
+const router = new Router();
+const quality = require('../models/quality.js');
+const renderDataListView = require('../utils/data-list-view');
+const materialEditor = require('../utils/material-editor');
 
-module.exports = router
+module.exports = router;
 
-router.get('/', async (req,res) => {
-    const {rows,fields} = await quality.quality_all()
-    const result = await quality.quality_count()
-    
-    template.render('quality.twig', {
-        'title': "Quality List",
-        'header_title': "Quality List",
-        'rows': rows, 
-        'fields': fields, 
-        'total': Math.ceil(result.rows[0].count/25),
-        'current': 1,
-        'url': '/quality/'        
-    }).then((output) => {
-        res.end(output)
-    })
-})
+const renderPage = (req,res) => renderDataListView(req,res,{
+    url: '/quality/',
+    load: async (page) => {
+        const [data, countResult] = await Promise.all([
+            quality.quality_paginated_all((page-1)*25),
+            quality.quality_count()
+        ]);
+        const count = countResult && countResult.rows && countResult.rows[0] ? countResult.rows[0].count : 0;
+        return {
+            unavailable: !data || !countResult,
+            rows: data && data.rows,
+            fields: data && data.fields,
+            editFields: materialEditor.getEditorFields('quality'),
+            keyFields: materialEditor.getDefinition('quality').keyFields,
+            total: Math.ceil(Number(count)/25)
+        };
+    }
+});
 
-router.get('/:page([0-9]+)', async (req,res) => {
-    const current = req.params.page
-    const offset = (req.params.page-1)*25
-    const {rows,fields} = await quality.quality_paginated_all(offset)
-    const result = await quality.quality_count()
-    
-    template.render('quality.twig', {
-        'title': "Quality List",
-        'header_title': "Quality List",
-        'rows': rows, 
-        'fields': fields, 
-        'total': Math.ceil(result.rows[0].count/25), 
-        'current': current,
-        'url': '/quality/'
-    }).then((output) => {
-        res.end(output)
-    })
-})
+router.get('/', renderPage);
+router.get('/:page([0-9]+)', renderPage);
+materialEditor.attachEditorRoute(router, 'quality');

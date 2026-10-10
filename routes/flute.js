@@ -1,42 +1,30 @@
-const Router = require('express-promise-router')
-const template = require('../templates')
-const router = new Router()
-const flute = require('../models/flute.js')
+const Router = require('express-promise-router');
+const router = new Router();
+const flute = require('../models/flute.js');
+const renderDataListView = require('../utils/data-list-view');
+const materialEditor = require('../utils/material-editor');
 
-module.exports = router
+module.exports = router;
 
-router.get('/', async (req,res) => {
-    const {rows,fields} = await flute.flute_all()
-    const result = await flute.flute_count()
-    
-    template.render('flute.twig', {
-        'title': "Flute List",
-        'header_title': "Flute List",
-        'rows': rows, 
-        'fields': fields, 
-        'total': Math.ceil(result.rows[0].count/25),
-        'current': 1,
-        'url': '/flute/'        
-    }).then((output) => {
-        res.end(output)
-    })
-})
+const renderPage = (req,res) => renderDataListView(req,res,{
+    url: '/flute/',
+    load: async (page) => {
+        const [data, countResult] = await Promise.all([
+            flute.flute_paginated_all((page-1)*25),
+            flute.flute_count()
+        ]);
+        const count = countResult && countResult.rows && countResult.rows[0] ? countResult.rows[0].count : 0;
+        return {
+            unavailable: !data || !countResult,
+            rows: data && data.rows,
+            fields: data && data.fields,
+            editFields: materialEditor.getEditorFields('flute'),
+            keyFields: materialEditor.getDefinition('flute').keyFields,
+            total: Math.ceil(Number(count)/25)
+        };
+    }
+});
 
-router.get('/:page([0-9]+)', async (req,res) => {
-    const current = req.params.page
-    const offset = (req.params.page-1)*25
-    const {rows,fields} = await flute.flute_paginated_all(offset)
-    const result = await flute.flute_count()
-    
-    template.render('flute.twig', {
-        'title': "Flute List",
-        'header_title': "Flute List",
-        'rows': rows, 
-        'fields': fields, 
-        'total': Math.ceil(result.rows[0].count/25), 
-        'current': current,
-        'url': '/flute/'
-    }).then((output) => {
-        res.end(output)
-    })
-})
+router.get('/', renderPage);
+router.get('/:page([0-9]+)', renderPage);
+materialEditor.attachEditorRoute(router, 'flute');

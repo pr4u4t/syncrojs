@@ -1,0 +1,16 @@
+{
+  "server": {
+    "secret": "SESSION_SECRET"
+  },
+  "syncro": {
+    "host": "SYNCRO_HOST",
+    "port": {
+      "__name": "SYNCRO_PORT",
+      "__format": "number"
+    },
+    "connect_timeout": {
+      "__name": "SYNCRO_CONNECT_TIMEOUT",
+      "__format": "number"
+    }
+  }
+}

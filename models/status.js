@@ -1,29 +1,40 @@
-const { XMLParser } = require("fast-xml-parser")
-const parser = new XMLParser()
-const fs = require('fs')
-var net = require('net')
-const {PromiseSocket, TimeoutError} = require("promise-socket")
-const config = require('config')
-const log = require('../utils/log.js')
+const net = require('node:net');
+const config = require('config');
+const db = require('../db');
 
-const port = config.get('syncro.port')
-const host = config.get('syncro.host')
+const port = config.get('syncro.port');
+const host = config.get('syncro.host');
 
-const status = async function(){
-    const cmd = 'Shift.List'
+const database = async function(){
     try{
-        const psocket = new PromiseSocket()
-        await psocket.connect(port,host)
-        var result = await psocket.write(cmd)
-        if(result != cmd.length){
-            log.error('Command send failed', new Error())
-            return null
-        }
-        var buff = await psocket.readAll()
-        ret = [ buff ]
-        return ret
-    }catch(error){
-        log.error("Failed to fetch Status",error)
-        return null
+        await db.query('SELECT 1');
+        return true;
+    }catch{
+        return false;
     }
-}
+};
+
+const syncro = function(){
+    return new Promise((resolve) => {
+        const socket = net.createConnection({ host, port });
+        let settled = false;
+        const finish = (connected) => {
+            if(settled){
+                return;
+            }
+            settled = true;
+            clearTimeout(timer);
+            socket.destroy();
+            resolve(connected);
+        };
+        const timer = setTimeout(() => finish(false), 1500);
+
+        socket.once('connect', () => finish(true));
+        socket.once('error', () => finish(false));
+    });
+};
+
+module.exports = {
+    database,
+    syncro
+};

@@ -1,0 +1,3307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8FCE4AB4-5569-4F6F-974B-9283F54EDD61}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>S_SyncroC</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SyncroC</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <SccAuxPath>
+    </SccAuxPath>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\_Client\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\_Client\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Npgsql2.0.11-bin-ms.net3.5sp1\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.0.11.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Npgsql2.0.11-bin-ms.net3.5sp1\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+      <HintPath>..\..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+      <HintPath>..\..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+      <HintPath>..\..\..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+      <HintPath>..\..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+      <HintPath>..\..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+      <HintPath>..\..\..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.0.3705\System.XML.dll</HintPath>
+    </Reference>
+    <Reference Include="vjslib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\AOC_Not_Ready.bmp" />
+    <None Include="Resources\ACTIVE_ROLL_DX.JPG" />
+    <None Include="Resources\ACTIVE_ROLL_SX.JPG" />
+    <Content Include="Resources\AOC_Auto.bmp" />
+    <Content Include="Resources\AOC_GAP.bmp" />
+    <Content Include="Resources\AOC_Manual.bmp" />
+    <Content Include="Resources\AOC_NOGAP.bmp" />
+    <Content Include="Resources\AOC_Semi.bmp" />
+    <Content Include="Resources\AOC_TANDEM.bmp" />
+    <Content Include="Resources\apri.JPG" />
+    <None Include="Resources\cartone1.bmp" />
+    <None Include="Resources\cartone11.bmp" />
+    <None Include="Resources\Bridge1.bmp" />
+    <None Include="Resources\Bridge2.bmp" />
+    <None Include="Resources\arcobaleno.gif" />
+    <None Include="Resources\Automatico_ISO_0017.bmp" />
+    <None Include="Resources\Automatico_ISO_0017_Reverse.bmp" />
+    <None Include="Resources\bobina.png" />
+    <Content Include="Resources\brush_off.jpg" />
+    <Content Include="Resources\brush_on.jpg" />
+    <None Include="Resources\crest-01.bmp" />
+    <None Include="Resources\crest-01 bis.bmp" />
+    <None Include="Resources\Compact_2_Asse_NO_Aux.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\cestino.png" />
+    <None Include="Resources\cestino_premuto.png" />
+    <None Include="Resources\CloseLoop_Auto.png" />
+    <None Include="Resources\CloseLoop_Manuale.png" />
+    <Content Include="Resources\CREST 3L.jpg" />
+    <Content Include="Resources\crest-master-02.bmp" />
+    <None Include="Resources\crest-master-021.bmp" />
+    <None Include="Resources\crest-master-022.bmp" />
+    <Content Include="Resources\crest-master-03.bmp" />
+    <Content Include="Resources\crest-master-04.bmp" />
+    <None Include="Resources\crest-master-041.bmp" />
+    <None Include="Resources\crest-master-042.bmp" />
+    <None Include="Resources\CREST.jpg" />
+    <Content Include="Resources\debug.bmp" />
+    <Content Include="Resources\debug-02.bmp" />
+    <Content Include="Resources\debug-03.bmp" />
+    <Content Include="Resources\debug-04.bmp" />
+    <Content Include="Resources\debugA.bmp" />
+    <Content Include="Resources\DoubleBacker.bmp" />
+    <None Include="Resources\DoubleFaster.bmp" />
+    <None Include="Resources\DoubleSlower.bmp" />
+    <Content Include="Resources\DryWetSupervisor-02.bmp" />
+    <Content Include="Resources\DryWetSupervisor-03.bmp" />
+    <Content Include="Resources\DryWetSupervisor-04.bmp" />
+    <Content Include="Resources\Esclamativo.ico" />
+    <None Include="Resources\Express-01.png" />
+    <Content Include="Resources\express-terminal-02.bmp" />
+    <Content Include="Resources\express-terminal-03.bmp" />
+    <Content Include="Resources\express-terminal-04.bmp" />
+    <None Include="Resources\Fasciatura_Reverse.bmp" />
+    <None Include="Resources\Fasciatura_Normal.bmp" />
+    <Content Include="Resources\Faster.bmp" />
+    <None Include="Resources\Glue unit.bmp" />
+    <None Include="Resources\KnifeLevel2.bmp" />
+    <None Include="Resources\KnifeLevel3.bmp" />
+    <None Include="Resources\KnifeLevel4.bmp" />
+    <None Include="Resources\KnifeLevel5.bmp" />
+    <None Include="Resources\KnifeLevel6.bmp" />
+    <None Include="Resources\KnifeLevel8.bmp" />
+    <None Include="Resources\KnifeLevel9.bmp" />
+    <None Include="Resources\link-01.bmp" />
+    <None Include="Resources\liner.bmp" />
+    <None Include="Resources\LATO_OPERATORE.bmp" />
+    <None Include="Resources\LATO_NON_OPERATORE.bmp" />
+    <None Include="Resources\GLUE_GAP.bmp" />
+    <None Include="Resources\INTRUSIONE_BARRIERA.bmp" />
+    <None Include="Resources\filter.gif" />
+    <None Include="Resources\linerEmedium.bmp" />
+    <None Include="Resources\Graph.png" />
+    <None Include="Resources\lateralBarItem_change.png" />
+    <None Include="Resources\info_icon.png" />
+    <None Include="Resources\fungo.png" />
+    <Content Include="Resources\link1-1.bmp" />
+    <Content Include="Resources\link1-1A.bmp" />
+    <Content Include="Resources\link2-1.bmp" />
+    <Content Include="Resources\link2-1A.bmp" />
+    <Content Include="Resources\link-rotary-02.bmp" />
+    <Content Include="Resources\link-rotary-03.bmp" />
+    <Content Include="Resources\link-rotary-04.bmp" />
+    <None Include="Resources\logo Fosber.bmp" />
+    <None Include="Resources\LINK_PORTABOBINA.JPG" />
+    <None Include="Resources\LogoSyncro.bmp" />
+    <None Include="Resources\Load_ISO_0734.png" />
+    <None Include="Resources\Load_ISO_0734_Reverse.png" />
+    <Content Include="Resources\LOCALE_ISO_1109.bmp" />
+    <Content Include="Resources\LOCALE_ISO_1109l_PREMUTO.bmp" />
+    <None Include="Resources\LUBRIFICAZIONE_OLIO_ISO_0391.bmp" />
+    <None Include="Resources\Manuale_ISO_0096.bmp" />
+    <None Include="Resources\Manuale_ISO_0096_Reverse.bmp" />
+    <None Include="Resources\MANUTENZIONE_ISO_0717.bmp" />
+    <None Include="Resources\MAIN_STEAM .bmp" />
+    <None Include="Resources\Lock_Blue.jpg" />
+    <Content Include="Resources\master-01.bmp" />
+    <None Include="Resources\Not_Ready_To_Run.bmp" />
+    <None Include="Resources\medium.bmp" />
+    <None Include="Resources\MoistureSensorSelected.bmp" />
+    <None Include="Resources\MoistureSensor.bmp" />
+    <None Include="Resources\OverviewDryEnd.bmp" />
+    <None Include="Resources\OptionType.bmp" />
+    <None Include="Resources\OptionGap.bmp" />
+    <None Include="Resources\OptionPositioning.bmp" />
+    <None Include="Resources\OptionShaft.bmp" />
+    <None Include="Resources\NotUsed.bmp" />
+    <None Include="Resources\PaperTension.png" />
+    <None Include="Resources\Not_Ready_To_Splice.bmp" />
+    <None Include="Resources\OStop.png" />
+    <None Include="Resources\NStop.png" />
+    <None Include="Resources\Master.bmp" />
+    <Content Include="Resources\ParaffinMachineActive.bmp" />
+    <Content Include="Resources\ParaffinMachineNotActive.bmp" />
+    <None Include="Resources\paste.png" />
+    <None Include="Resources\Piani.bmp" />
+    <Content Include="Resources\pmac.bmp" />
+    <Content Include="Resources\pmacA.bmp" />
+    <None Include="Resources\READY_ROLL_SX.JPG" />
+    <None Include="Resources\READY_ROLL_DX.JPG" />
+    <None Include="Resources\PrinterIcon.gif" />
+    <None Include="Resources\record.png" />
+    <Content Include="Resources\REMOTO_ISO_1108.bmp" />
+    <Content Include="Resources\REMOTO_ISO_1108_PREMUTO.bmp" />
+    <None Include="Resources\ReturnToDefault.png" />
+    <Content Include="Resources\Roll.bmp" />
+    <Content Include="Resources\RollSelected.bmp" />
+    <Content Include="Resources\rotary-01.bmp" />
+    <Content Include="Resources\Rotary.bmp" />
+    <None Include="Resources\ROTATING_ROLL_DX_1.JPG" />
+    <None Include="Resources\ROTATING_ROLL_DX_2.JPG" />
+    <None Include="Resources\ROTATING_ROLL_DX_3.JPG" />
+    <None Include="Resources\ROTATING_ROLL_DX_4.JPG" />
+    <None Include="Resources\ROTATING_ROLL_SX_1.JPG" />
+    <None Include="Resources\ROTATING_ROLL_SX_2.JPG" />
+    <None Include="Resources\ROTATING_ROLL_SX_3.JPG" />
+    <None Include="Resources\ROTATING_ROLL_SX_4.JPG" />
+    <None Include="Resources\rotateRight.PNG" />
+    <Content Include="Resources\RSHScrapDisabled.bmp" />
+    <Content Include="Resources\RSHScrapEnabled.bmp" />
+    <Content Include="Resources\Scanner_Green.bmp" />
+    <Content Include="Resources\Scanner_Red.bmp" />
+    <None Include="Resources\SendOrder_ISO_1965.png" />
+    <None Include="Resources\SendOrder_ISO_1965_Reverse.png" />
+    <None Include="Resources\shiftLeft.PNG" />
+    <Content Include="Resources\Shoes.bmp" />
+    <None Include="Resources\SlitterUp&amp;Down.bmp" />
+    <None Include="Resources\SlitterUp&amp;DownPressed.bmp" />
+    <None Include="Resources\Slitter.bmp" />
+    <None Include="Resources\SingleFacer.bmp" />
+    <Content Include="Resources\Slower.bmp" />
+    <None Include="Resources\smart-01 bis.bmp" />
+    <Content Include="Resources\SMART_V2_CORPO_MACCHINA.bmp" />
+    <Content Include="Resources\SplicerProductionEnd.bmp" />
+    <Content Include="Resources\SplicerProductionEndRev.bmp" />
+    <None Include="Resources\STEAM_SHOWER.bmp" />
+    <None Include="Resources\stato_Rotary.bmp" />
+    <None Include="Resources\Stato_Terminal.bmp" />
+    <Content Include="Resources\STEAM_SHOWER_OFF.bmp" />
+    <Content Include="Resources\STEAM_SHOWER_ON .bmp" />
+    <Content Include="Resources\stellina.gif" />
+    <None Include="Resources\swap.png" />
+    <Content Include="Resources\syncroSystem-02.bmp" />
+    <Content Include="Resources\syncroSystem-03.bmp" />
+    <Content Include="Resources\syncroSystem-04.bmp" />
+    <None Include="Resources\TEMPERATURA CARTA.bmp" />
+    <None Include="Resources\TEMPERATURA CARTA BASSA.bmp" />
+    <Content Include="Resources\terminal-01.bmp" />
+    <None Include="Resources\Terna_fosber.jpg" />
+    <Content Include="Resources\TERMINAL.bmp" />
+    <None Include="Resources\Terna.bmp" />
+    <Content Include="Resources\twin.bmp" />
+    <None Include="Resources\twin-01.bmp" />
+    <Content Include="Resources\twinA.bmp" />
+    <Content Include="Resources\TwinStatus.bmp" />
+    <None Include="Resources\warp_updown_pos_M3.png" />
+    <None Include="Resources\warp_endtoend_pos_0.png" />
+    <None Include="Resources\warp_endtoend_pos_1.png" />
+    <None Include="Resources\warp_endtoend_pos_2.png" />
+    <None Include="Resources\warp_endtoend_pos_3.png" />
+    <None Include="Resources\warp_endtoend_pos_M1.png" />
+    <None Include="Resources\warp_endtoend_pos_M2.png" />
+    <None Include="Resources\warp_endtoend_pos_M3.png" />
+    <None Include="Resources\warp_updown_pos_0.png" />
+    <None Include="Resources\warp_updown_pos_1.png" />
+    <None Include="Resources\warp_updown_pos_2.png" />
+    <None Include="Resources\warp_updown_pos_3.png" />
+    <None Include="Resources\warp_updown_pos_M1.png" />
+    <None Include="Resources\warp_updown_pos_M2.png" />
+    <None Include="Resources\warp_endtoend_pos_0_CloseLoop_Auto.png" />
+    <None Include="Resources\warp_endtoend_pos_1_CloseLoop_Auto.png" />
+    <None Include="Resources\warp_endtoend_pos_2_CloseLoop_Auto.png" />
+    <None Include="Resources\warp_endtoend_pos_3_CloseLoop_Auto.png" />
+    <None Include="Resources\warp_endtoend_pos_M1_CloseLoop_Auto.png" />
+    <None Include="Resources\warp_endtoend_pos_M2_CloseLoop_Auto.png" />
+    <None Include="Resources\warp_endtoend_pos_M3_CloseLoop_Auto.png" />
+    <Content Include="Resources\warp_updown_pos_0_CloseLoop_Auto.png" />
+    <Content Include="Resources\warp_updown_pos_1_CloseLoop_Auto.png" />
+    <Content Include="Resources\warp_updown_pos_2_CloseLoop_Auto.png" />
+    <Content Include="Resources\warp_updown_pos_3_CloseLoop_Auto.png" />
+    <Content Include="Resources\warp_updown_pos_M1_CloseLoop_Auto.png" />
+    <Content Include="Resources\warp_updown_pos_M2_CloseLoop_Auto.png" />
+    <Content Include="Resources\warp_updown_pos_M3_CloseLoop_Auto.png" />
+    <Content Include="Resources\wet-dry.bmp" />
+    <Content Include="Resources\wet-dryA72x60.bmp" />
+    <Content Include="Resources\WETAOC_Auto.bmp" />
+    <Content Include="Resources\WETAOC_Manual.bmp" />
+    <Content Include="Resources\WETAOC_Override.bmp" />
+    <None Include="Resources\zoom_in.png" />
+    <None Include="Resources\zoom_out.png" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Command.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\AlarmTimer\AlarmTimer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AlarmTimer\AlarmTimer.Designer.cs">
+      <DependentUpon>AlarmTimer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AlarmTimer\AlarmTimerTickEventArgs.cs" />
+    <Compile Include="Controls\Bracket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Bracket.Designer.cs">
+      <DependentUpon>Bracket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Colors\ColConv.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ControlEventArgs\SlitterScorerStatusEventArgs.cs" />
+    <Compile Include="Controls\Graphic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Graphic\Bars\BarGraph.cs" />
+    <Compile Include="Controls\Graphic\Bars\BarGraphPlotter.cs" />
+    <Compile Include="Controls\Graphic\Bars\BarGraphRenderer.cs" />
+    <Compile Include="Controls\Graphic\Bars\BarSlice.cs" />
+    <Compile Include="Controls\Graphic\Bars\BarSliceCollection.cs" />
+    <Compile Include="Controls\Graphic\Bars\MultipleBarSlice.cs" />
+    <Compile Include="Controls\Graphic\GraphBars.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Graphic\GraphBars.Designer.cs">
+      <DependentUpon>GraphBars.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Graphic\GraphBase.cs" />
+    <Compile Include="Controls\Graphic\GraphLines.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Graphic\GraphLines.designer.cs">
+      <DependentUpon>GraphLines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Graphic\GraphLinesEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Graphic\GraphLinesEditor.designer.cs">
+      <DependentUpon>GraphLinesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Graphic\GraphPies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Graphic\GraphPies.Designer.cs">
+      <DependentUpon>GraphPies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Graphic\GraphRenderer.cs" />
+    <Compile Include="Controls\Graphic\GridGraphBase.cs" />
+    <Compile Include="Controls\Graphic\Legends\Legend.cs" />
+    <Compile Include="Controls\Graphic\Legends\LegendEntry.cs" />
+    <Compile Include="Controls\Graphic\Legends\LegendEntryCollection.cs" />
+    <Compile Include="Controls\Graphic\Legends\LegendRenderer.cs" />
+    <Compile Include="Controls\Graphic\Lines\DateLines\DateLine.cs" />
+    <Compile Include="Controls\Graphic\Lines\DateLines\DateLineCollection.cs" />
+    <Compile Include="Controls\Graphic\Lines\DateLines\DateLineGraph.cs" />
+    <Compile Include="Controls\Graphic\Lines\DateLines\DateLineGraphRenderer.cs" />
+    <Compile Include="Controls\Graphic\Lines\DateLines\DateLinePoint.cs" />
+    <Compile Include="Controls\Graphic\Lines\DateLines\DateLinePointCollection.cs" />
+    <Compile Include="Controls\Graphic\Lines\DateLines\DateXAxisText.cs" />
+    <Compile Include="Controls\Graphic\Lines\DateLines\DateXAxisTextCollection.cs" />
+    <Compile Include="Controls\Graphic\Lines\Line.cs" />
+    <Compile Include="Controls\Graphic\Lines\LineCollection.cs" />
+    <Compile Include="Controls\Graphic\Lines\LineGraph.cs" />
+    <Compile Include="Controls\Graphic\Lines\LineGraphRenderer.cs" />
+    <Compile Include="Controls\Graphic\Lines\LinePoint.cs" />
+    <Compile Include="Controls\Graphic\Lines\LinePointCollection.cs" />
+    <Compile Include="Controls\Graphic\Lines\XAxisText.cs" />
+    <Compile Include="Controls\Graphic\Lines\XAxisTextCollection.cs" />
+    <Compile Include="Controls\Graphic\Pies\PieGraph.cs" />
+    <Compile Include="Controls\Graphic\Pies\PieGraphRenderer.cs" />
+    <Compile Include="Controls\Graphic\Pies\PieSlice.cs" />
+    <Compile Include="Controls\Graphic\Pies\PieSliceCollection.cs" />
+    <Compile Include="Controls\Grid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GridView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GridView.Designer.cs">
+      <DependentUpon>GridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GroupPanel\Enums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\GroupPanel\GroupPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GroupPanel\LateralBarItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GroupPanel\LateralBarItem.Designer.cs">
+      <DependentUpon>LateralBarItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GroupPanel\MyListBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\GroupPanel\MyListBox.Designer.cs">
+      <DependentUpon>MyListBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GroupPanel\TabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GroupPanel\TabPageCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\GroupPanel\VirtualForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GroupPanel\VirtualForm.designer.cs">
+      <DependentUpon>VirtualForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IncDecButton\IncDecButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IncDecButton\IncDecButtonDownEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\IncDecButton\IncDecButtonKit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IncDecButton\IncDecButtonKitDownEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\Interfaces\IValidableControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\IOChannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Link.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LanguageAndAccessibilitySettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LowLevelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\LowLevelControl.Designer.cs">
+      <DependentUpon>LowLevelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\myLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\myLabel.Designer.cs">
+      <DependentUpon>myLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Prc\PrcControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Prc\PrcControl.Designer.cs">
+      <DependentUpon>PrcControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Prc\PrcTemperature.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Prc\PrcTemperature.Designer.cs">
+      <DependentUpon>PrcTemperature.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Prc\PrcWrapArm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Prc\PrcWrapArm.Designer.cs">
+      <DependentUpon>PrcWrapArm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Prc\WarpControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Prc\WarpControl.designer.cs">
+      <DependentUpon>WarpControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Roll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Roll.Designer.cs">
+      <DependentUpon>Roll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SlitterScorerSetupStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SlitterScorerShaftStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SlitterScorerShaftStatus.Designer.cs">
+      <DependentUpon>SlitterScorerShaftStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tools\MachineTools.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Photoeye\BusyChangedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\Photoeye\Photoeye.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ProgBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Tools\RotaryCS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Tools\ScoreShaft.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StateButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SyncroUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SyncroUserControl.Designer.cs">
+      <DependentUpon>SyncroUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Title.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TitledLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TitledList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TitledMaskTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TitledNumericUpDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TitledTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Tools\SlitShaft.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Tools\WebDirector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WrapArm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WrapArm.Designer.cs">
+      <DependentUpon>WrapArm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Alarm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\AlarmHistory.cs" />
+    <Compile Include="DataBase\ConfigBase.cs" />
+    <Compile Include="DataBase\CutToPattern.cs" />
+    <Compile Include="DataBase\DownTime.cs" />
+    <Compile Include="DataBase\DownTimeReason.cs" />
+    <Compile Include="DataBase\EventArgs\DBChangedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\Flute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\Interfaces\IDatabase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\Language.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\AOC.cs" />
+    <Compile Include="DataBase\LineConfig\Bridge.cs" />
+    <Compile Include="DataBase\LineConfig\Converters.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\DBSections.cs" />
+    <Compile Include="DataBase\LineConfig\DoubleBacker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\Encoders.cs" />
+    <Compile Include="DataBase\LineConfig\GlueGap.cs" />
+    <Compile Include="DataBase\LineConfig\GlueUnit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\Knife.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\LineBase.cs" />
+    <Compile Include="DataBase\LineConfig\LineConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\Office.cs" />
+    <Compile Include="DataBase\LineConfig\Operator.cs" />
+    <Compile Include="DataBase\LineConfig\PaperTension.cs" />
+    <Compile Include="DataBase\LineConfig\PRC.cs" />
+    <Compile Include="DataBase\LineConfig\PreHeatersTern.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\Printers.cs" />
+    <Compile Include="DataBase\LineConfig\Regulation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\Rotary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\SFMainSteam.cs" />
+    <Compile Include="DataBase\LineConfig\SingleFacer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\SlitterScorer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\Speed.cs" />
+    <Compile Include="DataBase\LineConfig\SpeedReference.cs" />
+    <Compile Include="DataBase\LineConfig\Splicer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\Stacker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\SteamShower.cs" />
+    <Compile Include="DataBase\LineConfig\Syncro.cs" />
+    <Compile Include="DataBase\LineConfig\WebDirector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\LineConfig\WEC.cs" />
+    <Compile Include="DataBase\LineConfig\WrapArm.cs" />
+    <Compile Include="DataBase\LineConfig\WrapArmSteam.cs" />
+    <Compile Include="DataBase\Message.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\Order.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\Paper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\PastOrder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\PastRoll.cs" />
+    <Compile Include="DataBase\PRCManager.cs" />
+    <Compile Include="DataBase\Quality.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\RotaryFormat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\ScorerProfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\Shift.cs" />
+    <Compile Include="DataBase\SqlManager.cs" />
+    <Compile Include="DataBase\SyncroConfig\AIOSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\AlarmsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\AllenBradleyCommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\baseComms.cs" />
+    <Compile Include="DataBase\SyncroConfig\BridgeSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\baseSocketComms.cs" />
+    <Compile Include="DataBase\SyncroConfig\DBCarteamCtrlSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\DBExpress400CtrlSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\FanFoldHOETTEN.cs" />
+    <Compile Include="DataBase\SyncroConfig\GU_KohlerCtrlSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEBHSSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEBSCOMGapoCommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFELogimac.cs" />
+    <Compile Include="DataBase\SyncroConfig\KnifeLogimacComms.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEMhi_58E_Ctrl.cs" />
+    <Compile Include="DataBase\SyncroConfig\MonitorSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\RollScanSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\MTHFosberMindaSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\MTHFosberStandard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\SyncroConfig\MTHSeemiSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\RollStandFosberPRT400CTRLSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\RSMSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SFSmart400CTRLSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SplicerFosberLNK400CTRLSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SSCompact22.2XCommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SSCompact22.2XSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\RSHMhi_Settings.cs" />
+    <Compile Include="DataBase\SyncroConfig\CTCSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\DataBridgeSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\DBExpressCtrlSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\DBGenericCtrlSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\DBGenericSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\DBMSSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\DIOSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\EventLogSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\FCTSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\GeneralSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\GUGenericCTRLSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\GUGenericSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEBmb21.11CommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEBmb21.11Settings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEDigitec21.11CommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEDigitec21.11Settings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEDigitec21.20CommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEDigitec21.20Settings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEDigitec21.30CommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEDigitec21.30Settings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEMarquipDeccCommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\KNIFEMarquipSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\MTHCommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\MTHDuckerSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\OFFICESPDESettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\OHDCommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\PHGenericCTRLSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\PHGenericSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\PLCComm.cs" />
+    <Compile Include="DataBase\SyncroConfig\PLCSiemensComm.cs" />
+    <Compile Include="DataBase\SyncroConfig\PrinterSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\RSHFosber23_XXSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\RTCSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SerialComm.cs" />
+    <Compile Include="DataBase\SyncroConfig\SFGenericCTRLSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SFGenericSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SFSmartCTRLSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SocketComm.cs" />
+    <Compile Include="DataBase\SyncroConfig\SpeedASRSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SpeedSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SplicerGenericCTRLSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SplicerGenericSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SSPaddlesSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SSTwin22.40CommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SSTwin22.40Settings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SSTwin22.60CommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SSTwin22.60Settings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SSTwinE22.50CommsSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\SyncroConfig\SSTwinE22.50Settings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SSCompact22.2XMacComms.cs" />
+    <Compile Include="DataBase\SyncroConfig\STKMarquipDeccCommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\STKBSCOMGapoCommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\STKStackerUniversalCommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\STKStackerUniversalSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\STK_GenericCTRL.cs" />
+    <Compile Include="DataBase\SyncroConfig\StarterSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\STKFavalessaLRECommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\STKTerminal20.11CommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\STKTerminal20.20CommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\STKTerminal20.20Settings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBase\SyncroConfig\STKTerminal400CommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\STK_NE_CommsSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\SyncroBase.cs" />
+    <Compile Include="DataBase\SyncroConfig\SyncroConfig.cs" />
+    <Compile Include="DataBase\SyncroConfig\SyncroCSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\TaskSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\ThredBaseComms.cs" />
+    <Compile Include="DataBase\SyncroConfig\Twin400MacCommsBHSSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\WECBMUSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\WECSettings.cs" />
+    <Compile Include="DataBase\SyncroConfig\WECSyncroSettings.cs" />
+    <Compile Include="DataBase\TRACEManager.cs" />
+    <Compile Include="DBManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_CommFailure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LateralBar\Frm_LateralBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LateralBar\Frm_LateralBar.designer.cs">
+      <DependentUpon>Frm_LateralBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Debug\Frm_DebugDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Debug\Frm_DebugGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Debug\Frm_DebugINI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Debug\Frm_DebugTwin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Debug\Frm_DebugTwin2.Designer.cs">
+      <DependentUpon>Frm_DebugTwin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Debug\Twin400\Frm_DebugTwin400SetupSituation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Debug\Twin400\Frm_DebugTwin400Status1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Debug\Twin400\Frm_DebugTwin400Status2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Debug\Twin400\Frm_DebugTwin400Subgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Debug\Twin400\Frm_DebugTwin400_positioning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Alarms\Frm_DoubleBackerAlarmsActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Alarms\Frm_DoubleBackerAlarmsActive.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerAlarmsActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Alarms\Frm_DoubleBackerAlarmsHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Alarms\Frm_DoubleBackerAlarmsHistory.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerAlarmsHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Alarms\Frm_DoubleBackerAlarmsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Alarms\Frm_DoubleBackerAlarmsSubgroup.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerAlarmsSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole01.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerConsole01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole02.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerConsole02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole03.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerConsole03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole04.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerConsole04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsoleSubgroup.cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsoleSubgroup.cs.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerConsoleSubgroup.cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Frm_DoubleBackerGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatus01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsMachine.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerSettingsMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsStatus.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerSettingsStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsSubgroup.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerSettingsSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsTask.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerSettingsTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatus02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatus02.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerStatus02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatus03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatus03.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerStatus03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatus04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatus04.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerStatus04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatusSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatusSubgroup.Designer.cs">
+      <DependentUpon>Frm_DoubleBackerStatusSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\DryEndSupervisor\Frm_DryEndSupervisor01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DryEndSupervisor\Frm_DryEndSupervisor02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DryEndSupervisor\Frm_DryEndSupervisor03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\DryEndSupervisor\Frm_DryEndSupervisorGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Frm_Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Alarms\Frm_GlueUnitAlarmActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Alarms\Frm_GlueUnitAlarmActive.Designer.cs">
+      <DependentUpon>Frm_GlueUnitAlarmActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Alarms\Frm_GlueUnitAlarmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Alarms\Frm_GlueUnitAlarmHistory.Designer.cs">
+      <DependentUpon>Frm_GlueUnitAlarmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Alarms\Frm_GlueUnitAlarmSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Alarms\Frm_GlueUnitAlarmSubgroup.Designer.cs">
+      <DependentUpon>Frm_GlueUnitAlarmSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Console\Frm_GlueUnitConsoleGlueGaps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Console\Frm_GlueUnitConsoleGlueGaps.Designer.cs">
+      <DependentUpon>Frm_GlueUnitConsoleGlueGaps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Console\Frm_GlueUnitConsoleSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Console\Frm_GlueUnitConsoleSubgroup.Designer.cs">
+      <DependentUpon>Frm_GlueUnitConsoleSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Console\Frm_GlueUnitConsoleWrapArms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Console\Frm_GlueUnitConsoleWrapArms.Designer.cs">
+      <DependentUpon>Frm_GlueUnitConsoleWrapArms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Frm_GlueUnitGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Frm_GlueUnitGroup.Designer.cs">
+      <DependentUpon>Frm_GlueUnitGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Frm_GlueUnitStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Frm_GlueUnitStatus.Designer.cs">
+      <DependentUpon>Frm_GlueUnitStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Settings\Frm_GlueUnitSettingsMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Settings\Frm_GlueUnitSettingsMachine.Designer.cs">
+      <DependentUpon>Frm_GlueUnitSettingsMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Settings\Frm_GlueUnitSettingsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Settings\Frm_GlueUnitSettingsSubgroup.Designer.cs">
+      <DependentUpon>Frm_GlueUnitSettingsSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Settings\Frm_GlueUnitSettingsTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\GlueUnit\Settings\Frm_GlueUnitSettingsTask.Designer.cs">
+      <DependentUpon>Frm_GlueUnitSettingsTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Knife\Alarms\Frm_KnifeAlarmActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Knife\Alarms\Frm_KnifeAlarmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Knife\Alarms\Frm_KnifeAlarmSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Knife\Frm_KnifeConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Knife\Frm_KnifeGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Knife\Frm_KnifePattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Knife\Frm_KnifePattern.Designer.cs">
+      <DependentUpon>Frm_KnifePattern.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Knife\Frm_KnifeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Knife\Settings\Frm_KnifeSettingsMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Knife\Settings\Frm_KnifeSettingsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Knife\Settings\Frm_KnifeSettingsTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Alarms\Frm_PreHeaterTernAlarmActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Alarms\Frm_PreHeaterTernAlarmActive.Designer.cs">
+      <DependentUpon>Frm_PreHeaterTernAlarmActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Alarms\Frm_PreHeaterTernAlarmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Alarms\Frm_PreHeaterTernAlarmHistory.Designer.cs">
+      <DependentUpon>Frm_PreHeaterTernAlarmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Alarms\Frm_PreHeaterTernAlarmSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Alarms\Frm_PreHeaterTernAlarmSubgroup.Designer.cs">
+      <DependentUpon>Frm_PreHeaterTernAlarmSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Frm_PreHeaterTernConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Frm_PreHeaterTernConsole.Designer.cs">
+      <DependentUpon>Frm_PreHeaterTernConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Frm_PreHeaterTernGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Frm_PreHeaterTernGroup.Designer.cs">
+      <DependentUpon>Frm_PreHeaterTernGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Frm_PreHeaterTernStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Frm_PreHeaterTernStatus.Designer.cs">
+      <DependentUpon>Frm_PreHeaterTernStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Settings\Frm_PreHeaterTernSettingsMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Settings\Frm_PreHeaterTernSettingsMachine.Designer.cs">
+      <DependentUpon>Frm_PreHeaterTernSettingsMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Settings\Frm_PreHeaterTernSettingsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Settings\Frm_PreHeaterTernSettingsSubgroup.Designer.cs">
+      <DependentUpon>Frm_PreHeaterTernSettingsSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Settings\Frm_PreHeaterTernSettingsTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\PreHeaterTern\Settings\Frm_PreHeaterTernSettingsTask.Designer.cs">
+      <DependentUpon>Frm_PreHeaterTernSettingsTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Alarms\Frm_Alarm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Alarms\Frm_Alarm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Alarms\Frm_AlarmsSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Home\Frm_HomePrc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Home\Frm_HomePrc.Designer.cs">
+      <DependentUpon>Frm_HomePrc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Operator\Frm_MessagePRC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Operator\Frm_MessagePRC.Designer.cs">
+      <DependentUpon>Frm_MessagePRC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Operator\Frm_Operator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Frm_Paper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Frm_ProductionGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Frm_Quality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Home\Frm_HomeDry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Home\Frm_HomeSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Home\Frm_HomeWet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Operator\Frm_OperatorSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Operator\Frm_OperatorSubGroup.Designer.cs">
+      <DependentUpon>Frm_OperatorSubGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Operator\Frm_Printings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Operator\Frm_Printings.Designer.cs">
+      <DependentUpon>Frm_Printings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\OrdersIns\Frm_DryPastOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\OrdersIns\Frm_DryPastOrders.Designer.cs">
+      <DependentUpon>Frm_DryPastOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\OrdersIns\Frm_InsWetOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\OrdersIns\Frm_OrdersInsSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\OrdersIns\Frm_QuickInsDryOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\OrdersList\Frm_DryOrdersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\OrdersList\Frm_DryPastOrdersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\OrdersList\Frm_DryWetOrdersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\OrdersList\Frm_OrdersListSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\OrdersList\Frm_WetOrdersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Warnings\Frm_Warning1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Warnings\Frm_Warning2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Production\Warnings\Frm_WarningsSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Frm_AIOStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Frm_DownTimeReasons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Frm_DIOStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Frm_Flute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Frm_Languages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Frm_LineConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Frm_RestoreBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Frm_SettingsGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Simulation\Frm_SimulationGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Simulation\Frm_SimulationGeneral.Designer.cs">
+      <DependentUpon>Frm_SimulationGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Simulation\Frm_SimulationSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Simulation\Frm_SimulationSubgroup.Designer.cs">
+      <DependentUpon>Frm_SimulationSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Alarms\Frm_ShearAlarmActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Alarms\Frm_ShearAlarmActive.Designer.cs">
+      <DependentUpon>Frm_ShearAlarmActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Alarms\Frm_ShearAlarmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Alarms\Frm_ShearAlarmHistory.Designer.cs">
+      <DependentUpon>Frm_ShearAlarmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Alarms\Frm_ShearAlarmsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Alarms\Frm_ShearAlarmsSubgroup.Designer.cs">
+      <DependentUpon>Frm_ShearAlarmsSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Frm_ShearAlarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Frm_ShearConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Frm_ShearGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Frm_ShearStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Settings\Frm_ShearSettingsMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Settings\Frm_ShearSettingsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Shear\Settings\Frm_ShearSettingsTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Alarms\Frm_SingleFacerAlarmActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Alarms\Frm_SingleFacerAlarmActive.Designer.cs">
+      <DependentUpon>Frm_SingleFacerAlarmActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Alarms\Frm_SingleFacerAlarmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Alarms\Frm_SingleFacerAlarmHistory.Designer.cs">
+      <DependentUpon>Frm_SingleFacerAlarmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Alarms\Frm_SingleFacerAlarmSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Alarms\Frm_SingleFacerAlarmSubgroup.Designer.cs">
+      <DependentUpon>Frm_SingleFacerAlarmSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole01.Designer.cs">
+      <DependentUpon>Frm_SingleFacerConsole01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole02.Designer.cs">
+      <DependentUpon>Frm_SingleFacerConsole02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole03.Designer.cs">
+      <DependentUpon>Frm_SingleFacerConsole03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole04.Designer.cs">
+      <DependentUpon>Frm_SingleFacerConsole04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsoleSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsoleSubgroup.Designer.cs">
+      <DependentUpon>Frm_SingleFacerConsoleSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Frm_SingleFacerGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsBridgeStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsBridgeStatus.Designer.cs">
+      <DependentUpon>Frm_SingleFacerSettingsBridgeStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsMachine.Designer.cs">
+      <DependentUpon>Frm_SingleFacerSettingsMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsSFStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsSFStatus.Designer.cs">
+      <DependentUpon>Frm_SingleFacerSettingsSFStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsSubgroup.Designer.cs">
+      <DependentUpon>Frm_SingleFacerSettingsSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsTask.Designer.cs">
+      <DependentUpon>Frm_SingleFacerSettingsTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus01.Designer.cs">
+      <DependentUpon>Frm_SingleFacerStatus01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus02.Designer.cs">
+      <DependentUpon>Frm_SingleFacerStatus02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus03.Designer.cs">
+      <DependentUpon>Frm_SingleFacerStatus03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus04.Designer.cs">
+      <DependentUpon>Frm_SingleFacerStatus04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatusSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatusSubgroup.Designer.cs">
+      <DependentUpon>Frm_SingleFacerStatusSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Alarms\Frm_SlitterScorerAlarmActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Alarms\Frm_SlitterScorerAlarmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Alarms\Frm_SlitterScorerAlarmsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Status\Frm_SlitterScorerConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Frm_SlitterScorerGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Status\Frm_SlitterScorerStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Status\Frm_SlitterScorerBlades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Settings\Frm_SlitterScorerSettingsMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Settings\Frm_SlitterScorerSettingsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Settings\Frm_SlitterScorerSettingsTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Status\Frm_SlitterScorerStatusSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Status\Frm_SlitterScorerRegulations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Status\Frm_SlitterScorerRegulations.Designer.cs">
+      <DependentUpon>Frm_SlitterScorerRegulations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Tools\Frm_SlitterScorerWebDirector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SlitterScorer\Tools\Frm_SlitterScorerToolsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Alarms\Frm_SplicerAlarmActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Alarms\Frm_SplicerAlarmActive.Designer.cs">
+      <DependentUpon>Frm_SplicerAlarmActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Alarms\Frm_SplicerAlarmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Alarms\Frm_SplicerAlarmHistory.Designer.cs">
+      <DependentUpon>Frm_SplicerAlarmHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Alarms\Frm_SplicerAlarmsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Alarms\Frm_SplicerAlarmsSubgroup.Designer.cs">
+      <DependentUpon>Frm_SplicerAlarmsSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Frm_SplicerConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Frm_SplicerConsole.Designer.cs">
+      <DependentUpon>Frm_SplicerConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Frm_SplicerGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Frm_SplicerGroup.Designer.cs">
+      <DependentUpon>Frm_SplicerGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Frm_SplicerStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Frm_SplicerStatus.Designer.cs">
+      <DependentUpon>Frm_SplicerStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsMachine.Designer.cs">
+      <DependentUpon>Frm_SplicerSettingsMachine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsStatus.Designer.cs">
+      <DependentUpon>Frm_SplicerSettingsStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsSubgroup.Designer.cs">
+      <DependentUpon>Frm_SplicerSettingsSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsTask.Designer.cs">
+      <DependentUpon>Frm_SplicerSettingsTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Alarms\Frm_StackerAlarmActive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Alarms\Frm_StackerAlarmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Alarms\Frm_StackerAlarmSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Frm_StackerConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Frm_StackerGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Settings\Frm_CTCStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Settings\Frm_StackerSettingsMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Settings\Frm_StackerSettingsStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Settings\Frm_StackerSettingsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Settings\Frm_StackerSettingsTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Status\Frm_StackerStatus01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Status\Frm_StackerStatus01.Designer.cs">
+      <DependentUpon>Frm_StackerStatus01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Status\Frm_StackerStatus02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Status\Frm_StackerStatus02.Designer.cs">
+      <DependentUpon>Frm_StackerStatus02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Status\Frm_StackerStatus03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Status\Frm_StackerStatus03.Designer.cs">
+      <DependentUpon>Frm_StackerStatus03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Status\Frm_StackerStatus04.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Status\Frm_StackerStatus04.Designer.cs">
+      <DependentUpon>Frm_StackerStatus04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Status\Frm_StackerStatusSubgroup.cs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Stacker\Status\Frm_StackerStatusSubgroup.cs.Designer.cs">
+      <DependentUpon>Frm_StackerStatusSubgroup.cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Frm_DowntimeReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Frm_ProductionTrace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Frm_ProductionTrace.designer.cs">
+      <DependentUpon>Frm_ProductionTrace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Frm_ShiftReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Frm_StatisticsGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Orders\Frm_StatisticsOrdersDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Orders\Frm_StatisticsOrdersDetail.Designer.cs">
+      <DependentUpon>Frm_StatisticsOrdersDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Orders\Frm_StatisticsOrdersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Orders\Frm_StatisticsOrdersList.Designer.cs">
+      <DependentUpon>Frm_StatisticsOrdersList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Orders\Frm_StatisticsOrdersSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Orders\Frm_StatisticsOrdersSubgroup.Designer.cs">
+      <DependentUpon>Frm_StatisticsOrdersSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Rolls\Frm_StatisticsRollsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Rolls\Frm_StatisticsRollsList.designer.cs">
+      <DependentUpon>Frm_StatisticsRollsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Rolls\Frm_StatisticsRollsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Rolls\Frm_StatisticsRollsSubgroup.Designer.cs">
+      <DependentUpon>Frm_StatisticsRollsSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Rolls\Frm_StatisticsRollsTrace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Statistics\Rolls\Frm_StatisticsRollsTrace.Designer.cs">
+      <DependentUpon>Frm_StatisticsRollsTrace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_AOCSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_AOCStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_AOC_WECSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_WECSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_WECSettings.Designer.cs">
+      <DependentUpon>Frm_WECSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_WECStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_WECStatus.Designer.cs">
+      <DependentUpon>Frm_WECStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\Frm_SyncroSystemGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\Frm_SyncroSystemOperations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\Frm_SyncroSystemOperations.Designer.cs">
+      <DependentUpon>Frm_SyncroSystemOperations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\LOG\Frm_Log2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\LOG\Frm_Log2.Designer.cs">
+      <DependentUpon>Frm_Log2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\LOG\Frm_Log1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\LOG\Frm_Log1.Designer.cs">
+      <DependentUpon>Frm_Log1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\LOG\Frm_Log3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\LOG\Frm_Log3.Designer.cs">
+      <DependentUpon>Frm_Log3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\LOG\Frm_Log4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\LOG\Frm_Log4.Designer.cs">
+      <DependentUpon>Frm_Log4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\LOG\Frm_LogSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\LOG\Frm_LogSubgroup.Designer.cs">
+      <DependentUpon>Frm_LogSubgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\OFFICE\Frm_OFFICESettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\OFFICE\Frm_OFFICESettings.Designer.cs">
+      <DependentUpon>Frm_OFFICESettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\OFFICE\Frm_OFFICEStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\OFFICE\Frm_OFFICEStatus.Designer.cs">
+      <DependentUpon>Frm_OFFICEStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\OFFICE\Frm_OFFICESubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\OFFICE\Frm_OFFICESubGroup.Designer.cs">
+      <DependentUpon>Frm_OFFICESubGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\OFFICE\Frm_PRCSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\OFFICE\Frm_PRCSettings.Designer.cs">
+      <DependentUpon>Frm_PRCSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\PRINTER\Frm_PRINTERSSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\PRINTER\Frm_PRINTERSSettings.Designer.cs">
+      <DependentUpon>Frm_PRINTERSSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\PRINTER\Frm_PRINTERSStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\PRINTER\Frm_PRINTERSStatus.Designer.cs">
+      <DependentUpon>Frm_PRINTERSStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\PRINTER\Frm_PRINTERSSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\PRINTER\Frm_PRINTERSSubGroup.Designer.cs">
+      <DependentUpon>Frm_PRINTERSSubGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\SPEED\Frm_SpeedSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\SPEED\Frm_SpeedStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\SPEED\Frm_SpeedSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\SPEED_Reference\Frm_SpeedReferenceSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\SPEED_Reference\Frm_SpeedReferenceStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\SPEED_Reference\Frm_SpeedReferenceSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\SYNCRO\Frm_SyncroSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\SYNCRO\Frm_SyncroStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\SYNCRO\Frm_SyncroSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\SYNCRO\Frm_SyncroTask1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\SyncroSystem\SYNCRO\Frm_SyncroTask2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Alarms\Frm_twin400_alarm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Alarms\Frm_twin400_alarm4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Alarms\Frm_twin400_alarmsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Flutes\Frm_twin400_flutes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Flutes\Frm_twin400_flutesSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Flutes\Frm_twin400_quality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Frm_Twin400Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Maintenance\Frm_twin400_maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Maintenance\Frm_twin400_maintenanceSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Maintenance\Frm_twin400_simulations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Maintenance\Frm_twin400_testInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Maintenance\Frm_twin400_testOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Orders\Frm_twin400_orderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Orders\Frm_twin400_ordersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Orders\Frm_twin400_ordersSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Orders\Frm_twin400_pastOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Status\Frm_twin400_blades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Status\Frm_twin400_console.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Status\Frm_twin400_regulations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Status\Frm_twin400_regulations.Designer.cs">
+      <DependentUpon>Frm_twin400_regulations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Settings\Frm_twin400_machineSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Settings\Frm_twin400_misc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Settings\Frm_twin400_plunges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Settings\Frm_twin400_settingsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Settings\Frm_twin400_tasks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Settings\Frm_twin400_tasks.Designer.cs">
+      <DependentUpon>Frm_twin400_tasks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Status\Frm_twin400_overview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Status\Frm_twin400_statusSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Tools\Frm_twin400_bladesAndScorers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Tools\Frm_twin400_rotary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Tools\Frm_twin400_toolsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Tools\Frm_twin400_webDirector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Warnings\Frm_twin400_warning1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Warnings\Frm_twin400_warning4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\Twin400\Warnings\Frm_twin400_warningsSubgroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\WetEndSupervisor\Frm_WetEndSupervisor01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\WetEndSupervisor\Frm_WetEndSupervisor02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\WetEndSupervisor\Frm_WetEndSupervisor03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\WetEndSupervisor\Frm_WetEndSupervisor03.Designer.cs">
+      <DependentUpon>Frm_WetEndSupervisor03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\WetEndSupervisor\Frm_WetEndSupervisorGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_Alert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_AskDateTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_AskDateTime.Designer.cs">
+      <DependentUpon>Frm_AskDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_AskString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_AskValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_AskValueAndConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_AskValueAndConfirm.Designer.cs">
+      <DependentUpon>Frm_AskValueAndConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_Confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_FilterPastOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_FilterPastOrder.Designer.cs">
+      <DependentUpon>Frm_FilterPastOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_FilterPastRolls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_FilterPastRolls.Designer.cs">
+      <DependentUpon>Frm_FilterPastRolls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_FilterPRCMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_FilterPRCMessage.Designer.cs">
+      <DependentUpon>Frm_FilterPRCMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_FilterQuality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_FilterQuality.Designer.cs">
+      <DependentUpon>Frm_FilterQuality.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_MoveOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_MultipleDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_PopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_PRCAskMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_PRCAskMessage.Designer.cs">
+      <DependentUpon>Frm_PRCAskMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_PRCAskValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_PRCAskValue.Designer.cs">
+      <DependentUpon>Frm_PRCAskValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_PRCCurve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_PRCCurve.Designer.cs">
+      <DependentUpon>Frm_PRCCurve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_RollData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_RollData.Designer.cs">
+      <DependentUpon>Frm_RollData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_ScorersOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_ScorersOptions.Designer.cs">
+      <DependentUpon>Frm_ScorersOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_Swap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_Swap.Designer.cs">
+      <DependentUpon>Frm_Swap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_TimeSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PopUp\Frm_TimeSetup.Designer.cs">
+      <DependentUpon>Frm_TimeSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StatusBar\Frm_StatusBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StatusBar\Frm_StatusBarDryEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StatusBar\Frm_StatusBarTwin400.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StatusBar\Frm_StatusBarWetEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Network\CommunicationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Network\Icmp\EchoMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Network\Icmp\Icmp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Network\Icmp\IcmpMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Network\Icmp\InformationMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Network\TCPMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Network\TCPSocket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Network\UDPMessage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Network\UDPSocket.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PageManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagesHistorian.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RTCManager.cs" />
+    <Compile Include="Utility\Accessibility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utility\CleanCutData.cs" />
+    <Compile Include="Utility\DetailPaddle.cs" />
+    <Compile Include="Utility\DetailScore.cs" />
+    <Compile Include="Utility\DetailSector.cs" />
+    <Compile Include="Utility\DetailSlit.cs" />
+    <Compile Include="Utility\DisplaySettings.cs" />
+    <Compile Include="Utility\Enums.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utility\EventArgs\AccessibilityChangedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utility\DGVPrinter.cs" />
+    <Compile Include="Utility\FosberDialogResult.cs" />
+    <Compile Include="Utility\Ini.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utility\LocalValidationLimits.cs" />
+    <Compile Include="Utility\Logger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utility\lookup.cs" />
+    <Compile Include="Utility\ScoreMeasure.cs" />
+    <Compile Include="Utility\Settings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utility\SetupSituation.cs" />
+    <Compile Include="Utility\Shoutdown.cs" />
+    <Compile Include="Utility\SyncroConverter.cs" />
+    <Compile Include="Utility\SyncroImage.cs" />
+    <Compile Include="Utility\TimeZoneInformation.cs" />
+    <Compile Include="Utility\Twin400LogAnalyzer.cs" />
+    <EmbeddedResource Include="Controls\CheckBox.resx">
+      <DependentUpon>CheckBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Graphic.resx">
+      <DependentUpon>Graphic.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Graphic\GraphBars.resx">
+      <DependentUpon>GraphBars.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Graphic\GraphLines.resx">
+      <DependentUpon>GraphLines.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Graphic\GraphLinesEditor.resx">
+      <DependentUpon>GraphLinesEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Graphic\GraphPies.resx">
+      <DependentUpon>GraphPies.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Grid.resx">
+      <DependentUpon>Grid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GridView.resx">
+      <DependentUpon>GridView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GroupPanel\GroupPanel.resx">
+      <DependentUpon>GroupPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GroupPanel\LateralBarItem.resx">
+      <DependentUpon>LateralBarItem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GroupPanel\MyListBox.resx">
+      <DependentUpon>MyListBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GroupPanel\TabPage.resx">
+      <DependentUpon>TabPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\GroupPanel\VirtualForm.resx">
+      <DependentUpon>VirtualForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IncDecButton\IncDecButton.resx">
+      <DependentUpon>IncDecButton.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IncDecButton\IncDecButtonKit.resx">
+      <DependentUpon>IncDecButtonKit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Link.resx">
+      <DependentUpon>Link.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LowLevelControl.resx">
+      <DependentUpon>LowLevelControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\myLabel.resx">
+      <DependentUpon>myLabel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Photoeye\Photoeye.resx">
+      <DependentUpon>Photoeye.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Prc\PrcControl.resx">
+      <DependentUpon>PrcControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Prc\PrcTemperature.resx">
+      <DependentUpon>PrcTemperature.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Prc\PrcWrapArm.resx">
+      <DependentUpon>PrcWrapArm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Prc\WarpControl.resx">
+      <DependentUpon>WarpControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ProgBar.resx">
+      <DependentUpon>ProgBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Roll.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Roll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SlitterScorerSetupStatus.resx">
+      <DependentUpon>SlitterScorerSetupStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SlitterScorerShaftStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SlitterScorerShaftStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StateButton.resx">
+      <DependentUpon>StateButton.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Tab.resx">
+      <DependentUpon>Tab.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Title.resx">
+      <DependentUpon>Title.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TitledLabel.resx">
+      <DependentUpon>TitledLabel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TitledList.resx">
+      <DependentUpon>TitledList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TitledMaskTextBox.resx">
+      <DependentUpon>TitledMaskTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TitledNumericUpDown.resx">
+      <DependentUpon>TitledNumericUpDown.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TitledTextBox.resx">
+      <DependentUpon>TitledTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LanguageAndAccessibilitySettings.resx">
+      <DependentUpon>LanguageAndAccessibilitySettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WrapArm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WrapArm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Base.resx">
+      <DependentUpon>Frm_Base.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_CommFailure.resx">
+      <DependentUpon>Frm_CommFailure.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LateralBar\Frm_LateralBar.resx">
+      <DependentUpon>Frm_LateralBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Debug\Frm_DebugDatabase.resx">
+      <DependentUpon>Frm_DebugDatabase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Debug\Frm_DebugGroup.resx">
+      <DependentUpon>Frm_DebugGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Debug\Frm_DebugINI.resx">
+      <DependentUpon>Frm_DebugINI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Debug\Frm_DebugTwin2.resx">
+      <DependentUpon>Frm_DebugTwin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Debug\Twin400\Frm_DebugTwin400SetupSituation.resx">
+      <DependentUpon>Frm_DebugTwin400SetupSituation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Debug\Twin400\Frm_DebugTwin400Status1.resx">
+      <DependentUpon>Frm_DebugTwin400Status1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Debug\Twin400\Frm_DebugTwin400Status2.resx">
+      <DependentUpon>Frm_DebugTwin400Status2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Debug\Twin400\Frm_DebugTwin400Subgroup.resx">
+      <DependentUpon>Frm_DebugTwin400Subgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Debug\Twin400\Frm_DebugTwin400_positioning.resx">
+      <DependentUpon>Frm_DebugTwin400_positioning.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Alarms\Frm_DoubleBackerAlarmsActive.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerAlarmsActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Alarms\Frm_DoubleBackerAlarmsHistory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerAlarmsHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Alarms\Frm_DoubleBackerAlarmsSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerAlarmsSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole01.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerConsole01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerConsole02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerConsole03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsole04.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerConsole04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Console\Frm_DoubleBackerConsoleSubgroup.cs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerConsoleSubgroup.cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Frm_DoubleBackerGroup.resx">
+      <DependentUpon>Frm_DoubleBackerGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatus01.resx">
+      <DependentUpon>Frm_DoubleBackerStatus01.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsMachine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerSettingsMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerSettingsStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerSettingsSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Settings\Frm_DoubleBackerSettingsTask.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerSettingsTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatus02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerStatus02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatus03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerStatus03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatus04.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerStatus04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DoubleBacker\Status\Frm_DoubleBackerStatusSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DoubleBackerStatusSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DryEndSupervisor\Frm_DryEndSupervisor01.resx">
+      <DependentUpon>Frm_DryEndSupervisor01.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DryEndSupervisor\Frm_DryEndSupervisor02.resx">
+      <DependentUpon>Frm_DryEndSupervisor02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DryEndSupervisor\Frm_DryEndSupervisor03.resx">
+      <DependentUpon>Frm_DryEndSupervisor03.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\DryEndSupervisor\Frm_DryEndSupervisorGroup.resx">
+      <DependentUpon>Frm_DryEndSupervisorGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Frm_Page.resx">
+      <DependentUpon>Frm_Page.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\GlueUnit\Alarms\Frm_GlueUnitAlarmActive.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_GlueUnitAlarmActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\GlueUnit\Alarms\Frm_GlueUnitAlarmHistory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_GlueUnitAlarmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\GlueUnit\Alarms\Frm_GlueUnitAlarmSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_GlueUnitAlarmSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\GlueUnit\Console\Frm_GlueUnitConsoleGlueGaps.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_GlueUnitConsoleGlueGaps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\GlueUnit\Console\Frm_GlueUnitConsoleSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_GlueUnitConsoleSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\GlueUnit\Console\Frm_GlueUnitConsoleWrapArms.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_GlueUnitConsoleWrapArms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\GlueUnit\Frm_GlueUnitGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_GlueUnitGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\GlueUnit\Frm_GlueUnitStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_GlueUnitStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\GlueUnit\Settings\Frm_GlueUnitSettingsMachine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_GlueUnitSettingsMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\GlueUnit\Settings\Frm_GlueUnitSettingsSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_GlueUnitSettingsSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\GlueUnit\Settings\Frm_GlueUnitSettingsTask.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_GlueUnitSettingsTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Knife\Alarms\Frm_KnifeAlarmActive.resx">
+      <DependentUpon>Frm_KnifeAlarmActive.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Knife\Alarms\Frm_KnifeAlarmHistory.resx">
+      <DependentUpon>Frm_KnifeAlarmHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Knife\Alarms\Frm_KnifeAlarmSubgroup.resx">
+      <DependentUpon>Frm_KnifeAlarmSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Knife\Frm_KnifeConsole.resx">
+      <DependentUpon>Frm_KnifeConsole.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Knife\Frm_KnifeGroup.resx">
+      <DependentUpon>Frm_KnifeGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Knife\Frm_KnifePattern.resx">
+      <DependentUpon>Frm_KnifePattern.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Knife\Frm_KnifeStatus.resx">
+      <DependentUpon>Frm_KnifeStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Knife\Settings\Frm_KnifeSettingsMachine.resx">
+      <DependentUpon>Frm_KnifeSettingsMachine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Knife\Settings\Frm_KnifeSettingsSubgroup.resx">
+      <DependentUpon>Frm_KnifeSettingsSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Knife\Settings\Frm_KnifeSettingsTask.resx">
+      <DependentUpon>Frm_KnifeSettingsTask.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\PreHeaterTern\Alarms\Frm_PreHeaterTernAlarmActive.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PreHeaterTernAlarmActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\PreHeaterTern\Alarms\Frm_PreHeaterTernAlarmHistory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PreHeaterTernAlarmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\PreHeaterTern\Alarms\Frm_PreHeaterTernAlarmSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PreHeaterTernAlarmSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\PreHeaterTern\Frm_PreHeaterTernConsole.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PreHeaterTernConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\PreHeaterTern\Frm_PreHeaterTernGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PreHeaterTernGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\PreHeaterTern\Frm_PreHeaterTernStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PreHeaterTernStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\PreHeaterTern\Settings\Frm_PreHeaterTernSettingsMachine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PreHeaterTernSettingsMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\PreHeaterTern\Settings\Frm_PreHeaterTernSettingsSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PreHeaterTernSettingsSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\PreHeaterTern\Settings\Frm_PreHeaterTernSettingsTask.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PreHeaterTernSettingsTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Alarms\Frm_Alarm1.resx">
+      <DependentUpon>Frm_Alarm1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Alarms\Frm_Alarm2.resx">
+      <DependentUpon>Frm_Alarm2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Alarms\Frm_AlarmsSubGroup.resx">
+      <DependentUpon>Frm_AlarmsSubGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Home\Frm_HomePrc.resx">
+      <DependentUpon>Frm_HomePrc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Operator\Frm_MessagePRC.resx">
+      <DependentUpon>Frm_MessagePRC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Operator\Frm_Operator.resx">
+      <DependentUpon>Frm_Operator.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Frm_Paper.resx">
+      <DependentUpon>Frm_Paper.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Frm_ProductionGroup.resx">
+      <DependentUpon>Frm_ProductionGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Frm_Quality.resx">
+      <DependentUpon>Frm_Quality.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Home\Frm_HomeDry.resx">
+      <DependentUpon>Frm_HomeDry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Home\Frm_HomeSubGroup.resx">
+      <DependentUpon>Frm_HomeSubGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Home\Frm_HomeWet.resx">
+      <DependentUpon>Frm_HomeWet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Operator\Frm_OperatorSubGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_OperatorSubGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Operator\Frm_Printings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_Printings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\OrdersIns\Frm_DryPastOrders.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_DryPastOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\OrdersIns\Frm_InsWetOrder.resx">
+      <DependentUpon>Frm_InsWetOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\OrdersIns\Frm_OrdersInsSubGroup.resx">
+      <DependentUpon>Frm_OrdersInsSubGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\OrdersIns\Frm_QuickInsDryOrder.resx">
+      <DependentUpon>Frm_QuickInsDryOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\OrdersList\Frm_DryOrdersList.resx">
+      <DependentUpon>Frm_DryOrdersList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\OrdersList\Frm_DryPastOrdersList.resx">
+      <DependentUpon>Frm_DryPastOrdersList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\OrdersList\Frm_DryWetOrdersList.resx">
+      <DependentUpon>Frm_DryWetOrdersList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\OrdersList\Frm_OrdersListSubGroup.resx">
+      <DependentUpon>Frm_OrdersListSubGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\OrdersList\Frm_WetOrdersList.resx">
+      <DependentUpon>Frm_WetOrdersList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Warnings\Frm_Warning1.resx">
+      <DependentUpon>Frm_Warning1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Warnings\Frm_Warning2.resx">
+      <DependentUpon>Frm_Warning2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Production\Warnings\Frm_WarningsSubGroup.resx">
+      <DependentUpon>Frm_WarningsSubGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Settings\Frm_AIOStatus.resx">
+      <DependentUpon>Frm_AIOStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Settings\Frm_CTCStatus.resx">
+      <DependentUpon>Frm_CTCStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Settings\Frm_DownTimeReasons.resx">
+      <DependentUpon>Frm_DownTimeReasons.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Settings\Frm_DIOStatus.resx">
+      <DependentUpon>Frm_DIOStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Settings\Frm_Flute.resx">
+      <DependentUpon>Frm_Flute.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Settings\Frm_Languages.resx">
+      <DependentUpon>Frm_Languages.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Settings\Frm_LineConfig.resx">
+      <DependentUpon>Frm_LineConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Settings\Frm_RestoreBackup.resx">
+      <DependentUpon>Frm_RestoreBackup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Settings\Frm_SettingsGroup.resx">
+      <DependentUpon>Frm_SettingsGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Settings\Simulation\Frm_SimulationGeneral.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SimulationGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Settings\Simulation\Frm_SimulationSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SimulationSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Shear\Alarms\Frm_ShearAlarmActive.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_ShearAlarmActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Shear\Alarms\Frm_ShearAlarmHistory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_ShearAlarmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Shear\Alarms\Frm_ShearAlarmsSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_ShearAlarmsSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Shear\Frm_ShearAlarm.resx">
+      <DependentUpon>Frm_ShearAlarm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Shear\Frm_ShearConsole.resx">
+      <DependentUpon>Frm_ShearConsole.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Shear\Frm_ShearGroup.resx">
+      <DependentUpon>Frm_ShearGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Shear\Frm_ShearStatus.resx">
+      <DependentUpon>Frm_ShearStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Shear\Settings\Frm_ShearSettingsMachine.resx">
+      <DependentUpon>Frm_ShearSettingsMachine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Shear\Settings\Frm_ShearSettingsSubgroup.resx">
+      <DependentUpon>Frm_ShearSettingsSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Shear\Settings\Frm_ShearSettingsTask.resx">
+      <DependentUpon>Frm_ShearSettingsTask.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Alarms\Frm_SingleFacerAlarmActive.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerAlarmActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Alarms\Frm_SingleFacerAlarmHistory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerAlarmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Alarms\Frm_SingleFacerAlarmSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerAlarmSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole01.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerConsole01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerConsole02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerConsole03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsole04.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerConsole04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Console\Frm_SingleFacerConsoleSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerConsoleSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Frm_SingleFacerGroup.resx">
+      <DependentUpon>Frm_SingleFacerGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsBridgeStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerSettingsBridgeStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsMachine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerSettingsMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsSFStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerSettingsSFStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerSettingsSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Settings\Frm_SingleFacerSettingsTask.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerSettingsTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus01.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerStatus01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerStatus02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerStatus03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatus04.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerStatus04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SingleFacer\Status\Frm_SingleFacerStatusSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SingleFacerStatusSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Alarms\Frm_SlitterScorerAlarmActive.resx">
+      <DependentUpon>Frm_SlitterScorerAlarmActive.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Alarms\Frm_SlitterScorerAlarmHistory.resx">
+      <DependentUpon>Frm_SlitterScorerAlarmHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Alarms\Frm_SlitterScorerAlarmsSubgroup.resx">
+      <DependentUpon>Frm_SlitterScorerAlarmsSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Status\Frm_SlitterScorerConsole.resx">
+      <DependentUpon>Frm_SlitterScorerConsole.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Frm_SlitterScorerGroup.resx">
+      <DependentUpon>Frm_SlitterScorerGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Status\Frm_SlitterScorerStatus.resx">
+      <DependentUpon>Frm_SlitterScorerStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Status\Frm_SlitterScorerBlades.resx">
+      <DependentUpon>Frm_SlitterScorerBlades.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Settings\Frm_SlitterScorerSettingsMachine.resx">
+      <DependentUpon>Frm_SlitterScorerSettingsMachine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Settings\Frm_SlitterScorerSettingsSubgroup.resx">
+      <DependentUpon>Frm_SlitterScorerSettingsSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Settings\Frm_SlitterScorerSettingsTask.resx">
+      <DependentUpon>Frm_SlitterScorerSettingsTask.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Status\Frm_SlitterScorerStatusSubgroup.resx">
+      <DependentUpon>Frm_SlitterScorerStatusSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Status\Frm_SlitterScorerRegulations.resx">
+      <DependentUpon>Frm_SlitterScorerRegulations.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Tools\Frm_SlitterScorerWebDirector.resx">
+      <DependentUpon>Frm_SlitterScorerWebDirector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SlitterScorer\Tools\Frm_SlitterScorerToolsSubgroup.resx">
+      <DependentUpon>Frm_SlitterScorerToolsSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Splicer\Alarms\Frm_SplicerAlarmActive.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SplicerAlarmActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Splicer\Alarms\Frm_SplicerAlarmHistory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SplicerAlarmHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Splicer\Alarms\Frm_SplicerAlarmsSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SplicerAlarmsSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Splicer\Frm_SplicerConsole.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SplicerConsole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Splicer\Frm_SplicerGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SplicerGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Splicer\Frm_SplicerStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SplicerStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsMachine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SplicerSettingsMachine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SplicerSettingsStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SplicerSettingsSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Splicer\Settings\Frm_SplicerSettingsTask.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SplicerSettingsTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Alarms\Frm_StackerAlarmActive.resx">
+      <DependentUpon>Frm_StackerAlarmActive.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Alarms\Frm_StackerAlarmHistory.resx">
+      <DependentUpon>Frm_StackerAlarmHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Alarms\Frm_StackerAlarmSubgroup.resx">
+      <DependentUpon>Frm_StackerAlarmSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Frm_StackerConsole.resx">
+      <DependentUpon>Frm_StackerConsole.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Frm_StackerGroup.resx">
+      <DependentUpon>Frm_StackerGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Settings\Frm_StackerSettingsMachine.resx">
+      <DependentUpon>Frm_StackerSettingsMachine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Settings\Frm_StackerSettingsStatus.resx">
+      <DependentUpon>Frm_StackerSettingsStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Settings\Frm_StackerSettingsSubgroup.resx">
+      <DependentUpon>Frm_StackerSettingsSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Settings\Frm_StackerSettingsTask.resx">
+      <DependentUpon>Frm_StackerSettingsTask.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Status\Frm_StackerStatus01.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_StackerStatus01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Status\Frm_StackerStatus02.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_StackerStatus02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Status\Frm_StackerStatus03.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_StackerStatus03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Status\Frm_StackerStatus04.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_StackerStatus04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Stacker\Status\Frm_StackerStatusSubgroup.cs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_StackerStatusSubgroup.cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Statistics\Frm_DowntimeReport.resx">
+      <DependentUpon>Frm_DowntimeReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Statistics\Frm_ProductionTrace.resx">
+      <DependentUpon>Frm_ProductionTrace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Statistics\Frm_ShiftReport.resx">
+      <DependentUpon>Frm_ShiftReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Statistics\Frm_StatisticsGroup.resx">
+      <DependentUpon>Frm_StatisticsGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Statistics\Orders\Frm_StatisticsOrdersDetail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_StatisticsOrdersDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Statistics\Orders\Frm_StatisticsOrdersList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_StatisticsOrdersList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Statistics\Orders\Frm_StatisticsOrdersSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_StatisticsOrdersSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Statistics\Rolls\Frm_StatisticsRollsList.resx">
+      <DependentUpon>Frm_StatisticsRollsList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Statistics\Rolls\Frm_StatisticsRollsSubgroup.resx">
+      <DependentUpon>Frm_StatisticsRollsSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Statistics\Rolls\Frm_StatisticsRollsTrace.resx">
+      <DependentUpon>Frm_StatisticsRollsTrace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_AOCSettings.resx">
+      <DependentUpon>Frm_AOCSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_AOCStatus.resx">
+      <DependentUpon>Frm_AOCStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_AOC_WECSubGroup.resx">
+      <DependentUpon>Frm_AOC_WECSubGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_WECSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_WECSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\AOC_WEC\Frm_WECStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_WECStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\Frm_SyncroSystemGroup.resx">
+      <DependentUpon>Frm_SyncroSystemGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\Frm_SyncroSystemOperations.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_SyncroSystemOperations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\LOG\Frm_Log1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_Log1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\LOG\Frm_Log2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_Log2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\LOG\Frm_Log3.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_Log3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\LOG\Frm_Log4.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_Log4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\LOG\Frm_LogSubgroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_LogSubgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\OFFICE\Frm_OFFICESettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_OFFICESettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\OFFICE\Frm_OFFICEStatus.resx">
+      <DependentUpon>Frm_OFFICEStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\OFFICE\Frm_OFFICESubGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_OFFICESubGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\OFFICE\Frm_PRCSettings.resx">
+      <DependentUpon>Frm_PRCSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\PRINTER\Frm_PRINTERSSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PRINTERSSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\PRINTER\Frm_PRINTERSStatus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PRINTERSStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\PRINTER\Frm_PRINTERSSubGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_PRINTERSSubGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\SPEED\Frm_SpeedSettings.resx">
+      <DependentUpon>Frm_SpeedSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\SPEED\Frm_SpeedStatus.resx">
+      <DependentUpon>Frm_SpeedStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\SPEED\Frm_SpeedSubGroup.resx">
+      <DependentUpon>Frm_SpeedSubGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\SPEED_Reference\Frm_SpeedReferenceSettings.resx">
+      <DependentUpon>Frm_SpeedReferenceSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\SPEED_Reference\Frm_SpeedReferenceStatus.resx">
+      <DependentUpon>Frm_SpeedReferenceStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\SPEED_Reference\Frm_SpeedReferenceSubGroup.resx">
+      <DependentUpon>Frm_SpeedReferenceSubGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\SYNCRO\Frm_SyncroSettings.resx">
+      <DependentUpon>Frm_SyncroSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\SYNCRO\Frm_SyncroStatus.resx">
+      <DependentUpon>Frm_SyncroStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\SYNCRO\Frm_SyncroSubGroup.resx">
+      <DependentUpon>Frm_SyncroSubGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\SYNCRO\Frm_SyncroTask1.resx">
+      <DependentUpon>Frm_SyncroTask1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\SyncroSystem\SYNCRO\Frm_SyncroTask2.resx">
+      <DependentUpon>Frm_SyncroTask2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Alarms\Frm_twin400_alarm1.resx">
+      <DependentUpon>Frm_twin400_alarm1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Alarms\Frm_twin400_alarm4.resx">
+      <DependentUpon>Frm_twin400_alarm4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Alarms\Frm_twin400_alarmsSubgroup.resx">
+      <DependentUpon>Frm_twin400_alarmsSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Flutes\Frm_twin400_flutes.resx">
+      <DependentUpon>Frm_twin400_flutes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Flutes\Frm_twin400_flutesSubgroup.resx">
+      <DependentUpon>Frm_twin400_flutesSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Flutes\Frm_twin400_quality.resx">
+      <DependentUpon>Frm_twin400_quality.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Frm_Twin400Group.resx">
+      <DependentUpon>Frm_Twin400Group.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Maintenance\Frm_twin400_maintenance.resx">
+      <DependentUpon>Frm_twin400_maintenance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Maintenance\Frm_twin400_maintenanceSubgroup.resx">
+      <DependentUpon>Frm_twin400_maintenanceSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Maintenance\Frm_twin400_simulations.resx">
+      <DependentUpon>Frm_twin400_simulations.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Maintenance\Frm_twin400_testInput.resx">
+      <DependentUpon>Frm_twin400_testInput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Maintenance\Frm_twin400_testOutput.resx">
+      <DependentUpon>Frm_twin400_testOutput.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Orders\Frm_twin400_orderDetails.resx">
+      <DependentUpon>Frm_twin400_orderDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Orders\Frm_twin400_ordersList.resx">
+      <DependentUpon>Frm_twin400_ordersList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Orders\Frm_twin400_ordersSubgroup.resx">
+      <DependentUpon>Frm_twin400_ordersSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Orders\Frm_twin400_pastOrders.resx">
+      <DependentUpon>Frm_twin400_pastOrders.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Status\Frm_twin400_blades.resx">
+      <DependentUpon>Frm_twin400_blades.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Status\Frm_twin400_console.resx">
+      <DependentUpon>Frm_twin400_console.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Status\Frm_twin400_regulations.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_twin400_regulations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Settings\Frm_twin400_machineSettings.resx">
+      <DependentUpon>Frm_twin400_machineSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Settings\Frm_twin400_misc.resx">
+      <DependentUpon>Frm_twin400_misc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Settings\Frm_twin400_plunges.resx">
+      <DependentUpon>Frm_twin400_plunges.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Settings\Frm_twin400_settingsSubgroup.resx">
+      <DependentUpon>Frm_twin400_settingsSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Settings\Frm_twin400_tasks.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_twin400_tasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Status\Frm_twin400_overview.resx">
+      <DependentUpon>Frm_twin400_overview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Status\Frm_twin400_statusSubgroup.resx">
+      <DependentUpon>Frm_twin400_statusSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Tools\Frm_twin400_bladesAndScorers.resx">
+      <DependentUpon>Frm_twin400_bladesAndScorers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Tools\Frm_twin400_rotary.resx">
+      <DependentUpon>Frm_twin400_rotary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Tools\Frm_twin400_toolsSubgroup.resx">
+      <DependentUpon>Frm_twin400_toolsSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Tools\Frm_twin400_webDirector.resx">
+      <DependentUpon>Frm_twin400_webDirector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Warnings\Frm_twin400_warning1.resx">
+      <DependentUpon>Frm_twin400_warning1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Warnings\Frm_twin400_warning4.resx">
+      <DependentUpon>Frm_twin400_warning4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\Twin400\Warnings\Frm_twin400_warningsSubgroup.resx">
+      <DependentUpon>Frm_twin400_warningsSubgroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\WetEndSupervisor\Frm_WetEndSupervisor01.resx">
+      <DependentUpon>Frm_WetEndSupervisor01.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\WetEndSupervisor\Frm_WetEndSupervisor02.resx">
+      <DependentUpon>Frm_WetEndSupervisor02.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\WetEndSupervisor\Frm_WetEndSupervisor03.resx">
+      <DependentUpon>Frm_WetEndSupervisor03.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pages\WetEndSupervisor\Frm_WetEndSupervisorGroup.resx">
+      <DependentUpon>Frm_WetEndSupervisorGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_Alert.resx">
+      <DependentUpon>Frm_Alert.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_AskDateTime.resx">
+      <DependentUpon>Frm_AskDateTime.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_AskString.resx">
+      <DependentUpon>Frm_AskString.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_AskValue.resx">
+      <DependentUpon>Frm_AskValue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_AskValueAndConfirm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_AskValueAndConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_Confirm.resx">
+      <DependentUpon>Frm_Confirm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_FilterPastOrder.resx">
+      <DependentUpon>Frm_FilterPastOrder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_FilterPastRolls.resx">
+      <DependentUpon>Frm_FilterPastRolls.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_FilterPRCMessage.resx">
+      <DependentUpon>Frm_FilterPRCMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_FilterQuality.resx">
+      <DependentUpon>Frm_FilterQuality.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_MoveOrders.resx">
+      <DependentUpon>Frm_MoveOrders.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_MultipleDelete.resx">
+      <DependentUpon>Frm_MultipleDelete.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_PopUp.resx">
+      <DependentUpon>Frm_PopUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_PRCAskMessage.resx">
+      <DependentUpon>Frm_PRCAskMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_PRCAskValue.resx">
+      <DependentUpon>Frm_PRCAskValue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_PRCCurve.resx">
+      <DependentUpon>Frm_PRCCurve.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_RollData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_RollData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_ScorersOptions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Frm_ScorersOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_Swap.resx">
+      <DependentUpon>Frm_Swap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PopUp\Frm_TimeSetup.resx">
+      <DependentUpon>Frm_TimeSetup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatusBar\Frm_StatusBar.resx">
+      <DependentUpon>Frm_StatusBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatusBar\Frm_StatusBarDryEnd.resx">
+      <DependentUpon>Frm_StatusBarDryEnd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatusBar\Frm_StatusBarTwin400.resx">
+      <DependentUpon>Frm_StatusBarTwin400.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatusBar\Frm_StatusBarWetEnd.resx">
+      <DependentUpon>Frm_StatusBarWetEnd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageManager.resx">
+      <DependentUpon>PageManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

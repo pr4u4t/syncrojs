@@ -1,98 +1,90 @@
-const { XMLParser } = require("fast-xml-parser")
-const parser = new XMLParser()
-const fs = require('fs')
-var net = require('net')
-const {PromiseSocket, TimeoutError} = require("promise-socket")
-const config = require('config')
-const log = require('../utils/log.js')
+const { XMLParser } = require("fast-xml-parser");
+const parser = new XMLParser();
+const config = require('config');
+const logger = require('../utils/logger');
+const { connect: syncroConnect } = require('../utils/syncro');
 
-const dry = config.get('app.dry')
-const port = config.get('syncro.port')
-const host = config.get('syncro.host')
+const dry = config.get('app.dry');
  
 
 const shift_all = async function(){
-    const cmd = 'Shift.List'
+    const cmd = 'Shift.List';
     try{
-        var ret
-        var xmlbuff
-        const psocket = new PromiseSocket()
-        await psocket.connect(port,host)
-        var result = await psocket.write(cmd)
+        var ret;
+        var xmlbuff;
+        const psocket = await syncroConnect();
+        var result = await psocket.write(cmd);
         if(result != cmd.length){
-            log.error('Error sending shift query',new Error())
-            return null
+            logger.error('Error sending shift query');
+            return null;
         }
-        xmlbuff = await psocket.readAll()
-        xmlbuff = xmlbuff.toString()
-        let jml = parser.parse(xmlbuff)
-        ret = ((Array.isArray(jml.NewDataSet.ShiftList)) ? jml.NewDataSet.ShiftList : [ jml.NewDataSet.ShiftList ]).reverse()
-        return ret
+        xmlbuff = await psocket.readAll();
+        xmlbuff = xmlbuff.toString();
+        let jml = parser.parse(xmlbuff);
+        ret = ((Array.isArray(jml.NewDataSet.ShiftList)) ? jml.NewDataSet.ShiftList : [ jml.NewDataSet.ShiftList ]).reverse();
+        return ret;
     }catch(error){
-        log.error('Error getting shift data',error)
-        return null
+        logger.error('Error getting shift data',error)
+        return null;
     }
-}
+};
 
 const shift_state = async function(){
     try{
-        const psocket = new PromiseSocket()
-        await psocket.connect(port,host)
-        var result = await psocket.write('Shift.State')
-        result = await psocket.readAll()
-        result = result.toString()
-        return result
+        const psocket = await syncroConnect();
+        var result = await psocket.write('Shift.State');
+        result = await psocket.readAll();
+        result = result.toString();
+        return result;
     }catch(error){
-        log.error('Error getting shift state',error)
-        return null
+        logger.error('Error getting shift state');
+        return null;
     }
 }
 
 const shift_count = async function(){
-    let count = await shift_all()
-    return (count == null) ? null : count.length
+    let count = await shift_all();
+    return (count == null) ? null : count.length;
 }
 
 const shift_end = async function(){
-    const cmd = 'Shift.Stop()'
+    const cmd = 'Shift.Stop()';
     
     if(dry === true){
-        log.debug("shift_end",cmd)
-        return true
+        logger.debug("shift_end",cmd);
+        return true;
     }
     
     try{
-        const psocket = new PromiseSocket()
-        await psocket.connect(port,host)
-        var result = await psocket.write(cmd)
-        result = await psocket.readAll()
-        result = result.toString()
-        return result.toLowerCase() == 'ok'
+        const psocket = await syncroConnect();
+        var result = await psocket.write(cmd);
+        result = await psocket.readAll();
+        result = result.toString();
+        return result.toLowerCase() == 'ok';
     }catch(error){
-        log.error('Error getting shift state',error)
-        return null
+        logger.error('Error getting shift state',error);
+        return null;
     }
 }
 
 const shift_new = async function(id,manager,people){
-    const sep = '\u241E'
-    const cmd = "Shift.Shift("+ id + sep + manager + sep + people + ")"
+    const sep = '\u241E';
+    const cmd = "Shift.Shift("+ id + sep + manager + sep + people + ")";
     
     if(dry === true){
-        log.debug("shift_new",cmd)
-        return true
+        logger.debug("shift_new",cmd);
+        return true;
     }
     
     try{
-        const psocket = new PromiseSocket()
-        await psocket.connect(port,host)
-        var result = await psocket.write(cmd)
-        result = await psocket.readAll()
-        result = result.toString()
-        return result.toLowerCase() == 'ok'
+        const psocket = await syncroConnect();
+        var result = await psocket.write(cmd);
+        result = await psocket.readAll();
+        result = result.toString();
+        return result.toLowerCase() == 'ok';
     }catch(error){
-        log.error('Error getting shift state',error)
-        return null
+        logger.error('Error getting shift state',error);
+        return null;
     }
 }
 

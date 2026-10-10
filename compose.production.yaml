@@ -1,0 +1,61 @@
+services:
+  server:
+    image: syncrojs-prod:${IMAGE_TAG:-latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      secrets:
+        - extra_ca
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET in .env.production}
+      PGHOST: ${PGHOST:?Set PGHOST in .env.production}
+      PGPORT: ${PGPORT:-5432}
+      PGDATABASE: ${PGDATABASE:?Set PGDATABASE in .env.production}
+      PGUSER: ${PGUSER:?Set PGUSER in .env.production}
+      PGPASSWORD: ${PGPASSWORD:?Set PGPASSWORD in .env.production}
+      PGCONNECT_TIMEOUT: ${PGCONNECT_TIMEOUT:-3000}
+      PGQUERY_TIMEOUT: ${PGQUERY_TIMEOUT:-5000}
+      SYNCRO_HOST: ${SYNCRO_HOST:?Set SYNCRO_HOST in .env.production}
+      SYNCRO_PORT: ${SYNCRO_PORT:-13000}
+      SYNCRO_CONNECT_TIMEOUT: ${SYNCRO_CONNECT_TIMEOUT:-3000}
+      CLASSIC_GENERATOR_SOCKET: /run/syncrojs/classic-generator.sock
+    ports:
+      - "${APP_PORT:-80}:3000"
+    depends_on:
+      classic-generator:
+        condition: service_healthy
+    volumes:
+      - syncrojs-production-uploads:/usr/src/app/uploads
+      - syncrojs-production-generator-socket:/run/syncrojs
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/health/status').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  classic-generator:
+    image: syncrojs-classic-generator:${IMAGE_TAG:-latest}
+    build:
+      context: .
+      dockerfile: tools/classic_generator.Dockerfile
+      secrets:
+        - extra_ca
+    restart: unless-stopped
+    volumes:
+      - syncrojs-production-generator-socket:/run/syncrojs
+    healthcheck:
+      test: ["CMD-SHELL", "test -S /run/syncrojs/classic-generator.sock"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+
+volumes:
+  syncrojs-production-uploads:
+  syncrojs-production-generator-socket:
+
+secrets:
+  extra_ca:
+    file: ${EXTRA_CA_FILE:-/dev/null}

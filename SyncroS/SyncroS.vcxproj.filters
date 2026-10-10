@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2b9e1c28-f845-4d19-828f-98805cd7ecf7}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="Source Files\MachineCommands">
+      <UniqueIdentifier>{65b8221e-6167-4c2a-a56c-06b6ea5cac0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PageFunction">
+      <UniqueIdentifier>{30fac6cc-637a-4ef5-9eb1-558d9660b07f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{f012f89f-56b3-4364-b6c6-7eb09faae579}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc</Extensions>
+    </Filter>
+    <Filter Include="Header Files\MachineCommands">
+      <UniqueIdentifier>{aeaf96a5-6e75-4505-babd-3a5a64d5ce44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\PageFunction">
+      <UniqueIdentifier>{f5215480-e7a5-405c-8235-593939ff6e7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include Files">
+      <UniqueIdentifier>{09b1f071-fe29-407b-beac-a8a3ea68742f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include Files\DataBase">
+      <UniqueIdentifier>{048b6082-36f0-42ac-9076-0aa65141cd04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shared Files">
+      <UniqueIdentifier>{806c854c-5ed5-46d8-956e-a754a55f7df6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C_CommunicationManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C_DBManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\C_Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C_NamedPipeClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C_PageManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C_RTCManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Dbms\C_SMOrder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Rtc\C_SMState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\C_SMTaskSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C_SocketTCP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\StrType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncroS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_AlarmHistoryCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_DoubleBackerCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_ExternWECCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_GenericCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_GlueUnitCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_IncDecCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_KnifeCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_MthCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_PreHeatersTernCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_ProcessControlCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="machinecommands\C_RotaryCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="machinecommands\C_RotaryFormatCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_ScorerProfileCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_SimulationCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_SingleFacerCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_SlitterScorerCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_SplicerCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="machinecommands\C_StackerCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_StarterCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_Twin400Commands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="MachineCommands\C_WebDirectorCommands.cpp">
+      <Filter>Source Files\MachineCommands</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_DebugGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_DoubleBackerGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_DryEndSupervisorGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_GlueUnitGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_KnifeGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_LateralBar.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_PreHeaterTernGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_ProductionGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_SettingsGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_ShearGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_SingleFacerGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_SlitterScorerGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_SplicerGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_StackerGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_StatisticsGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_StatusBar.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_SyncroSystemGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_Twin400Group.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="pagefunction\C_WetEndSupervisorGroup.cpp">
+      <Filter>Source Files\PageFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\shared\C_SMLineConfig.cpp">
+      <Filter>Shared Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\C_SMPrc.cpp">
+      <Filter>Shared Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C_CommunicationManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C_DBManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\shared\C_Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C_NamedPipeClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C_PageManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C_RTCManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Dbms\C_SMOrder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Rtc\C_SMState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\shared\C_SMTaskSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\shared\StrType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_AlarmHistoryCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_DoubleBackerCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_ExternWECCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_GenericCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_GlueUnitCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_IncDecCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_KnifeCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_MthCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_PreHeatersTernCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_ProcessControlCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="machinecommands\C_RotaryCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="machinecommands\C_RotaryFormatCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_ScorerProfileCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_SimulationCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_SingleFacerCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_SlitterScorerCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_SplicerCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="machinecommands\C_StackerCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_StarterCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_Twin400Commands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="MachineCommands\C_WebDirectorCommands.h">
+      <Filter>Header Files\MachineCommands</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_DebugGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_DoubleBackerGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_DryEndSupervisorGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_GlueUnitGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_KnifeGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_LateralBar.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_PreHeaterTernGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_ProductionGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_SettingsGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_ShearGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_SingleFacerGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_SlitterScorerGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_SplicerGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_StackerGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_StatisticsGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_StatusBar.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_SyncroSystemGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_Twin400Group.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="pagefunction\C_WetEndSupervisorGroup.h">
+      <Filter>Header Files\PageFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\DBMSPipe.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Global.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Namespace\Network.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\RTCPipe.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\SharedMemory\StateSM.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Messages\T_PrinterCodes.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\messages\T_SyncroCCodes.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Messages\T_SyncroSCodes.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\Namespace\Utility.h">
+      <Filter>Include Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\DownTime.h">
+      <Filter>Include Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Flute.h">
+      <Filter>Include Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Paper.h">
+      <Filter>Include Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\PastOrder.h">
+      <Filter>Include Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\PastRollsData.h">
+      <Filter>Include Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ProgramData.h">
+      <Filter>Include Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Quality.h">
+      <Filter>Include Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\ScorerProfile.h">
+      <Filter>Include Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\SetupData.h">
+      <Filter>Include Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Include\ShiftData.h">
+      <Filter>Include Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\TrashOrder.h">
+      <Filter>Include Files\DataBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\shared\C_SMLineConfig.h">
+      <Filter>Shared Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\C_SMPrc.h">
+      <Filter>Shared Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

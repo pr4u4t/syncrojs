@@ -1,50 +1,75 @@
-const Router = require('express-promise-router')
-const config = require('config')
-const template = require('../templates')
-const multer  = require('multer')
-const upload = multer({ dest: './uploads/' })
-const fs = require('fs')
-const router = new Router()
+const Router = require('express-promise-router');
+const config = require('config');
+const logger = require('../utils/logger');
+const sendAppShell = require('../utils/app-shell');
+const multer  = require('multer');
+const upload = multer({ dest: './uploads/' });
+const cache = require('../utils/cache');
+const appSettings = require('../models/app-settings');
+const orderModel = require('../models/order');
+const router = new Router();
 
-module.exports = router
+module.exports = router;
 
 const traverse_config = function(conf,ret,path){
     switch(typeof conf){ 
         case "undefined":
-            return
+            return;
     
         case "function":
-            return
+            return;
     
         case "object":
             for(const [key,value] of Object.entries(conf)){
-                path.push(key)
-                traverse_config(value,ret,path)
-                path.pop()
+                const fieldPath = [...path, key].join('.');
+                if (fieldPath === 'server.secret' || appSettings.isDatabaseSetting(fieldPath)) {
+                    continue;
+                }
+                path.push(key);
+                traverse_config(value,ret,path);
+                path.pop();
             }
-            return
+            return;
             
         default:
-            ret.push({ path: path.join('.'), conf})
+            ret.push({ path: path.join('.'), conf, type: typeof conf });
     }
 }
 
 const config_to_fields = function(conf){
-    var ret = []
-    var path = []
-    traverse_config(conf,ret,path)
-    return ret
+    var ret = [];
+    var path = [];
+    traverse_config(conf,ret,path);
+    return ret;
+}
+
+const config_to_groups = function(fields){
+    const groups = new Map();
+
+    for(const field of fields){
+        const section = field.path.split('.')[0];
+        if(!groups.has(section)){
+            groups.set(section, {
+                id: `settings-${section}`,
+                title: section.charAt(0).toUpperCase() + section.slice(1),
+                fields: []
+            });
+        }
+        groups.get(section).fields.push(field);
+    }
+
+    return Array.from(groups.values());
 }
 
 const config_set = function(obj, path, value){
-    var schema = obj  // a moving reference to internal objects within obj
-    var pList = path.split('.')
-    var len = pList.length
+    var schema = obj;  // a moving reference to internal objects within obj
+    var pList = path.split('.');
+    var len = pList.length;
         
     for(var i = 0; i < len-1; i++) {
-        var elem = pList[i]
+        var elem = pList[i];
         if( !schema[elem] ){
-            schema[elem] = {}
+            schema[elem] = {};
         }
         
         schema = schema[elem];
@@ -54,25 +79,67 @@ const config_set = function(obj, path, value){
 }
 
 router.get('/', async (req,res) => {
-    template.render('settings.twig', {
-        'title': "Settings",
-        'header_title': "Settings",
-        'fields': config_to_fields(config),
-        'url': '/settings/'        
-    }).then((output) => {
-        res.end(output)
-    })
-})
+    sendAppShell(req,res);
+});
+
+router.get('/data', async (req,res) => {
+    const fields = config_to_fields(config);
+    const parserField = fields.find((field) => field.path === 'orders.parser.type');
+    if(parserField){
+        if(parserField.conf === 'extended_outs'){
+            parserField.conf = 'extended_orders';
+        }
+        parserField.options = (await orderModel.available_backends()).map((file) => file.replace(/\.js$/, ''));
+    }
+
+    res.set('Cache-Control', 'no-store').json({
+        groups: config_to_groups(fields),
+        cacheCleared: req.query.cache === 'cleared',
+        settingsSaved: req.query.saved === '1'
+    });
+});
+
+router.post('/flush-cache', upload.none(), async (req,res) => {
+    cache.flushAll();
+    res.redirect('/settings?cache=cleared');
+});
 
 router.post('/save', upload.none(), async (req,res) => {
-    var conf = JSON.parse(JSON.stringify(config));
-    
-    for(const [key,value] of Object.entries(req.body)){
-       config_set(conf,key,value)
+    const allowedFields = new Map(config_to_fields(config).map((field) => [field.path, field]));
+    const values = {};
+    const availableParsers = (await orderModel.available_backends()).map((file) => file.replace(/\.js$/, ''));
+
+    for(const [path,value] of Object.entries(req.body)){
+        const field = allowedFields.get(path);
+        if(!field || appSettings.isDatabaseSetting(path)){
+            continue;
+        }
+
+        if(field.type === 'boolean'){
+            if(value !== 'true' && value !== 'false'){
+                continue;
+            }
+            values[path] = value === 'true';
+        }else if(field.type === 'number'){
+            const number = Number(value);
+            if(!Number.isFinite(number)){
+                continue;
+            }
+            values[path] = number;
+        }else if(path === 'orders.parser.type'){
+            if(!availableParsers.includes(value)){
+                continue;
+            }
+            values[path] = value;
+        }else{
+            values[path] = value;
+        }
     }
-    
-    let data = JSON.stringify(conf);
-    fs.writeFileSync('../config/default.json', data)
-    
-    res.redirect('/settings')
-})
+
+    await appSettings.save(values);
+    if(values['orders.parser.type'] && values['orders.parser.type'] !== orderModel.current_backend()){
+        await orderModel.switch_backend(values['orders.parser.type']);
+    }
+    config.util.extendDeep(config, appSettings.toNestedObject(values));
+    res.redirect('/settings?saved=1');
+});

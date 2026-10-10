@@ -1,0 +1,34 @@
+{
+    "server": {
+      "host": "0.0.0.0",
+      "port": 3000
+    },
+    "syncro": {
+      "host": "192.168.0.148",
+      "port": 13000,
+      "timeout": 30000
+    },
+    "orders": {
+      "shift": {
+        "skip_working": 0,
+        "skip_idle": 0,
+        "check_on_add": false
+      },
+      "parser":{
+        "type": "classic"
+      },
+      "max_trim": 2300
+    },
+    "app": {
+      "debug": true,
+      "dry": false,
+      "pagination": 50
+    },
+    "cache": {
+      "ttl": 100,
+      "period": 120
+    },
+    "log":{
+      "level": "silent"
+    }
+}

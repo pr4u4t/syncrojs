@@ -1,0 +1,945 @@
+C:\Users\fosber synchro\Documents\GitHub\cardboard\_Client\Debug\S_SyncroC.exe
+C:\Users\fosber synchro\Documents\GitHub\cardboard\_Client\Debug\S_SyncroC.pdb
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.csprojResolveAssemblyReference.cache
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.CheckBox.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Graphic.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GraphBars.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Graph.GraphLines.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Graph.GraphLinesEditor.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GraphPies.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Grid.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GridView.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.GroupPanel.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.LateralBarItem.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.MyListBox.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.TabPage.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.VirtualForm.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.IncDecButton.IncDecButton.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.IncDecButton.IncDecButtonKit.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Link.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.LowLevelControl.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.myLabel.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Photoeye.Photoeye.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.PrcControl.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.PrcTemperature.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.PrcWrapArm.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.WarpControl.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.ProgBar.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Roll.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.SlitterScorerSetupStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.SlitterScorerShaftStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.StateButton.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Tab.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Title.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledLabel.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledList.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledMaskTextBox.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledNumericUpDown.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledTextBox.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.LanguageAndAccessibilitySettings.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.WrapArm.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Frm_Base.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Frm_CommFailure.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.LateralBar.Frm_LateralBar.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugDatabase.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugINI.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugTwin2.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400SetupSituation.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400Status1.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400Status2.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400Subgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400_positioning.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Alarms.Frm_DoubleBackerAlarmsActive.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Alarms.Frm_DoubleBackerAlarmsHistory.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Alarms.Frm_DoubleBackerAlarmsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole01.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole02.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole03.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole04.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsoleSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Frm_DoubleBackerGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus01.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsMachine.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsTask.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus02.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus03.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus04.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatusSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisor01.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisor02.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisor03.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisorGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Frm_Page.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Alarms.Frm_GlueUnitAlarmActive.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Alarms.Frm_GlueUnitAlarmHistory.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Alarms.Frm_GlueUnitAlarmSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Console.Frm_GlueUnitConsoleGlueGaps.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Console.Frm_GlueUnitConsoleSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Console.Frm_GlueUnitConsoleWrapArms.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Frm_GlueUnitGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Frm_GlueUnitStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Settings.Frm_GlueUnitSettingsMachine.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Settings.Frm_GlueUnitSettingsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Settings.Frm_GlueUnitSettingsTask.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Alarms.Frm_KnifeAlarmActive.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Alarms.Frm_KnifeAlarmHistory.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Alarms.Frm_KnifeAlarmSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifeConsole.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifeGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifePattern.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifeStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Settings.Frm_KnifeSettingsMachine.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Settings.Frm_KnifeSettingsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Settings.Frm_KnifeSettingsTask.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Alarms.Frm_PreHeaterTernAlarmActive.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Alarms.Frm_PreHeaterTernAlarmHistory.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Alarms.Frm_PreHeaterTernAlarmSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Frm_PreHeaterTernConsole.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Frm_PreHeaterTernGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Frm_PreHeaterTernStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Settings.Frm_PreHeaterTernSettingsMachine.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Settings.Frm_PreHeaterTernSettingsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Settings.Frm_PreHeaterTernSettingsTask.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Alarms.Frm_Alarm1.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Alarms.Frm_Alarm2.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Alarms.Frm_AlarmsSubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomePrc.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_MessagePRC.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_Operator.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Frm_Paper.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Frm_ProductionGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Frm_Quality.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomeDry.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomeSubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomeWet.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_OperatorSubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_Printings.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_DryPastOrders.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_InsWetOrder.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_OrdersInsSubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_QuickInsDryOrder.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_DryOrdersList.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_DryPastOrdersList.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_DryWetOrdersList.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_OrdersListSubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_WetOrdersList.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Warnings.Frm_Warning1.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Warnings.Frm_Warning2.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Warnings.Frm_WarningsSubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_AIOStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_CTCStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_DownTimeReasons.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_DIOStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_Flute.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_Languages.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_LineConfig.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_RestoreBackup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_SettingsGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Simulation.Frm_SimulationGeneral.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Simulation.Frm_SimulationSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Alarms.Frm_ShearAlarmActive.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Alarms.Frm_ShearAlarmHistory.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Alarms.Frm_ShearAlarmsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearAlarm.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearConsole.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Settings.Frm_ShearSettingsMachine.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Settings.Frm_ShearSettingsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Settings.Frm_ShearSettingsTask.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Alarms.Frm_SingleFacerAlarmActive.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Alarms.Frm_SingleFacerAlarmHistory.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Alarms.Frm_SingleFacerAlarmSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole01.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole02.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole03.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole04.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsoleSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Frm_SingleFacerGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsBridgeStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsMachine.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsSFStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsTask.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus01.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus02.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus03.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus04.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatusSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Alarms.Frm_SlitterScorerAlarmActive.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Alarms.Frm_SlitterScorerAlarmHistory.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Alarms.Frm_SlitterScorerAlarmsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerConsole.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Frm_SlitterScorerGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerBlades.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Settings.Frm_SlitterScorerSettingsMachine.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Settings.Frm_SlitterScorerSettingsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Settings.Frm_SlitterScorerSettingsTask.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerStatusSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerRegulations.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Tools.Frm_SlitterScorerWebDirector.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Tools.Frm_SlitterScorerToolsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Alarms.Frm_SplicerAlarmActive.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Alarms.Frm_SplicerAlarmHistory.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Alarms.Frm_SplicerAlarmsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Frm_SplicerConsole.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Frm_SplicerGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Frm_SplicerStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsMachine.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsTask.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Alarms.Frm_StackerAlarmActive.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Alarms.Frm_StackerAlarmHistory.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Alarms.Frm_StackerAlarmSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Frm_StackerConsole.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Frm_StackerGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsMachine.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsTask.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus01.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus02.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus03.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus04.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatusSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_DowntimeReport.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_ProductionTrace.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_ShiftReport.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_StatisticsGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Orders.Frm_StatisticsOrdersDetail.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Orders.Frm_StatisticsOrdersList.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Orders.Frm_StatisticsOrdersSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Rolls.Frm_StatisticsRollsList.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Rolls.Frm_StatisticsRollsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Rolls.Frm_StatisticsRollsTrace.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_AOCSettings.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_AOCStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_AOC_WECSubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_WECSettings.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_WECStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.Frm_SyncroSystemGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.Frm_SyncroSystemOperations.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log1.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log2.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log3.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log4.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_LogSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_OFFICESettings.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_OFFICEStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_OFFICESubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_PRCSettings.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.PRINTER.Frm_PRINTERSSettings.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.PRINTER.Frm_PRINTERSStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.PRINTER.Frm_PRINTERSSubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED.Frm_SpeedSettings.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED.Frm_SpeedStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED.Frm_SpeedSubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED_Reference.Frm_SpeedReferenceSettings.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED_Reference.Frm_SpeedReferenceStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED_Reference.Frm_SpeedReferenceSubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroSettings.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroStatus.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroSubGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroTask1.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroTask2.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Alarms.Frm_twin400_alarm1.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Alarms.Frm_twin400_alarm4.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Alarms.Frm_twin400_alarmsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Flutes.Frm_twin400_flutes.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Flutes.Frm_twin400_flutesSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Flutes.Frm_twin400_quality.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Frm_Twin400Group.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_maintenance.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_maintenanceSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_simulations.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_testInput.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_testOutput.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_orderDetails.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_ordersList.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_ordersSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_pastOrders.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_blades.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_console.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_regulations.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_machineSettings.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_misc.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_plunges.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_settingsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_tasks.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_overview.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_statusSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_bladesAndScorers.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_rotary.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_toolsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_webDirector.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Warnings.Frm_twin400_warning1.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Warnings.Frm_twin400_warning4.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Warnings.Frm_twin400_warningsSubgroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisor01.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisor02.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisor03.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisorGroup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_Alert.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskDateTime.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskString.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskValue.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskValueAndConfirm.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_Confirm.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterPastOrder.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterPastRolls.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterPRCMessage.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterQuality.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_MoveOrders.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_MultipleDelete.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PopUp.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PRCAskMessage.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PRCAskValue.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PRCCurve.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_RollData.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_ScorersOptions.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_Swap.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_TimeSetup.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBar.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBarDryEnd.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBarTwin400.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBarWetEnd.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.PageManager.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Properties.Resources.resources
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.csproj.GenerateResource.Cache
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\S_SyncroC.exe
+C:\Users\fosber synchro\Documents\GitHub\cardboard\SyncroC\obj\Debug\S_SyncroC.pdb
+C:\Users\rozwoj\Documents\GitHub\cardboard\_Client\Debug\S_SyncroC.exe
+C:\Users\rozwoj\Documents\GitHub\cardboard\_Client\Debug\S_SyncroC.pdb
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.csprojResolveAssemblyReference.cache
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.CheckBox.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Graphic.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GraphBars.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Graph.GraphLines.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Graph.GraphLinesEditor.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GraphPies.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Grid.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GridView.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.GroupPanel.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.LateralBarItem.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.MyListBox.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.TabPage.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.VirtualForm.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.IncDecButton.IncDecButton.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.IncDecButton.IncDecButtonKit.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Link.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.LowLevelControl.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.myLabel.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Photoeye.Photoeye.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.PrcControl.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.PrcTemperature.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.PrcWrapArm.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.WarpControl.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.ProgBar.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Roll.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.SlitterScorerSetupStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.SlitterScorerShaftStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.StateButton.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Tab.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Title.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledLabel.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledList.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledMaskTextBox.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledNumericUpDown.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledTextBox.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.LanguageAndAccessibilitySettings.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.WrapArm.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Frm_Base.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Frm_CommFailure.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.LateralBar.Frm_LateralBar.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugDatabase.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugINI.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugTwin2.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400SetupSituation.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400Status1.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400Status2.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400Subgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400_positioning.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Alarms.Frm_DoubleBackerAlarmsActive.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Alarms.Frm_DoubleBackerAlarmsHistory.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Alarms.Frm_DoubleBackerAlarmsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole01.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole02.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole03.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole04.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsoleSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Frm_DoubleBackerGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus01.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsMachine.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsTask.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus02.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus03.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus04.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatusSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisor01.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisor02.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisor03.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisorGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Frm_Page.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Alarms.Frm_GlueUnitAlarmActive.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Alarms.Frm_GlueUnitAlarmHistory.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Alarms.Frm_GlueUnitAlarmSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Console.Frm_GlueUnitConsoleGlueGaps.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Console.Frm_GlueUnitConsoleSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Console.Frm_GlueUnitConsoleWrapArms.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Frm_GlueUnitGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Frm_GlueUnitStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Settings.Frm_GlueUnitSettingsMachine.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Settings.Frm_GlueUnitSettingsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Settings.Frm_GlueUnitSettingsTask.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Alarms.Frm_KnifeAlarmActive.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Alarms.Frm_KnifeAlarmHistory.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Alarms.Frm_KnifeAlarmSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifeConsole.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifeGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifePattern.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifeStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Settings.Frm_KnifeSettingsMachine.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Settings.Frm_KnifeSettingsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Settings.Frm_KnifeSettingsTask.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Alarms.Frm_PreHeaterTernAlarmActive.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Alarms.Frm_PreHeaterTernAlarmHistory.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Alarms.Frm_PreHeaterTernAlarmSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Frm_PreHeaterTernConsole.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Frm_PreHeaterTernGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Frm_PreHeaterTernStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Settings.Frm_PreHeaterTernSettingsMachine.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Settings.Frm_PreHeaterTernSettingsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Settings.Frm_PreHeaterTernSettingsTask.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Alarms.Frm_Alarm1.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Alarms.Frm_Alarm2.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Alarms.Frm_AlarmsSubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomePrc.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_MessagePRC.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_Operator.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Frm_Paper.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Frm_ProductionGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Frm_Quality.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomeDry.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomeSubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomeWet.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_OperatorSubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_Printings.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_DryPastOrders.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_InsWetOrder.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_OrdersInsSubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_QuickInsDryOrder.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_DryOrdersList.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_DryPastOrdersList.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_DryWetOrdersList.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_OrdersListSubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_WetOrdersList.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Warnings.Frm_Warning1.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Warnings.Frm_Warning2.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Warnings.Frm_WarningsSubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_AIOStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_CTCStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_DownTimeReasons.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_DIOStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_Flute.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_Languages.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_LineConfig.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_RestoreBackup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_SettingsGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Simulation.Frm_SimulationGeneral.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Simulation.Frm_SimulationSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Alarms.Frm_ShearAlarmActive.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Alarms.Frm_ShearAlarmHistory.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Alarms.Frm_ShearAlarmsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearAlarm.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearConsole.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Settings.Frm_ShearSettingsMachine.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Settings.Frm_ShearSettingsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Settings.Frm_ShearSettingsTask.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Alarms.Frm_SingleFacerAlarmActive.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Alarms.Frm_SingleFacerAlarmHistory.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Alarms.Frm_SingleFacerAlarmSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole01.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole02.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole03.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole04.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsoleSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Frm_SingleFacerGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsBridgeStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsMachine.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsSFStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsTask.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus01.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus02.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus03.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus04.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatusSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Alarms.Frm_SlitterScorerAlarmActive.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Alarms.Frm_SlitterScorerAlarmHistory.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Alarms.Frm_SlitterScorerAlarmsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerConsole.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Frm_SlitterScorerGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerBlades.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Settings.Frm_SlitterScorerSettingsMachine.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Settings.Frm_SlitterScorerSettingsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Settings.Frm_SlitterScorerSettingsTask.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerStatusSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerRegulations.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Tools.Frm_SlitterScorerWebDirector.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Tools.Frm_SlitterScorerToolsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Alarms.Frm_SplicerAlarmActive.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Alarms.Frm_SplicerAlarmHistory.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Alarms.Frm_SplicerAlarmsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Frm_SplicerConsole.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Frm_SplicerGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Frm_SplicerStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsMachine.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsTask.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Alarms.Frm_StackerAlarmActive.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Alarms.Frm_StackerAlarmHistory.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Alarms.Frm_StackerAlarmSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Frm_StackerConsole.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Frm_StackerGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsMachine.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsTask.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus01.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus02.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus03.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus04.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatusSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_DowntimeReport.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_ProductionTrace.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_ShiftReport.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_StatisticsGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Orders.Frm_StatisticsOrdersDetail.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Orders.Frm_StatisticsOrdersList.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Orders.Frm_StatisticsOrdersSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Rolls.Frm_StatisticsRollsList.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Rolls.Frm_StatisticsRollsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Rolls.Frm_StatisticsRollsTrace.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_AOCSettings.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_AOCStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_AOC_WECSubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_WECSettings.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_WECStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.Frm_SyncroSystemGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.Frm_SyncroSystemOperations.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log1.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log2.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log3.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log4.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_LogSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_OFFICESettings.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_OFFICEStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_OFFICESubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_PRCSettings.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.PRINTER.Frm_PRINTERSSettings.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.PRINTER.Frm_PRINTERSStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.PRINTER.Frm_PRINTERSSubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED.Frm_SpeedSettings.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED.Frm_SpeedStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED.Frm_SpeedSubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED_Reference.Frm_SpeedReferenceSettings.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED_Reference.Frm_SpeedReferenceStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED_Reference.Frm_SpeedReferenceSubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroSettings.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroStatus.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroSubGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroTask1.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroTask2.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Alarms.Frm_twin400_alarm1.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Alarms.Frm_twin400_alarm4.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Alarms.Frm_twin400_alarmsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Flutes.Frm_twin400_flutes.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Flutes.Frm_twin400_flutesSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Flutes.Frm_twin400_quality.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Frm_Twin400Group.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_maintenance.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_maintenanceSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_simulations.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_testInput.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_testOutput.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_orderDetails.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_ordersList.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_ordersSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_pastOrders.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_blades.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_console.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_regulations.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_machineSettings.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_misc.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_plunges.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_settingsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_tasks.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_overview.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_statusSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_bladesAndScorers.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_rotary.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_toolsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_webDirector.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Warnings.Frm_twin400_warning1.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Warnings.Frm_twin400_warning4.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Warnings.Frm_twin400_warningsSubgroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisor01.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisor02.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisor03.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisorGroup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_Alert.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskDateTime.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskString.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskValue.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskValueAndConfirm.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_Confirm.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterPastOrder.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterPastRolls.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterPRCMessage.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterQuality.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_MoveOrders.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_MultipleDelete.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PopUp.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PRCAskMessage.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PRCAskValue.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PRCCurve.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_RollData.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_ScorersOptions.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_Swap.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_TimeSetup.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBar.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBarDryEnd.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBarTwin400.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBarWetEnd.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.PageManager.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Properties.Resources.resources
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.csproj.GenerateResource.Cache
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\S_SyncroC.exe
+C:\Users\rozwoj\Documents\GitHub\cardboard\SyncroC\obj\Debug\S_SyncroC.pdb
+C:\Users\Administrator\Documents\GitHub\cardboard\_Client\Debug\S_SyncroC.exe
+C:\Users\Administrator\Documents\GitHub\cardboard\_Client\Debug\S_SyncroC.pdb
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.CheckBox.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Graphic.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GraphBars.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Graph.GraphLines.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Graph.GraphLinesEditor.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GraphPies.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Grid.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GridView.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.GroupPanel.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.LateralBarItem.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.MyListBox.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.TabPage.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.GroupPanel.VirtualForm.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.IncDecButton.IncDecButton.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.IncDecButton.IncDecButtonKit.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Link.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.LowLevelControl.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.myLabel.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Photoeye.Photoeye.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.PrcControl.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.PrcTemperature.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.PrcWrapArm.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Prc.WarpControl.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.ProgBar.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Roll.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.SlitterScorerSetupStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.SlitterScorerShaftStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.StateButton.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Tab.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.Title.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledLabel.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledList.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledMaskTextBox.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledNumericUpDown.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.TitledTextBox.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.LanguageAndAccessibilitySettings.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Controls.WrapArm.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Frm_Base.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Frm_CommFailure.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.LateralBar.Frm_LateralBar.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugDatabase.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugINI.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Frm_DebugTwin2.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400SetupSituation.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400Status1.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400Status2.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400Subgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Debug.Twin400.Frm_DebugTwin400_positioning.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Alarms.Frm_DoubleBackerAlarmsActive.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Alarms.Frm_DoubleBackerAlarmsHistory.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Alarms.Frm_DoubleBackerAlarmsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole01.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole02.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole03.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsole04.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Console.Frm_DoubleBackerConsoleSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Frm_DoubleBackerGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus01.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsMachine.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Settings.Frm_DoubleBackerSettingsTask.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus02.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus03.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatus04.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DoubleBacker.Status.Frm_DoubleBackerStatusSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisor01.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisor02.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisor03.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.DryEndSupervisor.Frm_DryEndSupervisorGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Frm_Page.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Alarms.Frm_GlueUnitAlarmActive.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Alarms.Frm_GlueUnitAlarmHistory.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Alarms.Frm_GlueUnitAlarmSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Console.Frm_GlueUnitConsoleGlueGaps.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Console.Frm_GlueUnitConsoleSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Console.Frm_GlueUnitConsoleWrapArms.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Frm_GlueUnitGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Frm_GlueUnitStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Settings.Frm_GlueUnitSettingsMachine.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Settings.Frm_GlueUnitSettingsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.GlueUnit.Settings.Frm_GlueUnitSettingsTask.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Alarms.Frm_KnifeAlarmActive.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Alarms.Frm_KnifeAlarmHistory.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Alarms.Frm_KnifeAlarmSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifeConsole.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifeGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifePattern.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Frm_KnifeStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Settings.Frm_KnifeSettingsMachine.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Settings.Frm_KnifeSettingsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Knife.Settings.Frm_KnifeSettingsTask.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Alarms.Frm_PreHeaterTernAlarmActive.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Alarms.Frm_PreHeaterTernAlarmHistory.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Alarms.Frm_PreHeaterTernAlarmSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Frm_PreHeaterTernConsole.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Frm_PreHeaterTernGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Frm_PreHeaterTernStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Settings.Frm_PreHeaterTernSettingsMachine.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Settings.Frm_PreHeaterTernSettingsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.PreHeaterTern.Settings.Frm_PreHeaterTernSettingsTask.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Alarms.Frm_Alarm1.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Alarms.Frm_Alarm2.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Alarms.Frm_AlarmsSubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomePrc.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_MessagePRC.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_Operator.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Frm_Paper.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Frm_ProductionGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Frm_Quality.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomeDry.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomeSubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Home.Frm_HomeWet.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_OperatorSubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Operator.Frm_Printings.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_DryPastOrders.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_InsWetOrder.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_OrdersInsSubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersIns.Frm_QuickInsDryOrder.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_DryOrdersList.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_DryPastOrdersList.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_DryWetOrdersList.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_OrdersListSubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.OrdersList.Frm_WetOrdersList.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Warnings.Frm_Warning1.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Warnings.Frm_Warning2.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Production.Warnings.Frm_WarningsSubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_AIOStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_CTCStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_DownTimeReasons.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_DIOStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_Flute.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_Languages.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_LineConfig.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_RestoreBackup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Frm_SettingsGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Simulation.Frm_SimulationGeneral.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Settings.Simulation.Frm_SimulationSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Alarms.Frm_ShearAlarmActive.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Alarms.Frm_ShearAlarmHistory.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Alarms.Frm_ShearAlarmsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearAlarm.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearConsole.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Frm_ShearStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Settings.Frm_ShearSettingsMachine.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Settings.Frm_ShearSettingsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Shear.Settings.Frm_ShearSettingsTask.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Alarms.Frm_SingleFacerAlarmActive.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Alarms.Frm_SingleFacerAlarmHistory.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Alarms.Frm_SingleFacerAlarmSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole01.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole02.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole03.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsole04.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Console.Frm_SingleFacerConsoleSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Frm_SingleFacerGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsBridgeStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsMachine.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsSFStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Settings.Frm_SingleFacerSettingsTask.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus01.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus02.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus03.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatus04.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SingleFacer.Status.Frm_SingleFacerStatusSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Alarms.Frm_SlitterScorerAlarmActive.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Alarms.Frm_SlitterScorerAlarmHistory.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Alarms.Frm_SlitterScorerAlarmsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerConsole.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Frm_SlitterScorerGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerBlades.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Settings.Frm_SlitterScorerSettingsMachine.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Settings.Frm_SlitterScorerSettingsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Settings.Frm_SlitterScorerSettingsTask.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerStatusSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Status.Frm_SlitterScorerRegulations.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Tools.Frm_SlitterScorerWebDirector.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SlitterScorer.Tools.Frm_SlitterScorerToolsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Alarms.Frm_SplicerAlarmActive.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Alarms.Frm_SplicerAlarmHistory.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Alarms.Frm_SplicerAlarmsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Frm_SplicerConsole.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Frm_SplicerGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Frm_SplicerStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsMachine.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Splicer.Settings.Frm_SplicerSettingsTask.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Alarms.Frm_StackerAlarmActive.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Alarms.Frm_StackerAlarmHistory.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Alarms.Frm_StackerAlarmSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Frm_StackerConsole.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Frm_StackerGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsMachine.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Settings.Frm_StackerSettingsTask.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus01.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus02.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus03.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatus04.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Stacker.Status.Frm_StackerStatusSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_DowntimeReport.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_ProductionTrace.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_ShiftReport.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Frm_StatisticsGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Orders.Frm_StatisticsOrdersDetail.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Orders.Frm_StatisticsOrdersList.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Orders.Frm_StatisticsOrdersSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Rolls.Frm_StatisticsRollsList.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Rolls.Frm_StatisticsRollsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Statistics.Rolls.Frm_StatisticsRollsTrace.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_AOCSettings.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_AOCStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_AOC_WECSubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_WECSettings.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.AOC_WEC.Frm_WECStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.Frm_SyncroSystemGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.Frm_SyncroSystemOperations.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log1.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log2.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log3.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_Log4.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.LOG.Frm_LogSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_OFFICESettings.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_OFFICEStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_OFFICESubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.OFFICE.Frm_PRCSettings.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.PRINTER.Frm_PRINTERSSettings.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.PRINTER.Frm_PRINTERSStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.PRINTER.Frm_PRINTERSSubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED.Frm_SpeedSettings.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED.Frm_SpeedStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED.Frm_SpeedSubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED_Reference.Frm_SpeedReferenceSettings.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED_Reference.Frm_SpeedReferenceStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SPEED_Reference.Frm_SpeedReferenceSubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroSettings.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroStatus.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroSubGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroTask1.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.SyncroSystem.SYNCRO.Frm_SyncroTask2.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Alarms.Frm_twin400_alarm1.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Alarms.Frm_twin400_alarm4.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Alarms.Frm_twin400_alarmsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Flutes.Frm_twin400_flutes.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Flutes.Frm_twin400_flutesSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Flutes.Frm_twin400_quality.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Frm_Twin400Group.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_maintenance.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_maintenanceSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_simulations.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_testInput.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Maintenance.Frm_twin400_testOutput.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_orderDetails.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_ordersList.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_ordersSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Orders.Frm_twin400_pastOrders.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_blades.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_console.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_regulations.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_machineSettings.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_misc.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_plunges.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_settingsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Settings.Frm_twin400_tasks.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_overview.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Status.Frm_twin400_statusSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_bladesAndScorers.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_rotary.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_toolsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Tools.Frm_twin400_webDirector.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Warnings.Frm_twin400_warning1.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Warnings.Frm_twin400_warning4.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.Twin400.Warnings.Frm_twin400_warningsSubgroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisor01.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisor02.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisor03.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.Pages.WetEndSupervisor.Frm_WetEndSupervisorGroup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_Alert.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskDateTime.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskString.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskValue.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_AskValueAndConfirm.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_Confirm.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterPastOrder.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterPastRolls.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterPRCMessage.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_FilterQuality.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_MoveOrders.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_MultipleDelete.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PopUp.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PRCAskMessage.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PRCAskValue.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_PRCCurve.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_RollData.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_ScorersOptions.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_Swap.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.PopUp.Frm_TimeSetup.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBar.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBarDryEnd.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBarTwin400.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Forms.StatusBar.Frm_StatusBarWetEnd.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\S_SyncroC.exe
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\S_SyncroC.pdb
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\cardboard\SyncroC\obj\Debug\SyncroC.PageManager.resources

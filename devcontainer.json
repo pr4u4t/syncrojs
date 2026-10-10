@@ -1,0 +1,21 @@
+{
+  "name": "SyncroJS WSL development",
+  "dockerComposeFile": [
+    "../compose.yaml",
+    "../compose.local-db.yaml",
+    "../compose.devcontainer.yaml"
+  ],
+  "service": "server",
+  "runServices": ["server", "database"],
+  "workspaceFolder": "/usr/src/app",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/usr/src/app,type=bind",
+  "postCreateCommand": "npm ci",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "SyncroJS"
+    }
+  },
+  "remoteUser": "node",
+  "shutdownAction": "stopCompose"
+}

@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ACTIVE_ROLL_DX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ACTIVE_ROLL_DX.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ROTATING_ROLL_DX_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ROTATING_ROLL_DX_2.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Automatico_ISO_0017" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Automatico_ISO_0017.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OverviewDryEnd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OverviewDryEnd.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bridge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bridge2.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smart_01_bis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smart-01 bis.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REMOTO_ISO_1108_PREMUTO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMOTO_ISO_1108_PREMUTO.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="debug" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\debug.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="STEAM_SHOWER_OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\STEAM_SHOWER_OFF.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ParaffinMachineActive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ParaffinMachineActive.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_M3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_M3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOCALE_ISO_1109_PREMUTO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOCALE_ISO_1109l_PREMUTO.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_0_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_0_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stato_Rotary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stato_Rotary.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="INTRUSIONE_BARRIERA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\INTRUSIONE_BARRIERA.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OptionPositioning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OptionPositioning.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Slitter.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_M3_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_M3_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OptionGap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OptionGap.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\copy.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PaperTension" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PaperTension.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LATO_OPERATORE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LATO_OPERATORE.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AOC_Manual" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AOC_Manual.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crest_01_bis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crest-01 bis.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LATO_NON_OPERATORE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LATO_NON_OPERATORE.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Master" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Master.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="debug_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\debug-03.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="twin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\twin.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MoistureSensor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MoistureSensor.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ACTIVE_ROLL_SX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ACTIVE_ROLL_SX.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="master_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\master-01.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rotary_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rotary-01.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lock_Blue.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Automatico_ISO_0017_Reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Automatico_ISO_0017_Reverse.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OptionType" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OptionType.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Compact_2_Asse_NO_Aux" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Compact_2_Asse_NO_Aux.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lateralBarItem_change" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lateralBarItem_change.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_3_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_3_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AOC_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AOC_Auto.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SendOrder_ISO_1965" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SendOrder_ISO_1965.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_1_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_1_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_M2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_M2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="medium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medium.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_M2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_M2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_2_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_2_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shiftLeft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shiftLeft.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MANUTENZIONE_ISO_0717" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MANUTENZIONE_ISO_0717.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OptionShaft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OptionShaft.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_M1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_M1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ROTATING_ROLL_SX_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ROTATING_ROLL_SX_2.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Manuale_ISO_0096" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Manuale_ISO_0096.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wet_dry" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wet-dry.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ROTATING_ROLL_SX_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ROTATING_ROLL_SX_1.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="STEAM_SHOWER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\STEAM_SHOWER.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SlitterUp_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SlitterUp&amp;Down.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_M1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_M1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="swap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\swap.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Terminal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Terminal.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="debug_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\debug-02.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="express_terminal_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\express-terminal-04.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ROTATING_ROLL_DX_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ROTATING_ROLL_DX_3.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crest_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crest-01.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="twin_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\twin-01.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SingleFacer1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SingleFacer.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_2.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zoom_in" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zoom_in.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ROTATING_ROLL_SX_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ROTATING_ROLL_SX_3.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Terna_fosber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Terna_fosber.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fungo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fungo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RSHScrapEnabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RSHScrapEnabled.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wet_dryA72x60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wet-dryA72x60.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="express_terminal_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\express-terminal-02.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="express_terminal_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\express-terminal-03.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cartone11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cartone11.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Manuale_ISO_0096_Reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Manuale_ISO_0096_Reverse.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crest_master_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crest-master-02.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PrinterIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PrinterIcon.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Not_Ready_To_Splice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Not_Ready_To_Splice.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graph" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Graph.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AOC_GAP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AOC_GAP.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReturnToDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReturnToDefault.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="debugA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\debugA.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Not_Ready_To_Run" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Not_Ready_To_Run.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Terna" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Terna.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NStop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NStop.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MAIN_STEAM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MAIN_STEAM .bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_M1_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_M1_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="record" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\record.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="link1_1A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\link1-1A.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="STEAM_SHOWER_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\STEAM_SHOWER_ON .bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OStop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\OStop.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="terminal_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\terminal-01.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KnifeLevel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KnifeLevel9.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="link_rotary_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\link-rotary-03.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="link1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\link1-1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="link_rotary_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\link-rotary-04.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\filter.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SplicerProductionEnd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SplicerProductionEnd.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Piani" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Piani.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stato_Terminal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stato_Terminal.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TEMPERATURA_CARTA_BASSA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TEMPERATURA CARTA BASSA.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="READY_ROLL_SX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\READY_ROLL_SX.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shoes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shoes.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Glue_unit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Glue unit.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo_Fosber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo Fosber.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LINK_PORTABOBINA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LINK_PORTABOBINA.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ROTATING_ROLL_DX_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ROTATING_ROLL_DX_1.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crest_master_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crest-master-04.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rotateRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rotateRight.PNG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="paste" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paste.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotUsed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotUsed.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fasciatura_Normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fasciatura_Normal.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crest_master_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crest-master-03.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Load_ISO_0734" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Load_ISO_0734.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RSHScrapDisabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RSHScrapDisabled.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CREST 3L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CREST 3L.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Esclamativo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Esclamativo.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ParaffinMachineNotActive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ParaffinMachineNotActive.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AOC_Semi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AOC_Semi.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brush_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brush_off.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Load_ISO_0734_Reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Load_ISO_0734_Reverse.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="link2_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\link2-1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SendOrder_ISO_1965_Reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SendOrder_ISO_1965_Reverse.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_0.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_M2_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_M2_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Slower" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Slower.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="link_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\link-01.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_M3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_M3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="twinA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\twinA.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DoubleSlower" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DoubleSlower.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fasciatura_Reverse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fasciatura_Reverse.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="link2_1A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\link2-1A.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SlitterUp_DownPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SlitterUp&amp;DownPressed.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ROTATING_ROLL_DX_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ROTATING_ROLL_DX_4.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Express_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Express-01.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="READY_ROLL_DX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\READY_ROLL_DX.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CREST" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CREST.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MoistureSensorSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MoistureSensorSelected.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SplicerProductionEndRev" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SplicerProductionEndRev.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_updown_pos_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_updown_pos_0.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="debug_04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\debug-04.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoSyncro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoSyncro.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="liner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\liner.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TwinStatus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TwinStatus.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rotary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rotary.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cartone1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cartone1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brush_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brush_on.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SingleFacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SMART_V2_CORPO_MACCHINA.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cestino" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cestino.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AOC_Not_Ready" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AOC_Not_Ready.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DoubleFaster" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DoubleFaster.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_3.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOCALE_ISO_1109" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOCALE_ISO_1109.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="linerEmedium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\linerEmedium.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ROTATING_ROLL_SX_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ROTATING_ROLL_SX_4.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LUBRIFICAZIONE_OLIO_ISO_0391" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LUBRIFICAZIONE_OLIO_ISO_0391.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="arcobaleno" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arcobaleno.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="link_rotary_02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\link-rotary-02.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zoom_out" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zoom_out.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="REMOTO_ISO_1108" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\REMOTO_ISO_1108.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cestino_premuto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cestino_premuto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pmac" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pmac.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TEMPERATURA_CARTA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TEMPERATURA CARTA.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bobina" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bobina.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AOC_NOGAP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AOC_NOGAP.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pmacA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pmacA.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GLUE_GAP" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GLUE_GAP.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseLoop_Manuale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseLoop_Manuale.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_0_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_0_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_1_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_1_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_2_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_2_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_3_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_3_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_M1_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_M1_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_M2_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_M2_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warp_endtoend_pos_M3_CloseLoop_Auto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warp_endtoend_pos_M3_CloseLoop_Auto.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>
