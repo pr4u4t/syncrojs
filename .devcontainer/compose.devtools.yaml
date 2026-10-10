@@ -1,0 +1,15 @@
+services:
+  server:
+    build:
+      args:
+        INSTALL_CPP_TOOLS: "true"
+      secrets:
+        - extra_ca
+  classic-generator:
+    build:
+      secrets:
+        - extra_ca
+
+secrets:
+  extra_ca:
+    file: ${EXTRA_CA_CERT:-/dev/null}

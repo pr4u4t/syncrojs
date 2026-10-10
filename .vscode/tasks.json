@@ -1,0 +1,244 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "React migration final build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build:client"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Jest tests",
+			"type": "shell",
+			"command": "npm",
+			"args": ["test", "--", "--runInBand"],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Measure classic parser fixtures",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const dir=\"tests/models/classic_data\";const rec=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;for(const name of fs.readdirSync(dir)){const data=fs.readFileSync(path.join(dir,name),\"utf8\");const chunks=data.match(/(.{587})/g)||[];const lengths=chunks.map(x=>x.length);const noMatch=chunks.filter(x=>!x.match(rec)).length;console.log(JSON.stringify({name,chars:data.length,bytes:Buffer.byteLength(data),lf:(data.match(/\\n/g)||[]).length,cr:(data.match(/\\r/g)||[]).length,chunkCount:chunks.length,remainder:data.length%587,noMatch,groups:chunks[0]?.match(rec)?.length-1,firstRecord:chunks[0]?.length,lastRecord:lengths.at(-1)}));}"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Summarize classic fixed-width records",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const d=\"tests/models/classic_data\";const rec=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;for(const name of fs.readdirSync(d)){const text=fs.readFileSync(path.join(d,name),\"utf8\");const chunks=text.match(/(.{587})/g)||[];const rows=[];let malformed=0;for(const chunk of chunks){if(chunk.trim()===\"\")continue;const match=chunk.match(rec);if(!match){malformed++;continue;}const row=match.slice(1,43).map((value)=>value.replace(/  +/g,\" \").trim());rows.push(row);}console.log(JSON.stringify({name,parsedRows:rows.length,malformed,regexWidth:chunks[0]?.match(rec)?.[0].length,nonemptyTail:text.slice(chunks.length*587).trim().length>0,outs:rows.slice(0,3).map((row)=>[row[20],row[35]]),setupIds:rows.slice(0,3).map((row)=>row[2])}));}"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect classic record tails",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const dir=\"tests/models/classic_data\";const rec=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;for(const name of fs.readdirSync(dir)){const text=fs.readFileSync(path.join(dir,name),\"utf8\");const chunks=text.match(/(.{587})/g)||[];const nonempty=chunks.filter((chunk)=>chunk.trim()!==\"\");const sample=nonempty.slice(0,2).map((chunk)=>{const m=chunk.match(rec);return {tail:chunk.slice(m[0].length),lastFields:m.slice(-5).map((v)=>v.trim())};});console.log(JSON.stringify({name,sample}));}"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate all classic fixed-width records",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const dir=\"tests/models/classic_data\";const rec=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;for(const name of fs.readdirSync(dir)){const text=fs.readFileSync(path.join(dir,name),\"utf8\");const chunks=text.match(/(.{587})/g)||[];let active=0,malformed=0,tailData=0,extraData=0;for(const chunk of chunks){if(chunk.trim()===\"\")continue;active++;const m=chunk.match(rec);if(!m){malformed++;continue;}if(chunk.slice(m[0].length).trim()!==\"\")tailData++;if(m.slice(39,43).some((value)=>value.trim()!==\"\"))extraData++;}console.log(JSON.stringify({name,active,malformed,nonblankTail90:tailData,nonblankExtraCaptureGroups:extraData,discardedRemainder:text.slice(chunks.length*587).trim().length}));}"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect unmapped classic fields",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const d=\"tests/models/classic_data\";const r=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;for(const name of [\"Ord_mac 1 zam.dat\",\"Ord_mac3.dat\",\"Ord_mac5.dat\"]){const text=fs.readFileSync(path.join(d,name),\"utf8\");const chunks=text.match(/(.{587})/g)||[];const rec=chunks.find((chunk)=>chunk.trim()!==\"\").match(r);console.log(JSON.stringify({name,unmappedGroups:rec.slice(39,43).map((value)=>value.trim())}));}"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Analyze classic cut waste",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const dir=\"tests/models/classic_data\";const rec=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;const rows=[];for(const name of fs.readdirSync(dir)){const text=fs.readFileSync(path.join(dir,name),\"utf8\");for(const chunk of text.match(/(.{587})/g)||[]){if(chunk.trim()===\"\")continue;const m=chunk.match(rec);if(!m)continue;const f=m.slice(1,43).map(v=>v.replace(/  +/g,\" \").trim());const n=i=>f[i]===\"\"?NaN:Number(f[i]);const web=n(5),w0=n(11),o0=n(20),w1=n(26),o1=n(35);const used=(Number.isFinite(w0)&&Number.isFinite(o0)?w0*o0:0)+(Number.isFinite(w1)&&Number.isFinite(o1)?w1*o1:0);rows.push({file:name,setup:f[2],web,used,trim:web-used,twoOrders:Number.isFinite(w1)&&Number.isFinite(o1)&&o1>0,outs0:o0,outs1:o1,w0,w1,trimPct:(web-used)/web*100,utilPct:used/web*100});}}const sorted=a=>[...a].sort((x,y)=>x-y);const median=a=>{const s=sorted(a);return s.length%2?s[(s.length-1)/2]:(s[s.length/2-1]+s[s.length/2])/2};const summarize=rs=>({records:rs.length,twoOrders:rs.filter(r=>r.twoOrders).length,trimMm:{min:Math.min(...rs.map(r=>r.trim))/10,median:median(rs.map(r=>r.trim))/10,mean:rs.reduce((s,r)=>s+r.trim,0)/rs.length/10,max:Math.max(...rs.map(r=>r.trim))/10},weightedUtilPct:rs.reduce((s,r)=>s+r.used,0)/rs.reduce((s,r)=>s+r.web,0)*100,trimOutOfRange:rs.filter(r=>r.trim<0||r.trim>2300).length});const total=summarize(rows);const files=[...new Set(rows.map(r=>r.file))].map(file=>({file,...summarize(rows.filter(r=>r.file===file))}));const topWaste=sorted(rows.map(r=>r.trim)).slice(-8).reverse().map(trim=>rows.find(r=>r.trim===trim));const lowestWaste=sorted(rows.map(r=>r.trim)).slice(0,8).map(trim=>rows.find(r=>r.trim===trim));console.log(JSON.stringify({total,files,highestWaste:topWaste,lowestWaste},null,2));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Classic trim distribution",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const dir=\"tests/models/classic_data\";const r=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;const rows=[];for(const file of fs.readdirSync(dir)){for(const chunk of fs.readFileSync(path.join(dir,file),\"utf8\").match(/(.{587})/g)||[]){if(!chunk.trim())continue;const m=chunk.match(r);if(!m)continue;const f=m.slice(1,43).map(v=>v.replace(/  +/g,\" \").trim());const n=i=>f[i]===\"\"?NaN:Number(f[i]);const web=n(5),w0=n(11),o0=n(20),w1=n(26),o1=n(35);const used=(Number.isFinite(w0)&&Number.isFinite(o0)?w0*o0:0)+(Number.isFinite(w1)&&Number.isFinite(o1)?w1*o1:0);rows.push({file,setup:f[2],web,used,trim:web-used,orders:Number.isFinite(w1)&&Number.isFinite(o1)&&o1>0?2:1,w0,o0,w1,o1});}}const hist=k=>Object.fromEntries([...rows.reduce((m,r)=>m.set(k(r),(m.get(k(r))||0)+1),new Map())].sort((a,b)=>String(a[0]).localeCompare(String(b[0]),undefined,{numeric:true})));const pct=(p)=>{const a=rows.map(r=>r.trim).sort((x,y)=>x-y);return a[Math.ceil(p*a.length)-1]/10;};const sorted=[...rows].sort((a,b)=>b.trim-a.trim);const low=[...rows].sort((a,b)=>a.trim-b.trim);console.log(JSON.stringify({trimHistogramMm:hist(r=>r.trim/10),orderCountDistribution:hist(r=>r.orders),outsPairDistribution:hist(r=>`${r.o0} + ${Number.isFinite(r.o1)?r.o1:0}`),wastePercentilesMm:{p50:pct(.5),p75:pct(.75),p90:pct(.9)},highestWaste:sorted.slice(0,5).map(r=>({...r,webMm:r.web/10,usedMm:r.used/10,trimMm:r.trim/10,utilizationPct:r.used/r.web*100})),lowestWaste:low.slice(0,5).map(r=>({...r,webMm:r.web/10,usedMm:r.used/10,trimMm:r.trim/10,utilizationPct:r.used/r.web*100}))},null,2));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Compare fixture cuts to width optimum",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const dir=\"tests/models/classic_data\";const rec=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;const rows=[];for(const file of fs.readdirSync(dir)){for(const chunk of fs.readFileSync(path.join(dir,file),\"utf8\").match(/(.{587})/g)||[]){if(!chunk.trim())continue;const m=chunk.match(rec);if(!m)continue;const f=m.slice(1,43).map(v=>v.replace(/  +/g,\" \").trim());const n=i=>f[i]===\"\"?NaN:Number(f[i]);const web=n(5),w0=n(11),o0=n(20),w1=n(26),o1=n(35);if(!Number.isFinite(web)||!Number.isFinite(w0)||!Number.isFinite(o0)||o0<1)continue;const hasSecond=Number.isFinite(w1)&&Number.isFinite(o1)&&o1>0;const currentUsed=w0*o0+(hasSecond?w1*o1:0);let bestUsed=-1,best=[0,0];if(hasSecond){for(let a=1;a*w0+w1<=web;a++){for(let b=1;a*w0+b*w1<=web;b++){const used=a*w0+b*w1;if(used>bestUsed){bestUsed=used;best=[a,b];}}}}else{best[0]=Math.floor(web/w0);bestUsed=best[0]*w0;}rows.push({file,setup:f[2],web,w0,o0,w1,o1:hasSecond?o1:0,currentUsed,bestUsed,bestOuts:best,match:currentUsed===bestUsed,currentTrim:(web-currentUsed)/10,bestTrim:(web-bestUsed)/10});}}const mismatches=rows.filter(r=>!r.match);console.log(JSON.stringify({rows:rows.length,exactWidthOptima:rows.length-mismatches.length,mismatches:mismatches.length,examples:mismatches.slice(0,30),largestCurrentVsBestTrimMm:Math.max(...mismatches.map(r=>r.currentTrim-r.bestTrim)),mismatchFiles:Object.fromEntries([...new Set(mismatches.map(r=>r.file))].map(file=>[file,mismatches.filter(r=>r.file===file).length]))},null,2));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Compare classic cuts with five-out cap",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const dir=\"tests/models/classic_data\";const rec=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;const rows=[];for(const file of fs.readdirSync(dir)){for(const chunk of fs.readFileSync(path.join(dir,file),\"utf8\").match(/(.{587})/g)||[]){if(!chunk.trim())continue;const m=chunk.match(rec);if(!m)continue;const f=m.slice(1,43).map(v=>v.replace(/  +/g,\" \").trim());const n=i=>f[i]===\"\"?NaN:Number(f[i]);const web=n(5),w0=n(11),o0=n(20),w1=n(26),o1=n(35);if(!Number.isFinite(web)||!Number.isFinite(w0)||!Number.isFinite(o0)||o0<1)continue;const second=Number.isFinite(w1)&&Number.isFinite(o1)&&o1>0;let best=-1,bestOuts=[];for(let a=1;a<=5;a++){for(let b=second?1:0;b<=(second?5:0);b++){const used=a*w0+(second?b*w1:0);if(used<=web&&used>best){best=used;bestOuts=[a,b];}}}const current=w0*o0+(second?w1*o1:0);rows.push({file,setup:f[2],web,w0,o0,w1,o1:second?o1:0,currentTrim:(web-current)/10,bestTrim:(web-best)/10,bestOuts,match:current===best});}}const bad=rows.filter(r=>!r.match);console.log(JSON.stringify({rows:rows.length,matches:rows.length-bad.length,mismatches:bad.length,largerWasteMm:bad.length?Math.max(...bad.map(r=>r.currentTrim-r.bestTrim)):0,examples:bad.slice(0,25)},null,2));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect demand fields on width mismatches",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const dir=\"tests/models/classic_data\";const r=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;const mismatches=[];for(const file of fs.readdirSync(dir)){for(const chunk of fs.readFileSync(path.join(dir,file),\"utf8\").match(/(.{587})/g)||[]){if(!chunk.trim())continue;const m=chunk.match(r);if(!m)continue;const f=m.slice(1,43).map(v=>v.replace(/  +/g,\" \").trim());const n=i=>f[i]===\"\"?NaN:Number(f[i]);const web=n(5),w0=n(11),o0=n(20),w1=n(26),o1=n(35);if(!Number.isFinite(web)||!Number.isFinite(w0)||!Number.isFinite(o0)||o0<1)continue;const second=Number.isFinite(w1)&&Number.isFinite(o1)&&o1>0;const current=w0*o0+(second?w1*o1:0);let best=-1,bestOuts=[];for(let a=1;a<=5;a++)for(let b=second?1:0;b<=(second?5:0);b++){const used=a*w0+(second?b*w1:0);if(used<=web&&used>best){best=used;bestOuts=[a,b];}}if(current!==best)mismatches.push({file,setup:f[2],webMm:web/10,order1:{widthMm:w0/10,outs:o0,sheetLength:f[18],qty:f[19],linearMeters:f[21]},order2:second?{widthMm:w1/10,outs:o1,sheetLength:f[33],qty:f[34],linearMeters:f[36]}:null,trimMm:(web-current)/10,bestTrimMm:(web-best)/10,bestOuts});}}console.log(JSON.stringify(mismatches,null,2));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check classic setup run lengths",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const dir=\"tests/models/classic_data\";const r=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;const rows=[];for(const file of fs.readdirSync(dir)){for(const chunk of fs.readFileSync(path.join(dir,file),\"utf8\").match(/(.{587})/g)||[]){if(!chunk.trim())continue;const m=chunk.match(r);if(!m)continue;const f=m.slice(1,43).map(v=>v.replace(/  +/g,\" \").trim());const n=i=>f[i]===\"\"?NaN:Number(f[i]);const orders=[[n(18),n(19),n(20),n(21)],[n(33),n(34),n(35),n(36)]].filter(([,q,o,l])=>Number.isFinite(q)&&Number.isFinite(o)&&o>0&&Number.isFinite(l));const req=orders.map(([len,q,outs])=>q*len/(outs*10000));const report=orders.map(([, , ,meters])=>meters);const predicted=Math.max(...req);const shared=report.every(m=>m===report[0]);rows.push({file,setup:f[2],req,reported:report,predicted,rounded:Math.round(predicted),shared,match:report.every(m=>m===Math.round(predicted)),diff:Math.abs(report[0]-predicted)});}}const matches=rows.filter(r=>r.match);const diffs=rows.map(r=>r.diff).sort((a,b)=>a-b);console.log(JSON.stringify({records:rows.length,matchNearestInteger:matches.length,nonMatch:rows.length-matches.length,sharedMeters:rows.filter(r=>r.shared).length,diffMedian:diffs[Math.floor(diffs.length/2)],maxDiff:Math.max(...diffs),examples:rows.slice(0,5),nonmatching:rows.filter(r=>!r.match).slice(0,15)},null,2));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Compare fixture run-length optimum",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const dir=\"tests/models/classic_data\";const r=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;const rows=[];for(const file of fs.readdirSync(dir)){for(const chunk of fs.readFileSync(path.join(dir,file),\"utf8\").match(/(.{587})/g)||[]){if(!chunk.trim())continue;const m=chunk.match(r);if(!m)continue;const f=m.slice(1,43).map(v=>v.replace(/  +/g,\" \").trim());const n=i=>f[i]===\"\"?NaN:Number(f[i]);const web=n(5),w0=n(11),q0=n(19),o0=n(20),l0=n(18),m0=n(21),w1=n(26),q1=n(34),o1=n(35),l1=n(33),m1=n(36);if(!Number.isFinite(web)||!Number.isFinite(w0)||!Number.isFinite(q0)||!Number.isFinite(o0)||o0<1)continue;const second=Number.isFinite(w1)&&Number.isFinite(q1)&&Number.isFinite(o1)&&Number.isFinite(l1)&&o1>0;const currentRun=Math.max(Number.isFinite(m0)?m0:0,Number.isFinite(m1)?m1:0);let bestRun=Infinity,best=[];for(let a=1;a<=5;a++)for(let b=second?1:0;b<=(second?5:0);b++){const used=a*w0+(second?b*w1:0);if(used>web)continue;const run0=Math.ceil(q0*l0/(a*10000));const run1=second?Math.ceil(q1*l1/(b*10000)):0;const run=Math.max(run0,run1);if(run<bestRun){bestRun=run;best=[a,b];}}const actual0=Math.ceil(q0*l0/(o0*10000));const actual1=second?Math.ceil(q1*l1/(o1*10000)):0;const derivedRun=Math.max(actual0,actual1);rows.push({file,setup:f[2],webMm:web/10,outs:[o0,second?o1:0],currentRun,derivedRun,bestRun,bestOuts:best,matchRun:currentRun===bestRun,matchDerived:currentRun===derivedRun,usedMm:(w0*o0+(second?w1*o1:0))/10,bestUsedMm:(w0*best[0]+(second?w1*best[1]:0))/10});}}const mismatches=rows.filter(r=>!r.matchRun);const derived=rows.filter(r=>!r.matchDerived);console.log(JSON.stringify({records:rows.length,storedRunMatchesFormula:rows.length-derived.length,storedRunMatchesMinimum:rows.length-mismatches.length,mismatches:mismatches.length,examples:mismatches.slice(0,20),formulaMismatches:derived.slice(0,10)},null,2));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check run-length tie breaks",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");const path=require(\"path\");const dir=\"tests/models/classic_data\";const r=/(.{11})(.{44})(.{12})(.{36})(.{23})(.{5})(.{10})(.{1})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{15})(.{12})(.{30})(.{5})(.{5})(.{5})(.{5})(.{5})(.{5})(.{4})(.{5})(.{6})(.{1})(.{8})(.{2})(.{57})(.{56})(.{8})(.{8})/;let rows=[];for(const file of fs.readdirSync(dir)){for(const chunk of fs.readFileSync(path.join(dir,file),\"utf8\").match(/(.{587})/g)||[]){if(!chunk.trim())continue;const m=chunk.match(r);if(!m)continue;const f=m.slice(1,43).map(v=>v.replace(/  +/g,\" \").trim());const n=i=>f[i]===\"\"?NaN:Number(f[i]);const web=n(5),w0=n(11),q0=n(19),o0=n(20),l0=n(18),w1=n(26),q1=n(34),o1=n(35),l1=n(33);if(![web,w0,q0,o0,l0].every(Number.isFinite)||o0<1)continue;const second=[w1,q1,o1,l1].every(Number.isFinite)&&o1>0;let candidates=[];for(let a=1;a<=5;a++)for(let b=second?1:0;b<=(second?5:0);b++){const used=a*w0+(second?b*w1:0);if(used>web)continue;const run=Math.max(Math.ceil(q0*l0/(a*10000)),second?Math.ceil(q1*l1/(b*10000)):0);candidates.push({a,b,run,used});}const bestRun=Math.min(...candidates.map(c=>c.run));const ties=candidates.filter(c=>c.run===bestRun);const usedCurrent=w0*o0+(second?w1*o1:0);const chosen=ties.find(c=>c.a===o0&&c.b===(second?o1:0));const maxUsed=Math.max(...ties.map(c=>c.used));rows.push({file,setup:f[2],outs:[o0,second?o1:0],bestRun,tieCount:ties.length,currentUsed:usedCurrent,maxTieUsed:maxUsed,isMaxWidthTie:usedCurrent===maxUsed,chosenIsMinRun:Boolean(chosen),tieOuts:ties.map(c=>[c.a,c.b])});}}const notMax=rows.filter(x=>!x.isMaxWidthTie);const mult=rows.filter(x=>x.tieCount>1);console.log(JSON.stringify({records:rows.length,allSelectMinRun:rows.every(x=>x.chosenIsMinRun),multipleMinRunTies:mult.length,currentChoosesMaxWidthAmongTies:rows.length-notMax.length,notMaxWidthTies:notMax.slice(0,20),tieExamples:mult.slice(0,12)},null,2));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check C++ compiler",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"command -v g++ || command -v clang++ || true"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build and test classic generator",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"g++ -std=c++17 -O2 -Wall -Wextra -Werror tools/classic_generator.cpp -o /tmp/classic-generator && /tmp/classic-generator --self-test"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Smoke test classic generator DAT",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const {execFileSync}=require(\"child_process\");const fs=require(\"fs\");execFileSync(\"/tmp/classic-generator\",[\"tools/example_orders.csv\",\"/tmp/classic-generator-smoke.dat\"],{stdio:\"inherit\"});const text=fs.readFileSync(\"/tmp/classic-generator-smoke.dat\",\"utf8\");const rows=require(\"./models/order\").parse(text);if(text.length!==59040)throw new Error(\"Fixture-compatible file size mismatch: \"+text.length);if(rows.length!==1)throw new Error(\"Expected one parsed setup, got \"+rows.length);const row=rows[0];if(row[20]!==\"3\"||row[35]!==\"1\"||row[21]!==\"322\"||row[36]!==\"322\"||row[4]!==\"A\")throw new Error(\"Unexpected generated fields: \"+JSON.stringify({flute:row[4],outs:[row[20],row[35]],meters:[row[21],row[36]]}));console.log(JSON.stringify({characters:text.length,parsedSetups:rows.length,flute:row[4],outs:[row[20],row[35]],meters:[row[21],row[36]]}));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Smoke test Node to C++ Unix socket",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const assert=require(\"node:assert/strict\");const {spawn}=require(\"child_process\");const fs=require(\"fs\");const socketPath=\"/tmp/classic-generator-node-smoke.sock\";const server=spawn(\"/tmp/classic-generator\",[\"--socket\",socketPath],{stdio:[\"ignore\",\"pipe\",\"inherit\"]});(async()=>{try{await new Promise((resolve,reject)=>{server.once(\"error\",reject);server.once(\"exit\",code=>reject(new Error(\"generator exited \"+code)));server.stdout.on(\"data\",chunk=>{if(chunk.toString().includes(\"listening on\"))resolve();});});const {generateDatFromCsv}=require(\"./utils/classic-generator\");const dat=await generateDatFromCsv(fs.readFileSync(\"tools/example_orders.csv\"),{socketPath,maxTrimTenthsMm:2300});const rows=require(\"./models/order\").parse(dat);assert.equal(dat.length,59040);assert.equal(rows.length,1);assert.deepEqual([rows[0][3],rows[0][4],rows[0][20],rows[0][35],rows[0][21]],[\"FALA A\",\"A\",\"3\",\"1\",\"322\"]);console.log(JSON.stringify({characters:dat.length,parsedSetups:rows.length,quality:rows[0][3],flute:rows[0][4],outs:[rows[0][20],rows[0][35]],meters:[rows[0][21],rows[0][36]]}));}catch(error){console.error(error);process.exitCode=1;}finally{server.kill(\"SIGTERM\");await new Promise(resolve=>server.once(\"exit\",resolve));try{fs.unlinkSync(socketPath);}catch{}}})()"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Smoke test operator status parser",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const assert=require(\"node:assert/strict\");const syncro=require(\"./utils/syncro\");const xml=\"<OperatorStatus><LineSpeed>1450</LineSpeed><DryMetersLeft>820</DryMetersLeft><WetEndMetersLeft>1200</WetEndMetersLeft><DrySetupCount>6</DrySetupCount><DryProgressPercent>42</DryProgressPercent><AocTimeLeft>00:02:00</AocTimeLeft><AocMode>Auto</AocMode><AocType>Tandem</AocType><Simulation>false</Simulation><FirstStopTime>2026-10-09 08:15</FirstStopTime><FirstStopMachine>STK1</FirstStopMachine><FirstStopReason>NOT_READY_TO_RUN</FirstStopReason><ReadyToRun>true</ReadyToRun><ReadyToAOC>false</ReadyToAOC><Machines><Machine><Name>Knife</Name><Configured>true</Configured><ReadyToRun>true</ReadyToRun><ReadyToAOC>false</ReadyToAOC><Alarmed>false</Alarmed><Warned>true</Warned><InEmergency>false</InEmergency></Machine><Machine><Name>Stacker1</Name><Configured>true</Configured><ReadyToRun>false</ReadyToRun><ReadyToAOC>false</ReadyToAOC><Alarmed>true</Alarmed><Warned>false</Warned><InEmergency>false</InEmergency></Machine></Machines></OperatorStatus>\";syncro.connect=async()=>({write:async value=>value.length,readAll:async()=>Buffer.from(xml),destroy:()=>{}});const path=require.resolve(\"./models/operator-status\");delete require.cache[path];const {operator_status}=require(\"./models/operator-status\");operator_status().then(snapshot=>{assert.equal(snapshot.readyToRun,true);assert.equal(snapshot.lineSpeed,1450);assert.equal(snapshot.machines.length,2);assert.equal(snapshot.machines[1].alarmed,true);console.log(JSON.stringify({readyToRun:snapshot.readyToRun,lineSpeed:snapshot.lineSpeed,machines:snapshot.machines.length,stackerAlarmed:snapshot.machines[1].alarmed}));}).catch(error=>{console.error(error);process.exitCode=1;});"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify SyncroS raw order token map",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const assert=require(\"node:assert/strict\");const quality=require(\"./models/quality\");const flute=require(\"./models/flute\");quality.quality_params_by_id=async()=>({rows:[{weightfactoruwg_m:285,thickness_uddmm:27,scoregap_uddmm:30}]});flute.flute_params_by_id=async()=>({rows:[{}]});const orders=require(\"./models/order\");const row=Array(42).fill(\"\");Object.assign(row,{2:\"9001\",3:\"Q1\",4:\"A\",5:\"25000\",8:\"First\",10:\"ORDER-1\",11:\"8000\",12:\"1000\",13:\"0\",14:\"0\",15:\"0\",16:\"0\",17:\"100\",18:\"10000\",19:\"250\",20:\"2\",23:\"Second\",25:\"ORDER-2\",26:\"8000\",27:\"1200\",28:\"0\",29:\"0\",30:\"0\",31:\"0\",32:\"120\",33:\"15000\",34:\"300\",35:\"1\"});(async()=>{const converted=await orders.mac2syncro(row);assert.equal(converted.error,null);assert.equal(converted.result.length,102);const serialized=orders.m2s_serialize(converted.result);const tokens=serialized.slice(serialized.indexOf(\"(\")+1,-1).split(\"\\u241e\");assert.equal(tokens.length,104);assert.equal(tokens.length-1,103);assert.equal(tokens[0],\" \");assert.equal(tokens[1],\"9001.2\");assert.equal(tokens[10],\"ORDER-1\");assert.equal(tokens[41],\"ORDER-2\");assert.equal(tokens[102],\"False\");assert.equal(tokens[103],\"\");console.log(JSON.stringify({jsFields:converted.result.length,syncroTokens:tokens.length-1,rawFields:tokens.length,setupID:tokens[0],setupCode:tokens[1],order0:tokens[10],order1:tokens[41]}));})().catch(error=>{console.error(error);process.exitCode=1;});"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Smoke test manual one two three setup builder",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const assert=require(\"node:assert/strict\");const quality=require(\"./models/quality\");const flute=require(\"./models/flute\");quality.quality_params_by_id=async()=>({rows:[{weightfactoruwg_m:285,thickness_uddmm:27,scoregap_uddmm:30}]});flute.flute_params_by_id=async()=>({rows:[{}]});const orders=require(\"./models/order\");const input={setupCode:\"9002\",webWidthMm:\"2500\",qualityId:\"Q1\",fluteId:\"A\",orders:[1,2,3].map(index=>({orderNumber:`ORDER-${index}`,customerName:`Customer ${index}`,sheetWidthMm:\"800\",outs:\"1\",sheetLengthMm:String(900+index*100),quantitySheets:String(10+index),sheetsPerStack:\"100\",scores:[\"100\",\"\",\"\",\"\",\"\"]}))};orders.manual_setup_to_syncro(input).then(setup=>{assert.equal(setup.error,null);assert.equal(setup.setupCode,\"9002.2\");assert.equal(setup.trim,1000);assert.equal(setup.result.length,102);assert.deepEqual([setup.result[13],setup.result[44],setup.result[75]],[1,1,1]);assert.deepEqual([setup.result[19],setup.result[50],setup.result[81]],[\"3\",\"2\",\"1\"]);assert.deepEqual([setup.result[21],setup.result[52],setup.result[83]],[\"11\",\"12\",\"13\"]);console.log(JSON.stringify({setupCode:setup.setupCode,orders:3,trimMm:setup.trim/10,outs:[setup.result[13],setup.result[44],setup.result[75]],levels:[setup.result[19],setup.result[50],setup.result[81]]}));}).catch(error=>{console.error(error);process.exitCode=1;});"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
