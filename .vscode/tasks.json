@@ -16,7 +16,11 @@
 			"label": "Run Jest tests",
 			"type": "shell",
 			"command": "npm",
-			"args": ["test", "--", "--runInBand"],
+			"args": [
+				"test",
+				"--",
+				"--runInBand"
+			],
 			"isBackground": false,
 			"problemMatcher": []
 		},
@@ -239,6 +243,204 @@
 			],
 			"isBackground": false,
 			"problemMatcher": []
+		},
+		{
+			"label": "Compare SyncroC binaries",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require('node:fs'),crypto=require('node:crypto');const files=['S_SyncroC_dziala.exe','S_SyncroC_niedziala.exe'];const out=files.map(file=>{const b=fs.readFileSync(file);const pe=b.readUInt32LE(0x3c);const ascii=[...b.toString('latin1').matchAll(/[\\x20-\\x7e]{5,}/g)].map(x=>x[0]);const wide=[...b.toString('utf16le').matchAll(/[\\x20-\\x7e]{5,}/g)].map(x=>x[0]);const strings=[...new Set([...ascii,...wide])].filter(s=>/Shift|Order\\.Add|OrderTCP|acknowledg|timeout|unknown|13000|Syncro/i.test(s));return {file,bytes:b.length,sha256:crypto.createHash('sha256').update(b).digest('hex'),peOffset:pe,machine:'0x'+b.readUInt16LE(pe+4).toString(16),sections:b.readUInt16LE(pe+6),linkTimestamp:new Date(b.readUInt32LE(pe+8)*1000).toISOString(),protocolStrings:strings.filter(s=>/Shift\\.Shift|Shift insert|Shift\\.State|Shift\\.List|Order\\.Add64|Order.Add started|acknowledgement|OrderTCP/.test(s)).slice(0,80)};});const a=fs.readFileSync(files[0]),b=fs.readFileSync(files[1]);let different=0,first=[];for(let i=0;i<Math.min(a.length,b.length);i++)if(a[i]!==b[i]){different++;if(first.length<20)first.push(i);}console.log(JSON.stringify({binaries:out,sizeEqual:a.length===b.length,differingBytesWithinCommonLength:different,firstDifferentOffsets:first},null,2));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Compare SyncroC binaries v2",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\"),crypto=require(\"crypto\");const files=[\"S_SyncroC_dziala.exe\",\"S_SyncroC_niedziala.exe\"];const out=files.map(file=>{const b=fs.readFileSync(file);const pe=b.readUInt32LE(0x3c);const ascii=[...b.toString(\"latin1\").matchAll(/[\\x20-\\x7e]{5,}/g)].map(x=>x[0]);const wide=[...b.toString(\"utf16le\").matchAll(/[\\x20-\\x7e]{5,}/g)].map(x=>x[0]);const strings=[...new Set([...ascii,...wide])].filter(s=>/Shift|Order\\.Add|OrderTCP|acknowledg|timeout|unknown|13000|Syncro/i.test(s));return {file,bytes:b.length,sha256:crypto.createHash(\"sha256\").update(b).digest(\"hex\"),peOffset:pe,machine:\"0x\"+b.readUInt16LE(pe+4).toString(16),sections:b.readUInt16LE(pe+6),linkTimestamp:new Date(b.readUInt32LE(pe+8)*1000).toISOString(),protocolStrings:strings.filter(s=>/Shift\\.Shift|Shift insert|Shift\\.State|Shift\\.List|Order\\.Add64|Order.Add started|acknowledgement|OrderTCP/.test(s)).slice(0,80)};});const a=fs.readFileSync(files[0]),b=fs.readFileSync(files[1]);let different=0,first=[];for(let i=0;i<Math.min(a.length,b.length);i++)if(a[i]!==b[i]){different++;if(first.length<20)first.push(i);}console.log(JSON.stringify({binaries:out,sizeEqual:a.length===b.length,differingBytesWithinCommonLength:different,firstDifferentOffsets:first},null,2));"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect SyncroC protocol strings",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\");for(const file of [\"S_SyncroC_dziala.exe\",\"S_SyncroC_niedziala.exe\"]){const b=fs.readFileSync(file);const all=[...b.toString(\"latin1\").matchAll(/[\\x20-\\x7e]{4,}/g)].map(m=>m[0]);const wide=[...b.toString(\"utf16le\").matchAll(/[\\x20-\\x7e]{4,}/g)].map(m=>m[0]);const found=[...new Set([...all,...wide])].filter(s=>/^(Shift\\.|shift\\.|Order\\.|Orders\\.|order\\.|TCP|\\[ORDER_TCP\\])/.test(s)||/Shift\\.Shift|Shift\\.Add|Shift\\.Stop|Orders\\.Get|Orders\\.Has|Order\\.Add|OrderTCP|13000|unknown|insert event|acknowledgement/i.test(s));console.log(\"--- \"+file+\" ---\\n\"+found.slice(0,250).join(\"\\n\"));}"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Diff SyncroC trees",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require('fs'),p=require('path');function walk(d,r=''){let o=[];for(const e of fs.readdirSync(p.join(d,r),{withFileTypes:true})){if(e.name.includes('Zone.Identifier')||e.name==='obj'||e.name==='bin')continue;const rr=p.join(r,e.name);if(e.isDirectory())o=o.concat(walk(d,rr));else o.push(rr);}return o;}const A='SyncroC_dziala',B='SyncroC';const a=new Set(walk(A)),b=new Set(walk(B));for(const f of a)if(!b.has(f))console.log('ONLY_OLD '+f);for(const f of b)if(!a.has(f))console.log('ONLY_NEW '+f);for(const f of a)if(b.has(f)){const x=fs.readFileSync(p.join(A,f)),y=fs.readFileSync(p.join(B,f));if(!x.equals(y))console.log('DIFF '+f+' '+x.length+' -> '+y.length);}"
+			]
+		},
+		{
+			"label": "Diff SyncroC trees v2",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"const fs=require(\"fs\"),p=require(\"path\");function walk(d,r){let o=[];for(const e of fs.readdirSync(p.join(d,r),{withFileTypes:true})){if(e.name.includes(\"Zone.Identifier\")||e.name===\"obj\"||e.name===\"bin\")continue;const rr=p.join(r,e.name);if(e.isDirectory())o=o.concat(walk(d,rr));else o.push(rr);}return o;}const A=\"SyncroC_dziala\",B=\"SyncroC\";const a=new Set(walk(A,\"\")),b=new Set(walk(B,\"\"));for(const f of a)if(!b.has(f))console.log(\"ONLY_OLD \"+f);for(const f of b)if(!a.has(f))console.log(\"ONLY_NEW \"+f);for(const f of a)if(b.has(f)){const x=fs.readFileSync(p.join(A,f)),y=fs.readFileSync(p.join(B,f));if(!x.equals(y))console.log(\"DIFF \"+f+\" \"+x.length+\" -> \"+y.length);}"
+			]
+		},
+		{
+			"label": "Diff changed SyncroC files",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"cd /usr/src/app && for f in Controls/Tools/SlitShaft.cs Forms/Pages/Production/Home/Frm_HomeDry.cs Forms/StatusBar/Frm_StatusBarDryEnd.cs Utility/Logger.cs .directory; do diff -u SyncroC_dziala/$f SyncroC/$f; done > /tmp/syncroc.diff; wc -l /tmp/syncroc.diff; diff SyncroC_dziala/Forms/LateralBar/Frm_LateralBar.designer.cs SyncroC/Forms/LateralBar/Frm_LateralBar.Designer.cs && echo LATERAL_SAME; grep -n -i 'LateralBar' SyncroC/SyncroC.csproj SyncroC_dziala/SyncroC.csproj"
+			]
+		},
+		{
+			"label": "Diff PageManager",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"cd /usr/src/app && diff -u SyncroC_dziala/PageManager.cs SyncroC/PageManager.cs > /tmp/pm.diff; wc -l /tmp/pm.diff; grep -n '^[-+]' /tmp/pm.diff | grep -v -i 'ordertcp\\|shift' | head -150; for f in SyncroC_dziala/PageManager.cs SyncroC/PageManager.cs SyncroC_dziala/Forms/StatusBar/Frm_StatusBarDryEnd.cs SyncroC/Forms/StatusBar/Frm_StatusBarDryEnd.cs SyncroC_dziala/Controls/Tools/SlitShaft.cs SyncroC/Controls/Tools/SlitShaft.cs SyncroC_dziala/Forms/Pages/Production/Home/Frm_HomeDry.cs SyncroC/Forms/Pages/Production/Home/Frm_HomeDry.cs; do printf '%s ' $f; head -c 3 $f | od -An -tx1; done"
+			]
+		},
+		{
+			"label": "Analyze SyncroC encodings",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/an.js"
+			]
+		},
+		{
+			"label": "Compare SyncroC_org",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/cmp_org.js"
+			]
+		},
+		{
+			"label": "Diff org files",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/diff_org.js"
+			]
+		},
+		{
+			"label": "Check PRE_MSG_CODE bytes",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/premsg.js"
+			]
+		},
+		{
+			"label": "Patch size vs org",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/stat.js"
+			]
+		},
+		{
+			"label": "Jest shift/order tests",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"jest",
+				"tests/models/syncro_data_models.test.js",
+				"tests/models/order_classic_conversion.test.js",
+				"tests/routes"
+			]
+		},
+		{
+			"label": "Install and run shift/order tests",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"cd /usr/src/app && npm ci --no-audit --no-fund 2>&1 | tail -5 && npx jest --runInBand tests/models/syncro_data_models.test.js tests/routes/shift.test.js tests/models/order_classic_conversion.test.js 2>&1 | tail -40"
+			]
+		},
+		{
+			"label": "Delete Zone.Identifier files",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/zone.js",
+				"--delete"
+			]
+		},
+		{
+			"label": "Remove stray file",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-e",
+				"require(\"fs\").unlinkSync(\"/usr/src/app/+y.length);}\");console.log(\"removed\")"
+			]
+		},
+		{
+			"label": "Remove stray file v2",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/rm_stray.js"
+			]
+		},
+		{
+			"label": "Build client bundle",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build:client"
+			]
+		},
+		{
+			"label": "Copy review fixture",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/fixture.js"
+			]
+		},
+		{
+			"label": "Remove review fixture",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/fixture.js",
+				"rm"
+			]
+		},
+		{
+			"label": "Check Qt toolchain",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"command -v g++ cmake qmake6 qmake ninja pkg-config; pkg-config --modversion Qt6Widgets 2>&1; id -u; ls /usr/include/qt6 2>&1 | head -3; cat /etc/os-release | head -2"
+			]
+		},
+		{
+			"label": "Remove YAD scripts",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/rm_yad.js"
+			]
 		}
 	]
 }

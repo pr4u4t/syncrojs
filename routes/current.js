@@ -101,6 +101,9 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
                 res.status(400).json({ error: 'order_file_invalid' });
                 return;
             }
+        const queuedOrders = await ordmac.orders_all();
+        const queuedCodes = new Set((queuedOrders || []).map((order) => String(order.SetupCode ?? '').trim()).filter(Boolean));
+        const firstRowByCode = new Map();
         for(let i = 0;  i < rows.length; ++i){
                 const warning = zeroQuantityWarning(rows[i]);
                 if(warning){
@@ -110,6 +113,16 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
                 const tmp = await ordmac.validate(rows[i], papers, quality, flute);
             if(tmp.result === null || tmp.result === undefined){
                 invalid[i] = tmp;
+                continue;
+            }
+            const setupCode = String(tmp.result[0] || '').trim();
+            if(!setupCode) continue;
+            if(queuedCodes.has(setupCode)){
+                warnings[i] = { message: `Ustawienie ${setupCode} jest już w kolejce Syncro. Zostanie pominięte.`, duplicate: true };
+            }else if(firstRowByCode.has(setupCode)){
+                warnings[i] = { message: `Ustawienie ${setupCode} powtarza wiersz ${firstRowByCode.get(setupCode) + 1}. Zostanie pominięte.`, duplicate: true };
+            }else{
+                firstRowByCode.set(setupCode, i);
             }
         }
         req.session.current = rows;
@@ -472,7 +485,12 @@ router.get('/import/batch/:step', async (req, res) => {
             return;
         }
         if(alreadyQueued){
-            res.status(409).json({ status: false, current, steps, setupCode, error: 'order_rejected' });
+            req.session.step = next;
+            if(steps === next){
+                req.session.current = null;
+                req.session.step = null;
+            }
+            res.json({ status: true, current: next, steps, setupCode, skipped: true, warning: 'already_queued' });
             return;
         }
     
@@ -582,7 +600,12 @@ router.post('/add', async (req, res) => {
         return;
     }
     if(alreadyQueued){
-        res.status(409).json({ status: false, setupCode, error: 'order_rejected' });
+        req.session.step = current;
+        if(steps === current){
+            req.session.current = null;
+            req.session.step = null;
+        }
+        res.json({ status: true, current, steps, setupCode, skipped: true, warning: 'already_queued' });
         return;
     }
 

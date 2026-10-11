@@ -29,16 +29,17 @@ if [ -n "$(git status --porcelain --untracked-files=normal)" ]; then
     exit 1
 fi
 
-before=$(git rev-parse --short HEAD)
+before=$(git rev-parse HEAD)
 printf 'Fetching updates for %s...\n' "$upstream"
 git fetch --prune
 git pull --ff-only
 
-after=$(git rev-parse --short HEAD)
+after=$(git rev-parse HEAD)
 if [ "$before" = "$after" ]; then
-    printf 'Already up to date at %s. Rebuilding and applying production anyway.\n' "$after"
+    printf 'Already up to date at %s. Rebuilding and applying production anyway.\n' "$(git rev-parse --short "$after")"
 else
-    printf 'Updated %s -> %s.\n' "$before" "$after"
+    git update-ref refs/syncro-production/previous "$before"
+    printf 'Updated %s -> %s. Previous version saved for rollback.\n' "$(git rev-parse --short "$before")" "$(git rev-parse --short "$after")"
 fi
 
 make update-production

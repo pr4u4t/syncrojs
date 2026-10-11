@@ -11,7 +11,7 @@ FROM node:${IMG_VERSION}
 
 # Optional corporate CA (e.g. TLS-inspecting proxy); empty secret is a no-op.
 RUN --mount=type=secret,id=extra_ca,required=false \
-    if [ -s /run/secrets/extra_ca ]; then cat /run/secrets/extra_ca >> /etc/ssl/certs/ca-certificates.crt; fi
+    if grep -q -- '-----BEGIN CERTIFICATE-----' /run/secrets/extra_ca; then cat /run/secrets/extra_ca >> /etc/ssl/certs/ca-certificates.crt; fi
 ENV NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
 
 ARG INSTALL_CPP_TOOLS=false
@@ -38,16 +38,17 @@ RUN rm -rf csv-to-xlsx-2.1.5
 
 ADD https://github.com/Aternus/csv-to-xlsx/releases/download/v2.1.5/csv-to-xlsx-linux node_modules/@aternus/csv-to-xlsx/bin/
 
-RUN mkdir -p uploads && chown node:node uploads
-
-# Run the application as a non-root user.
-USER node
-
 # Copy the rest of the source files into the image.
 COPY . .
+
+# Build static assets while the image build user can write to the source tree.
+RUN npm run build:client && mkdir -p uploads && chown node:node uploads
+
+# Run the application as a non-root user without rebuilding assets at startup.
+USER node
 
 # Expose the port that the application listens on.
 EXPOSE 3000
 
 # Run the application.
-CMD [ "npm", "start" ]
+CMD [ "node", "app.js" ]

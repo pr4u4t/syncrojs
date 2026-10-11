@@ -34,7 +34,7 @@ const shift_state = async function(){
         const psocket = await syncroConnect();
         var result = await psocket.write('Shift.State');
         result = await psocket.readAll();
-        result = result.toString();
+        result = result.toString().trim();
         return result;
     }catch(error){
         logger.error('Error getting shift state');
@@ -59,7 +59,7 @@ const shift_end = async function(){
         const psocket = await syncroConnect();
         var result = await psocket.write(cmd);
         result = await psocket.readAll();
-        result = result.toString();
+        result = result.toString().trim();
         return result.toLowerCase() == 'ok';
     }catch(error){
         logger.error('Error getting shift state',error);
@@ -80,7 +80,7 @@ const shift_new = async function(id,manager,people){
         const psocket = await syncroConnect();
         var result = await psocket.write(cmd);
         result = await psocket.readAll();
-        result = result.toString();
+        result = result.toString().trim();
         return result.toLowerCase() == 'ok';
     }catch(error){
         logger.error('Error getting shift state',error);

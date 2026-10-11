@@ -1,6 +1,10 @@
 {
   "server": {
-    "secret": "SESSION_SECRET"
+    "secret": "SESSION_SECRET",
+    "port": {
+      "__name": "SERVER_PORT",
+      "__format": "number"
+    }
   },
   "syncro": {
     "host": "SYNCRO_HOST",

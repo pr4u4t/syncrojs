@@ -75,7 +75,7 @@ volumes:
   syncrojs-classic-generator-socket:
 secrets:
   extra_ca:
-    file: ${EXTRA_CA_FILE:-/dev/null}
+    file: ${EXTRA_CA_FILE:-./tools/no-extra-ca.pem}
 # secrets:
 #   db-password:
 #     file: db/password.txt

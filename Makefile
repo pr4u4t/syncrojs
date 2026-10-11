@@ -1,7 +1,7 @@
 dev:
 	docker build -t syncrojs-dev --build-arg NODE_ENV=development .
 
-.PHONY: dev production check-production-env deploy-production update-production stop-production logs-production package-production load-production run-prod test run-dev run-test
+.PHONY: dev production check-production-env deploy-production update-production restart-production stop-production logs-production package-production load-production run-prod test run-dev run-test
 
 PROD_ENV_FILE ?= .env.production
 PROD_COMPOSE = docker compose --env-file $(PROD_ENV_FILE) -f compose.production.yaml
@@ -17,6 +17,9 @@ deploy-production: check-production-env
 	$(PROD_COMPOSE) up -d --no-build
 
 update-production: production deploy-production
+
+restart-production: check-production-env
+	$(PROD_COMPOSE) restart
 
 stop-production: check-production-env
 	$(PROD_COMPOSE) down

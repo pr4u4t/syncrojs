@@ -672,7 +672,7 @@ const orders_delete_all = async function(){
             return null;
         }
         result = await psocket.readAll();
-        result = result.toString();
+        result = result.toString().trim();
         return result.toLowerCase() == 'ok';
     }catch(error){
         logger.error(`order: failed to delete orders ${error}`);

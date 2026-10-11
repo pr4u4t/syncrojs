@@ -7,8 +7,10 @@ services:
       secrets:
         - extra_ca
     restart: unless-stopped
+    network_mode: host
     environment:
       NODE_ENV: production
+      SERVER_PORT: ${APP_PORT:-3000}
       SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET in .env.production}
       PGHOST: ${PGHOST:?Set PGHOST in .env.production}
       PGPORT: ${PGPORT:-5432}
@@ -21,8 +23,6 @@ services:
       SYNCRO_PORT: ${SYNCRO_PORT:-13000}
       SYNCRO_CONNECT_TIMEOUT: ${SYNCRO_CONNECT_TIMEOUT:-3000}
       CLASSIC_GENERATOR_SOCKET: /run/syncrojs/classic-generator.sock
-    ports:
-      - "${APP_PORT:-80}:3000"
     depends_on:
       classic-generator:
         condition: service_healthy
@@ -30,7 +30,7 @@ services:
       - syncrojs-production-uploads:/usr/src/app/uploads
       - syncrojs-production-generator-socket:/run/syncrojs
     healthcheck:
-      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/health/status').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:${APP_PORT:-3000}/health/status').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
       interval: 15s
       timeout: 5s
       retries: 5
@@ -58,4 +58,4 @@ volumes:
 
 secrets:
   extra_ca:
-    file: ${EXTRA_CA_FILE:-/dev/null}
+    file: ${EXTRA_CA_FILE:-./tools/no-extra-ca.pem}

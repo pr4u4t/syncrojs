@@ -169,7 +169,7 @@ namespace SyncroC
 		/// <summary>
 		/// Determine if the rest of a string has to be decoded and translated
 		/// </summary>
-		public static string PRE_MSG_CODE = "�";
+		public static string PRE_MSG_CODE = "\u00A7"; // section sign, must match SyncroS; escaped so file encoding cannot corrupt it
 		/// <summary>
 		/// Into a string that has to be decoded specify a portion of the string that
 		/// has not to be decoded.
@@ -273,7 +273,7 @@ namespace SyncroC
 		private Frm_Log4 syncroSystem_Log4;
 
 		//statistics group
-		public Frm_ShiftReport statistics_shiftReport;
+		private Frm_ShiftReport statistics_shiftReport;
 		private Frm_DowntimeReport statistics_downtimeReport;
 		private Frm_StatisticsOrdersList statistics_ordersList;
 		private Frm_StatisticsOrdersDetail statistics_ordersDetail;
@@ -1393,7 +1393,7 @@ namespace SyncroC
         //Logger.LogWindowsEvent("PageManager", "Main", log, EventLogEntryType.Error);
         Logger.LogError("PageManager", "Main - " + log, e);
         Frm_Alert alert = new Frm_Alert();
-        string text = DBManager.getDBManager().message.getTranslatedMessage("�SYCC_42");
+        string text = DBManager.getDBManager().message.getTranslatedMessage("\u00A7SYCC_42");
         alert.ShowDialog(text);
         CommunicationManager.GetCommunicationManager().ShutDown(false,false);
       }
@@ -3592,6 +3592,8 @@ namespace SyncroC
     {
 		private static readonly object orderAckLock = new object();
 		private static readonly Hashtable pendingOrderAcks = new Hashtable();
+		private static readonly object shiftAckLock = new object();
+\		private static ManualResetEvent pendingShiftAck;
 
 		private static void LogOrderTcp(string message)
 		{
@@ -3616,6 +3618,35 @@ namespace SyncroC
 		public static void Initialize(DBManager dbm)
 		{
 			dbm.order.OnDBOrderChange += new SyncroC.DataBase.Order.DBChangedHandler(OrderChanged);
+			dbm.shift.OnDBShiftChange += new SyncroC.DataBase.Shift.DBChangedHandler(ShiftChanged);
+			RTCManager.getRTCManager().OnRTCManagerPropertyChanged += new RTCManagerPropertyChangedHandler(RtcPropertyChanged);
+		}
+
+		private static void SignalShiftAck(string reason)
+		{
+			ManualResetEvent acknowledgement;
+			lock (shiftAckLock)
+			{
+				acknowledgement = pendingShiftAck;
+			}
+			LogOrderTcp("Shift event; " + reason + "; matched waiter=" + (acknowledgement != null));
+			if (acknowledgement != null)
+				acknowledgement.Set();
+		}
+
+		// SyncroS sends shift.Add only for the closed (previous) shift, so its key is not the new shift ID.
+		private static void ShiftChanged(object sender, SyncroC.DataBase.EventArgs.DBChangedEventArgs args)
+		{
+			if (args == null || args.Changement != SyncroC.DataBase.EventArgs.DBChangement.Insert)
+				return;
+			SignalShiftAck("closed shift=" + args.Key);
+		}
+
+		// Starting from idle produces no shift.Add; SyncroS only reports the IsIdleShift transition.
+		private static void RtcPropertyChanged(object sender, RTCManagerPropertyChangedEventArgs args)
+		{
+			if (args != null && args.propertyName == "IsIdleShift")
+				SignalShiftAck("IsIdleShift=" + args.newValue);
 		}
 
 		private static void OrderChanged(object sender, SyncroC.DataBase.EventArgs.DBChangedEventArgs args)
@@ -3721,6 +3752,77 @@ namespace SyncroC
 			}
 		}
 
+		private static string SendShiftStart(OrderTcpHandlerData data, string command)
+		{
+			int openParenthesis = command.IndexOf('(');
+			int closeParenthesis = command.LastIndexOf(')');
+			if (openParenthesis < 0 || closeParenthesis <= openParenthesis || closeParenthesis != command.Length - 1)
+				return "invalid\n";
+
+			string[] parameters = command.Substring(openParenthesis + 1, closeParenthesis - openParenthesis - 1)
+				.Split(new char[] { Command.PARAMETER_SEPARATOR });
+			int people;
+			string shiftId = parameters.Length > 0 ? parameters[0].Trim() : String.Empty;
+			string manager = parameters.Length > 1 ? parameters[1].Trim() : String.Empty;
+			if (parameters.Length != 3 || shiftId.Length != 1 || shiftId[0] < '1' || shiftId[0] > '9' ||
+				manager.Length == 0 || manager.Length > 50 || manager.IndexOf('\r') >= 0 || manager.IndexOf('\n') >= 0 ||
+				manager.IndexOf(Command.PARAMETER_SEPARATOR) >= 0 || !Int32.TryParse(parameters[2].Trim(), out people) || people < 1)
+			{
+				LogOrderTcp("Shift.Shift rejected: invalid shift ID, manager, or people count");
+				return "invalid\n";
+			}
+
+			return SendShiftCommand(data, command, "Shift.Shift", "shift=" + shiftId);
+		}
+
+		private static string SendShiftStop(OrderTcpHandlerData data)
+		{
+			if (RTCManager.getRTCManager().IsIdleShift)
+				return "ok\n";
+			return SendShiftCommand(data, Command.DB_SHIFT + "." + Command.DB_CMD_STOPSHIFT + "()", "Shift.Stop", "");
+		}
+
+		private static string SendShiftCommand(OrderTcpHandlerData data, string command, string name, string detail)
+		{
+			ManualResetEvent acknowledgement = new ManualResetEvent(false);
+			lock (shiftAckLock)
+			{
+				if (pendingShiftAck != null)
+				{
+					acknowledgement.Close();
+					return "pending\n";
+				}
+				pendingShiftAck = acknowledgement;
+			}
+
+			try
+			{
+				if (!data.communication().SendTcp(data.communication().SYNCROS_DB_MANAGER, command))
+				{
+					LogOrderTcp(name + " failed to queue in DBManager; " + detail);
+					return "transport-error\n";
+				}
+
+				LogOrderTcp(name + " queued; waiting for shift event; " + detail);
+				bool acknowledged = acknowledgement.WaitOne(25000);
+				LogOrderTcp(name + " acknowledgement=" + (acknowledged ? "ok" : "timeout") + "; " + detail);
+				return acknowledged ? "ok\n" : "timeout\n";
+			}
+			catch (Exception exception)
+			{
+				LogOrderTcp(name + " handler failed; " + detail, exception);
+				return "transport-error\n";
+			}
+			finally
+			{
+				lock (shiftAckLock)
+				{
+					pendingShiftAck = null;
+				}
+				acknowledgement.Close();
+			}
+		}
+
         //static String ordPath = @"C:\usr\Syncro\Data\Client\Order.xml";
 
         public static void TcpClientHandle(Object obj)
@@ -3745,7 +3847,6 @@ namespace SyncroC
 				while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
 				{
 					string receivedChunk = System.Text.Encoding.UTF8.GetString(bytes, 0, i);
-					LogOrderTcp("Socket RX chunk bytes=" + i + "; data=" + EscapeOrderTcpLogText(receivedChunk));
 					received.Append(receivedChunk);
 					string text = received.ToString();
 
@@ -3788,24 +3889,22 @@ namespace SyncroC
 			}
 			catch (IOException)
 			{
-				data = "timeout\n";
 				LogOrderTcp("TCP command read timed out");
+				byte[] timeoutMessage = System.Text.Encoding.ASCII.GetBytes("timeout\n");
+				stream.Write(timeoutMessage, 0, timeoutMessage.Length);
+				return;
 			}
 
 			if (data == null)
 			{
 				if (received.Length == 0)
-				{
-					LogOrderTcp("TCP connection closed without request payload");
 					return;
-				}
 				data = "invalid\n";
 				LogOrderTcp("TCP connection closed with incomplete request; chars=" + received.Length);
 			}
 
 			if (data.StartsWith("Order.Add64:"))
 				data = "invalid\n";
-			LogOrderTcp("Socket RX decoded command chars=" + data.Length + "; data=" + EscapeOrderTcpLogText(data));
 
 			if (data.Length > 0)
 			{
@@ -3819,9 +3918,14 @@ namespace SyncroC
 					: data.StartsWith("Home.Info") ? "Home.Info"
 					: data.StartsWith("Operator.Status") ? "Operator.Status"
 					: data.StartsWith("Shift.State") ? "Shift.State"
+					: data.StartsWith("Shift.Shift(") ? "Shift.Shift"
+					: data.StartsWith("Shift.Stop") ? "Shift.Stop"
 					: data.StartsWith("Shift.List") ? "Shift.List"
 					: "Other";
-				LogOrderTcp("Received " + commandName + "; chars=" + data.Length);
+				// Home.Info / Operator.Status are polled every second; logging them contends with the UI thread's log mutex.
+				bool logCommand = commandName == "Order.Add" || commandName == "Shift.Shift" || commandName == "Shift.Stop" || commandName == "Orders.Delete" || commandName == "Other";
+				if (logCommand)
+					LogOrderTcp("Received " + commandName + "; data=" + EscapeOrderTcpLogText(data));
                 //Console.WriteLine("Received: {0}", data);
                 if (data.StartsWith("Syncro.Version")) {
                     data = PageManager.getPageManager().getSyncroVersion();
@@ -3846,10 +3950,15 @@ namespace SyncroC
                     {
                         data = PageManager.getPageManager().getShiftReport().getCurrentShiftState() ? "idle" : "working";
                     }
-                    else
+                    else if (PageManager.getPageManager().getHomeDryForm() != null)
                     {
                         data = PageManager.getPageManager().getHomeDryForm().getIsStopShift() ? "idle" : "working";
                     }
+                    else data = "error\n";
+				} else if (data.StartsWith("Shift.Shift(")) {
+					data = SendShiftStart(cd, data);
+				} else if (data.Equals("Shift.Stop()")) {
+					data = SendShiftStop(cd);
                 } else if (data.StartsWith("Shift.List"))
                 {
                     data = DBManager.getDBManager().shift.getTableShift().DataSet.GetXml();
@@ -3886,8 +3995,8 @@ namespace SyncroC
                     data = "unknown\n";
                 }
 
-				string responseSummary = data.StartsWith("<") ? "xml" : data.Trim();
-				LogOrderTcp("Responding to " + commandName + "; result=" + responseSummary);
+				if (logCommand)
+					LogOrderTcp("Responding to " + commandName + "; result=" + (data.StartsWith("<") ? "xml" : data.Trim()));
                 byte[] msg = System.Text.Encoding.ASCII.GetBytes(data);
                 stream.Write(msg, 0, msg.Length);
             }
@@ -3900,7 +4009,6 @@ namespace SyncroC
 			{
 				if (cd.client() != null)
 					cd.client().Close();
-				LogOrderTcp("TCP client handler closed connection");
 			}
         }
 
@@ -3921,7 +4029,6 @@ namespace SyncroC
                 while (true)
                 {
                     TcpClient client = server.AcceptTcpClient();
-					LogOrderTcp("Accepted TCP client " + client.Client.RemoteEndPoint);
                     Thread t = new Thread(TcpClientHandle);
                     t.Start(new OrderTcpHandlerData(data.communication(), data.db(), client));
                 }

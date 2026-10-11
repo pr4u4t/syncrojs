@@ -5,6 +5,7 @@ import { classicLevels } from '../utils/classic-levels';
 import { MAX_TOTAL_OUTS, totalOuts } from '../utils/order-constraints';
 
 const numberOrDash = (value) => value === null || value === undefined || (typeof value === 'string' && value.trim() === '') ? '—' : value;
+const localized = (en, pl) => document.documentElement.lang === 'pl' ? pl : en;
 const createManualSetupCode = () => `M${Date.now().toString(36).toUpperCase()}${Math.random().toString(36).slice(2, 10).toUpperCase()}`;
 const classicScoreFields = [[12, 13, 14, 15, 16], [27, 28, 29, 30, 31], [42, 43, 44, 45, 46]];
 const classicOrderStarts = [8, 23, 38];
@@ -38,20 +39,28 @@ const parseNonnegativeTenthsMm = (value) => {
   return Math.abs(millimeters * 10 - tenths) <= 0.000001 ? tenths : NaN;
 };
 
-function DashboardUpdateAge({ updatedAt, delayed }){
+function DashboardUpdateAge({ receivedAt, delayed }){
   const [now, setNow] = useState(Date.now());
+  const [pulse, setPulse] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(timer);
   }, []);
 
-  const timestamp = updatedAt ? Date.parse(updatedAt) : NaN;
+  useEffect(() => {
+    if(!receivedAt) return undefined;
+    setPulse(true);
+    const timer = setTimeout(() => setPulse(false), 900);
+    return () => clearTimeout(timer);
+  }, [receivedAt]);
+
+  const timestamp = Number(receivedAt);
   const seconds = Number.isFinite(timestamp) ? Math.max(0, Math.floor((now - timestamp) / 1000)) : null;
   const stale = delayed || seconds === null;
 
   return (
-    <span className={`dashboard-live-indicator ${stale ? 'is-stale' : ''} ${!stale ? 'is-blinking' : ''}`} role="status" aria-live="off">
+    <span className={`dashboard-live-indicator ${stale ? 'is-stale' : ''} ${pulse ? 'is-blinking' : ''}`} role="status" aria-live="off">
       <span className="dashboard-live-indicator__dot" aria-hidden="true" />
       {seconds === null ? 'Waiting for update' : <><span>Updated</span><strong>{seconds}</strong><span>s ago</span></>}
     </span>
@@ -59,7 +68,7 @@ function DashboardUpdateAge({ updatedAt, delayed }){
 }
 
 function Home(){
-  const [state, setState] = useState({ loading: true, data: null, unavailable: false, updatedAt: null });
+  const [state, setState] = useState({ loading: true, data: null, unavailable: false, updatedAt: null, receivedAt: null });
   const [versions, setVersions] = useState(null);
   const [operatorStatus, setOperatorStatus] = useState(null);
   const [operatorStatusUnavailable, setOperatorStatusUnavailable] = useState(false);
@@ -70,7 +79,7 @@ function Home(){
     stream.onmessage = (event) => {
       try {
         const snapshot = JSON.parse(event.data);
-        setState({ loading: snapshot.loading, data: snapshot.data, unavailable: snapshot.unavailable, updatedAt: snapshot.updatedAt });
+        setState({ loading: snapshot.loading, data: snapshot.data, unavailable: snapshot.unavailable, updatedAt: snapshot.updatedAt, receivedAt: Date.now() });
         setOperatorStatus(snapshot.operatorStatus);
         setOperatorStatusUnavailable(snapshot.operatorStatusUnavailable);
       } catch {
@@ -127,7 +136,7 @@ function Home(){
                   <span className="dashboard-eyebrow">Live status</span>
                   <h2 id="shift-overview-title">Shift Overview</h2>
                 </div>
-                <DashboardUpdateAge updatedAt={state.updatedAt} delayed={state.unavailable} />
+                <DashboardUpdateAge receivedAt={state.receivedAt} delayed={state.unavailable} />
               </div>
               <dl className="shift-metrics">
                 <div><dt>Shift ID</dt><dd>{numberOrDash(shift.ID)}</dd></div>
@@ -591,16 +600,28 @@ function DataList({ title, endpoint, page = 1 }){
 
 function CurrentOrders(){
   const { data, error, reload } = useRemoteData('/current/orders', { refreshInterval: 15000, keepPreviousData: true });
+  const [clearing, setClearing] = useState(false);
   const clearOrders = async () => {
-    await fetch('/current/clear', { method: 'POST', body: new FormData() });
-    reload();
+    setClearing(true);
+    try {
+      await fetch('/current/clear', { method: 'POST', body: new FormData() });
+      // Syncro clears the queue asynchronously, so wait until Orders.Get reports it empty.
+      for (let attempt = 0; attempt < 20; attempt += 1) {
+        const result = await fetch('/current/orders', { cache: 'no-store' }).then((response) => response.json()).catch(() => null);
+        if (result && !result.unavailable && Array.isArray(result.rows) && result.rows.length === 0) break;
+        await new Promise((resolve) => setTimeout(resolve, 500));
+      }
+    } finally {
+      setClearing(false);
+      reload();
+    }
   };
 
   return (
     <>
       <div className="d-flex flex-wrap gap-2 mt-1">
-        <button type="button" className="btn btn-outline-secondary" onClick={reload}>Odśwież zlecenia</button>
-        <button type="button" className="btn btn-outline-danger" onClick={clearOrders}>Clear Orders</button>
+        <button type="button" className="btn btn-outline-secondary" onClick={reload} disabled={clearing}>Odśwież zlecenia</button>
+        <button type="button" className="btn btn-outline-danger" onClick={clearOrders} disabled={clearing}>{clearing ? 'Clearing...' : 'Clear Orders'}</button>
       </div>
       {error && <div className="alert alert-warning mt-4" role="alert">Syncro connection unavailable. Current orders could not be loaded.</div>}
       {!data && !error && <div className="async-data-view__loading" role="status"><span className="spinner-border" aria-hidden="true" />Loading...</div>}
@@ -918,11 +939,13 @@ function OrderImport(){
       setPreview((current) => {
         if(!current) return current;
         const rows = [...current.rows];
+        const changed = JSON.stringify(rows[selectedSetup.index]) !== JSON.stringify(result.row);
         rows[selectedSetup.index] = result.row;
         const invalid = { ...(current.invalid || {}) };
         if(result.invalid) invalid[selectedSetup.index] = result.invalid;
         else delete invalid[selectedSetup.index];
-        return { ...current, rows, invalid };
+        const edited = changed ? { ...(current.edited || {}), [selectedSetup.index]: true } : current.edited;
+        return { ...current, rows, invalid, edited };
       });
       setSelectedSetup((current) => current ? {
         ...current,
@@ -1128,6 +1151,7 @@ function OrderImport(){
   const removePreviewRow = async (rowIndex) => {
     setBusy(true);
     setError('');
+    let removed = false;
     try {
       const response = await fetch('/current/import/remove', {
         method: 'POST',
@@ -1141,27 +1165,41 @@ function OrderImport(){
       setPreview((current) => {
         if (!current) return current;
         const rows = current.rows.filter((_, index) => index !== rowIndex);
-        const invalid = Object.fromEntries(Object.entries(current.invalid || {}).flatMap(([index, value]) => {
+        const reindex = (entries) => Object.fromEntries(Object.entries(entries || {}).flatMap(([index, value]) => {
           const oldIndex = Number(index);
           if (oldIndex === rowIndex) return [];
           return [[String(oldIndex > rowIndex ? oldIndex - 1 : oldIndex), value]];
         }));
-        const warnings = Object.fromEntries(Object.entries(current.warnings || {}).flatMap(([index, value]) => {
-          const oldIndex = Number(index);
-          if (oldIndex === rowIndex) return [];
-          return [[String(oldIndex > rowIndex ? oldIndex - 1 : oldIndex), value]];
-        }));
-        return { ...current, rows, invalid, warnings };
+        return { ...current, rows, invalid: reindex(current.invalid), warnings: reindex(current.warnings), edited: reindex(current.edited) };
       });
+      removed = true;
     } catch (removeError) {
       setError(removeError.message);
     } finally {
       setBusy(false);
     }
+    return removed;
+  };
+
+  const removeSelectedSetup = async () => {
+    if (!selectedSetup) return;
+    const label = setupDetails?.code || `Setup ${selectedSetup.index + 1}`;
+    if (!window.confirm(localized(`Remove ${label} from the import?`, `Usunąć ${label} z importu?`))) return;
+    if (await removePreviewRow(selectedSetup.index)) setSelectedSetup(null);
   };
 
   const invalid = preview ? Object.keys(preview.invalid) : [];
   const warningCount = preview ? Object.keys(preview.warnings || {}).length : 0;
+  const normalizeScores = (value) => String(value || '').split(/[\s,;]+/).filter(Boolean).join(' ');
+  const scoresDirty = Boolean(selectedSetup?.scoreDrafts && Array.isArray(selectedSetup.row)) && (() => {
+    const saved = scoreDraftsFromClassicRow(selectedSetup.row);
+    return Object.keys(selectedSetup.scoreDrafts).some((orderIndex) => normalizeScores(selectedSetup.scoreDrafts[orderIndex]) !== normalizeScores(saved[orderIndex]));
+  })();
+  const selectedEdited = Boolean(selectedSetup && preview?.edited?.[selectedSetup.index]);
+  const confirmDiscardScores = () => !scoresDirty || window.confirm(localized('Discard unsaved crease changes?', 'Porzucić niezapisane zmiany bigów?'));
+  const closeSetupDialog = () => {
+    if (confirmDiscardScores()) setSelectedSetup(null);
+  };
   const popupCreaseCount = selectedSetup?.scoreDrafts
     ? Object.values(selectedSetup.scoreDrafts).reduce((total, value) => total + String(value || '').split(/[\s,;]+/).filter(Boolean).length, 0)
     : 0;
@@ -1309,17 +1347,26 @@ function OrderImport(){
                     openSetupDetails(row, index);
                   }
                 }}>
-                  <td>{index + 1}</td>
+                  <td>{index + 1}{preview.edited?.[index] && <span className="badge text-bg-info ms-2" title="Scores changed manually">Edited</span>}</td>
                   {cells.map((value, column) => <td className={fieldIndexes.includes(column) ? 'table-danger import-invalid-cell' : ''} key={column}>{value}</td>)}
                   <td><button type="button" className="btn btn-sm btn-outline-danger" disabled={busy} onClick={(event) => { event.stopPropagation(); removePreviewRow(index); }}>Remove setup</button></td>
                 </tr>;
               })}</tbody>
             </table>
           </div>
-          <section className="mt-4">
-            <h2 className="h4">Summary</h2>
-            <p>Total / ready / skipped / failed: {preview.rows.length} / {preview.rows.length - invalid.length - warningCount} / {warningCount} / {invalid.length}</p>
-            <div className="d-flex justify-content-end gap-2">
+          <section className="import-summary mt-4">
+            <div>
+              <h2 className="h4 mb-2">Summary</h2>
+              <dl className="import-summary__counts">
+                {[
+                  ['Total', preview.rows.length],
+                  ['Ready to send', preview.rows.length - invalid.length - warningCount],
+                  ['Skipped', warningCount],
+                  ['Invalid', invalid.length]
+                ].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
+              </dl>
+            </div>
+            <div className="d-flex gap-2">
               <button type="button" className="btn btn-outline-danger" disabled={busy} onClick={() => confirmImport(false)}>Deny</button>
               <button type="button" className="btn btn-primary" disabled={busy || invalid.length > 0 || preview.rows.length === 0} onClick={() => confirmImport(true)}>Accept</button>
             </div>
@@ -1335,7 +1382,7 @@ function OrderImport(){
           <p>
             {transfer.error || (transfer.complete
               ? warningCount > 0
-                ? `Pominięto zestawy zawierające zamówienia z zerową ilością (${warningCount}). Pozostałe zestawy zostały wysłane.`
+                ? `Pominięto zestawy (${warningCount}): zerowa ilość albo ustawienie już jest w Syncro. Pozostałe zestawy zostały wysłane.`
                 : 'Orders were transferred successfully.'
               : transfer.waitingForAck
                 ? <><span>Waiting for Syncro acknowledgement for setup</span> <strong>{transfer.setupCode || '...'}</strong>.</>
@@ -1352,14 +1399,18 @@ function OrderImport(){
           </div>
         </section>
       )}
-      {selectedSetup && <dialog className="material-editor-dialog order-detail-dialog" ref={setupDialogRef} aria-labelledby="order-detail-title" onClose={() => setSelectedSetup(null)}>
+      {selectedSetup && <dialog className="material-editor-dialog order-detail-dialog" ref={setupDialogRef} aria-labelledby="order-detail-title" onCancel={(event) => { if (!confirmDiscardScores()) event.preventDefault(); }} onClose={() => setSelectedSetup(null)}>
         <div>
           <header className="material-editor-dialog__header">
             <div>
               <h2 id="order-detail-title">Setup details</h2>
-              <p>{setupDetails?.code || `Setup ${selectedSetup.index + 1}`}</p>
+              <p>
+                {setupDetails?.code || `Setup ${selectedSetup.index + 1}`}
+                {selectedEdited && <span className="badge text-bg-info ms-2">Edited</span>}
+                {scoresDirty && <span className="badge text-bg-warning ms-2">Unsaved changes</span>}
+              </p>
             </div>
-            <button type="button" className="btn btn-outline-secondary btn-sm" aria-label="Close" onClick={() => setSelectedSetup(null)}>Close</button>
+            <button type="button" className="btn btn-outline-secondary btn-sm" aria-label="Close" onClick={closeSetupDialog}>Close</button>
           </header>
           {setupDetails ? <div className="order-detail-dialog__fields">
             <section className="order-detail-dialog__setup" aria-label="Setup parameters">
@@ -1381,24 +1432,36 @@ function OrderImport(){
                 </dl>
                 {order.scoreDrafts !== undefined && <div className="order-detail-dialog__score-editor">
                   <label className="form-label" htmlFor={`setup-score-editor-${selectedSetup.index}-${order.sourceOrderIndex}`}>Bigowania (mm), jedno na linię</label>
-                  <textarea
-                    className={`form-control ${classicScoreFields[order.sourceOrderIndex].some((fieldIndex) => setupDetails.invalidFieldIndexes.includes(fieldIndex)) ? 'is-invalid' : ''}`}
-                    id={`setup-score-editor-${selectedSetup.index}-${order.sourceOrderIndex}`}
-                    rows="5"
-                    maxLength="255"
-                    value={order.scoreDrafts}
-                    title={classicScoreFields[order.sourceOrderIndex].some((fieldIndex) => setupDetails.invalidFieldIndexes.includes(fieldIndex)) ? setupDetails.validationError : undefined}
-                    onChange={(event) => updateScoreDraft(order.sourceOrderIndex, event.target.value)}
-                  />
+                  <div className="manual-score-editor order-detail-dialog__score-lines">
+                    <div className="manual-score-gutter" aria-hidden="true">
+                      {String(order.scoreDrafts || '').split(/\r\n|\r|\n/).map((_, lineIndex) => <span key={lineIndex}>{lineIndex + 1}</span>)}
+                    </div>
+                    <textarea
+                      className={`form-control ${classicScoreFields[order.sourceOrderIndex].some((fieldIndex) => setupDetails.invalidFieldIndexes.includes(fieldIndex)) ? 'is-invalid' : ''}`}
+                      id={`setup-score-editor-${selectedSetup.index}-${order.sourceOrderIndex}`}
+                      rows="5"
+                      maxLength="255"
+                      placeholder="No creases"
+                      value={order.scoreDrafts}
+                      title={classicScoreFields[order.sourceOrderIndex].some((fieldIndex) => setupDetails.invalidFieldIndexes.includes(fieldIndex)) ? setupDetails.validationError : undefined}
+                      onChange={(event) => updateScoreDraft(order.sourceOrderIndex, event.target.value)}
+                      onScroll={(event) => {
+                        const gutter = event.currentTarget.previousElementSibling;
+                        if (gutter) gutter.scrollTop = event.currentTarget.scrollTop;
+                      }}
+                    />
+                  </div>
                 </div>}
               </fieldset>)}
             </section>
           </div> : <div className="order-detail-dialog__fallback">Detailed order fields are not available for this row.</div>}
           {setupDetails?.canEditScores && <div className={`order-detail-dialog__score-feedback ${popupCreaseCount > 22 ? 'text-danger' : ''}`} role="status">Suma bigów w setupie: {popupCreaseCount} / 22.</div>}
+          {preview?.warnings?.[selectedSetup.index] && <div className="alert alert-warning order-detail-dialog__warning" role="status">{preview.warnings[selectedSetup.index].message}</div>}
           {scoreSaveMessage && <div className="order-detail-dialog__score-feedback" role="status">{scoreSaveMessage}</div>}
           <footer className="material-editor-dialog__actions">
-            {setupDetails?.canEditScores && <button type="button" className="btn btn-primary" onClick={saveScoreDrafts} disabled={scoreSaving || busy || popupCreaseCount > 22}>{scoreSaving ? 'Saving...' : 'Zapisz bigi'}</button>}
-            <button type="button" className="btn btn-primary" onClick={() => setSelectedSetup(null)}>Close</button>
+            <button type="button" className="btn btn-outline-danger me-auto" onClick={removeSelectedSetup} disabled={busy || scoreSaving}>Remove setup</button>
+            {setupDetails?.canEditScores && <button type="button" className="btn btn-primary" onClick={saveScoreDrafts} disabled={!scoresDirty || scoreSaving || busy || popupCreaseCount > 22}>{scoreSaving ? 'Saving...' : 'Zapisz bigi'}</button>}
+            <button type="button" className="btn btn-outline-secondary" onClick={closeSetupDialog}>Close</button>
           </footer>
         </div>
       </dialog>}

@@ -10,5 +10,6 @@ fi
 exec yad \
     --notification \
     --image="$repo_root/tools/syncro-update.svg" \
-    --text="Aktualizuj Syncro: kliknij, aby pobrać zmiany i wdrożyć produkcję" \
-    --command="/usr/bin/env sh \"$repo_root/tools/run-update-terminal.sh\""
+    --text="Syncro updater: kliknij, aby zaktualizować; prawy przycisk otwiera rollback" \
+    --command="/usr/bin/env sh \"$repo_root/tools/run-update-gui.sh\"" \
+    --menu="Aktualizuj!/usr/bin/env sh \"$repo_root/tools/run-update-gui.sh\" update|Przywróć poprzednią wersję!/usr/bin/env sh \"$repo_root/tools/run-update-gui.sh\" rollback|Zakończ!quit"

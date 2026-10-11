@@ -12,4 +12,4 @@ services:
 
 secrets:
   extra_ca:
-    file: ${EXTRA_CA_CERT:-/dev/null}
+    file: ${EXTRA_CA_CERT:-./tools/no-extra-ca.pem}
