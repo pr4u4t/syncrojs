@@ -39,6 +39,22 @@ const zeroQuantityWarning = (row) => {
 
 module.exports = router;
 
+// fast-xml-parser turns numeric values into numbers, so leading zeros must not decide equality.
+const normalizeId = (value) => String(value ?? '').trim().replace(/^0+(?=\d)/, '');
+const orderNumbersKey = (numbers) => numbers.map(normalizeId).filter(Boolean).sort().join(', ');
+const sourceOrderNumbers = (row) => Array.isArray(row)
+    ? [row[10], row[25], row.length === 55 ? row[40] : '']
+    : (row && Array.isArray(row.orders) ? row.orders.map((order) => order.orderNumber) : []);
+
+// true: same setup already queued, false: code taken by other orders, null: queue unavailable.
+const queuedSetupMatches = async (setupCode, row) => {
+    const queued = await ordmac.orders_all();
+    if(!Array.isArray(queued)) return null;
+    const match = queued.find((order) => normalizeId(order.SetupCode) === normalizeId(setupCode));
+    if(!match) return null;
+    return orderNumbersKey([match.OrderNumber0, match.OrderNumber1, match.OrderNumber2]) === orderNumbersKey(sourceOrderNumbers(row));
+};
+
 router.get('/', async (req, res) => {
     logger.debug("get /current");
     sendAppShell(req,res);
@@ -102,7 +118,9 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
                 return;
             }
         const queuedOrders = await ordmac.orders_all();
-        const queuedCodes = new Set((queuedOrders || []).map((order) => String(order.SetupCode ?? '').trim()).filter(Boolean));
+        const queuedByCode = new Map((queuedOrders || [])
+            .map((order) => [normalizeId(order.SetupCode), orderNumbersKey([order.OrderNumber0, order.OrderNumber1, order.OrderNumber2])])
+            .filter(([code]) => code));
         const firstRowByCode = new Map();
         for(let i = 0;  i < rows.length; ++i){
                 const warning = zeroQuantityWarning(rows[i]);
@@ -116,13 +134,25 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
                 continue;
             }
             const setupCode = String(tmp.result[0] || '').trim();
-            if(!setupCode) continue;
-            if(queuedCodes.has(setupCode)){
-                warnings[i] = { message: `Ustawienie ${setupCode} jest już w kolejce Syncro. Zostanie pominięte.`, duplicate: true };
-            }else if(firstRowByCode.has(setupCode)){
-                warnings[i] = { message: `Ustawienie ${setupCode} powtarza wiersz ${firstRowByCode.get(setupCode) + 1}. Zostanie pominięte.`, duplicate: true };
+            const code = normalizeId(setupCode);
+            if(!code) continue;
+            const orders = orderNumbersKey(sourceOrderNumbers(rows[i]));
+            if(queuedByCode.has(code)){
+                const queued = queuedByCode.get(code);
+                if(queued === orders){
+                    warnings[i] = { message: `Ustawienie ${setupCode} (${orders}) jest już w kolejce Syncro. Zostanie pominięte.`, duplicate: true };
+                }else{
+                    invalid[i] = { error: `Kod ustawienia ${setupCode} jest już zajęty w Syncro przez inne zamówienia (${queued || 'brak numerów'}). Plik zawiera: ${orders || 'brak numerów'}.` };
+                }
+            }else if(firstRowByCode.has(code)){
+                const first = firstRowByCode.get(code);
+                if(first.orders === orders){
+                    warnings[i] = { message: `Ustawienie ${setupCode} powtarza wiersz ${first.index + 1}. Zostanie pominięte.`, duplicate: true };
+                }else{
+                    invalid[i] = { error: `Kod ustawienia ${setupCode} występuje też w wierszu ${first.index + 1} z innymi zamówieniami.` };
+                }
             }else{
-                firstRowByCode.set(setupCode, i);
+                firstRowByCode.set(code, { index: i, orders });
             }
         }
         req.session.current = rows;
@@ -485,6 +515,11 @@ router.get('/import/batch/:step', async (req, res) => {
             return;
         }
         if(alreadyQueued){
+            const sameSetup = await queuedSetupMatches(setupCode, sourceRow);
+            if(sameSetup !== true){
+                res.status(409).json({ status: false, current, steps, setupCode, error: 'order_rejected' });
+                return;
+            }
             req.session.step = next;
             if(steps === next){
                 req.session.current = null;
@@ -600,6 +635,11 @@ router.post('/add', async (req, res) => {
         return;
     }
     if(alreadyQueued){
+        const sameSetup = await queuedSetupMatches(setupCode, sourceRow);
+        if(sameSetup !== true){
+            res.status(409).json({ status: false, setupCode, error: 'order_rejected' });
+            return;
+        }
         req.session.step = current;
         if(steps === current){
             req.session.current = null;

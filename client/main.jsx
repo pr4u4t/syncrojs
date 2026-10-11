@@ -1347,7 +1347,7 @@ function OrderImport(){
                     openSetupDetails(row, index);
                   }
                 }}>
-                  <td>{index + 1}{preview.edited?.[index] && <span className="badge text-bg-info ms-2" title="Scores changed manually">Edited</span>}</td>
+                  <td>{index + 1}{preview.edited?.[index] && <span className="badge badge-edited ms-2" title="Scores changed manually">Edited</span>}</td>
                   {cells.map((value, column) => <td className={fieldIndexes.includes(column) ? 'table-danger import-invalid-cell' : ''} key={column}>{value}</td>)}
                   <td><button type="button" className="btn btn-sm btn-outline-danger" disabled={busy} onClick={(event) => { event.stopPropagation(); removePreviewRow(index); }}>Remove setup</button></td>
                 </tr>;
@@ -1406,7 +1406,7 @@ function OrderImport(){
               <h2 id="order-detail-title">Setup details</h2>
               <p>
                 {setupDetails?.code || `Setup ${selectedSetup.index + 1}`}
-                {selectedEdited && <span className="badge text-bg-info ms-2">Edited</span>}
+                {selectedEdited && <span className="badge badge-edited ms-2">Edited</span>}
                 {scoresDirty && <span className="badge text-bg-warning ms-2">Unsaved changes</span>}
               </p>
             </div>
