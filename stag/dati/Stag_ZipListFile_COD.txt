@@ -1,0 +1,13 @@
+*.bas
+*.ctl
+*.vbp
+*.frm
+*.frx
+*.cls
+*.bat
+*.dll
+*.txt
+shutcmd.exe
+
+
+

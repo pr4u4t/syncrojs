@@ -88,9 +88,17 @@ test('rejects crease measurements that are zero, malformed, or wider than the sh
 
 test('limits total crease measurements across the setup to twenty-two', () => {
     const payload = makePayload();
-    payload[14] = Array(23).fill('1000').join(' ');
+    payload[14] = Array(12).fill('1000').join(' ');
+    payload[45] = Array(11).fill('1000').join(' ');
 
     expect(validateSyncroPayload(payload).error).toMatch(/zawiera 23 bigów; limit to 22/);
+});
+
+test('limits crease measurements to fifteen per order', () => {
+    const payload = makePayload();
+    payload[14] = Array(16).fill('1000').join(' ');
+
+    expect(validateSyncroPayload(payload).error).toMatch(/Zamówienie 1 zawiera 16 bigów; limit to 15 na zamówienie/);
 });
 
 test('rejects total setup length below the Syncro AOC minimum', () => {

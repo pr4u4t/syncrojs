@@ -397,7 +397,7 @@ function Settings(){
                     {field.path === 'orders.parser.type' && (
                       <div className="form-text settings-field__help">
                         {selectedParser === 'extended_orders'
-                          ? 'CSV: one row per order; rows sharing setup_code are grouped into one setup. Supports up to 3 orders and 22 crease measurements total. Put measurements in score_measures_mm, separated by semicolons. Existing fixed-width DAT files remain supported, with 5 crease fields per order.'
+                          ? 'CSV: one row per order; rows sharing setup_code are grouped into one setup. Supports up to 3 orders, 15 crease measurements per order and 22 in total. Put measurements in score_measures_mm, separated by semicolons. Existing fixed-width DAT files remain supported, with 5 crease fields per order.'
                           : 'Classic DAT parser. CSV files are optimized into the classic fixed-width DAT layout before preview and transfer.'}
                       </div>
                     )}
@@ -1309,7 +1309,7 @@ function OrderImport(){
                             }}
                           />
                         </div>
-                        <div className="form-text">One crease measurement per line. Maximum 22 across the setup.</div>
+                        <div className="form-text">One crease measurement per line. Maximum 15 per order and 22 across the setup.</div>
                       </div>
                     </div>
                   </fieldset>

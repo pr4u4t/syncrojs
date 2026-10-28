@@ -1,0 +1,555 @@
+[NPort Configuration File]
+# [Model Name]
+#  211  DE-211    
+#  8211 DE-211-IA 
+#  311  DE-311    
+#  8311 DE-311M   
+#  301  DE-301    
+#  302  DE-302    
+#  304  DE-304    
+#  331  DE-331    
+#  332  DE-332    
+#  334  DE-334    
+#  303  DE-303    
+#  308  DE-308    
+ModelName	311
+
+#################
+# Server Config #
+#################
+
+# [Server Name]
+ServerName	NP45437
+
+# [IP Configuration]
+#  0 Static IP 
+#  1 DHCP      
+#  2 DHCP/BootP
+#  3 BootP     
+DHCPflag	0
+
+# [Server IP address]
+#  IP address 255.255.255.255 means not set 
+IPAddress	10.151.151.33
+
+# [netmask]
+Netmask		255.255.255.0
+
+# [gateway address]
+Gateway		
+
+# [Server password]
+Password	
+
+
+###########
+# OP mode #
+###########
+
+# [OP mode (Hex)]
+#  2 Host Based / Driver Mode
+#  1 Pair Connection (Msater)
+#  0 Pair Connection (Slave)
+#  A TCP Server
+#  D TCP Client
+#  E UDP Server/Client
+#  C Ethernet Modem mode
+OPMode		e
+
+
+# Host Based / Driver Mode
+#----------------
+
+# [TCP alive check time]
+TCPAlive	7
+
+# [Delimiter en/disable]
+#  bit 0 Delimiter Char 1 Enable/Disable
+#  bit 1 Delimiter Char 2 Enable/Disable
+#  0 Disable Delimiter Char
+#  1 Enable Delimiter Char
+DeliCharFlag	0
+
+# [Delimiter 1 (Hex)]
+ASPPDel1	ff
+
+# [Delimiter 2 (Hex)]
+ASPPDel2	ff
+
+# [Force transmit (ms)]
+ASPPFtx	0
+
+
+# Pair Connection (Master)
+#--------------------------
+
+# [Remote IP address]
+RemoteIP	
+
+# [TCP alive check time]
+# The flag is same to Host Based / Driver Mode TCP alive check time
+# TCPAlive	7
+
+
+# Pair Connection (Slave)
+#-------------------------
+
+# [Remote IP address]
+# The flag is same to Pair connection (Master) remote ip address
+# RemoteIP	
+
+# [TCP alive check time]
+# The flag is same to Host Based / Driver Mode TCP alive check time
+# TCPAlive	7
+
+
+# TCP Server
+#-----------------------------
+
+# [TCP port number]
+RAWTCPport		4001
+
+# [Dest. IP address]
+#  Destination IP address
+RAWIP	
+
+# [Delimiter en/disable]
+#  bit 0 Delimiter Char 1 Enable/Disable
+#  bit 1 Delimiter Char 2 Enable/Disable
+#  0 Disable Delimiter Char
+#  1 Enable Delimiter Char
+RAWDeliCharFlag	0
+
+# [Delimiter 1 (Hex)]
+RAWDelimiter1	ff
+
+# [Delimiter 2 (Hex)]
+RAWDelimiter2	ff
+
+# [Force transmit (ms)]
+RAWForceTran	0
+
+# [Inactivity Time]
+RAWInactT	0
+
+# [TCP alive check time]
+# The flag is same to Host Based / Driver Mode TCP alive check time
+# RAWTCPAlive	7
+
+
+# RAW Connect (TCP Client)
+#-------------------------
+
+# [Dest. IP address]
+#  Destination IP address
+CLIIP	
+
+# [TCP port number]
+CLITCPport	4001
+
+# [TCP Connect]
+#  0 StartUp
+#  1 Any Character
+TCPConnect	0
+
+# [Delimiter en/disable]
+#  bit 0 Delimiter Char 1 Enable/Disable
+#  bit 1 Delimiter Char 2 Enable/Disable
+#  0 Disable Delimiter Char
+#  1 Enable Delimiter Char
+CLIDeliCharFlag	0
+
+# [Delimiter 1 (Hex)]
+CLIDelimiter1	ff
+
+# [Delimiter 2 (Hex)]
+CLIDelimiter2	ff
+
+# [Force transmit (ms)]
+CLIForceTran	0
+
+# [Inactivity Time]
+CLIInactT	0
+
+# [TCP alive check time]
+# The flag is same to Host Based / Driver Mode TCP alive check time
+# CLITCPAlive	7
+
+
+# UDP Server/Client
+#------------------------------------
+
+# [UDP Connect LAN to serial Source Begin IP address]
+# [UDP Connect LAN to serial Source End IP address]
+UDPSIPBegin1	10.151.151.3
+UDPSIPEnd1	10.151.151.3
+UDPSIPBegin2	
+UDPSIPEnd2	
+UDPSIPBegin3	
+UDPSIPEnd3	
+UDPSIPBegin4	
+UDPSIPEnd4	
+# [UDP Connect serial to LAN Destination Begin IP address]
+# [UDP Connect serial to LAN Destination End IP address]
+# [UDP Connect serial to LAN Destination Port]
+UDPDIPBegin1	10.151.151.3
+UDPDIPEnd1	10.151.151.3
+UDPDestPort1	4003
+UDPDIPBegin2	
+UDPDIPEnd2	
+UDPDestPort2	4003
+UDPDIPBegin3	
+UDPDIPEnd3	
+UDPDestPort3	4003
+UDPDIPBegin4	
+UDPDIPEnd4	
+UDPDestPort4	4003
+
+# [UDP Connect local port]
+UDPport		4002
+
+# [Delimiter en/disable]
+#  bit 0 Delimiter Char 1 Enable/Disable
+#  bit 1 Delimiter Char 2 Enable/Disable
+#  0 Disable Delimiter Char
+#  1 Enable Delimiter Char
+UDPDeliCharFlag	3
+
+# [Delimiter 1 (Hex)]
+UDPDelimiter1	4
+
+# [Delimiter 2 (Hex)]
+UDPDelimiter2	6
+
+# [Force transmit (ms)]
+UDPForceTran	200
+
+
+# Ethernet Modem Mode
+#---------------------
+
+# [TCP port number]
+MDMTCPport	4001
+
+# [Dest. IP address]
+#  Destination IP address
+MDMIP	
+
+# [TCP alive check time]
+# The flag is same to Host Based / Driver Mode TCP alive check time
+# TCPAlive	7
+
+
+###############
+# Serial port #
+###############
+
+# [Baud Rate]
+#  0 50
+#  1 75
+#  2 150
+#  3 300
+#  4 600
+#  5 1200
+#  6 2400
+#  7 4800
+#  8 7200
+#  9 9600
+#  10 19200
+#  11 38400
+#  12 57600
+#  13 115200
+#  14 230400
+BaudRate	9
+
+# [IO Control (Hex)]
+#  BITS(bit 0,1)+STOP(bit 2,3)+PARITY(bit 4,5)+FLOW(bit 6,7)
+#  03 Tx/Rx 8 data bits
+#  02 Tx/Rx 7 data bits
+#  01 Tx/Rx 6 data bits
+#  00 Tx/Rx 5 data bits
+#  00 1 stop bit
+#  08 2 stop bit
+#  00 no parity
+#  10 even parity
+#  20 odd parity
+#  30 mark parity
+#  04 space parity
+#  00 no flow control
+#  40 hardware flow control
+#  80 software flow control
+IOControl	13
+
+# [UART FIFO]
+#  0 Disable UART FIFO
+#  1 Enable UART FIFO
+UARTfifo	0
+
+########################
+# Access Control Table #
+########################
+
+# [Access Control IP address]
+# [Access Control Netmask]
+# [Access Control IP port flag (Hex)]
+#  total 16 bits, bit 0 map to port 1, and so on
+#  bit = 0  not set
+#  bit = 1  set
+AccessIP1	
+AccessMask1	255.255.255.255
+AccessPFlag1	0
+
+AccessIP2	
+AccessMask2	255.255.255.255
+AccessPFlag2	0
+
+AccessIP3	
+AccessMask3	255.255.255.255
+AccessPFlag3	0
+
+AccessIP4	
+AccessMask4	255.255.255.255
+AccessPFlag4	0
+
+AccessIP5	
+AccessMask5	255.255.255.255
+AccessPFlag5	0
+
+AccessIP6	
+AccessMask6	255.255.255.255
+AccessPFlag6	0
+
+AccessIP7	
+AccessMask7	255.255.255.255
+AccessPFlag7	0
+
+AccessIP8	
+AccessMask8	255.255.255.255
+AccessPFlag8	0
+
+AccessIP9	
+AccessMask9	255.255.255.255
+AccessPFlag9	0
+
+AccessIP10	
+AccessMask10	255.255.255.255
+AccessPFlag10	0
+
+AccessIP11	
+AccessMask11	255.255.255.255
+AccessPFlag11	0
+
+AccessIP12	
+AccessMask12	255.255.255.255
+AccessPFlag12	0
+
+AccessIP13	
+AccessMask13	255.255.255.255
+AccessPFlag13	0
+
+AccessIP14	
+AccessMask14	255.255.255.255
+AccessPFlag14	0
+
+AccessIP15	
+AccessMask15	255.255.255.255
+AccessPFlag15	0
+
+AccessIP16	
+AccessMask16	255.255.255.255
+AccessPFlag16	0
+
+AccessIP17	
+AccessMask17	255.255.255.255
+AccessPFlag17	0
+
+AccessIP18	
+AccessMask18	255.255.255.255
+AccessPFlag18	0
+
+AccessIP19	
+AccessMask19	255.255.255.255
+AccessPFlag19	0
+
+AccessIP20	
+AccessMask20	255.255.255.255
+AccessPFlag20	0
+
+AccessIP21	
+AccessMask21	255.255.255.255
+AccessPFlag21	0
+
+AccessIP22	
+AccessMask22	255.255.255.255
+AccessPFlag22	0
+
+AccessIP23	
+AccessMask23	255.255.255.255
+AccessPFlag23	0
+
+AccessIP24	
+AccessMask24	255.255.255.255
+AccessPFlag24	0
+
+AccessIP25	
+AccessMask25	255.255.255.255
+AccessPFlag25	0
+
+AccessIP26	
+AccessMask26	255.255.255.255
+AccessPFlag26	0
+
+AccessIP27	
+AccessMask27	255.255.255.255
+AccessPFlag27	0
+
+AccessIP28	
+AccessMask28	255.255.255.255
+AccessPFlag28	0
+
+AccessIP29	
+AccessMask29	255.255.255.255
+AccessPFlag29	0
+
+AccessIP30	
+AccessMask30	255.255.255.255
+AccessPFlag30	0
+
+AccessIP31	
+AccessMask31	255.255.255.255
+AccessPFlag31	0
+
+AccessIP32	
+AccessMask32	255.255.255.255
+AccessPFlag32	0
+
+AccessIP33	
+AccessMask33	255.255.255.255
+AccessPFlag33	0
+
+AccessIP34	
+AccessMask34	255.255.255.255
+AccessPFlag34	0
+
+AccessIP35	
+AccessMask35	255.255.255.255
+AccessPFlag35	0
+
+AccessIP36	
+AccessMask36	255.255.255.255
+AccessPFlag36	0
+
+AccessIP37	
+AccessMask37	255.255.255.255
+AccessPFlag37	0
+
+AccessIP38	
+AccessMask38	255.255.255.255
+AccessPFlag38	0
+
+AccessIP39	
+AccessMask39	255.255.255.255
+AccessPFlag39	0
+
+AccessIP40	
+AccessMask40	255.255.255.255
+AccessPFlag40	0
+
+AccessIP41	
+AccessMask41	255.255.255.255
+AccessPFlag41	0
+
+AccessIP42	
+AccessMask42	255.255.255.255
+AccessPFlag42	0
+
+AccessIP43	
+AccessMask43	255.255.255.255
+AccessPFlag43	0
+
+AccessIP44	
+AccessMask44	255.255.255.255
+AccessPFlag44	0
+
+AccessIP45	
+AccessMask45	255.255.255.255
+AccessPFlag45	0
+
+AccessIP46	
+AccessMask46	255.255.255.255
+AccessPFlag46	0
+
+AccessIP47	
+AccessMask47	255.255.255.255
+AccessPFlag47	0
+
+AccessIP48	
+AccessMask48	255.255.255.255
+AccessPFlag48	0
+
+AccessIP49	
+AccessMask49	255.255.255.255
+AccessPFlag49	0
+
+AccessIP50	
+AccessMask50	255.255.255.255
+AccessPFlag50	0
+
+AccessIP51	
+AccessMask51	255.255.255.255
+AccessPFlag51	0
+
+AccessIP52	
+AccessMask52	255.255.255.255
+AccessPFlag52	0
+
+AccessIP53	
+AccessMask53	255.255.255.255
+AccessPFlag53	0
+
+AccessIP54	
+AccessMask54	255.255.255.255
+AccessPFlag54	0
+
+AccessIP55	
+AccessMask55	255.255.255.255
+AccessPFlag55	0
+
+AccessIP56	
+AccessMask56	255.255.255.255
+AccessPFlag56	0
+
+AccessIP57	
+AccessMask57	255.255.255.255
+AccessPFlag57	0
+
+AccessIP58	
+AccessMask58	255.255.255.255
+AccessPFlag58	0
+
+AccessIP59	
+AccessMask59	255.255.255.255
+AccessPFlag59	0
+
+AccessIP60	
+AccessMask60	255.255.255.255
+AccessPFlag60	0
+
+AccessIP61	
+AccessMask61	255.255.255.255
+AccessPFlag61	0
+
+AccessIP62	
+AccessMask62	255.255.255.255
+AccessPFlag62	0
+
+AccessIP63	
+AccessMask63	255.255.255.255
+AccessPFlag63	0
+
+AccessIP64	
+AccessMask64	255.255.255.255
+AccessPFlag64	0
+
+
+# ----------End of File----------

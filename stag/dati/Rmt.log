@@ -1,0 +1,1334 @@
+13/10/11 | 20.24.27 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+13/10/11 | 20.24.28 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+13/10/11 | 20.24.29 | rmt: rispondi 1 per abilitazioni_sch
+13/10/11 | 20.24.29 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+13/10/11 | 20.24.35 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+13/10/11 | 20.24.37 | rmt: rmt occupata abilitazioni_sch 1 2 con dati aggiuntivi
+13/10/11 | 20.24.39 | rmt: rispondi -10 per abilitazioni_sch
+13/10/11 | 20.24.45 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+13/10/11 | 20.24.49 | rmt: rmt occupata abilitazioni_sch 1 2 con dati aggiuntivi
+13/10/11 | 20.24.49 | rmt: rispondi -10 per abilitazioni_sch
+13/10/11 | 20.25.28 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+13/10/11 | 20.25.34 | rmt: rispondi -10 per abilitazioni_sch
+13/10/11 | 20.26.12 | rmt: esegui rmt_set_par_mac_macro 1 0 con dati aggiuntivi
+13/10/11 | 20.26.15 | rmt: rispondi 1 per rmt_set_par_mac_macro
+13/10/11 | 20.26.57 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+13/10/11 | 20.27.01 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+13/10/11 | 20.27.01 | rmt: rispondi 1 per set_par_sch_01
+13/10/11 | 20.27.02 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+13/10/11 | 20.32.03 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+13/10/11 | 20.32.07 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+13/10/11 | 20.32.07 | rmt: rispondi 1 per set_par_sch_01
+13/10/11 | 20.32.07 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+13/10/11 | 20.32.46 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+13/10/11 | 20.32.49 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+13/10/11 | 20.32.50 | rmt: rispondi 1 per set_par_sch_01
+13/10/11 | 20.32.50 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+13/10/11 | 20.33.00 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+13/10/11 | 20.33.01 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+13/10/11 | 20.33.02 | rmt: rispondi 1 per set_par_sch_01
+13/10/11 | 20.33.02 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+13/10/11 | 21.43.59 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+13/10/11 | 21.43.59 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+13/10/11 | 21.44.00 | rmt: rispondi 1 per abilitazioni_sch
+13/10/11 | 21.44.00 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+13/10/11 | 21.44.03 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+13/10/11 | 21.44.04 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+13/10/11 | 21.44.05 | rmt: rispondi 1 per abilitazioni_sch
+13/10/11 | 21.44.05 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+13/10/11 | 21.44.09 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+13/10/11 | 21.44.10 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+13/10/11 | 21.44.10 | rmt: rispondi 1 per abilitazioni_sch
+13/10/11 | 21.44.11 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+13/10/11 | 21.44.15 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+13/10/11 | 21.44.15 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+13/10/11 | 21.44.16 | rmt: rispondi 1 per abilitazioni_sch
+13/10/11 | 21.44.16 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 01.08.18 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+14/10/11 | 01.08.19 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+14/10/11 | 01.08.19 | rmt: rispondi 1 per abilitazioni_sch
+14/10/11 | 01.08.20 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 01.08.30 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+14/10/11 | 01.08.31 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+14/10/11 | 01.08.32 | rmt: rispondi 1 per abilitazioni_sch
+14/10/11 | 01.08.32 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 01.08.38 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+14/10/11 | 01.08.39 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+14/10/11 | 01.08.40 | rmt: rispondi 1 per abilitazioni_sch
+14/10/11 | 01.08.40 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 01.08.45 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+14/10/11 | 01.08.45 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+14/10/11 | 01.08.46 | rmt: rispondi 1 per abilitazioni_sch
+14/10/11 | 01.08.46 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 02.12.37 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+14/10/11 | 02.12.38 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+14/10/11 | 02.12.38 | rmt: rispondi 1 per abilitazioni_sch
+14/10/11 | 02.12.38 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 02.12.41 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+14/10/11 | 02.12.42 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+14/10/11 | 02.12.43 | rmt: rispondi 1 per abilitazioni_sch
+14/10/11 | 02.12.43 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 21.03.24 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+14/10/11 | 21.03.24 | rmt: rispondi 1 per rmt_plc_pag_pro
+14/10/11 | 21.16.45 | rmt: esegui set_par_sch_03 1 1 con dati aggiuntivi
+14/10/11 | 21.16.47 | rmt: rispondi 1 per set_par_sch_03
+14/10/11 | 21.17.37 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+14/10/11 | 21.17.38 | rmt: rispondi 1 per set_par_sch_03
+14/10/11 | 21.21.37 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/10/11 | 21.21.38 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/10/11 | 21.21.39 | rmt: rispondi 1 per set_par_sch_04
+14/10/11 | 21.21.39 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 21.24.47 | rmt: esegui set_par_plc_01 6 1 con dati aggiuntivi
+14/10/11 | 21.24.47 | rmt: rispondi 1 per set_par_plc_01
+14/10/11 | 21.49.34 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+14/10/11 | 21.49.34 | rmt: rispondi 1 per rmt_plc_pag_pro
+14/10/11 | 22.44.05 | rmt: esegui set_par_sch_02 1 1 con dati aggiuntivi
+14/10/11 | 22.44.06 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/10/11 | 22.44.06 | rmt: rispondi 1 per set_par_sch_02
+14/10/11 | 22.44.06 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 22.56.45 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+14/10/11 | 22.56.45 | rmt: rispondi 1 per rmt_plc_pag_pro
+14/10/11 | 22.56.48 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+14/10/11 | 22.56.48 | rmt: rispondi 1 per rmt_plc_pag_pro
+14/10/11 | 23.16.02 | rmt: esegui set_par_sch_02 1 1 con dati aggiuntivi
+14/10/11 | 23.16.03 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/10/11 | 23.16.03 | rmt: rispondi 1 per set_par_sch_02
+14/10/11 | 23.16.03 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 23.16.30 | rmt: esegui set_par_sch_02 1 1 con dati aggiuntivi
+14/10/11 | 23.16.31 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/10/11 | 23.16.31 | rmt: rispondi 1 per set_par_sch_02
+14/10/11 | 23.16.32 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 23.16.50 | rmt: esegui set_par_sch_02 1 2 con dati aggiuntivi
+14/10/11 | 23.16.51 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+14/10/11 | 23.16.52 | rmt: rispondi 1 per set_par_sch_02
+14/10/11 | 23.16.52 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/10/11 | 23.17.00 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+14/10/11 | 23.17.01 | rmt: rispondi 1 per rmt_plc_pag_pro
+14/10/11 | 23.17.39 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+14/10/11 | 23.17.39 | rmt: rispondi 1 per rmt_plc_pag_pro
+14/10/11 | 23.19.13 | rmt: esegui set_par_sch_02 1 2 con dati aggiuntivi
+14/10/11 | 23.19.14 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+14/10/11 | 23.19.14 | rmt: rispondi 1 per set_par_sch_02
+14/10/11 | 23.19.15 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 02.27.14 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+15/10/11 | 02.27.14 | rmt: rispondi 1 per rmt_plc_pag_pro
+15/10/11 | 02.28.13 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+15/10/11 | 02.28.13 | rmt: rispondi 1 per rmt_plc_pag_pro
+15/10/11 | 03.59.49 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+15/10/11 | 03.59.50 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+15/10/11 | 03.59.50 | rmt: rispondi 1 per abilitazioni_sch
+15/10/11 | 03.59.50 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 03.59.52 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+15/10/11 | 03.59.53 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+15/10/11 | 03.59.53 | rmt: rispondi 1 per abilitazioni_sch
+15/10/11 | 03.59.53 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 04.00.13 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+15/10/11 | 04.00.13 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+15/10/11 | 04.00.14 | rmt: rispondi 1 per abilitazioni_sch
+15/10/11 | 04.00.14 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 04.00.16 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+15/10/11 | 04.00.17 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+15/10/11 | 04.00.17 | rmt: rispondi 1 per abilitazioni_sch
+15/10/11 | 04.00.18 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 04.09.53 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+15/10/11 | 04.09.53 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+15/10/11 | 04.09.54 | rmt: rispondi 1 per abilitazioni_sch
+15/10/11 | 04.09.54 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 04.09.56 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+15/10/11 | 04.09.57 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+15/10/11 | 04.09.57 | rmt: rispondi 1 per abilitazioni_sch
+15/10/11 | 04.09.58 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 04.09.58 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+15/10/11 | 04.09.59 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+15/10/11 | 04.10.00 | rmt: rispondi 1 per abilitazioni_sch
+15/10/11 | 04.10.00 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 04.10.01 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+15/10/11 | 04.10.02 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+15/10/11 | 04.10.02 | rmt: rispondi 1 per abilitazioni_sch
+15/10/11 | 04.10.02 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 04.29.22 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+15/10/11 | 04.29.22 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+15/10/11 | 04.29.23 | rmt: rispondi 1 per abilitazioni_sch
+15/10/11 | 04.29.23 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 04.29.25 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+15/10/11 | 04.29.26 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+15/10/11 | 04.29.27 | rmt: rispondi 1 per abilitazioni_sch
+15/10/11 | 04.29.27 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 04.31.30 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+15/10/11 | 04.31.30 | rmt: rispondi 1 per rmt_plc_pag_pro
+15/10/11 | 04.35.24 | rmt: esegui set_par_plc_01 6 1 con dati aggiuntivi
+15/10/11 | 04.35.24 | rmt: rispondi 1 per set_par_plc_01
+15/10/11 | 04.40.00 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/10/11 | 04.40.00 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/10/11 | 04.40.01 | rmt: rispondi 1 per set_par_sch_04
+15/10/11 | 04.40.01 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/10/11 | 11.27.01 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+15/10/11 | 11.27.01 | rmt: rispondi 1 per rmt_plc_pag_pro
+15/10/11 | 11.47.08 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+15/10/11 | 11.47.09 | rmt: rispondi 1 per rmt_plc_pag_pro
+17/10/11 | 08.41.05 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+17/10/11 | 08.41.05 | rmt: rispondi 1 per rmt_plc_pag_pro
+17/10/11 | 08.42.30 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+17/10/11 | 08.42.30 | rmt: rispondi 1 per rmt_plc_pag_pro
+17/10/11 | 10.01.14 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+17/10/11 | 10.01.14 | rmt: rispondi 1 per rmt_plc_pag_pro
+02/11/11 | 04.58.46 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+02/11/11 | 04.58.47 | rmt: rispondi 1 per rmt_set_par_rul_plc
+02/11/11 | 04.59.15 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+02/11/11 | 04.59.15 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+02/11/11 | 04.59.16 | rmt: rispondi 1 per set_par_sch_01
+02/11/11 | 04.59.16 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+02/11/11 | 04.59.25 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+02/11/11 | 04.59.26 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+02/11/11 | 04.59.26 | rmt: rispondi 1 per set_par_sch_01
+02/11/11 | 04.59.27 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+02/11/11 | 05.00.22 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+02/11/11 | 05.00.22 | rmt: rispondi 1 per rmt_set_par_rul_plc
+02/11/11 | 07.26.10 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+02/11/11 | 07.26.11 | rmt: rispondi 1 per rmt_set_par_rul_plc
+02/11/11 | 17.28.58 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+02/11/11 | 17.28.58 | rmt: rispondi 1 per rmt_set_par_rul_plc
+02/11/11 | 17.29.30 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+02/11/11 | 17.29.31 | rmt: rispondi 1 per rmt_set_par_rul_plc
+03/11/11 | 05.25.35 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+03/11/11 | 05.25.36 | rmt: rispondi 1 per rmt_set_par_rul_plc
+07/11/11 | 10.48.48 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+07/11/11 | 10.48.49 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/11/11 | 10.48.49 | rmt: rispondi 1 per set_par_sch_01
+07/11/11 | 10.48.50 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/11/11 | 10.48.56 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+07/11/11 | 10.48.57 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+07/11/11 | 10.48.58 | rmt: rispondi 1 per set_par_sch_01
+07/11/11 | 10.48.58 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/11/11 | 10.51.25 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+07/11/11 | 10.51.25 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+07/11/11 | 10.51.26 | rmt: rispondi 1 per set_par_sch_01
+07/11/11 | 10.51.26 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/11/11 | 10.51.34 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+07/11/11 | 10.51.35 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/11/11 | 10.51.35 | rmt: rispondi 1 per set_par_sch_01
+07/11/11 | 10.51.36 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/11/11 | 14.12.28 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+07/11/11 | 14.12.29 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/11/11 | 14.12.29 | rmt: rispondi 1 per set_par_sch_01
+07/11/11 | 14.12.30 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/11/11 | 14.12.35 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+07/11/11 | 14.12.36 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+07/11/11 | 14.12.36 | rmt: rispondi 1 per set_par_sch_01
+07/11/11 | 14.12.37 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/11/11 | 14.15.35 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+07/11/11 | 14.15.36 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+07/11/11 | 14.15.37 | rmt: rispondi 1 per set_par_sch_01
+07/11/11 | 14.15.37 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/11/11 | 14.15.42 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+07/11/11 | 14.15.43 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/11/11 | 14.15.43 | rmt: rispondi 1 per set_par_sch_01
+07/11/11 | 14.15.43 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/11/11 | 09.27.37 | rmt: esegui set_par_sch_02 1 1 con dati aggiuntivi
+08/11/11 | 09.27.38 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/11/11 | 09.27.38 | rmt: rispondi 1 per set_par_sch_02
+08/11/11 | 09.27.39 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/11/11 | 09.27.48 | rmt: esegui set_par_sch_02 1 2 con dati aggiuntivi
+08/11/11 | 09.27.49 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+08/11/11 | 09.27.50 | rmt: rispondi 1 per set_par_sch_02
+08/11/11 | 09.27.50 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/11/11 | 14.43.19 | rmt: esegui set_par_sch_02 1 1 con dati aggiuntivi
+08/11/11 | 14.43.19 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/11/11 | 14.43.20 | rmt: rispondi 1 per set_par_sch_02
+08/11/11 | 14.43.20 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/11/11 | 18.00.03 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+08/11/11 | 18.00.04 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+08/11/11 | 18.00.04 | rmt: rispondi 1 per set_par_sch_01
+08/11/11 | 18.00.05 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/11/11 | 18.01.33 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+08/11/11 | 18.01.34 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+08/11/11 | 18.01.34 | rmt: rispondi 1 per set_par_sch_01
+08/11/11 | 18.01.35 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/11/11 | 18.03.33 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+08/11/11 | 18.03.34 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+08/11/11 | 18.03.35 | rmt: rispondi 1 per set_par_sch_01
+08/11/11 | 18.03.35 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/11/11 | 18.07.37 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+08/11/11 | 18.07.38 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+08/11/11 | 18.07.38 | rmt: rispondi 1 per set_par_sch_01
+08/11/11 | 18.07.39 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+09/11/11 | 12.20.30 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+09/11/11 | 12.20.31 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+09/11/11 | 12.20.31 | rmt: rispondi 1 per set_par_sch_01
+09/11/11 | 12.20.32 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+09/11/11 | 12.20.43 | rmt: esegui set_par_sch_02 1 1 con dati aggiuntivi
+09/11/11 | 12.20.44 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+09/11/11 | 12.20.44 | rmt: rispondi 1 per set_par_sch_02
+09/11/11 | 12.20.44 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+12/11/11 | 11.17.44 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+12/11/11 | 11.17.44 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+12/11/11 | 11.17.45 | rmt: rispondi 1 per set_par_sch_04
+12/11/11 | 11.17.45 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+12/11/11 | 11.26.24 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+12/11/11 | 11.26.25 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+12/11/11 | 11.26.26 | rmt: rispondi 1 per set_par_sch_04
+12/11/11 | 11.26.26 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+12/11/11 | 11.27.21 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+12/11/11 | 11.27.21 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+12/11/11 | 11.27.22 | rmt: rispondi 1 per set_par_sch_04
+12/11/11 | 11.27.22 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+12/11/11 | 11.44.47 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+12/11/11 | 11.44.48 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+12/11/11 | 11.44.49 | rmt: rispondi 1 per set_par_sch_01
+12/11/11 | 11.44.49 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 20.09.46 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 20.09.46 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 20.09.47 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 20.09.47 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 20.49.00 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 20.49.00 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 20.49.01 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 20.49.01 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 20.51.00 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 20.51.01 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 20.51.02 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 20.51.02 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 20.57.19 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 20.57.20 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 20.57.21 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 20.57.21 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 21.00.51 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 21.00.52 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 21.00.52 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 21.00.53 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 21.04.04 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 21.04.05 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 21.04.06 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 21.04.06 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 21.06.38 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 21.06.39 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 21.06.39 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 21.06.39 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 21.08.16 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 21.08.16 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 21.08.17 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 21.08.17 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 21.11.20 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 21.11.21 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 21.11.22 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 21.11.22 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 21.19.50 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 21.19.51 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 21.19.52 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 21.19.52 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 21.20.57 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 21.20.58 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 21.20.59 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 21.20.59 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+14/11/11 | 21.22.00 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+14/11/11 | 21.22.01 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+14/11/11 | 21.22.02 | rmt: rispondi 1 per set_par_sch_04
+14/11/11 | 21.22.02 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 16.24.28 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/11/11 | 16.24.29 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 16.24.30 | rmt: rispondi 1 per set_par_sch_04
+15/11/11 | 16.24.30 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 16.32.30 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/11/11 | 16.32.31 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 16.32.31 | rmt: rispondi 1 per set_par_sch_04
+15/11/11 | 16.32.32 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 16.34.40 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/11/11 | 16.34.41 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 16.34.41 | rmt: rispondi 1 per set_par_sch_04
+15/11/11 | 16.34.41 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 16.36.13 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/11/11 | 16.36.14 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 16.36.14 | rmt: rispondi 1 per set_par_sch_04
+15/11/11 | 16.36.15 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 16.41.30 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+15/11/11 | 16.41.30 | rmt: rispondi 1 per rmt_plc_pag_pro
+15/11/11 | 16.43.19 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+15/11/11 | 16.43.19 | rmt: rispondi 1 per rmt_plc_pag_pro
+15/11/11 | 16.46.59 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+15/11/11 | 16.47.00 | rmt: rispondi 1 per rmt_plc_pag_pro
+15/11/11 | 16.47.00 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+15/11/11 | 16.47.00 | rmt: rmt occupata rmt_plc_pag_pro 1 0 con dati aggiuntivi
+15/11/11 | 16.47.00 | rmt: rispondi 1 per rmt_plc_pag_pro
+15/11/11 | 16.47.02 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+15/11/11 | 16.47.03 | rmt: rispondi 1 per rmt_plc_pag_pro
+15/11/11 | 16.47.06 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+15/11/11 | 16.47.06 | rmt: rispondi 1 per rmt_plc_pag_pro
+15/11/11 | 16.51.29 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/11/11 | 16.51.29 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 16.51.30 | rmt: rispondi 1 per set_par_sch_04
+15/11/11 | 16.51.30 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 16.53.08 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/11/11 | 16.53.09 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 16.53.10 | rmt: rispondi 1 per set_par_sch_04
+15/11/11 | 16.53.10 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 16.53.34 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+15/11/11 | 16.53.36 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 16.53.36 | rmt: rispondi 1 per set_par_sch_01
+15/11/11 | 16.53.37 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 16.55.32 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+15/11/11 | 16.55.33 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 16.55.34 | rmt: rispondi 1 per set_par_sch_01
+15/11/11 | 16.55.34 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 16.59.50 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/11/11 | 16.59.51 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 16.59.52 | rmt: rispondi 1 per set_par_sch_04
+15/11/11 | 16.59.52 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 17.01.05 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/11/11 | 17.01.06 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 17.01.06 | rmt: rispondi 1 per set_par_sch_04
+15/11/11 | 17.01.06 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 17.02.35 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/11/11 | 17.02.36 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 17.02.37 | rmt: rispondi 1 per set_par_sch_04
+15/11/11 | 17.02.37 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 17.03.28 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/11/11 | 17.03.29 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 17.03.30 | rmt: rispondi 1 per set_par_sch_04
+15/11/11 | 17.03.30 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+15/11/11 | 17.03.41 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+15/11/11 | 17.03.42 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+15/11/11 | 17.03.42 | rmt: rispondi 1 per set_par_sch_04
+15/11/11 | 17.03.43 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 10.55.03 | rmt: esegui set_par_sch_04 3 1 con dati aggiuntivi
+16/11/11 | 10.55.04 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 10.55.36 | rmt: esegui set_par_sch_04 3 2 con dati aggiuntivi
+16/11/11 | 10.55.36 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 10.56.09 | rmt: esegui set_par_sch_04 3 2 con dati aggiuntivi
+16/11/11 | 10.56.10 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 10.56.12 | rmt: esegui set_par_sch_04 3 2 con dati aggiuntivi
+16/11/11 | 10.56.13 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 18.22.38 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 18.22.39 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 18.22.39 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 18.22.40 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 18.30.13 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 18.30.14 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 18.30.14 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 18.30.15 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 18.30.30 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+16/11/11 | 18.30.31 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 18.30.31 | rmt: rispondi 1 per set_par_sch_01
+16/11/11 | 18.30.32 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 18.33.47 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 18.33.48 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 18.33.49 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 18.33.49 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 18.37.41 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 18.37.42 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 18.37.42 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 18.37.42 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 18.38.26 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 18.38.27 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 18.38.27 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 18.38.28 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 18.39.16 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 18.39.17 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 18.39.17 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 18.39.18 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 18.43.31 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 18.43.32 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 18.43.33 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 18.43.33 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 19.01.39 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+16/11/11 | 19.01.40 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 19.01.40 | rmt: rispondi 1 per set_par_sch_01
+16/11/11 | 19.01.40 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 19.05.30 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 19.05.31 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 19.05.32 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 19.05.32 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 19.06.50 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 19.06.52 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 19.06.52 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 19.06.53 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 19.07.59 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 19.07.59 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 19.08.00 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 19.08.00 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 19.10.09 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 19.10.10 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 19.10.10 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 19.10.11 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/11/11 | 19.11.00 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+16/11/11 | 19.11.01 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/11/11 | 19.11.02 | rmt: rispondi 1 per set_par_sch_04
+16/11/11 | 19.11.02 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+18/11/11 | 11.40.31 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+18/11/11 | 11.40.32 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+18/11/11 | 11.40.32 | rmt: rispondi 1 per set_par_sch_01
+18/11/11 | 11.40.33 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+19/11/11 | 11.23.56 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+19/11/11 | 11.23.56 | rmt: rispondi 1 per rmt_plc_pag_pro
+19/11/11 | 11.23.58 | rmt: esegui rmt_plc_pag_pro 1 0 con dati aggiuntivi
+19/11/11 | 11.23.59 | rmt: rispondi 1 per rmt_plc_pag_pro
+22/11/11 | 13.50.51 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+22/11/11 | 13.50.52 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+22/11/11 | 13.50.53 | rmt: rispondi 1 per set_par_sch_01
+22/11/11 | 13.50.53 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/11/11 | 13.52.37 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+22/11/11 | 13.52.38 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+22/11/11 | 13.52.39 | rmt: rispondi 1 per set_par_sch_01
+22/11/11 | 13.52.39 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/11/11 | 13.54.37 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+22/11/11 | 13.54.37 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+22/11/11 | 13.54.38 | rmt: rispondi 1 per set_par_sch_01
+22/11/11 | 13.54.38 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/11/11 | 13.58.55 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+22/11/11 | 13.58.56 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+22/11/11 | 13.58.57 | rmt: rispondi 1 per set_par_sch_01
+22/11/11 | 13.58.57 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/11/11 | 14.02.02 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+22/11/11 | 14.02.02 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+22/11/11 | 14.02.03 | rmt: rispondi 1 per set_par_sch_01
+22/11/11 | 14.02.03 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/11/11 | 14.10.35 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+22/11/11 | 14.10.35 | rmt: rispondi 1 per rmt_set_par_rul_plc
+22/11/11 | 14.10.49 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+22/11/11 | 14.10.50 | rmt: rispondi 1 per rmt_set_par_rul_plc
+22/11/11 | 16.30.49 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+22/11/11 | 16.30.50 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+22/11/11 | 16.30.51 | rmt: rispondi 1 per set_par_sch_01
+22/11/11 | 16.30.51 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/11/11 | 16.31.03 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+22/11/11 | 16.31.03 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+22/11/11 | 16.31.04 | rmt: rispondi 1 per set_par_sch_01
+22/11/11 | 16.31.04 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/11/11 | 16.34.21 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+22/11/11 | 16.34.22 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+22/11/11 | 16.34.22 | rmt: rispondi 1 per set_par_sch_01
+22/11/11 | 16.34.22 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/11/11 | 16.34.43 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+22/11/11 | 16.34.44 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+22/11/11 | 16.34.44 | rmt: rispondi 1 per set_par_sch_01
+22/11/11 | 16.34.45 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/11/11 | 16.36.07 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+22/11/11 | 16.36.07 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+22/11/11 | 16.36.08 | rmt: rispondi 1 per set_par_sch_01
+22/11/11 | 16.36.08 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 08.29.33 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 08.29.34 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 08.29.35 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 08.29.35 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.04.12 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.04.13 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.04.14 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.04.14 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.04.35 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.04.35 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.04.36 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.04.36 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.06.43 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.06.44 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.06.44 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.06.45 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.12.38 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.12.39 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.12.40 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.12.40 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.12.49 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.12.50 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.12.51 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.12.51 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.14.10 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.14.11 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.14.12 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.14.12 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.15.18 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.15.18 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.15.19 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.15.19 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.15.24 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.15.25 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.15.25 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.15.25 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.16.29 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.16.29 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.16.30 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.16.30 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.16.34 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.16.34 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.16.35 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.16.35 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.17.24 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.17.25 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.17.25 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.17.26 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.17.30 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.17.30 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.17.31 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.17.31 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.18.20 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.18.21 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.18.22 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.18.22 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.19.17 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.19.17 | rmt: rmt occupata set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.19.18 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.19.18 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.19.19 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.20.35 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.20.36 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.20.37 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.20.37 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.20.44 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.20.44 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.20.45 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.20.45 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.24.44 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.24.45 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.24.45 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.24.46 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.24.49 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.24.50 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.24.51 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.24.51 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.25.22 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.25.23 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.25.24 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.25.24 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.25.26 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.25.27 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.25.28 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.25.28 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.26.00 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.26.01 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.26.02 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.26.02 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.26.04 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.26.05 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.26.06 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.26.06 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.26.42 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.26.42 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.26.43 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.26.43 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.27.27 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.27.28 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.27.28 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.27.28 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 09.36.46 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+23/11/11 | 09.36.47 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 09.36.47 | rmt: rispondi 1 per set_par_sch_04
+23/11/11 | 09.36.48 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 10.31.27 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+23/11/11 | 10.31.27 | rmt: rispondi 1 per rmt_set_par_rul_plc
+23/11/11 | 11.06.58 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+23/11/11 | 11.06.58 | rmt: rispondi 1 per rmt_set_par_rul_plc
+23/11/11 | 11.08.43 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+23/11/11 | 11.08.43 | rmt: rispondi 1 per rmt_set_par_rul_plc
+23/11/11 | 17.00.16 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+23/11/11 | 17.00.16 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 17.00.17 | rmt: rispondi 1 per set_par_sch_01
+23/11/11 | 17.00.17 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 17.00.29 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+23/11/11 | 17.00.30 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 17.00.31 | rmt: rispondi 1 per set_par_sch_01
+23/11/11 | 17.00.31 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 17.00.43 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+23/11/11 | 17.00.43 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+23/11/11 | 17.00.44 | rmt: rispondi 1 per set_par_sch_01
+23/11/11 | 17.00.44 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 17.02.20 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+23/11/11 | 17.02.21 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 17.02.21 | rmt: rispondi 1 per set_par_sch_01
+23/11/11 | 17.02.21 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 18.41.29 | rmt: esegui set_par_sch_02 1 1 con dati aggiuntivi
+23/11/11 | 18.41.29 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 18.41.30 | rmt: rispondi 1 per set_par_sch_02
+23/11/11 | 18.41.30 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 18.41.46 | rmt: esegui set_par_sch_02 1 2 con dati aggiuntivi
+23/11/11 | 18.41.46 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+23/11/11 | 18.41.47 | rmt: rispondi 1 per set_par_sch_02
+23/11/11 | 18.41.47 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 18.48.43 | rmt: esegui set_par_sch_02 1 2 con dati aggiuntivi
+23/11/11 | 18.48.44 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+23/11/11 | 18.48.44 | rmt: rispondi 1 per set_par_sch_02
+23/11/11 | 18.48.45 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 18.48.51 | rmt: esegui set_par_sch_02 1 1 con dati aggiuntivi
+23/11/11 | 18.48.52 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+23/11/11 | 18.48.53 | rmt: rispondi 1 per set_par_sch_02
+23/11/11 | 18.48.53 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+23/11/11 | 22.02.50 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+23/11/11 | 22.02.51 | rmt: rispondi 1 per rmt_set_par_rul_plc
+24/11/11 | 08.07.19 | rmt: esegui set_par_sch_02 1 2 con dati aggiuntivi
+24/11/11 | 08.07.20 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/11/11 | 08.07.20 | rmt: rispondi 1 per set_par_sch_02
+24/11/11 | 08.07.21 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 08.07.33 | rmt: esegui set_par_sch_02 1 1 con dati aggiuntivi
+24/11/11 | 08.07.34 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 08.07.34 | rmt: rispondi 1 per set_par_sch_02
+24/11/11 | 08.07.34 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 08.27.03 | rmt: esegui rmt_set_par_rul_plc 4 0 con dati aggiuntivi
+24/11/11 | 08.27.03 | rmt: rispondi 1 per rmt_set_par_rul_plc
+24/11/11 | 09.27.42 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+24/11/11 | 09.27.43 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/11/11 | 09.27.43 | rmt: rispondi 1 per set_par_sch_01
+24/11/11 | 09.27.44 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 09.36.02 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+24/11/11 | 09.36.03 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/11/11 | 09.36.04 | rmt: rispondi 1 per set_par_sch_01
+24/11/11 | 09.36.04 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 09.46.33 | rmt: esegui set_par_sch_02 1 2 con dati aggiuntivi
+24/11/11 | 09.46.33 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/11/11 | 09.46.34 | rmt: rispondi 1 per set_par_sch_02
+24/11/11 | 09.46.34 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 10.03.27 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+24/11/11 | 10.03.28 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 10.03.28 | rmt: rispondi 1 per set_par_sch_04
+24/11/11 | 10.03.29 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 12.00.04 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+24/11/11 | 12.00.04 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 12.00.05 | rmt: rispondi 1 per set_par_sch_04
+24/11/11 | 12.00.05 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 12.01.02 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+24/11/11 | 12.01.03 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 12.01.03 | rmt: rispondi 1 per set_par_sch_04
+24/11/11 | 12.01.04 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 12.12.35 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+24/11/11 | 12.12.35 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 12.12.36 | rmt: rispondi 1 per set_par_sch_04
+24/11/11 | 12.12.36 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 12.18.11 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+24/11/11 | 12.18.12 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 12.18.12 | rmt: rispondi 1 per set_par_sch_04
+24/11/11 | 12.18.12 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 12.32.55 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+24/11/11 | 12.32.56 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 12.32.56 | rmt: rispondi 1 per set_par_sch_04
+24/11/11 | 12.32.56 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 12.33.45 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+24/11/11 | 12.33.46 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 12.33.47 | rmt: rispondi 1 per set_par_sch_04
+24/11/11 | 12.33.47 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 12.47.38 | rmt: esegui set_par_sch_04 3 1 con dati aggiuntivi
+24/11/11 | 12.47.38 | rmt: rispondi 1 per set_par_sch_04
+24/11/11 | 12.48.17 | rmt: esegui set_par_sch_04 3 2 con dati aggiuntivi
+24/11/11 | 12.48.18 | rmt: rispondi 1 per set_par_sch_04
+24/11/11 | 18.37.22 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+24/11/11 | 18.37.23 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 18.37.24 | rmt: rispondi 1 per set_par_sch_01
+24/11/11 | 18.37.24 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 18.43.04 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+24/11/11 | 18.43.05 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 18.43.06 | rmt: rispondi 1 per set_par_sch_01
+24/11/11 | 18.43.06 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 18.58.10 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+24/11/11 | 18.58.11 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 18.58.12 | rmt: rispondi 1 per set_par_sch_01
+24/11/11 | 18.58.12 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/11/11 | 19.11.07 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+24/11/11 | 19.11.08 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/11/11 | 19.11.09 | rmt: rispondi 1 per set_par_sch_01
+24/11/11 | 19.11.09 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 11.02.54 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+25/11/11 | 11.02.55 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+25/11/11 | 11.02.56 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 11.02.56 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 11.03.12 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+25/11/11 | 11.03.13 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+25/11/11 | 11.03.13 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 11.03.14 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 11.34.59 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+25/11/11 | 11.35.01 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+25/11/11 | 11.35.01 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 11.35.02 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 11.35.19 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+25/11/11 | 11.35.20 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+25/11/11 | 11.35.21 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 11.35.21 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 12.01.38 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+25/11/11 | 12.01.39 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+25/11/11 | 12.01.39 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 12.01.40 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 13.37.01 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+25/11/11 | 13.37.02 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+25/11/11 | 13.37.03 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 13.37.03 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 13.37.12 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+25/11/11 | 13.37.13 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+25/11/11 | 13.37.14 | rmt: rispondi 1 per set_par_sch_04
+25/11/11 | 13.37.14 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 13.44.01 | rmt: esegui set_par_sch_04 3 2 con dati aggiuntivi
+25/11/11 | 13.44.01 | rmt: rispondi 1 per set_par_sch_04
+25/11/11 | 13.44.08 | rmt: esegui set_par_sch_04 3 1 con dati aggiuntivi
+25/11/11 | 13.44.08 | rmt: rispondi 1 per set_par_sch_04
+25/11/11 | 13.47.16 | rmt: esegui set_par_sch_03 1 1 con dati aggiuntivi
+25/11/11 | 13.47.17 | rmt: rispondi 1 per set_par_sch_03
+25/11/11 | 13.53.43 | rmt: esegui rmt_set_par_mac_macro 1 0 con dati aggiuntivi
+25/11/11 | 13.53.43 | rmt: rispondi 1 per rmt_set_par_mac_macro
+25/11/11 | 14.08.19 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+25/11/11 | 14.08.20 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+25/11/11 | 14.08.21 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 14.08.21 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 14.08.52 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+25/11/11 | 14.08.53 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+25/11/11 | 14.08.53 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 14.08.54 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 14.09.02 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+25/11/11 | 14.09.03 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+25/11/11 | 14.09.03 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 14.09.04 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 14.45.37 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+25/11/11 | 14.45.38 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+25/11/11 | 14.45.38 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 14.45.39 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 14.45.46 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+25/11/11 | 14.45.47 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+25/11/11 | 14.45.47 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 14.45.47 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 15.13.39 | rmt: esegui set_par_sch_04 3 2 con dati aggiuntivi
+25/11/11 | 15.13.39 | rmt: rispondi 1 per set_par_sch_04
+25/11/11 | 15.13.59 | rmt: esegui set_par_sch_04 3 1 con dati aggiuntivi
+25/11/11 | 15.13.59 | rmt: rispondi 1 per set_par_sch_04
+25/11/11 | 15.14.01 | rmt: esegui set_par_sch_04 3 2 con dati aggiuntivi
+25/11/11 | 15.14.02 | rmt: rispondi 1 per set_par_sch_04
+25/11/11 | 16.02.55 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+25/11/11 | 16.02.56 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+25/11/11 | 16.02.57 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 16.02.57 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 17.17.18 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+25/11/11 | 17.17.19 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+25/11/11 | 17.17.19 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 17.17.20 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 17.17.24 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+25/11/11 | 17.17.24 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+25/11/11 | 17.17.25 | rmt: rispondi 1 per set_par_sch_01
+25/11/11 | 17.17.25 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/11/11 | 18.34.20 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+25/11/11 | 18.34.21 | rmt: rispondi 1 per set_par_sch_03
+25/11/11 | 18.34.43 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+25/11/11 | 18.34.44 | rmt: rispondi 1 per set_par_sch_03
+25/11/11 | 18.35.04 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+25/11/11 | 18.35.05 | rmt: rispondi 1 per set_par_sch_03
+25/11/11 | 18.35.24 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+25/11/11 | 18.35.26 | rmt: rispondi 1 per set_par_sch_03
+25/11/11 | 18.35.54 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+25/11/11 | 18.35.55 | rmt: rispondi 1 per set_par_sch_03
+25/11/11 | 19.32.44 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+25/11/11 | 19.32.45 | rmt: rispondi 1 per set_par_sch_03
+25/11/11 | 19.35.03 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+25/11/11 | 19.35.04 | rmt: rispondi 1 per set_par_sch_03
+25/11/11 | 19.37.28 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+25/11/11 | 19.37.29 | rmt: rispondi 1 per set_par_sch_03
+26/11/11 | 14.55.39 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+26/11/11 | 14.55.40 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+26/11/11 | 14.55.40 | rmt: rispondi 1 per set_par_sch_01
+26/11/11 | 14.55.41 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+26/11/11 | 14.55.45 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+26/11/11 | 14.55.46 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+26/11/11 | 14.55.47 | rmt: rispondi 1 per set_par_sch_01
+26/11/11 | 14.55.47 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+26/11/11 | 14.56.10 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+26/11/11 | 14.56.11 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+26/11/11 | 14.56.12 | rmt: rispondi 1 per set_par_sch_01
+26/11/11 | 14.56.12 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 09.23.58 | rmt: esegui set_par_sch_02 1 1 con dati aggiuntivi
+28/11/11 | 09.23.59 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 09.24.00 | rmt: rispondi 1 per set_par_sch_02
+28/11/11 | 09.24.00 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 09.24.10 | rmt: esegui set_par_sch_02 1 2 con dati aggiuntivi
+28/11/11 | 09.24.11 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+28/11/11 | 09.24.12 | rmt: rispondi 1 per set_par_sch_02
+28/11/11 | 09.24.12 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 09.53.35 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+28/11/11 | 09.53.36 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+28/11/11 | 09.53.37 | rmt: rispondi 1 per set_par_sch_01
+28/11/11 | 09.53.37 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 11.19.16 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+28/11/11 | 11.19.17 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 11.19.17 | rmt: rispondi 1 per set_par_sch_01
+28/11/11 | 11.19.18 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 11.19.20 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+28/11/11 | 11.19.21 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+28/11/11 | 11.19.22 | rmt: rispondi 1 per set_par_sch_01
+28/11/11 | 11.19.22 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 14.25.35 | rmt: esegui rmt_set_par_mac_macro 1 0 con dati aggiuntivi
+28/11/11 | 14.25.36 | rmt: rispondi 1 per rmt_set_par_mac_macro
+28/11/11 | 14.26.26 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 14.26.27 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 14.26.27 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 14.26.28 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 14.26.32 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 14.26.33 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 14.26.34 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 14.26.34 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 14.26.38 | rmt: esegui set_par_sch_04 3 1 con dati aggiuntivi
+28/11/11 | 14.26.38 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 14.29.52 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 14.29.53 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 14.29.54 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 14.29.54 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 16.49.48 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 16.49.49 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 16.49.50 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 16.49.50 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 16.54.48 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 16.54.49 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 16.54.50 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 16.54.50 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 16.54.52 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 16.54.53 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 16.54.54 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 16.54.54 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 16.55.23 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 16.55.24 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 16.55.24 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 16.55.25 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 16.55.54 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 16.55.55 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 16.55.56 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 16.55.56 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 16.59.22 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 16.59.23 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 16.59.24 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 16.59.24 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 16.59.26 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 16.59.27 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 16.59.28 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 16.59.28 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 16.59.52 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 16.59.53 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 16.59.54 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 16.59.54 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 17.01.15 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 17.01.16 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 17.01.17 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 17.01.17 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 17.01.20 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 17.01.21 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 17.01.21 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 17.01.22 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 17.01.36 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 17.01.37 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 17.01.38 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 17.01.38 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/11/11 | 17.02.26 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+28/11/11 | 17.02.26 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+28/11/11 | 17.02.27 | rmt: rispondi 1 per set_par_sch_04
+28/11/11 | 17.02.27 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 09.49.58 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+07/12/11 | 09.50.00 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 09.50.00 | rmt: rispondi 1 per set_par_sch_01
+07/12/11 | 09.50.00 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 11.39.05 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+07/12/11 | 11.39.06 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 11.39.07 | rmt: rispondi 1 per set_par_sch_01
+07/12/11 | 11.39.07 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 14.02.44 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 14.02.44 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 14.02.45 | rmt: rispondi 1 per set_par_sch_04
+07/12/11 | 14.02.45 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 14.39.44 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+07/12/11 | 14.39.45 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 14.39.45 | rmt: rispondi 1 per set_par_sch_01
+07/12/11 | 14.39.46 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 14.39.48 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+07/12/11 | 14.39.49 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 14.39.49 | rmt: rispondi 1 per set_par_sch_01
+07/12/11 | 14.39.50 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 14.39.52 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+07/12/11 | 14.39.53 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 14.39.54 | rmt: rispondi 1 per set_par_sch_01
+07/12/11 | 14.39.54 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 14.49.05 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 14.49.05 | rmt: rmt occupata set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 14.49.06 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 14.49.06 | rmt: rispondi 1 per set_par_sch_04
+07/12/11 | 14.49.07 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 14.49.22 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 14.49.23 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 14.49.24 | rmt: rispondi 1 per set_par_sch_04
+07/12/11 | 14.49.24 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 14.52.18 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 14.52.19 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 14.52.20 | rmt: rispondi 1 per set_par_sch_04
+07/12/11 | 14.52.20 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 14.54.01 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 14.54.02 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 14.54.03 | rmt: rispondi 1 per set_par_sch_04
+07/12/11 | 14.54.03 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 14.56.42 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 14.56.43 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 14.56.44 | rmt: rispondi 1 per set_par_sch_04
+07/12/11 | 14.56.44 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 15.06.02 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 15.06.03 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 15.06.04 | rmt: rispondi 1 per set_par_sch_04
+07/12/11 | 15.06.04 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 15.06.06 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 15.06.07 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 15.06.08 | rmt: rispondi 1 per set_par_sch_04
+07/12/11 | 15.06.08 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 15.06.10 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 15.06.11 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 15.06.11 | rmt: rispondi 1 per set_par_sch_04
+07/12/11 | 15.06.11 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 15.24.45 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 15.24.46 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 15.24.46 | rmt: rispondi 1 per set_par_sch_04
+07/12/11 | 15.24.47 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/12/11 | 15.26.14 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+07/12/11 | 15.26.15 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/12/11 | 15.26.16 | rmt: rispondi 1 per set_par_sch_04
+07/12/11 | 15.26.16 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/12/11 | 10.49.30 | rmt: esegui set_par_sch_02 1 1 con dati aggiuntivi
+08/12/11 | 10.49.32 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/12/11 | 10.49.33 | rmt: rispondi 1 per set_par_sch_02
+08/12/11 | 10.49.33 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/12/11 | 10.49.38 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+08/12/11 | 10.49.39 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/12/11 | 10.49.39 | rmt: rispondi 1 per set_par_sch_01
+08/12/11 | 10.49.40 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/12/11 | 10.49.43 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+08/12/11 | 10.49.43 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/12/11 | 10.49.44 | rmt: rispondi 1 per set_par_sch_01
+08/12/11 | 10.49.44 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/12/11 | 10.49.46 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+08/12/11 | 10.49.47 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/12/11 | 10.49.48 | rmt: rispondi 1 per set_par_sch_01
+08/12/11 | 10.49.48 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/12/11 | 10.58.48 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+08/12/11 | 10.58.49 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/12/11 | 10.58.49 | rmt: rispondi 1 per set_par_sch_04
+08/12/11 | 10.58.50 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/12/11 | 10.59.34 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+08/12/11 | 10.59.35 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/12/11 | 10.59.35 | rmt: rispondi 1 per set_par_sch_04
+08/12/11 | 10.59.36 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/12/11 | 11.00.26 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+08/12/11 | 11.00.26 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/12/11 | 11.00.27 | rmt: rispondi 1 per set_par_sch_04
+08/12/11 | 11.00.27 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/12/11 | 11.01.41 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+08/12/11 | 11.01.42 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/12/11 | 11.01.42 | rmt: rispondi 1 per set_par_sch_04
+08/12/11 | 11.01.43 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/12/11 | 11.07.21 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+08/12/11 | 11.07.22 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/12/11 | 11.07.22 | rmt: rispondi 1 per set_par_sch_04
+08/12/11 | 11.07.23 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/12/11 | 11.14.43 | rmt: esegui set_par_sch_04 1 1 con dati aggiuntivi
+08/12/11 | 11.14.44 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+08/12/11 | 11.14.44 | rmt: rispondi 1 per set_par_sch_04
+08/12/11 | 11.14.45 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+03/05/12 | 12.02.02 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+03/05/12 | 12.02.03 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+03/05/12 | 12.02.03 | rmt: rispondi 1 per set_par_sch_01
+03/05/12 | 12.02.04 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+04/05/12 | 11.18.02 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+04/05/12 | 11.18.03 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+04/05/12 | 11.18.03 | rmt: rispondi 1 per set_par_sch_01
+04/05/12 | 11.18.03 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+04/05/12 | 11.20.46 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+04/05/12 | 11.20.46 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+04/05/12 | 11.20.47 | rmt: rispondi 1 per set_par_sch_01
+04/05/12 | 11.20.47 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+04/05/12 | 11.23.17 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+04/05/12 | 11.23.18 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+04/05/12 | 11.23.18 | rmt: rispondi 1 per set_par_sch_01
+04/05/12 | 11.23.18 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+04/05/12 | 11.25.48 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+04/05/12 | 11.25.48 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+04/05/12 | 11.25.49 | rmt: rispondi 1 per set_par_sch_01
+04/05/12 | 11.25.49 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+28/06/12 | 17.03.08 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+28/06/12 | 17.03.09 | rmt: rispondi 1 per set_par_sch_03
+28/06/12 | 17.04.16 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+28/06/12 | 17.04.18 | rmt: rispondi 1 per set_par_sch_03
+28/06/12 | 17.05.43 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+28/06/12 | 17.05.44 | rmt: rispondi 1 per set_par_sch_03
+30/07/13 | 16.10.27 | rmt: esegui set_par_sch_04 3 2 con dati aggiuntivi
+30/07/13 | 16.10.27 | rmt: rispondi 1 per set_par_sch_04
+30/07/13 | 16.10.33 | rmt: esegui set_par_sch_04 3 1 con dati aggiuntivi
+30/07/13 | 16.10.34 | rmt: rispondi 1 per set_par_sch_04
+04/02/15 | 14.57.40 | rmt: esegui set_par_sch_04 3 1 con dati aggiuntivi
+04/02/15 | 14.57.40 | rmt: rispondi 1 per set_par_sch_04
+24/03/15 | 07.54.20 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+24/03/15 | 07.54.21 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/03/15 | 07.54.21 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 07.54.22 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 07.54.44 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+24/03/15 | 07.54.45 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/03/15 | 07.54.45 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 07.54.45 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 07.58.02 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+24/03/15 | 07.58.03 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/03/15 | 07.58.04 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 07.58.04 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 07.58.19 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+24/03/15 | 07.58.20 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/03/15 | 07.58.20 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 07.58.20 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 08.02.12 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+24/03/15 | 08.02.13 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/03/15 | 08.02.14 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 08.02.14 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 08.02.27 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+24/03/15 | 08.02.27 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/03/15 | 08.02.28 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 08.02.28 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 08.03.56 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+24/03/15 | 08.03.57 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/03/15 | 08.03.57 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 08.03.58 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 08.04.11 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+24/03/15 | 08.04.12 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/03/15 | 08.04.12 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 08.04.13 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 08.05.36 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+24/03/15 | 08.05.37 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/03/15 | 08.05.38 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 08.05.38 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 08.05.51 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+24/03/15 | 08.05.52 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/03/15 | 08.05.52 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 08.05.52 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 08.15.39 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+24/03/15 | 08.15.40 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/03/15 | 08.15.41 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 08.15.41 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 08.17.40 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+24/03/15 | 08.17.41 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/03/15 | 08.17.41 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 08.17.42 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 08.47.49 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+24/03/15 | 08.47.50 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+24/03/15 | 08.47.51 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 08.47.51 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+24/03/15 | 08.48.07 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+24/03/15 | 08.48.08 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+24/03/15 | 08.48.08 | rmt: rispondi 1 per set_par_sch_01
+24/03/15 | 08.48.09 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+08/07/15 | 10.06.25 | rmt: esegui set_par_sch_04 3 2 con dati aggiuntivi
+08/07/15 | 10.06.26 | rmt: rispondi 1 per set_par_sch_04
+08/07/15 | 10.06.50 | rmt: esegui set_par_sch_04 3 1 con dati aggiuntivi
+08/07/15 | 10.06.50 | rmt: rispondi 1 per set_par_sch_04
+08/07/15 | 10.58.31 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+08/07/15 | 10.58.33 | rmt: rispondi 1 per set_par_sch_03
+03/03/16 | 09.53.59 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+03/03/16 | 09.54.00 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+03/03/16 | 09.54.00 | rmt: rispondi 1 per set_par_sch_01
+03/03/16 | 09.54.01 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+03/03/16 | 09.55.59 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+03/03/16 | 09.56.01 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+03/03/16 | 09.56.01 | rmt: rispondi 1 per set_par_sch_01
+03/03/16 | 09.56.01 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+02/02/17 | 16.18.31 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+02/02/17 | 16.18.32 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+02/02/17 | 16.18.33 | rmt: rispondi 1 per set_par_sch_01
+02/02/17 | 16.18.33 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+02/02/17 | 16.19.53 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+02/02/17 | 16.19.54 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+02/02/17 | 16.19.54 | rmt: rispondi 1 per set_par_sch_01
+02/02/17 | 16.19.55 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+02/02/17 | 16.23.03 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+02/02/17 | 16.23.04 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+02/02/17 | 16.23.04 | rmt: rispondi 1 per set_par_sch_01
+02/02/17 | 16.23.05 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+17/05/17 | 16.06.14 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+17/05/17 | 16.06.16 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+17/05/17 | 16.06.16 | rmt: rispondi 1 per abilitazioni_sch
+17/05/17 | 16.06.16 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+17/05/17 | 16.41.05 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+17/05/17 | 16.41.06 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+17/05/17 | 16.41.07 | rmt: rispondi 1 per abilitazioni_sch
+17/05/17 | 16.41.07 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+17/05/17 | 16.41.16 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+17/05/17 | 16.41.17 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+17/05/17 | 16.41.18 | rmt: rispondi 1 per abilitazioni_sch
+17/05/17 | 16.41.18 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+17/05/17 | 16.41.31 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+17/05/17 | 16.41.32 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+17/05/17 | 16.41.32 | rmt: rispondi 1 per abilitazioni_sch
+17/05/17 | 16.41.32 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+17/05/17 | 16.41.40 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+17/05/17 | 16.41.42 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+17/05/17 | 16.41.42 | rmt: rispondi 1 per abilitazioni_sch
+17/05/17 | 16.41.42 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+17/05/17 | 17.03.15 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+17/05/17 | 17.03.17 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+17/05/17 | 17.03.17 | rmt: rispondi 1 per abilitazioni_sch
+17/05/17 | 17.03.17 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+20/01/18 | 09.28.35 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+20/01/18 | 09.28.36 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+20/01/18 | 09.28.37 | rmt: rispondi 1 per abilitazioni_sch
+20/01/18 | 09.28.37 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+20/01/18 | 09.31.29 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+20/01/18 | 09.31.29 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+20/01/18 | 09.31.30 | rmt: rispondi 1 per abilitazioni_sch
+20/01/18 | 09.31.30 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+20/01/18 | 09.31.38 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+20/01/18 | 09.31.39 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+20/01/18 | 09.31.39 | rmt: rispondi 1 per abilitazioni_sch
+20/01/18 | 09.31.40 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+20/01/18 | 09.33.40 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+20/01/18 | 09.33.41 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+20/01/18 | 09.33.42 | rmt: rispondi 1 per abilitazioni_sch
+20/01/18 | 09.33.42 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/01/18 | 11.43.00 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+22/01/18 | 11.43.02 | rmt: rispondi 1 per set_par_sch_03
+22/01/18 | 11.44.41 | rmt: esegui set_par_sch_03 1 1 con dati aggiuntivi
+22/01/18 | 11.44.43 | rmt: rispondi 1 per set_par_sch_03
+26/12/18 | 09.52.16 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+26/12/18 | 09.52.16 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+26/12/18 | 09.52.17 | rmt: rispondi 1 per abilitazioni_sch
+26/12/18 | 09.52.17 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+26/12/18 | 09.53.40 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+26/12/18 | 09.53.41 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+26/12/18 | 09.53.42 | rmt: rispondi 1 per abilitazioni_sch
+26/12/18 | 09.53.42 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+26/12/18 | 09.54.33 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+26/12/18 | 09.54.34 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+26/12/18 | 09.54.35 | rmt: rispondi 1 per abilitazioni_sch
+26/12/18 | 09.54.35 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+26/12/18 | 09.54.40 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+26/12/18 | 09.54.42 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+26/12/18 | 09.54.42 | rmt: rispondi 1 per abilitazioni_sch
+26/12/18 | 09.54.42 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+26/12/18 | 09.55.04 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+26/12/18 | 09.55.05 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+26/12/18 | 09.55.05 | rmt: rispondi 1 per abilitazioni_sch
+26/12/18 | 09.55.06 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+26/12/18 | 09.55.24 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+26/12/18 | 09.55.26 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+26/12/18 | 09.55.26 | rmt: rispondi 1 per abilitazioni_sch
+26/12/18 | 09.55.27 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+26/12/18 | 10.07.22 | rmt: esegui abilitazioni_sch 1 1 con dati aggiuntivi
+26/12/18 | 10.07.23 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 1 con dati aggiuntivi
+26/12/18 | 10.07.23 | rmt: rispondi 1 per abilitazioni_sch
+26/12/18 | 10.07.23 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+26/12/18 | 10.47.46 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+26/12/18 | 10.47.48 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+26/12/18 | 10.47.48 | rmt: rispondi 1 per abilitazioni_sch
+26/12/18 | 10.47.48 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+04/03/19 | 12.35.52 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+04/03/19 | 12.35.54 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+04/03/19 | 12.35.54 | rmt: rispondi 1 per abilitazioni_sch
+04/03/19 | 12.35.55 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+04/03/19 | 12.40.19 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+04/03/19 | 12.40.21 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+04/03/19 | 12.40.21 | rmt: rispondi 1 per abilitazioni_sch
+04/03/19 | 12.40.22 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+04/03/19 | 12.43.21 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+04/03/19 | 12.43.24 | rmt: rispondi -10 per abilitazioni_sch
+04/03/19 | 12.43.30 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+04/03/19 | 12.43.32 | rmt: rmt occupata abilitazioni_sch 1 2 con dati aggiuntivi
+04/03/19 | 12.43.33 | rmt: rispondi -10 per abilitazioni_sch
+04/03/19 | 12.43.36 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+04/03/19 | 12.43.39 | rmt: rispondi -10 per abilitazioni_sch
+04/03/19 | 12.43.47 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+04/03/19 | 12.43.50 | rmt: rispondi -10 per abilitazioni_sch
+04/03/19 | 12.43.54 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+04/03/19 | 12.43.59 | rmt: rispondi -10 per abilitazioni_sch
+04/03/19 | 12.46.24 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+04/03/19 | 12.46.26 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+04/03/19 | 12.46.26 | rmt: rispondi 1 per abilitazioni_sch
+04/03/19 | 12.46.26 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+04/03/19 | 15.04.55 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+04/03/19 | 15.04.57 | rmt: rispondi 1 per set_par_sch_03
+04/03/19 | 15.08.15 | rmt: esegui set_par_sch_03 1 2 con dati aggiuntivi
+04/03/19 | 15.08.17 | rmt: rispondi 1 per set_par_sch_03
+07/03/19 | 10.34.26 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+07/03/19 | 10.34.27 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+07/03/19 | 10.34.27 | rmt: rispondi 1 per abilitazioni_sch
+07/03/19 | 10.34.28 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/10/19 | 13.26.01 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+16/10/19 | 13.26.03 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+16/10/19 | 13.26.03 | rmt: rispondi 1 per set_par_sch_01
+16/10/19 | 13.26.04 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/10/19 | 13.32.00 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+16/10/19 | 13.32.01 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/10/19 | 13.32.01 | rmt: rispondi 1 per set_par_sch_01
+16/10/19 | 13.32.02 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/03/21 | 14.03.11 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+22/03/21 | 14.03.13 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+22/03/21 | 14.03.13 | rmt: rispondi 1 per abilitazioni_sch
+22/03/21 | 14.03.13 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/03/21 | 14.03.17 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+22/03/21 | 14.03.19 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+22/03/21 | 14.03.19 | rmt: rispondi 1 per abilitazioni_sch
+22/03/21 | 14.03.19 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/03/21 | 14.06.07 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+22/03/21 | 14.06.09 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+22/03/21 | 14.06.09 | rmt: rispondi 1 per abilitazioni_sch
+22/03/21 | 14.06.09 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/03/21 | 14.06.13 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+22/03/21 | 14.06.15 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+22/03/21 | 14.06.15 | rmt: rispondi 1 per abilitazioni_sch
+22/03/21 | 14.06.15 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/03/21 | 14.07.09 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+22/03/21 | 14.07.11 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+22/03/21 | 14.07.11 | rmt: rispondi 1 per abilitazioni_sch
+22/03/21 | 14.07.11 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/03/21 | 15.16.54 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+22/03/21 | 15.16.56 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+22/03/21 | 15.16.56 | rmt: rispondi 1 per abilitazioni_sch
+22/03/21 | 15.16.56 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/03/21 | 15.33.41 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+22/03/21 | 15.33.42 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+22/03/21 | 15.33.43 | rmt: rispondi 1 per abilitazioni_sch
+22/03/21 | 15.33.43 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/03/21 | 15.44.12 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+22/03/21 | 15.44.13 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+22/03/21 | 15.44.13 | rmt: rispondi 1 per abilitazioni_sch
+22/03/21 | 15.44.14 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/03/21 | 15.44.19 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+22/03/21 | 15.44.21 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+22/03/21 | 15.44.21 | rmt: rispondi 1 per abilitazioni_sch
+22/03/21 | 15.44.21 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+22/03/21 | 15.45.06 | rmt: esegui abilitazioni_sch 1 2 con dati aggiuntivi
+22/03/21 | 15.45.08 | rmt: esegui rmt_sta_bar_ric_plc_auto 1 2 con dati aggiuntivi
+22/03/21 | 15.45.08 | rmt: rispondi 1 per abilitazioni_sch
+22/03/21 | 15.45.08 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+16/05/23 | 11.00.53 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+16/05/23 | 11.00.54 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+16/05/23 | 11.00.54 | rmt: rispondi 1 per set_par_sch_01
+16/05/23 | 11.00.55 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/05/23 | 10.19.04 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+25/05/23 | 10.19.05 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+25/05/23 | 10.19.05 | rmt: rispondi 1 per set_par_sch_01
+25/05/23 | 10.19.06 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/05/23 | 10.22.32 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+25/05/23 | 10.22.33 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+25/05/23 | 10.22.34 | rmt: rispondi 1 per set_par_sch_01
+25/05/23 | 10.22.34 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+25/05/23 | 10.29.28 | rmt: esegui set_par_sch_04 3 2 con dati aggiuntivi
+25/05/23 | 10.29.28 | rmt: rispondi 1 per set_par_sch_04
+25/05/23 | 10.29.28 | rmt: esegui set_par_sch_04 3 1 con dati aggiuntivi
+25/05/23 | 10.29.29 | rmt: rispondi 1 per set_par_sch_04
+25/05/23 | 10.29.29 | rmt: esegui set_par_sch_04 3 2 con dati aggiuntivi
+25/05/23 | 10.29.30 | rmt: rispondi 1 per set_par_sch_04
+30/08/23 | 10.47.47 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+30/08/23 | 10.47.47 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+30/08/23 | 10.47.48 | rmt: rispondi 1 per set_par_sch_01
+30/08/23 | 10.47.48 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+30/08/23 | 10.48.01 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+30/08/23 | 10.48.02 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+30/08/23 | 10.48.03 | rmt: rispondi 1 per set_par_sch_01
+30/08/23 | 10.48.03 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+02/10/23 | 09.05.00 | rmt: esegui dia_sch_tag_sch 2 1 con dati aggiuntivi
+02/10/23 | 09.05.01 | rmt: rispondi 1 per dia_sch_tag_sch
+02/10/23 | 09.06.26 | rmt: esegui dia_sch_tag_sch 2 2 con dati aggiuntivi
+02/10/23 | 09.06.27 | rmt: rispondi 1 per dia_sch_tag_sch
+02/10/23 | 09.06.45 | rmt: esegui dia_sch_tag_sch 2 2 con dati aggiuntivi
+02/10/23 | 09.06.45 | rmt: rispondi 1 per dia_sch_tag_sch
+02/10/23 | 09.07.02 | rmt: esegui dia_sch_tag_sch 2 1 con dati aggiuntivi
+02/10/23 | 09.07.02 | rmt: rispondi 1 per dia_sch_tag_sch
+02/10/23 | 09.07.31 | rmt: esegui dia_sch_tag_sch 2 2 con dati aggiuntivi
+02/10/23 | 09.07.31 | rmt: rispondi 1 per dia_sch_tag_sch
+02/10/23 | 09.29.20 | rmt: esegui dia_sch_tag_sch 2 1 con dati aggiuntivi
+02/10/23 | 09.29.21 | rmt: rispondi 1 per dia_sch_tag_sch
+02/10/23 | 09.29.40 | rmt: esegui dia_sch_tag_sch 2 2 con dati aggiuntivi
+02/10/23 | 09.29.40 | rmt: rispondi 1 per dia_sch_tag_sch
+07/08/24 | 09.53.50 | rmt: esegui set_par_sch_01 1 1 con dati aggiuntivi
+07/08/24 | 09.53.50 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 1 con dati aggiuntivi
+07/08/24 | 09.53.51 | rmt: rispondi 1 per set_par_sch_01
+07/08/24 | 09.53.51 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+07/08/24 | 09.54.05 | rmt: esegui set_par_sch_01 1 2 con dati aggiuntivi
+07/08/24 | 09.54.07 | rmt: esegui rmt_sta_bar_ric_plc_auto 0 2 con dati aggiuntivi
+07/08/24 | 09.54.07 | rmt: rispondi 1 per set_par_sch_01
+07/08/24 | 09.54.08 | rmt: rispondi 1 per rmt_sta_bar_ric_plc_auto
+10/12/25 | 10.14.05 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+10/12/25 | 10.14.05 | rmt: rispondi 1 per rmt_plc_pag_pro
+22/06/26 | 18.25.38 | rmt: esegui rmt_plc_pag_pro 9 0 con dati aggiuntivi
+22/06/26 | 18.25.38 | rmt: rispondi 1 per rmt_plc_pag_pro

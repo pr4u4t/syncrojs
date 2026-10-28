@@ -1,0 +1,1090 @@
+******STAG Versione del 06/09/01******
+
+Differenze rispetto alla versione del 20/06/01:
+
+(Simone Paolinelli)
+
+1. Risolto problema inserimento lunghezza > 3276 (da integer a long)
+
+2. Tolta la bind su comunicazione rete con SPDE. Introdotto Timer per tale comunicazione per mantenerla attiva: com_spde_lan.SendData ""
+
+3. Risolto problema inserimento allarmi in lingua: subroutine sal_des della form imp_all
+
+4. Comunicazione con gli azionamenti (in configurazione): introdotto messaggio di invio parziale dei parametri (alcuni parametri non trasmessi)
+
+5. Modificata la MaxLength di un parametro di configurazione macchina (da 3 a 4)
+
+
+
+******STAG Versione del 16/10/01******
+
+Differenze rispetto alla versione del 06/09/01:
+
+(Simone Paolinelli)
+
+1. Risolto problema di overflow in seguito a lettura di un valore errato su PLC: evito la lettura dei report di produzione per i livelli non presenti nella macchina.
+OSSERVAZIONE : Il vero problema deve comunque essere risolto a livello di PLC visto che è capitato il seguente caso: letto un valore fuori range
+per il tipo long (+2.147.483.648) per il livello medio quando la macchina ha due livelli.
+
+2. Risolto problema in fase di validazione ordini (in particolari casi di modifica ordine accettava un ordine avente formato con indice 1 nullo e formato con indice 2
+riempito nei suoi dati di lavorazione).
+
+
+
+******STAG Versione del 19/10/01******
+
+Differenze rispetto alla versione del 16/10/01:
+
+(Simone Paolinelli)
+
+1. Modificato codice in abilitazioni.frm per renderlo pienamente compatibile al Visual Basic 6 (ActiveControl.value)
+
+
+
+******STAG Versione del 24/10/01******
+
+Differenze rispetto alla versione del 19/10/01:
+
+(Simone Paolinelli)
+
+1. Inserito nei LOG l'identificativo ordine attribuito da SPDE (non solo quello di STAG) in tutte quelle stringhe che prevedono tale informazione.
+
+
+******STAG Versione del 07/11/01******
+
+Differenze rispetto alla versione del 24/10/01:
+
+(Simone Paolinelli)
+
+1. Modificata stringa inviata ad SPDE col protocollo Digitec nel caso di comando richiesta stato: invece di inviare una stringa i cui primi due
+caratteri sono spazi si inviano due "0".
+
+
+******STAG Versione del 17/12/01******
+
+Differenze rispetto alla versione del 07/11/01:
+
+(Simone Paolinelli)
+
+1. Modifica per introdurre nei file delle frequenze allarme e storico allarme gli allarmi tradotti in lingua (già nella fase di caricamento
+del programma). Fino a tale modifica, gli allarmi che si trovavano attivi al caricamento del programma venivano inseriti in italiano nei file suddetti.
+
+
+******STAG Versione del 24/01/02******
+
+Differenze rispetto alla versione del 17/12/01:
+
+(Simone Paolinelli)
+
+1. Resa standard la modifica fatta per l'impianto di Linpac Atlanta in cui era presente Escada: tale modifica, relativa al protocollo col punto unico, prevede che, qualora si riceva il formato 2 di un ordine e non sia ancora stato ricevuto il formato 1 dello stesso, vengano resettate le strutture interne di STAG in modo da poter ricevere nuovamente l'intero ordine. La modifica si è resa necessaria in quanto ci sono stati casi di perdite di stringhe nella comunicazione (rete e seriale).
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+*Versione 1.0.0                  Versione Plc relativa:  XX0MST2130010.SWP
+Autore Modifica:        Lenzoni -Pieri
+Supervisore:            Disperati Icilio
+Note:   Le prove sono state simulate in ufficio fra SPDE (nuova dll tag_bsh) e STAG
+
+01. Unificazione dei codici di errore fra SPDE,PMAC,STEP,STAG
+02. Revisione del protocollo di comunicazione v 2.0.0 (CSC) per formattare uniformemente le risposte di STAG e restituire i codici di errore. Il protocollo è descritto nel documento AINSMST00001ITA.doc
+03. si è cambiato il controllo sul numero di livelli per permetterne la scrittura su file STAG.INI
+04. Correzione per evitare che si generi un errore di runtime. Si è posta la val sul variant v per evitare di far finire degli 0 binari nella funzione Hex(v).
+05. Si è generata la funzione inc_prg_bar_ini in cui si controlla che .value non diventi mai maggiore di .max
+06. Si è modificata la parte di controllo dei dati immessi nella Private Sub eve_key_F3 della set_par_mac.frm
+07. Viene salvata la struttura par_abi_ute nella par_abi tutte le volte che si cambia configurazione
+
+
+>PATTERN DI MODIFICA 'Loc. UTP 21.02.02 Pieri - Lenzoni
+
+- Unificazione dei codici di errore fra SPDE,PMAC,STEP,STAG
+
+FATTE:
+01. Modificato file codici_errore.txt inserendo gli errori di validazione specifici di STAG
+
+>PATTERN DI MODIFICA 'Pieri Lenzoni LOC. UTP 22-02-2002
+
+- Revisione del protocollo di comunicazione v 2.0.0 (CSC) per formattare uniformemente le risposte di STAG e restituire i codici di errore. Il protocollo è descritto nel documento AINSMST00001ITA.doc
+
+FATTE:
+01. Modificato modulo com_spde_bas subroutine ric_dat_spde per uniformare le risposte da STAG in caso di errore di check sum, errore nella lunghezza dei messaggi ricevuti e valorizzazione dei codici errore riscontrati
+
+>PATTERN DI MODIFICA 'NC220816Arturo Uff 22-07-02
+- si è cambiato il controllo sul numero di livelli per permetterne la scrittura su file STAG.INI
+
+FATTE:
+01. set_par_mac.frm nella Private Sub eve_key_F3 si controlla che il numero di livelli sia compreso fra 1 e 3 e relativa assegnazione.
+
+>PATTERN DI MODIFICA 'Arturo uff 23-07-02
+- Correzione per evitare che si generi un errore di runtime. Si è posta la val sul variant v per evitare di far finire degli 0 binari nella funzione Hex(v).
+
+FATTE:
+01. uti_stag.bas nella Function int_esa messo il val(v)
+
+>PATTERN DI MODIFICA 'Arturo uff 25-07-02
+- Si è generata la funzione inc_prg_bar_ini in cui si controlla che .value non diventi mai maggiore di .max
+- Si è modificata la parte di controllo dei dati immessi nella Private Sub eve_key_F3 della set_par_mac.frm
+
+FATTE:
+01. principale.bas Sub load_form sostituiti tutti i 'Frm_ini.prg_bar_ini.value = Frm_ini.prg_bar_ini.value + 1' con 'inc_prg_bar_ini'
+02. principale.bas Sub Main sostituiti tutti i 'Frm_ini.prg_bar_ini.value = Frm_ini.prg_bar_ini.value + 1' con 'inc_prg_bar_ini'
+03. uti_stag.bas generata Sub inc_prg_bar_ini
+04. com_lenze.bas Public Sub set_cod_azi sostituiti tutti i 'Frm_ini.prg_bar_ini.value = Frm_ini.prg_bar_ini.value + 1' con 'inc_prg_bar_ini'
+05. collezione_ordini.cls Friend Sub Leg_dat_ord sostituiti tutti i 'Frm_ini.prg_bar_ini.value = Frm_ini.prg_bar_ini.value + 1' con 'inc_prg_bar_ini'
+06. ini_bas.bas Sub leg_par_mac sostituiti tutti i 'Frm_ini.prg_bar_ini.value = Frm_ini.prg_bar_ini.value + 1' con 'inc_prg_bar_ini'
+07. lingue_stag.bas Sub set_all sostituiti tutti i 'Frm_ini.prg_bar_ini.value = Frm_ini.prg_bar_ini.value + 1' con 'inc_prg_bar_ini'
+08. lingue_stag.bas Sub set_msg sostituiti tutti i 'Frm_ini.prg_bar_ini.value = Frm_ini.prg_bar_ini.value + 1' con 'inc_prg_bar_ini'
+09. lingue_stag.bas Sub imposta sostituiti tutti i 'Frm_ini.prg_bar_ini.value = Frm_ini.prg_bar_ini.value + 1' con 'inc_prg_bar_ini'
+10. lingue_stag.bas Sub Leggi sostituiti tutti i 'Frm_ini.prg_bar_ini.value = Frm_ini.prg_bar_ini.value + 1' con 'inc_prg_bar_ini'
+11. set_par_mac.frm Private Sub eve_key_F3 cambiati controlli dati immessi
+
+>PATTERN DI MODIFICA 'Arturo uff 26-07-02
+- Viene salvata la struttura par_abi_ute nella par_abi tutte le volte che si cambia configurazione
+
+FATTE:
+01. abilitazioni.frm Private Sub fun_mot_Click
+
+
+*Versione 1.1.0                  Versione Plc relativa:  XX0MST2130010.SWP
+Autore Modifica:        Palmerini Arturo
+Supervisore:            Disperati Icilio
+Data:  05-11-02
+
+MODIFICHE:
+01. Inserito la differenziazione delle curve di taglio anche relativamente alla grammautura massima del cartone
+02. Modificata la funzione err_cut_to_mark per gestione del controllo del bit di cut to mark
+03. Potenziamento log della sub dig_ric_dat_spde: protocollo Fosber1.0
+04. Gestione dell'azzeramento della stringa di ricezione str
+05. Potenziamento plc.log - log con plc -
+06. Potenziamento sch_tag.log - log con scheda di taglio -
+07. Potenziamento can_log - log con Azionamenti Lenze -
+08. Inserimento gestione label di versione su form_ini (stessa logica di SPDE)
+09. Inserimento salvataggio dei log premendo tasti Ctrl + Shift + L (stessa logica di SPDE)
+10. Problema di visualizzazione dei dati su sta_bar
+11. Inserito controllo su validità informazione di livello (monolivllo: SUP; doppio: SUP, INF; triplo: SUP, INF, MED) inviato da remoto
+12. Corretto problema run time error causato da un'assegnazione di un intero ad una stringa
+13. Ricostruzione in automatico dei file indice dei dbf
+14. Correzione errore di runtime durante compattazione del db sto.dbf (2)
+15. Cambiato il controllo sulla massima canna con la larghezza massima dei formati
+16. Cambiata gestione della lunghezza dei Sandwich, se imposto rulletti Lunghezza = 0 se Sandwich = default da stag.ini
+
+>PATTERN DI MODIFICA 'Arturo uff 05-11-02
+- Inserito la differenziazione delle curve di taglio anche relativamente alla grammautura massima del cartone
+
+FATTE:
+01. Modulo TIP_STAG.bas (generale) (dichiarazioni) aggiunto tipo enumerato tip_gra_car
+02. Modulo TIP_STAG.bas (generale) (dichiarazioni) aggoimto campo gra_car al tipo tip_car_tec
+03. Form set_par_mac.frm Private Sub Fil_par_mac aggiunta inizializzazione combo box cmb_gra_car
+04. Form set_par_mac.frm Sub scr_par_mac_ute memorizzazione del dato nella struttura globale par_mac_ute
+05. Form set_par_mac.frm Private Sub eve_key_F3 inserito controllo su valore grammatura e salvataggio nella struttura globale par_mac
+06. Modulo Lingue_stag.bas Sub set_msg inserito messaggio di errore
+07. Modulo Ges_file.bas Sub cos_cur_tag modificata la sub per permettere la ricostruzione del db con il dato di grammatura del cartone
+08. Modulo Ges_file.bas Sub cos_par_cfg modificata la sub per permettere la ricostruzione del db con il dato di grammatura del cartone
+09. Modulo Ini_bas.bas Sub scr_par_mac scrittura del parametro di grammatura sullo stag.ini
+10. Modulo Ini_bas.bas Sub leg_par_mac lettura del parametro di grammatura dallo stag.ini
+11. Form leg_cfg.frm Sub ini_dbf caricamento impostazioni delle schede di taglio
+12. Form leg_cfg.frm Private Sub eve_key_F11 controllo consistenza dati prima di salvare
+13. Form ini_dbf
+14. Modulo par_cfg_sch_tag Function tro_cfg inserita ricerca per grammatura
+15. Modulo par_cfg_sch_tag Sub set_cfg_att inserito controllo anche su grammatura max cartone
+16. Modulo sch_tag_bas,bas Public Sub conferma_cfg_all_liv inserito controllo anche su grammatura max cartone
+17. Modulo sch_tag_bas,bas Public Sub conferma_cfg_liv inserito controllo anche su grammatura max cartone
+18. Modulo par_cfg_sch_tag Sub salva_cfg_def inserito controllo anche su grammatura max cartone
+19. Modulo par_cfg_sch_tag Sub salva_cfg_att inserito controllo anche su grammatura max cartone
+20. Modulo par_cfg_sch_tag Sub modifica_cfg inserito controllo anche su grammatura max cartone
+21. Modulo par_cfg_sch_tag Sub leggi_cfg inserito controllo anche su grammatura max cartone
+22. Modulo par_cfg_sch_tag Public Function trova_cfg_adatta inserito controllo anche su grammatura max cartone
+23. Form del_cfg.frm (generale) (dichiarazioni) aggiunta dichiarazione grammatura
+24. Form del_cfg.frm Sub ini_dbf inserito controllo anche su grammatura max cartone
+25. Form del_cfg.frm Private Sub eve_key_F11 modificata la entry di cancella_cfg
+26. Form del_cfg.frm Private Sub Form_Activate aggiunta inizializzazione grammatura
+27. Modulo par_cur_tag.bas Function carica_new_par_cur_tag inserito controllo anche su grammatura max cartone
+28. Modulo par_cur_tag.bas Sub leggi_par_cur_tag inserito controllo anche su grammatura max cartone
+29. Modulo par_cur_tag.bas Sub scr_par_cur_tag_dbf inserito controllo anche su grammatura max cartone
+30. Form Abilitazioni.frm Private Sub fun_mot_Click
+
+>PATTERN DI MODIFICA 'Icilio e Arturo 11-11-02
+- Modificata la funzione err_cut_to_mark per gestione del controllo del bit di cut to mark
+
+FATTE
+01. Modulo Validazione_ordini.bas Function err_cut_to_mark, correzione validazione ordini cut to mark
+
+>PATTERN DI MODIFICA 'Arturo uff 12-11-02
+- Potenziamento log della sub dig_ric_dat_spde: protocollo Fosber1.0 (1)
+- Gestione dell'azzeramento della stringa di ricezione str (2)
+- Potenziamento plc.log - log con plc - (3)
+- Potenziamento sch_tag.log - log con scheda di taglio - (4)
+- Potenziamento can_log - log con Azionamenti Lenze - (5)
+
+FATTE:
+01. Modulo Com_spde_bas.bas Sub dig_ric_dat_spde (1) (2)
+02. Modulo Principale sub Main (1) loggato l'avvio di stag
+03. Modulo di classe Classe_stato.cls (3) loggato anche ricezione dei DM3600-3699
+04. Modulo Omron_plc.bas Sub snd_str_PLC (3) loggato l'invio della stringa sul plc ogni cambiamento della stringa
+05. Modulo Com_sch_di_tag_bas.bas Sub snd_str_sch_tag (4) loggato invio verso scheda di taglio
+06. Form sta_bar.frm Private Sub com_sch_tag_OnComm (4) loggata ricezione da scheda di taglio
+07. Modulo com_lenze Function snd_par_rul_ing (5)
+
+>PATTERN DI MODIFICA 'Arturo uff 13-11-02
+- Inserimento gestione label di versione su form_ini (stessa logica di SPDE)
+
+FATTE:
+01. Form frm_ini.frm inserita label Vrs_nmb
+02. Modulo Principale.bas sub Main inserita scrittura versione su stag.ini
+03. Form frm_ini.frm Private Sub Form_Load apiciata la gestione con variabili di progetto
+
+>PATTERN DI MODIFICA 'Arturo uff 26-11-02
+- Inserimento salvataggio dei log premendo tasti Ctrl + Shift + L (stessa logica di SPDE) (1)
+- Problema di visualizzazione dei dati su sta_bar (2)
+
+FATTE:
+01. Modulo di classe key.cls Private Sub Ges_Key inserito case vbKeyL (1)
+02. Modulo uti_stag.bas Sub Salva_log copiata funzione da SPDE (1)
+03. Modulo Principale.bas Sub Main spostate dichiarazioni degli oggetti prima di caricare le form (2)
+
+>PATTERN DI MODIFICA 'Arturo uff 07-02-03
+- Inserito controllo su validità informazione di livello (monolivllo: SUP; doppio: SUP, INF; triplo: SUP, INF, MED) inviato da remoto
+- Corretto problema run time error causato da un'assegnazione di un intero ad una stringa
+FATTE:
+01. Modulo validazione_ordini.bas Function err_ass_liv si controlla il livello inviato relativamente alla tipologia dell'impianto
+02. Modulo validazione_ordini.bas Function err_abi_liv tolta la val sulla stringa
+
+>PATTERN DI MODIFICA 'Arturo uff 08-02-03
+- Ricostruzione in automatico dei file indice dei dbf (1)
+- Correzione errore di runtime durante compattazione del db sto.dbf (2)
+FATTE:
+01. Modulo ges_file.bas Sub chk_fil inserita ricostruzione dei ndx e ini dove necessario
+02. Modulo ges_file.bas Sub ric_ind creata funzione per la ricostruzione dei file indice
+03. Modulo ges_file.bas Sub del_sto tolta la rs.Edit
+04. Form sto_all.frm Sub comp_sto cambiata la funzione di compattazione aggiungendo gestione errori
+
+>PATTERN DI MODIFICA 'Arturo uff 19-02-03
+- Cambiato il controllo sulla massima canna con la larghezza massima dei formati
+FATTE:
+01. Modulo validazione_ordini.bas Sub val_ord tolta vecchia funzione su altezza bobina aggiunta nuova su dimensione formati
+02. Modulo validazione_ordini.bas Function err_lar_max_for generata funzione
+
+*Versione 1.1.1                  Versione Plc relativa:  XX0MST2130010.SWP
+Autore Modifica:        Palmerini Arturo
+Supervisore:            Disperati Icilio
+Data:  21-02-03
+
+MODIFICHE:
+01. (pmMST020) Cambiata gestione della lunghezza dei Sandwich, se imposto rulletti Lunghezza = 0 se Sandwich = default da stag.ini
+02. (pmMST021) Inserito nr. massimo giri motore differenziato per livello su par_cfg.dbf
+03. Corretto controllo sui limiti del db par_cfg.dbf nella form. Si generava un errore di run-time perchè si andava a leggere il record precedente al primo
+04. (pmMST023) Inserito messaggio di allarme nella pagina impostazioni che si attiva quando si disabilita uno o più motori sullo stesso livello
+05. (pmMST011) Inserita textbox tempo anticipo chiusura flap.
+06. cambiato evento di compattazione del db sto.dbf: si compatta solo la prima volta che si richiama la form
+07. cambiato default impostazione rulletti da 0 a 470
+08. (pmMST029) Cambiato set di caratteri ammesso per il campo codice commessa
+09. abilitato controllo esecuzione operazioni sulla form abilitazioni anche sul tasto space
+
+>PATTERN DI MODIFICA 'Arturo uff 20-02-03
+- (pmMST020) Cambiata gestione della lunghezza dei Sandwich, se imposto rulletti Lunghezza = 0 se Sandwich = default da stag.ini
+FATTE:
+01. Form set_par_mac.frm Sub scr_par_mac_ute assegnazione del nuovo valore
+02. Form set_par_mac.frm Sub eve_key_F3 scrittura dei parametri nella struttura par_mac a partire da par_mac_ute
+
+>PATTERN DI MODIFICA 'Arturo uff 21-02-03
+- (pmMST021) Inserito nr. massimo giri motore differenziato per livello su par_cfg.dbf
+FATTE:
+01. Form set_par_mac.frm Sub scr_par_mac_ute assegnazione del nuovo valore
+02. Modulo Tip_stag.bas (generale) (dichiarazioni) tolto gir_max_mot_lam dalla struttura tip_sch_tag_liv
+03. Modulo Tip_stag.bas (generale) (dichiarazioni) aggiunto gir_max_mot_lam dalla struttura tip_par_cfg_sch_tag_liv
+04. Modulo Par_cfg_sch_tag.bas Public Function trova_cfg_adatta inserito dato di velocità massima motore
+05. Modulo Ini_bas.bas Sub scr_par_sch_tag_att_liv_ini tolta scrittura nell'ini del parametro di max vel motore
+06. Modulo Ini_bas.bas Sub scr_par_sch_tag_def_liv_ini tolta scrittura nell'ini del parametro di max vel motore
+07. Modulo Ini_bas.bas Sub leg_par_mac tolta lettura dall'ini del parametro di max vel motore
+08. Form set_par_sch_tag1.frm Sub fil_par_sch_tag_def_liv tolta text_box e valorizzazione del parametro di max vel motore
+09. Form set_par_sch_tag1.frm Sub fil_par_sch_tag_liv tolta text_box e valorizzazione del parametro di max vel motore
+10. Form set_par_sch_tag1.frm Sub scr_par_def_ute_liv tolta text_box e valorizzazione del parametro di max vel motore
+11. Form set_par_sch_tag1.frm Sub scr_par_att_ute_liv tolta text_box e valorizzazione del parametro di max vel motore
+12. Modulo sch_tag_bas Sub def_in_att spostata la valorizzazione del numero di giri del motore su nuova struttura
+13. Modulo Par_cfg_sch_tag.bas Sub salva_cfg_def scrive il nuovo valore sul db cfg_mac.dbf
+14. Modulo Par_cfg_sch_tag.bas Sub salva_cfg_att scrive il nuovo valore sul db cfg_mac.dbf
+15. Modulo Par_cfg_sch_tag.bas Sub modifica_cfg scrive il nuovo valore sul db cfg_mac.dbf
+16. Modulo Par_cfg_sch_tag.bas Sub leggi_cfg legge parametro dal db cfg_mac.dbf
+17. Form set_par_sch_tag3.frm Sub fil_par_sch_tag_def_liv inserita text_box e valorizzazione del parametro di max vel motore
+18. Form set_par_sch_tag3.frm Sub fil_par_sch_tag_liv inserita text_box e valorizzazione del parametro di max vel motore
+19. Form set_par_sch_tag3.frm Sub scr_par_att_ute_liv inserita text_box e valorizzazione del parametro di max vel motore
+20. Form set_par_sch_tag3.frm Sub scr_par_def_ute_liv inserita text_box e valorizzazione del parametro di max vel motore
+21. Form set_par_sch_tag3.frm Sub del_txt aggiunto azzeramento della textbox
+22. Modulo ges_file.bas Sub cos_par_cfg ricostruisce il db con la colonna numero giri max del motore
+23. Form leg_cfg.frm Sub agg_lab aggiunta visualizzazione label max nr di giri
+24. Form leg_cfg.frm Sub ini_lab aggiunta inizializzazione label max nr di giri
+25. Form leg_cfg.frm Sub scr_par_ute scrittura nella variabile ute del valore di max nr di giri
+
+>PATTERN DI MODIFICA 'Arturo uff 03-03-03
+- Corretto controllo sui limiti del db par_cfg.dbf nella form. Si generava un errore di run-time perchè si andava a leggere il record precedente al primo
+FATTE:
+01. Form leg_cfg.frm Private Sub Form_KeyDown aggiunta controllo sui limiti del db
+
+>PATTERN DI MODIFICA 'Arturo uff 05-03-03
+- (pmMST023) Inserito messaggio di allarme nella pagina impostazioni che si attiva quando si disabilita uno o più motori sullo stesso livello
+FATTE:
+01. Form abilitazioni.frm Sub chk_abi_mot Generata funzione che fa apparire un messaggio di errore nel caso ci siano dei motori disabilitati
+02. Form abilitazioni.frm Private Sub Form_Activate attivazione del timer per far lampeggiare il testo
+03. Form abilitazioni.frm Private Sub Form_Deactivate disattivazione del timer per far lampeggiare il testo
+04. Form abilitazioni.frm Private Sub fun_mot_Click prima di uscire dalla funzione si controlla lo stato dell'abilitazione dei motori
+05. Form abilitazioni.frm Private Sub tim_frm_abi_Timer inserito timer per far lampeggiare il testo delle textbox
+06. Modulo lingue_stag.bas Sub set_msg inseriti messaggi di allarme in lingua
+
+>PATTERN DI MODIFICA 'Arturo uff 07-03-03
+- (pmMST011) Inserita textbox tempo anticipo chiusura flap.
+FATTE:
+01. Form set_par_rul.frm Sub fil_par_rul_usc_liv inizializzazione valore della text box
+02. Form set_par_rul.frm Sub ini_txt_lab inizializzazione textbox
+03. Form set_par_rul.frm Sub scr_par_ute_rul_usc_liv scrittura valore nella struttura interna a STAG
+04. Form set_par_rul.frm Private Sub txt_tem_chi_fla_GotFocus inserita selezione automatica quando setfocus
+05. Form set_par_rul.frm Private Sub eve_key_F2 abilito i controlli della form
+06. Form set_par_rul.frm Private Sub eve_key_F3 disabilito i controlli della form
+07. Form set_par_rul.frm Private Sub eve_key_esc disabilito i controlli della form
+08. Form set_par_rul.frm Private Sub Form_Activate disabilito i controlli della form
+09. Form set_par_rul.frm Function chk_txt_tem_fla generata funzione di controllo limiti dei valori di anticipo apertura / chiusura flap
+10. Modulo com_lenze.bas Function snd_par_rul_usc si invia al lenze il tempo di chiusura al posto di quello di apertura
+11. Modulo ini_bas.bas Sub ini_val_non_uti inizializzazione della nuova textbox
+12. Modulo ini_bas.bas Sub scr_par_mac salvataggio impostazioni su ini
+13. Modulo ini_bas.bas Sub leg_par_mac lettura impostazioni da ini
+14. Modulo Omron_PLC Sub snd_str_PLC invio 20 dm invece di 17 per allinearmi al documento SPPMST00102.doc
+15. Modulo Omron_PLC Sub rie_dat_par_mac preparazione array invio dato al plc
+16. Modulo Var_STAG.bas (generale) (dichiarazioni) inserita costante di limite per variabile tempo chiusura flap
+17. Modulo tip_stag.bas (generale) (dichiarazioni) inerito parametro nel tipo tip_rul_usc_liv
+
+>PATTERN DI MODIFICA 'Arturo uff 07-04-03
+- cambiato evento di compattazione del db sto.dbf: si compatta solo la prima volta che si richiama la form
+FATTE:
+01. Form sto_all Private Sub Form_Activate compattamento del db sto.dbf solo una volta all'avvio della form (prima che venga tenuto occupato dalla griglia
+
+>PATTERN DI MODIFICA 'Arturo uff 30-04-03
+- cambiato default impostazione rulletti da 0 a 470
+FATTE:
+01. Form set_par_mac Sub scr_par_mac_ute cambiato default da 0 a 470
+02. Modulo var_Stag.bas (generale)(dichiarazioni) generata costante LUN_SAN_RUL inizializzata a 470
+
+>PATTERN DI MODIFICA 'Arturo uff 12-05-03
+- (pmMST029) Cambiato set di caratteri ammesso per il campo codice commessa (1)
+- abilitato controllo esecuzione operazioni sulla form abilitazioni anche sul tasto space (2)
+FATTE:
+01. Modulo Validazione_ordini.bas Function err_cod_com cambiato il set di caratteri (ammessi codici ascii sotto 127|dec e sopra 32|dec) (1)
+02. Form abilitazioni Private Sub liv_Click aggiunto controllo stato macchina (2)
+03. Form abilitazioni Private Sub fun_mot_Click aggiunto controllo stato macchina (2)
+
+*Versione 1.1.2                  Versione Plc relativa:  XX0MST2130018.SWP
+Autore Modifica:        Palmerini Arturo
+Supervisore:            Disperati Icilio
+Data:  09-09-03
+
+MODIFICHE:
+01. (pmMST0033) Inserimento di una soglia per il controllo della tensione massima della batteria di condensatori sulla linea DC Bus.
+02. Aggiornata la classe RMT
+
+>PATTERN DI MODIFICA 'Arturo uff 09-09-03
+- (pmMST0033) Inserimento di una soglia per il controllo della tensione massima della batteria di condensatori sulla linea DC Bus.
+FATTE:
+01. Form set_par_mac.frm Inserita text box per inserimento dato + gestione gotfocus
+02. Form set_par_mac.frm Private Sub Fil_par_mac assegnazione del valore della struttura alla textbox
+03. Form set_par_mac.frm Sub scr_par_mac_ute assegnazione del valore della textbox alla struttura
+03. Form set_par_mac.frm Private Sub eve_key_F3 Salvataggio delle impostazioni su plc
+04. Modulo var_stag (generale) (dichiarazioni) aggiunte costanti di limite
+05. Modulo tip_stag.bas inserita nuovo parametro nella struttura tip_car_tec
+06. Modulo omron_plc.bas Sub rie_dat_par_mac invio dati al plc
+07. Modulo ini_bas.bas Sub scr_par_mac salvataggio del parametro nell'ini
+08. Modulo ini_bas.bas Sub leg_par_mac lettura del parametro dall'ini
+
+>PATTERN DI MODIFICA 'Iciliouff 29-10-2003
+- Aggiornata la classe RMT
+FATTE:
+01. Eliminate l'istanza alla classe com_plc.cls (ist_com_plc) + eliminata la classe com_plc da STAG.vbp (non dal controllo codice sorgente)
+02. Sostituita la classe rmt.cls con quella di PMAC, SPDE
+03. Modulo Tip_stag.bas aggiornata la definizione di Tip_com_plc reintegrando ind_clt,ind_ass per motivi di allineamento codice con SPDE, PMAC
+
+
+*Versione 1.2.0                  Versione Plc relativa:  XX0MST2130018.SWP
+Autore Modifica:        Icilio Disperati
+Supervisore:            Icilio Disperati
+Data:  03-11-03
+
+MODIFICHE:
+01. Sincronizzazione delle comunicazioni fra PLC e schede di taglio e fra STAG ed ogni singolo dispositivo (esclusi gli azionamenti Lenze per ora)
+
+>PATTERN DI MODIFICA 'Iciliouff 03-11-2003
+- Sincronizzazione delle comunicazioni fra PLC e schede di taglio e fra STAG ed ogni singolo dispositivo (esclusi gli azionamenti Lenze per ora)
+FATTE:
+01. Aggiunte RMT gestione operazioni utente (plc, scheda di taglio, macro) gli azionamenti Lenze rimangono per ora esclusi da questo tipo di gestione
+02. Rivista le sincronizzazioni comunicazioni con schede di taglio e plc. Ogni comando operatore è adesso accentrato nel timer principale del programma
+03. E' stata tolta la gestione del TIME OUT con schede di taglio in tim_all_timer
+04. Set_par_sch_tag1 gestito invio curva di taglio per livello a Plc con rollback in caso di RET_BAD (mancata scrittura)
+05. Sono stati gestiti i roll back delle impostazioni dove necessario
+
+*Versione 2.0.0                  Versione Plc relativa:  XX0MST2130018.SWP
+Autore Modifica:        Icilio Disperati
+Supervisore:            Icilio Disperati
+Data:  20-11-03
+
+MODIFICHE:
+01. Inserimento gestione Cut to Pattern automatico
+02. Aggioramenti programma in fase di installazione 3545
+03. Revisione procedura acquisizione pattern + correzione di alcuni bug
+04. Correzione di alcuni bug + traduzioni
+05. Riviste operazioni verso schede di taglio
+06. Implementati reinvio corrente/successivo su operazioni in lista
+07. Modificato calcolo preallarme per livello, ripristinato calcolo quota preposizionamento
+08. Implementata visualizzazione ordini pattern/mark su pagina lista ordini
+
+>PATTERN DI MODIFICA 'Iciliouff 20-11-2003
+- Inserimento gestione Cut to Pattern automatico
+FATTE:
+01. Classe Ordine - Inseriti i nuovi dati x cut to pattern
+02. TIP_STAG.BAS, INI_BAS.BAS - Definito optional cut to pattern e la sua scrittura/lettura su/da .INI
+03. OMRON_PLC.BAS - rie_dat_par_cfg_mac - Inviato bit6 DM3500 in caso di presenza optional cut to pattern
+04. Inseriti nuovi dati di configurazione x cut to pattern su STAG.INI
+05. Validazione_ordini.bas - inserite nuove routine di validazione
+06. Codici_errore.txt - inseriti nuovi codici di errore
+07. Tip_stag.bas - inseriti nuovi comandi x cut to pattern + nuove strutture dati
+
+>PATTERN DI MODIFICA 'Icilio3545 03-01-2004
+- Aggioramenti programma in fase di installazione 3545
+FATTE:
+01. Get_new_dat - corretto problema forzatura cut_to_mar=str_true
+02. Form PATTERN.FRM - corretto problema mancata validazione L1-L10
+03. Modulo VAR_STAG.BAS - Innalzato il limite della misura delle quote L1-L10 a 999 (anzichè 100)
+04. Modulo COM_SPDE_BAS.BAS - corretta la valorizzazione di sca_per_tag
+05. Modulo TIP_STAG.BAS - corretta la struttura x ordine scheda di taglio portando L1-L10 a STRING*4
+06. Modulo PRINCIPALE.BAS - valorizzato diversamente ordine dummy
+
+>PATTERN DI MODIFICA 'Icilio3545 04-01-2004
+- Revisione procedura acquisizione pattern + correzione di alcuni bug
+FATTE:
+01. Form Adj_pat_con.frm - modificati itemdata combo box x contrasto (da 01..04)
+02. Form Adj_pat_con.frm - eve_key_F6 Nascondo il messaggio di acquisizione in corso a procedura terminata
+04. Modulo DLG_TAG_BAS.BAS - Inserito gestione comando invio dato tip_ope_PLC.CONFERMA_DATI_SCHEDE_TAGLIO per rmt_plc
+05. Modulo DLG_TAG_BAS.BAS - Inserito gestione macro di acquisizione contrasto x scheda di taglio - PLC (utilizzata in acquisizione contrasto)
+05. Form Adj_pat_con.frm - definita ed inizializzata nuova rmt per comandi macro
+06. Form Adj_pat_con.frm - gestito comando macro di acquisizione contrasto
+07. Modulo TIP_STAG.BAS - inserito nuovo comando macro ACQ_CON_SCH_PLC
+08. Modulo OMRON.BAS - Loggo su scheda di taglio ogni volta che invio CONFERMA_DATI_SCHEDE_TAGLIO a PLC
+09. Form Adj_pat_con.frm - eliminata rmt scheda di taglio (sostituita da rmt macro)
+10. Modulo OMRON_PLC.BAS - in snd_str_plc, in caso di invio ordine, il NUM_DM_RIEMPITI è salito a 24 (anzichè 19)per l'invio di quote di preposizionamento ftc pattern ed offset taglio a registro
+11. Modulo VAR_STAG.BAS - portato NUM_PAR_CFG a 79 per l'invio dei nuovi dati di cfg
+
+>PATTERN DI MODIFICA 'Icilio3545 06-01-2004
+- Correzione di alcuni bug + traduzioni
+FATTE:
+01. Modulo PRINCIPALE.BAS - load_form Caricate le nuove form inserite
+02. Modulo OMRON_PLC.BAS - rie_dat_ord modificato il calcolo della quota di preposizionamento per patternd
+03. Form PATTERN.FRM - abort Il nuovo pattern veniva memorizzato in PATTERN.DBF anche se incompleto
+
+>PATTERN DI MODIFICA 'Icilio3545 08-01-2004
+- Riviste operazioni verso schede di taglio
+FATTE:
+01. Aumentato il numero dei caratteri per offset posizionamento fotocellula
+02. Modulo COM_SCH_TAG.BAS - Modificato snd_sch_tag per scambiare i dati di configurazione con i dati dell'ordine corrente(off_cut,fin_pri,fin_dop)
+03. Modulo VAR_STAG.BAS - Aggiunte variabili inv_ord_sch_tag(1 to 2) per forzare invio a schede di taglio (non è necessario indicare il livello interessato)
+04. Modulo DLG_TAG_BAS.BAS - Inserite variabili inv_ord_sch_tag(1 to 2) nel ciclo di allineamento ordini
+05. Modulo DLG_TAG_BAS.BAS - Inserita funzionalità di invio corrente/successivo a schede di taglio dopo che l'invio del corrente/successivo a PLC è andato a buon fine
+
+>PATTERN DI MODIFICA 'Icilio3545 09-01-2004
+- Implementati reinvio corrente/successivo su operazioni in lista
+FATTE:
+01. Classe Collezioneordini.cls - Modifica aggiunto flag di riallineamento schede di taglio
+02. Modulo Var_STAG.BAS,DLG_TAG_BAS.BAS - Modificati inv_ord_plc_cur,suc con un vettore
+
+>PATTERN DI MODIFICA 'Icilio3545 10-01-2004
+- Modificato calcolo preallarme per livello, ripristinato calcolo quota preposizionamento
+FATTE:
+01. Modulo OMRON_PLC.BAS - sub rie_dat_ord il preallarme utilizzato in caso di ordine corrente/successivo cut to pattern è quello specificato in STAG. In questo modo, il preallarme di STAG può essere regolato per permettere alle fotocellule di rilevamento pattern di arrivare a quota.
+02. Modulo OMRON_PLC.BAS - Ripristinato il calcolo della quota di posizionamento
+
+>PATTERN DI MODIFICA 'Icilio3545 11-01-2004
+- Implementata visualizzazione ordini pattern/mark su pagina lista ordini
+FATTE:
+01. Modulo VAR_STAG.BAS - definito il colore per pattern (faded_orange)
+02. Form PAG_LIS_ORD.FRM,PAG_LIS_ESE.FRM - sub aggiorna rivista per colorare le celle in modo opportuno
+
+*Versione 2.1                    Versione Plc relativa:  XX0MST2130018.SWP
+Autore Modifica:        Arturo Palmerini
+Supervisore:            Arturo Palmerini
+Data:  04-03-04
+
+MODIFICHE:
+00. Eliminata la possibilità di leggere dal supervisori i dati di consuntivo fogli fatti (si sono mantenute le funzioni per eventuali sviluppi futuri)
+00. (pmMST0042) Ogni volta che viene sostituito l'ordine corrente con uno diverso (diverso id) viene azzerato il conteggio dei metri fatti
+00. La prima operazione eseguita nel timer è quella di controllare se la com con PLC è attiva. Precedentemente accadeva che si metteva la comunicazione come attiva senza che venisse letto lo stato dal PLC.
+01. BUG - Inserito nuovo messaggio di allarme e relativo controllo nella val_ord in caso di invio errato del campo Prima lettura FTC
+02. BUG - Poteva venire erroneamente premuta la sequenza Shift + Ctrl + O al posto della procedura Shift + Ctrl + L. Si permette lo shift solo con le protezioni disabilitate.
+03. BUG - Invertita carta ed onda per evitare di visualizzare carta errata
+04. BUG - Corretto il numero NUM_DM_RIEMPITI in invio e modifica ordine verso PLC (il terzo livello non avrebbe ricevuto la quota di preposizionamento fotocellula pattern)
+04. RIC - Per Greensboro ho dovuto riabilitare i report della taglierina x diagnosticare problema overrun di Escada
+05. BUG (1) - Ad ogni accensione del Pc veniva generato un errore nella API CAN_RegisterHardware e STAG andava avanti generando errori per non aver eseguito le altre funzioni di inizializzazione della rete CAN.
+05. BUG (2) - Non veniva inizializzato correttamente il valore di preallarme in fogli durante l'invio dell'ordine
+06. BUG - La dimensione di MESSAGGI.dbf era legata al numero di azionamenti impostato sul supervisore. Questo problema generava la ricostuzione del database.
+07. BUG - Si è aumentato la dimensione della colonna ALLARME del dbIII STO.DBF alla dimensione della colonna descrizione del db MESSAGGI.DBF per evitare errori di runtime.
+08. BUG - Inseriti log per monitorare le scritture di stato su corrugator control e stato liste a cambio ordine
+
+>PATTERN DI MODIFICA 'Arturo uff 02-03-04
+- (1) Eliminata la possibilità di leggere dal supervisori i dati di consuntivo fogli fatti (si sono mantenute le funzioni per eventuali sviluppi futuri)
+- (2) (pmMST0042) Ogni volta che viene sostituito l'ordine corrente con uno diverso (diverso id) viene azzerato il conteggio dei metri fatti
+- (3) La prima operazione eseguita nel timer è quella di controllare se la com con PLC è attiva. Precedentemente accadeva che si metteva la comunicazione come attiva senza che venisse letto lo stato dal PLC.
+FATTE:
+01. dlg_tag_bas.bas sub tim_tag_plc spostata gestione lettura dati plc, inserito azzeramento contatori in caso di invio ordine
+02. lingue_stag.bas eliminata la scritta Report ON/OFF dal tasto F7 della pagina degli ordini eseguiti
+03. pag_lis_ese.frm eliminata la possibilità di far apparire i dati di consuntivo
+
+>PATTERN DI MODIFICA 'Arturo uff 15-03-04
+- Inserito nuovo messaggio di allarme e relativo controllo nella val_ord in caso di invio errato del campo Prima lettura FTC
+FATTE:
+01. Modulo codici_errore.txt inserito nuovo codice di errore
+02. Validazione_Ordini.bas inserita funzione per il controllo del valore del campo prima lettura FTC
+
+>PATTERN DI MODIFICA 'Arturo uff 04-05-2004
+- BUG - Poteva venire erroneamente premuta la sequenza Shift + Ctrl + O al posto della procedura Shift + Ctrl + L. Si permette lo shift solo con le protezioni disabilitate.
+FATTE:
+01. Classe key.cls Private Sub Ges_Key inserito controllo se ute abilitato sul case Shift + Ctrl + O.
+
+>PATTERN DI MODIFICA 'Icilio3521 27-03-2004
+- BUG - Invertita carta ed onda per evitare di visualizzare carta errata
+FATTE:
+01. Form ins_ord.frm Private Sub riempi_celle Invertita carta ed onda per evitare di visualizzare carta errata
+
+>PATTERN DI MODIFICA 'Iciliouff 08-07-2004
+- BUG - Corretto il numero NUM_DM_RIEMPITI in invio e modifica ordine verso PLC (il terzo livello non avrebbe ricevuto la quota di preposizionamento fotocellula pattern)
+FATTE:
+01. Funzione snd_str_plc - Portato NUM_DM_RIEMPITI da 24 a 25 (invio ordine) e da 17 a 25 (modifica ordine)
+
+>PATTERN DI MODIFICA 'Iciliouff 08-07-2004
+- RIC - Per Greensboro ho dovuto riabilitare i report della taglierina x diagnosticare problema overrun di Escada
+FATTE:
+01. Inserito flag su STAG.INI x abilitare o meno la possibilità di entrare nei report taglierina (abi_rep_pro)
+
+>PATTERN DI MODIFICA 'APalmerini_FI16/08/2004_1
+- BUG (1) - Ad ogni accensione del Pc veniva generato un errore nella API CAN_RegisterHardware e STAG andava avanti generando errori per non aver eseguito le altre funzioni di inizializzazione della rete CAN.
+- BUG (2) - Non veniva inizializzato correttamente il valore di preallarme in fogli durante l'invio dell'ordine
+FATTE:
+01. Modulo Principale.bas funzione ini_can anche in caso di errore della CAN_RegisterHardware si inizializzano le comunicazioni. (1)
+02. Modulo Omron_PLC.bas tolta la condizione 'pre_all =' nell ramo else dell'iif (2)
+
+>PATTERN DI MODIFICA 'APalmerini_FI02/12/2004_1
+- BUG - La dimensione di MESSAGGI.dbf era legata al numero di azionamenti impostato sul supervisore. Questo problema generava la ricostuzione del database.
+FATTE:
+01. Modulo Lingue_stag.bas modificato l'indice NUM_AZI del ciclo for che aggiunge i commenti relativi agli errori sugli azionamenti.
+
+>PATTERN DI MODIFICA 'APalmerini_FI07/01/2005_1
+- BUG - Si è aumentato la dimensione della colonna ALLARME del dbIII STO.DBF alla dimensione della colonna descrizione del db MESSAGGI.DBF per evitare errori di runtime.
+FATTE:
+01. Modulo ges_file.bas eseguito il controllo sulla validità del database ad ogni caricamento del supervisore
+
+>PATTERN DI MODIFICA 'APalmerini_FI26/01/2005_1
+- BUG - Inseriti log per monitorare le scritture di stato su corrugator control e stato liste a cambio ordine
+FATTE:
+01. Modulo ges_ord.bas inserito log per monitorare le liste prima e dopo lo shift
+02. Modulo com_spde_bas.bas in caso di invio di comandi si visualizza la lista su lis.log
+03. Modulo ges_ord.bas quando avviene lo shift si visualizza la nuova lista in lis.log
+
+*Versione 2.2.1                    Versione Plc relativa:  XX0MST2130018.SWP
+Autore Modifica:        Alessandro Borelli
+Supervisore:
+Data:  09-09-05
+
+MODIFICHE:
+00. Inserita la gestione dei ritorni di produzione al supervisore (per ordine, turno e giorno)
+01. Aggiunta una pagina accessibile dalla pagina ordini eseguiti per visualizzare/azzerare i dati di produzione turno e giorno
+
+>PATTERN DI MODIFICA 'ABorelli_FI09/09/2005_1
+FATTE:
+01. pag_pro_day.frm: aggiunta la form per visualizzare/azzerare manualmente i dati di produzione turno e giorno
+02. produzione.bas: corretta la formattazione dell'ora nel formato "hh.mm.ss" aggiungendo uno zero in testa se necessario
+03. uni_mis_ang.bas: aggiunta funzione di conversione in square feet
+04. ini_bas.bas: aggiunta la gestione della entry abi_err_com_pu in stag.ini, sezione abilitazioni, per evitare messaggi di errore comunicazione con supervisore per sistemi dos
+                 aggiunta lettura/scrittura turno attuale, dati di produzione correnti
+05. lingue_stag.bas: aggiunti vari messaggi e descrizioni tasti e intestazione griglie
+06. key.cls: aggiunta scrittura su file dei dati di produzione correnti
+07. validazione_ordini.bas: tolto controllo sulla validazione della massima larghezza formati (a volte mettono formati maggiore perche' la carta si restringe)
+08. sta_bar.frm: tolta visualizzazione errore di comunicazione con punto unico se la entry abi_err_com_pu in abilitazioni e' impostata a 0
+09. task_tag_ver_all.bas: aggiunti nuovi tipi e costanti per la gestione della produzione e dei nuovi comandi protocollo uffici
+10. principale.bas: introdotta la conversione automatica dei file degli ordini al nuovo formato, se la dimensione e' quella vecchia
+                    aggiunte routine di controllo, lettura e scrittura dei file di produzione
+11. tip_stag.bas: modificato tipo ordine esistente e altre strutture di stato
+12. var_stag.bas: introdotte nuove costanti per nomi file
+13. dlg_tag_bas.bas: inserite chiamate a funzioni di totalizzazione metri prodotti
+14. classe_ordine.cls: aggiunte vari proprieta' e metodi per accumulare ed azzerare dati di produzione
+15. pag_lis_ese.frm: aggiunti i dati sui tempi dell'ordine e numero fermate
+                     gestito il tasto F2 per passare alla pagina di produzione turno e giorno
+16. stato.cls: aggiunta la totalizzazione ed azzeramento dei tempi di produzione, aggiunto calcolo velocita' medie
+17. ges_ord.bas: modificata gestione fine produzione e cambio ordine per dati produzione
+18. spde_bas.bas: aggiunti comandi O ed R per lettura dati di produzione ordine e turno giorno dagli uffici, aggiunte funzioni di formattazione
+
+*Versione 2.3                    Versione Plc relativa:  XX0MST2130018.SWP
+Autore Modifica:        Alessandro Borelli
+Supervisore:		Icilio Disperati
+Data:  11-11-05
+
+MODIFICHE:
+01. Inserita la gestione dell'azionamento TDE Macno: in stag.ini, la entry [car_tec] tip_azi_tag e'=0 per Lenze, =1 per TDEMACNO
+02. Mancanza traduzioni delle pagine popup e probabile correzione errore al cambio ordine che non faceva fare lo shift lista.
+03. Aggiunta per_cli per Model Obaly per ricevere gli ordini in modo da accettare anche prima il livello superiore e poi l'inferiore.
+04. Tolti tutti i caratteri accentati dai messaggi per evitare problemi con le code page diverse
+04. BUG: sostituito Ucase$ con Ucase in due query SQL
+05. BUG: Durante l'inserimento ordini, se non si inserisce niente nel combobox del cut-to-mark del primo livello, il secondo livello non viene memorizzato
+06. BUG: STAG non si avvia con i dati da MAC + APM: Aggiunta creazione archivi ZIP in relazione a ProcInt09
+
+>PATTERN DI MODIFICA 'ABorelli_FI11/11/2005_1
+-Inserita la gestione dell'azionamento TDE Macno: in stag.ini, la entry [car_tec] tip_azi_tag e'=0 per Lenze, =1 per TDEMACNO
+FATTE:
+01. dia_sta_azi.frm: in rcv_par_dia_azi() disabilitata la diagnostica per TDE Macno
+02. dia_sta_azi.frm: in reset_azi() disabilitato l'invio parametri all'azionamento
+03. ini_bas.bas: leg_par_ac, scr_par_mac, gestione di tip_azi_tag nel .ini
+04. omron_plc.bas: in rie_dat_par_cfg_mac() il tipo di azionamento si scrive nel DM3502, bit 12
+05. set_par_mac.frm: aggiunta la gestione della combo box con tipo di azionamento
+06.
+
+>PATTERN DI MODIFICA 'andrea per rom
+-Mancanza traduzioni delle pagine popup e probabile correzione errore al cambio ordine che non faceva fare lo shift lista.
+FATTE:
+01. Modulo Ges_ord, funzione Shifta: aggiunto on error
+02. Modulo ClasseStato, funzione tempi e funzione chg_ord: aggiunto on error
+03. Modulo CollezioneOrdini, funzione del_blk: aggiunto on error
+
+>PATTERN DI MODIFICA 'andrea per obaly 15-02-06
+-Aggiunta per_cli per Model Obaly per ricevere gli ordini in modo da accettare anche prima il livello superiore e poi l'inferiore.
+FATTE:
+01. Modulo Com_spde_bas, sub dig_ric_dat_spde: aggiunta per_cli per evitare il controllo che, quando si riceve un ordine, prima arrivi sempre il livello inferiore.
+
+>PATTERN DI MODIFICA 'andrea 17-02-06
+-Tolti tutti i caratteri accentati dai messaggi per evitare problemi con le code page diverse
+FATTE:
+01. Form sta_bar: rinominato controllo lab_velocità in lab_velocita
+02. Modulo Lingue_stag.bas, sub set_msg: tolti caratteri accentati
+03. Modulo Lingue_stag.bas, sub set_msg: aggiunta di messaggi condizionata resa fissa
+04. Modulo Lingue_stag.bas, funzione Leggi: tolto controllo dell'allineamento tra italiano e codice sorgente
+05. Modulo com_lenze.bas, sub set_cod_azi: tolti caratteri accentati
+06. Form Pag_lis_ese, evento Form_Aggiorna: si rendono visibili o invisibili le descrizioni dei tasti F2 e F7 a seconda che siano abilitati o no i report produzione
+
+>PATTERN DI MODIFICA 'andrea 24-02-06
+-BUG: sostituito Ucase$ con Ucase in due query SQL
+FATTE:
+01. Modulo Spde.bas, funzione con_agg_ond_car: sostituito Ucase$ con Ucase
+02. Modulo Spde.bas, funzione dig_con_agg_ond_car: sostituito Ucase$ con Ucase
+
+>PATTERN DI MODIFICA 'alessandro 06-04-2006
+-BUG: Per alcuni tipi di controlli non veniva settata la codepage, le onde/carte non erano quindi visualizzate bene con lingue straniere
+FATTE:
+01. Modulo lingue_stag.bas, function leggi: settata la codepage anche per DbGrid, DBCombo, ComboBox, MSFlexGrid
+
+>PATTERN DI MODIFICA 'andrea 20-04-06
+- BUG: Durante l'inserimento ordini, se non si inserisce niente nel combobox del cut-to-mark del primo livello, il secondo livello non viene memorizzato
+FATTE:
+01. Modulo Ins_ord_bas, sub get_new_dat: aggiunto val() nel confronto del cut-to-mark.
+
+>PATTERN DI MODIFICA 'IDisperati_FI 21/08/2006
+- BUG: STAG non si avvia con i dati da MAC + APM: Aggiunta creazione archivi ZIP in relazione a ProcInt09
+FATTE:
+01. BUG: Modificato cnv_ord.bas funzione cnv_ord e Leggi_pro (i riferimenti dei file erano errati)
+02. Aggiunto collegamento a "Microsoft Scriptiong Runtime" su Stag.vbp
+03. Modificata Frm_ini per visualizzare JOB e Commessa a video
+04. Intregrata UTILITY.BAS con le funzioni per creare zip e testare e copiare directory
+
+*Versione 3.0           Versione Plc relativa:  ??
+Autore Modifica:        ??
+Supervisore:		??
+Data:  17-04-07
+
+MODIFICHE:
+01. Aggiunto il protocollo con plc CJ1M in tcp ip usando le FINS
+02. BUG: Allineato a destra il codice cliente ricevuto da SPDE, per i protocolli 2.0 e 2.1 
+03. Aggiunto log dell'ordine corrente su PLC in Ord.log e del disallineamento del corrente.
+04. BUG: aggiunto valore assoluto sulle differenze di due GetTickCount per il problema dei valori negativi.
+05. BUG: correzione del problema di disallineamento 
+
+>PATTERN DI MODIFICA 'ABorelli_FI17/11/2006_1
+- Aggiunto il protocollo con plc CJ1M in tcp ip usando le FINS
+FATTE:
+01. Aggiunta la classe Fins per la gestione del protocollo ethernet
+02. Aggiunto il parametro di compilazione condizionale CJ (se vale 1 abilita il protocollo ethernet)
+03. COmpilando con CJ=1 togliere il controllo SYSMAC_PLC dalla form sta_bar.frm
+
+>PATTERN DI MODIFICA 'ABorelli_FI19/03/2007_1
+- BUG: Allineato a destra il codice cliente ricevuto da SPDE, per i protocolli 2.0 e 2.1 
+FATTE:
+01. Modificate le funzioni rie_ord_rec e rie_ord_rec_21
+
+>PATTERN DI MODIFICA 'AGrassi_FI 17-04-2007
+-Aggiunto log dell'ordine corrente su PLC in Ord.log e del disallineamento del corrente.
+FATTE:
+01. ClasseStato, sub Ass_stato: aggiunto log dell'ordine corrente su PLC (solo quando cambia)
+02. ClasseStato, sun Aggiorna: aggiunto log sul disallineamento del corrente (solo quando inizia)
+03. ClasseStato, sun Aggiorna: aggiunto controllo sul cambiamento dell'ID del corrente per rivalutare il disallineamento
+
+>PATTERN DI MODOFICA 'AGrassi_FI 21-05-2007
+-BUG: aggiunto valore assoluto sulle differenze di due GetTickCount per il problema dei valori negativi.
+FATTE:
+01. Modulo dlg_tag_bas, funzione tim_tag_plc: 2 correzioni
+
+>PATTERN DI MODIFICA 'agrassi saica 02-11-2007
+-BUG: correzione del problema di disallineamento del corrente
+FATTE:
+01. ClasseStato.cls, sub aggiorna: aggiunta condizione di disallineamento rilevato sul corrente per eseguire nuovi controlli
+
+>PATTERN DI MODIFICA 'agrassi_FI28-05-08
+- Rafforzato il calcolo del checksum per la comunicazione con la scheda di taglio
+FATTE:
+01. Modificata Function CHK_SUM del modulo com_sch_di_tag_bas
+
+*Versione 3.0.7           Versione Plc relativa>=  XX0MST2130018.SWP
+Autore Modifica:        AGrassi
+Supervisore:            AGrassi
+Data:  01-08-08
+>PATTERN DI MODIFICA 'agrassi_FI15-07-08
+- Differenziata per livello l'abilitazione del cut-to-pattern.
+FATTE:
+01. Modificati moduli com_sch_di_tag_bas, dlg_tag_bas, ini_bas, Omron_PLC, set_par_mac, Tip_stag, validazione_ordini.
+
+*Versione 3.0.8           Versione Plc relativa>=  XX0MST2130018.SWP
+Autore Modifica:        AGrassi
+Supervisore:            AGrassi
+Data:  17-12-08
+>PATTERN DI MODIFICA 'agrassi_FI17-12-08
+- Nell'invio dell'ordine al PLC si indica anche su quale livello è presente il cut-to-pattern.
+FATTE:
+01. Modificato modulo Omron_PLC, funzione rie_dat_ord.
+02. Corretto errore su Ins_ord.Form_Activate
+
+*Versione 3.0.9           Versione Plc relativa>=  XX0MST2130018.SWP
+Autore Modifica:        A.Grassi
+Supervisore:            A.Grassi
+Data:  01-07-09
+
+->Aggiunta lingua norvegese
+
+*Versione 3.0.10         Versione Plc relativa>=  XX0MST2130018.SWP
+Autore Modifica:        A.Grassi
+Supervisore:            A.Grassi
+Data:  09-09-09
+>PATTERN DI MODIFICA  'agrassi_FI09-09-09_1
+- Non si aggiornavano correttamente gli allarmi
+FATTE:
+01. ClasseStato: aggiunto aggiornamento dello stato old anche nella gestione dell'errore
+
+
+*Versione 4.0           Versione Plc relativa:  ??
+Autore Modifica:        Roberto Fazzi
+Supervisore:		Roberto Fazzi
+Data:  12-01-08
+
+MODIFICHE:
+01. Modificato protocollo con PLC per gestione cut to pattern automatico e gruppo di scarto doppio livello
+02. Inserito parametro di abilitazione del Cut to pattern Automatico
+03. Modificato Cut to Pattern DBase aggiungendo dato di CutOffset
+04. Modificato inserimento ordine aggiungendo dato di "Posizione Laterale Pattern" e tolto "OffSet Cut to Pattern" e modificata struttura ordini
+05. Aggiunta nuova versione di protocollo con Supervisore
+06. Aggiunta memorizzazione scarto fatto al gruppo di scarto dopo la fine dell'ordine
+07. Aggiunta pagina con impostazioni parametri ingegneristiche per il gruppo di scarto automatico
+08. Aggiunta gestione per non modificare SPDE ModID quando si esegue una modifica di ordine aggiungendo il campo SpdeModID nella struttura ordini
+
+
+>PATTERN DI MODIFICA 'Robertouff 26-11-07
+FATTE:
+01. Form Sta_bar.frm: Aggiunta gestione protocollo Fosber30
+02. Modulo Com_spde.bas: Aggiunta gestione protocollo Fosber30
+03. Modulo Task_tag_ver_all.bas: Aggiunto comando per restituzione a supervisore dei report di produzione a fine ordine. Aggiunta anche struttura dati per ordine terminato con metri scartati sul gruppo di scarto
+04. Form Set_par_com.frm: Aggiunta gestione protocollo Fosber30
+05. Modulo Stato.cls. Aggiunti nei DM letti i DM relativi allo scarto fatto al gruppo di scarto nell'ordine precedente e memorizzazione nei report dell'ordine
+06. Modulo Var_stag.bas. Aggiunti indirizzi di scrittura alla scheda di taglio dei parametri relativi al gruppo di scarto doppio livello
+07. Modulo Lingue_stag.bas. Aggiunti messaggi relativi alle pagine ingegneristiche aggiunte
+08. Form Pettern.frm. Aggiunta campo dell'Offset di taglio 
+09. Modulo Ges_file.bas. Aggiunta gestione del campo dell'Offset di taglio  nel DBase Pattern.dbf
+10. Modulo Tip_Stag.bas. Aggiunto flag di Cut to Pattern Automatico
+11. Modulo Validazione_Ordini.bas: Aggiunta gestione del campo dell'Offset di taglio
+12. Modulo Ins_ord_bas.bas. Aggiunta gestione del campo dell'Offset di taglio
+13. Clase Ordine.cls. Aggiunta gestione del campo dell'Offset di taglio
+14. Form Set_par_sch_.tag4.frm. Aggiuunta gestione dei dati per cut to pattern automatico
+15. Form Ins_ord.frm. Aggiunti flag di Cut to Pattern Automatico nell'inserimento ordine
+16. Modulo Com_sch_di_tag_bas.bas. Aggiunto flag di cut to pattern automatico e dati x gruppo di scarto automatico
+17. Form Set_par_mac.frm. Aggiunto flag di Cut to Pattern automatico
+18. Modulo Ini_bas. Inizializzazione dati relativi al gruppo di scarto
+
+>PATTERN DI MODIFICA 'RFAZZI_FI 04-01-08
+FATTE:
+01. Modulo Dlg_tag_bas.bas: Aggiunto flag di Cut to Pattern Automatico su alcuni passi di programma ( mancanti )
+02. Modulo Omron_plc.bas: Aggiunto flag di Cut to Pattern Automatico su alcuni passi di programma ( mancanti )
+
+>PATTERN DI MODIFICA 'RFAZZI_FI 05-01-08
+FATTE:
+01. Modulo Com_spde_bas.bas: Aggiunta gestione per non modificare l'SPDE ModID quando si esegue una modifica dell'ordine direttamente da Stag e inizializzazionedella Posizione Laterale del Cut to Pattern quando non ricevuto dal Supervisore ( dipende dalla versione di protocollo attivo )
+02. Modulo Tip_stag.bas: Aggiunta gestione per non modificare l'SPDE ModID quando si esegue una modifica dell'ordine direttamente da Stag
+03. Classe Ordine,cls: Aggiunto Spde ModID nella struttura degli ordini
+
+>PATTERN DI MODIFICA 'RFAZZI_FI 06-01-08
+FATTE:
+01. Modulo Omron_plc.bas: Aggiunto calcolo per posizionamento automatico delle FD di lettura del Pattern in base alla posizione rispetto al lato SX della scatola
+02. Form Pattern.frm: Aggiuunta campo "Ofs_Cut" al database e gestione per l'inserimento a video
+
+>PATTERN DI MODIFICA 'RFAZZI_FI 07-01-08
+FATTE:
+01. Modulo Val_ins_ord: Aggiunto controllo sull'inserimento della posizione laterale del pattern per ritornare errore
+02. Modulo Ins_ord_bas.bas: Creato codice errore dell'inserimento della posizione laterale del pattern
+03. Form Ins_ord_frm: Inserimento Posizione Laterale del Patterne rimozione OffCut
+04. Modulo Lingue_stag.bas: aggiunto messaggio di errore per inserimento posizione laterale del pattern
+05. Modulo Codici_errore.bas: Creato codice errore dell'inserimento della posizione laterale del pattern
+
+
+>PATTERN DI MODIFICA 'RFAZZI_FI 08-01-08
+FATTE:
+01. Modulo Com_sch_di_tag_bas: Download della quota della lunghezza di taglio a default
+02. Modulo Omron_plc.bas: Modifica calcolo per posizionamento automatico delle FD di lettura del Pattern in base alla posizione rispetto al lato SX della scatola
+03. Modulo Omron_plc.bas: Invio quota di posizionamento delle FD Pattern sul bordo della scatola in caso di ordine NoPattern
+04. Classe Stato.cls: Aggiunta visualizzazione dei metri scartati al gruppo di scarto sui report di produzione
+05. Form Pag_lis_ese.frm: Aggiunta visualizzazione dei metri scartati al gruppo di scarto sui report di produzione
+06. Classe Ordine.cls: Creazione dei metodi per leggere/scrivere metri scartati al gruppo di scarto
+07. Modulo Ges_file.bas: Aggiunto controllo per definizione della dimensione del campo all'interno del DB Stop.dbf
+
+
+*Versione 4.0.3           Versione Plc relativa:  ??
+Autore Modifica:        Roberto Fazzi
+Supervisore:		Roberto Fazzi
+Data:  09-06-09 . Eseguito Merge con versione STD 3.0.8
+
+
+>PATTERN DI MODIFICA 'agrassi_FI28-05-08
+- Rafforzato il calcolo del checksum per la comunicazione con la scheda di taglio
+FATTE:
+01. Modificata Function CHK_SUM del modulo com_sch_di_tag_bas
+
+>PATTERN DI MODIFICA 'agrassi_FI15-07-08
+- Differenziata per livello l'abilitazione del cut-to-pattern.
+FATTE:
+01. Modificati moduli com_sch_di_tag_bas, dlg_tag_bas, ini_bas, Omron_PLC, set_par_mac, Tip_stag, validazione_ordini.
+
+>PATTERN DI MODIFICA 'agrassi_FI17-12-08
+- Nell'invio dell'ordine al PLC si indica anche su quale livello è presente il cut-to-pattern.
+FATTE:
+01. Modificato modulo Omron_PLC, funzione rie_dat_ord.
+02. Corretto errore su Ins_ord.Form_Activate
+
+*Versione 4.0.4         Versione Plc relativa:  ??
+Autore Modifica:        Roberto Fazzi
+Supervisore:		Roberto Fazzi
+Data:  10-12-09.
+
+MODIFICHE:
+01. Aggiunta gestione Cut to Pattern Automatico per livello 
+02. inserita differente versione di protocollo PLC per la configurazione ordine fra la macchina std e la versione con gruppo di scarto ( DM3503 )
+03. Si cancella la tabella del pattern se si aggiorna una versione inferiore alla 4.0.0
+04. BUG. Corretto errore di "Posizione Pattern" nel caso che si inserisca un nuovo ordine
+
+>PATTERN DI MODIFICA 'RFAZZI_FI09/12/2009_1
+- Aggiunta gestione presenza del Cut to Pattern Automatico x livello
+FATTE:
+01. Modificata Function rie_dat_ord del modulo omron_PLC.bas
+02. Modificata Function rie_dat_par_cfg_mac del modulo omron_PLC.bas
+03. Modificata Function eve_key.F6 della form pag_pro.frm
+04. Modificata Function tim_tag_plc del modulo dlg_tag_bas.bas
+05. Modificata Function err_cut_to_mark del modulo validazione_ordini.bas
+06. Modificata Function var_ese_ope della form set_par_sch_tag4.frm
+07. Modificata Function ini_form della form set_par_sch_tag4.frm
+08. Modificata Function F5 della form set_par_sch_tag4.frm
+09. Modificata Function Activate della form set_par_sch_tag4.frm
+10. Modificata Function ini_form della form Ins_Ord.frm
+11. Modificata Function riempi_celle della form Ins_Ord.frm
+12. Modificata Function Activate della form Ins_Ord.frm
+13. Modificata Function snd_sch_tag del modulo com_sch_di_tag_bas.bas
+14. Modificata Function chk_cut_to_pat_auto della form set_par_mac.frm
+15. Modificata Function fil_par_mac della form set_par_mac.frm
+16. Modificata Function scr_par_mac_ute della form set_par_mac.frm
+17. Modificata Function scr_par_mac del modulo ini_bas.bas
+18. Modificata Function leg_par_mac del modulo ini_bas.bas
+
+>PATTERN DI MODIFICA 'RFAZZI_FI09/12/2009_2
+- Aggiunta gestione per differente configurazione bit verso il PLC. Il discriminante è la presenza del CutToPatternAutomatico
+FATTE:
+01. Modificata Function rie_dat_ord del modulo omron_PLC.bas
+
+>PATTERN DI MODIFICA 'agrassi_FI09-12-2009_1
+- Si cancella la tabella del pattern se si aggiorna una versione inferiore alla 4.0.0
+FATTE:
+01. Modulo Uti_Stag.bas: aggiunte funzioni per il confronto tra versioni 
+02. Modulo Principale.bas, funzione Main: aggiunto controllo versione e cancellazione di Pattern.dbf se necessario
+
+>PATTERN DI MODIFICA 'RFAZZI_FI11/12/2009_1
+- Corretto errore di "Posizione Pattern" nel caso che si inserisca un nuovo ordine
+FATTE:
+01. Modificata Function err_pos_pat del modulo validazione_ordini.bas
+
+****************************************************************************************
+*Versione 4.0.5         Versione Plc relativa:  ??
+Autore Modifica:        Paolo Massaro
+Supervisore:		Paolo Massaro
+Data:  08-02-10.
+
+MODIFICHE:
+01. BUG. Non era più possibile abilitare il cut-to-mark
+
+>PATTERN DI MODIFICA 'PMASSARO_FI08/02/10 - Non si riusciva più ad abilitare il Cut-To-Mark
+- Non era più possibile abilitare il cut-to-mark
+FATTE:
+01. Modificata Subroutin scr_par_mac_ute() della form Frm_Set_Par_Mac.Frm
+'PMASSARO_FI08/02/10 - Non si riusciva più ad abilitare il Cut-To-Mark
+*****************************************************************************************
+
+*Versione 4.0.6         Versione Plc relativa:  ??
+Autore Modifica:        Andrea Grassi	
+Supervisore:		Andrea Grassi
+Data:  10-02-10
+
+MODIFICHE:
+01. Modifica interfaccia con il PLC: si invia il bit di cut to register per livello, non solo il cut to pattern
+
+>PATTERN DI MODIFICA 'PMASSARO_FI08/02/10 - Non si riusciva più ad abilitare il Cut-To-Mark
+FATTE:
+01. Modificata rie_dat_ord() della modulo Omron_PLC.bas
+
+*****************************************************************************************
+
+*Versione 4.1.0         Versione Plc relativa:  ??
+Autore Modifica:        Andrea Grassi	
+Supervisore:		Andrea Grassi
+Data:  08-03-2010
+
+MODIFICHE:
+01. Aggiunta comunicazione di rete con le schede di taglio
+
+>PATTERN DI MODIFICA 'agrassi_FI08-03-2010_1 e 'agrassi_FI15-04-2001_1
+FATTE:
+01. Modulo Tip_Stag: aggiunte sottostrutture per comunicazione di rete con schede di taglio
+02. Modulo Ini_bas: aggiunta lettura e scrittura nell'INI dei parmetri di comunicazione (leg_par_mac e scr_par_mac)
+03. Form Sta_bar: aggiunti socket per comunicazione con schede di taglio
+04. Form Set_par_com: aggiunta visualizzazione e modifica dei parametri di comunicazione di rete con schede di taglio
+05. Modulo Ges_porte: aggiunta l'inizializzazione dei socket
+06. Modulo Com_sch_di_tag_bas: aggiunta scrittura su socket invece che sulla seriale quando è configurata la rete
+07. Classe Stato: aggiunto log della velocità  ('agrassi_FI15-04-2001_1)
+
+*****************************************************************************************
+
+*Versione 4.1.1         Versione Plc relativa:  ??
+Autore Modifica:        Andrea Grassi	
+Supervisore:		Andrea Grassi
+Data:  06-09-2010
+
+MODIFICHE:
+01. Aggiunti, tra i Documenti Correlati, i file di configurazione delle Moxa per le schede di taglio del livello 1 e 2
+
+
+*****************************************************************************************
+
+*Versione 4.1.2         Versione Plc relativa:  ??
+Autore Modifica:        Andrea Grassi	
+Supervisore:		Andrea Grassi
+Data:  13-10-2010
+
+MODIFICHE:
+01. Aggiunto On Error nella dataArrival del socket di comunicazione con le schede di taglio per intercettare
+    l'errore 10054.
+
+PATTERN DI MODIFICA 'agrassi_FI13-10-2004_1
+
+
+*****************************************************************************************
+
+*Versione 4.1.3         Versione Plc relativa:  ??
+Autore Modifica:        Marco Lamioni	
+Supervisore:		Marco Lamioni
+Data:  13-10-2010
+
+MODIFICHE:
+01.  Emulazione del protocollo taglierina SIMON con punto unico DEPM (Aggiunto protocollo di comunicazione Simon V1.0)
+      PATTERN DI MODIFICA 'MLamioni_FI03/11/2010 Emulazione con protocollo taglierina SIMON
+     'PRocchiccioli_FI_16/12/2010 Emulazione con protocollo taglierina SIMON
+
+02.  'MLAMIONI_PMASSARO_FI27/10/2010 - Gestione comunicazione UDP-TCP per schede di taglio
+
+0.3 Inserita funzione maschera stringa per impianto Bigny da sistema Marquip DECC per gestire 3 livelli con macchina a 2 livelli
+    PATTERN DI MODIFICA ' PRocchiccioli FI_28_12_10
+0.4 inserita correzione per richiesta collegamento durante invio stringa da supervisore Maqrquipe DECC
+    PATTERN DI MODIFICA 'PRocchiccioli_FI_30/12/2010
+
+
+*****************************************************************************************
+
+*Versione 4.1.4         Versione Plc relativa:  ??
+Autore Modifica:        Massaro Paolo	
+Supervisore:		Massaro Paolo
+Data:  22-02-2011
+
+BUG:
+01.  Corretti bugs creati con le modifiche precedenti
+      PATTERN DI MODIFICA 'PMASSARO_FI22/02/2011 - Corretto Bug su validazione stringa con protocollo SIMON10
+	 
+*****************************************************************************************
+
+*Versione 4.1.5         Versione Plc relativa:  ??
+Autore Modifica:        Massaro Paolo	
+Supervisore:		Massaro Paolo
+Data:  07-07-2011
+
+MODIFICHE:
+01.  'PMASSAROFI_05/07/11 - Aggiunta ricezione ordini da MHI via BCD
+	 Come funziona: 
+	 Non esiste una gestione dell'ordine corrente, ma solo del successivo: MHI lo invia poco tempo prima del C.O.
+	 MHI invia al PLC la lunghezza di taglio via Hardware per ogni livello, il PLC le memorizza nei DM3624-25-26
+	 STAG conttolla continuamente le lunghezze inviate in precedenza e le confronta con quelle nei DM sopra citati.
+	 Se almeno una è diversa o la lista contiene meno di due ordini oppure la lunghezza nei DM sopracitati è
+	 diversa dalla lunghezza di taglio successiva (presente nel PLC), allora creiamo un ordine successivo fittizio.
+	 I classici cicli di allineamento ordini faranno il resto.
+
+*****************************************************************************************
+
+*Versione 4.1.6         Versione Plc relativa:  ??
+Autore Modifica:        Andrea Grassi	
+Supervisore:		Andrea Grassi
+Data:  12-07-2011
+
+MODIFICHE:
+01.  'agrassi_FI12-07-2011_1
+Master con doppio gruppo di scarto: l'invio dei parametri alle schede di taglio si fermava al n. 101, 
+mentre ne avrebbe dovuto mandare 102.
+
+*****************************************************************************************
+
+*Versione 4.1.7         Versione Plc relativa:  ??
+Autore Modifica:        Andrea Grassi	
+Supervisore:		Andrea Grassi
+Data:  05-09-2011
+
+MODIFICHE:
+01.  'agrassi_FI05-09-2011_1
+La modifica ('MLamioni_FI03/11/2010 Emulazione con protocollo taglierina SIMON)
+assegnava sempre lo stag_id al cod_ord_abb. Però questa assegnazione va fatta solo
+in caso di protocollo di comunicazione con punto unico Simon10 o MHI10.
+
+*****************************************************************************************
+
+*Versione 4.1.8         Versione Plc relativa:  plcxMST_XXXXyyccc_042a.cxp  (modifiche M.Livi per inst. Zcarton Agosto 2011)
+Autore Modifica:        Massaro Paolo	
+Supervisore:		    Massaro Paolo
+Data:  22-02-2011
+
+MODIFICHE:
+	1. 'PMASSARO_FI05-08-11 - Aggiunta gestione ordine nullo
+	Come funziona: 
+	E' stata modificata la Val_ord per non eseguire i controlli qualora la testata dell'ordine è valorizzata, ma non lo è la lunghezza
+	di taglio (per i 3 formati).
+	Nell'invio dei dati al PLC viene valorizzata la "Vel Max" con la massima velocità della macchina.
+	Relativamente all'inserimento degli ordini da grafica: è stato creato un comando specifico per creare "l'ordine nullo".
+	In pratica la testata e i campi "cliente" del primo formato vengono valorizzati con dei dati di "default" per indicare proprio
+	questo ordine e poterlo identificare a prima vista anche dalla pagina "lista ordini".
+	
+	Note importanti: la versione del PLC deve corrispondere a quella indicata (deve contenere le modifiche per la gestione del cambio
+	ordine.)
+	Lato AOC/SPDE/Syncro:
+	1. Interfaccia SW: Deve essere prevista la gestione per inviare l'ordine vuoto.
+	2. Interfaccia HW:
+		-	Deve essere gestito (e rivisto) il segnale di cambio "No Gap in corso". In pratica questo segnale deve essere chiuso non
+			solo durante la fase di "Cambio No-Gap", ma anche quando è in corso un cambio in cui la "MST 21.30" non è inclusa.
+	   -	Quando la "MST 21.30" non è in lavoro, deve ricevere obbligatoriamente il segnale di cambio immediato per entrambi i livelli.
+			Questo è valido anche se la MST non è in lavoro nemmeno nell'ordine successivo. Con questi segnali il PLC eseguirà lo shift dell'ordine.
+	
+	Impianto in cui è stato testato: Zcarton (job 3703 e 3883) Agosto 2011
+	
+	2. 'PMASSARO_FI30/08/11 - Personalizzazione Zcarton per inviare l'ordine successivo al PLC on ritardo rispetto al fine cambio
+
+	3. 'PMASSARO_FI05/09/11 - Aggiunto Trim sull'assegnazione della commessa ricevuta da SPDE o altro supervisore
+	
+*****************************************************************************************

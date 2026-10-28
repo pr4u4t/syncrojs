@@ -1,5 +1,5 @@
 const config = require('config');
-const { MAX_TOTAL_OUTS, totalOuts } = require('../utils/order-constraints');
+const { MAX_TOTAL_OUTS, MAX_CREASES_PER_ORDER, MAX_CREASES_PER_SETUP, totalOuts } = require('../utils/order-constraints');
 
 const HEADER_SIZE = 9;
 const ORDER_SIZE = 31;
@@ -124,11 +124,14 @@ const validateSyncroPayload = (payload, source = null) => {
             if(measures.some((measure) => !Number.isInteger(measure) || measure <= 0 || measure > order.sheetWidth)){
                 return invalid(`Zamówienie ${order.index + 1}: bigi muszą być dodatnie i nie mogą przekraczać szerokości arkusza.`, source, 'scores', [order.index]);
             }
+            if(measures.length > MAX_CREASES_PER_ORDER){
+                return invalid(`Zamówienie ${order.index + 1} zawiera ${measures.length} bigów; limit to ${MAX_CREASES_PER_ORDER} na zamówienie.`, source, 'scores', [order.index]);
+            }
             totalCreaseMeasures += measures.length;
         }
     }
-    if(totalCreaseMeasures > 22){
-        return invalid(`Setup zawiera ${totalCreaseMeasures} bigów; limit to 22.`, source, 'scores', activeOrders.map((order) => order.index));
+    if(totalCreaseMeasures > MAX_CREASES_PER_SETUP){
+        return invalid(`Setup zawiera ${totalCreaseMeasures} bigów; limit to ${MAX_CREASES_PER_SETUP}.`, source, 'scores', activeOrders.map((order) => order.index));
     }
 
     const maxTotalOuts = configuredLimit('max_total_outs', MAX_TOTAL_OUTS);

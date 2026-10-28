@@ -1,0 +1,262 @@
+******DATI Versione del 18/12/01******
+
+Differenze rispetto alla versione del 17/12/01:
+
+(Simone Paolinelli)
+
+1. Inserito DBase corretto delle lingue disponibili su STAG
+
+(Arturo Palmerini)
+
+2. Modificato il parametro Decelerazione Tagli Corti (parametri schede di taglio). Il valore è stato portato da 107 a 130 come richiesto da pmMST0007
+
+(Arturo Palmerini) file: 'STAG DATI Ver1.0.0 30-09-02.zip'
+
+1. Tolta ricostruzione db dal stag.ini standard
+2. Aggiunto db messaggi.dbf con traduzioni in spagnolo
+
+(Arturo Palmerini) file: 'STAG DATI Ver1.0.0 25-10-02.zip'
+1. Cambiato il default dell'impostazione della rete:
+	por_loc=150                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+	por_rem=250
+	ind_rem=200.0.0.200
+
+(Arturo Palmerini) file: 'STAG DATI Ver1.0.0 27-11-02.zip'
+1. Correzione file 'messaggi.dbf' per quanto riguarda lingua INGLESE:
+	inserita visualizzazione label F1-F10 su tasti.frm
+	inserite alcune traduzioni mancanti
+
+(Arturo Palmerini) file: 'STAG DATI Ver1.1.0 29-11-02.zip'
+1. Inseriti dbf:
+	Messaggi.dbf	Inserito messaggio di errore validazione per grammatura
+	Cur_tag.dbf	Inserita colonna grammatura aggiornate le curve di taglio ai valori consigliati da Digitec
+	Par_cfg.dbf	Inserita colonna grammatura aggiornati parametri di configurazione ai valori consigliati da Digitec
+	stag.ini	Inserita sezione [Info] contenente la versione di stag
+
+(Arturo Palmerini) file: 'STAG DATI Ver1.1.0 04-12-02.zip'
+1. Aggiornata colonna traduzioni Polacco su messaggi.dbf traduzione effettuata su impianto 3505Werner Kenkel.
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			STAG DATI Ver1.1.0 27-01-2003.zip
+
+MODIFICHE:
+1. MESSAGGI.DBF - Inserite traduzioni in francese ed olandese (3518 Sca Brussels)
+2. Ver_Stag_Dati.txt - Inserito il file di versione della cartella dati
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			STAG DATI Ver1.1.0 20-02-03.zip
+
+MODIFICHE:
+1. PAR_CFG.DBF - Riportato a 100 il valore di KI_NOR che era erroneamente stato dimensionato a 10 durante l'ultima revisione delle curve di taglio
+2. - tolti tutti gli inf perchè generati internamente al codice per evitare errori ISAM
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver1.1.1 04-04-03.zip
+
+MODIFICHE:
+01. PAR_CFG.DBF - Inserite colonne MAX_GIR1, MAX_GIR2, MAX_GIR3 per limitare il numero massimo di giri del motore differenziato per livello
+02. PAR_CFG.DBF - Valorizzate le colonne del punto 1 con i valori consigliati da Digitec
+03. STAG.INI - Inseriti valori di default per livello 3
+04. MESSAGGI.DBF - Inserite 3 nuove traduzioni per messaggio errore disabilitazione motore
+05. MESSAGGI.DBF - Inserito messaggio di allarme ingresso pianetti come da versione CS
+06. MESSAGGI.DBF - Aggiornati messaggi di allarme pervenuti da officina
+07. ALL_HAR.DBF - Aggiornati messaggi di allarme pervenuti da officina
+08. ALL_MAC.DBF - Aggiornati messaggi di allarme pervenuti da officina
+09. MESSAGGI.DBF - Inserita colonna versione SVEDESE
+10. LINGUE.DBF - Inserita riga versione SVEDESE
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			STAG DATI Ver1.1.1 03-07-2003.zip
+
+MODIFICHE:
+01. MESSAGGI.DBF - Inserite traduzioni in svedese
+02. Eliminati dall'archivio lo storico allarmi e le tabelle di frequenza allarmi 
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver1.1.1 13-08-2003.zip
+
+MODIFICHE:
+01. MESSAGGI.DBF - Inserite correzioni lingua francese a Descar (Lenzoni) -
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver1.1.2 10-09-2003.zip
+MODIFICHE:
+01. MESSAGGI.DBF - Inseriti messaggi di errore soglia DC Bus, aggiunte lingue polacco e svedese -
+02. All_qe1.dbf - Aggiunti campi mancanti su allarmi plc -
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			STAG DATI Ver2.0.0 27-01-2004.zip
+
+MODIFICHE:
+01. MESSAGGI.DBF - Inserite traduzioni in inglese per 'Cut to pattern'
+02. MESSAGGI.DBF - Completate traduzioni in inglese
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.0.zip
+
+MODIFICHE:
+01. MESSAGGI.DBF - Tolta visualizzazione messaggio Report ON/OFF dal tasto F7 della pagina degli ordini eseguiti
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.1.zip
+
+MODIFICHE:
+01. MESSAGGI.DBF - Aggiunti/modificati/corretti allarmi macchina in lingua italiana, inglese e francese
+02. All_har.DBF - Linkati nuovi DM
+03. All_mac.DBF - Linkati nuovi DM
+04. All_qe2.DBF - Linkati nuovi DM
+05. F_a_con.DBF - Linkati nuovi DM
+06. F_a_har.DBF - Linkati nuovi DM
+07. F_a_mac.DBF - Linkati nuovi DM
+08. F_a_qe1.DBF - Linkati nuovi DM
+09. F_a_qe2.DBF - Linkati nuovi DM
+10. F_a_war.DBF - Linkati nuovi DM
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			STAG DATI Ver2.1.1 19-04-2004.zip
+
+MODIFICHE:
+01. MESSAGGI.DBF - Cambiato Carter 1,2,3 con descrizioni
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.1 11-05-2004.zip
+
+MODIFICHE:
+01. STAG.INI - Cambiati default come suggerito da Michele D'Andria
+	lun_san=1900                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            gap_tgl_cor=5000                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 gap_tgl_lun=9000
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.2 12-05-2004.zip
+
+MODIFICHE:
+01. MESSAGGI.DBF - Aggiornamento/revisione messaggi di allarme - Inserimento traduzioni in POLACCO ritornate da Sca Olawa -
+02. ALL_QE3.DBF - Aggiornamento/revisione messaggi di allarme
+03. ALL_QE2.DBF - Aggiornamento/revisione messaggi di allarme
+04. ALL_QE1.DBF - Aggiornamento/revisione messaggi di allarme
+05. ALL_MAC.DBF - Aggiornamento/revisione messaggi di allarme
+06. ALL_HAR.DBF - Aggiornamento/revisione messaggi di allarme
+07. F_A_QE3.DBF - Aggiornamento/revisione messaggi di allarme
+08. F_A_QE2.DBF - Aggiornamento/revisione messaggi di allarme
+09. F_A_QE1.DBF - Aggiornamento/revisione messaggi di allarme
+10. F_A_MAC.DBF - Aggiornamento/revisione messaggi di allarme
+11. F_A_HAR.DBF - Aggiornamento/revisione messaggi di allarme
+12. F_A_WAR.DBF - Aggiornamento/revisione messaggi di allarme
+13. F_A_CON.DBF - Aggiornamento/revisione messaggi di allarme                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.3 23-06-2004.zip
+
+MODIFICHE:
+01. MESSAGGI.DBF - Correzione della traduzione di Resa dalla pagina inserimento ordini -
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.4 23-06-2004.zip
+MODIFICHE:
+01. STAG.INI - Correzione di alcune impostazioni di default come richiesto da Michele d'Andria
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.5 23-06-2004.zip
+MODIFICHE:
+01. MESSAGGI.DBF - Inserita colonna TURCO
+02. LINGUE.DBF - Aggiunta gestione per colonna TURCO
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.6 26-08-2004.zip
+MODIFICHE:
+01. MESSAGGI.DBF - Inserite correzioni alla lingua spagnolo fatte da Stagetti su installazione TRILLA
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.7 29-11-2004.zip
+MODIFICHE:
+01. MESSAGGI.DBF - Revisione del database per problema messaggi di errore. Si è partiti dalla Ver2.1.4 e si sono sovrascritte
+		   le colonne TURCO (presa da Ver2.1.5) e SPAGNOLO (presa da Ver2.1.6)
+02. STAG.INI - Modificata password da 'apisa' a 'pad'
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.8 02-12-2004.zip
+MODIFICHE:
+01. MESSAGGI.DBF - Revisione inserimento nuovi messaggi in TURCO
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.9 22-12-2004.zip
+MODIFICHE:
+01. PAR_CFG.DBF - Dopo riunione con Digitec si è deciso di portare il Kp da 8 a 7 e il Filtro Kp da 3 a 2 su tutte le configurazioni della master S4 (brushless)
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.10 04-12-2004.zip
+MODIFICHE:
+01. MESSAGGI.DBF - Inserimento traduzioni fatte da Gunnar alla lingua TEDESCO
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.11 19-01-2005.zip
+MODIFICHE:
+01. MESSAGGI.DBF - Completate le traduzioni con interprete sull'installazione 3590 MONDI ESCHENBACH (Marco Stagetti)
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			STAG DATI Ver2.1.11 11-02-2005.zip
+MODIFICHE:
+01. MESSAGGI.DBF - Completate le traduzioni in francese per sezione Cut to pattern
+
+*Autore Modifica:        	Arturo Palmerini
+Nome versione:			STAG DATI Ver2.1.12 07-06-2005.zip
+MODIFICHE:
+01. MESSAGGI.DBF - Inserita colonna Portoghese da installazione 3543 Rigesa - Tecnico Amilcare Cipriani -
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			STAG DATI Ver2.1.13 02-08-2005.zip
+MODIFICHE:
+01. PATTERN.DBF - Inseriti record x indirizzare le funzioni della fotocellula SICK tramite il campo contrasto (Ligth ON - Dark ON in modo Fine o Coarse )
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			STAG DATI Ver2.1.14 01-12-2005.zip
+MODIFICHE:
+01. LINGUE.DBF - Aggiunta colonna per RUSSO
+02. MESSAGGI.DBF - Aggiunta colonna per RUSSO
+03. PATTERN.DBF - Aggiornato il DB con quello utilizzato e testato ad 3618 UNION GANDIA
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			STAG DATI Ver2.1.15 19-07-2006.zip
+MODIFICHE:
+01. PATTERN.DBF - Ho testato personalmente il buon funzionamento del DB inserito
+02. MESSAGGI.DBF - Inserite traduzioni messaggio disconnessione inverter
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			DATxMST_xxxxYYccc_Ver2.3.6a.zip
+MODIFICHE:
+01. (23-08-2006) - Aggiunti i file Stag_ZipListFile_COD.txt, Stag_ZipListFile_DAT.txt, Stag_ZipListFile_LOG.txt - Questi impostano la configurazione dei backup in formato ZIP per codice,dati e log
+02. (23-08-2006) - Aggiunto il file "7za.exe" utilizzato per lo creare gli archivi ZIP
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			DATxMST_xxxxYYccc_Ver3.0.0a.zip
+MODIFICHE:
+03. (12-01-2007) - Corrette curve di taglio per taglierina 2800, grammatura 2600 in accordo con le curve di taglio ricevute da Digitec (azionamneti TDE Macno)
+
+*Autore Modifica:        	Massaro Paolo
+Nome versione:			DATxMST_xxxxYYccc_Ver3.0.2a.zip
+MODIFICHE:
+03. (22-07-2008) - Corrette Traduzioni Lingua Russa
+
+*versione 3.0.3
+Autore Modifica:        Andrea Grassi
+Data:  			01-07-09
+Modifica: 		Aggiunta lingua norvegese
+
+*versione 3.0.4
+Autore Modifica:        Paolo Massaro
+Data:  			21-12-10
+Modifica: 		Convertire le traduzioni riferite a SPDE con "Punto Unico"
+
+*Autore Modifica:        	Icilio Disperati
+Nome versione:			DATxMST_xxxxYYccc_Ver3.0.4a.zip
+MODIFICHE:
+03. (12-01-2007) - Corrette curve di taglio per taglierina 2800, grammatura 2600 in accordo con le curve di taglio ricevute da Digitec (azionamneti TDE Macno)
+
+*Autore Modifica:        	Massaro Paolo
+Nome versione:			DATxMST_xxxxYYccc_Ver3.0.4b.zip
+MODIFICHE:
+03. (28-03-2011) - Corrette Traduzioni Lingua Chinese
+
+*Autore Modifica:        	Massaro Paolo
+Nome versione:			DATxMST_xxxxYYccc_Ver3.0.4c.zip
+MODIFICHE:
+01. (05-09-2011) - Messaggi.dbf: aggiunta riga con descrizione del comando "Creazione Ordine Nullo"

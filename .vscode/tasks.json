@@ -441,6 +441,370 @@
 			"args": [
 				"/tmp/rm_yad.js"
 			]
+		},
+		{
+			"label": "Run crease limit tests",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"jest",
+				"--runInBand",
+				"tests/models/extended_orders_csv.test.js",
+				"tests/models/order_classic_conversion.test.js",
+				"tests/models/order_validation.test.js",
+				"tests/routes/current.test.js"
+			]
+		},
+		{
+			"label": "Test planner validator",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"cd /usr/src/app && command -v python3 && python3 tools/planner-format/validate_orders.py tools/example_extended_orders.csv; echo EXIT=$?; python3 tools/planner-format/validate_orders.py tests/models/classic_data/1b9b5f0c1d5eeb4924ac770eb55988db.dat --format dat587 | tail -8; echo EXIT=$?; python3 tools/planner-format/validate_orders.py tools/example_extended_orders.csv --write-dat740 /tmp/ex.dat >/dev/null; python3 -c \"import sys;d=open('/tmp/ex.dat').read();print(len(d))\"; python3 tools/planner-format/validate_orders.py /tmp/ex.dat; echo EXIT=$?"
+			]
+		},
+		{
+			"label": "Test planner validator v2",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/test_validator.sh"
+			]
+		},
+		{
+			"label": "Inspect DAT fixture lengths",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/inspect_dat.py"
+			]
+		},
+		{
+			"label": "Summarize validator on fixtures",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/fixture_errors.py"
+			]
+		},
+		{
+			"label": "Debug DAT record",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/debug_rec.py"
+			]
+		},
+		{
+			"label": "Test DAT740 parser",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/test_dat740.js"
+			]
+		},
+		{
+			"label": "Test DAT740 tie-break",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"node /tmp/test_dat740b.js 2>&1 | grep -v '\"level\"'; python3 /usr/src/app/tools/planner-format/validate_orders.py /tmp/single740.dat; sh /tmp/test_validator.sh 2>&1 | tail -4"
+			]
+		},
+		{
+			"label": "Check 14 outs rule",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/usr/src/app/tools/planner-format/validate_orders.py",
+				"/tmp/outs15.csv"
+			]
+		},
+		{
+			"label": "Check crease segment sums",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/score_sums.py"
+			]
+		},
+		{
+			"label": "Test wide CSV validator",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"cd /usr/src/app/tools/planner-wide-csv && python3 validate_wide_csv.py example_as_received.csv; echo EXIT=$?; python3 validate_wide_csv.py example_valid.csv; echo EXIT=$?"
+			]
+		},
+		{
+			"label": "Test wide CSV limits",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/test_wide.py"
+			]
+		},
+		{
+			"label": "Inventory stag sources",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"/tmp/stag_inventory.js"
+			]
+		},
+		{
+			"label": "Inspect STAG data files",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/inspect_stag.py"
+			]
+		},
+		{
+			"label": "Dump STAG DBF schemas",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/dbf_schema.py"
+			]
+		},
+		{
+			"label": "Check stag.ini line endings",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/ini_check.py"
+			]
+		},
+		{
+			"label": "Check STAG order layout",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/check_layout.py"
+			]
+		},
+		{
+			"label": "Check Qt toolchain v2",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"command -v cmake ninja samu g++; ls /usr/lib/cmake/Qt6 2>/dev/null | head -3; ls /usr/lib/qt6/plugins/sqldrivers 2>/dev/null; echo DISPLAY=$DISPLAY WAYLAND=$WAYLAND_DISPLAY; ls /tmp/.X11-unix 2>/dev/null; ls /tmp | grep -i wayland"
+			]
+		},
+		{
+			"label": "Inspect dev container",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"-c",
+				"id; cat /etc/os-release | head -2; ls /usr/bin | grep -E '^(g\\+\\+|c\\+\\+|gcc|cmake)$'; echo XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR; ls -la /tmp/.X11-unix"
+			]
+		},
+		{
+			"label": "Inspect dev container v2",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/inspect_container.sh"
+			]
+		},
+		{
+			"label": "Check stag-qt build",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/check_stag_build.sh"
+			]
+		},
+		{
+			"label": "Run stag-qt",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/run_stag.sh"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build and test stag-qt",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/build_stag.sh"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Build and test stag-qt v2",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/build_stag.sh"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect STAG messages",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/inspect_msg.py"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Build and test stag-qt v3",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/build_stag.sh"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Build and test stag-qt v4",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/build_stag.sh"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run stag-qt with PLC simulator",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/run_stag_demo.sh"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check stag-qt demo logs",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/check_demo.sh"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect PAR_CFG",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/inspect_parcfg.py"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Build and test stag-qt v5",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/build_stag.sh"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Build and test stag-qt v6",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/build_stag.sh"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run stag-qt demo v2",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/run_stag_demo2.sh"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run stag-qt demo v3",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/run_stag_demo2.sh"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check stag-qt demo v2",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/check_demo2.sh"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect production report fields",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/inspect_rep.py"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect CUR_TAG",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/inspect_curtag.py"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect CUR_TAG v2",
+			"type": "shell",
+			"command": "python3",
+			"args": [
+				"/tmp/inspect_curtag.py"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Build and test stag-qt v7",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/build_stag.sh"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Run stag-qt demo v4",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/run_stag_demo2.sh"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check stag-qt demo v4",
+			"type": "shell",
+			"command": "sh",
+			"args": [
+				"/tmp/check_demo3.sh"
+			],
+			"problemMatcher": []
 		}
 	]
 }

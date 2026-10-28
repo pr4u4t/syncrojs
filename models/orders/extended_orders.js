@@ -111,6 +111,38 @@ const parseExtendedOrdersCsv = (records) => {
     return [...setups.values()];
 };
 
+const DAT740_LENGTH = 740;
+const DAT740_ORDER_WIDTHS = [15, 12, 30, 5, ...Array(15).fill(5), 4, 5, 6, 2, 8, 2];
+
+// A record length fits when every non-blank record has the header's constant 'G' and nothing but blanks is left over.
+const fitsRecordLength = (data, length) => {
+    const pattern = new RegExp(`[^\\r\\n]{${length}}`, 'g');
+    const records = (data.match(pattern) || []).filter((record) => record.trim() !== '');
+    return records.length > 0 && records.every((record) => record[141] === 'G') && data.replace(pattern, '').trim() === '';
+};
+
+// Maps a 740-character record onto the 55-field row used by mac2syncro; the 15 creases are packed into the first score field.
+const dat740Row = (record) => {
+    const read = (offset, width) => record.slice(offset, offset + width).replace(/  +/g, ' ').trim();
+    const row = [];
+    let offset = 0;
+    for (const width of [11, 44, 12, 36, 23, 5, 10, 1]) {
+        row.push(read(offset, width));
+        offset += width;
+    }
+    for (let order = 0; order < 3; order += 1) {
+        const fields = DAT740_ORDER_WIDTHS.map((width) => {
+            const value = read(offset, width);
+            offset += width;
+            return value;
+        });
+        const scores = fields.slice(4, 19).filter((value) => value !== '' && value !== '0');
+        row.push(...fields.slice(0, 4), scores.join(' '), '', '', '', '', ...fields.slice(19));
+    }
+    row.push(read(offset, 8), read(offset + 8, 8));
+    return row;
+};
+
 const mac_parse = function(data){
     logger.debug('extended_orders: mac_parse');
     const firstLine = String(data).split(/\r\n|\r|\n/, 1)[0].replace(/^\uFEFF/, '').toLowerCase();
@@ -118,6 +150,17 @@ const mac_parse = function(data){
         const records = parseCsv(String(data));
         if (records.length < 2) throw new Error('Extended orders CSV contains no order rows');
         return parseExtendedOrdersCsv(records);
+    }
+
+    const fits589 = fitsRecordLength(data, 589);
+    const fits740 = fitsRecordLength(data, DAT740_LENGTH);
+    // A single 740 record with an empty third order also fits 589; order 1's fixed "20" field breaks the tie.
+    const firstRecord = String(data).replace(/^[\r\n]+/, '');
+    const prefer740 = fits740 && (!fits589 || (firstRecord.slice(304, 306) === '20' && firstRecord.slice(254, 256) !== '20'));
+    if (prefer740) {
+        return (data.match(new RegExp(`[^\\r\\n]{${DAT740_LENGTH}}`, 'g')) || [])
+            .filter((record) => record.trim() !== '')
+            .map(dat740Row);
     }
 
     const rows = [];

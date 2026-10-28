@@ -11,6 +11,7 @@ const flute = require('./flute.js');
 const { connect: syncroConnect } = require('../utils/syncro');
 const { classicLevels } = require('../utils/classic-levels');
 const { validateSyncroPayload, validateConversion } = require('./order-validation');
+const { MAX_CREASES_PER_ORDER, MAX_CREASES_PER_SETUP } = require('../utils/order-constraints');
 const parser = new XMLParser();
 var current = null;
 var backend = null;
@@ -524,6 +525,9 @@ const manual_setup_to_syncro = async function(input){
             if(scores.some((score) => Number(score) > webWidth)){
                 throw new Error(`${label} crease measurements cannot exceed the web width`);
             }
+            if(scores.length > MAX_CREASES_PER_ORDER){
+                throw new Error(`${label} may contain no more than ${MAX_CREASES_PER_ORDER} crease measures`);
+            }
             const level = order.level === undefined ? 3 - index : Number(order.level);
             if(!Number.isInteger(level) || level < 1 || level > 3){
                 throw new Error(`${label} level must be 1, 2, or 3`);
@@ -542,8 +546,8 @@ const manual_setup_to_syncro = async function(input){
         });
 
         const creaseMeasureCount = parsedOrders.reduce((count, order) => count + order.scores.length, 0);
-        if(creaseMeasureCount > 22){
-            throw new Error('A setup may contain no more than 22 crease measures');
+        if(creaseMeasureCount > MAX_CREASES_PER_SETUP){
+            throw new Error(`A setup may contain no more than ${MAX_CREASES_PER_SETUP} crease measures`);
         }
 
         const usedWidth = parsedOrders.reduce((sum, order) => sum + order.sheetWidth * order.outs, 0);

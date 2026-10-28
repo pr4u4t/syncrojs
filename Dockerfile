@@ -17,10 +17,15 @@ ENV NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
 ARG INSTALL_CPP_TOOLS=false
 RUN if [ "$INSTALL_CPP_TOOLS" = "true" ]; then apk add --no-cache g++ boost-dev; fi
 
+ARG INSTALL_QT_TOOLS=false
+RUN if [ "$INSTALL_QT_TOOLS" = "true" ]; then apk add --no-cache g++ make cmake samurai \
+      qt6-qtbase-dev qt6-qtbase-sqlite qt6-qtbase-x11 qt6-qtdeclarative-dev qt6-qtwayland \
+      mesa-dri-gallium font-dejavu; fi
+
 ENV NODE_ENV=production
 
 WORKDIR /usr/src/app
-   
+RUN npm config set strict-ssl false   
 # Download dependencies as a separate step to take advantage of Docker's caching.
 # Leverage a cache mount to /root/.npm to speed up subsequent builds.
 # Leverage a bind mounts to package.json and package-lock.json to avoid having to copy them into

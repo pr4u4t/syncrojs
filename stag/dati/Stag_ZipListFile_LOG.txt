@@ -1,0 +1,10 @@
+C:\USR\STAG\DATI\*.LOG
+C:\USR\STAG\DATI\*.ini
+C:\USR\STAG\DATI\Ver_Stag_Dati.txt
+C:\USR\STAG\DATI\*.DAT
+C:\USR\STAG\DATI\*.OLD
+
+
+
+
+

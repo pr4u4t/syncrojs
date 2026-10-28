@@ -3,6 +3,7 @@ services:
     build:
       args:
         INSTALL_CPP_TOOLS: "true"
+        INSTALL_QT_TOOLS: "true"
       secrets:
         - extra_ca
   classic-generator:

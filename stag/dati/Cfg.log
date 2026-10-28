@@ -1,0 +1,568 @@
+13/10/11 | 20.24.28 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+13/10/11 | 20.24.29 | rmt_sta_bar_macro RETOK
+13/10/11 | 20.27.01 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+13/10/11 | 20.27.02 | rmt_sta_bar_macro RETOK
+13/10/11 | 20.32.07 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+13/10/11 | 20.32.07 | rmt_sta_bar_macro RETOK
+13/10/11 | 20.32.49 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+13/10/11 | 20.32.50 | rmt_sta_bar_macro RETOK
+13/10/11 | 20.33.01 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+13/10/11 | 20.33.02 | rmt_sta_bar_macro RETOK
+13/10/11 | 21.43.59 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+13/10/11 | 21.44.00 | rmt_sta_bar_macro RETOK
+13/10/11 | 21.44.04 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+13/10/11 | 21.44.05 | rmt_sta_bar_macro RETOK
+13/10/11 | 21.44.10 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+13/10/11 | 21.44.11 | rmt_sta_bar_macro RETOK
+13/10/11 | 21.44.15 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+13/10/11 | 21.44.16 | rmt_sta_bar_macro RETOK
+14/10/11 | 01.08.19 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+14/10/11 | 01.08.20 | rmt_sta_bar_macro RETOK
+14/10/11 | 01.08.31 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+14/10/11 | 01.08.32 | rmt_sta_bar_macro RETOK
+14/10/11 | 01.08.39 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+14/10/11 | 01.08.40 | rmt_sta_bar_macro RETOK
+14/10/11 | 01.08.45 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+14/10/11 | 01.08.46 | rmt_sta_bar_macro RETOK
+14/10/11 | 02.12.38 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+14/10/11 | 02.12.38 | rmt_sta_bar_macro RETOK
+14/10/11 | 02.12.42 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+14/10/11 | 02.12.43 | rmt_sta_bar_macro RETOK
+14/10/11 | 21.21.38 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/10/11 | 21.21.39 | rmt_sta_bar_macro RETOK
+14/10/11 | 22.44.06 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/10/11 | 22.44.06 | rmt_sta_bar_macro RETOK
+14/10/11 | 23.16.03 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/10/11 | 23.16.03 | rmt_sta_bar_macro RETOK
+14/10/11 | 23.16.31 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/10/11 | 23.16.32 | rmt_sta_bar_macro RETOK
+14/10/11 | 23.16.51 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/10/11 | 23.16.52 | rmt_sta_bar_macro RETOK
+14/10/11 | 23.19.14 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/10/11 | 23.19.15 | rmt_sta_bar_macro RETOK
+15/10/11 | 03.59.50 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+15/10/11 | 03.59.50 | rmt_sta_bar_macro RETOK
+15/10/11 | 03.59.53 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+15/10/11 | 03.59.53 | rmt_sta_bar_macro RETOK
+15/10/11 | 04.00.13 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+15/10/11 | 04.00.14 | rmt_sta_bar_macro RETOK
+15/10/11 | 04.00.17 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+15/10/11 | 04.00.18 | rmt_sta_bar_macro RETOK
+15/10/11 | 04.09.53 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+15/10/11 | 04.09.54 | rmt_sta_bar_macro RETOK
+15/10/11 | 04.09.57 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+15/10/11 | 04.09.58 | rmt_sta_bar_macro RETOK
+15/10/11 | 04.09.59 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+15/10/11 | 04.10.00 | rmt_sta_bar_macro RETOK
+15/10/11 | 04.10.02 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+15/10/11 | 04.10.02 | rmt_sta_bar_macro RETOK
+15/10/11 | 04.29.22 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+15/10/11 | 04.29.23 | rmt_sta_bar_macro RETOK
+15/10/11 | 04.29.26 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+15/10/11 | 04.29.27 | rmt_sta_bar_macro RETOK
+15/10/11 | 04.40.00 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/10/11 | 04.40.01 | rmt_sta_bar_macro RETOK
+02/11/11 | 04.59.15 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+02/11/11 | 04.59.16 | rmt_sta_bar_macro RETOK
+02/11/11 | 04.59.26 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+02/11/11 | 04.59.27 | rmt_sta_bar_macro RETOK
+07/11/11 | 10.48.49 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/11/11 | 10.48.50 | rmt_sta_bar_macro RETOK
+07/11/11 | 10.48.57 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/11/11 | 10.48.58 | rmt_sta_bar_macro RETOK
+07/11/11 | 10.51.25 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/11/11 | 10.51.26 | rmt_sta_bar_macro RETOK
+07/11/11 | 10.51.35 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/11/11 | 10.51.36 | rmt_sta_bar_macro RETOK
+07/11/11 | 14.12.29 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/11/11 | 14.12.30 | rmt_sta_bar_macro RETOK
+07/11/11 | 14.12.36 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/11/11 | 14.12.37 | rmt_sta_bar_macro RETOK
+07/11/11 | 14.15.36 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/11/11 | 14.15.37 | rmt_sta_bar_macro RETOK
+07/11/11 | 14.15.43 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/11/11 | 14.15.43 | rmt_sta_bar_macro RETOK
+08/11/11 | 09.27.38 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/11/11 | 09.27.39 | rmt_sta_bar_macro RETOK
+08/11/11 | 09.27.49 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/11/11 | 09.27.50 | rmt_sta_bar_macro RETOK
+08/11/11 | 14.43.19 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/11/11 | 14.43.20 | rmt_sta_bar_macro RETOK
+08/11/11 | 18.00.04 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/11/11 | 18.00.05 | rmt_sta_bar_macro RETOK
+08/11/11 | 18.01.34 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/11/11 | 18.01.35 | rmt_sta_bar_macro RETOK
+08/11/11 | 18.03.34 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/11/11 | 18.03.35 | rmt_sta_bar_macro RETOK
+08/11/11 | 18.07.38 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/11/11 | 18.07.39 | rmt_sta_bar_macro RETOK
+09/11/11 | 12.20.31 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+09/11/11 | 12.20.32 | rmt_sta_bar_macro RETOK
+09/11/11 | 12.20.44 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+09/11/11 | 12.20.44 | rmt_sta_bar_macro RETOK
+12/11/11 | 11.17.44 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+12/11/11 | 11.17.45 | rmt_sta_bar_macro RETOK
+12/11/11 | 11.26.25 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+12/11/11 | 11.26.26 | rmt_sta_bar_macro RETOK
+12/11/11 | 11.27.21 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+12/11/11 | 11.27.22 | rmt_sta_bar_macro RETOK
+12/11/11 | 11.44.48 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+12/11/11 | 11.44.49 | rmt_sta_bar_macro RETOK
+14/11/11 | 20.09.46 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 20.09.47 | rmt_sta_bar_macro RETOK
+14/11/11 | 20.49.00 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 20.49.01 | rmt_sta_bar_macro RETOK
+14/11/11 | 20.51.01 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 20.51.02 | rmt_sta_bar_macro RETOK
+14/11/11 | 20.57.20 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 20.57.21 | rmt_sta_bar_macro RETOK
+14/11/11 | 21.00.52 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 21.00.53 | rmt_sta_bar_macro RETOK
+14/11/11 | 21.04.05 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 21.04.06 | rmt_sta_bar_macro RETOK
+14/11/11 | 21.06.39 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 21.06.39 | rmt_sta_bar_macro RETOK
+14/11/11 | 21.08.16 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 21.08.17 | rmt_sta_bar_macro RETOK
+14/11/11 | 21.11.21 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 21.11.22 | rmt_sta_bar_macro RETOK
+14/11/11 | 21.19.51 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 21.19.52 | rmt_sta_bar_macro RETOK
+14/11/11 | 21.20.58 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 21.20.59 | rmt_sta_bar_macro RETOK
+14/11/11 | 21.22.01 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+14/11/11 | 21.22.02 | rmt_sta_bar_macro RETOK
+15/11/11 | 16.24.29 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 16.24.30 | rmt_sta_bar_macro RETOK
+15/11/11 | 16.32.31 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 16.32.32 | rmt_sta_bar_macro RETOK
+15/11/11 | 16.34.41 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 16.34.41 | rmt_sta_bar_macro RETOK
+15/11/11 | 16.36.14 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 16.36.15 | rmt_sta_bar_macro RETOK
+15/11/11 | 16.51.29 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 16.51.30 | rmt_sta_bar_macro RETOK
+15/11/11 | 16.53.09 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 16.53.10 | rmt_sta_bar_macro RETOK
+15/11/11 | 16.53.36 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 16.53.37 | rmt_sta_bar_macro RETOK
+15/11/11 | 16.55.33 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 16.55.34 | rmt_sta_bar_macro RETOK
+15/11/11 | 16.59.51 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 16.59.52 | rmt_sta_bar_macro RETOK
+15/11/11 | 17.01.06 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 17.01.06 | rmt_sta_bar_macro RETOK
+15/11/11 | 17.02.36 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 17.02.37 | rmt_sta_bar_macro RETOK
+15/11/11 | 17.03.29 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 17.03.30 | rmt_sta_bar_macro RETOK
+15/11/11 | 17.03.42 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+15/11/11 | 17.03.43 | rmt_sta_bar_macro RETOK
+16/11/11 | 18.22.39 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 18.22.40 | rmt_sta_bar_macro RETOK
+16/11/11 | 18.30.14 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 18.30.15 | rmt_sta_bar_macro RETOK
+16/11/11 | 18.30.31 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 18.30.32 | rmt_sta_bar_macro RETOK
+16/11/11 | 18.33.48 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 18.33.49 | rmt_sta_bar_macro RETOK
+16/11/11 | 18.37.42 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 18.37.42 | rmt_sta_bar_macro RETOK
+16/11/11 | 18.38.27 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 18.38.28 | rmt_sta_bar_macro RETOK
+16/11/11 | 18.39.17 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 18.39.18 | rmt_sta_bar_macro RETOK
+16/11/11 | 18.43.32 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 18.43.33 | rmt_sta_bar_macro RETOK
+16/11/11 | 19.01.40 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 19.01.40 | rmt_sta_bar_macro RETOK
+16/11/11 | 19.05.31 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 19.05.32 | rmt_sta_bar_macro RETOK
+16/11/11 | 19.06.52 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 19.06.53 | rmt_sta_bar_macro RETOK
+16/11/11 | 19.07.59 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 19.08.00 | rmt_sta_bar_macro RETOK
+16/11/11 | 19.10.10 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 19.10.11 | rmt_sta_bar_macro RETOK
+16/11/11 | 19.11.01 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/11/11 | 19.11.02 | rmt_sta_bar_macro RETOK
+18/11/11 | 11.40.32 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+18/11/11 | 11.40.33 | rmt_sta_bar_macro RETOK
+22/11/11 | 13.50.52 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+22/11/11 | 13.50.53 | rmt_sta_bar_macro RETOK
+22/11/11 | 13.52.38 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+22/11/11 | 13.52.39 | rmt_sta_bar_macro RETOK
+22/11/11 | 13.54.37 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+22/11/11 | 13.54.38 | rmt_sta_bar_macro RETOK
+22/11/11 | 13.58.56 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+22/11/11 | 13.58.57 | rmt_sta_bar_macro RETOK
+22/11/11 | 14.02.02 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+22/11/11 | 14.02.03 | rmt_sta_bar_macro RETOK
+22/11/11 | 16.30.50 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+22/11/11 | 16.30.51 | rmt_sta_bar_macro RETOK
+22/11/11 | 16.31.03 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+22/11/11 | 16.31.04 | rmt_sta_bar_macro RETOK
+22/11/11 | 16.34.22 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+22/11/11 | 16.34.22 | rmt_sta_bar_macro RETOK
+22/11/11 | 16.34.44 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+22/11/11 | 16.34.45 | rmt_sta_bar_macro RETOK
+22/11/11 | 16.36.07 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+22/11/11 | 16.36.08 | rmt_sta_bar_macro RETOK
+23/11/11 | 08.29.34 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 08.29.35 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.04.13 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.04.14 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.04.35 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.04.36 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.06.44 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.06.45 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.12.39 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.12.40 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.12.50 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.12.51 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.14.11 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.14.12 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.15.18 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.15.19 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.15.25 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.15.25 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.16.29 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.16.30 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.16.34 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.16.35 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.17.25 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.17.26 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.17.30 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.17.31 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.18.21 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.18.22 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.19.18 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.19.19 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.20.36 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.20.37 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.20.44 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.20.45 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.24.45 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.24.46 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.24.50 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.24.51 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.25.23 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.25.24 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.25.27 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.25.28 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.26.01 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.26.02 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.26.05 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.26.06 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.26.42 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.26.43 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.27.28 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.27.28 | rmt_sta_bar_macro RETOK
+23/11/11 | 09.36.47 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 09.36.48 | rmt_sta_bar_macro RETOK
+23/11/11 | 17.00.16 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 17.00.17 | rmt_sta_bar_macro RETOK
+23/11/11 | 17.00.30 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 17.00.31 | rmt_sta_bar_macro RETOK
+23/11/11 | 17.00.43 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 17.00.44 | rmt_sta_bar_macro RETOK
+23/11/11 | 17.02.21 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 17.02.21 | rmt_sta_bar_macro RETOK
+23/11/11 | 18.41.29 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 18.41.30 | rmt_sta_bar_macro RETOK
+23/11/11 | 18.41.46 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 18.41.47 | rmt_sta_bar_macro RETOK
+23/11/11 | 18.48.44 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 18.48.45 | rmt_sta_bar_macro RETOK
+23/11/11 | 18.48.52 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+23/11/11 | 18.48.53 | rmt_sta_bar_macro RETOK
+24/11/11 | 08.07.20 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 08.07.21 | rmt_sta_bar_macro RETOK
+24/11/11 | 08.07.34 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 08.07.34 | rmt_sta_bar_macro RETOK
+24/11/11 | 09.27.43 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 09.27.44 | rmt_sta_bar_macro RETOK
+24/11/11 | 09.36.03 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 09.36.04 | rmt_sta_bar_macro RETOK
+24/11/11 | 09.46.33 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 09.46.34 | rmt_sta_bar_macro RETOK
+24/11/11 | 10.03.28 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 10.03.29 | rmt_sta_bar_macro RETOK
+24/11/11 | 12.00.04 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 12.00.05 | rmt_sta_bar_macro RETOK
+24/11/11 | 12.01.03 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 12.01.04 | rmt_sta_bar_macro RETOK
+24/11/11 | 12.12.35 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 12.12.36 | rmt_sta_bar_macro RETOK
+24/11/11 | 12.18.12 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 12.18.12 | rmt_sta_bar_macro RETOK
+24/11/11 | 12.32.56 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 12.32.56 | rmt_sta_bar_macro RETOK
+24/11/11 | 12.33.46 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 12.33.47 | rmt_sta_bar_macro RETOK
+24/11/11 | 18.37.23 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 18.37.24 | rmt_sta_bar_macro RETOK
+24/11/11 | 18.43.05 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 18.43.06 | rmt_sta_bar_macro RETOK
+24/11/11 | 18.58.11 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 18.58.12 | rmt_sta_bar_macro RETOK
+24/11/11 | 19.11.08 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/11/11 | 19.11.09 | rmt_sta_bar_macro RETOK
+25/11/11 | 11.02.55 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 11.02.56 | rmt_sta_bar_macro RETOK
+25/11/11 | 11.03.13 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 11.03.14 | rmt_sta_bar_macro RETOK
+25/11/11 | 11.35.01 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 11.35.02 | rmt_sta_bar_macro RETOK
+25/11/11 | 11.35.20 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 11.35.21 | rmt_sta_bar_macro RETOK
+25/11/11 | 12.01.39 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 12.01.40 | rmt_sta_bar_macro RETOK
+25/11/11 | 13.37.02 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 13.37.03 | rmt_sta_bar_macro RETOK
+25/11/11 | 13.37.13 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 13.37.14 | rmt_sta_bar_macro RETOK
+25/11/11 | 14.08.20 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 14.08.21 | rmt_sta_bar_macro RETOK
+25/11/11 | 14.08.53 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 14.08.54 | rmt_sta_bar_macro RETOK
+25/11/11 | 14.09.03 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 14.09.04 | rmt_sta_bar_macro RETOK
+25/11/11 | 14.45.38 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 14.45.39 | rmt_sta_bar_macro RETOK
+25/11/11 | 14.45.47 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 14.45.47 | rmt_sta_bar_macro RETOK
+25/11/11 | 16.02.56 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 16.02.57 | rmt_sta_bar_macro RETOK
+25/11/11 | 17.17.19 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 17.17.20 | rmt_sta_bar_macro RETOK
+25/11/11 | 17.17.24 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/11/11 | 17.17.25 | rmt_sta_bar_macro RETOK
+26/11/11 | 14.55.40 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+26/11/11 | 14.55.41 | rmt_sta_bar_macro RETOK
+26/11/11 | 14.55.46 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+26/11/11 | 14.55.47 | rmt_sta_bar_macro RETOK
+26/11/11 | 14.56.11 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+26/11/11 | 14.56.12 | rmt_sta_bar_macro RETOK
+28/11/11 | 09.23.59 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 09.24.00 | rmt_sta_bar_macro RETOK
+28/11/11 | 09.24.11 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 09.24.12 | rmt_sta_bar_macro RETOK
+28/11/11 | 09.53.36 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 09.53.37 | rmt_sta_bar_macro RETOK
+28/11/11 | 11.19.17 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 11.19.18 | rmt_sta_bar_macro RETOK
+28/11/11 | 11.19.21 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 11.19.22 | rmt_sta_bar_macro RETOK
+28/11/11 | 14.26.27 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 14.26.28 | rmt_sta_bar_macro RETOK
+28/11/11 | 14.26.33 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 14.26.34 | rmt_sta_bar_macro RETOK
+28/11/11 | 14.29.53 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 14.29.54 | rmt_sta_bar_macro RETOK
+28/11/11 | 16.49.49 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 16.49.50 | rmt_sta_bar_macro RETOK
+28/11/11 | 16.54.49 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 16.54.50 | rmt_sta_bar_macro RETOK
+28/11/11 | 16.54.53 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 16.54.54 | rmt_sta_bar_macro RETOK
+28/11/11 | 16.55.24 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 16.55.25 | rmt_sta_bar_macro RETOK
+28/11/11 | 16.55.55 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 16.55.56 | rmt_sta_bar_macro RETOK
+28/11/11 | 16.59.23 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 16.59.24 | rmt_sta_bar_macro RETOK
+28/11/11 | 16.59.27 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 16.59.28 | rmt_sta_bar_macro RETOK
+28/11/11 | 16.59.53 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 16.59.54 | rmt_sta_bar_macro RETOK
+28/11/11 | 17.01.16 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 17.01.17 | rmt_sta_bar_macro RETOK
+28/11/11 | 17.01.21 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 17.01.22 | rmt_sta_bar_macro RETOK
+28/11/11 | 17.01.37 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 17.01.38 | rmt_sta_bar_macro RETOK
+28/11/11 | 17.02.26 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+28/11/11 | 17.02.27 | rmt_sta_bar_macro RETOK
+07/12/11 | 09.50.00 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 09.50.00 | rmt_sta_bar_macro RETOK
+07/12/11 | 11.39.06 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 11.39.07 | rmt_sta_bar_macro RETOK
+07/12/11 | 14.02.44 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 14.02.45 | rmt_sta_bar_macro RETOK
+07/12/11 | 14.39.45 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 14.39.46 | rmt_sta_bar_macro RETOK
+07/12/11 | 14.39.49 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 14.39.50 | rmt_sta_bar_macro RETOK
+07/12/11 | 14.39.53 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 14.39.54 | rmt_sta_bar_macro RETOK
+07/12/11 | 14.49.06 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 14.49.07 | rmt_sta_bar_macro RETOK
+07/12/11 | 14.49.23 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 14.49.24 | rmt_sta_bar_macro RETOK
+07/12/11 | 14.52.19 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 14.52.20 | rmt_sta_bar_macro RETOK
+07/12/11 | 14.54.02 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 14.54.03 | rmt_sta_bar_macro RETOK
+07/12/11 | 14.56.43 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 14.56.44 | rmt_sta_bar_macro RETOK
+07/12/11 | 15.06.03 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 15.06.04 | rmt_sta_bar_macro RETOK
+07/12/11 | 15.06.07 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 15.06.08 | rmt_sta_bar_macro RETOK
+07/12/11 | 15.06.11 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 15.06.11 | rmt_sta_bar_macro RETOK
+07/12/11 | 15.24.46 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 15.24.47 | rmt_sta_bar_macro RETOK
+07/12/11 | 15.26.15 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/12/11 | 15.26.16 | rmt_sta_bar_macro RETOK
+08/12/11 | 10.49.32 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/12/11 | 10.49.33 | rmt_sta_bar_macro RETOK
+08/12/11 | 10.49.39 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/12/11 | 10.49.40 | rmt_sta_bar_macro RETOK
+08/12/11 | 10.49.43 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/12/11 | 10.49.44 | rmt_sta_bar_macro RETOK
+08/12/11 | 10.49.47 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/12/11 | 10.49.48 | rmt_sta_bar_macro RETOK
+08/12/11 | 10.58.49 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/12/11 | 10.58.50 | rmt_sta_bar_macro RETOK
+08/12/11 | 10.59.35 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/12/11 | 10.59.36 | rmt_sta_bar_macro RETOK
+08/12/11 | 11.00.26 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/12/11 | 11.00.27 | rmt_sta_bar_macro RETOK
+08/12/11 | 11.01.42 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/12/11 | 11.01.43 | rmt_sta_bar_macro RETOK
+08/12/11 | 11.07.22 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/12/11 | 11.07.23 | rmt_sta_bar_macro RETOK
+08/12/11 | 11.14.44 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+08/12/11 | 11.14.45 | rmt_sta_bar_macro RETOK
+03/05/12 | 12.02.03 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+03/05/12 | 12.02.04 | rmt_sta_bar_macro RETOK
+04/05/12 | 11.18.03 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+04/05/12 | 11.18.03 | rmt_sta_bar_macro RETOK
+04/05/12 | 11.20.46 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+04/05/12 | 11.20.47 | rmt_sta_bar_macro RETOK
+04/05/12 | 11.23.18 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+04/05/12 | 11.23.18 | rmt_sta_bar_macro RETOK
+04/05/12 | 11.25.48 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+04/05/12 | 11.25.49 | rmt_sta_bar_macro RETOK
+24/03/15 | 07.54.21 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 07.54.22 | rmt_sta_bar_macro RETOK
+24/03/15 | 07.54.45 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 07.54.45 | rmt_sta_bar_macro RETOK
+24/03/15 | 07.58.03 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 07.58.04 | rmt_sta_bar_macro RETOK
+24/03/15 | 07.58.20 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 07.58.20 | rmt_sta_bar_macro RETOK
+24/03/15 | 08.02.13 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 08.02.14 | rmt_sta_bar_macro RETOK
+24/03/15 | 08.02.27 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 08.02.28 | rmt_sta_bar_macro RETOK
+24/03/15 | 08.03.57 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 08.03.58 | rmt_sta_bar_macro RETOK
+24/03/15 | 08.04.12 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 08.04.13 | rmt_sta_bar_macro RETOK
+24/03/15 | 08.05.37 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 08.05.38 | rmt_sta_bar_macro RETOK
+24/03/15 | 08.05.52 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 08.05.52 | rmt_sta_bar_macro RETOK
+24/03/15 | 08.15.40 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 08.15.41 | rmt_sta_bar_macro RETOK
+24/03/15 | 08.17.41 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 08.17.42 | rmt_sta_bar_macro RETOK
+24/03/15 | 08.47.50 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 08.47.51 | rmt_sta_bar_macro RETOK
+24/03/15 | 08.48.08 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+24/03/15 | 08.48.09 | rmt_sta_bar_macro RETOK
+03/03/16 | 09.54.00 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+03/03/16 | 09.54.01 | rmt_sta_bar_macro RETOK
+03/03/16 | 09.56.01 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+03/03/16 | 09.56.01 | rmt_sta_bar_macro RETOK
+02/02/17 | 16.18.32 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+02/02/17 | 16.18.33 | rmt_sta_bar_macro RETOK
+02/02/17 | 16.19.54 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+02/02/17 | 16.19.55 | rmt_sta_bar_macro RETOK
+02/02/17 | 16.23.04 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+02/02/17 | 16.23.05 | rmt_sta_bar_macro RETOK
+17/05/17 | 16.06.16 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+17/05/17 | 16.06.16 | rmt_sta_bar_macro RETOK
+17/05/17 | 16.41.06 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+17/05/17 | 16.41.07 | rmt_sta_bar_macro RETOK
+17/05/17 | 16.41.17 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+17/05/17 | 16.41.18 | rmt_sta_bar_macro RETOK
+17/05/17 | 16.41.32 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+17/05/17 | 16.41.32 | rmt_sta_bar_macro RETOK
+17/05/17 | 16.41.42 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+17/05/17 | 16.41.42 | rmt_sta_bar_macro RETOK
+17/05/17 | 17.03.17 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+17/05/17 | 17.03.17 | rmt_sta_bar_macro RETOK
+20/01/18 | 09.28.36 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+20/01/18 | 09.28.37 | rmt_sta_bar_macro RETOK
+20/01/18 | 09.31.29 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+20/01/18 | 09.31.30 | rmt_sta_bar_macro RETOK
+20/01/18 | 09.31.39 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+20/01/18 | 09.31.40 | rmt_sta_bar_macro RETOK
+20/01/18 | 09.33.41 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+20/01/18 | 09.33.42 | rmt_sta_bar_macro RETOK
+26/12/18 | 09.52.16 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+26/12/18 | 09.52.17 | rmt_sta_bar_macro RETOK
+26/12/18 | 09.53.41 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+26/12/18 | 09.53.42 | rmt_sta_bar_macro RETOK
+26/12/18 | 09.54.34 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+26/12/18 | 09.54.35 | rmt_sta_bar_macro RETOK
+26/12/18 | 09.54.42 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+26/12/18 | 09.54.42 | rmt_sta_bar_macro RETOK
+26/12/18 | 09.55.05 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+26/12/18 | 09.55.06 | rmt_sta_bar_macro RETOK
+26/12/18 | 09.55.26 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+26/12/18 | 09.55.27 | rmt_sta_bar_macro RETOK
+26/12/18 | 10.07.23 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+26/12/18 | 10.07.23 | rmt_sta_bar_macro RETOK
+26/12/18 | 10.47.48 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+26/12/18 | 10.47.48 | rmt_sta_bar_macro RETOK
+04/03/19 | 12.35.54 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+04/03/19 | 12.35.55 | rmt_sta_bar_macro RETOK
+04/03/19 | 12.40.21 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+04/03/19 | 12.40.22 | rmt_sta_bar_macro RETOK
+04/03/19 | 12.46.26 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+04/03/19 | 12.46.26 | rmt_sta_bar_macro RETOK
+07/03/19 | 10.34.27 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+07/03/19 | 10.34.28 | rmt_sta_bar_macro RETOK
+16/10/19 | 13.26.03 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/10/19 | 13.26.04 | rmt_sta_bar_macro RETOK
+16/10/19 | 13.32.01 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/10/19 | 13.32.02 | rmt_sta_bar_macro RETOK
+22/03/21 | 14.03.13 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+22/03/21 | 14.03.13 | rmt_sta_bar_macro RETOK
+22/03/21 | 14.03.19 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+22/03/21 | 14.03.19 | rmt_sta_bar_macro RETOK
+22/03/21 | 14.06.09 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+22/03/21 | 14.06.09 | rmt_sta_bar_macro RETOK
+22/03/21 | 14.06.15 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+22/03/21 | 14.06.15 | rmt_sta_bar_macro RETOK
+22/03/21 | 14.07.11 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+22/03/21 | 14.07.11 | rmt_sta_bar_macro RETOK
+22/03/21 | 15.16.56 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+22/03/21 | 15.16.56 | rmt_sta_bar_macro RETOK
+22/03/21 | 15.33.42 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+22/03/21 | 15.33.43 | rmt_sta_bar_macro RETOK
+22/03/21 | 15.44.13 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+22/03/21 | 15.44.14 | rmt_sta_bar_macro RETOK
+22/03/21 | 15.44.21 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+22/03/21 | 15.44.21 | rmt_sta_bar_macro RETOK
+22/03/21 | 15.45.08 | Ges_fine_trasmissione: Invio curva di taglio e parametri di configurazione a PLC
+22/03/21 | 15.45.08 | rmt_sta_bar_macro RETOK
+16/05/23 | 11.00.54 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+16/05/23 | 11.00.55 | rmt_sta_bar_macro RETOK
+25/05/23 | 10.19.05 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/05/23 | 10.19.06 | rmt_sta_bar_macro RETOK
+25/05/23 | 10.22.33 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+25/05/23 | 10.22.34 | rmt_sta_bar_macro RETOK
+30/08/23 | 10.47.47 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+30/08/23 | 10.47.48 | rmt_sta_bar_macro RETOK
+30/08/23 | 10.48.02 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+30/08/23 | 10.48.03 | rmt_sta_bar_macro RETOK
+07/08/24 | 09.53.50 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/08/24 | 09.53.51 | rmt_sta_bar_macro RETOK
+07/08/24 | 09.54.07 | Ges_fine_trasmissione: Invio parametri macchina e parametri di configurazione a PLC
+07/08/24 | 09.54.08 | rmt_sta_bar_macro RETOK

@@ -312,7 +312,7 @@ test('builds a direct Syncro setup with three manually entered orders', async ()
       sheetLengthMm: `${900 + index * 100}`,
       quantitySheets: `${10 + index}`,
       sheetsPerStack: '100',
-      scores: index === 2 ? Array.from({ length: 22 }, (_, scoreIndex) => String((scoreIndex + 1) * 10)) : []
+      scores: index === 2 ? Array.from({ length: 15 }, (_, scoreIndex) => String((scoreIndex + 1) * 10)) : []
     }))
   });
 
@@ -325,7 +325,7 @@ test('builds a direct Syncro setup with three manually entered orders', async ()
   expect([setup.result[12], setup.result[43], setup.result[74]]).toEqual([8000, 8000, 8000]);
   expect([setup.result[14], setup.result[45], setup.result[76]]).toEqual([
     '8000',
-    Array.from({ length: 22 }, (_, index) => String((index + 1) * 100)).join(' '),
+    Array.from({ length: 15 }, (_, index) => String((index + 1) * 100)).join(' '),
     '8000'
   ]);
   expect([setup.result[19], setup.result[50], setup.result[81]]).toEqual(['3', '1', '1']);
@@ -398,6 +398,28 @@ test('limits crease measures to 22 across the setup', async () => {
 
   expect(setup.result).toBeNull();
   expect(setup.error).toMatch(/22/);
+});
+
+test('limits crease measures to 15 per manually entered order', async () => {
+  const setup = await orders.manual_setup_to_syncro({
+    setupCode: '9006',
+    webWidthMm: '2500',
+    qualityId: 'Q1',
+    fluteId: 'A',
+    orders: [{
+      orderNumber: 'ORDER-1',
+      customerName: 'Customer',
+      sheetWidthMm: '800',
+      outs: '1',
+      sheetLengthMm: '1000',
+      quantitySheets: '10',
+      sheetsPerStack: '100',
+      scores: Array.from({ length: 16 }, (_, scoreIndex) => String(scoreIndex + 1))
+    }]
+  });
+
+  expect(setup.result).toBeNull();
+  expect(setup.error).toMatch(/15/);
 });
 
 test('treats the SyncroC ok line as an accepted order', async () => {

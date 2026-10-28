@@ -1,0 +1,9 @@
+C:\BACKUP\TEMP\*.DBF
+C:\BACKUP\TEMP\*.INI
+C:\BACKUP\TEMP\7za.exe
+C:\BACKUP\TEMP\kill.exe
+C:\BACKUP\TEMP\NULL.ICO
+C:\BACKUP\TEMP\Stag*.txt
+C:\BACKUP\TEMP\Ver_Stag_Dati.txt
+
+

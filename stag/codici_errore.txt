@@ -1,0 +1,145 @@
+Attribute VB_Name = "Codici_errore"
+Option Explicit
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' Costanti per i codici di ritorno e di sincronizzazione
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Public Enum cod_ret
+  RET_OK = 1     ' funzione riuscita
+  RET_ZRO = 0     ' restituisce zero
+  RET_WRK = 2     ' operazione in corso (da servire)
+  RET_EXE = 3     ' operazione in esecuzione (attesa che termini)
+  RET_BAD = -10   ' funzione fallita
+End Enum
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' Costanti per i codici di ritorno da validazione ordini
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Public Const COD_ERR_LUN_COD = 100        'errore per assenza codice ordine
+Public Const COD_ERR_ALT_BOB = 101        'errore altezza bobina
+Public Const COD_ERR_ASS_OND = 102        'errore assenza onda
+Public Const COD_ERR_COD_OND = 103        'errore codice onda
+Public Const COD_ERR_MIN_SCA = 104        'errore larghezza minima della scatola
+Public Const COD_ERR_ASS_LIV = 105        'errore assenza livello
+Public Const COD_ERR_QUO_CRD = 106    'errore assenza di almeno una quota per i cordoni
+Public Const COD_ERR_TIP_CRD = 107    'errore sul tipo dei cordoni
+Public Const COD_ERR_ASS_CRD = 108        'errore assenza tipo cordone richiesto
+Public Const COD_ERR_LET_MIS_CRD = 109    'errore nella lettura della stringa dei cordoni
+Public Const COD_ERR_SOM_SCA = 110        'errore sulla larghezza complessiva dei formati
+Public Const COD_ERR_NUM_SCA = 111        'errore sul numero delle scatole richieste
+Public Const COD_ERR_RIF_MIN = 112        'errore sul rifilo minimo
+Public Const COD_ERR_RIF_MAX = 113        'errore sul rifilo massimo
+'Public Const COD_ERR_NUM_SCA_RIF_DX = 114 'errore sul numero delle scatole nel caso di rifilo solo a destra
+'Public Const COD_ERR_NUM_SCA_RIF_SX = 115 'errore sul numero delle scatole nel caso di rifilo solo a sinistra
+Public Const COD_ERR_LIV_DOP = 116        'errore: piu' di un ordine per uno stesso livello
+Public Const COD_ERR_LUN_FOR = 117      'errore: lunghezza formato assente
+Public Const COD_ERR_SCA_TOT_NUM = 118 'errore:numero di fogli del formato assente
+Public Const COD_ERR_FGL_PER_PIL_ALT_MAX = 119 'errore fogli per altezza massima della pila
+Public Const COD_ERR_FGL_PER_PIL_ALT_MIN = 120  'errore fogli per altezza minima della pila
+Public Const COD_ERR_ORD_DES_RUL = 121     'errore nel formato della destinazione del bancale sulle rulliere
+Public Const COD_ERR_OTT_ECC = 122    'errore di impostazione dell'ottimizzazione
+Public Const COD_ERR_TIP_RIF_SEL = 123 'Tipo di rifilo selezionato non possibile sulla macchina
+Public Const COD_ERR_SCA_NUM_ECC = 124 'errore:numero di fogli del formato accessivo
+Public Const COD_ERR_ORD_SCA = 125   'errore:formato "scarto" non possibile
+'3503 Massaro-Palmerini 22-03-02
+Public Const COD_ERR_SUP_LAR_PER_LIV = 126 'errore di ordine troppo grande su Liv Sup
+Public Const COD_ERR_MED_LAR_PER_LIV = 127 'errore di ordine troppo grande su Liv Med
+Public Const COD_ERR_INF_LAR_PER_LIV = 128 'errore di ordine troppo grande su Liv Inf
+'Fine 3503
+'07.02.02 Pieri - Lenzoni aggiunti codici per STAG
+Public Const COD_ERR_ASS_SCA_PER_TAG = 150  'errore: assenza numero scatole per taglio
+Public Const COD_ERR_ASS_CAR = 151  'errore: assenza carta
+Public Const COD_ERR_ABI_LIV = 152  'errore: livello non abilitato al formato per l'ordine
+Public Const COD_ERR_COD_COM = 153  'errore: carattere errato su codice commessa
+Public Const COD_ERR_SCA_LUN = 154  'errore: misura lunghezza scatola
+Public Const COD_ERR_ASS_CUT_TO_MARK = 155  'errore: assenza impostazione cut-to-mark
+Public Const COD_ERR_CUT_TO_MARK = 156  'errore: cut-to-mark non presente sulla macchina
+Public Const COD_ERR_LIV_LUN_DIV = 157  'errore: due formati sullo stesso livello con misure diverse
+Public Const COD_ERR_ASS_DAT = 158  'errore:assenza dati su un formato dell'ordine
+Public Const COD_ERR_MAX_SCA_LAR = 159  'errore: sulla misura della larghezza scatola di un formato dell'ordine
+Public Const COD_ERR_ASS_LUN = 160  'errore:assenza lunghezza scatola di un formato dell'ordine
+Public Const COD_ERR_SCA_PER_TAG = 161  'errore:misura eccessiva sulle scatole per taglio di un formato
+Public Const COD_ERR_ASS_NUM_FOG = 162  'errore:assenza nel numero di fogli del formato
+'02/07/02 Matteo F.
+Public Const COD_ERR_OTT_LUN = 163 'errore: Valore errato ottimizzazione lunghezza
+'Iciliouff 15-12-2002 Errori SPDE x Optional macchine
+Public Const COD_ERR_CUT_TO_MARK_TOT = 164    'errore: dato di cut-to-mark non valido o non coerente per più formati dello stesso livello
+Public Const COD_ERR_IMP_CON = 165            'errore: dato di impilamento continuo non valido o non coerente per più formati dello stesso livello
+Public Const COD_ERR_INS_TAV = 166            'errore: dato di inserimento tavola non valido o non coerente per più formati dello stesso livello
+'Iciliouff 20-11-2003
+Public Const COD_ERR_CUT_TO_MARK_LIV_ABB = 167  'errore: dato di cut to mark impostato in modo diverso sui due formati abbinati sullo stesso livello
+Public Const COD_ERR_COD_PAT = 168              'errore: dato codice pattern impostato in modo diverso sui due formati abbinati sullo stesso livello
+Public Const COD_ERR_OFS_CUT_PAT = 169          'errore: dato offset taglio registro non corretto
+Public Const COD_ERR_PAT_CON = 170              'errore: dato contrasto fotocellula non corretto
+Public Const COD_ERR_FIN_PRI = 171              'errore: dato finestra prima del pattern/mark non corretto
+Public Const COD_ERR_FIN_DOP = 172              'errore: dato finestra dopo del pattern/mark non corretto
+Public Const COD_ERR_MIS_PAT = 173              'errore: dati L1..L10 non corretti
+Public Const COD_ERR_PRI_LET_FTC = 174          'errore: dato prima lettura FTC non corretto 'Arturo uff 15-03-04
+'RFAZZI_FI 07-01-08
+Public Const COD_ERR_POS_PAT = 175         'errore: posizione laterale pattern errata
+
+
+Public Const COD_ERR_CAL_MIS_ORD = 200        'errore nel calcolo delle misure
+Public Const COD_ERR_POS_OTT_CLT = 201        'errore nel posizionamento dei coltelli
+Public Const COD_ERR_POS_OTT_CRD = 202        'errore nel posizionamento dei cordoni
+Public Const COD_ERR_TRO_CRD_TIP = 203        'sono stati richiesti troppi cordoni di un certo tipo
+Public Const COD_ERR_TRO_TIP_CRD = 204        'sono stati richiesti troppi tipi di cordone
+Public Const COD_ERR_LAR_FOR = 205            'errore nell'impostazione dell'ordine perchè richiesto rifilo assente ma la somma scatole è minore della bobina
+Public Const COD_ERR_DUE_TIP_CRD_FRZ = 206    'sono stati forzati due tipi di cordoni sull'asse ausiliario
+Public Const COD_ERR_TRO_CRD_FRZ = 207        'sono stati forzati troppi cordoni sull'asse ausiliario
+Public Const COD_ERR_FRZ_CRD = 208            'non è stata fatta correttamente la forzatura dei cordoni sull'asse ausiliario
+Public Const COD_ERR_CAR_CRD = 209            'ci sono caratteri non permessi nella stringa delle misure di cordonatura
+Public Const COD_ERR_TIP_POS = 210            'ci sono caratteri non permessi nella stringa delle misure di cordonatura
+Public Const COD_ERR_CRD_MIS = 211            'il tipo di cordone forzato non e' presente sull'asse ausiliario (andrea kappa 23-01-00)
+Public Const COD_ERR_CRD_OFF = 212            'errore nell'offset del cordone teletwin
+Public Const COD_ERR_TRO_CRD_VIC = 213        'troppi cordoni vicini
+
+' codici errore per richieste operazioni (usate per risposte ad SPDE e per protocollo con uffici)
+Public Const COD_ERR_OPE_IN_COR = 1100        ' errore: operazione in corso
+Public Const COD_ERR_AFF_IN_COR = 1101        ' errore: affilatura in corso
+Public Const COD_ERR_LUB_IN_COR = 1114        ' errore: lubrificazione in corso
+Public Const COD_ERR_IMP_AFF_CLT = 1102       ' errore: impossibile affilare il coltello
+Public Const COD_ERR_ASSE_CLT_1_LAV = 1103    ' errore: asse coltelli 1 in lavoro
+Public Const COD_ERR_ASSE_CLT_2_LAV = 1104    ' errore: asse coltelli 2 in lavoro
+Public Const COD_ERR_ASSE_CRD_1_LAV = 1105    ' errore: asse cordoni 1 in lavoro
+Public Const COD_ERR_ASSE_CRD_2_LAV = 1106    ' errore: asse cordoni 2 in lavoro
+Public Const COD_ERR_ASSE_CRD_AUX_LAV = 1107  ' errore: asse cordoni AUX in lavoro
+Public Const COD_ERR_CAM_ORD_IN_COR = 1108    ' errore: cambio ordine in corso
+Public Const COD_ERR_CAR_IN_MOV = 1109        ' errore: carrello in movimento
+Public Const COD_ERR_E_STOP = 1110            ' errore: macchina in E stop
+Public Const COD_ERR_F_STOP = 1111            ' errore: macchina in F stop
+Public Const COD_ERR_N_STOP = 1112            ' errore: macchina in normal stop
+Public Const COD_ERR_INV_DAT = 1113           ' errore: invio dati rifiutato
+Public Const COD_ERR_MAN_UTE = 1115           ' errore: macchina in manutenzione
+Public Const COD_ERR_COR_IN_POS = 1116        ' errore: corrente in posizionamento
+Public Const COD_ERR_COR_IN_LAV = 1117        ' errore: corrente in lavoro
+Public Const COD_ERR_COR_POS = 1118           ' errore: corrente posizionato
+Public Const COD_ERR_ORD_NON_ESI = 1119       ' errore: ordine non esistente
+Public Const COD_ERR_MAC_NON_RES = 1120       ' errore: macchina non resettata
+Public Const COD_ERR_MAC_RES_IN_COR = 1121    ' errore: reset in corso
+Public Const COD_ERR_LIS_ORD = 1122           ' errore: errore nella lista ordini
+Public Const COD_ERR_COM = 1123               ' errore: errore comunicazioni
+Public Const COD_ERR_ABO = 1124               ' errore: errore per abort
+Public Const COD_ERR_OND_NON_ESI = 1125       ' errore: onda non esistente
+Public Const COD_ERR_MAC_IN_MAN = 1126        ' errore: macchina in manuale si puo solamente leggere lo stato
+Public Const COD_ERR_CLT_CRD = 1127           ' errore: troppi coltelli o troppi cordoni tandem
+Public Const COD_ERR_USO_AUX = 1128           ' errore: 2 ordini consecutivi con l'asse ausiliario
+'Arturo uff 10-04-03 (1)
+Public Const COD_ERR_DAT_NON_OK = 1129        ' errore: errore lunghezza blocco dati
+Public Const COD_ERR_CMD_NON_GES = 1130       ' errore: comando non gestito
+Public Const COD_ERR_OPE_NON_GES = 1131       ' errore: operazione non gestita
+Public Const COD_ERR_INV_NUM_TUR = 1132       ' errore: errore di invio del numero turno (numero turno non compreso fra 1 e 4)
+Public Const COD_ERR_TUR_ATT_LAV = 1133       ' errore: turno attualmente in lavoro
+Public Const COD_ERR_CHA_CAP_TUR = 1134       ' errore: carattere errato nel campo capo turno
+Public Const COD_ERR_CHA_SUP_TUR = 1135       ' errore: carattere errato nel campo supervisore turno
+Public Const COD_ERR_NUM_PER_TUR = 1136       ' errore: campo numero persone turno non numerico
+Public Const COD_ERR_FOR_DAT_SYS = 1137       ' errore: formato data errato
+Public Const COD_ERR_FOR_ORA_SYS = 1138       ' errore: formato ora errato
+Public Const COD_ERR_LIN_RUN_SYS = 1139       ' errore: operazione non possibile linea in produzione
+
+' altri codici errore per protocollo uffici
+Public Const COD_ERR_UFF_IMP_ESE_OPE = 2000  'impossibile eseguire l'operazione
+Public Const COD_ERR_UFF_DAT_NON_DIS = 2001   ' errore dati richiesti non esistenti
+Public Const COD_ERR_UFF_POS_ORD_MIN = 2002   ' posizione ordine in lista inferiore a 2
+Public Const COD_ERR_UFF_COD_UNI_ERR = 2003   ' valore del codice univoco errato
+Public Const COD_ERR_UFF_CON_NON_ESI = 2004   ' non esistono consuntivi da restituire

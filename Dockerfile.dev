@@ -7,6 +7,9 @@ RUN --mount=type=secret,id=extra_ca,required=false \
 ENV NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
 ENV NODE_ENV=development
 
+# Toolchain for the Qt port in stag-qt/ (headless tests run with QT_QPA_PLATFORM=offscreen).
+RUN apk add --no-cache g++ make cmake samurai qt6-qtbase-dev qt6-qtbase-sqlite qt6-qtdeclarative-dev
+
 WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
