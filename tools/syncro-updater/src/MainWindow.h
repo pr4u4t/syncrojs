@@ -73,6 +73,8 @@ private:
     QVector<Step> fetchSteps();
     QVector<Step> stateSteps();
     QVector<Step> deploySteps();
+    QVector<Step> selfUpdateSteps();
+    void restartSelf();
 
     QString m_repoPath;
     RepoInfo m_info;
@@ -81,6 +83,7 @@ private:
     Operation m_queued = Operation::None;
     bool m_silentCheck = false;
     bool m_quitRequested = false;
+    bool m_updaterReinstalled = false;
     int m_lastNotifiedBehind = 0;
 
     CommandRunner m_runner;

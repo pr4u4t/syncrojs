@@ -142,6 +142,11 @@ MainWindow::MainWindow(const QString &repoPath, int checkIntervalMinutes, QWidge
             qApp->quit();
             return;
         }
+        if (success && m_updaterReinstalled) {
+            appendLog(tr("Aktualizator został zaktualizowany — uruchamianie nowej wersji."), false);
+            restartSelf();
+            return;
+        }
         const Operation queued = m_queued;
         m_queued = Operation::None;
         if (queued == Operation::Update)
@@ -494,6 +499,40 @@ QVector<Step> MainWindow::deploySteps()
     return {build};
 }
 
+QVector<Step> MainWindow::selfUpdateSteps()
+{
+    Step reinstall;
+    reinstall.title = tr("Aktualizacja aktualizatora (jeśli zmienił się jego kod)");
+    reinstall.program = QStringLiteral("sh");
+    reinstall.arguments = [this]() { return QStringList{QStringLiteral("tools/reinstall-updater-if-changed.sh"), m_beforeUpdate}; };
+    reinstall.cancellable = false;
+    reinstall.onFinished = [this](const StepResult &result) -> QString {
+        // Production is already deployed at this point, so a failed rebuild must not report the update as failed.
+        if (result.exitCode != 0) {
+            appendLog(tr("Nie udało się przebudować aktualizatora (kod %1). Uruchom ręcznie: sh tools/install-update-launcher.sh").arg(result.exitCode), true);
+            return {};
+        }
+        m_updaterReinstalled = result.standardOutput.contains(QLatin1String("SYNCRO_UPDATER_REINSTALLED"));
+        return {};
+    };
+    return {reinstall};
+}
+
+void MainWindow::restartSelf()
+{
+    // The installer replaced the binary on disk; start the new one once this instance has released the single-instance socket.
+    const QString binDir = qEnvironmentVariable("XDG_BIN_HOME", QDir::homePath() + QStringLiteral("/.local/bin"));
+    QStringList arguments{QStringLiteral("-c"), QStringLiteral("sleep 2; exec \"$0\" --repo \"$1\" ${2:+\"$2\"}"),
+                          binDir + QStringLiteral("/syncro-updater"), m_repoPath};
+    if (m_tray && isHidden())
+        arguments << QStringLiteral("--tray");
+    if (!QProcess::startDetached(QStringLiteral("sh"), arguments)) {
+        appendLog(tr("Nie udało się uruchomić nowej wersji aktualizatora. Uruchom go ponownie ręcznie."), true);
+        return;
+    }
+    qApp->quit();
+}
+
 void MainWindow::checkForUpdates()
 {
     if (m_runner.isRunning())
@@ -562,7 +601,7 @@ void MainWindow::startUpdate()
     };
     steps << record;
 
-    steps << deploySteps() << stateSteps();
+    steps << deploySteps() << selfUpdateSteps() << stateSteps();
     startOperation(Operation::Update, steps);
 }
 
@@ -625,7 +664,7 @@ void MainWindow::startRollback()
     steps << remember;
 
     steps << gitStep(tr("Przywracanie kodu"), {QStringLiteral("reset"), QStringLiteral("--hard"), target}, {}, true);
-    steps << deploySteps() << stateSteps();
+    steps << deploySteps() << selfUpdateSteps() << stateSteps();
     startOperation(Operation::Rollback, steps);
 }
 
@@ -660,6 +699,7 @@ void MainWindow::startRestart()
 void MainWindow::startOperation(Operation operation, const QVector<Step> &steps)
 {
     m_operation = operation;
+    m_updaterReinstalled = false;
     if (operation != Operation::Check)
         m_beforeUpdate.clear();
 

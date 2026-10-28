@@ -15,7 +15,7 @@ The installer builds `tools/syncro-updater`, installs the binary to `~/.local/bi
 - a desktop launcher (when a Desktop directory exists),
 - a KDE autostart entry that starts the updater in the system tray (`--tray`).
 
-Rerun the installer after pulling changes to the updater itself.
+After an update or rollback the updater rebuilds and reinstalls itself (`tools/reinstall-updater-if-changed.sh`) when `tools/syncro-updater` or its installer changed between the two versions, then restarts into the new binary. A failed rebuild is only logged, because production is already deployed at that point; rerun `sh tools/install-update-launcher.sh` manually in that case. Versions older than 1.1.0 cannot do this, so run the installer once by hand after this change reaches production.
 
 ## What it does
 

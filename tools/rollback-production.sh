@@ -49,3 +49,4 @@ git update-ref refs/syncro-production/rollback-from "$current"
 git reset --hard "$previous"
 make update-production
 printf '%s\n' 'Rollback deployment completed.'
+sh tools/reinstall-updater-if-changed.sh "$current" || printf '%s\n' 'Warning: updater reinstall failed; run tools/install-update-launcher.sh manually.' >&2

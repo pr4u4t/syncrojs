@@ -22,6 +22,9 @@ RUN if [ "$INSTALL_QT_TOOLS" = "true" ]; then apk add --no-cache g++ make cmake 
       qt6-qtbase-dev qt6-qtbase-sqlite qt6-qtbase-x11 qt6-qtdeclarative-dev qt6-qtwayland \
       mesa-dri-gallium font-dejavu; fi
 
+ARG INSTALL_DEV_SHELL=false
+RUN if [ "$INSTALL_DEV_SHELL" = "true" ]; then apk add --no-cache bash git; fi
+
 ENV NODE_ENV=production
 
 WORKDIR /usr/src/app

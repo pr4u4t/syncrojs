@@ -4,13 +4,10 @@ services:
       args:
         INSTALL_CPP_TOOLS: "true"
         INSTALL_QT_TOOLS: "true"
+        INSTALL_DEV_SHELL: "true"
       secrets:
         - extra_ca
   classic-generator:
     build:
       secrets:
         - extra_ca
-
-secrets:
-  extra_ca:
-    file: ${EXTRA_CA_CERT:-./tools/no-extra-ca.pem}

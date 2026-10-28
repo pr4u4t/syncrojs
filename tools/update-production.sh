@@ -44,3 +44,4 @@ fi
 
 make update-production
 printf '%s\n' 'Production update completed.'
+sh tools/reinstall-updater-if-changed.sh "$before" || printf '%s\n' 'Warning: updater reinstall failed; run tools/install-update-launcher.sh manually.' >&2

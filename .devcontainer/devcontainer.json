@@ -22,5 +22,8 @@
     }
   },
   "remoteUser": "node",
+  "remoteEnv": {
+    "SHELL": "/bin/bash"
+  },
   "shutdownAction": "stopCompose"
 }
