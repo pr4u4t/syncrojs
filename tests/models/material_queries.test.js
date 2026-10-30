@@ -60,7 +60,7 @@ test.each(models)('$name list, lookup, pagination and count query the database a
     expect(cache.set).toHaveBeenCalledWith(`${name}.all`, result);
 
     await expect(model[byId]('ITEM-1')).resolves.toEqual(result);
-    expect(db.query.mock.calls[1][0]).toContain('ITEM-1');
+    expect(JSON.stringify(db.query.mock.calls[1])).toContain('ITEM-1');
     expect(cache.set).toHaveBeenCalledWith(`${name}.by_id.ITEM-1`, result);
 
     await expect(model[paginated](50)).resolves.toEqual(result);
@@ -72,7 +72,16 @@ test.each(models)('$name list, lookup, pagination and count query the database a
     expect(cache.set).toHaveBeenCalledWith(`${name}.count`, result);
 });
 
-test.each(models)('$name methods return cached values without querying', async ({ model, all, byId, paginated, count, name }) => {
+test.each(models.filter(({ name }) => name !== 'papers'))('$name lookup ignores case and passes the ID as a parameter', async ({ model, byId }) => {
+    await model[byId]("b'280");
+
+    const [query, params] = db.query.mock.calls[0];
+    expect(query).toMatch(/lower\(\w+\) = lower\(\$1\)/);
+    expect(query).not.toContain("b'280");
+    expect(params).toEqual(["b'280"]);
+});
+
+test.each(models)('$name methods return cached values without querying',async ({ model, all, byId, paginated, count, name }) => {
     cache.get.mockReturnValue(result);
 
     await expect(model[all]()).resolves.toBe(result);

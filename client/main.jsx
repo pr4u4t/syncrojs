@@ -31,6 +31,12 @@ const parsePositiveTenthsMm = (value) => {
   const tenths = Math.round(millimeters * 10);
   return Math.abs(millimeters * 10 - tenths) <= 0.000001 ? tenths : NaN;
 };
+// Tenths of a mm for a crease draft: null with no creases, NaN when a line is not a valid measure.
+const scoreDraftSumTenths = (draft) => {
+  const lines = String(draft || '').split(/[\s,;]+/).filter(Boolean);
+  if (lines.length === 0) return null;
+  return lines.reduce((total, line) => total + parsePositiveTenthsMm(line), 0);
+};
 const parseNonnegativeTenthsMm = (value) => {
   if (value === null || value === undefined || String(value).trim() === '') return null;
   const millimeters = Number(value);
@@ -464,12 +470,31 @@ function useRemoteData(url, { refreshInterval = 0, keepPreviousData = false } = 
   return { data, error, reload: () => setRefreshIndex((value) => value + 1) };
 }
 
+// Messages for the rules the server enforces in place of database foreign keys; null for anything else.
+const materialRuleMessage = (result) => {
+  if (result.error === 'material_in_use') {
+    const { type, ids } = result.usedBy;
+    const shown = `${ids.slice(0, 5).join(', ')}${ids.length > 5 ? ', ...' : ''}`;
+    return type === 'queue'
+      ? `Material is used by setups in the Syncro queue (${ids.length}): ${shown}`
+      : `Material is used by qualities (${ids.length}): ${shown}`;
+  }
+  if (result.error === 'material_usage_unknown') return 'Could not check the Syncro queue, so this material was not deleted. Try again when Syncro is connected.';
+  if (result.error === 'material_reference_missing') return `Not found in the database: ${result.missing.join(', ')}`;
+  return null;
+};
+
 function DataList({ title, endpoint, page = 1 }){
   const { data, error, reload } = useRemoteData(`${endpoint}${page}?api=1`);
   const [editing, setEditing] = useState(null);
   const [saving, setSaving] = useState(false);
   const [saveError, setSaveError] = useState('');
+  const [savedNotice, setSavedNotice] = useState('');
+  const [previewing, setPreviewing] = useState(null);
+  const [deleteError, setDeleteError] = useState('');
+  const addRequest = useRef(new URLSearchParams(window.location.search).get('add'));
   const dialogRef = useRef(null);
+  const previewDialogRef = useRef(null);
   const totalPages = data ? Math.max(0, Number(data.total) || 0) : 0;
   const currentPage = data && Number(data.current) ? Math.min(Number(data.current), Math.max(1, totalPages)) : page;
   const editFields = data && data.editFields || [];
@@ -482,22 +507,88 @@ function DataList({ title, endpoint, page = 1 }){
     if (!editing && dialog.open) dialog.close();
   }, [editing]);
 
+  useEffect(() => {
+    const dialog = previewDialogRef.current;
+    if (!dialog) return;
+    if (previewing && !dialog.open) dialog.showModal();
+    if (!previewing && dialog.open) dialog.close();
+  }, [previewing]);
+
+  const rowValues = (row) => Object.fromEntries(editFields.map((field) => {
+    const value = row[field.name];
+    if (value === null || value === undefined) return [field.name, ''];
+    if (field.type === 'boolean') return [field.name, value ? 'true' : 'false'];
+    if (field.type === 'datetime-local') {
+      const date = new Date(value);
+      const localDate = Number.isNaN(date.getTime()) ? String(value).replace(' ', 'T') : new Date(date.getTime() - date.getTimezoneOffset() * 60000).toISOString();
+      return [field.name, localDate.slice(0, 19)];
+    }
+    return [field.name, String(value)];
+  }));
+
+  const rowLabel = (row) => (data.keyFields || []).map((field) => row[field]).join(' / ');
+
   const editRow = (row) => {
     setSaveError('');
+    setSavedNotice('');
     setEditing({
       key: Object.fromEntries((data.keyFields || []).map((field) => [field, row[field]])),
-      values: Object.fromEntries(editFields.map((field) => {
-        const value = row[field.name];
-        if (value === null || value === undefined) return [field.name, ''];
-        if (field.type === 'boolean') return [field.name, value ? 'true' : 'false'];
-        if (field.type === 'datetime-local') {
-          const date = new Date(value);
-          const localDate = Number.isNaN(date.getTime()) ? String(value).replace(' ', 'T') : new Date(date.getTime() - date.getTimezoneOffset() * 60000).toISOString();
-          return [field.name, localDate.slice(0, 19)];
-        }
-        return [field.name, String(value)];
-      }))
+      values: rowValues(row)
     });
+  };
+
+  const addRecord = (id = '', fromImport = false) => {
+    setSaveError('');
+    setSavedNotice('');
+    setEditing({
+      creating: true,
+      fromImport,
+      values: Object.fromEntries(editFields.map((field) => [field.name, field.primaryKey ? id : field.type === 'boolean' ? 'false' : '']))
+    });
+  };
+
+  const deleteRow = async (row) => {
+    const label = rowLabel(row);
+    if (!window.confirm(localized(`Delete ${label} from the database?`, `Usunąć ${label} z bazy danych?`))) return;
+    setPreviewing(null);
+    setDeleteError('');
+    setSavedNotice('');
+    try {
+      const response = await fetch(`${endpoint}delete`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ key: Object.fromEntries((data.keyFields || []).map((field) => [field, row[field]])) })
+      });
+      const result = await response.json();
+      if (!response.ok) {
+        setDeleteError(materialRuleMessage(result) || (result.error === 'material_not_found'
+          ? 'This material was changed or removed. Reload the list and try again.'
+          : 'Could not delete this material. Check the database connection.'));
+        return;
+      }
+      setSavedNotice('Record deleted.');
+      reload();
+    } catch {
+      setDeleteError('Could not delete this material. Check the database connection.');
+    }
+  };
+
+  // ?add=<id> comes from the import preview, for a value missing from the database.
+  useEffect(() => {
+    if (!addRequest.current || !editFields.length) return;
+    const id = addRequest.current;
+    addRequest.current = null;
+    window.history.replaceState(null, '', window.location.pathname);
+    addRecord(id, true);
+  }, [data]);
+
+  const copyIntoNewRecord = (rowIndex) => {
+    const row = data.rows[Number(rowIndex)];
+    if (!row) return;
+    setEditing((current) => ({
+      ...current,
+      values: { ...rowValues(row), ...Object.fromEntries(editFields.filter((field) => field.primaryKey).map((field) => [field.name, current.values[field.name]])) }
+    }));
   };
 
   const saveRow = async (event) => {
@@ -505,20 +596,21 @@ function DataList({ title, endpoint, page = 1 }){
     setSaving(true);
     setSaveError('');
     try {
-      const response = await fetch(`${endpoint}update`, {
+      const response = await fetch(`${endpoint}${editing.creating ? 'create' : 'update'}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editing)
       });
       const result = await response.json();
       if (!response.ok) {
-        setSaveError(result.error === 'material_not_found'
+        setSaveError(materialRuleMessage(result) || (result.error === 'material_not_found'
           ? 'This material was changed or removed. Reload the list and try again.'
           : result.error === 'material_conflict'
             ? 'A record with these key values already exists.'
-            : 'Could not save this material. Check the values and database connection.');
+            : 'Could not save this material. Check the values and database connection.'));
         return;
       }
+      setSavedNotice(!editing.creating ? 'Changes saved.' : editing.fromImport ? 'Record added. Go back to the import tab; validation refreshes automatically.' : 'Record added.');
       setEditing(null);
       reload();
     } catch {
@@ -530,6 +622,11 @@ function DataList({ title, endpoint, page = 1 }){
 
   return (
     <>
+      {savedNotice && <div className="alert alert-success" role="status">{savedNotice}</div>}
+      {deleteError && <div className="alert alert-warning" role="alert">{deleteError}</div>}
+      {data && !data.unavailable && editFields.length > 0 && <div className="d-flex flex-wrap gap-2 mb-3">
+        <button type="button" className="btn btn-primary" onClick={() => addRecord()}>Add record</button>
+      </div>}
       {error && <div className="alert alert-warning" role="alert">Database connection unavailable. Could not load records.</div>}
       {!data && !error && <div className="async-data-view__loading" role="status"><span className="spinner-border" aria-hidden="true" />Loading records...</div>}
       {data && (data.unavailable ? (
@@ -541,36 +638,77 @@ function DataList({ title, endpoint, page = 1 }){
           <table className="table table-striped">
             <thead className="table-dark"><tr>{data.fields.map((field) => <th scope="col" key={field.name}>{field.name}</th>)}{editFields.length > 0 && <th scope="col">Actions</th>}</tr></thead>
             <tbody>{data.rows.map((row, rowIndex) => (
-              <tr key={rowIndex}>{data.fields.map((field, fieldIndex) => {
+              <tr key={rowIndex} {...(editFields.length > 0 ? {
+                className: 'import-preview-row',
+                tabIndex: 0,
+                onClick: () => setPreviewing(row),
+                onKeyDown: (event) => {
+                  if (event.target === event.currentTarget && (event.key === 'Enter' || event.key === ' ')) {
+                    event.preventDefault();
+                    setPreviewing(row);
+                  }
+                }
+              } : {})}>{data.fields.map((field, fieldIndex) => {
                 const value = row[field.name] ?? Object.values(row)[fieldIndex];
                 return <td key={field.name}>{value === null || value === undefined ? '' : String(value)}</td>;
-              })}{editFields.length > 0 && <td><button type="button" className="btn btn-outline-primary btn-sm" onClick={() => editRow(row)}>Edit</button></td>}</tr>
+              })}{editFields.length > 0 && <td><div className="d-flex gap-2">
+                <button type="button" className="btn btn-outline-primary btn-sm" onClick={(event) => { event.stopPropagation(); editRow(row); }}>Edit</button>
+                <button type="button" className="btn btn-outline-danger btn-sm" onClick={(event) => { event.stopPropagation(); deleteRow(row); }}>Delete</button>
+              </div></td>}</tr>
             ))}</tbody>
           </table>
         </div>
       ))}
+      {previewing && <dialog className="material-editor-dialog order-detail-dialog" ref={previewDialogRef} aria-labelledby="material-preview-title" onClose={() => setPreviewing(null)}>
+        <div>
+          <header className="material-editor-dialog__header">
+            <div>
+              <h2 id="material-preview-title">Record details</h2>
+              <p>{rowLabel(previewing)}</p>
+            </div>
+            <button type="button" className="btn btn-outline-secondary btn-sm" aria-label="Close" onClick={() => setPreviewing(null)}>Close</button>
+          </header>
+          <dl className="material-editor-dialog__fields m-0">
+            {editFields.map((field) => <div className="order-detail-dialog__material-field" key={field.name}>
+              <dt>{field.name}</dt>
+              <dd>{numberOrDash(previewing[field.name] === null || previewing[field.name] === undefined ? '' : String(previewing[field.name]))}</dd>
+            </div>)}
+          </dl>
+          <footer className="material-editor-dialog__actions">
+            <button type="button" className="btn btn-outline-danger me-auto" onClick={() => deleteRow(previewing)}>Delete</button>
+            <button type="button" className="btn btn-primary" onClick={() => { const row = previewing; setPreviewing(null); editRow(row); }}>Edit</button>
+          </footer>
+        </div>
+      </dialog>}
       {editing && <dialog className="material-editor-dialog" ref={dialogRef} aria-labelledby="material-editor-title" onClose={() => setEditing(null)}>
         <form onSubmit={saveRow}>
           <header className="material-editor-dialog__header">
             <div>
-              <h2 id="material-editor-title">Edit material</h2>
+              <h2 id="material-editor-title">{editing.creating ? 'Add material' : 'Edit material'}</h2>
               <p>{title}</p>
             </div>
             <button type="button" className="btn btn-outline-secondary btn-sm" aria-label="Close" onClick={() => setEditing(null)}>Close</button>
           </header>
           <div className="material-editor-dialog__fields">
-            {editFields.map((field) => <div className={`settings-field ${field.type === 'text' && field.maxLength >= 100 ? 'material-editor-dialog__field--wide' : ''}`} key={field.name}>
+            {editing.creating && data.rows.length > 0 && <div className="settings-field material-editor-dialog__field--wide">
+              <label className="form-label" htmlFor="material-copy-from">Copy values from</label>
+              <select className="form-select" id="material-copy-from" defaultValue="" onChange={(event) => copyIntoNewRecord(event.target.value)}>
+                <option value="" disabled>Choose a record...</option>
+                {data.rows.map((row, rowIndex) => <option value={rowIndex} key={rowIndex}>{rowLabel(row)}</option>)}
+              </select>
+            </div>}
+            {editFields.filter((field) => !(editing.creating && field.readOnly)).map((field) => <div className={`settings-field ${field.type === 'text' && field.maxLength >= 100 ? 'material-editor-dialog__field--wide' : ''}`} key={field.name}>
               <label className="form-label" htmlFor={`material-field-${field.name}`}>{field.name}</label>
               {field.type === 'boolean' ? <select className="form-select" id={`material-field-${field.name}`} value={editing.values[field.name]} onChange={(event) => setEditing((current) => ({ ...current, values: { ...current.values, [field.name]: event.target.value } }))}>
                 <option value="true">Yes</option>
                 <option value="false">No</option>
-              </select> : <input className="form-control" id={`material-field-${field.name}`} type={field.type === 'integer' ? 'number' : field.type} step={field.type === 'integer' ? '1' : field.type === 'datetime-local' ? '1' : undefined} maxLength={field.maxLength} readOnly={field.primaryKey || field.readOnly} value={editing.values[field.name]} onChange={(event) => setEditing((current) => ({ ...current, values: { ...current.values, [field.name]: event.target.value } }))} required />}
+              </select> : <input className="form-control" id={`material-field-${field.name}`} type={field.type === 'integer' ? 'number' : field.type} step={field.type === 'integer' ? '1' : field.type === 'datetime-local' ? '1' : undefined} maxLength={field.maxLength} readOnly={!editing.creating && (field.primaryKey || field.readOnly)} value={editing.values[field.name]} onChange={(event) => setEditing((current) => ({ ...current, values: { ...current.values, [field.name]: event.target.value } }))} required={!editing.creating || field.primaryKey || field.type !== 'text'} />}
             </div>)}
           </div>
           {saveError && <div className="alert alert-warning material-editor-dialog__error" role="alert">{saveError}</div>}
           <footer className="material-editor-dialog__actions">
             <button type="button" className="btn btn-outline-secondary" onClick={() => setEditing(null)} disabled={saving}>Cancel</button>
-            <button type="submit" className="btn btn-primary" disabled={saving}>{saving ? 'Saving...' : 'Save changes'}</button>
+            <button type="submit" className="btn btn-primary" disabled={saving}>{saving ? 'Saving...' : editing.creating ? 'Add record' : 'Save changes'}</button>
           </footer>
         </form>
       </dialog>}
@@ -620,7 +758,7 @@ function CurrentOrders(){
   return (
     <>
       <div className="d-flex flex-wrap gap-2 mt-1">
-        <button type="button" className="btn btn-outline-secondary" onClick={reload} disabled={clearing}>Odśwież zlecenia</button>
+        <button type="button" className="btn btn-outline-secondary" onClick={reload} disabled={clearing}>Refresh orders</button>
         <button type="button" className="btn btn-outline-danger" onClick={clearOrders} disabled={clearing}>{clearing ? 'Clearing...' : 'Clear Orders'}</button>
       </div>
       {error && <div className="alert alert-warning mt-4" role="alert">Syncro connection unavailable. Current orders could not be loaded.</div>}
@@ -662,6 +800,11 @@ function CurrentOrders(){
   );
 }
 
+const materialLabels = {
+  quality: 'Quality',
+  flute: 'Flute'
+};
+
 function OrderImport(){
   const [preview, setPreview] = useState(null);
   const [selectedSetup, setSelectedSetup] = useState(null);
@@ -679,6 +822,21 @@ function OrderImport(){
   const [manualTrimInputs, setManualTrimInputs] = useState({});
   const [manualSetupCode, setManualSetupCode] = useState(createManualSetupCode);
   const [activeTab, setActiveTab] = useState('file');
+  const recheckMaterials = Boolean(preview && !transfer && Object.keys(preview.missingMaterials || {}).length > 0);
+  // The material form opens in another tab, so coming back means the record may exist now.
+  useEffect(() => {
+    if (!recheckMaterials) return undefined;
+    const revalidate = async () => {
+      const response = await fetch('/current/import/revalidate', { method: 'POST' });
+      if (!response.ok) return;
+      const result = await response.json();
+      setPreview((current) => (current ? { ...current, ...result } : current));
+      setSelectedSetup((current) => (current ? { ...current, validationError: '' } : current));
+    };
+    const onFocus = () => { revalidate().catch(() => {}); };
+    window.addEventListener('focus', onFocus);
+    return () => window.removeEventListener('focus', onFocus);
+  }, [recheckMaterials]);
   useEffect(() => {
     const dialog = setupDialogRef.current;
     if (!dialog) return;
@@ -932,7 +1090,7 @@ function OrderImport(){
       });
       const result = await response.json();
       if(!response.ok || !result.saved){
-        setScoreSaveMessage(result.error || 'Nie udało się zapisać bigów.');
+        setScoreSaveMessage(result.error || 'Could not save the creases.');
         return;
       }
 
@@ -954,10 +1112,10 @@ function OrderImport(){
         validationError: result.invalid?.error || ''
       } : current);
       setScoreSaveMessage(result.invalid
-        ? `Bigi zapisane, ale setup nadal nie przechodzi walidacji: ${result.invalid.error}`
-        : 'Bigi zapisane; setup przechodzi walidację.');
+        ? `Creases saved, but the setup still fails validation: ${result.invalid.error}`
+        : 'Creases saved; the setup passes validation.');
     }catch(saveError){
-      setScoreSaveMessage(saveError.message || 'Nie udało się zapisać bigów.');
+      setScoreSaveMessage(saveError.message || 'Could not save the creases.');
     }finally{
       setScoreSaving(false);
     }
@@ -1170,7 +1328,7 @@ function OrderImport(){
           if (oldIndex === rowIndex) return [];
           return [[String(oldIndex > rowIndex ? oldIndex - 1 : oldIndex), value]];
         }));
-        return { ...current, rows, invalid: reindex(current.invalid), warnings: reindex(current.warnings), edited: reindex(current.edited) };
+        return { ...current, rows, invalid: reindex(current.invalid), warnings: reindex(current.warnings), edited: reindex(current.edited), missingMaterials: reindex(current.missingMaterials) };
       });
       removed = true;
     } catch (removeError) {
@@ -1183,7 +1341,7 @@ function OrderImport(){
 
   const removeSelectedSetup = async () => {
     if (!selectedSetup) return;
-    const label = setupDetails?.code || `Setup ${selectedSetup.index + 1}`;
+    const label = setupDetails?.code || localized(`Setup ${selectedSetup.index + 1}`, `Ustawienie ${selectedSetup.index + 1}`);
     if (!window.confirm(localized(`Remove ${label} from the import?`, `Usunąć ${label} z importu?`))) return;
     if (await removePreviewRow(selectedSetup.index)) setSelectedSetup(null);
   };
@@ -1195,11 +1353,23 @@ function OrderImport(){
     const saved = scoreDraftsFromClassicRow(selectedSetup.row);
     return Object.keys(selectedSetup.scoreDrafts).some((orderIndex) => normalizeScores(selectedSetup.scoreDrafts[orderIndex]) !== normalizeScores(saved[orderIndex]));
   })();
+  const selectedError = selectedSetup ? preview?.invalid?.[selectedSetup.index]?.error || '' : '';
+  const selectedMissing = selectedSetup ? preview?.missingMaterials?.[selectedSetup.index] || [] : [];
   const selectedEdited = Boolean(selectedSetup && preview?.edited?.[selectedSetup.index]);
   const confirmDiscardScores = () => !scoresDirty || window.confirm(localized('Discard unsaved crease changes?', 'Porzucić niezapisane zmiany bigów?'));
   const closeSetupDialog = () => {
     if (confirmDiscardScores()) setSelectedSetup(null);
   };
+  const orderSheetWidth = (orderIndex) => Number(selectedSetup.row[classicOrderStarts[orderIndex] + 3]);
+  // An order left as the file had it may stay off the sheet width; one edited here may not.
+  const scoreSumBlocked = Boolean(selectedSetup?.scoreDrafts && Array.isArray(selectedSetup.row)) && (() => {
+    const saved = scoreDraftsFromClassicRow(selectedSetup.row);
+    return Object.keys(selectedSetup.scoreDrafts).some((orderIndex) => {
+      if (normalizeScores(selectedSetup.scoreDrafts[orderIndex]) === normalizeScores(saved[orderIndex])) return false;
+      const sum = scoreDraftSumTenths(selectedSetup.scoreDrafts[orderIndex]);
+      return sum !== null && sum !== orderSheetWidth(orderIndex);
+    });
+  })();
   const popupCreaseCount = selectedSetup?.scoreDrafts
     ? Object.values(selectedSetup.scoreDrafts).reduce((total, value) => total + String(value || '').split(/[\s,;]+/).filter(Boolean).length, 0)
     : 0;
@@ -1318,7 +1488,7 @@ function OrderImport(){
             </div>
             <div className="manual-measure-count" aria-live="polite">{manualMeasureCount} / 22 <span>crease measures entered</span></div>
             {manualMeasureCount > 22 && <div className="alert alert-warning mt-2" role="alert">A setup may contain no more than 22 crease measures.</div>}
-            {manualTotalOuts > MAX_TOTAL_OUTS && <div className="alert alert-warning mt-2" role="alert">Łączna liczba użytków w zestawie wynosi {manualTotalOuts}; limit to {MAX_TOTAL_OUTS}.</div>}
+            {manualTotalOuts > MAX_TOTAL_OUTS && <div className="alert alert-warning mt-2" role="alert">{`The setup has ${manualTotalOuts} outs in total; the limit is ${MAX_TOTAL_OUTS}.`}</div>}
             {manualError && <div className="alert alert-warning mt-3" role="alert">{manualError}</div>}
             {manualResult && <div className="alert alert-success" role="status">Setup {manualResult.setupCode} accepted by Syncro. Trim: {numberOrDash(manualResult.trim / 10)} mm.</div>}
             {manualOptionsError && <div className="alert alert-warning mt-3" role="alert">Quality and flute lists could not be loaded from the database.</div>}
@@ -1382,7 +1552,7 @@ function OrderImport(){
           <p>
             {transfer.error || (transfer.complete
               ? warningCount > 0
-                ? `Pominięto zestawy (${warningCount}): zerowa ilość albo ustawienie już jest w Syncro. Pozostałe zestawy zostały wysłane.`
+                ? `Skipped setups (${warningCount}): zero quantity or already in Syncro. The remaining setups were sent.`
                 : 'Orders were transferred successfully.'
               : transfer.waitingForAck
                 ? <><span>Waiting for Syncro acknowledgement for setup</span> <strong>{transfer.setupCode || '...'}</strong>.</>
@@ -1412,6 +1582,13 @@ function OrderImport(){
             </div>
             <button type="button" className="btn btn-outline-secondary btn-sm" aria-label="Close" onClick={closeSetupDialog}>Close</button>
           </header>
+          {(selectedError || selectedMissing.length > 0) && <div className={`alert ${selectedError ? 'alert-danger' : 'alert-warning'} order-detail-dialog__warning`} role="alert">
+            {selectedError && <div>{selectedError}</div>}
+            {selectedMissing.map(({ type, id }) => <div key={type}>
+              {!selectedError && `${materialLabels[type]} ${id} does not exist in the database. The setup will be sent with this ID. `}
+              <a className="alert-link" href={`/${type}/?add=${encodeURIComponent(id)}`} target="_blank" rel="noopener">{`Add ${materialLabels[type].toLowerCase()} ${id} to the database`}</a>
+            </div>)}
+          </div>}
           {setupDetails ? <div className="order-detail-dialog__fields">
             <section className="order-detail-dialog__setup" aria-label="Setup parameters">
               {[
@@ -1431,7 +1608,7 @@ function OrderImport(){
                   })}
                 </dl>
                 {order.scoreDrafts !== undefined && <div className="order-detail-dialog__score-editor">
-                  <label className="form-label" htmlFor={`setup-score-editor-${selectedSetup.index}-${order.sourceOrderIndex}`}>Bigowania (mm), jedno na linię</label>
+                  <label className="form-label" htmlFor={`setup-score-editor-${selectedSetup.index}-${order.sourceOrderIndex}`}>Creasing lines (mm), one per line</label>
                   <div className="manual-score-editor order-detail-dialog__score-lines">
                     <div className="manual-score-gutter" aria-hidden="true">
                       {String(order.scoreDrafts || '').split(/\r\n|\r|\n/).map((_, lineIndex) => <span key={lineIndex}>{lineIndex + 1}</span>)}
@@ -1451,16 +1628,21 @@ function OrderImport(){
                       }}
                     />
                   </div>
+                  {scoreDraftSumTenths(order.scoreDrafts) !== null && (() => {
+                    const sum = scoreDraftSumTenths(order.scoreDrafts);
+                    const width = orderSheetWidth(order.sourceOrderIndex);
+                    return <div className={`form-text ${sum === width ? '' : 'text-danger'}`} role="status">{`Sum of creases: ${Number.isNaN(sum) ? '—' : sum / 10} / ${width / 10} mm`}</div>;
+                  })()}
                 </div>}
               </fieldset>)}
             </section>
           </div> : <div className="order-detail-dialog__fallback">Detailed order fields are not available for this row.</div>}
-          {setupDetails?.canEditScores && <div className={`order-detail-dialog__score-feedback ${popupCreaseCount > 22 ? 'text-danger' : ''}`} role="status">Suma bigów w setupie: {popupCreaseCount} / 22.</div>}
+          {setupDetails?.canEditScores && <div className={`order-detail-dialog__score-feedback ${popupCreaseCount > 22 ? 'text-danger' : ''}`} role="status">Creases in setup: {popupCreaseCount} / 22.</div>}
           {preview?.warnings?.[selectedSetup.index] && <div className="alert alert-warning order-detail-dialog__warning" role="status">{preview.warnings[selectedSetup.index].message}</div>}
           {scoreSaveMessage && <div className="order-detail-dialog__score-feedback" role="status">{scoreSaveMessage}</div>}
           <footer className="material-editor-dialog__actions">
             <button type="button" className="btn btn-outline-danger me-auto" onClick={removeSelectedSetup} disabled={busy || scoreSaving}>Remove setup</button>
-            {setupDetails?.canEditScores && <button type="button" className="btn btn-primary" onClick={saveScoreDrafts} disabled={!scoresDirty || scoreSaving || busy || popupCreaseCount > 22}>{scoreSaving ? 'Saving...' : 'Zapisz bigi'}</button>}
+            {setupDetails?.canEditScores && <button type="button" className="btn btn-primary" onClick={saveScoreDrafts} disabled={!scoresDirty || scoreSumBlocked || scoreSaving || busy || popupCreaseCount > 22}>{scoreSaving ? 'Saving...' : 'Save creases'}</button>}
             <button type="button" className="btn btn-outline-secondary" onClick={closeSetupDialog}>Close</button>
           </footer>
         </div>

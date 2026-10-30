@@ -25,7 +25,8 @@ const flute_all = async function(){
 }
 
 const flute_params_by_id = async function(id){
-    const query = 'SELECT * FROM syncro_db_3892.flute WHERE flute= \''+id+'\'';
+    // Case-insensitive; an exact match wins if IDs differ only by case. The ID comes from uploaded files.
+    const query = 'SELECT * FROM syncro_db_3892.flute WHERE lower(flute) = lower($1) ORDER BY flute = $1 DESC, flute';
     const key = 'flute.by_id.'+id;
     
     value = cache.get(key);
@@ -35,7 +36,7 @@ const flute_params_by_id = async function(id){
     }
     logger.info('flute_params_by_id: cache miss');
     try{
-        const {rows,fields} = await db.query(query);
+        const {rows,fields} = await db.query(query, [id]);
         cache.set(key, {rows,fields});
         return {rows,fields};
     }catch(error){

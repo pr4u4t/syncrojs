@@ -10,8 +10,8 @@ jest.mock('../../models/order', () => ({
     mac2syncro: jest.fn(),
     orders_delete_all: jest.fn()
 }));
-jest.mock('../../models/quality', () => ({ quality_all: jest.fn() }));
-jest.mock('../../models/flute', () => ({ flute_all: jest.fn() }));
+jest.mock('../../models/quality', () => ({ quality_all: jest.fn(), quality_params_by_id: jest.fn() }));
+jest.mock('../../models/flute', () => ({ flute_all: jest.fn(), flute_params_by_id: jest.fn() }));
 jest.mock('../../models/papers', () => ({}));
 jest.mock('../../models/shift', () => ({ shift_state: jest.fn() }));
 jest.mock('../../models/orders/classic', () => ({ mac_parse: jest.fn(), validate: jest.fn() }));
@@ -281,13 +281,13 @@ test('DAT score update writes converted crease measurements and revalidates the 
 
     const response = await postForm('/current/import/update-scores', {
         index: '0',
-        scoresByOrder: JSON.stringify({ 0: '100\n200' })
+        scoresByOrder: JSON.stringify({ 0: '300\n500' })
     }, { current: [row], currentBackend: 'extended_orders' });
 
     expect(response.status).toBe(200);
     const body = await response.json();
     expect(body.saved).toBe(true);
-    expect(body.row.slice(12, 17)).toEqual(['1000 2000', '', '', '', '']);
+    expect(body.row.slice(12, 17)).toEqual(['3000 5000', '', '', '', '']);
     expect(body.invalid).toBeNull();
     expect(orders.validate).toHaveBeenCalledWith(body.row, expect.anything(), expect.anything(), expect.anything(), 'extended_orders');
 });
@@ -303,7 +303,7 @@ test('DAT score update returns validation details when an edited crease remains 
 
     const response = await postForm('/current/import/update-scores', {
         index: '0',
-        scoresByOrder: JSON.stringify({ 0: '500' })
+        scoresByOrder: JSON.stringify({ 0: '800' })
     }, { current: [row] });
 
     expect(response.status).toBe(200);
@@ -328,6 +328,37 @@ test('DAT score update enforces the twenty-two crease limit on the server', asyn
     expect(response.status).toBe(400);
     await expect(response.json()).resolves.toMatchObject({ saved: false, error: 'Setup zawiera 23 bigów; limit to 22.' });
     expect(orders.validate).not.toHaveBeenCalled();
+});
+
+const creaseRow = (saved = '') => {
+    const row = Array(42).fill('');
+    row[10] = 'ORDER-1';
+    row[11] = '8000';
+    row[12] = saved;
+    row[18] = '10000';
+    row[20] = '1';
+    return row;
+};
+
+test('DAT score update rejects edited creases that do not add up to the sheet width', async () => {
+    const row = creaseRow('8000');
+    const session = { current: [row] };
+
+    const response = await postForm('/current/import/update-scores', { index: '0', scoresByOrder: JSON.stringify({ 0: '123\n45' }) }, session);
+
+    expect(response.status).toBe(400);
+    await expect(response.json()).resolves.toMatchObject({ saved: false, error: 'Zamówienie 1: suma bigów (168 mm) musi być równa szerokości arkusza (800 mm).' });
+    expect(orders.validate).not.toHaveBeenCalled();
+});
+
+test('DAT score update still allows clearing creases and keeps an unchanged order off the sum', async () => {
+    orders.validate.mockResolvedValue({ result: ['converted'], error: null });
+
+    const cleared = await postForm('/current/import/update-scores', { index: '0', scoresByOrder: JSON.stringify({ 0: '' }) }, { current: [creaseRow('1000 2000')] });
+    expect(cleared.status).toBe(200);
+
+    const unchanged = await postForm('/current/import/update-scores', { index: '0', scoresByOrder: JSON.stringify({ 0: '100\n200' }) }, { current: [creaseRow('1000 2000')] });
+    expect(unchanged.status).toBe(200);
 });
 
 test('parsed setup can be removed from the pending import session', async () => {
@@ -408,4 +439,46 @@ test('clear endpoint deletes orders and redirects', async () => {
     expect(response.status).toBe(302);
     expect(response.headers.get('location')).toBe('/current/');
     expect(orders.orders_delete_all).toHaveBeenCalledTimes(1);
+});
+
+test('revalidate reports rows whose quality or flute is missing from the database', async () => {
+    const row = Array(55).fill('');
+    row[3] = 'NOPE';
+    row[4] = 'b';
+    row[10] = 'A1';
+    row[19] = '10';
+    quality.quality_params_by_id.mockResolvedValue({ rows: [] });
+    flute.flute_params_by_id.mockResolvedValue({ rows: [{ flute: 'B' }] });
+    orders.orders_all.mockResolvedValue([]);
+    orders.validate.mockResolvedValue({ result: null, error: 'Quality NOPE was not found in the database' });
+
+    const response = await postForm('/current/import/revalidate', {}, { current: [row], currentBackend: 'classic' });
+
+    expect(response.status).toBe(200);
+    await expect(response.json()).resolves.toEqual({
+        invalid: { 0: { result: null, error: 'Quality NOPE was not found in the database' } },
+        warnings: {},
+        missingMaterials: { 0: [{ type: 'quality', id: 'NOPE' }] }
+    });
+});
+
+test('revalidate does not call a failed database lookup a missing material', async () => {
+    const row = Array(55).fill('');
+    row[3] = 'Q1';
+    row[4] = 'B';
+    quality.quality_params_by_id.mockResolvedValue(null);
+    flute.flute_params_by_id.mockResolvedValue(null);
+    orders.orders_all.mockResolvedValue([]);
+    orders.validate.mockResolvedValue({ result: null, error: 'mac2syncro: failed to fetch parameters' });
+
+    const response = await postForm('/current/import/revalidate', {}, { current: [row], currentBackend: 'classic' });
+
+    await expect(response.json()).resolves.toMatchObject({ missingMaterials: {} });
+});
+
+test('revalidate needs a pending import that has not started', async () => {
+    const none = await postForm('/current/import/revalidate', {});
+    expect(none.status).toBe(400);
+    const started = await postForm('/current/import/revalidate', {}, { current: [['x']], step: 0 });
+    expect(started.status).toBe(409);
 });

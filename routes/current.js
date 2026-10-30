@@ -35,6 +35,22 @@ const zeroQuantityWarning = (row) => {
     return `${zeroOrders.length > 1 ? 'Zamówienia' : 'Zamówienie'} ${zeroOrders.join(', ')} ${zeroOrders.length > 1 ? 'mają' : 'ma'} 0 sztuk. Ten zestaw zostanie pominięty.`;
 };
 
+// Quality and flute IDs from the row with no record in the database; a failed lookup reports nothing.
+const missingMaterials = async (row) => {
+    const ids = Array.isArray(row) ? [row[3], row[4]] : [row && row.qualityId, row && row.fluteId];
+    const lookups = [
+        { type: 'quality', id: String(ids[0] ?? '').trim(), find: quality.quality_params_by_id },
+        { type: 'flute', id: String(ids[1] ?? '').trim(), find: flute.flute_params_by_id }
+    ];
+    const missing = [];
+    for(const { type, id, find } of lookups){
+        if(!id) continue;
+        const found = await find(id);
+        if(found && Array.isArray(found.rows) && found.rows.length === 0) missing.push({ type, id });
+    }
+    return missing;
+};
+
 module.exports = router;
 
 // fast-xml-parser turns numeric values into numbers, so leading zeros must not decide equality.
@@ -51,6 +67,53 @@ const queuedSetupMatches = async (setupCode, row) => {
     const match = queued.find((order) => normalizeId(order.SetupCode) === normalizeId(setupCode));
     if(!match) return null;
     return orderNumbersKey([match.OrderNumber0, match.OrderNumber1, match.OrderNumber2]) === orderNumbersKey(sourceOrderNumbers(row));
+};
+
+const validateImportRows = async (rows, backend) => {
+    const invalid = {};
+    const warnings = {};
+    const missing = {};
+    const queuedOrders = await ordmac.orders_all();
+    const queuedByCode = new Map((queuedOrders || [])
+        .map((order) => [normalizeId(order.SetupCode), orderNumbersKey([order.OrderNumber0, order.OrderNumber1, order.OrderNumber2])])
+        .filter(([code]) => code));
+    const firstRowByCode = new Map();
+    for(let i = 0;  i < rows.length; ++i){
+        const warning = zeroQuantityWarning(rows[i]);
+        if(warning){
+            warnings[i] = { message: warning };
+            continue;
+        }
+        const rowMissing = await missingMaterials(rows[i]);
+        if(rowMissing.length > 0) missing[i] = rowMissing;
+        const tmp = await ordmac.validate(rows[i], papers, quality, flute, backend);
+        if(tmp.result === null || tmp.result === undefined){
+            invalid[i] = tmp;
+            continue;
+        }
+        const setupCode = String(tmp.result[0] || '').trim();
+        const code = normalizeId(setupCode);
+        if(!code) continue;
+        const orders = orderNumbersKey(sourceOrderNumbers(rows[i]));
+        if(queuedByCode.has(code)){
+            const queued = queuedByCode.get(code);
+            if(queued === orders){
+                warnings[i] = { message: `Ustawienie ${setupCode} (${orders}) jest już w kolejce Syncro. Zostanie pominięte.`, duplicate: true };
+            }else{
+                invalid[i] = { error: `Kod ustawienia ${setupCode} jest już zajęty w Syncro przez inne zamówienia (${queued || 'brak numerów'}). Plik zawiera: ${orders || 'brak numerów'}.` };
+            }
+        }else if(firstRowByCode.has(code)){
+            const first = firstRowByCode.get(code);
+            if(first.orders === orders){
+                warnings[i] = { message: `Ustawienie ${setupCode} powtarza wiersz ${first.index + 1}. Zostanie pominięte.`, duplicate: true };
+            }else{
+                invalid[i] = { error: `Kod ustawienia ${setupCode} występuje też w wierszu ${first.index + 1} z innymi zamówieniami.` };
+            }
+        }else{
+            firstRowByCode.set(code, { index: i, orders });
+        }
+    }
+    return { invalid, warnings, missingMaterials: missing };
 };
 
 router.get('/', async (req, res) => {
@@ -89,8 +152,7 @@ router.get('/manual/options', async (req, res) => {
 router.post('/import', upload.single('orderFile'), async (req, res) => {
     let rows;
     let backend;
-    const invalid = {};
-    const warnings = {};
+    let validation;
 
     logger.debug("post /current/import");
     if(req.session.pendingOrderAck){
@@ -112,44 +174,7 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
                 res.status(400).json({ error: 'order_file_invalid' });
                 return;
             }
-        const queuedOrders = await ordmac.orders_all();
-        const queuedByCode = new Map((queuedOrders || [])
-            .map((order) => [normalizeId(order.SetupCode), orderNumbersKey([order.OrderNumber0, order.OrderNumber1, order.OrderNumber2])])
-            .filter(([code]) => code));
-        const firstRowByCode = new Map();
-        for(let i = 0;  i < rows.length; ++i){
-                const warning = zeroQuantityWarning(rows[i]);
-                if(warning){
-                    warnings[i] = { message: warning };
-                    continue;
-                }
-                const tmp = await ordmac.validate(rows[i], papers, quality, flute, backend);
-            if(tmp.result === null || tmp.result === undefined){
-                invalid[i] = tmp;
-                continue;
-            }
-            const setupCode = String(tmp.result[0] || '').trim();
-            const code = normalizeId(setupCode);
-            if(!code) continue;
-            const orders = orderNumbersKey(sourceOrderNumbers(rows[i]));
-            if(queuedByCode.has(code)){
-                const queued = queuedByCode.get(code);
-                if(queued === orders){
-                    warnings[i] = { message: `Ustawienie ${setupCode} (${orders}) jest już w kolejce Syncro. Zostanie pominięte.`, duplicate: true };
-                }else{
-                    invalid[i] = { error: `Kod ustawienia ${setupCode} jest już zajęty w Syncro przez inne zamówienia (${queued || 'brak numerów'}). Plik zawiera: ${orders || 'brak numerów'}.` };
-                }
-            }else if(firstRowByCode.has(code)){
-                const first = firstRowByCode.get(code);
-                if(first.orders === orders){
-                    warnings[i] = { message: `Ustawienie ${setupCode} powtarza wiersz ${first.index + 1}. Zostanie pominięte.`, duplicate: true };
-                }else{
-                    invalid[i] = { error: `Kod ustawienia ${setupCode} występuje też w wierszu ${first.index + 1} z innymi zamówieniami.` };
-                }
-            }else{
-                firstRowByCode.set(code, { index: i, orders });
-            }
-        }
+        validation = await validateImportRows(rows, backend);
         req.session.current = rows;
         req.session.currentBackend = backend;
     } catch (err) {
@@ -165,8 +190,7 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
     res.json({
         rows,
         fields: rows.some((row) => row && row.format === 'extended_orders_csv') ? extendedOrdersParser.preview_fields : ordmac.fields,
-        invalid,
-        warnings,
+        ...validation,
         knifeLevelCount: Number(config.get('orders.validation.knife_level_count')) || 3
     });
 });
@@ -271,6 +295,24 @@ router.post('/import/confirm', upload.none(), async (req, res) => {
     }
 });
 
+// Runs the validation again after a missing material was added to the database in another tab.
+router.post('/import/revalidate', upload.none(), async (req, res) => {
+    if(req.session.step !== undefined && req.session.step !== null){
+        res.status(409).json({ error: 'import_already_started' });
+        return;
+    }
+    if(!Array.isArray(req.session.current)){
+        res.status(400).json({ error: 'no_import_pending' });
+        return;
+    }
+    try{
+        res.json(await validateImportRows(req.session.current, req.session.currentBackend));
+    }catch(error){
+        logger.error(`order import revalidate ${error}`);
+        res.status(400).json({ error: 'order_file_invalid' });
+    }
+});
+
 router.post('/import/remove', upload.none(), (req, res) => {
     if(req.session.pendingOrderAck){
         res.status(409).json({ removed: false, error: 'order_ack_unknown', setupCode: req.session.pendingOrderAck.setupCode });
@@ -338,6 +380,7 @@ router.post('/import/update-scores', upload.none(), async (req, res) => {
     ];
     const updatedRow = sourceRow.slice();
     let updatedOrders = 0;
+    const editedSums = [];
     for(let orderIndex = 0; orderIndex < scoreColumns.length; orderIndex += 1){
         if(!Object.prototype.hasOwnProperty.call(scoresByOrder, orderIndex)) continue;
         const order = scoreColumns[orderIndex];
@@ -373,6 +416,13 @@ router.post('/import/update-scores', upload.none(), async (req, res) => {
             if(tenths > 0) parsedScores.push(String(tenths));
         }
 
+        // Only a changed order is held to the sum: 114 of 22142 creased orders in the DAT samples miss it,
+        // all with their 5 fields full, and they must stay editable alongside the order being fixed.
+        const savedScores = order.fields.flatMap((field) => String(sourceRow[field] || '').trim().split(/[\s,;]+/)).map(Number).filter((value) => value > 0);
+        if(parsedScores.length > 0 && parsedScores.map(Number).join(' ') !== savedScores.join(' ')){
+            editedSums.push({ orderIndex, sum: parsedScores.reduce((total, value) => total + Number(value), 0), width: Number(sourceRow[order.width]) });
+        }
+
         updatedRow[order.fields[0]] = parsedScores.length > 0
             ? parsedScores.join(' ')
             : String(sourceRow[order.width]);
@@ -392,6 +442,12 @@ router.post('/import/update-scores', upload.none(), async (req, res) => {
     }, 0);
     if(totalCreaseMeasures > 22){
         res.status(400).json({ saved: false, error: `Setup zawiera ${totalCreaseMeasures} bigów; limit to 22.` });
+        return;
+    }
+
+    const wrongSum = editedSums.find(({ sum, width }) => sum !== width);
+    if(wrongSum){
+        res.status(400).json({ saved: false, error: `Zamówienie ${wrongSum.orderIndex + 1}: suma bigów (${wrongSum.sum / 10} mm) musi być równa szerokości arkusza (${wrongSum.width / 10} mm).` });
         return;
     }
 

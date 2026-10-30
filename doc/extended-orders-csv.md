@@ -45,7 +45,7 @@ The format exists because the fixed-width DAT layout carries only five crease (s
 `score_measures_mm` holds the **widths of the consecutive panels between crease lines**, edge to edge, in millimeters, separated by semicolons, with a decimal point and at most one decimal place. The values add up to the sheet width: an 800 mm sheet split into five panels is `100;150;300;150;100`.
 
 - Leave the cell empty when the order has no creases.
-- Values must be positive and may not exceed the sheet width of that order. Their sum should equal the sheet width (not enforced by the server; the planner validator warns).
+- Values must be positive and may not exceed the sheet width of that order. Their sum should equal the sheet width. A file that misses it still imports (the planner validator warns), but a crease edit in the import preview must add up exactly.
 - Repeated values are kept as entered.
 - **At most 15 measurements per order.**
 - **At most 22 measurements per setup**, counting all its orders together.
@@ -79,7 +79,7 @@ SETUP-THREE,2500,Q1,A,ORDER-3,Klient Gamma,800,1,950,8000,80,1,400;400
 
 ## Ozdan wide CSV (one row per setup)
 
-The `extended_orders` parser also reads the Ozdan export `OrdList.csv`: `;` separated, one row per setup with order blocks `z1_`–`z3_`, dimensions in tenths of a millimetre, recognised by the `program_number_drcorr` header. `FOSBEROID` becomes the setup code, `Quality` and `flute` the quality and flute IDs. The full specification and a validator are in [tools/planner-wide-csv](../tools/planner-wide-csv/README.md). The limits above apply unchanged (15 / 22 creases, outs total ≤ 14, a setup with quantity `0` is skipped).
+The `extended_orders` parser also reads the Ozdan export `OrdList.csv`: `;` separated, one row per setup with order blocks `z1_`–`z3_`, dimensions in tenths of a millimetre, recognised by the `program_number_drcorr` header. `FOSBEROID` becomes the setup code, `Quality` and `flute` the quality and flute IDs. Each row is parsed into the same 55-field row as `Ord_mac.dat`, so the import preview, score editing and validation match it; measures beyond the fifth are packed into the last score field. The full specification and a validator are in [tools/planner-wide-csv](../tools/planner-wide-csv/README.md). The limits above apply unchanged (15 / 22 creases, outs total ≤ 14, a setup with quantity `0` is skipped).
 
 ## Extended fixed-width DAT (740 characters)
 

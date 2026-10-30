@@ -15,103 +15,146 @@ const { validateConversion } = require('../../models/order-validation');
 const fixture = (name) => fs.readFileSync(path.join(__dirname, 'ozdan_data', name), 'latin1');
 const csv = fixture('OrdList.csv');
 
-test('parses every Ozdan OrdList.csv row as one setup with its z1-z3 orders', () => {
-    const setups = extendedOrders.mac_parse(csv);
+const LEVEL_TOKENS = [19, 50, 81];
 
-    expect(setups.map((setup) => setup.setupCode)).toEqual(['5122', '5148', '5149', '5150', '5151', '5152']);
-    expect(setups.map((setup) => setup.orders.length)).toEqual([1, 1, 2, 1, 3, 3]);
-    expect(setups[0]).toMatchObject({
-        format: 'extended_orders_csv',
-        webWidthMm: '2450',
-        qualityId: 'b450',
-        fluteId: 'B'
+test('parses OrdList.csv into the same 55-field rows as Ord_mac.dat', () => {
+    const rows = extendedOrders.mac_parse(csv);
+    const datRows = classicParser.mac_parse(fixture('Ord_mac.dat'));
+
+    expect(rows).toHaveLength(datRows.length);
+    rows.forEach((row, index) => {
+        expect(row).toHaveLength(orders.fields.length);
+        // The .dat carries placeholder quality/flute in fields 3 and 4.
+        const differences = row.map((value, field) => (value === datRows[index][field] ? null : field)).filter((field) => field !== null);
+        expect(differences.filter((field) => field !== 3 && field !== 4)).toEqual([]);
     });
-    expect(setups[0].orders[0]).toEqual({
-        orderNumber: 'R952026103',
-        customerName: 'POL-KARTON',
-        sheetWidthMm: '396',
-        outs: '6',
-        sheetLengthMm: '1210',
-        quantitySheets: '0',
-        sheetsPerStack: '690',
-        scores: ['118', '160', '118'],
-        level: '3'
-    });
-    expect(setups[4].orders.map((order) => order.level)).toEqual(['3', '3', '1']);
-    expect(setups[4].preview).toEqual(['5151', '2500', 'b280', 'B', 'R1102026101, R792026101, R682026061', 0]);
+    expect(rows[0].slice(2, 6)).toEqual(['5122', 'b450', 'B', '24500']);
+    expect(rows[0].slice(8, 23)).toEqual(['POL-KARTON', '407', 'R952026103', '3960', '1180', '1600', '1180', '0', '0', '690', '12100', '0', '6', '0', '20']);
 });
 
-test('keeps knife levels 1-3 and derives the DAT fixed values 20 / 10 from the sheet lengths', () => {
+test('keeps more creases than DAT has score fields and sends them all', async () => {
+    const [header, row] = csv.split('\r\n');
+    const columns = header.split(';');
+    const values = row.split(';');
+    const measures = [100, 200, 300, 400, 500, 600, 700];
+    measures.forEach((measure, index) => { values[columns.indexOf(`z1_score_${index + 1}`)] = String(measure); });
+
+    const [parsed] = extendedOrders.mac_parse(`${header}\r\n${values.join(';')}\r\n`);
+    expect(parsed.slice(12, 17)).toEqual(['100', '200', '300', '400', '500 600 700']);
+    expect((await orders.mac2syncro(parsed)).result[14]).toBe(measures.join(' '));
+});
+
+test('keeps knife levels 1-3 and derives the DAT fixed values 20 / 10 from the sheet lengths', async () => {
     const [header, , , row] = csv.split('\r\n');
     const columns = header.split(';');
     const values = row.split(';');
     expect(values[columns.indexOf('z1_level')]).toBe('20');
-    expect(extendedOrders.mac_parse(`${header}\r\n${row}\r\n`)[0].orders.map((order) => order.level)).toEqual(['3', '1']);
+    const levels = async (source) => {
+        const { result } = await orders.mac2syncro(extendedOrders.mac_parse(source)[0]);
+        return LEVEL_TOKENS.slice(0, 2).map((token) => result[token]);
+    };
+    expect(await levels(`${header}\r\n${row}\r\n`)).toEqual(['3', '1']);
 
     values[columns.indexOf('z1_level')] = '2';
     values[columns.indexOf('z2_level')] = '';
     values[columns.indexOf('z2_length')] = values[columns.indexOf('z1_length')];
-    expect(extendedOrders.mac_parse(`${header}\r\n${values.join(';')}\r\n`)[0].orders.map((order) => order.level)).toEqual(['2', '2']);
+    expect(await levels(`${header}\r\n${values.join(';')}\r\n`)).toEqual(['2', '2']);
 });
 
-test('converts Ozdan CSV setups like the classic parser converts the same orders from Ord_mac.dat', async () => {
-    const setups = extendedOrders.mac_parse(csv);
-    const classicRows = classicParser.mac_parse(fixture('Ord_mac.dat'));
-    expect(classicRows).toHaveLength(setups.length);
+test('rejects an Ozdan knife level outside 1-3 and the DAT fixed values instead of replacing it', async () => {
+    const [header, , , row] = csv.split('\r\n');
+    const columns = header.split(';');
+    const values = row.split(';');
+    values[columns.indexOf('z1_level')] = '5';
 
-    for (const index of [1, 2, 3, 4, 5]) {
-        const fromCsv = await orders.mac2syncro(setups[index]);
+    const converted = await orders.mac2syncro(extendedOrders.mac_parse(`${header}\r\n${values.join(';')}\r\n`)[0]);
+
+    expect(converted.result).toBeNull();
+    expect(converted.error).toBe('Zamówienie 1: nieprawidłowy poziom noża (5).');
+});
+
+test('converts Ozdan CSV rows like the classic parser converts the same orders from Ord_mac.dat', async () => {
+    const rows = extendedOrders.mac_parse(csv);
+    const classicRows = classicParser.mac_parse(fixture('Ord_mac.dat'));
+
+    for (const index of [0, 1, 2, 3, 4, 5]) {
+        const fromCsv = await orders.mac2syncro(rows[index]);
         const fromDat = await orders.mac2syncro(classicRows[index]);
         expect(fromCsv.error).toBeNull();
         expect(fromCsv.result).toHaveLength(102);
 
-        // The .dat carries placeholder quality/flute; empty order slots differ only in blank vs '0' filler.
         const differences = fromCsv.result
-            .map((value, token) => (String(value).trim() || '0') === (String(fromDat.result[token]).trim() || '0') ? null : token)
+            .map((value, token) => (value === fromDat.result[token] ? null : token))
             .filter((token) => token !== null);
         expect(differences).toEqual([4, 5]);
-        expect([fromCsv.result[4], fromCsv.result[5]]).toEqual([setups[index].qualityId, 'B']);
+        expect([fromCsv.result[4], fromCsv.result[5]]).toEqual([rows[index][3], 'B']);
     }
 });
 
-test('rejects an Ozdan setup with zero sheets during validation', async () => {
-    const setup = extendedOrders.mac_parse(csv)[0];
-    const converted = await extendedOrders.validate(setup, null, null, null, orders);
+test('sends quality and flute IDs as stored in the database, whatever their case in the file', async () => {
+    const quality = require('../../models/quality');
+    const flute = require('../../models/flute');
+    quality.quality_params_by_id.mockResolvedValueOnce({ rows: [{ qualityid: 'B280', weightfactoruwg_m: 285, thickness_uddmm: 27, scoregap_uddmm: 30 }] });
+    flute.flute_params_by_id.mockResolvedValueOnce({ rows: [{ flute: 'B' }] });
+
+    const row = extendedOrders.mac_parse(csv)[3];
+    const lowerCaseFlute = [...row];
+    lowerCaseFlute[4] = 'b';
+    const converted = await orders.mac2syncro(lowerCaseFlute);
+
+    expect(row[3]).toBe('b280');
+    expect(converted.result[4]).toBe('B280');
+    expect(converted.result[5]).toBe('B');
+});
+
+test('reports an unknown quality on the row instead of failing the import', async () => {
+    const quality = require('../../models/quality');
+    quality.quality_params_by_id.mockResolvedValueOnce({ rows: [] });
+
+    const converted = await orders.mac2syncro(extendedOrders.mac_parse(csv)[1]);
 
     expect(converted.result).toBeNull();
-    expect(converted.error).toMatch(/Order 1 quantity must be a positive integer/);
+    expect(converted.error).toMatch(/Quality b500 was not found/);
+});
+
+test('rejects an Ozdan setup with zero sheets during validation', async () => {
+    const converted = await orders.validate(extendedOrders.mac_parse(csv)[0], null, null, null, 'extended_orders');
+
+    expect(converted.result).toBeNull();
+    expect(converted.error).toMatch(/Zamówienie 1: liczba arkuszy musi być dodatnia/);
 });
 
 test('accepts more than five outs on one order while the setup total stays within 14', async () => {
-    const setup = extendedOrders.mac_parse(csv)[0];
-    expect(setup.orders[0].outs).toBe('6');
-    const converted = validateConversion(
-        await orders.mac2syncro({ ...setup, orders: [{ ...setup.orders[0], quantitySheets: '1000' }] })
-    );
+    const row = [...extendedOrders.mac_parse(csv)[0]];
+    expect(row[20]).toBe('6');
+    row[19] = '1000';
+    const converted = validateConversion(await orders.mac2syncro(row));
 
     expect(converted.error).toBeNull();
     expect(converted.result[13]).toBe(6);
 });
 
 test('rejects an Ozdan setup whose outs add up to more than 14', async () => {
-    const setup = extendedOrders.mac_parse(csv)[4];
+    const row = [...extendedOrders.mac_parse(csv)[4]];
     // 15 × 160 mm leaves a 100 mm trim on the 2500 mm web, so only the outs total breaks a rule.
-    const widen = (order, outs) => ({ ...order, outs, sheetWidthMm: '160', scores: [] });
-    const [first, second, third] = setup.orders;
-    const converted = validateConversion(
-        await orders.mac2syncro({ ...setup, orders: [widen(first, '6'), widen(second, '6'), widen(third, '3')] })
-    );
+    [[8, '6'], [23, '6'], [38, '3']].forEach(([start, outs]) => {
+        row[start + 3] = '1600';
+        row[start + 4] = '1600';
+        row[start + 12] = outs;
+    });
+    const converted = validateConversion(await orders.mac2syncro(row));
 
     expect(converted.result).toBeNull();
     expect(converted.error).toMatch(/Łączna liczba użytków w zestawie wynosi 15; limit to 14/);
 });
 
 test('rejects more sheets per stack than the stacker takes', async () => {
-    const setup = extendedOrders.mac_parse(csv)[1];
-    const converted = await orders.mac2syncro({ ...setup, orders: [{ ...setup.orders[0], sheetsPerStack: '1001' }] });
+    const row = [...extendedOrders.mac_parse(csv)[1]];
+    row[17] = '1001';
+    const converted = validateConversion(await orders.mac2syncro(row));
 
     expect(converted.result).toBeNull();
-    expect(converted.error).toMatch(/sheets per stack must be a positive integer no greater than 1000/);
+    expect(converted.error).toMatch(/liczba arkuszy w stosie musi wynosić 0-1000/);
 });
 
 test('rejects an Ozdan row with the wrong number of columns', () => {

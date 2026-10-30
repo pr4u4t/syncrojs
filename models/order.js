@@ -313,17 +313,21 @@ const mac2syncro = async function(mac){
 
     const delivery = "1 01 01 0001 08 00 00 0";
     const quality_row = await quality.quality_params_by_id(mac[3]);
-    const fluteId = mac[4];
-    const flute_row = await flute.flute_params_by_id(fluteId);
+    const flute_row = await flute.flute_params_by_id(mac[4]);
     
     if(quality_row == null || flute_row == null){
         const err = "mac2syncro: failed to fetch parameters";
         logger.error(err);
         return {result: null, error: err};
     }
+    if(!quality_row.rows?.[0]){
+        return {result: null, error: `Quality ${mac[3]} was not found in the database`};
+    }
    
     logger.info(quality_row);
 
+    // The lookup ignores case; Syncro gets the IDs as stored in the database.
+    const fluteId = flute_row.rows[0]?.flute || mac[4];
     const qualityWeight = quality_row.rows[0].weightfactoruwg_m;      //635
     const qualityThickness = quality_row.rows[0].thickness_uddmm;     //45 
     const qualityGap = quality_row.rows[0].scoregap_uddmm;            //30
@@ -333,14 +337,23 @@ const mac2syncro = async function(mac){
     const outs0 = parseInt(mac[20]);
     const outs1 = parseInt(mac[35]);
     const hasOrder2 = mac.length === 55 && mac[40] !== '';
-        const levels = classicLevels(
-            [mac[18], mac[33], hasOrder2 ? mac[48] : null],
-            Number(config.get('orders.validation.knife_level_count')) || 3
-        );
+    // Anything else in this field would be dropped below in favour of the derived level.
+    const badLevelOrder = [[10, 22], [25, 37], [40, 52]].findIndex(([orderNumber, level]) => (
+        String(mac[orderNumber] || '').trim() && !['', '1', '2', '3', '10', '20'].includes(String(mac[level] ?? '').trim())
+    ));
+    if(badLevelOrder >= 0){
+        return {result: null, error: `Zamówienie ${badLevelOrder + 1}: nieprawidłowy poziom noża (${String(mac[[22, 37, 52][badLevelOrder]]).trim()}).`};
+    }
+
+    // The fixed field holds 20 / 10 in .dat files; a level 1-3 there was set explicitly in an Ozdan CSV.
+    const levels = classicLevels(
+        [mac[18], mac[33], hasOrder2 ? mac[48] : null],
+        Number(config.get('orders.validation.knife_level_count')) || 3
+    ).map((level, index) => (/^[123]$/.test(mac[[22, 37, 52][index]]) ? mac[[22, 37, 52][index]] : level));
     const sheetWidth2 = hasOrder2 ? parseInt(mac[41]) : undefined;
     const outs2 = hasOrder2 ? parseInt(mac[50]) : undefined;
     const setupid = mac[2];
-    const qualityId = mac[3];
+    const qualityId = quality_row.rows[0].qualityid || mac[3];
     const clientNum0 = mac[10];
     const clientNum1 = mac[25];
     const clientName0 = mac[8];
@@ -491,18 +504,21 @@ const manual_setup_to_syncro = async function(input){
         const setupSuffix = setupMatch[2] || '2';
         const setupCode = `${setupMatch[1]}.${setupSuffix}`;
         const webWidth = toTenthsMm(input.webWidthMm, 'Web width');
-        const qualityId = String(input.qualityId || '').trim();
-        const fluteId = String(input.fluteId || '').trim();
+        const inputQualityId = String(input.qualityId || '').trim();
+        const inputFluteId = String(input.fluteId || '').trim();
         const ordersInput = input.orders;
-        if(!qualityId || !fluteId || !Array.isArray(ordersInput) || ordersInput.length < 1 || ordersInput.length > 3){
+        if(!inputQualityId || !inputFluteId || !Array.isArray(ordersInput) || ordersInput.length < 1 || ordersInput.length > 3){
             throw new Error('Enter quality, flute, and between one and three orders');
         }
 
-        const qualityRow = await quality.quality_params_by_id(qualityId);
-        const fluteRow = await flute.flute_params_by_id(fluteId);
+        const qualityRow = await quality.quality_params_by_id(inputQualityId);
+        const fluteRow = await flute.flute_params_by_id(inputFluteId);
         if(!qualityRow || !qualityRow.rows || !qualityRow.rows[0] || !fluteRow || !fluteRow.rows || fluteRow.rows.length === 0){
             throw new Error('Quality or flute was not found in the database');
         }
+        // The lookup ignores case; Syncro gets the IDs as stored in the database.
+        const qualityId = qualityRow.rows[0].qualityid || inputQualityId;
+        const fluteId = fluteRow.rows[0].flute || inputFluteId;
 
         // Outs are limited only by the setup total; validateConversion rejects a sum above it.
         const maxOuts = Number(config.get('orders.validation.max_total_outs')) || MAX_TOTAL_OUTS;

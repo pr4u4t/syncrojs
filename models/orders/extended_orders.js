@@ -121,21 +121,32 @@ const setupPreview = (setup) => [
 
 // zN_level 20 / 10 is the DAT fixed field Ozdan copies into the CSV, not a knife level.
 const OZDAN_DAT_FIXED_LEVELS = ['10', '20'];
+const OZDAN_MAX_ORDER_NUMBER = 30;
+const OZDAN_MAX_CUSTOMER_NAME = 15;
+const EMPTY_OZDAN_ORDER = ['', '', '', ...Array(8).fill('0'), '', '', '', ''];
 
-// Given levels are kept; a missing one copies an order with the same length, otherwise order 1 -> 3, later -> 1.
-const resolveOzdanLevels = (orders) => {
-    for (const order of orders) {
-        if (order.level) continue;
-        const twin = orders.find((other) => other !== order && other.level && other.sheetLengthMm === order.sheetLengthMm);
-        order.level = twin ? twin.level : (order === orders[0] ? '3' : '1');
-    }
+// Levels are written only when the file sets one: a missing one copies an order with the same length, otherwise order 1 -> 3, later -> 1.
+// Without any, the DAT fixed values stay and mac2syncro derives the levels as it does for Ord_mac.dat.
+const resolveOzdanLevels = (blocks) => {
+    const levels = blocks.map((block) => (OZDAN_DAT_FIXED_LEVELS.includes(block.level) ? '' : block.level));
+    if (!levels.some(Boolean)) return blocks.map((block) => block.level);
+    return levels.map((level, index) => {
+        if (level) return level;
+        const twin = levels.findIndex((other, otherIndex) => other && blocks[otherIndex].length === blocks[index].length);
+        return twin >= 0 ? levels[twin] : (index === 0 ? '3' : '1');
+    });
 };
 
-// Ozdan dimensions are tenths of a millimeter, the same unit as the fixed-width .dat files.
-const tenthsToMm = (value) => (value === '' ? '' : String(Number(value) / 10));
+// DAT has 5 score fields where Ozdan has 17; measures beyond the fifth are packed into the last one, which scorer() splits again.
+const ozdanScoreFields = (scores, sheetWidth) => {
+    if (scores.length === 0) return [sheetWidth, '0', '0', '0', '0'];
+    const fields = [...scores.slice(0, 4), scores.slice(4).join(' ') || '0'];
+    while (fields.length < 5) fields.splice(fields.length - 1, 0, '0');
+    return fields;
+};
 
 // Ozdan OrdList.csv: one setup per row with up to three z1-z3 order blocks, separated by ';'.
-// The setup code matches what the classic parser sends for the same orders in Ord_mac.dat.
+// Each row becomes the 55-field row Ord_mac.dat parses into; dimensions already are tenths of a millimeter.
 const parseOzdanCsv = (records) => {
     const headers = csvHeaders(records[0]);
     if (new Set(headers).size !== headers.length) throw new Error('Duplicate column in Ozdan orders CSV');
@@ -146,43 +157,40 @@ const parseOzdanCsv = (records) => {
         const values = record.length === headers.length + 1 && record[headers.length].trim() === '' ? record.slice(0, -1) : record;
         if (values.length !== headers.length) throw new Error(`Ozdan orders CSV row ${index + 2} has the wrong number of columns`);
         const row = Object.fromEntries(headers.map((header, column) => [header, values[column].trim()]));
-        const setupCode = row.fosberoid;
-        if (!setupCode) throw new Error(`Ozdan orders CSV row ${index + 2} has no FOSBEROID`);
+        if (!row.fosberoid) throw new Error(`Ozdan orders CSV row ${index + 2} has no FOSBEROID`);
 
-        const orders = [];
+        const blocks = [];
         for (let block = 1; block <= 3; block += 1) {
             const field = (name) => row[`z${block}_${name}`] || '';
             if (!field('order_number_optima')) continue;
+            if (field('order_number_optima').length > OZDAN_MAX_ORDER_NUMBER) {
+                throw new Error(`Ozdan orders CSV row ${index + 2} has an order number longer than ${OZDAN_MAX_ORDER_NUMBER} characters`);
+            }
             const scores = headers
                 .filter((header) => header.startsWith(`z${block}_score_`))
                 .map((header) => row[header])
-                .filter((score) => score !== '' && Number(score) !== 0)
-                .map(tenthsToMm);
-            orders.push({
-                orderNumber: field('order_number_optima'),
-                customerName: field('customer_name'),
-                sheetWidthMm: tenthsToMm(field('width')),
-                outs: field('out_box'),
-                sheetLengthMm: tenthsToMm(field('length')),
-                quantitySheets: field('pieces'),
-                sheetsPerStack: field('sheets_per_stack'),
-                level: OZDAN_DAT_FIXED_LEVELS.includes(field('level')) ? '' : field('level'),
-                scores
-            });
+                .filter((score) => score !== '' && Number(score) !== 0);
+            blocks.push({ field, scores, length: field('length'), level: field('level') });
         }
-        resolveOzdanLevels(orders);
+        const levels = resolveOzdanLevels(blocks);
 
-        const setup = {
-            format: 'extended_orders_csv',
-            setupCode,
-            webWidthMm: tenthsToMm(row.web_width),
-            qualityId: row.quality,
-            fluteId: row.flute,
-            orders,
-            preview: null
-        };
-        setup.preview = setupPreview(setup);
-        return setup;
+        const orderFields = blocks.map(({ field, scores }, blockIndex) => [
+            field('customer_name').slice(0, OZDAN_MAX_CUSTOMER_NAME),
+            field('customer_number_drcorr'),
+            field('order_number_optima'),
+            field('width'),
+            ...ozdanScoreFields(scores, field('width')),
+            field('sheets_per_stack'),
+            field('length'),
+            field('pieces'),
+            field('out_box'),
+            row.order_length_m || '',
+            levels[blockIndex]
+        ]);
+        while (orderFields.length < 3) orderFields.push(EMPTY_OZDAN_ORDER);
+
+        const papers = [1, 2, 3, 4, 5].map((paper) => row[`paper_${paper}`] || '').join('');
+        return [row.program_number_drcorr, papers, row.fosberoid, row.quality, row.flute, row.web_width, row.order_length_m || '', 'G', ...orderFields.flat(), '', ''];
     });
 };
 
