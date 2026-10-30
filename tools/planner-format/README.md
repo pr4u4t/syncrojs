@@ -12,11 +12,11 @@ The planner can deliver orders in two ways. Pick whichever is more convenient �
 |---|---|---|
 | Creases per order | up to 15 | up to 15 |
 | Creases per setup | up to 22 | up to 22 |
-| Outs per order | 1–5 | 1–5 |
+| Outs per order | setup total ≤ 14 | setup total ≤ 14 |
 | **Outs per setup (sum)** | **up to 14** | **up to 14** |
 | Knife level | explicit `level` column | derived by the server from sheet lengths |
 | Units | millimetres (`245.5`) | tenths of a millimetre (`2455`) |
-| Sheets per stack | actual value | **doubled** value (as in the MAC DAT) |
+| Sheets per stack | actual value, 1–1000 | actual value, 0–1000 (0 = machine default) |
 
 In Syncro Settings the **`extended_orders`** parser must be selected – it reads CSV, DAT 740 and the legacy DAT 589.
 
@@ -51,10 +51,10 @@ In Syncro Settings the **`extended_orders`** parser must be selected – it read
 | `order_number` | yes | up to 30 characters | |
 | `customer_name` | yes | up to 15 characters | |
 | `sheet_width_mm` | yes | mm, max. one decimal place | |
-| `outs` | yes | integer 1–5 | Sum within the setup ≤ 14. |
+| `outs` | yes | positive integer | Sum within the setup ≤ 14. |
 | `sheet_length_mm` | yes | mm, max. one decimal place | |
 | `quantity_sheets` | yes | integer 1–999999 | `0` → the whole setup is skipped. |
-| `sheets_per_stack` | yes | integer 1–9999 | Actual value. |
+| `sheets_per_stack` | yes | integer 1–1000 | Actual value (stacker limit). |
 | `score_measures_mm` | yes (may be empty) | panel widths in mm separated by `;` | Sum = `sheet_width_mm`. See “Creases”. |
 | `level` | no | `1`, `2` or `3` | Knife level. Default: order 1 → `3`, later orders → `1`. |
 
@@ -112,10 +112,10 @@ Positions are 0-based.
 | 27 | 30 | Order number (empty = no order) |
 | 57 | 5 | Sheet width (0.1 mm) |
 | 62 | 75 | Creases 1–15: panel widths, 15 × 5 characters (0.1 mm, e.g. `1950` = 195.0 mm); field *n* starts at `62 + 5·(n−1)` |
-| 137 | 4 | Sheets per stack × 2 (e.g. `690` = 345 sheets) |
+| 137 | 4 | Sheets per stack, actual value (0–1000, 0 = machine default) |
 | 141 | 5 | Sheet length (0.1 mm) |
 | 146 | 6 | Quantity of sheets |
-| 152 | 2 | Outs (1–5) |
+| 152 | 2 | Outs (setup total ≤ 14) |
 | 154 | 8 | Linear meters (informational) |
 | 162 | 2 | Fixed field: `20` for order 1, `10` for orders 2 and 3 (**always write `20` in order 1**) |
 
@@ -153,7 +153,7 @@ python3 validate_orders.py orders.csv --write-dat740 orders.dat
 The server rejects a setup (red in the preview) when:
 
 1. **Creases:** max. **15 per order** and max. **22 per setup**; every panel width positive and not wider than the order's sheet. The panels should add up to the sheet width – the server does not enforce this, the validator reports a warning.
-2. **Outs:** the sum of outs of all orders in the setup ≤ **14**, e.g. 5 + 5 + 4 is allowed, 5 + 5 + 5 = 15 is not (outs per order 1–5).
+2. **Outs:** the sum of outs of all orders in the setup ≤ **14**, e.g. 6 + 8 or 5 + 5 + 4 is allowed, 5 + 5 + 5 = 15 is not; there is no separate limit per order.
 3. **Widths:** web ≤ **2543 mm**; sum of `sheet width × outs` ≥ **1000 mm** and ≤ web width.
 4. **Trim** (web − used width): **16–230 mm**.
 5. **Cut length** per knife level: min. **500 mm**, max. **4900 / 3500 / 5150 mm** for levels 1 / 2 / 3.

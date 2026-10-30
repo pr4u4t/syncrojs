@@ -29,6 +29,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:python": "python3 -B -m unittest discover -s tests/python",
     "build:client": "esbuild client/main.jsx --bundle --minify --outfile=public/js/app.js --jsx=automatic",
     "start": "npm run build:client && node app.js",
     "dev": "npm run build:client && NODE_ENV=development node app.js"

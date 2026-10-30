@@ -85,7 +85,7 @@ test('converts more than five DAT crease measurements packed in the first score 
   const row = Array(42).fill('');
   Object.assign(row, {
     2: '9011', 3: 'Q1', 4: 'A', 5: '25000',
-    8: 'Customer', 10: 'ORDER-MANY-SCORES', 11: '8000',
+    8: 'Customer', 10: 'ORDER-MANY-SCORES', 11: '23000',
     12: '1000 2000 3000 4000 5000 6000', 17: '100',
     18: '12000', 19: '400', 20: '1'
   });
@@ -178,7 +178,7 @@ test('matches all three parsed DAT order blocks to their serialized Syncro token
       level: order.level,
       sheetLength: source[order.length],
       quantity: source[order.quantity],
-      sheetsPerStack: String(Number.parseInt(source[order.stack], 10) / 2)
+      sheetsPerStack: String(Number.parseInt(source[order.stack], 10))
     });
   });
 });
@@ -238,6 +238,11 @@ test('limits total outs across all classic DAT orders to fourteen', async () => 
   row[20] = '9';
   row[35] = '5';
   const converted = { result: Array(102).fill('0'), error: null };
+  // 14 outs × 170 mm leave a 120 mm trim on the 2500 mm web, so only the outs total decides.
+  Object.assign(converted.result, { 0: '9001.2', 1: '25000', 4: 'Q1', 5: 'A', 8: '1200' });
+  for (const start of [9, 40]) {
+    Object.assign(converted.result, { [start]: `ORDER-${start}`, [start + 3]: '1700', [start + 5]: '1700', [start + 10]: '3', [start + 11]: '12000', [start + 12]: '400', [start + 13]: '100' });
+  }
   converted.result[13] = '9';
   converted.result[44] = '5';
   const valid = validateSyncroPayload(converted.result, row);
@@ -431,6 +436,22 @@ test('treats the SyncroC ok line as an accepted order', async () => {
   syncro.connect.mockResolvedValue(socket);
 
   await expect(orders.orders_add(['order-data'])).resolves.toBe(true);
+});
+
+test('keeps Syncro setup codes and order numbers as text', async () => {
+  const socket = {
+    write: jest.fn(async (command) => command.length),
+    readAll: jest.fn().mockResolvedValue(Buffer.from(
+      '<NewDataSet><DryEndList><Position>1</Position><SetupCode>9001.10</SetupCode>' +
+      '<OrderNumber0>0123</OrderNumber0><OrderNumber1>R952026103</OrderNumber1><OrderNumber2 /></DryEndList></NewDataSet>'
+    )),
+    destroy: jest.fn()
+  };
+  syncro.connect.mockResolvedValue(socket);
+
+  await expect(orders.orders_all()).resolves.toEqual([
+    { Position: 1, SetupCode: '9001.10', OrderNumber0: '0123', OrderNumber1: 'R952026103', OrderNumber2: '' }
+  ]);
 });
 
 test('parses current orders from Syncro and returns an empty list for an empty queue', async () => {

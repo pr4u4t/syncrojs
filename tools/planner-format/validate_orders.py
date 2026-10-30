@@ -28,7 +28,6 @@ from typing import Dict, List, Optional, Tuple
 DEFAULT_LIMITS = {
     "max_creases_per_order": 15,
     "max_creases_per_setup": 22,
-    "max_outs_per_order": 5,
     "max_total_outs": 14,
     "max_orders_per_setup": 3,
     "knife_level_count": 3,
@@ -41,7 +40,7 @@ DEFAULT_LIMITS = {
     "max_trim_tenths_mm": 2300,
     "allow_narrow_trim": False,
     "max_quantity": 999999,
-    "max_sheets_per_stack": 9999,
+    "max_sheets_per_stack": 1000,
 }
 
 CSV_REQUIRED = [
@@ -93,7 +92,7 @@ class Order:
     outs: Optional[int] = None
     sheet_length: Optional[int] = None
     quantity: Optional[int] = None
-    sheets_per_stack: Optional[float] = None
+    sheets_per_stack: Optional[int] = None
     level: Optional[int] = None
     scores: List[int] = field(default_factory=list)
 
@@ -358,10 +357,7 @@ def read_dat(text: str, format_name: str, limits: dict, report: Report) -> List[
                 except ValueError as error:
                     report.error(where, "%s: %s" % (key, error))
             try:
-                doubled = parse_int(values["sheets_per_stack"])
-                order.sheets_per_stack = doubled / 2
-                if doubled % 2:
-                    report.warning(where, "Pole arkuszy na stos (%d) jest nieparzyste; w DAT zapisuje się podwójną wartość." % doubled)
+                order.sheets_per_stack = parse_int(values["sheets_per_stack"])
             except ValueError as error:
                 report.error(where, "sheets_per_stack: %s" % error)
 
@@ -421,10 +417,9 @@ def write_dat740(setups: List[Setup], report: Report) -> str:
                 if len(order.scores) > 15:
                     raise ValueError("zamówienie %d ma więcej niż 15 bigów" % (index + 1))
                 scores = [number(score, 5) for score in order.scores] + [" " * 5] * (15 - len(order.scores))
-                stack = None if order.sheets_per_stack is None else int(order.sheets_per_stack * 2)
                 parts += [text(order.customer, 15), text("", 12), text(order.number, 30), number(order.sheet_width, 5)]
                 parts += scores
-                parts += [number(stack, 4), number(order.sheet_length, 5), number(order.quantity, 6),
+                parts += [number(order.sheets_per_stack, 4), number(order.sheet_length, 5), number(order.quantity, 6),
                           number(order.outs, 2), text("", 8), "20" if index == 0 else "10"]
             parts += [" " * 8, " " * 8, " " * 90]
         except ValueError as error:
@@ -479,7 +474,8 @@ def validate_setup(setup: Setup, limits: dict, report: Report, qualities: Option
         if len(orders) == 3 and orders[2].outs and not orders[1].outs:
             error("Nie można pominąć drugiego zamówienia, jeśli podano trzecie.")
         orders = [order for order in orders if order.outs != 0]
-    max_outs = limits["max_outs_per_order"] if is_csv else 9
+    # Outs are limited only by the setup total, checked below.
+    max_outs = limits["max_total_outs"]
 
     complete = True
     total_creases = 0
@@ -497,8 +493,10 @@ def validate_setup(setup: Setup, limits: dict, report: Report, qualities: Option
             error("%s: outs musi być liczbą całkowitą 1-%d." % (label, max_outs))
         if order.quantity is None or not 1 <= order.quantity <= limits["max_quantity"]:
             error("%s: ilość arkuszy musi być liczbą całkowitą 1-%d." % (label, limits["max_quantity"]))
-        if is_csv and (order.sheets_per_stack is None or not 1 <= order.sheets_per_stack <= limits["max_sheets_per_stack"]):
-            error("%s: arkusze na stos muszą być w zakresie 1-%d." % (label, limits["max_sheets_per_stack"]))
+        # A DAT may leave the stack to the machine default with 0; a CSV must state it.
+        min_stack = 1 if is_csv else 0
+        if order.sheets_per_stack is None or not min_stack <= order.sheets_per_stack <= limits["max_sheets_per_stack"]:
+            error("%s: arkusze na stos muszą być w zakresie %d-%d." % (label, min_stack, limits["max_sheets_per_stack"]))
         if order.sheet_width is None or order.sheet_width <= 0:
             error("%s: szerokość arkusza musi być dodatnia." % label)
         if order.sheet_length is None or order.sheet_length <= 0:

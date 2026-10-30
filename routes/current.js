@@ -5,13 +5,11 @@ const host = config.get('syncro.host');
 const shift_skip = config.get('orders.shift');
 const logger = require('../utils/logger');
 const sendAppShell = require('../utils/app-shell');
-const classicGenerator = require('../utils/classic-generator');
-const classicParser = require('../models/orders/classic');
 const extendedOrdersParser = require('../models/orders/extended_orders');
+const { detectOrderFormat } = require('../models/orders/detect');
 const router = new Router();
 const multer  = require('multer');
 const upload = multer({ dest: './uploads/' });
-const path = require('path');
 const ordmac = require('../models/order.js');
 const papers = require('../models/papers.js');
 const quality = require('../models/quality.js');
@@ -90,7 +88,7 @@ router.get('/manual/options', async (req, res) => {
 
 router.post('/import', upload.single('orderFile'), async (req, res) => {
     let rows;
-    let isExtendedOrdersCsv = false;
+    let backend;
     const invalid = {};
     const warnings = {};
 
@@ -105,14 +103,11 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
             return;
         }
             const data = fs.readFileSync(req.file.path, 'utf8');
-            const isCsv = path.extname(req.file.originalname).toLowerCase() === '.csv';
-            isExtendedOrdersCsv = isCsv && ordmac.current_backend() === 'extended_orders';
-            const parsedData = isCsv && !isExtendedOrdersCsv
-                ? await classicGenerator.generateDatFromCsv(data, { maxTrimTenthsMm: config.get('orders.max_trim') })
-                : data;
-            rows = isExtendedOrdersCsv
-                ? await ordmac.parse(parsedData)
-                : isCsv ? classicParser.mac_parse(parsedData) : await ordmac.parse(parsedData);
+            // Unrecognised files fall back to the parser configured in Settings.
+            const format = detectOrderFormat(data, req.file.originalname) || ordmac.current_backend();
+            logger.info(`order import ${req.file.originalname}: ${format} parser`);
+            backend = format;
+            rows = await ordmac.parse(data, backend);
             if(!Array.isArray(rows) || rows.length === 0){
                 res.status(400).json({ error: 'order_file_invalid' });
                 return;
@@ -128,7 +123,7 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
                     warnings[i] = { message: warning };
                     continue;
                 }
-                const tmp = await ordmac.validate(rows[i], papers, quality, flute);
+                const tmp = await ordmac.validate(rows[i], papers, quality, flute, backend);
             if(tmp.result === null || tmp.result === undefined){
                 invalid[i] = tmp;
                 continue;
@@ -156,12 +151,10 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
             }
         }
         req.session.current = rows;
+        req.session.currentBackend = backend;
     } catch (err) {
         logger.error(`order add post ${err}`);
-            const generatorUnavailable = err.code === 'CLASSIC_GENERATOR_UNAVAILABLE' || err.code === 'CLASSIC_GENERATOR_TIMEOUT';
-            res.status(generatorUnavailable ? 503 : 400).json({
-                error: generatorUnavailable ? 'classic_generator_unavailable' : 'order_file_invalid'
-            });
+        res.status(400).json({ error: 'order_file_invalid' });
         return;
     } finally {
         if(req.file){
@@ -171,7 +164,7 @@ router.post('/import', upload.single('orderFile'), async (req, res) => {
 
     res.json({
         rows,
-        fields: isExtendedOrdersCsv ? extendedOrdersParser.preview_fields : ordmac.fields,
+        fields: rows.some((row) => row && row.format === 'extended_orders_csv') ? extendedOrdersParser.preview_fields : ordmac.fields,
         invalid,
         warnings,
         knifeLevelCount: Number(config.get('orders.validation.knife_level_count')) || 3
@@ -251,7 +244,7 @@ router.post('/import/confirm', upload.none(), async (req, res) => {
         const invalid = [];
         for(let index = 0; index < req.session.current.length; ++index){
             if(zeroQuantityWarning(req.session.current[index])) continue;
-            const validation = await ordmac.validate(req.session.current[index], papers, quality, flute);
+            const validation = await ordmac.validate(req.session.current[index], papers, quality, flute, req.session.currentBackend);
             if(!validation || validation.result === null || validation.result === undefined){
                 invalid.push({ index, error: validation && validation.error ? validation.error : 'Nie udało się zwalidować zamówienia.' });
             }
@@ -405,7 +398,7 @@ router.post('/import/update-scores', upload.none(), async (req, res) => {
     let validation = null;
     if(!zeroQuantityWarning(updatedRow)){
         try{
-            validation = await ordmac.validate(updatedRow, papers, quality, flute);
+            validation = await ordmac.validate(updatedRow, papers, quality, flute, req.session.currentBackend);
         }catch(error){
             logger.warn({error, rowIndex}, 'Could not validate edited DAT scores');
             res.status(400).json({ saved: false, error: error.message || 'Nie udało się zwalidować bigów.' });

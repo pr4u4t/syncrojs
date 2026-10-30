@@ -9,14 +9,14 @@ Specification and validator for the CSV layout proposed by the planner: **one ro
 | [example_as_received.csv](example_as_received.csv) | the sample exactly as received from the planner (fails validation, see below) |
 | [example_valid.csv](example_valid.csv) | the same setup corrected (passes) |
 
-> The Syncro application does not import this layout yet. The validator defines what the planner must deliver; an import parser can follow once the format is agreed.
+> The Syncro application imports this layout automatically with the `extended_orders` parser (Current Orders > Import file), whatever parser is selected in Settings; it is recognised by the `program_number_drcorr` header. The Ozdan export `OrdList.csv` is the reference file ([tests/models/ozdan_data](../../tests/models/ozdan_data/OrdList.csv)); the same orders also arrive as a classic 587-character `Ord_mac.dat`, and both produce the same Syncro setup.
 
 ---
 
 ## File
 
 - Text file, **semicolon** (`;`) separated, first line is the header. UTF-8 (BOM allowed); Windows-1250 is accepted with a warning.
-- Header names are case-insensitive; column order is free. Every row has the same number of columns as the header.
+- Header names are case-insensitive; column order is free. Every row has the same number of columns as the header; one extra empty column at the end of a data row (a trailing `;`, as in the Ozdan export) is ignored.
 - All numbers are **whole numbers**. Widths, lengths and creases are in **tenths of a millimetre** (`24500` = 2450.0 mm). No decimal separators.
 - One row per setup. An unused order block (`z2_`, `z3_`) has an empty order number; its other fields may be empty or `0`.
 
@@ -43,9 +43,9 @@ Specification and validator for the CSV layout proposed by the planner: **one ro
 | `zN_score_1` … `zN_score_17` | yes (may be `0`) | 0.1 mm | Crease panels, see below. |
 | `zN_length` | yes | 0.1 mm | Sheet (cut) length. |
 | `zN_pieces` | yes | 1–999999 | Quantity of sheets. `0` → the whole setup is skipped. |
-| `zN_out_box` | yes | 1–5 | Outs (number of sheets across the web). |
-| `zN_level` | no | `1`, `2`, `3` | Knife level, see below. |
-| `zN_sheets_per_stack` | **requested** | 1–9999 | Sheets per stack. **Missing in the received proposal** – Syncro needs it; please add it. Without it the machine default is used. |
+| `zN_out_box` | yes | positive integer | Outs (number of sheets across the web); all orders of the setup together at most 14. |
+| `zN_level` | no | `1`, `2`, `3`, or `20` / `10` | Knife level, see below. |
+| `zN_sheets_per_stack` | yes | 1–1000 | Sheets per stack, sent to Syncro unchanged (same as for `Ord_mac.dat`). The stacker takes about 1400 sheets of a low flute and 1000 of a high one, so the limit is 1000. |
 
 ## Creases
 
@@ -65,6 +65,7 @@ The layout has 17 columns per order (51 per setup), but **our limits apply**:
 ## Knife level
 
 - `zN_level` set → used as given (`1`, `2`, `3`; level 2 only on machines with three knife levels).
+- `zN_level` `20` / `10` → the DAT fixed field (order 1 / orders 2–3) copied by the Ozdan export; treated like an empty level.
 - `zN_level` empty → the level of another order in the setup with **the same length**; if there is none, order 1 → `3`, orders 2 and 3 → `1`.
 - Orders on the same knife level must have the same length.
 
@@ -73,7 +74,7 @@ The layout has 17 columns per order (51 per setup), but **our limits apply**:
 A setup is rejected when:
 
 1. **Creases:** more than 15 per order or more than 22 per setup; a panel wider than the sheet.
-2. **Outs:** `zN_out_box` outside 1–5, or the setup total above **14** (5 + 5 + 4 is fine, 5 + 5 + 5 is not).
+2. **Outs:** `zN_out_box` below 1, or the setup total above **14** (6 + 8 or 5 + 5 + 4 is fine, 5 + 5 + 5 is not).
 3. **Widths:** web above **2543 mm**; used width (`width × out_box` summed) below **1000 mm** or above the web.
 4. **Trim** (web − used width) outside **16–230 mm**.
 5. **Cut length** below **500 mm** or above **4900 / 3500 / 5150 mm** on knife levels 1 / 2 / 3; different lengths on one knife level.

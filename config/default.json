@@ -18,6 +18,7 @@
       "max_trim": 2300,
       "validation": {
         "max_total_outs": 14,
+        "max_sheets_per_stack": 1000,
         "knife_level_count": 3,
         "min_cut_length_tenths_mm": 5000,
         "max_cut_length_tenths_mm": [49000, 35000, 51500],

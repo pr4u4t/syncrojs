@@ -11,8 +11,10 @@ const flute = require('./flute.js');
 const { connect: syncroConnect } = require('../utils/syncro');
 const { classicLevels } = require('../utils/classic-levels');
 const { validateSyncroPayload, validateConversion } = require('./order-validation');
-const { MAX_CREASES_PER_ORDER, MAX_CREASES_PER_SETUP } = require('../utils/order-constraints');
-const parser = new XMLParser();
+const { MAX_TOTAL_OUTS, MAX_CREASES_PER_ORDER, MAX_CREASES_PER_SETUP, MAX_SHEETS_PER_STACK } = require('../utils/order-constraints');
+// Identifiers stay text: as numbers "9001.10" would become 9001.1 and "0123" 123. Returning undefined skips number parsing.
+const IDENTIFIER_TAGS = new Set(['SetupCode', 'OrderNumber0', 'OrderNumber1', 'OrderNumber2']);
+const parser = new XMLParser({ tagValueProcessor: (tagName, value) => (IDENTIFIER_TAGS.has(tagName) ? undefined : value) });
 var current = null;
 var backend = null;
 
@@ -386,7 +388,7 @@ const mac2syncro = async function(mac){
         levels[0],
         sheetLength0,
         sheetCount0,
-        sheetsStack0/2,
+        sheetsStack0,
         1,
         0,
         84
@@ -413,7 +415,7 @@ const mac2syncro = async function(mac){
             levels[1], 
             sheetLength1, 
             sheetCount1, 
-            sheetsStack1/2, 
+            sheetsStack1,
             1, 
             0, 
             84
@@ -442,7 +444,7 @@ const mac2syncro = async function(mac){
             levels[2],
             mac[48],
             mac[49],
-            sheetsStack2/2,
+            sheetsStack2,
             1,
             0,
             84
@@ -502,6 +504,9 @@ const manual_setup_to_syncro = async function(input){
             throw new Error('Quality or flute was not found in the database');
         }
 
+        // Outs are limited only by the setup total; validateConversion rejects a sum above it.
+        const maxOuts = Number(config.get('orders.validation.max_total_outs')) || MAX_TOTAL_OUTS;
+        const maxSheetsPerStack = Number(config.get('orders.validation.max_sheets_per_stack')) || MAX_SHEETS_PER_STACK;
         const parsedOrders = ordersInput.map((order, index) => {
             const label = `Order ${index + 1}`;
             if(!order || typeof order !== 'object'){
@@ -536,10 +541,10 @@ const manual_setup_to_syncro = async function(input){
                 orderNumber,
                 customerName,
                 sheetWidth,
-                outs: positiveInteger(order.outs, `${label} outs`, 5),
+                outs: positiveInteger(order.outs, `${label} outs`, maxOuts),
                 sheetLength: toTenthsMm(order.sheetLengthMm, `${label} sheet length`),
                 sheetCount: positiveInteger(order.quantitySheets, `${label} quantity`, 999999),
-                sheetsPerStack: positiveInteger(order.sheetsPerStack, `${label} sheets per stack`, 9999),
+                sheetsPerStack: positiveInteger(order.sheetsPerStack, `${label} sheets per stack`, maxSheetsPerStack),
                 scores,
                 level
             };
@@ -707,8 +712,9 @@ const orders_all = async function(){
             logger.warn('Orders.Get response did not contain NewDataSet');
             return null;
         }
+        // An empty queue (<NewDataSet />) parses to an empty string.
         const rows = parsed.NewDataSet && parsed.NewDataSet.DryEndList;
-        if(rows === null || rows === undefined) return [];
+        if(!rows) return [];
         return Array.isArray(rows) ? rows : [rows];
     }catch(error){
         logger.error('order: failed to obtain orders');
@@ -805,32 +811,48 @@ const default_backend = function(){
     return backtype;
 };
 
-const parse = function(data){
-    if(data === undefined || data === null){
-        logger.error('invalid data');
-        return false;
+// An explicit backend (e.g. detected from the uploaded file) overrides the configured one.
+const backend_for = function(back){
+    if(back === 'extended_outs'){
+        back = 'extended_orders';
     }
-
-    if(backend === undefined || backend === null){
-        logger.error('no valid backup selected');
-        return false;
+    if(back === 'classic'){
+        return require('./orders/classic');
     }
-
-    return backend.mac_parse(data, module.exports);
+    if(back === 'extended_orders'){
+        return require('./orders/extended_orders');
+    }
+    return backend;
 };
 
-const validate = async function(data){
+const parse = function(data, back = null){
     if(data === undefined || data === null){
         logger.error('invalid data');
         return false;
     }
 
-    if(backend === undefined || backend === null){
+    const selected = backend_for(back);
+    if(selected === undefined || selected === null){
         logger.error('no valid backup selected');
         return false;
     }
 
-    const converted = await backend.validate(data, papers, quality, flute, module.exports);
+    return selected.mac_parse(data, module.exports);
+};
+
+const validate = async function(data, papersModel, qualityModel, fluteModel, back = null){
+    if(data === undefined || data === null){
+        logger.error('invalid data');
+        return false;
+    }
+
+    const selected = backend_for(back);
+    if(selected === undefined || selected === null){
+        logger.error('no valid backup selected');
+        return false;
+    }
+
+    const converted = await selected.validate(data, papers, quality, flute, module.exports);
     return validateConversion(converted, data);
 };
 

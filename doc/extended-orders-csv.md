@@ -1,6 +1,16 @@
 # Extended orders CSV
 
-Select the `extended_orders` parser in Settings, then upload a CSV from Current Orders > Import file. The legacy parser name `extended_outs` remains accepted as a configuration alias.
+Upload the file from Current Orders > Import file. The parser is chosen from the file content, whatever is selected in Settings:
+
+| File | Parser |
+|---|---|
+| CSV with a `setup_code` column (this format) | `extended_orders` |
+| `;` CSV with a `program_number_drcorr` column (Ozdan, see below) | `extended_orders` |
+| any other `.csv` | rejected as an unknown file (the classic CSV generator is not used for imports at the moment) |
+| DAT with 587-character records | `classic` |
+| DAT with 589- or 740-character records | `extended_orders` |
+
+Only a file matching none of these falls back to the parser selected in Settings. The legacy parser name `extended_outs` remains accepted as a configuration alias.
 
 The format exists because the fixed-width DAT layout carries only five crease (score) fields per order. The CSV carries up to **15 crease measurements per order** while keeping the Syncro limit of **22 crease measurements per setup** (all orders in the set combined).
 
@@ -23,10 +33,10 @@ The format exists because the fixed-width DAT layout carries only five crease (s
 | `order_number` | yes | max 30 characters | |
 | `customer_name` | yes | max 15 characters | |
 | `sheet_width_mm` | yes | mm, max one decimal | |
-| `outs` | yes | integer 1–5 | Total outs across the setup are limited to 14. |
+| `outs` | yes | positive integer | Limited only by the setup total: all orders together at most 14. |
 | `sheet_length_mm` | yes | mm, max one decimal | Orders on the same knife level must share the length. |
 | `quantity_sheets` | yes | positive integer | |
-| `sheets_per_stack` | yes | positive integer | |
+| `sheets_per_stack` | yes | integer 1–1000 | Stacker limit, setting `orders.validation.max_sheets_per_stack`. |
 | `score_measures_mm` | yes (may be empty) | mm values separated by `;` | See crease limits below. |
 | `level` | no | `1`, `2` or `3` | Knife level. When omitted: order 1 → `3`, later orders → `1`. |
 
@@ -67,14 +77,18 @@ SETUP-THREE,2500,Q1,A,ORDER-3,Klient Gamma,800,1,950,8000,80,1,400;400
 - A setup already present in the Syncro queue with the same orders, or repeated in the file, is skipped (yellow). The same setup code with different orders is an error (red).
 - Existing fixed-width 589-character DAT files remain supported, but their layout only carries five score fields per order.
 
+## Ozdan wide CSV (one row per setup)
+
+The `extended_orders` parser also reads the Ozdan export `OrdList.csv`: `;` separated, one row per setup with order blocks `z1_`–`z3_`, dimensions in tenths of a millimetre, recognised by the `program_number_drcorr` header. `FOSBEROID` becomes the setup code, `Quality` and `flute` the quality and flute IDs. The full specification and a validator are in [tools/planner-wide-csv](../tools/planner-wide-csv/README.md). The limits above apply unchanged (15 / 22 creases, outs total ≤ 14, a setup with quantity `0` is skipped).
+
 ## Extended fixed-width DAT (740 characters)
 
-> Read by the `extended_orders` parser next to CSV and the 589-character DAT. The planner-facing specification and a Python validator are in [tools/planner-format](../tools/planner-format/README.md). It is the existing DAT record with 15 score fields per order instead of 5; the 15 values are packed into the first score field of the internal 55-field row, so preview, score editing and validation work unchanged.
+> Read by the `extended_orders` parser next to CSV and the 589-character DAT, detected automatically on import. The planner-facing specification and a Python validator are in [tools/planner-format](../tools/planner-format/README.md). It is the existing DAT record with 15 score fields per order instead of 5; the 15 values are packed into the first score field of the internal 55-field row, so preview, score editing and validation work unchanged.
 
 ### Conventions
 
 - One setup per record; records follow each other **without line breaks**, exactly like the current DAT. Fully blank records are ignored.
-- Record length: **740 characters** (650 data + 90 blank padding). Trailing blanks after the last record are ignored. With the `extended_orders` parser selected, the file is read as 740 when its records have `G` at position 141 and do not fit the 589 layout; for a single record that fits both, the fixed field `20` of order 1 (position 304) decides, so always write it.
+- Record length: **740 characters** (650 data + 90 blank padding). Trailing blanks after the last record are ignored. The file is read as 740 when its records have `G` at position 141 and do not fit the 589 layout; for a single record that fits both, the fixed field `20` of order 1 (position 304) decides, so always write it.
 - Text fields are left-aligned and padded with spaces. Numeric fields are right-aligned and padded with spaces.
 - Widths, lengths and crease panel widths are in **tenths of a millimetre** (`22000` = 2200.0 mm), as in the current DAT.
 - An unused order block is entirely blank. An unused score field is blank or `0`. One value per score field — no packing of several values into one field.
@@ -105,10 +119,10 @@ Offsets are 0-based character positions.
 | 27 | 30 | Order number (blank = no order) |
 | 57 | 5 | Sheet width (0.1 mm) |
 | 62 | 75 | Scores 1–15, 15 × 5 characters (0.1 mm); score *n* at `62 + 5·(n−1)` |
-| 137 | 4 | Sheets per stack (same meaning as current DAT) |
+| 137 | 4 | Sheets per stack (0–1000, 0 = machine default) |
 | 141 | 5 | Sheet length (0.1 mm) |
 | 146 | 6 | Quantity of sheets |
-| 152 | 2 | Outs (1–5) |
+| 152 | 2 | Outs (setup total ≤ 14) |
 | 154 | 8 | Linear meters |
 | 162 | 2 | Fixed field (`20` for order 1, `10` for orders 2–3, as in current DAT) |
 

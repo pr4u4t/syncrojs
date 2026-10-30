@@ -20,7 +20,6 @@ from typing import Dict, List, Optional
 DEFAULT_LIMITS = {
     "max_creases_per_order": 15,
     "max_creases_per_setup": 22,
-    "max_outs_per_order": 5,
     "max_total_outs": 14,
     "knife_level_count": 3,
     "min_cut_length_tenths_mm": 5000,
@@ -32,7 +31,7 @@ DEFAULT_LIMITS = {
     "max_trim_tenths_mm": 2300,
     "allow_narrow_trim": False,
     "max_quantity": 999999,
-    "max_sheets_per_stack": 9999,
+    "max_sheets_per_stack": 1000,
     "order_length_tolerance_percent": 2,
 }
 
@@ -70,6 +69,9 @@ def to_int(text: str) -> Optional[int]:
     if not text.lstrip("-").isdigit():
         raise ValueError("'%s' is not a whole number" % text)
     return int(text)
+
+
+DAT_FIXED_LEVELS = (10, 20)
 
 
 def physical_level(level: int, level_count: int) -> Optional[int]:
@@ -122,6 +124,9 @@ def read_rows(raw: bytes, report: Report) -> List[Dict[str, str]]:
 
     result = []
     for line, values in enumerate(rows[1:], start=2):
+        # The Ozdan export terminates every data row with an extra ';'.
+        if len(values) == len(headers) + 1 and not values[-1].strip():
+            values = values[:-1]
         if len(values) != len(headers):
             report.add("ERROR", "row %d" % line, "Row has %d columns, header has %d." % (len(values), len(headers)))
             continue
@@ -188,6 +193,8 @@ def parse_setup(row: Dict[str, str], limits: dict, report: Report) -> Optional[d
             except ValueError as problem:
                 error("%s %s: %s" % (label, prefix + column, problem))
                 order[key] = None
+        if order["level"] in DAT_FIXED_LEVELS:
+            order["level"] = None  # the DAT fixed field (20 / 10), not a knife level: derive it like an empty level
 
         scores, seen_gap = [], False
         for index in range(1, SCORE_COLUMNS + 1):
@@ -264,8 +271,8 @@ def validate_setup(setup: dict, limits: dict, report: Report, qualities: Optiona
             error("%s: length must be positive." % label)
         if order["pieces"] is None or not 1 <= order["pieces"] <= limits["max_quantity"]:
             error("%s: pieces must be 1-%d." % (label, limits["max_quantity"]))
-        if order["outs"] is None or not 1 <= order["outs"] <= limits["max_outs_per_order"]:
-            error("%s: out_box must be 1-%d." % (label, limits["max_outs_per_order"]))
+        if order["outs"] is None or not 1 <= order["outs"] <= limits["max_total_outs"]:
+            error("%s: out_box must be 1-%d." % (label, limits["max_total_outs"]))
         if order["stack"] is not None and not 1 <= order["stack"] <= limits["max_sheets_per_stack"]:
             error("%s: sheets_per_stack must be 1-%d." % (label, limits["max_sheets_per_stack"]))
         if physical_level(order["level"], int(limits["knife_level_count"])) is None:

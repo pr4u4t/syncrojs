@@ -1,5 +1,5 @@
 const config = require('config');
-const { MAX_TOTAL_OUTS, MAX_CREASES_PER_ORDER, MAX_CREASES_PER_SETUP, totalOuts } = require('../utils/order-constraints');
+const { MAX_TOTAL_OUTS, MAX_CREASES_PER_ORDER, MAX_CREASES_PER_SETUP, MAX_SHEETS_PER_STACK, totalOuts } = require('../utils/order-constraints');
 
 const HEADER_SIZE = 9;
 const ORDER_SIZE = 31;
@@ -10,6 +10,7 @@ const DAT_FIELDS = {
     scores: [[12, 13, 14, 15, 16], [27, 28, 29, 30, 31], [42, 43, 44, 45, 46]],
     sheetLength: [18, 33, 48],
     quantity: [19, 34, 49],
+    sheetsPerStack: [17, 32, 47],
     outs: [20, 35, 50]
 };
 
@@ -101,6 +102,7 @@ const validateSyncroPayload = (payload, source = null) => {
         return invalid('Nie można pominąć drugiego zamówienia, jeśli podano trzecie.', source, 'orderNumber', [1, 2]);
     }
 
+    const maxSheetsPerStack = configuredLimit('max_sheets_per_stack', MAX_SHEETS_PER_STACK);
     let totalCreaseMeasures = 0;
     for(const order of activeOrders){
         if(!order.orderNumber) return invalid(`Zamówienie ${order.index + 1}: brak numeru zamówienia.`, source, 'orderNumber', [order.index]);
@@ -115,6 +117,10 @@ const validateSyncroPayload = (payload, source = null) => {
         }
         if(!Number.isInteger(order.quantity) || order.quantity <= 0){
             return invalid(`Zamówienie ${order.index + 1}: liczba arkuszy musi być dodatnia.`, source, 'quantity', [order.index]);
+        }
+        // 0 leaves the stack to the machine default; about a fifth of the planner DAT orders use it.
+        if(!Number.isInteger(order.sheetsPerStack) || order.sheetsPerStack < 0 || order.sheetsPerStack > maxSheetsPerStack){
+            return invalid(`Zamówienie ${order.index + 1}: liczba arkuszy w stosie musi wynosić 0-${maxSheetsPerStack} (0 = domyślnie maszyna).`, source, 'sheetsPerStack', [order.index]);
         }
         if(!order.scores){
             return invalid(`Zamówienie ${order.index + 1}: brak pomiarów bigowania.`, source, 'scores', [order.index]);

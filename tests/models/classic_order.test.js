@@ -28,8 +28,10 @@ test('Ord_mac 1 zam.dat', async () => {
     const order1 = parsed[1];
     expect(parseInt(order0[20])).toEqual(2); //number of outs 1 to be equal 2
     expect(parseInt(order1[20])).toEqual(3); //number of outs 1 to be equal 2
+    // The first record has 0 sheets: the import skips such a setup and validation rejects it.
     const result0 = await orders.validate(order0);
-    expect(Array.isArray(result0.result)).toEqual(true);
+    expect(result0.result).toBeNull();
+    expect(result0.error).toMatch(/liczba arkuszy musi być dodatnia/);
     const result1 = await orders.validate(order1);
     expect(Array.isArray(result1.result)).toEqual(true);
 }, timeout);
@@ -43,8 +45,10 @@ test('Ord_mac 2 zam.dat', async () => {
     const order1 = parsed[1];
     expect(parseInt(order0[20])).toEqual(2); //number of outs 1 to be equal 2
     expect(parseInt(order1[20])).toEqual(2); //number of outs 1 to be equal 2
+    // The first record has 0 sheets: the import skips such a setup and validation rejects it.
     const result0 = await orders.validate(order0);
-    expect(Array.isArray(result0.result)).toEqual(true);
+    expect(result0.result).toBeNull();
+    expect(result0.error).toMatch(/liczba arkuszy musi być dodatnia/);
     const result1 = await orders.validate(order1);
     expect(Array.isArray(result1.result)).toEqual(true);
 
@@ -59,8 +63,10 @@ test('Ord_mac bigi gora dol.dat', async () => {
     const order1 = parsed[1];
     expect(parseInt(order0[20])).toEqual(2); //number of outs 1 to be equal 2
     expect(parseInt(order1[20])).toEqual(2); //number of outs 1 to be equal 2
+    // The first record has 0 sheets: the import skips such a setup and validation rejects it.
     const result0 = await orders.validate(order0);
-    expect(Array.isArray(result0.result)).toEqual(true);
+    expect(result0.result).toBeNull();
+    expect(result0.error).toMatch(/liczba arkuszy musi być dodatnia/);
     const result1 = await orders.validate(order1);
     expect(Array.isArray(result1.result)).toEqual(true);
 }, timeout);
@@ -74,8 +80,10 @@ test('Ord_mac bigi gora.dat', async () => {
     const order1 = parsed[1];
     expect(parseInt(order0[20])).toEqual(2); //number of outs 1 to be equal 2
     expect(parseInt(order1[20])).toEqual(3); //number of outs 1 to be equal 3
+    // The first record has 0 sheets: the import skips such a setup and validation rejects it.
     const result0 = await orders.validate(order0);
-    expect(Array.isArray(result0.result)).toEqual(true);
+    expect(result0.result).toBeNull();
+    expect(result0.error).toMatch(/liczba arkuszy musi być dodatnia/);
     const result1 = await orders.validate(order1);
     expect(Array.isArray(result1.result)).toEqual(true);
 }, timeout);
@@ -89,8 +97,10 @@ test('Ord_mac.dat', async () => {
     const order1 = parsed[1];
     expect(parseInt(order0[20])).toEqual(1); //number of outs 1 to be equal 2
     expect(parseInt(order1[20])).toEqual(4); //number of outs 1 to be equal 3
+    // The first record has 0 sheets: the import skips such a setup and validation rejects it.
     const result0 = await orders.validate(order0);
-    expect(Array.isArray(result0.result)).toEqual(true);
+    expect(result0.result).toBeNull();
+    expect(result0.error).toMatch(/liczba arkuszy musi być dodatnia/);
     const result1 = await orders.validate(order1);
     expect(Array.isArray(result1.result)).toEqual(true);
 }, timeout);
@@ -134,8 +144,10 @@ test('Ord_mac3.dat', async () => {
     const order1 = parsed[1];
     expect(parseInt(order0[20])).toEqual(1); //number of outs 1 to be equal 2
     expect(parseInt(order1[20])).toEqual(3); //number of outs 1 to be equal 3
+    // The first record has 0 sheets: the import skips such a setup and validation rejects it.
     const result0 = await orders.validate(order0);
-    expect(Array.isArray(result0.result)).toEqual(true);
+    expect(result0.result).toBeNull();
+    expect(result0.error).toMatch(/liczba arkuszy musi być dodatnia/);
     const result1 = await orders.validate(order1);
     expect(Array.isArray(result1.result)).toEqual(true);
 }, timeout);
@@ -179,8 +191,10 @@ test('mac_parse_5_bigs', async () => {
     const order2 = parsed[1];
     expect(parseInt(order1[20])).toEqual(2); //number of outs 1 to be equal 2
     expect(parseInt(order2[20])).toEqual(1);
+    // 12 sheets make a 3.8 m run, below the 29.38 m minimum setup length.
     const result0 = await orders.validate(order1);
-    expect(Array.isArray(result0.result)).toEqual(true);
+    expect(result0.result).toBeNull();
+    expect(result0.error).toMatch(/Łączna długość setupu \(3810 mm\) jest mniejsza od wymaganego minimum/);
     const result1 = await orders.validate(order2);
     expect(Array.isArray(result1.result)).toEqual(true);
 }, timeout);
@@ -194,8 +208,10 @@ test('mac_parse_12_belts', async () => {
     const order2 = parsed[1];
     //expect(parseInt(order1[20])).toEqual(2); //number of outs 1 to be equal 2
     //expect(parseInt(order2[20])).toEqual(1);
+    // 12 sheets make a 3.8 m run, below the 29.38 m minimum setup length.
     const result0 = await orders.validate(order1);
-    expect(Array.isArray(result0.result)).toEqual(true);
+    expect(result0.result).toBeNull();
+    expect(result0.error).toMatch(/Łączna długość setupu \(3810 mm\) jest mniejsza od wymaganego minimum/);
     const result1 = await orders.validate(order2);
     expect(result1.result === null).toEqual(true); //this test should fail as number of outs is invalid
     expect(result1.error).toBeDefined();
@@ -210,8 +226,10 @@ test('mac_parse_10_belts', async () => {
     const order2 = parsed[1];
     //expect(parseInt(order1[20])).toEqual(2); //number of outs 1 to be equal 2
     //expect(parseInt(order2[20])).toEqual(1);
+    // 12 sheets make a 3.8 m run, below the 29.38 m minimum setup length.
     const result0 = await orders.validate(order1);
-    expect(Array.isArray(result0.result)).toEqual(true);
+    expect(result0.result).toBeNull();
+    expect(result0.error).toMatch(/Łączna długość setupu \(3810 mm\) jest mniejsza od wymaganego minimum/);
     const result1 = await orders.validate(order2);
     expect(result1.result === null).toEqual(true); //this test should fail as number of outs is invalid
     expect(result1.error).toBeDefined();

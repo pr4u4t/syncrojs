@@ -10,3 +10,4 @@ obj/
 **/*.kate-swp
 tools/syncro-updater/build/
 stag-qt/build/
+__pycache__/

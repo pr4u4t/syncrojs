@@ -18,4 +18,11 @@ const orderFieldsFromMatch = (match) => {
     return fields;
 };
 
-module.exports = { orderFieldsFromMatch };
+// A record length fits when every non-blank record has the header's constant 'G' and nothing but blanks is left over.
+const fitsRecordLength = (data, length) => {
+    const pattern = new RegExp(`[^\\r\\n]{${length}}`, 'g');
+    const records = (data.match(pattern) || []).filter((record) => record.trim() !== '');
+    return records.length > 0 && records.every((record) => record[141] === 'G') && data.replace(pattern, '').trim() === '';
+};
+
+module.exports = { orderFieldsFromMatch, fitsRecordLength };

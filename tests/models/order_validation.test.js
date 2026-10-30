@@ -51,7 +51,7 @@ test('rejects total outs above fourteen and maps the error back to DAT fields', 
     const source = Array(55).fill('');
     const error = validateSyncroPayload(makePayload({ outs: [9, 6, 0] }), source);
 
-    expect(error.error).toMatch(/łączna liczba użytków.*15.*14/);
+    expect(error.error).toMatch(/łączna liczba użytków.*15.*14/i);
     expect(error.fieldIndexes).toEqual([20, 35]);
 });
 
@@ -80,10 +80,34 @@ test('uses the configured maximum cut length for the selected physical knife lev
 test('rejects crease measurements that are zero, malformed, or wider than the sheet', () => {
     const payload = makePayload();
     payload[14] = '0';
+    expect(validateSyncroPayload(payload)).toBeNull();
+
+    payload[14] = '4000 0 4000';
+    expect(validateSyncroPayload(payload).error).toMatch(/bigi muszą być dodatnie/);
+
+    payload[14] = '4000 abc';
     expect(validateSyncroPayload(payload).error).toMatch(/bigi muszą być dodatnie/);
 
     payload[14] = '8001';
     expect(validateSyncroPayload(payload).error).toMatch(/przekraczać szerokości arkusza/);
+});
+
+test('limits sheets per stack to the stacker maximum of 1000 and maps the error to the DAT field', () => {
+    const payload = makePayload();
+    payload[9 + 31 + 13] = '1000';
+    expect(validateSyncroPayload(payload)).toBeNull();
+
+    payload[9 + 31 + 13] = '1001';
+    const error = validateSyncroPayload(payload, Array(55).fill(''));
+    expect(error.error).toBe('Zamówienie 2: liczba arkuszy w stosie musi wynosić 0-1000 (0 = domyślnie maszyna).');
+    expect(error.fieldIndexes).toEqual([32]);
+
+    // 0 is the machine default used by many planner DAT files.
+    payload[9 + 31 + 13] = '0';
+    expect(validateSyncroPayload(payload)).toBeNull();
+
+    payload[9 + 31 + 13] = '-1';
+    expect(validateSyncroPayload(payload).error).toMatch(/arkuszy w stosie/);
 });
 
 test('limits total crease measurements across the setup to twenty-two', () => {

@@ -98,7 +98,7 @@ test('manual options reports unavailable material data', async () => {
     await expect(response.json()).resolves.toEqual({ error: 'manual_options_unavailable' });
 });
 
-test('extended_orders CSV upload uses the grouped parser and preview fields', async () => {
+test('extended_orders CSV upload is detected from its header even with the classic parser configured', async () => {
     const source = 'setup_code,web_width_mm,quality_id,flute,order_number,customer_name,sheet_width_mm,outs,sheet_length_mm,quantity_sheets,sheets_per_stack,score_measures_mm\nSETUP-1,2500,Q1,A,A-1,Customer,800,1,1000,10,100,100;200';
     const setup = {
         format: 'extended_orders_csv',
@@ -106,7 +106,7 @@ test('extended_orders CSV upload uses the grouped parser and preview fields', as
         orders: [{ orderNumber: 'A-1', scores: ['100', '200'] }],
         preview: ['SETUP-1', '2500', 'Q1', 'A', 'A-1', 2]
     };
-    orders.current_backend.mockReturnValue('extended_orders');
+    orders.current_backend.mockReturnValue('classic');
     orders.parse.mockReturnValue([setup]);
     orders.validate.mockResolvedValue({ result: ['converted'], error: null });
     const form = new FormData();
@@ -123,10 +123,35 @@ test('extended_orders CSV upload uses the grouped parser and preview fields', as
     expect(body.rows).toEqual([setup]);
     expect(body.fields).toEqual(['Setup code', 'Web width (mm)', 'Quality ID', 'Flute ID', 'Order count', 'Crease measures (total)']);
     expect(body.invalid).toEqual({});
-    expect(orders.parse).toHaveBeenCalledWith(source);
-    expect(orders.validate).toHaveBeenCalledWith(setup, expect.anything(), expect.anything(), expect.anything());
+    expect(orders.parse).toHaveBeenCalledWith(source, 'extended_orders');
+    expect(orders.validate).toHaveBeenCalledWith(setup, expect.anything(), expect.anything(), expect.anything(), 'extended_orders');
     expect(classicGenerator.generateDatFromCsv).not.toHaveBeenCalled();
     expect(classicParser.mac_parse).not.toHaveBeenCalled();
+});
+
+test('every CSV upload, Ozdan included, goes to extended_orders whatever parser is configured', async () => {
+    const upload = async (source, name) => {
+        const form = new FormData();
+        form.append('orderFile', new Blob([source], { type: 'text/csv' }), name);
+        return fetch(`${baseUrl}/current/import`, { method: 'POST', headers: { Connection: 'close' }, body: form });
+    };
+    const fixture = (file) => require('node:fs').readFileSync(require('node:path').join(__dirname, '..', file), 'utf8');
+    orders.validate.mockResolvedValue({ result: ['converted'], error: null });
+
+    orders.current_backend.mockReturnValue('classic');
+    orders.parse.mockReturnValue([{ format: 'extended_orders_csv', orders: [] }]);
+    const ozdan = fixture('models/ozdan_data/OrdList.csv');
+    expect((await upload(ozdan, 'OrdList.csv')).status).toBe(200);
+    expect(orders.parse).toHaveBeenCalledWith(ozdan, 'extended_orders');
+    expect(classicGenerator.generateDatFromCsv).not.toHaveBeenCalled();
+
+    const plain = fixture('../tools/example_orders.csv');
+    orders.parse.mockImplementationOnce(() => { throw new Error('Unrecognised orders file'); });
+    const rejected = await upload(plain, 'orders.csv');
+    expect(rejected.status).toBe(400);
+    await expect(rejected.json()).resolves.toEqual({ error: 'order_file_invalid' });
+    expect(orders.parse).toHaveBeenLastCalledWith(plain, 'extended_orders');
+    expect(classicGenerator.generateDatFromCsv).not.toHaveBeenCalled();
 });
 
 test('DAT upload reports zero-quantity setups as warnings and skips blocking validation', async () => {
@@ -162,7 +187,7 @@ test('manual setup rejects pending imports and invalid conversion before Syncro 
 
 test('manual setup rejects Syncro preflight errors before checking or sending', async () => {
     orders.manual_setup_to_syncro.mockResolvedValue({ result: Array(102).fill('0'), setupCode: '9011.2' });
-    orders.validate_syncro_payload.mockReturnValue({ error: 'Łączny Setup Length jest poniżej minimum.' });
+    orders.validate_syncro_payload.mockReturnValueOnce({ error: 'Łączny Setup Length jest poniżej minimum.' });
 
     const response = await postForm('/current/manual', {});
 
@@ -223,7 +248,7 @@ test('import confirm rejects rows that fail parser validation', async () => {
     const validationError = 'Przy trzech zamówieniach co najmniej dwa muszą mieć tę samą długość arkusza i poziom noża.';
     orders.validate.mockResolvedValue({ result: null, error: validationError });
 
-    const response = await postForm('/current/import/confirm', { accept: 'true' }, { current: [['parsed-row']] });
+    const response = await postForm('/current/import/confirm', { accept: 'true' }, { current: [['parsed-row']], currentBackend: 'classic' });
 
     expect(response.status).toBe(400);
     await expect(response.json()).resolves.toEqual({
@@ -231,7 +256,7 @@ test('import confirm rejects rows that fail parser validation', async () => {
         error: 'invalid_import_rows',
         invalid: [{ index: 0, error: validationError }]
     });
-    expect(orders.validate).toHaveBeenCalledWith(['parsed-row'], expect.anything(), expect.anything(), expect.anything());
+    expect(orders.validate).toHaveBeenCalledWith(['parsed-row'], expect.anything(), expect.anything(), expect.anything(), 'classic');
 });
 
 test('import confirm allows zero-quantity rows to be skipped without validating them', async () => {
@@ -257,14 +282,14 @@ test('DAT score update writes converted crease measurements and revalidates the 
     const response = await postForm('/current/import/update-scores', {
         index: '0',
         scoresByOrder: JSON.stringify({ 0: '100\n200' })
-    }, { current: [row] });
+    }, { current: [row], currentBackend: 'extended_orders' });
 
     expect(response.status).toBe(200);
     const body = await response.json();
     expect(body.saved).toBe(true);
     expect(body.row.slice(12, 17)).toEqual(['1000 2000', '', '', '', '']);
     expect(body.invalid).toBeNull();
-    expect(orders.validate).toHaveBeenCalledWith(body.row, expect.anything(), expect.anything(), expect.anything());
+    expect(orders.validate).toHaveBeenCalledWith(body.row, expect.anything(), expect.anything(), expect.anything(), 'extended_orders');
 });
 
 test('DAT score update returns validation details when an edited crease remains invalid', async () => {
@@ -278,7 +303,7 @@ test('DAT score update returns validation details when an edited crease remains 
 
     const response = await postForm('/current/import/update-scores', {
         index: '0',
-        scoresByOrder: JSON.stringify({ 0: '900' })
+        scoresByOrder: JSON.stringify({ 0: '500' })
     }, { current: [row] });
 
     expect(response.status).toBe(200);
