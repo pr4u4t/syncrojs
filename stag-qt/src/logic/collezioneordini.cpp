@@ -18,6 +18,14 @@ int ClasseOrdine::Ord_liv(int i) const
     return int(vb::val(ord(i, QStringLiteral("Ord_liv"))));
 }
 
+double ClasseOrdine::Alt_ord() const
+{
+    double total = 0;
+    for (int i = 1; i <= 3; ++i)
+        total += vb::val(ord(i, QStringLiteral("sca_lar"))) * vb::val(ord(i, QStringLiteral("Sca_per_tag")));
+    return total;
+}
+
 int ClasseOrdine::ind_liv(int indFor) const
 {
     const QString liv = ord(indFor, QStringLiteral("Ord_liv"));

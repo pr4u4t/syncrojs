@@ -11,9 +11,14 @@ public:
 
     bool load(const QString &sqlitePath, int linAtt, QString *error = nullptr);
     QString msg(const QString &key) const;
+    // msg() without the log line, for keys that are legitimately absent (unused function keys).
+    QString find(const QString &key) const { return m_texts.value(key); }
+    // lingue_stag.imposta: caption of a control in the current language, empty when there is none.
+    QString controlText(const QString &form, const QString &control, int index) const;
 
 private:
     QHash<QString, QString> m_texts;
+    QHash<QString, QString> m_controls;
 };
 
 inline QString msg(const QString &key)

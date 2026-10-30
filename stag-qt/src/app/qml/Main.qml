@@ -1,8 +1,10 @@
 import QtQuick
 import QtQuick.Window
+import Stag
+import "nav.js" as Nav
 
-// Shell of the original layout: F1-F10 bar on top (tasti_stag), page area, status bar (sta_bar).
-// Designed at 800x600 like the VB forms and scaled to the panel.
+// Shell of the original layout: Tasti on top, the page below, status bar at the bottom. Designed at
+// 800x600 like the VB forms and scaled to the panel. Pages change like key.cls: eve_key.chg in nav.js.
 Window {
     id: root
     width: 800
@@ -12,8 +14,81 @@ Window {
     color: "#c0c0c0"
 
     readonly property real scaleFactor: Math.min(width / 800, height / 600)
+    property string currentForm: "Pag_pro"
+    property string previousForm: "Pag_pro"
+    property string overlayForm: ""
+    property int shiftMask: 0
+
+    function formUrl(name) {
+        return name === "" ? "" : Qt.resolvedUrl("forms/" + name + ".qml")
+    }
+    function activeForm() {
+        return overlayForm !== "" ? overlayForm : currentForm
+    }
+    function showForm(name) {
+        // The form being replaced may hold the focus; without it the function keys would stop working.
+        shell.forceActiveFocus()
+        const closedOverlay = overlayForm
+        overlayForm = ""
+        if (name === currentForm && closedOverlay !== "") {
+            // Coming back from a dialog is a Form_Activate of the page underneath.
+            stagUi.setPreviousForm(closedOverlay)
+            if (page.item)
+                page.item.activate()
+        }
+        if (name !== currentForm) {
+            previousForm = currentForm
+            stagUi.setPreviousForm(currentForm)
+            currentForm = name
+        }
+        updateLabels()
+    }
+    function updateLabels() {
+        const labels = stagUi.functionLabels(activeForm(), shiftMask)
+        const active = overlayForm !== "" ? overlay.item : page.item
+        const hidden = active && active.model ? active.model.hiddenFunctionKeys() : []
+        for (let key = 1; key <= 10; ++key) {
+            const label = tasti.ctl("des_fun", key)
+            if (label) {
+                label.text = labels[key - 1]
+                label.visible = !hidden.includes("F" + key)
+            }
+        }
+    }
+    function press(key, shift) {
+        const form = activeForm()
+        const active = overlayForm !== "" ? overlay.item : page.item
+        if (active && active.model && active.model.functionKey(key, shift))
+            return
+        const entry = Nav.forms[form] ? Nav.forms[form].keys[key] : undefined
+        const targets = entry ? entry[String(shift)] : undefined
+        if (!targets || targets.length === 0) {
+            stagUi.notPorted(form, key)
+            return
+        }
+        const chosen = active && active.model ? active.model.navigationTarget(key, shift) : ""
+        const target = chosen !== "" ? { to: chosen, keep: false } : targets[0]
+        if (target.to === "@back") {
+            if (overlayForm !== "") {
+                shell.forceActiveFocus()
+                stagUi.setPreviousForm(overlayForm)
+                overlayForm = ""
+                if (page.item)
+                    page.item.activate()
+            } else {
+                showForm(previousForm)
+            }
+            updateLabels()
+        } else if (target.keep || (Nav.forms[target.to] && Nav.forms[target.to].dialog)) {
+            overlayForm = target.to
+            updateLabels()
+        } else {
+            showForm(target.to)
+        }
+    }
 
     Item {
+        id: shell
         width: 800
         height: 600
         scale: root.scaleFactor
@@ -21,34 +96,85 @@ Window {
         focus: true
 
         Keys.onPressed: (event) => {
-            if (event.key >= Qt.Key_F1 && event.key <= Qt.Key_F10) {
-                functionBar.activate(event.key - Qt.Key_F1 + 1)
+            const shift = (event.modifiers & Qt.ShiftModifier ? 1 : 0)
+                        | (event.modifiers & Qt.ControlModifier ? 2 : 0)
+                        | (event.modifiers & Qt.AltModifier ? 4 : 0)
+            if (shift !== root.shiftMask) {
+                root.shiftMask = shift
+                root.updateLabels()
+            }
+            if (event.key >= Qt.Key_F1 && event.key <= Qt.Key_F12) {
+                root.press("F" + (event.key - Qt.Key_F1 + 1), shift)
+                event.accepted = true
+            } else if (event.key === Qt.Key_Escape) {
+                root.press("ESC", shift)
                 event.accepted = true
             }
         }
+        Keys.onReleased: (event) => {
+            const active = root.overlayForm !== "" ? overlay.item : page.item
+            if (active && active.model)
+                active.model.keyUp(event.key)
+            const shift = (event.modifiers & Qt.ShiftModifier ? 1 : 0)
+                        | (event.modifiers & Qt.ControlModifier ? 2 : 0)
+                        | (event.modifiers & Qt.AltModifier ? 4 : 0)
+            if (shift !== root.shiftMask) {
+                root.shiftMask = shift
+                root.updateLabels()
+            }
+        }
 
-        FunctionBar {
-            id: functionBar
-            anchors { left: parent.left; right: parent.right; top: parent.top }
-            labels: ["", "", "", "", "", "", "", "", "", ""]
-            onTriggered: (number) => pageArea.lastKey = number
+        Tasti {
+            id: tasti
+            x: 0
+            y: 0
+            width: 800
+            onVbEvent: (control, index, event) => {
+                if (control === "des_fun" && event === "Click")
+                    root.press("F" + index, root.shiftMask)
+            }
+            Component.onCompleted: root.updateLabels()
+        }
+
+        Loader {
+            id: page
+            x: 0
+            y: tasti.height
+            width: 800
+            height: 600 - tasti.height
+            clip: true
+            source: root.formUrl(root.currentForm)
+            onLoaded: root.updateLabels()
         }
 
         Rectangle {
-            id: pageArea
-            property int lastKey: 0
-            anchors { left: parent.left; right: parent.right; top: functionBar.bottom; bottom: statusBar.top }
-            color: "#d4d0c8"
-            Text {
-                anchors.centerIn: parent
-                text: pageArea.lastKey ? "F" + pageArea.lastKey : "STAG"
-                font.pixelSize: 28
+            anchors.fill: parent
+            visible: overlay.status === Loader.Ready
+            color: "#60000000"
+            z: 2
+            MouseArea { anchors.fill: parent }
+        }
+        Loader {
+            id: overlay
+            anchors.centerIn: parent
+            z: 3
+            source: root.formUrl(root.overlayForm)
+        }
+
+        // The on-screen F11 of the dialogs.
+        Connections {
+            target: overlay.item
+            function onVbEvent(control, index, event) {
+                if (control === "tas_f1" && event === "Click")
+                    root.press("F11", 0)
             }
+            function onCloseRequested() { root.press("ESC", 0) }
         }
 
         StatusBar {
             id: statusBar
             anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
+            z: 1
         }
     }
 }

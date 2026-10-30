@@ -47,9 +47,9 @@ class StaBarModel : public QObject
 public:
     // Var_stag.bas colours converted from VB &HBBGGRR.
     static QString vbColor(quint32 bgr);
-    static const quint32 vbBlack = 0x000000, vbWhite = 0xFFFFFF, vbRed = 0x0000FF, vbGreen = 0x00FF00;
-    static const quint32 COL_MODO = 0x000080, RED_GRU_ALL = 0x0000FF, LIGHT_Green = 0x00FF00, DARK_BLUE = 0xC00000;
-    static const quint32 COL_ALL_Red = 0x0000C0, COL_DARK_Green = 0x008000;
+    static constexpr quint32 vbBlack = 0x000000, vbWhite = 0xFFFFFF, vbRed = 0x0000FF, vbGreen = 0x00FF00;
+    static constexpr quint32 COL_MODO = 0x000080, RED_GRU_ALL = 0x0000FF, LIGHT_Green = 0x00FF00, DARK_BLUE = 0xC00000;
+    static constexpr quint32 COL_ALL_Red = 0x0000C0, COL_DARK_Green = 0x008000;
 
     explicit StaBarModel(QObject *parent = nullptr);
 

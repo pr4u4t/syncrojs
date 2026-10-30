@@ -1,10 +1,16 @@
 #pragma once
 
+#include "alarmgridmodel.h"
 #include "classestato.h"
 #include "collezioneordini.h"
 #include "finsclient.h"
+#include "paglisesemodel.h"
+#include "plclink.h"
+#include "paglisordmodel.h"
+#include "pagpromodel.h"
 #include "stabarmodel.h"
 
+#include <QHash>
 #include <QObject>
 #include <QSqlDatabase>
 #include <QTimer>
@@ -20,14 +26,24 @@ public:
         QString sqlitePath;     // migrated DBF tables
         QString plcHostOverride;
         quint16 plcPortOverride = 0;
+        // Off unless asked for: with it false nothing at all is written to the PLC.
+        bool plcWrites = false;
     };
 
     explicit StagApp(const Options &options, QObject *parent = nullptr);
 
     StaBarModel *staBar() { return &m_staBar; }
+    PagProModel *pagPro() { return &m_pagPro; }
+    PagLisOrdModel *pagLisOrd() { return &m_pagLisOrd; }
+    PagLisEseModel *pagLisEse() { return &m_pagLisEse; }
+    // The pages created in load(), by form name.
+    const QHash<QString, FormModel *> &pageModels() const { return m_pageModels; }
     ClasseStato &staTag() { return m_staTag; }
     FinsClient &fins() { return m_fins; }
+    PlcLink &plc() { return m_plc; }
 
+    // Principale.Main without the PLC: configuration, messages and order files.
+    void load();
     void start();
     void timTagPlc();
     // key.cls shutdown: Ordini.ini first codes and production totals.
@@ -35,6 +51,7 @@ public:
 
 private:
     void legOrd();
+    void loadPages();
 
     Options m_options;
     QSqlDatabase m_db;
@@ -43,6 +60,12 @@ private:
     StaBarModel m_staBar;
     CollezioneOrdini m_ordMac;
     CollezioneOrdini m_ordMacEse;
+    PagProModel m_pagPro;
+    PagLisOrdModel m_pagLisOrd;
+    PagLisEseModel m_pagLisEse;
+    PagAllModel m_pagAll;
+    PlcLink m_plc;
+    QHash<QString, FormModel *> m_pageModels;
     QTimer m_timComPlc;
     bool m_inTimTagPlc = false;
 };

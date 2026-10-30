@@ -33,6 +33,8 @@ public:
 
     int Ord_liv(int i) const;
     int ind_liv(int indFor) const;
+    // Alt_ord: total width of the formats, in tenths of a millimetre.
+    double Alt_ord() const;
 
 private:
     stag::OrderRecord m_order;
