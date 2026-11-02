@@ -1,4 +1,5 @@
 import QtQuick
+import Stag
 
 // VB.Shape: 0 rectangle, 1 square, 2 oval, 3 circle, 4 rounded rectangle, 5 rounded square.
 Item {
@@ -16,8 +17,8 @@ Item {
         height: equalSides ? side : control.height
         radius: control.shape === 2 || control.shape === 3 ? Math.min(width, height) / 2
                 : control.shape >= 4 ? Math.min(width, height) / 6 : 0
-        color: control.fillColor
+        color: Theme.modern && Math.min(control.width, control.height) <= 6 ? Theme.hairline : Theme.back(control.fillColor)
         border.width: control.borderWidth
-        border.color: control.borderColor
+        border.color: Theme.modern && control.shape < 2 ? Theme.hairline : Theme.back(control.borderColor)
     }
 }

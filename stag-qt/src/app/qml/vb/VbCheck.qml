@@ -1,4 +1,5 @@
 import QtQuick
+import Stag
 
 Item {
     id: control
@@ -35,9 +36,10 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: control.backColor
+        color: Theme.modern && control.graphical && control.checked ? Theme.accent : Theme.back(control.backColor)
+        radius: control.graphical ? Theme.radius(6) : 0
         border.width: control.graphical ? (control.activeFocus ? 2 : 1) : 0
-        border.color: "#404040"
+        border.color: Theme.border(Theme.edge, "#404040")
     }
     Rectangle {
         id: box
@@ -45,15 +47,15 @@ Item {
         width: 13
         height: 13
         anchors.verticalCenter: parent.verticalCenter
-        radius: control.exclusive ? 7 : 0
-        color: "#ffffff"
-        border.color: control.activeFocus ? "#000080" : "#404040"
+        radius: control.exclusive ? 7 : Theme.radius(3)
+        color: Theme.modern && control.checked ? Theme.accent : "#ffffff"
+        border.color: Theme.modern ? (control.activeFocus || control.checked ? Theme.accent : Theme.edge) : control.activeFocus ? "#000080" : "#404040"
         Rectangle {
             anchors.centerIn: parent
             width: 7
             height: 7
-            radius: control.exclusive ? 4 : 0
-            color: "#000000"
+            radius: control.exclusive ? 4 : Theme.radius(1)
+            color: Theme.modern ? "#ffffff" : "#000000"
             visible: control.checked
         }
     }
@@ -62,7 +64,7 @@ Item {
         horizontalAlignment: control.graphical ? Text.AlignHCenter : Text.AlignLeft
         text: control.text.replace(/&(?!&)/g, "")
         font: control.font
-        color: control.foreColor
+        color: Theme.modern && control.graphical && control.checked ? "#ffffff" : Theme.fore(control.foreColor)
         elide: Text.ElideRight
     }
     MouseArea {

@@ -109,6 +109,12 @@ SPDE i pozostałe:
 
 Układ wypełnia całe okno: szerokość i wysokość skalują się osobno, jak `PercX` i `PercY` w VB. Przy proporcjach innych niż 4:3 tekst i okrągłe lampki są rozciągnięte. Minimalny rozmiar okna to 640×480.
 
+## Wygląd
+
+`[Gui] Style` w `stag.ini` wybiera wygląd: `legacy` (jak VB) albo `normal` (nowy). Brak klucza to `legacy`, a program dopisuje wtedy `Style=legacy` do pliku. Nieznana wartość to też `legacy`, z ostrzeżeniem w logu. Zmiana działa po restarcie. Opcja `--gui legacy|normal` nadpisuje plik.
+
+Oba style używają tych samych formularzy i modeli, różni je tylko `qml/vb/Theme.qml` i komponenty `Vb*`. `normal` zamienia kolory z `.frm` na paletę, zachowując różnice między nimi, bo kolor bywa stanem. Układ wypełnia okno jak w `legacy`, więc przy proporcjach innych niż 4:3 tekst jest rozciągnięty. Bez strzałek przy zamówieniach (`Pag_pro`, `Ins_ord`), z prostym paskiem tytułu i kolorowym paskiem przy nagłówkach sekcji. Numer F też reaguje na kliknięcie. Pozostały układ, rodzina czcionek i inne bitmapy są takie jak w VB.
+
 ## Języki
 
 `Sel_lin` oferuje włoski, angielski, niemiecki i polski (`lin_att` 0, 1, 2, 8). Inne wartości `Lin_att` w `stag.ini` nadal działają, ale nie ma ich na liście.

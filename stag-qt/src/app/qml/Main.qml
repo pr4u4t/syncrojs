@@ -11,7 +11,7 @@ Window {
     height: 600
     visible: true
     title: "STAG"
-    color: "#c0c0c0"
+    color: Theme.modern ? Theme.ink : "#c0c0c0"
 
     // The release of a modifier goes to whatever has the focus then, as with Cmd+Shift+4 on macOS.
     onActiveChanged: {
@@ -141,7 +141,7 @@ Window {
             y: 0
             width: 800
             onVbEvent: (control, index, event) => {
-                if (control === "des_fun" && event === "Click")
+                if ((control === "des_fun" || (Theme.modern && control === "tas_fun")) && event === "Click")
                     root.press("F" + index, root.shiftMask)
             }
             Component.onCompleted: {
@@ -169,6 +169,20 @@ Window {
                     const white = ctl("shp_bianca", key - 1)
                     if (white)
                         white.visible = false
+                }
+                // The new look: cells on a plain ground, without the purple bar and separators.
+                if (Theme.modern) {
+                    for (const key of Object.keys(controls)) {
+                        if (key.startsWith("shp_"))
+                            controls[key].visible = false
+                    }
+                    for (let key = 1; key <= 10; ++key) {
+                        const name = ctl("tas_fun", key)
+                        name.y = 6
+                        name.font.pixelSize = 15
+                        name.foreColor = Theme.accent
+                        ctl("des_fun", key).y = 28
+                    }
                 }
                 Qt.callLater(root.updateLabels)
             }

@@ -4,6 +4,7 @@
 #include "uihooks.h"
 #include "stagglobals.h"
 #include "stagapp.h"
+#include "inistore.h"
 
 #include <QCommandLineParser>
 #include <cstdio>
@@ -23,6 +24,21 @@
 #include <QQuickItem>
 #include <QQuickWindow>
 #include <QTest>
+
+// Like every other key of the ini, a missing one is written with its default: there it can be changed.
+static QString guiStyleOfIni()
+{
+    return stag::getFileINIString(QStringLiteral("Gui"), QStringLiteral("Style"), QStringLiteral("legacy"));
+}
+
+// [Gui] Style of stag.ini: "normal" is the new look; no key at all, or anything else, keeps the VB one.
+static bool isModernGui(const QString &style)
+{
+    const QString wanted = style.trimmed().toLower();
+    if (!wanted.isEmpty() && wanted != QLatin1String("legacy") && wanted != QLatin1String("normal"))
+        qWarning().noquote() << "Unknown GUI style, using legacy:" << style;
+    return wanted == QLatin1String("normal");
+}
 
 // Fails the render runs below on any QML error or warning.
 static void watchWarnings(QQmlEngine &engine, int &failures)
@@ -211,6 +227,8 @@ int main(int argc, char *argv[])
     QCommandLineOption writesOption(QStringLiteral("enable-plc-writes"), QStringLiteral("Allow writing to the PLC; without it the program only reads"));
     QCommandLineOption screenshotOption(QStringLiteral("screenshot"), QStringLiteral("Normal start: write the window to this PNG after 2 s and quit"), QStringLiteral("file"));
     QCommandLineOption sizeOption(QStringLiteral("window-size"), QStringLiteral("Normal start: size of the window"), QStringLiteral("WxH"));
+    QCommandLineOption guiOption(QStringLiteral("gui"), QStringLiteral("Look of the program instead of [Gui] Style of stag.ini"), QStringLiteral("legacy|normal"));
+    parser.addOption(guiOption);
     parser.addOptions({dataOption, dbOption, plcOption, renderOption, shellOption, languageOption, writesOption, screenshotOption, sizeOption});
     parser.process(app);
     if (parser.isSet(renderOption) || parser.isSet(shellOption)) {
@@ -229,6 +247,8 @@ int main(int argc, char *argv[])
             for (auto model = data.pageModels().cbegin(); model != data.pageModels().cend(); ++model)
                 ui.addModel(model.key(), model.value());
         }
+        // After load(), which sets the data directory the ini is read from.
+        ui.setModernGui(isModernGui(parser.isSet(guiOption) ? parser.value(guiOption) : parser.isSet(dataOption) ? guiStyleOfIni() : QString()));
         if (parser.isSet(dbOption)) {
             QString error;
             if (!Messages::instance().load(parser.value(dbOption), parser.value(languageOption).toInt(), &error))
@@ -279,6 +299,8 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty(QStringLiteral("stagUi"), &ui);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed, &app, [] { QCoreApplication::exit(1); }, Qt::QueuedConnection);
     stag.start();
+    // After start(), which sets the data directory the ini is read from.
+    ui.setModernGui(isModernGui(parser.isSet(guiOption) ? parser.value(guiOption) : guiStyleOfIni()));
     for (auto model = stag.pageModels().cbegin(); model != stag.pageModels().cend(); ++model)
         ui.addModel(model.key(), model.value());
     QObject::connect(stag.pagMsg(), &PagMsgModel::opened, &ui, [&ui] { emit ui.overlayRequested(QStringLiteral("Pag_msg")); });

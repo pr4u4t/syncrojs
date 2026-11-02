@@ -1,4 +1,5 @@
 import QtQuick
+import Stag
 
 // Root of a generated form. Handlers attach to vbEvent, the way VB wires Sub <control>_<event>.
 Rectangle {
@@ -52,7 +53,7 @@ Rectangle {
         applying = false
     }
 
-    color: backColor
+    color: Theme.back(backColor)
 
     Connections {
         target: form.model
@@ -94,7 +95,31 @@ Rectangle {
         function onLanguageChanged() { form.translate() }
     }
 
+    // The new look of what repeats on the pages: the title inside its bar, and the section captions
+    // with the colour of the frame, which is a state, left as a stripe beside them.
+    function restyle() {
+        const title = ctl("pag_title")
+        if (title) {
+            title.x = 10
+            title.y = 1
+            title.height = 20
+            title.font.pixelSize = 14
+            title.centered = true
+        }
+        for (const index of [1, 2]) {
+            const section = ctl("lab_ord", index)
+            if (section) {
+                section.x = 6
+                section.y = 0
+                section.height = 28
+                section.centered = true
+            }
+        }
+    }
+
     Component.onCompleted: {
+        if (Theme.modern)
+            restyle()
         for (const key of Object.keys(controls)) {
             const control = controls[key]
             if (control.vbEvent === undefined)

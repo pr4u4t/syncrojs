@@ -40,8 +40,9 @@ endif()
 if(TARGET stag)
     set(STAG_OFFSCREEN "QT_QPA_PLATFORM=offscreen;QT_QUICK_BACKEND=software")
     add_test(NAME render_forms COMMAND stag --render-forms ${CMAKE_CURRENT_BINARY_DIR}/forms_png)
+    add_test(NAME render_forms_normal COMMAND stag --gui normal --render-forms ${CMAKE_CURRENT_BINARY_DIR}/forms_normal_png)
     add_test(NAME render_shell COMMAND stag --render-shell ${CMAKE_CURRENT_BINARY_DIR}/shell_png --db ${CMAKE_SOURCE_DIR}/stag.sqlite --language 8)
-    set_tests_properties(render_forms render_shell PROPERTIES ENVIRONMENT "${STAG_OFFSCREEN}")
+    set_tests_properties(render_forms render_forms_normal render_shell PROPERTIES ENVIRONMENT "${STAG_OFFSCREEN}")
 
     # The same walk with the ported pages on real orders; it logs into its data directory, so it gets a copy.
     set(STAG_RENDER_DATA ${CMAKE_CURRENT_BINARY_DIR}/render_data)

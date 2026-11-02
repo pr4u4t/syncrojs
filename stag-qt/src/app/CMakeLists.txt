@@ -4,8 +4,9 @@ set(STAG_VB_QML
     qml/vb/VbForm.qml qml/vb/VbLabel.qml qml/vb/VbTextBox.qml qml/vb/VbButton.qml qml/vb/VbFrame.qml
     qml/vb/VbPicture.qml qml/vb/VbImage.qml qml/vb/VbShape.qml qml/vb/VbLine.qml qml/vb/VbGrid.qml
     qml/vb/VbCombo.qml qml/vb/VbCheck.qml qml/vb/VbProgress.qml qml/vb/VbTimer.qml qml/vb/VbData.qml
-    qml/vb/VbInert.qml
+    qml/vb/VbInert.qml qml/vb/Theme.qml
 )
+set_source_files_properties(qml/vb/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
 
 qt_add_executable(stag main.cpp formui.h)
 qt_add_qml_module(stag

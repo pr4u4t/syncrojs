@@ -1,4 +1,5 @@
 import QtQuick
+import Stag
 
 Rectangle {
     id: control
@@ -10,9 +11,9 @@ Rectangle {
     property string toolTip
     signal vbEvent(string event, var args)
 
-    color: backColor
+    color: Theme.back(backColor)
     border.width: borderStyle === 1 ? 1 : 0
-    border.color: "#404040"
+    border.color: Theme.border(Theme.hairline, "#404040")
     clip: true
 
     Image {

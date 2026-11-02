@@ -15,6 +15,10 @@ class FormUi : public QObject
     Q_OBJECT
 
 public:
+    Q_PROPERTY(bool modernGui READ modernGui CONSTANT)
+    bool modernGui() const { return m_modernGui; }
+    void setModernGui(bool modern) { m_modernGui = modern; }
+
     explicit FormUi(StaBarModel *staBar, QObject *parent = nullptr)
         : QObject(parent)
         , m_staBar(staBar)
@@ -93,6 +97,7 @@ signals:
     void overlayRequested(const QString &form);
 
 private:
+    bool m_modernGui = false;
     StaBarModel *m_staBar;
     QString m_previousForm;
     QHash<QString, FormModel *> m_models;

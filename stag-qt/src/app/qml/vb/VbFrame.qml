@@ -1,4 +1,5 @@
 import QtQuick
+import Stag
 
 // VB.Frame: children use the frame's top-left as origin, the caption sits on the top border.
 Rectangle {
@@ -11,14 +12,15 @@ Rectangle {
     property string toolTip
     signal vbEvent(string event, var args)
 
-    color: backColor
+    color: Theme.back(backColor)
 
     Rectangle {
         anchors { fill: parent; topMargin: caption.visible ? caption.height / 2 : 0 }
         z: -1
         color: "transparent"
         border.width: control.borderStyle === 0 ? 0 : 1
-        border.color: "#808080"
+        border.color: Theme.border(Theme.hairline, "#808080")
+        radius: Theme.radius(6)
     }
     Text {
         id: caption
@@ -27,8 +29,8 @@ Rectangle {
         visible: control.text !== ""
         text: control.text.replace(/&(?!&)/g, "")
         font: control.font
-        color: control.foreColor
-        Rectangle { anchors.fill: parent; z: -1; color: control.backColor }
+        color: Theme.fore(control.foreColor)
+        Rectangle { anchors.fill: parent; z: -1; color: Theme.back(control.backColor) }
     }
     MouseArea {
         anchors.fill: parent

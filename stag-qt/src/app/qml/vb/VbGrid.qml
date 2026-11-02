@@ -1,4 +1,5 @@
 import QtQuick
+import Stag
 
 // MSFlexGrid, DBGrid and ListBox. Text lives in cells[row][col]; call setText or assign cells.
 Rectangle {
@@ -55,9 +56,9 @@ Rectangle {
     }
 
     activeFocusOnTab: true
-    color: backColor
+    color: Theme.back(backColor)
     border.width: 1
-    border.color: "#404040"
+    border.color: Theme.border(Theme.hairline, "#404040")
     clip: true
 
     onRowChanged: if (row >= 0) rowList.positionViewAtIndex(row, ListView.Contain)
@@ -82,11 +83,18 @@ Rectangle {
                         && control.textAt(rowItem.index, index) === control.textAt(rowItem.index - 1, index)
                     width: control.colWidth(index)
                     height: rowItem.height
-                    color: control.cellBack[rowItem.index] !== undefined ? control.cellBack[rowItem.index][index]
-                         : control.rowBack[rowItem.index] !== undefined ? control.rowBack[rowItem.index]
-                         : rowItem.index === control.row ? "#000080" : fixed ? "#c0c0c0" : control.backColor
-                    border.width: 1
+                    color: control.cellBack[rowItem.index] !== undefined ? Theme.back(control.cellBack[rowItem.index][index])
+                         : control.rowBack[rowItem.index] !== undefined ? Theme.back(control.rowBack[rowItem.index])
+                         : rowItem.index === control.row ? Theme.border(Theme.accent, "#000080") : fixed ? Theme.back("#c0c0c0") : Theme.back(control.backColor)
+                    border.width: Theme.modern ? 0 : 1
                     border.color: "#808080"
+                    // Only the lines between the rows.
+                    Rectangle {
+                        visible: Theme.modern
+                        anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
+                        height: 1
+                        color: Theme.hairline
+                    }
                     Text {
                         anchors.fill: parent
                         anchors.leftMargin: 2
@@ -97,9 +105,9 @@ Rectangle {
                         font.pixelSize: control.cellPixelSize > 0 ? control.cellPixelSize : control.font.pixelSize
                         font.bold: control.colBold[parent.index] !== undefined ? control.colBold[parent.index] || rowItem.index === 0 : control.font.bold
                         horizontalAlignment: [Text.AlignLeft, Text.AlignHCenter, Text.AlignRight][control.colAlign[parent.index] || 0]
-                        color: control.cellFore[rowItem.index] !== undefined ? control.cellFore[rowItem.index][parent.index]
-                             : control.rowFore[rowItem.index] !== undefined ? control.rowFore[rowItem.index]
-                             : rowItem.index === control.row ? "#ffffff" : control.foreColor
+                        color: control.cellFore[rowItem.index] !== undefined ? Theme.fore(control.cellFore[rowItem.index][parent.index])
+                             : control.rowFore[rowItem.index] !== undefined ? Theme.fore(control.rowFore[rowItem.index])
+                             : rowItem.index === control.row ? "#ffffff" : Theme.fore(control.foreColor)
                         elide: Text.ElideRight
                     }
                     MouseArea {

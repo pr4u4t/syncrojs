@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls.Basic
+import Stag
 
 // VB.ComboBox and DBCombo in dropdown style. A model selects by listIndex or by text.
 ComboBox {
@@ -26,8 +27,9 @@ ComboBox {
     bottomPadding: 0
     implicitHeight: 21
     background: Rectangle {
-        color: control.backColor
-        border.color: "#404040"
+        color: Theme.back(control.backColor)
+        radius: Theme.radius(3)
+        border.color: Theme.border(control.activeFocus ? Theme.accent : Theme.edge, "#404040")
         border.width: control.activeFocus ? 2 : 1
     }
     indicator: Text {
@@ -39,7 +41,7 @@ ComboBox {
     contentItem: Text {
         text: control.displayText
         font: control.font
-        color: control.foreColor
+        color: Theme.fore(control.foreColor)
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
     }

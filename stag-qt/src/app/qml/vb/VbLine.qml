@@ -1,4 +1,5 @@
 import QtQuick
+import Stag
 
 Rectangle {
     property real x1
@@ -12,7 +13,7 @@ Rectangle {
     y: y1
     width: Math.max(1, Math.hypot(x2 - x1, y2 - y1))
     height: borderWidth
-    color: borderColor
+    color: Theme.modern ? Theme.hairline : borderColor
     transformOrigin: Item.TopLeft
     rotation: Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI
 }

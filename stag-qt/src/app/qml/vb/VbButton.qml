@@ -1,4 +1,5 @@
 import QtQuick
+import Stag
 
 Rectangle {
     id: control
@@ -11,9 +12,10 @@ Rectangle {
     signal vbEvent(string event, var args)
 
     activeFocusOnTab: true
-    color: touch.pressed ? Qt.darker(backColor, 1.2) : backColor
+    color: touch.pressed ? Qt.darker(Theme.back(backColor), 1.2) : Theme.modern && Qt.colorEqual(backColor, "#c0c0c0") ? "#ffffff" : Theme.back(backColor)
+    radius: Theme.radius(6)
     border.width: activeFocus ? 2 : 1
-    border.color: "#404040"
+    border.color: Theme.border(activeFocus ? Theme.accent : Theme.edge, "#404040")
     opacity: enabled ? 1 : 0.5
 
     Image {
@@ -26,7 +28,7 @@ Rectangle {
         anchors.margins: 2
         text: control.text.replace(/&(?!&)/g, "")
         font: control.font
-        color: control.foreColor
+        color: Theme.fore(control.foreColor)
         wrapMode: Text.Wrap
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter

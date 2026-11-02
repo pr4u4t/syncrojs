@@ -1,4 +1,5 @@
 import QtQuick
+import Stag
 
 FocusScope {
     id: control
@@ -69,9 +70,10 @@ FocusScope {
 
     Rectangle {
         anchors.fill: parent
-        color: control.backColor
-        border.width: control.borderStyle === 1 ? 1 : 0
-        border.color: "#404040"
+        color: Theme.back(control.backColor)
+        radius: Theme.radius(3)
+        border.width: Theme.modern && control.activeFocus ? 2 : control.borderStyle === 1 ? 1 : 0
+        border.color: Theme.border(control.activeFocus ? Theme.accent : Theme.edge, "#404040")
         clip: true
 
         TextInput {
@@ -81,7 +83,7 @@ FocusScope {
             visible: !control.multiLine
             focus: !control.multiLine
             font: control.font
-            color: control.foreColor
+            color: Theme.fore(control.foreColor)
             maximumLength: control.maxLength
             readOnly: control.readOnly
             echoMode: control.password ? TextInput.Password : TextInput.Normal
@@ -98,7 +100,7 @@ FocusScope {
             focus: control.multiLine
             text: control.text
             font: control.font
-            color: control.foreColor
+            color: Theme.fore(control.foreColor)
             readOnly: control.readOnly
             wrapMode: TextEdit.Wrap
             onTextChanged: if (visible) control.edited(text)
