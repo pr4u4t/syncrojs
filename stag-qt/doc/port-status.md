@@ -97,7 +97,7 @@ SPDE i pozostałe:
 
 1. Sprawdzić ekrany na Macu.
 2. Zdecydować o poprawce godziny w raporcie produkcji.
-3. Zdecydować o pełnym ekranie z rozciąganiem jak w VB i o komputerze przy linii: Qt 6 nie działa na Windows XP.
+3. Zdecydować o pełnym ekranie z rozciąganiem jak w VB. Docelowo program działa na Linuksie, komputer z Windows XP znika. Ruch VB nagrać w Wiresharku, zanim to nastąpi.
 4. Uruchomić z `--enable-plc-writes` przy wyłączonej produkcji.
 5. Porównać ruch z VB w Wiresharku, najpierw `CONFIGURA` i zamówienia cut-to-pattern.
 
@@ -107,7 +107,7 @@ SPDE i pozostałe:
 
 Świadome odejścia od `.frm`, żeby linie i paski były całe: ukryte wąskie białe etykiety bez tekstu (`is_white_filler` w generatorze), białe kawałki w `Tasti` i `Sta_bar`, wyśrodkowane klawisze F, `scrap` do krawędzi paska.
 
-Okno skaluje się równomiernie (`scaleFactor` w `Main.qml`). Przy proporcjach innych niż 4:3 zostaje szary pas z prawej lub na dole.
+Układ wypełnia całe okno: szerokość i wysokość skalują się osobno, jak `PercX` i `PercY` w VB. Przy proporcjach innych niż 4:3 tekst i okrągłe lampki są rozciągnięte. Minimalny rozmiar okna to 640×480.
 
 ## Języki
 

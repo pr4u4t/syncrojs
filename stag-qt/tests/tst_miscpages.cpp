@@ -660,6 +660,8 @@ private slots:
         QCOMPARE(Messages::instance().captionText(QStringLiteral("msec")), QStringLiteral("msec"));
         QVERIFY(Messages::instance().load(QStringLiteral(STAG_SQLITE), 0));
         QCOMPARE(Messages::instance().captionText(QStringLiteral("Filtro Kp")), QStringLiteral("Filtro Kp"));
+        QVERIFY(Messages::instance().load(QStringLiteral(STAG_SQLITE), 1));
+        QCOMPARE(Messages::instance().find(QStringLiteral("pag_pro_day_0 2")).trimmed(), QStringLiteral("Shift change")); // "_Cambio turno" in the column
         QVERIFY(Messages::instance().load(QStringLiteral(STAG_SQLITE), 8));
         // A numbered placeholder keeps its number; what the machine has translated stays as it is.
         QCOMPARE(Messages::instance().find(QStringLiteral("det_all_con_1500")).trimmed(), QStringLiteral("Szczegoly alarmu nr 1500"));

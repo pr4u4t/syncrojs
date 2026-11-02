@@ -30,12 +30,13 @@ const char *column(const Row &row, int linAtt)
 // The text of a language: its own, else the table above, else the Italian rather than a blank field.
 QString resolved(const QString &own, const QString &italian, int linAtt)
 {
-    const QString mine = own.trimmed();
+    // A leading "_" marks a text of the column that nobody has translated yet.
+    const QString mine = own.trimmed().startsWith(u'_') ? QString() : own.trimmed();
     const QString it = italian.trimmed();
     if (linAtt == 0 || it.isEmpty() || (!mine.isEmpty() && mine != it))
-        return own;
+        return linAtt == 0 || it.isEmpty() ? own : mine;
     if (it == QLatin1String("Frame1")) // a designer's leftover, never a caption
-        return mine.isEmpty() ? QString() : own;
+        return mine;
     for (const auto &row : TRANSLATIONS) {
         if (it == QString::fromUtf8(row.it)) {
             if (const char *text = column(row, linAtt))
@@ -49,7 +50,7 @@ QString resolved(const QString &own, const QString &italian, int linAtt)
                 return QString::fromUtf8(text) + it.mid(prefix.size());
         }
     }
-    return mine.isEmpty() ? italian : own;
+    return mine.isEmpty() ? italian : mine;
 }
 
 } // namespace

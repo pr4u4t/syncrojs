@@ -62,6 +62,21 @@ public:
         return Messages::instance().controlText(form, control, index);
     }
 
+    // txt_shift of Show_tas_des: S, C and A on the keys that do something with Shift, Ctrl or Alt.
+    Q_INVOKABLE QStringList functionMarks(const QString &form) const
+    {
+        QStringList marks;
+        for (int key = 1; key <= 10; ++key) {
+            int used = 0;
+            for (int shift = 1; shift <= 7; ++shift) {
+                if (!Messages::instance().find(form.toLower() + u'_' + QString::number(shift) + u' ' + QString::number(key)).isEmpty())
+                    used |= shift;
+            }
+            marks << QString((used & 1) ? QStringLiteral("S") : QString()) + ((used & 2) ? QStringLiteral("C") : QString()) + ((used & 4) ? QStringLiteral("A") : QString());
+        }
+        return marks;
+    }
+
     Q_INVOKABLE QString captionText(const QString &italian) const { return Messages::instance().captionText(italian); }
 
     // Show_tas_des: captions of F1-F10 for a page and the held Shift/Ctrl/Alt mask.

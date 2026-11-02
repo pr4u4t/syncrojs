@@ -13,7 +13,15 @@ Window {
     title: "STAG"
     color: "#c0c0c0"
 
-    readonly property real scaleFactor: Math.min(width / 800, height / 600)
+    // The release of a modifier goes to whatever has the focus then, as with Cmd+Shift+4 on macOS.
+    onActiveChanged: {
+        if (!active && shiftMask !== 0) {
+            shiftMask = 0
+            updateLabels()
+        }
+    }
+    minimumWidth: 640
+    minimumHeight: 480
     property string currentForm: "Pag_pro"
     property string previousForm: "Pag_pro"
     property string overlayForm: ""
@@ -45,6 +53,7 @@ Window {
     }
     function updateLabels() {
         const labels = stagUi.functionLabels(activeForm(), shiftMask)
+        const marks = stagUi.functionMarks(activeForm())
         const active = overlayForm !== "" ? overlay.item : page.item
         const hidden = active && active.model ? active.model.hiddenFunctionKeys() : []
         for (let key = 1; key <= 10; ++key) {
@@ -53,6 +62,9 @@ Window {
                 label.text = labels[key - 1]
                 label.visible = !hidden.includes("F" + key)
             }
+            const mark = tasti.ctl("txt_shift", key)
+            if (mark)
+                mark.text = marks[key - 1]
         }
     }
     function press(key, shift) {
@@ -90,8 +102,8 @@ Window {
         id: shell
         width: 800
         height: 600
-        scale: root.scaleFactor
-        transformOrigin: Item.TopLeft
+        // Width and height apart, like PercX and PercY of VB: the layout fills the window at any proportion.
+        transform: Scale { xScale: root.width / 800; yScale: root.height / 600 }
         focus: true
 
         Keys.onPressed: (event) => {
@@ -147,6 +159,13 @@ Window {
                     text.y = 33
                     text.height = 28
                     text.alignment = 2
+                    // The number is centred now, so the S/C/A mark goes to the corner of the cell.
+                    const mark = ctl("txt_shift", key)
+                    if (mark) {
+                        mark.x = text.x + text.width - mark.width - 2
+                        mark.y = 13
+                        mark.alignment = 1
+                    }
                     const white = ctl("shp_bianca", key - 1)
                     if (white)
                         white.visible = false
