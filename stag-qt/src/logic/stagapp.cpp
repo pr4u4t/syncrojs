@@ -1,5 +1,9 @@
 #include "stagapp.h"
 
+#include "stagapi.h"
+
+#include <QHostAddress>
+
 #include "schtagpages.h"
 #include "miscpages.h"
 #include "stabarform.h"
@@ -101,9 +105,24 @@ void StagApp::load()
     loadPages();
 }
 
+// [Api] of stag.ini; StagApi says what it serves.
+void StagApp::startApi()
+{
+    // All three read before the check: a missing key is written with its default, so the ini shows them.
+    const bool enabled = stag::getFileINIString(QStringLiteral("Api"), QStringLiteral("Enabled"), QStringLiteral("0")).trimmed() == QLatin1String("1");
+    const QString host = stag::getFileINIString(QStringLiteral("Api"), QStringLiteral("Host"), QStringLiteral("127.0.0.1")).trimmed();
+    const quint16 port = quint16(stag::getFileINIString(QStringLiteral("Api"), QStringLiteral("Port"), QStringLiteral("13001")).toUInt());
+    if (!enabled)
+        return;
+    m_api = new StagApi([this] { return stagStatusJson(m_staBar, m_pagPro); }, this);
+    if (!m_api->listen(QHostAddress(host), port))
+        qWarning().noquote() << "Api:" << host << port << m_api->errorString();
+}
+
 void StagApp::start()
 {
     load();
+    startApi();
 
     const stag::TipPlcLan &lan = stag::par_mac.com_plc_lan;
     m_fins.setRemoteHost(m_options.plcHostOverride.isEmpty() ? lan.ind_rem : m_options.plcHostOverride);

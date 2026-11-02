@@ -22,6 +22,8 @@ services:
       SYNCRO_HOST: ${SYNCRO_HOST:?Set SYNCRO_HOST in .env.production}
       SYNCRO_PORT: ${SYNCRO_PORT:-13000}
       SYNCRO_CONNECT_TIMEOUT: ${SYNCRO_CONNECT_TIMEOUT:-3000}
+      STAG_HOST: ${STAG_HOST:-127.0.0.1}
+      STAG_PORT: ${STAG_PORT:-13001}
       CLASSIC_GENERATOR_SOCKET: /run/syncrojs/classic-generator.sock
     depends_on:
       classic-generator:

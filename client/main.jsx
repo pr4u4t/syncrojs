@@ -73,6 +73,78 @@ function DashboardUpdateAge({ receivedAt, delayed }){
   );
 }
 
+const STAG_ALARMS = { general: 'General', hardware: 'Hardware', electrical: 'Electrical', onboard: 'Onboard machine', console: 'Console' };
+
+function StagOrder({ title, order }){
+  const levels = order && order.levels ? order.levels : [];
+  return (
+    <article className="production-level">
+      <span className="production-level__index">{title}</span>
+      <strong>{numberOrDash(order && order.code)}</strong>
+      <dl>
+        <div><dt>Flute</dt><dd>{numberOrDash(order && order.flute)}</dd></div>
+        <div><dt>Paper</dt><dd>{numberOrDash(order && order.paper)}</dd></div>
+        <div><dt>Total length</dt><dd>{numberOrDash(order && order.total)}</dd></div>
+        {levels.map((level) => <div key={level.level}><dt>{level.level}</dt><dd>{level.job} {level.width} x {level.length} ({level.sheets})</dd></div>)}
+      </dl>
+    </article>
+  );
+}
+
+function StagPanel(){
+  const [state, setState] = useState({ data: null, unavailable: false, receivedAt: null });
+  useEffect(() => {
+    const stream = new EventSource('/api/stag/events');
+    stream.onmessage = (event) => {
+      const snapshot = JSON.parse(event.data);
+      setState({ data: snapshot.data, unavailable: snapshot.unavailable, receivedAt: Date.now() });
+    };
+    return () => stream.close();
+  }, []);
+  const data = state.data;
+  if(!data){
+    return (
+      <section className="dashboard-live" aria-live="polite">
+        <div className="alert alert-warning mb-0" role="alert">No connection to STAG. No data to show.</div>
+      </section>
+    );
+  }
+  const alarms = Object.entries(STAG_ALARMS).filter(([key]) => data.alarms && data.alarms[key]).map(([, label]) => label);
+  return (
+    <section className="dashboard-live" aria-live="polite">
+      {state.unavailable && <div className="alert alert-warning mb-0" role="alert">STAG does not answer. The values below are the last ones received.</div>}
+      {!data.plcConnected && <div className="alert alert-warning mb-0" role="alert">STAG has no connection to the PLC.</div>}
+      {alarms.length > 0 && <div className="alert alert-danger mb-0" role="alert">STAG alarms: {alarms.join(', ')}</div>}
+      <div className="dashboard-overview">
+        <section className="dashboard-panel" aria-labelledby="stag-title">
+          <div className="dashboard-panel__heading">
+            <div>
+              <span className="dashboard-eyebrow">Cut-off</span>
+              <h2 id="stag-title">STAG</h2>
+            </div>
+            <DashboardUpdateAge receivedAt={state.receivedAt} delayed={state.unavailable} />
+          </div>
+          <dl className="shift-metrics">
+            <div><dt>Mode</dt><dd>{numberOrDash(data.mode)}</dd></div>
+            <div><dt>Speed</dt><dd>{numberOrDash(data.speed)}</dd></div>
+            <div><dt>Max speed</dt><dd>{numberOrDash(data.maxSpeed)}</dd></div>
+            <div><dt>Meters left</dt><dd>{numberOrDash(data.metersLeft)}</dd></div>
+            <div><dt>Time to change</dt><dd>{numberOrDash(data.timeToChange)}</dd></div>
+            <div><dt>Status</dt><dd>{numberOrDash(data.running)}</dd></div>
+          </dl>
+          {data.message && <p className="mb-0">{data.message}</p>}
+        </section>
+        <section className="dashboard-panel" aria-label="STAG orders">
+          <div className="production-levels">
+            <StagOrder title="Current order" order={data.current} />
+            <StagOrder title="Next order" order={data.next} />
+          </div>
+        </section>
+      </div>
+    </section>
+  );
+}
+
 function Home(){
   const [state, setState] = useState({ loading: true, data: null, unavailable: false, updatedAt: null, receivedAt: null });
   const [versions, setVersions] = useState(null);
@@ -179,6 +251,7 @@ function Home(){
           </div>
         )}
       </section>
+      <StagPanel />
 
       {data && (
         <section className="dashboard-machine-metrics" aria-label="Production metrics">
@@ -1743,20 +1816,20 @@ function ShiftStart(){
 }
 
 function ConnectionStatus(){
-  const [status, setStatus] = useState({ application: 'Connecting', database: 'Checking', syncro: 'Checking' });
+  const [status, setStatus] = useState({ application: 'Connecting', database: 'Checking', syncro: 'Checking', stag: 'Checking' });
   useEffect(() => {
     const stream = new EventSource('/health/events');
     stream.onopen = () => setStatus((current) => ({ ...current, application: 'Connected' }));
     stream.onmessage = (event) => {
       const next = JSON.parse(event.data);
-      setStatus({ application: 'Connected', database: next.database ? 'Connected' : 'Disconnected', syncro: next.syncro ? 'Connected' : 'Disconnected' });
+      setStatus({ application: 'Connected', database: next.database ? 'Connected' : 'Disconnected', syncro: next.syncro ? 'Connected' : 'Disconnected', stag: next.stag ? 'Connected' : 'Disconnected' });
     };
     stream.onerror = () => setStatus((current) => ({ ...current, application: 'Disconnected' }));
     return () => stream.close();
   }, []);
   return (
-    <div className="connection-status connection-status--navbar" aria-label="Connection status">
-      {Object.entries(status).map(([service, value]) => <span className="connection-status__item" id={`${service}-status`} data-state={value === 'Connected' ? 'connected' : value === 'Disconnected' ? 'disconnected' : 'checking'} aria-live="polite" key={service}><span className="connection-status__label">{service === 'database' ? 'PostgreSQL' : service === 'syncro' ? 'Syncro TCP' : 'Application'}</span><span className="connection-status__value">{value}</span></span>)}
+    <div className="connection-status app-status-bar" aria-label="Connection status">
+      {Object.entries(status).map(([service, value]) => <span className="connection-status__item" id={`${service}-status`} data-state={value === 'Connected' ? 'connected' : value === 'Disconnected' ? 'disconnected' : 'checking'} aria-live="polite" key={service}><span className="connection-status__label">{service === 'database' ? 'PostgreSQL' : service === 'syncro' ? 'Syncro TCP' : service === 'stag' ? 'STAG' : 'Application'}</span><span className="connection-status__value">{value}</span></span>)}
     </div>
   );
 }
@@ -1792,7 +1865,6 @@ function Application(){
               <li className="nav-item"><a className={`nav-link ${page === 'settings' ? 'active' : ''}`} href="/settings">Settings</a></li>
             </ul>
             <div className="navbar-utility">
-              <ConnectionStatus />
               <div id="language-picker" className="language-switch" role="group" aria-label="Language"><button className="language-switch__button" type="button" data-language="en" lang="en" aria-pressed="true">EN</button><button className="language-switch__button" type="button" data-language="pl" lang="pl" aria-pressed="false">PL</button></div>
             </div>
           </div>
@@ -1814,6 +1886,7 @@ function Application(){
         {page === 'shift-start' && <ShiftStart />}
         {page === 'not-found' && <div className="alert alert-warning" role="alert">Page not found.</div>}
       </main>
+      <ConnectionStatus />
       <footer className="app-footer"><a className="app-footer__brand" href="/">Syncro Orders</a><span>Production operations</span></footer>
     </>
   );

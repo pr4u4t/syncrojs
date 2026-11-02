@@ -84,6 +84,8 @@ SPDE i pozostałe:
 
 - Poza edycją pola są tylko do odczytu lub wyłączone. W VB traciły tylko `TabStop`.
 - Checkboxy w `Set_par_mac` są poza edycją wyłączone, a nie szare.
+- Lampki grup alarmów (`har`, `qe`, `bm`, `con`) są przy braku PLC szare, w obu stylach. W VB `gruall(0)` i `del_all` robią je zielone. Lampka `!` działa jak w VB, a `Stag.Status` zwraca wtedy `alarms: null`.
+- Po odzyskaniu połączenia grupy alarmów są wysyłane zawsze. W VB `gruall(0)` gasi lampki, a stan idzie dalej tylko przy zmianie, więc alarm trwający przez przerwę zostawałby zgaszony.
 - Błąd wykonania w kodzie formularza trafia do logu i program działa dalej (`guardedFormCall`).
 - `scr_par_cur_tag_dbf`: gałąź z `LIVELLO0`, która w VB kończy się błędem, tylko loguje.
 - `Del_cfg`: F11 bez znalezionego rekordu zamyka dialog zamiast kończyć się błędem.
@@ -114,6 +116,10 @@ Układ wypełnia całe okno: szerokość i wysokość skalują się osobno, jak 
 `[Gui] Style` w `stag.ini` wybiera wygląd: `legacy` (jak VB) albo `normal` (nowy). Brak klucza to `legacy`, a program dopisuje wtedy `Style=legacy` do pliku. Nieznana wartość to też `legacy`, z ostrzeżeniem w logu. Zmiana działa po restarcie. Opcja `--gui legacy|normal` nadpisuje plik.
 
 Oba style używają tych samych formularzy i modeli, różni je tylko `qml/vb/Theme.qml` i komponenty `Vb*`. `normal` zamienia kolory z `.frm` na paletę, zachowując różnice między nimi, bo kolor bywa stanem. Układ wypełnia okno jak w `legacy`, więc przy proporcjach innych niż 4:3 tekst jest rozciągnięty. Bez strzałek przy zamówieniach (`Pag_pro`, `Ins_ord`), z prostym paskiem tytułu i kolorowym paskiem przy nagłówkach sekcji. Numer F też reaguje na kliknięcie. Pozostały układ, rodzina czcionek i inne bitmapy są takie jak w VB.
+
+## Połączenie ze stroną
+
+`[Api]` w `stag.ini`: `Enabled` (domyślnie `0`), `Host` (domyślnie `127.0.0.1`), `Port` (domyślnie `13001`). Jedno polecenie na połączenie: `Stag.Status` zwraca JSON (stan z paska, alarmy, bieżące i następne zamówienie), każde inne `error`. Port niczego nie zapisuje (`logic/stagapi`). Strona używa go do wskaźnika `STAG` na górnym pasku i panelu na stronie głównej (`models/stag.js`, `utils/stag-stream.js`, `STAG_HOST`, `STAG_PORT`). Żeby strona z innego komputera to widziała, `Host` musi być adresem tej karty sieciowej, a nie `127.0.0.1`.
 
 ## Języki
 

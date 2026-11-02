@@ -66,6 +66,19 @@ test('Syncro TCP status resolves connect, error and timeout outcomes', async () 
     jest.useRealTimers();
 });
 
+const config = require('config');
+
+test('STAG status connects to its own configured address', async () => {
+    const socket = new EventEmitter();
+    socket.destroy = jest.fn();
+    net.createConnection.mockReturnValue(socket);
+
+    const connected = status.stag();
+    socket.emit('connect');
+    await expect(connected).resolves.toBe(true);
+    expect(net.createConnection).toHaveBeenLastCalledWith({ host: config.get('stag.host'), port: config.get('stag.port') });
+});
+
 test('Home.Info parses valid XML and rejects incomplete responses', async () => {
     const socket = createSocket({ response: '<NewDataSet><Home><Speed>1200</Speed></Home></NewDataSet>' });
     syncro.connect.mockResolvedValueOnce(socket);

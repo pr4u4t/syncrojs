@@ -12,6 +12,7 @@ const home = require('../models/home.js');
 const operatorStatus = require('../models/operator-status');
 const statusStream = require('../utils/status-stream');
 const dashboardStream = require('../utils/dashboard-stream');
+const stagStream = require('../utils/stag-stream');
 
 router.get('/', sendAppShell);
 
@@ -30,6 +31,7 @@ router.get('/api/home', async (req,res) => {
 });
 
 router.get('/api/dashboard/events', dashboardStream.attach);
+router.get('/api/stag/events', stagStream.attach);
 
 router.get('/api/syncro/versions', async (req,res) => {
     const versions = await home.syncro_versions();

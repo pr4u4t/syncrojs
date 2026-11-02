@@ -1594,26 +1594,18 @@ a:hover {
   font-size: 0.9rem;
 }
 
-.connection-status--navbar {
-  gap: 0.45rem;
-  padding: 0;
-  font-size: 0.76rem;
+.app-status-bar {
+  width: min(100% - 2rem, 1480px);
+  margin: 0 auto;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--line);
+  font-size: 0.8rem;
 }
 
 .connection-status__item {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.connection-status--navbar .connection-status__item {
-  min-height: 34px;
-  gap: 0.4rem;
-  padding: 0.25rem 0.55rem;
-  border: 1px solid rgb(255 255 255 / 12%);
-  border-radius: 5px;
-  color: #e2ebe7;
-  background: rgb(255 255 255 / 6%);
 }
 
 .connection-status__item::before {
@@ -1637,12 +1629,13 @@ a:hover {
   font-weight: 600;
 }
 
-.connection-status--navbar .connection-status__label {
-  color: #e2ebe7;
+.app-status-bar .connection-status__label {
+  color: var(--ink);
+  font-weight: 650;
 }
 
-.connection-status--navbar .connection-status__value {
-  color: #c2d0ca;
+.app-status-bar .connection-status__value {
+  color: var(--muted);
 }
 
 .app-footer {
@@ -1723,10 +1716,6 @@ a:hover {
     margin: 0.45rem 0.75rem 0;
     padding-top: 0.7rem;
     border-top: 1px solid rgb(255 255 255 / 16%);
-  }
-
-  .connection-status--navbar .connection-status__label {
-    display: none;
   }
 }
 
@@ -1811,6 +1800,7 @@ a:hover {
     text-align: left;
   }
 
+  .app-status-bar,
   .app-footer {
     width: calc(100% - 1.5rem);
   }
@@ -1818,6 +1808,7 @@ a:hover {
 
 @media print {
   body > nav.navbar,
+  .app-status-bar,
   .app-footer,
   .dashboard-actions,
   #go_to_date,

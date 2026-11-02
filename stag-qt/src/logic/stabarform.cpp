@@ -17,6 +17,7 @@ using namespace stag;
 namespace {
 
 constexpr quint32 MEDIUM_GRAY = 0xC0C0C0;
+constexpr quint32 LAMP_UNKNOWN = 0x808080;
 
 QString at(const char *name, int index)
 {
@@ -73,10 +74,15 @@ void StaBarFormModel::publish()
     text("txt_vel_max", "txtVelMax");
     paint("frm_vel", "backColor", "frmVelBack");
     paint("shp_all_mal", "fillColor", "shpAllMal");
-    paint("shp_all_har", "fillColor", "shpAllHar");
-    paint("shp_all_qe", "fillColor", "shpAllQe");
-    paint("shp_all_bm", "fillColor", "shpAllBm");
-    paint("shp_all_con", "fillColor", "shpAllCon");
+    // Not as in VB, where they go green: without the PLC nobody knows the state of these groups. The "!"
+    // stays as it is, since chk_all_sftw lights it for the lost communication itself.
+    const bool noPlc = m_bar->property("linNoComPlc").toBool();
+    for (const auto &[control, property] : {std::pair{"shp_all_har", "shpAllHar"}, {"shp_all_qe", "shpAllQe"}, {"shp_all_bm", "shpAllBm"}, {"shp_all_con", "shpAllCon"}}) {
+        if (noPlc)
+            set(QLatin1String(control), QStringLiteral("fillColor"), color(LAMP_UNKNOWN));
+        else
+            paint(control, "fillColor", property);
+    }
     set(QStringLiteral("lin_no_com_plc"), QStringLiteral("visible"), m_bar->property("linNoComPlc"));
     set(QStringLiteral("lin_no_com_spde"), QStringLiteral("visible"), m_bar->property("linNoComSpde"));
     paint("lin_no_com_spde", "borderColor", "linNoComSpdeColor");

@@ -16,5 +16,12 @@
       "__name": "SYNCRO_CONNECT_TIMEOUT",
       "__format": "number"
     }
+  },
+  "stag": {
+    "host": "STAG_HOST",
+    "port": {
+      "__name": "STAG_PORT",
+      "__format": "number"
+    }
   }
 }

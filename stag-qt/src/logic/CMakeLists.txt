@@ -1,6 +1,7 @@
 add_library(staglogic STATIC
     classestato.cpp classestato.h
     stabarmodel.cpp stabarmodel.h
+    stagapi.cpp stagapi.h
     stabarform.cpp stabarform.h
     stagapp.cpp stagapp.h
     collezioneordini.cpp collezioneordini.h

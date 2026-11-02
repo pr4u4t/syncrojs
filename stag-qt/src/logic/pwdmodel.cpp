@@ -15,6 +15,12 @@ static const QString CPWD_L1 = QStringLiteral("GQVFJX");
 static constexpr quint32 COL_ALL_RED = StaBarModel::COL_ALL_Red;
 static constexpr quint32 VB_BLUE = 0xFF0000;
 
+// VB has these texts in Italian in the code; here they go through the table of translations.
+static QString localized(const char *italian)
+{
+    return Messages::instance().captionText(QString::fromUtf8(italian));
+}
+
 QString PwdModel::code(const QString &text)
 {
     QString result;
@@ -57,7 +63,7 @@ void PwdModel::activate(const QString &)
 {
     for (const char *name : {"txt_pwd", "txt_chg_pwd"})
         set(QLatin1String(name), QStringLiteral("modelFocus"), true);
-    setMessage(QStringLiteral("password"), COL_ALL_RED);
+    setMessage(localized("password"), COL_ALL_RED);
     m_pwd.clear();
     setText(QStringLiteral("txt_pwd"), QString());
     showPanels(false, true, false);
@@ -97,21 +103,21 @@ void PwdModel::enterPassword()
 {
     const QString typed = m_pwd.toUpper();
     if (typed == decode(pro_set.pwd, true)) {
-        setMessage(QStringLiteral("Password corretta"), VB_BLUE);
+        setMessage(localized("Password corretta"), VB_BLUE);
         pro_set.ute_wrk = true;
         setFileINIString(SECTION, QStringLiteral("Pwd"), pro_set.pwd);
         showPanels(true, false, false);
     } else if (typed == decode(pro_set.pwd_liv1, false)) {
         if (m_pwd.isEmpty())
             return;
-        setMessage(QStringLiteral("Password corretta"), VB_BLUE);
+        setMessage(localized("Password corretta"), VB_BLUE);
         pro_set.ute_wrk_liv1 = true;
         setFileINIString(SECTION, QStringLiteral("pwd_liv1"), pro_set.pwd_liv1);
         emit closeRequested();
     } else if (typed.isEmpty()) {
         emit closeRequested();
     } else {
-        setMessage(QStringLiteral("Password errata: riprova"), COL_ALL_RED);
+        setMessage(localized("Password errata: riprova"), COL_ALL_RED);
         m_pwd.clear();
         setText(QStringLiteral("txt_pwd"), QString());
         pro_set.ute_wrk = false;
@@ -124,7 +130,7 @@ void PwdModel::startChange(ChangeState state)
 {
     showPanels(false, false, true);
     set(QStringLiteral("frm_chg_pwd"), QStringLiteral("y"), 0);
-    askChange(QStringLiteral("Inserire la password corrente"), state);
+    askChange(localized("Inserire la password corrente"), state);
 }
 
 void PwdModel::askChange(const QString &message, ChangeState next)
@@ -144,14 +150,14 @@ void PwdModel::enterChange()
     switch (m_state) {
     case InOldPwd:
         if (typed == decode(pro_set.pwd, false))
-            askChange(QStringLiteral("Inserire la nuova password"), InNewPwd);
+            askChange(localized("Inserire la nuova password"), InNewPwd);
         else
             leave();
         break;
     case InNewPwd:
         if (!m_chgPwd.isEmpty()) {
             m_newPwd = typed;
-            askChange(QStringLiteral("Confermare la nuova password"), ConfNewPwd);
+            askChange(localized("Confermare la nuova password"), ConfNewPwd);
         } else {
             leave();
         }
@@ -160,7 +166,7 @@ void PwdModel::enterChange()
         if (typed == m_newPwd) {
             pro_set.pwd = code(typed);
             setFileINIString(SECTION, QStringLiteral("Pwd"), pro_set.pwd);
-            setText(QStringLiteral("txt_msg"), QStringLiteral("Nuova password memorizzata"));
+            setText(QStringLiteral("txt_msg"), localized("Nuova password memorizzata"));
             m_pwd.clear();
             setText(QStringLiteral("txt_pwd"), QString());
         }
@@ -168,16 +174,16 @@ void PwdModel::enterChange()
         break;
     case InOldPwdLiv1:
         if (typed == decode(pro_set.pwd_liv1, false)) {
-            askChange(QStringLiteral("Inserire la nuova password"), InNewPwdLiv1);
+            askChange(localized("Inserire la nuova password"), InNewPwdLiv1);
         } else {
             leave();
-            setMessage(QStringLiteral("Password corrente errata"), COL_ALL_RED);
+            setMessage(localized("Password corrente errata"), COL_ALL_RED);
         }
         break;
     case InNewPwdLiv1:
         if (!m_chgPwd.isEmpty()) {
             m_newPwdLiv1 = typed;
-            askChange(QStringLiteral("Confermare la nuova password"), ConfNewPwdLiv1);
+            askChange(localized("Confermare la nuova password"), ConfNewPwdLiv1);
         } else {
             leave();
         }
@@ -186,7 +192,7 @@ void PwdModel::enterChange()
         if (typed == m_newPwdLiv1) {
             pro_set.pwd_liv1 = code(typed);
             setFileINIString(SECTION, QStringLiteral("Pwd_Liv1"), pro_set.pwd_liv1);
-            setText(QStringLiteral("txt_msg"), QStringLiteral("Nuova password memorizzata"));
+            setText(QStringLiteral("txt_msg"), localized("Nuova password memorizzata"));
             m_pwd.clear();
             setText(QStringLiteral("txt_pwd"), QString());
         }
@@ -209,7 +215,7 @@ bool PwdModel::functionKey(const QString &key, int shift)
     if (key == QLatin1String("F2") || key == QLatin1String("F3") || key == QLatin1String("F4") || key == QLatin1String("F5")
         || key == QLatin1String("F6") || key == QLatin1String("F7")) {
         if (pro_set.ute_wrk)
-            messaggio(QStringLiteral("Applicazione non disponibile"), false);
+            messaggio(localized("Applicazione non disponibile"), false);
         return true;
     }
     if (key == QLatin1String("F8")) {

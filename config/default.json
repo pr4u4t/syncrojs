@@ -9,6 +9,10 @@
       "connect_timeout": 3000,
       "timeout": 30000
     },
+    "stag": {
+      "host": "127.0.0.1",
+      "port": 13001
+    },
     "orders": {
       "shift": {
         "skip_working": 0,

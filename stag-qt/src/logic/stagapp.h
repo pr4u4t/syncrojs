@@ -18,6 +18,7 @@
 class PagMsgModel;
 class SpdeLink;
 class StaBarFormModel;
+class StagApi;
 
 // Principale.Main start-up and the Tim_com_PLC loop (dlg_tag_bas.tim_tag_plc), as far as ported.
 class StagApp : public QObject
@@ -56,6 +57,7 @@ public:
 
 private:
     void legOrd();
+    void startApi();
     void loadPages();
     void loadSchTagPages();
 
@@ -74,6 +76,7 @@ private:
     SpdeLink *m_spde = nullptr;
     StaBarFormModel *m_staBarForm = nullptr;
     PagMsgModel *m_pagMsg = nullptr;
+    StagApi *m_api = nullptr;
     QTimer m_timComSpde;
     QHash<QString, FormModel *> m_pageModels;
     QTimer m_timComPlc;

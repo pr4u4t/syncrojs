@@ -100,13 +100,28 @@ private slots:
         QCOMPARE(page.navigationTarget(QStringLiteral("F3"), 0), QStringLiteral("Pwd_frm"));
     }
 
+    void messagesFollowTheLanguage()
+    {
+        PwdModel model;
+        QVERIFY(Messages::instance().load(QStringLiteral(STAG_SQLITE), 8));
+        model.activate(QString());
+        type(model, QStringLiteral("txt_pwd"), QStringLiteral("nope"));
+        const QString polish = model.value(QStringLiteral("txt_msg")).toString();
+        QVERIFY(Messages::instance().load(QStringLiteral(STAG_SQLITE), 2));
+        type(model, QStringLiteral("txt_pwd"), QStringLiteral("nope"));
+        const QString german = model.value(QStringLiteral("txt_msg")).toString();
+        QVERIFY(Messages::instance().load(QStringLiteral(STAG_SQLITE), 1));
+        QCOMPARE(polish, QStringLiteral("Bledne haslo: sprobuj ponownie"));
+        QCOMPARE(german, QStringLiteral("Falsches Passwort: erneut versuchen"));
+    }
+
     void wrongPasswordStaysAndEmptyCloses()
     {
         PwdModel model;
         QSignalSpy close(&model, &FormModel::closeRequested);
         model.activate(QString());
         type(model, QStringLiteral("txt_pwd"), QStringLiteral("nope"));
-        QCOMPARE(model.value(QStringLiteral("txt_msg")).toString(), QStringLiteral("Password errata: riprova"));
+        QCOMPARE(model.value(QStringLiteral("txt_msg")).toString(), QStringLiteral("Wrong password: try again"));
         QCOMPARE(close.count(), 0);
         QVERIFY(!pro_set.ute_wrk);
         type(model, QStringLiteral("txt_pwd"), QString());
@@ -123,7 +138,7 @@ private slots:
         type(model, QStringLiteral("txt_chg_pwd"), QStringLiteral("other"));
         QCOMPARE(pro_set.pwd_liv1, PwdModel::code(QStringLiteral("OTHER")));
         QCOMPARE(iniValue(QStringLiteral("Pwd_Liv1")), PwdModel::code(QStringLiteral("OTHER")));
-        QCOMPARE(model.value(QStringLiteral("txt_msg")).toString(), QStringLiteral("Nuova password memorizzata"));
+        QCOMPARE(model.value(QStringLiteral("txt_msg")).toString(), QStringLiteral("New password saved"));
     }
 
     void mismatchedConfirmationChangesNothing()
@@ -157,7 +172,7 @@ private slots:
         QVERIFY(m_message.isEmpty());
         pro_set.ute_wrk = true;
         QVERIFY(model.functionKey(QStringLiteral("F3"), 0));
-        QCOMPARE(m_message, QStringLiteral("Applicazione non disponibile"));
+        QCOMPARE(m_message, QStringLiteral("Application not available"));
     }
 
     void leavingWithF10DropsTheRights()

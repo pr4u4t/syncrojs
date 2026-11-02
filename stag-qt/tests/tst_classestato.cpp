@@ -136,6 +136,39 @@ private slots:
         QVERIFY(reset.isEmpty());
         QVERIFY(vel.isEmpty());
     }
+
+    void groupAlarmsComeBackAfterALostConnection()
+    {
+        FinsSimulator plc;
+        QVERIFY(plc.listen(QHostAddress::LocalHost, 0));
+        plc.setDm(3660, quint16(0x0002)); // the hardware group, active all the time
+
+        FinsClient fins;
+        fins.setRemoteHost(QStringLiteral("127.0.0.1"));
+        fins.setRemotePort(plc.port());
+        fins.setTimeOut(200);
+        fins.setEnabled(true);
+        QTRY_VERIFY_WITH_TIMEOUT(!fins.error(), 5000);
+
+        ClasseStato stato;
+        QSignalSpy groups(&stato, &ClasseStato::gruall);
+        stato.setComOK(true);
+        stato.aggiorna(fins);
+        const QString active = groups.last().at(0).toString();
+        QVERIFY(active != QStringLiteral("0"));
+
+        // The connection goes: gruall(0) turns the lamps off.
+        fins.closeSocket();
+        QVERIFY(fins.error());
+        stato.aggiorna(fins);
+        QCOMPARE(groups.last().at(0).toString(), QStringLiteral("0"));
+
+        // It comes back with the same alarm, which has to light its lamp again.
+        QTRY_VERIFY_WITH_TIMEOUT(!fins.error(), 5000);
+        stato.setComOK(true);
+        stato.aggiorna(fins);
+        QCOMPARE(groups.last().at(0).toString(), active);
+    }
 };
 
 QTEST_GUILESS_MAIN(TestClasseStato)

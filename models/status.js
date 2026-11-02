@@ -2,8 +2,6 @@ const net = require('node:net');
 const config = require('config');
 const db = require('../db');
 
-const port = config.get('syncro.port');
-const host = config.get('syncro.host');
 
 const database = async function(){
     try{
@@ -14,7 +12,7 @@ const database = async function(){
     }
 };
 
-const syncro = function(){
+const reachable = function(host, port){
     return new Promise((resolve) => {
         const socket = net.createConnection({ host, port });
         let settled = false;
@@ -34,7 +32,11 @@ const syncro = function(){
     });
 };
 
+const syncro = () => reachable(config.get('syncro.host'), config.get('syncro.port'));
+const stag = () => reachable(config.get('stag.host'), config.get('stag.port'));
+
 module.exports = {
     database,
-    syncro
+    syncro,
+    stag
 };

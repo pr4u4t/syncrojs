@@ -4,7 +4,7 @@ const clients = new Set();
 const intervalMs = 10000;
 let interval;
 let polling = false;
-let current = { database: false, syncro: false, updatedAt: null };
+let current = { database: false, syncro: false, stag: false, updatedAt: null };
 
 const snapshot = () => ({ ...current, application: true });
 
@@ -29,11 +29,12 @@ const poll = async function(){
     }
     polling = true;
     try{
-        const [database, syncro] = await Promise.all([
+        const [database, syncro, stag] = await Promise.all([
             status.database(),
-            status.syncro()
+            status.syncro(),
+            status.stag()
         ]);
-        current = { database, syncro, updatedAt: new Date().toISOString() };
+        current = { database, syncro, stag, updatedAt: new Date().toISOString() };
         publish();
     }finally{
         polling = false;

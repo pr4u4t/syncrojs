@@ -2,7 +2,8 @@ const { EventEmitter } = require('node:events');
 
 jest.mock('../../models/status', () => ({
     database: jest.fn(),
-    syncro: jest.fn()
+    syncro: jest.fn(),
+    stag: jest.fn()
 }));
 jest.mock('../../models/home', () => ({ home_info: jest.fn() }));
 jest.mock('../../models/operator-status', () => ({ operator_status: jest.fn() }));
@@ -67,6 +68,7 @@ test('status stream polls services and publishes an updated snapshot', async () 
     jest.useFakeTimers();
     statusModel.database.mockResolvedValue(true);
     statusModel.syncro.mockResolvedValue(false);
+    statusModel.stag.mockResolvedValue(true);
     const req = makeRequest();
     const res = makeResponse();
     statusStream.attach(req, res);
@@ -76,7 +78,7 @@ test('status stream polls services and publishes an updated snapshot', async () 
 
     expect(statusModel.database).toHaveBeenCalledTimes(1);
     expect(statusModel.syncro).toHaveBeenCalledTimes(1);
-    expect(statusStream.snapshot()).toMatchObject({ database: true, syncro: false, application: true });
+    expect(statusStream.snapshot()).toMatchObject({ database: true, syncro: false, stag: true, application: true });
     expect(res.writes.at(-1)).toContain('"database":true');
     req.emit('close');
 });
@@ -104,4 +106,36 @@ test('dashboard stream publishes live snapshots and retains last good data on fa
 
     req.emit('close');
     expect(res.writes.filter((message) => message === ': keep-alive\n\n')).toHaveLength(0);
+});
+
+describe('STAG stream', () => {
+    const stagModel = require('../../models/stag');
+    const stagStream = require('../../utils/stag-stream');
+
+    test('tells the page once when STAG does not answer, and then the data when it does', async () => {
+        jest.useFakeTimers();
+        const spy = jest.spyOn(stagModel, 'stag_status').mockResolvedValue(null);
+        const req = makeRequest();
+        const res = makeResponse();
+        stagStream.attach(req, res);
+        await flushPromises();
+
+        const messages = () => res.writes.filter((message) => message.startsWith('data: ')).map((message) => JSON.parse(message.slice(6)));
+        expect(messages()[0]).toMatchObject({ loading: true, data: null, unavailable: false });
+        expect(messages().at(-1)).toMatchObject({ loading: false, data: null, unavailable: true });
+
+        const count = messages().length;
+        jest.advanceTimersByTime(1000);
+        await flushPromises();
+        expect(messages()).toHaveLength(count);
+
+        spy.mockResolvedValue({ speed: '120' });
+        jest.advanceTimersByTime(1000);
+        await flushPromises();
+        expect(messages().at(-1)).toMatchObject({ loading: false, data: { speed: '120' }, unavailable: false });
+
+        req.emit('close');
+        spy.mockRestore();
+        jest.useRealTimers();
+    });
 });

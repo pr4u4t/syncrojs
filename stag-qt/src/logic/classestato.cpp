@@ -249,6 +249,8 @@ void ClasseStato::aggiorna(FinsClient &fins)
         emit run(7);
         emit gruall(QStringLiteral("0"));
         m_stato.comOK = false;
+        // Not in VB: the lamps were just turned off, so the next read has to send the groups even if unchanged.
+        m_oldStato.gruAll.clear();
         return;
     }
     try {
