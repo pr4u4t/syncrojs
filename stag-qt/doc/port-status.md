@@ -42,7 +42,7 @@ Te rzeczy są porównane tylko z kodem VB:
 
 ## Bezpieczeństwo
 
-Bez `--enable-plc-writes` nic nie idzie do PLC, kart ani SPDE. Dotyczy to też odczytów z kart, bo każda ramka zaczyna się od SYN, oraz gniazda SPDE, bo przychodzące zamówienie zmienia listę. Wyjątek: `Frm_debug` tylko czyta z PLC.
+Bez `--enable-plc-writes` albo `[Plc] EnableWrites=1` w `stag.ini` nic nie idzie do PLC, kart ani SPDE. Domyślnie jest `0`, program dopisuje ten klucz sam, a włącza tylko dokładnie `1`. Opcja ma pierwszeństwo: przy `EnableWrites=0` i tak włącza zapis. Dotyczy to też odczytów z kart, bo każda ramka zaczyna się od SYN, oraz gniazda SPDE, bo przychodzące zamówienie zmienia listę. Wyjątek: `Frm_debug` tylko czyta z PLC.
 
 ## Błędy VB zachowane 1:1
 

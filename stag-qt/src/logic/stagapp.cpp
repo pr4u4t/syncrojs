@@ -123,6 +123,9 @@ void StagApp::start()
 {
     load();
     startApi();
+    // [Plc] EnableWrites does what --enable-plc-writes does; only an exact 1 turns it on.
+    if (stag::getFileINIString(QStringLiteral("Plc"), QStringLiteral("EnableWrites"), QStringLiteral("0")).trimmed() == QLatin1String("1"))
+        m_options.plcWrites = true;
 
     const stag::TipPlcLan &lan = stag::par_mac.com_plc_lan;
     m_fins.setRemoteHost(m_options.plcHostOverride.isEmpty() ? lan.ind_rem : m_options.plcHostOverride);

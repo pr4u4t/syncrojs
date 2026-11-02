@@ -3,13 +3,16 @@
 #include "stabarform.h"
 #include "stabarmodel.h"
 #include "stagapi.h"
+#include "stagapp.h"
 
+#include <QFile>
 #include <QHostAddress>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QSignalSpy>
 #include <QTcpSocket>
+#include <QTemporaryDir>
 #include <QTest>
 
 class TestStagApi : public QObject
@@ -97,6 +100,43 @@ private slots:
         QCOMPARE(fill("shp_all_har"), grey);
         bar.setLinNoComPlc(false);
         QCOMPARE(fill("shp_all_har"), red);
+    }
+
+    void writesFollowTheIniAndTheOption()
+    {
+        // ini value (empty: no key), command line option, expected.
+        struct Case { const char *ini; bool option; bool expected; };
+        for (const Case &c : {Case{"", false, false}, {"0", false, false}, {"1", false, true}, {" 1 ", false, true},
+                              {"yes", false, false}, {"true", false, false}, {"0", true, true}}) {
+            QTemporaryDir dir;
+            const QString ini = dir.filePath(QStringLiteral("stag.ini"));
+            QVERIFY(QFile::copy(QStringLiteral(STAG_REFERENCE_DATA "/stag.ini"), ini));
+            QFile::setPermissions(ini, QFile::ReadOwner | QFile::WriteOwner);
+            for (const char *name : {"Ord_mac.dat", "Ord_mac_ese.dat", "Ordini.ini"})
+                QFile::copy(QStringLiteral(STAG_REFERENCE_DATA "/") + QLatin1String(name), dir.filePath(QLatin1String(name)));
+            const QString db = dir.filePath(QStringLiteral("stag.sqlite"));
+            QVERIFY(QFile::copy(QStringLiteral(STAG_SQLITE), db));
+            QFile::setPermissions(db, QFile::ReadOwner | QFile::WriteOwner);
+            if (*c.ini) {
+                QFile file(ini);
+                QVERIFY(file.open(QIODevice::Append));
+                file.write(QByteArray("\r\n[Plc]\r\nEnableWrites=") + c.ini + "\r\n");
+            }
+            StagApp::Options options;
+            options.dataDir = dir.path();
+            options.sqlitePath = db;
+            options.plcHostOverride = QStringLiteral("127.0.0.1");
+            options.plcPortOverride = 1;
+            options.plcWrites = c.option;
+            StagApp app(options);
+            app.start();
+            QCOMPARE(app.plc().writesEnabled(), c.expected);
+            if (!*c.ini) {
+                QFile file(ini);
+                QVERIFY(file.open(QIODevice::ReadOnly));
+                QVERIFY(file.readAll().contains("EnableWrites=0"));
+            }
+        }
     }
 };
 

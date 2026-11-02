@@ -59,7 +59,7 @@ private:
 
 // What tim_tag_plc does towards the machine once the state is read: start-up parameters, keeping the
 // current and next order aligned, and carrying out the pages' requests. Nothing is written unless
-// setWritesEnabled(true) was called: --enable-plc-writes on the command line.
+// setWritesEnabled(true) was called: --enable-plc-writes on the command line or [Plc] EnableWrites=1 in stag.ini.
 class PlcLink : public QObject
 {
     Q_OBJECT

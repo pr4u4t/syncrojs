@@ -31,7 +31,7 @@ public:
         QString sqlitePath;     // migrated DBF tables
         QString plcHostOverride;
         quint16 plcPortOverride = 0;
-        // Off unless asked for: with it false nothing at all is written to the PLC.
+        // Off unless asked for, here or with [Plc] EnableWrites: with it false nothing at all is written to the PLC.
         bool plcWrites = false;
     };
 

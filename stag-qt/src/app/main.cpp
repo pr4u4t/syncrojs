@@ -224,7 +224,7 @@ int main(int argc, char *argv[])
     QCommandLineOption renderOption(QStringLiteral("render-forms"), QStringLiteral("Write every form to a PNG in this directory and exit"), QStringLiteral("dir"));
     QCommandLineOption shellOption(QStringLiteral("render-shell"), QStringLiteral("Walk the function keys without the PLC, write PNGs to this directory and exit"), QStringLiteral("dir"));
     QCommandLineOption languageOption(QStringLiteral("language"), QStringLiteral("With a render option: MESSAGGI language number"), QStringLiteral("number"), QStringLiteral("1"));
-    QCommandLineOption writesOption(QStringLiteral("enable-plc-writes"), QStringLiteral("Allow writing to the PLC; without it the program only reads"));
+    QCommandLineOption writesOption(QStringLiteral("enable-plc-writes"), QStringLiteral("Allow writing to the PLC, like [Plc] EnableWrites=1 in stag.ini; without either the program only reads"));
     QCommandLineOption screenshotOption(QStringLiteral("screenshot"), QStringLiteral("Normal start: write the window to this PNG after 2 s and quit"), QStringLiteral("file"));
     QCommandLineOption sizeOption(QStringLiteral("window-size"), QStringLiteral("Normal start: size of the window"), QStringLiteral("WxH"));
     QCommandLineOption guiOption(QStringLiteral("gui"), QStringLiteral("Look of the program instead of [Gui] Style of stag.ini"), QStringLiteral("legacy|normal"));
