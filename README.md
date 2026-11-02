@@ -47,7 +47,17 @@ cmake --build build-stag -j8
 build-stag/bin/stag
 ```
 
-The build puts the database and a copy of the machine data next to the program, so it starts with no arguments. Without `--enable-plc-writes` it writes nothing to the PLC.
+The build puts the database and a copy of the machine data next to the program, so it starts with no arguments. Unless `--enable-plc-writes` or `[Plc] EnableWrites=1` in `stag.ini` is set, it writes nothing to the PLC.
+
+`[Gui] Style` in `stag.ini` picks the look: `normal` or `legacy`, the one of the VB program.
+
+| `normal` | `legacy` |
+|---|---|
+| ![Production page, normal look](stag-qt/doc/screenshots/production-normal.png) | ![Production page, legacy look](stag-qt/doc/screenshots/production-legacy.png) |
+
+![Enablements page, normal look](stag-qt/doc/screenshots/enablements-normal.png)
+
+The screenshots show the program without a PLC, so the status fields are empty and the alarm lamps grey.
 
 The state of the port, what has been checked and what has not, is in `stag-qt/doc/port-status.md`. It has not run against a real PLC yet, so it is not ready for production.
 
