@@ -23,7 +23,7 @@ Rectangle {
 
     function activate() {
         if (model)
-            model.activate(typeof stagUi !== "undefined" ? stagUi.previousForm() : "")
+            stagUi.activate(model, stagUi.previousForm())
     }
 
     // Copies what the C++ model assigned onto the controls.
@@ -66,6 +66,34 @@ Rectangle {
         z: -1
     }
 
+    // The caption the .frm gives each control, in Italian: what the translation of a caption starts from.
+    property var captions: ({})
+    function localize(key, control) {
+        if (captions[key] === undefined)
+            captions[key] = control.text
+        const match = key.match(/^(.*)\((\d+)\)$/)
+        const translated = stagUi.controlText(form.formName, match ? match[1] : key, match ? Number(match[2]) : 0)
+        // Only a real caption: the blank ones, like the function key texts, belong to whoever fills them.
+        const caption = translated !== "" ? translated : stagUi.captionText(captions[key])
+        if (caption.trim() !== "")
+            control.text = caption
+    }
+    function translate() {
+        if (typeof stagUi === "undefined")
+            return
+        for (const key of Object.keys(controls)) {
+            const control = controls[key]
+            if (control.vbEvent !== undefined && control.text !== undefined)
+                localize(key, control)
+        }
+        if (model)
+            applyState()
+    }
+    Connections {
+        target: typeof stagUi !== "undefined" ? stagUi : null
+        function onLanguageChanged() { form.translate() }
+    }
+
     Component.onCompleted: {
         for (const key of Object.keys(controls)) {
             const control = controls[key]
@@ -74,15 +102,12 @@ Rectangle {
             const match = key.match(/^(.*)\((\d+)\)$/)
             const name = match ? match[1] : key
             const index = match ? Number(match[2]) : -1
-            if (typeof stagUi !== "undefined" && control.text !== undefined) {
-                const translated = stagUi.controlText(form.formName, name, Math.max(index, 0))
-                if (translated !== "")
-                    control.text = translated
-            }
+            if (typeof stagUi !== "undefined" && control.text !== undefined)
+                localize(key, control)
             control.vbEvent.connect((event, args) => {
                 form.vbEvent(name, index, event, args)
                 if (form.model)
-                    form.model.controlEvent(name, index, event, args)
+                    stagUi.controlEvent(form.model, name, index, event, args)
             })
         }
         if (model) {

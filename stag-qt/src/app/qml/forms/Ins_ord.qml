@@ -10,1726 +10,50 @@ VbForm {
     backColor: "#ffffff"
     dialog: false
     controls: ({ "dat_pat": c_dat_pat, "frm_liv0(2)": c_frm_liv0_2, "txt_pos_lat_pat(2)": c_txt_pos_lat_pat_2, "txt_fin_pri(2)": c_txt_fin_pri_2, "txt_fin_dop(2)": c_txt_fin_dop_2, "txt_pat_con(2)": c_txt_pat_con_2, "txt_lun_for(2)": c_txt_lun_for_2, "cmb_cut_to_mark(2)": c_cmb_cut_to_mark_2, "txt_nom_cli(2)": c_txt_nom_cli_2, "txt_num_tot_fog(2)": c_txt_num_tot_fog_2, "txt_resa(2)": c_txt_resa_2, "txt_sca_lar(2)": c_txt_sca_lar_2, "txt_sca_lun(2)": c_txt_sca_lun_2, "txt_cod_cli(2)": c_txt_cod_cli_2, "txt_cod_com(2)": c_txt_cod_com_2, "txt_liv(2)": c_txt_liv_2, "cmb_pat_cod(2)": c_cmb_pat_cod_2, "lab_pos_lat_pattern(2)": c_lab_pos_lat_pattern_2, "lab_fin_pri(2)": c_lab_fin_pri_2, "lab_fin_dop(2)": c_lab_fin_dop_2, "lab_pat_con(2)": c_lab_pat_con_2, "lin10(26)": c_lin10_26, "lin10(25)": c_lin10_25, "lin10(24)": c_lin10_24, "lin10(23)": c_lin10_23, "lin10(22)": c_lin10_22, "lab_pat_cod(2)": c_lab_pat_cod_2, "lab_lun_for(2)": c_lab_lun_for_2, "lin10(8)": c_lin10_8, "lab_cut_to_mark(2)": c_lab_cut_to_mark_2, "lin10(5)": c_lin10_5, "lin1(2)": c_lin1_2, "lab_nom(2)": c_lab_nom_2, "lab_num(2)": c_lab_num_2, "lin9(2)": c_lin9_2, "lin8(2)": c_lin8_2, "lin6(2)": c_lin6_2, "lin2(2)": c_lin2_2, "lin4(2)": c_lin4_2, "shp_liv2(2)": c_shp_liv2_2, "lab_res(2)": c_lab_res_2, "lab_lar(2)": c_lab_lar_2, "lab_cod_cli(2)": c_lab_cod_cli_2, "lab_liv(2)": c_lab_liv_2, "lab_com(2)": c_lab_com_2, "lab_lun(2)": c_lab_lun_2, "shp_liv(2)": c_shp_liv_2, "lin3(2)": c_lin3_2, "lin7(2)": c_lin7_2, "shp_liv1(2)": c_shp_liv1_2, "lin10(2)": c_lin10_2, "frm_liv0(1)": c_frm_liv0_1, "txt_pos_lat_pat(1)": c_txt_pos_lat_pat_1, "txt_fin_pri(1)": c_txt_fin_pri_1, "txt_fin_dop(1)": c_txt_fin_dop_1, "txt_pat_con(1)": c_txt_pat_con_1, "txt_lun_for(1)": c_txt_lun_for_1, "cmb_cut_to_mark(1)": c_cmb_cut_to_mark_1, "txt_nom_cli(1)": c_txt_nom_cli_1, "txt_num_tot_fog(1)": c_txt_num_tot_fog_1, "txt_resa(1)": c_txt_resa_1, "txt_sca_lar(1)": c_txt_sca_lar_1, "txt_sca_lun(1)": c_txt_sca_lun_1, "txt_cod_cli(1)": c_txt_cod_cli_1, "txt_cod_com(1)": c_txt_cod_com_1, "txt_liv(1)": c_txt_liv_1, "cmb_pat_cod(1)": c_cmb_pat_cod_1, "lab_pos_lat_pattern(1)": c_lab_pos_lat_pattern_1, "lab_fin_pri(1)": c_lab_fin_pri_1, "lab_fin_dop(1)": c_lab_fin_dop_1, "lab_pat_con(1)": c_lab_pat_con_1, "lin10(21)": c_lin10_21, "lin10(20)": c_lin10_20, "lin10(19)": c_lin10_19, "lin10(18)": c_lin10_18, "lin10(17)": c_lin10_17, "lin10(16)": c_lin10_16, "lin10(15)": c_lin10_15, "lin10(14)": c_lin10_14, "lab_pat_cod(1)": c_lab_pat_cod_1, "lab_lun_for(1)": c_lab_lun_for_1, "lin10(7)": c_lin10_7, "lab_cut_to_mark(1)": c_lab_cut_to_mark_1, "lin10(4)": c_lin10_4, "lin1(1)": c_lin1_1, "lab_nom(1)": c_lab_nom_1, "lab_num(1)": c_lab_num_1, "lin9(1)": c_lin9_1, "lin8(1)": c_lin8_1, "lin6(1)": c_lin6_1, "lin2(1)": c_lin2_1, "lin4(1)": c_lin4_1, "shp_liv2(1)": c_shp_liv2_1, "lab_res(1)": c_lab_res_1, "lab_lar(1)": c_lab_lar_1, "lab_cod_cli(1)": c_lab_cod_cli_1, "lab_liv(1)": c_lab_liv_1, "lab_com(1)": c_lab_com_1, "lab_lun(1)": c_lab_lun_1, "shp_liv(1)": c_shp_liv_1, "lin3(1)": c_lin3_1, "lin7(1)": c_lin7_1, "shp_liv1(1)": c_shp_liv1_1, "lin10(1)": c_lin10_1, "frm_liv0(0)": c_frm_liv0_0, "txt_pat_con(0)": c_txt_pat_con_0, "txt_fin_dop(0)": c_txt_fin_dop_0, "txt_fin_pri(0)": c_txt_fin_pri_0, "txt_pos_lat_pat(0)": c_txt_pos_lat_pat_0, "txt_lun_for(0)": c_txt_lun_for_0, "cmb_cut_to_mark(0)": c_cmb_cut_to_mark_0, "txt_liv(0)": c_txt_liv_0, "txt_cod_com(0)": c_txt_cod_com_0, "txt_cod_cli(0)": c_txt_cod_cli_0, "txt_sca_lun(0)": c_txt_sca_lun_0, "txt_sca_lar(0)": c_txt_sca_lar_0, "txt_resa(0)": c_txt_resa_0, "txt_num_tot_fog(0)": c_txt_num_tot_fog_0, "txt_nom_cli(0)": c_txt_nom_cli_0, "cmb_pat_cod(0)": c_cmb_pat_cod_0, "lab_pat_con(0)": c_lab_pat_con_0, "lin10(13)": c_lin10_13, "lab_pat_cod(0)": c_lab_pat_cod_0, "lin10(12)": c_lin10_12, "lab_fin_dop(0)": c_lab_fin_dop_0, "lin10(11)": c_lin10_11, "lab_fin_pri(0)": c_lab_fin_pri_0, "lab_pos_lat_pattern(0)": c_lab_pos_lat_pattern_0, "lin10(10)": c_lin10_10, "lin10(9)": c_lin10_9, "lab_lun_for(0)": c_lab_lun_for_0, "lin10(6)": c_lin10_6, "lab_cut_to_mark(0)": c_lab_cut_to_mark_0, "lin10(3)": c_lin10_3, "lin10(0)": c_lin10_0, "shp_liv1(0)": c_shp_liv1_0, "lin7(0)": c_lin7_0, "lin3(0)": c_lin3_0, "shp_liv(0)": c_shp_liv_0, "lab_lun(0)": c_lab_lun_0, "lab_com(0)": c_lab_com_0, "lab_liv(0)": c_lab_liv_0, "lab_cod_cli(0)": c_lab_cod_cli_0, "lab_lar(0)": c_lab_lar_0, "lab_res(0)": c_lab_res_0, "shp_liv2(0)": c_shp_liv2_0, "lin4(0)": c_lin4_0, "lin2(0)": c_lin2_0, "lin6(0)": c_lin6_0, "lin8(0)": c_lin8_0, "lin9(0)": c_lin9_0, "lab_num(0)": c_lab_num_0, "lab_nom(0)": c_lab_nom_0, "lin1(0)": c_lin1_0, "frm_tes": c_frm_tes, "txt_id": c_txt_id, "txt_met": c_txt_met, "txt_indice": c_txt_indice, "txt_alt_bob": c_txt_alt_bob, "frame1": c_Frame1, "image1": c_Image1, "label9(1)": c_label9_1, "txt_cod_abb": c_txt_cod_abb, "cmb_onda": c_cmb_onda, "cmb_carta": c_cmb_carta, "label1": c_Label1, "line10(0)": c_Line10_0, "line1": c_Line1, "line10(1)": c_Line10_1, "shape12": c_Shape12, "shape6(1)": c_Shape6_1, "line7(1)": c_Line7_1, "line6": c_Line6, "label5": c_Label5, "label4": c_Label4, "label2": c_Label2, "label20": c_Label20, "line9": c_Line9, "label25": c_Label25, "txt_idle": c_txt_idle, "dat_ond": c_dat_ond, "dat_car": c_dat_car, "pag_title": c_Pag_title, "image3": c_Image3 })
+    VbImage {
+        id: c_Image3
+        x: 0
+        y: 1
+        width: 798
+        height: 20
+        stretch: true
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
+    }
+    VbLabel {
+        id: c_Pag_title
+        x: 0
+        y: 0
+        width: 531
+        height: 29
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 21
+        font.bold: true
+        text: "GESTIONE ORDINI"
+        opaque: false
+    }
     VbData {
-        id: c_dat_pat
-        recordSource: "select * from PATTERN order by CODICE"
+        id: c_dat_car
+        recordSource: "Onde"
     }
-    VbFrame {
-        id: c_frm_liv0_2
-        x: 35
-        y: 306
-        width: 735
-        height: 98
-        z: 1
-        backColor: "#ffffff"
-        borderStyle: 0
-        VbTextBox {
-            id: c_txt_pos_lat_pat_2
-            x: 552
-            y: 70
-            width: 44
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_pat_con_2
-            KeyNavigation.backtab: c_cmb_pat_cod_2
-            text: "12345"
-            maxLength: 5
-        }
-        VbTextBox {
-            id: c_txt_fin_pri_2
-            x: 638
-            y: 70
-            width: 38
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_fin_dop_2
-            KeyNavigation.backtab: c_txt_pat_con_2
-            text: "1234"
-            maxLength: 4
-        }
-        VbTextBox {
-            id: c_txt_fin_dop_2
-            x: 690
-            y: 70
-            width: 38
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_id
-            KeyNavigation.backtab: c_txt_fin_pri_2
-            text: "1234"
-            maxLength: 4
-        }
-        VbTextBox {
-            id: c_txt_pat_con_2
-            x: 604
-            y: 70
-            width: 16
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_fin_pri_2
-            KeyNavigation.backtab: c_txt_pos_lat_pat_2
-            text: "1"
-            maxLength: 1
-        }
-        VbTextBox {
-            id: c_txt_lun_for_2
-            x: 644
-            y: 24
-            width: 71
-            height: 20
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-        }
-        VbCombo {
-            id: c_cmb_cut_to_mark_2
-            x: 287
-            y: 67
-            width: 90
-            height: 27
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_cmb_pat_cod_2
-            KeyNavigation.backtab: c_txt_num_tot_fog_2
-            items: []
-        }
-        VbTextBox {
-            id: c_txt_nom_cli_2
-            x: 361
-            y: 25
-            width: 270
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_sca_lar_2
-            KeyNavigation.backtab: c_txt_cod_cli_2
-            maxLength: 30
-        }
-        VbTextBox {
-            id: c_txt_num_tot_fog_2
-            x: 194
-            y: 70
-            width: 82
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_cmb_cut_to_mark_2
-            KeyNavigation.backtab: c_txt_resa_2
-            maxLength: 6
-        }
-        VbTextBox {
-            id: c_txt_resa_2
-            x: 159
-            y: 70
-            width: 26
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_num_tot_fog_2
-            KeyNavigation.backtab: c_txt_sca_lun_2
-            maxLength: 1
-        }
-        VbTextBox {
-            id: c_txt_sca_lar_2
-            x: 5
-            y: 70
-            width: 73
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_sca_lun_2
-            KeyNavigation.backtab: c_txt_nom_cli_2
-        }
-        VbTextBox {
-            id: c_txt_sca_lun_2
-            x: 82
-            y: 70
-            width: 73
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_resa_2
-            KeyNavigation.backtab: c_txt_sca_lar_2
-        }
-        VbTextBox {
-            id: c_txt_cod_cli_2
-            x: 238
-            y: 25
-            width: 107
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_nom_cli_2
-            KeyNavigation.backtab: c_txt_cod_com_2
-            maxLength: 12
-        }
-        VbTextBox {
-            id: c_txt_cod_com_2
-            x: 93
-            y: 25
-            width: 135
-            height: 20
-            z: 1
-            backColor: "#ffffff"
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_cod_cli_2
-            KeyNavigation.backtab: c_txt_liv_2
-            maxLength: 15
-        }
-        VbCombo {
-            id: c_txt_liv_2
-            x: 4
-            y: 22
-            width: 81
-            height: 27
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#0000ff"
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_cod_com_2
-            KeyNavigation.backtab: c_txt_fin_dop_1
-            items: []
-        }
-        VbCombo {
-            id: c_cmb_pat_cod_2
-            x: 384
-            y: 66
-            width: 162
-            height: 28
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_pos_lat_pat_2
-            KeyNavigation.backtab: c_cmb_cut_to_mark_2
-        }
-        VbLabel {
-            id: c_lab_pos_lat_pattern_2
-            x: 552
-            y: 51
-            width: 46
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "pos.pat"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_fin_pri_2
-            x: 638
-            y: 51
-            width: 45
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "f.prima"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_fin_dop_2
-            x: 690
-            y: 51
-            width: 40
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "f.dopo"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_pat_con_2
-            x: 604
-            y: 51
-            width: 29
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "con."
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_26
-            x1: 686
-            y1: 50
-            x2: 686
-            y2: 96
-        }
-        VbLine {
-            id: c_lin10_25
-            x1: 634
-            y1: 50
-            x2: 634
-            y2: 96
-        }
-        VbLine {
-            id: c_lin10_24
-            x1: 600
-            y1: 50
-            x2: 600
-            y2: 96
-        }
-        VbLine {
-            id: c_lin10_23
-            x1: 548
-            y1: 50
-            x2: 548
-            y2: 96
-        }
-        VbLine {
-            id: c_lin10_22
-            x1: 638
-            y1: 4
-            x2: 638
-            y2: 50
-        }
-        VbLabel {
-            id: c_lab_pat_cod_2
-            x: 382
-            y: 51
-            width: 91
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "codice pattern"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_lun_for_2
-            x: 644
-            y: 5
-            width: 75
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "lun.formato"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_8
-            x1: 734
-            y1: 50
-            x2: 734
-            y2: 96
-            borderWidth: 2
-        }
-        VbLabel {
-            id: c_lab_cut_to_mark_2
-            x: 286
-            y: 51
-            width: 90
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "taglio registro"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_5
-            x1: 378
-            y1: 50
-            x2: 378
-            y2: 96
-        }
-        VbLine {
-            id: c_lin1_2
-            x1: 1
-            y1: 2
-            x2: 1
-            y2: 97
-            borderWidth: 2
-        }
-        VbLabel {
-            id: c_lab_nom_2
-            x: 361
-            y: 5
-            width: 123
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "nome cliente"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_num_2
-            x: 194
-            y: 51
-            width: 85
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "totale scatole"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin9_2
-            x1: 191
-            y1: 50
-            x2: 191
-            y2: 96
-        }
-        VbLine {
-            id: c_lin8_2
-            x1: 156
-            y1: 50
-            x2: 156
-            y2: 96
-        }
-        VbLine {
-            id: c_lin6_2
-            x1: 734
-            y1: 2
-            x2: 734
-            y2: 51
-            borderWidth: 2
-        }
-        VbLine {
-            id: c_lin2_2
-            x1: 88
-            y1: 4
-            x2: 88
-            y2: 51
-        }
-        VbLine {
-            id: c_lin4_2
-            x1: 352
-            y1: 4
-            x2: 352
-            y2: 51
-        }
-        VbShape {
-            id: c_shp_liv2_2
-            x: 0
-            y: 50
-            width: 735
-            height: 2
-            shape: 0
-            fillColor: "#000000"
-        }
-        VbLabel {
-            id: c_lab_res_2
-            x: 159
-            y: 51
-            width: 27
-            height: 16
-            backColor: "#748b7c"
-            foreColor: "#000000"
-            text: "resa"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_lar_2
-            x: 5
-            y: 51
-            width: 63
-            height: 16
-            backColor: "#748b7c"
-            foreColor: "#000000"
-            text: "larghezza"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_cod_cli_2
-            x: 238
-            y: 5
-            width: 119
-            height: 16
-            backColor: "#748b7c"
-            foreColor: "#000000"
-            text: "codice cliente"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_liv_2
-            x: 4
-            y: 5
-            width: 43
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "Livello"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_com_2
-            x: 93
-            y: 5
-            width: 107
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "commessa"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_lun_2
-            x: 82
-            y: 51
-            width: 66
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "lunghezza"
-            opaque: false
-            autoSize: true
-        }
-        VbShape {
-            id: c_shp_liv_2
-            x: 0
-            y: 2
-            width: 735
-            height: 3
-            shape: 0
-            fillColor: "#000000"
-            borderWidth: 2
-        }
-        VbLine {
-            id: c_lin3_2
-            x1: 233
-            y1: 4
-            x2: 233
-            y2: 51
-        }
-        VbLine {
-            id: c_lin7_2
-            x1: 78
-            y1: 50
-            x2: 78
-            y2: 96
-        }
-        VbShape {
-            id: c_shp_liv1_2
-            x: 0
-            y: 95
-            width: 735
-            height: 3
-            shape: 0
-            fillColor: "#000000"
-            borderWidth: 2
-        }
-        VbLine {
-            id: c_lin10_2
-            x1: 282
-            y1: 51
-            x2: 282
-            y2: 97
-        }
+    VbData {
+        id: c_dat_ond
+        recordSource: "select distinct onda from onde order by onda"
     }
-    VbFrame {
-        id: c_frm_liv0_1
-        x: 35
-        y: 204
-        width: 735
-        height: 98
+    VbTextBox {
+        id: c_txt_idle
+        x: 0
+        y: -67
+        width: 51
+        height: 24
         z: 1
-        backColor: "#ffffff"
+        backColor: "#ff0000"
+        foreColor: "#000080"
         borderStyle: 0
-        VbTextBox {
-            id: c_txt_pos_lat_pat_1
-            x: 552
-            y: 70
-            width: 44
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_pat_con_1
-            KeyNavigation.backtab: c_cmb_pat_cod_1
-            text: "12345"
-            maxLength: 5
-        }
-        VbTextBox {
-            id: c_txt_fin_pri_1
-            x: 638
-            y: 70
-            width: 38
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_fin_dop_1
-            KeyNavigation.backtab: c_txt_pat_con_1
-            text: "1234"
-            maxLength: 4
-        }
-        VbTextBox {
-            id: c_txt_fin_dop_1
-            x: 690
-            y: 70
-            width: 38
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_liv_2
-            KeyNavigation.backtab: c_txt_fin_pri_1
-            text: "1234"
-            maxLength: 4
-        }
-        VbTextBox {
-            id: c_txt_pat_con_1
-            x: 604
-            y: 70
-            width: 16
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_fin_pri_1
-            KeyNavigation.backtab: c_txt_pos_lat_pat_1
-            text: "1"
-            maxLength: 1
-        }
-        VbTextBox {
-            id: c_txt_lun_for_1
-            x: 644
-            y: 24
-            width: 71
-            height: 20
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-        }
-        VbCombo {
-            id: c_cmb_cut_to_mark_1
-            x: 287
-            y: 67
-            width: 90
-            height: 27
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_cmb_pat_cod_1
-            KeyNavigation.backtab: c_txt_num_tot_fog_1
-            items: []
-        }
-        VbTextBox {
-            id: c_txt_nom_cli_1
-            x: 361
-            y: 25
-            width: 270
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_sca_lar_1
-            KeyNavigation.backtab: c_txt_cod_cli_1
-            maxLength: 30
-        }
-        VbTextBox {
-            id: c_txt_num_tot_fog_1
-            x: 194
-            y: 70
-            width: 82
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_cmb_cut_to_mark_1
-            KeyNavigation.backtab: c_txt_resa_1
-            maxLength: 6
-        }
-        VbTextBox {
-            id: c_txt_resa_1
-            x: 159
-            y: 70
-            width: 26
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_num_tot_fog_1
-            KeyNavigation.backtab: c_txt_sca_lun_1
-            maxLength: 1
-        }
-        VbTextBox {
-            id: c_txt_sca_lar_1
-            x: 5
-            y: 70
-            width: 73
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_sca_lun_1
-            KeyNavigation.backtab: c_txt_nom_cli_1
-        }
-        VbTextBox {
-            id: c_txt_sca_lun_1
-            x: 82
-            y: 70
-            width: 73
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_resa_1
-            KeyNavigation.backtab: c_txt_sca_lar_1
-        }
-        VbTextBox {
-            id: c_txt_cod_cli_1
-            x: 238
-            y: 25
-            width: 107
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_nom_cli_1
-            KeyNavigation.backtab: c_txt_cod_com_1
-            maxLength: 12
-        }
-        VbTextBox {
-            id: c_txt_cod_com_1
-            x: 93
-            y: 25
-            width: 135
-            height: 20
-            z: 1
-            backColor: "#ffffff"
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_cod_cli_1
-            KeyNavigation.backtab: c_txt_liv_1
-            maxLength: 15
-        }
-        VbCombo {
-            id: c_txt_liv_1
-            x: 4
-            y: 22
-            width: 81
-            height: 27
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#0000ff"
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_cod_com_1
-            KeyNavigation.backtab: c_txt_fin_dop_0
-            items: []
-        }
-        VbCombo {
-            id: c_cmb_pat_cod_1
-            x: 384
-            y: 66
-            width: 162
-            height: 28
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_pos_lat_pat_1
-            KeyNavigation.backtab: c_cmb_cut_to_mark_1
-        }
-        VbLabel {
-            id: c_lab_pos_lat_pattern_1
-            x: 552
-            y: 51
-            width: 46
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "pos.pat"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_fin_pri_1
-            x: 638
-            y: 51
-            width: 45
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "f.prima"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_fin_dop_1
-            x: 690
-            y: 51
-            width: 40
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "f.dopo"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_pat_con_1
-            x: 604
-            y: 51
-            width: 29
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "con."
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_21
-            x1: 686
-            y1: 50
-            x2: 686
-            y2: 96
-        }
-        VbLine {
-            id: c_lin10_20
-            x1: 634
-            y1: 50
-            x2: 634
-            y2: 96
-        }
-        VbLine {
-            id: c_lin10_19
-            x1: 600
-            y1: 50
-            x2: 600
-            y2: 96
-        }
-        VbLine {
-            id: c_lin10_18
-            x1: 548
-            y1: 50
-            x2: 548
-            y2: 96
-        }
-        VbLine {
-            id: c_lin10_17
-            x1: 0
-            y1: 0
-            x2: 0
-            y2: 46
-        }
-        VbLine {
-            id: c_lin10_16
-            x1: 0
-            y1: 0
-            x2: 0
-            y2: 46
-        }
-        VbLine {
-            id: c_lin10_15
-            x1: 0
-            y1: 0
-            x2: 0
-            y2: 46
-        }
-        VbLine {
-            id: c_lin10_14
-            x1: 638
-            y1: 4
-            x2: 638
-            y2: 50
-        }
-        VbLabel {
-            id: c_lab_pat_cod_1
-            x: 382
-            y: 51
-            width: 91
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "codice pattern"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_lun_for_1
-            x: 644
-            y: 5
-            width: 73
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "lun.formato"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_7
-            x1: 734
-            y1: 50
-            x2: 734
-            y2: 96
-            borderWidth: 2
-        }
-        VbLabel {
-            id: c_lab_cut_to_mark_1
-            x: 286
-            y: 51
-            width: 90
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "taglio registro"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_4
-            x1: 378
-            y1: 50
-            x2: 378
-            y2: 96
-        }
-        VbLine {
-            id: c_lin1_1
-            x1: 1
-            y1: 2
-            x2: 1
-            y2: 97
-            borderWidth: 2
-        }
-        VbLabel {
-            id: c_lab_nom_1
-            x: 361
-            y: 5
-            width: 123
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "nome cliente"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_num_1
-            x: 194
-            y: 51
-            width: 85
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "totale scatole"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin9_1
-            x1: 191
-            y1: 50
-            x2: 191
-            y2: 96
-        }
-        VbLine {
-            id: c_lin8_1
-            x1: 156
-            y1: 50
-            x2: 156
-            y2: 96
-        }
-        VbLine {
-            id: c_lin6_1
-            x1: 734
-            y1: 2
-            x2: 734
-            y2: 51
-            borderWidth: 2
-        }
-        VbLine {
-            id: c_lin2_1
-            x1: 88
-            y1: 4
-            x2: 88
-            y2: 51
-        }
-        VbLine {
-            id: c_lin4_1
-            x1: 352
-            y1: 4
-            x2: 352
-            y2: 51
-        }
-        VbShape {
-            id: c_shp_liv2_1
-            x: 0
-            y: 50
-            width: 735
-            height: 2
-            shape: 0
-            fillColor: "#000000"
-        }
-        VbLabel {
-            id: c_lab_res_1
-            x: 159
-            y: 51
-            width: 27
-            height: 16
-            backColor: "#748b7c"
-            foreColor: "#000000"
-            text: "resa"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_lar_1
-            x: 5
-            y: 51
-            width: 63
-            height: 16
-            backColor: "#748b7c"
-            foreColor: "#000000"
-            text: "larghezza"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_cod_cli_1
-            x: 238
-            y: 5
-            width: 119
-            height: 16
-            backColor: "#748b7c"
-            foreColor: "#000000"
-            text: "codice cliente"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_liv_1
-            x: 4
-            y: 5
-            width: 43
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "Livello"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_com_1
-            x: 93
-            y: 5
-            width: 107
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "commessa"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_lun_1
-            x: 82
-            y: 51
-            width: 66
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "lunghezza"
-            opaque: false
-            autoSize: true
-        }
-        VbShape {
-            id: c_shp_liv_1
-            x: 0
-            y: 2
-            width: 735
-            height: 3
-            shape: 0
-            fillColor: "#000000"
-            borderWidth: 2
-        }
-        VbLine {
-            id: c_lin3_1
-            x1: 233
-            y1: 4
-            x2: 233
-            y2: 51
-        }
-        VbLine {
-            id: c_lin7_1
-            x1: 78
-            y1: 50
-            x2: 78
-            y2: 96
-        }
-        VbShape {
-            id: c_shp_liv1_1
-            x: 0
-            y: 95
-            width: 735
-            height: 3
-            shape: 0
-            fillColor: "#000000"
-            borderWidth: 2
-        }
-        VbLine {
-            id: c_lin10_1
-            x1: 282
-            y1: 51
-            x2: 282
-            y2: 97
-        }
-    }
-    VbFrame {
-        id: c_frm_liv0_0
-        x: 35
-        y: 102
-        width: 735
-        height: 98
-        z: 1
-        backColor: "#ffffff"
-        borderStyle: 0
-        VbTextBox {
-            id: c_txt_pat_con_0
-            x: 604
-            y: 70
-            width: 16
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_fin_pri_0
-            KeyNavigation.backtab: c_txt_pos_lat_pat_0
-            text: "1"
-            maxLength: 1
-        }
-        VbTextBox {
-            id: c_txt_fin_dop_0
-            x: 690
-            y: 70
-            width: 38
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_liv_1
-            KeyNavigation.backtab: c_txt_fin_pri_0
-            text: "1234"
-            maxLength: 4
-        }
-        VbTextBox {
-            id: c_txt_fin_pri_0
-            x: 638
-            y: 70
-            width: 38
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_fin_dop_0
-            KeyNavigation.backtab: c_txt_pat_con_0
-            text: "1234"
-            maxLength: 4
-        }
-        VbTextBox {
-            id: c_txt_pos_lat_pat_0
-            x: 552
-            y: 70
-            width: 44
-            height: 19
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_pat_con_0
-            KeyNavigation.backtab: c_cmb_pat_cod_0
-            text: "12345"
-            maxLength: 5
-        }
-        VbTextBox {
-            id: c_txt_lun_for_0
-            x: 644
-            y: 24
-            width: 71
-            height: 20
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            text: "12345678"
-        }
-        VbCombo {
-            id: c_cmb_cut_to_mark_0
-            x: 287
-            y: 67
-            width: 90
-            height: 27
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_cmb_pat_cod_0
-            KeyNavigation.backtab: c_txt_num_tot_fog_0
-            items: []
-        }
-        VbCombo {
-            id: c_txt_liv_0
-            x: 4
-            y: 22
-            width: 81
-            height: 27
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#0000ff"
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_cod_com_0
-            KeyNavigation.backtab: c_txt_alt_bob
-            items: []
-        }
-        VbTextBox {
-            id: c_txt_cod_com_0
-            x: 93
-            y: 25
-            width: 135
-            height: 20
-            z: 1
-            backColor: "#ffffff"
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_cod_cli_0
-            KeyNavigation.backtab: c_txt_liv_0
-            text: "123456789012345"
-            maxLength: 15
-        }
-        VbTextBox {
-            id: c_txt_cod_cli_0
-            x: 238
-            y: 25
-            width: 107
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_nom_cli_0
-            KeyNavigation.backtab: c_txt_cod_com_0
-            text: "123456789012"
-            maxLength: 12
-        }
-        VbTextBox {
-            id: c_txt_sca_lun_0
-            x: 82
-            y: 70
-            width: 73
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_resa_0
-            KeyNavigation.backtab: c_txt_sca_lar_0
-            text: "12345678"
-        }
-        VbTextBox {
-            id: c_txt_sca_lar_0
-            x: 3
-            y: 70
-            width: 73
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_sca_lun_0
-            KeyNavigation.backtab: c_txt_nom_cli_0
-            text: "12345678"
-        }
-        VbTextBox {
-            id: c_txt_resa_0
-            x: 159
-            y: 70
-            width: 26
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_num_tot_fog_0
-            KeyNavigation.backtab: c_txt_sca_lun_0
-            maxLength: 1
-        }
-        VbTextBox {
-            id: c_txt_num_tot_fog_0
-            x: 194
-            y: 70
-            width: 82
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_cmb_cut_to_mark_0
-            KeyNavigation.backtab: c_txt_resa_0
-            text: "123456"
-            maxLength: 6
-        }
-        VbTextBox {
-            id: c_txt_nom_cli_0
-            x: 361
-            y: 25
-            width: 270
-            height: 20
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_sca_lar_0
-            KeyNavigation.backtab: c_txt_cod_cli_0
-            text: "123456789012345678901234567890"
-            maxLength: 30
-        }
-        VbCombo {
-            id: c_cmb_pat_cod_0
-            x: 384
-            y: 66
-            width: 162
-            height: 28
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            KeyNavigation.tab: c_txt_pos_lat_pat_0
-            KeyNavigation.backtab: c_cmb_cut_to_mark_0
-        }
-        VbLabel {
-            id: c_lab_pat_con_0
-            x: 604
-            y: 51
-            width: 29
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "con."
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_13
-            x1: 600
-            y1: 52
-            x2: 600
-            y2: 98
-        }
-        VbLabel {
-            id: c_lab_pat_cod_0
-            x: 382
-            y: 51
-            width: 91
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "codice pattern"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_12
-            x1: 548
-            y1: 50
-            x2: 548
-            y2: 96
-        }
-        VbLabel {
-            id: c_lab_fin_dop_0
-            x: 690
-            y: 51
-            width: 40
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "f.dopo"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_11
-            x1: 686
-            y1: 50
-            x2: 686
-            y2: 96
-        }
-        VbLabel {
-            id: c_lab_fin_pri_0
-            x: 638
-            y: 51
-            width: 45
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "f.prima"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_pos_lat_pattern_0
-            x: 552
-            y: 51
-            width: 46
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "pos.pat"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_10
-            x1: 638
-            y1: 4
-            x2: 638
-            y2: 50
-        }
-        VbLine {
-            id: c_lin10_9
-            x1: 634
-            y1: 50
-            x2: 634
-            y2: 96
-        }
-        VbLabel {
-            id: c_lab_lun_for_0
-            x: 644
-            y: 5
-            width: 73
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "lun.formato"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_6
-            x1: 734
-            y1: 50
-            x2: 734
-            y2: 96
-            borderWidth: 2
-        }
-        VbLabel {
-            id: c_lab_cut_to_mark_0
-            x: 286
-            y: 51
-            width: 88
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "taglio registro"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin10_3
-            x1: 378
-            y1: 50
-            x2: 378
-            y2: 96
-        }
-        VbLine {
-            id: c_lin10_0
-            x1: 282
-            y1: 51
-            x2: 282
-            y2: 97
-        }
-        VbShape {
-            id: c_shp_liv1_0
-            x: 0
-            y: 95
-            width: 735
-            height: 3
-            shape: 0
-            fillColor: "#000000"
-            borderWidth: 2
-        }
-        VbLine {
-            id: c_lin7_0
-            x1: 78
-            y1: 50
-            x2: 78
-            y2: 96
-        }
-        VbLine {
-            id: c_lin3_0
-            x1: 233
-            y1: 4
-            x2: 233
-            y2: 51
-        }
-        VbShape {
-            id: c_shp_liv_0
-            x: 0
-            y: 2
-            width: 735
-            height: 3
-            shape: 0
-            fillColor: "#000000"
-            borderWidth: 2
-        }
-        VbLabel {
-            id: c_lab_lun_0
-            x: 82
-            y: 51
-            width: 66
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "lunghezza"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_com_0
-            x: 93
-            y: 5
-            width: 107
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "commessa"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_liv_0
-            x: 4
-            y: 5
-            width: 43
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "Livello"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_cod_cli_0
-            x: 238
-            y: 5
-            width: 119
-            height: 16
-            backColor: "#748b7c"
-            foreColor: "#000000"
-            text: "codice cliente"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_lar_0
-            x: 3
-            y: 51
-            width: 63
-            height: 16
-            backColor: "#748b7c"
-            foreColor: "#000000"
-            text: "larghezza"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_res_0
-            x: 159
-            y: 51
-            width: 31
-            height: 16
-            backColor: "#748b7c"
-            foreColor: "#000000"
-            text: "resa"
-            opaque: false
-            autoSize: true
-        }
-        VbShape {
-            id: c_shp_liv2_0
-            x: -2
-            y: 50
-            width: 735
-            height: 2
-            shape: 0
-            fillColor: "#000000"
-        }
-        VbLine {
-            id: c_lin4_0
-            x1: 352
-            y1: 4
-            x2: 352
-            y2: 51
-        }
-        VbLine {
-            id: c_lin2_0
-            x1: 88
-            y1: 4
-            x2: 88
-            y2: 51
-        }
-        VbLine {
-            id: c_lin6_0
-            x1: 734
-            y1: 2
-            x2: 734
-            y2: 51
-            borderWidth: 2
-        }
-        VbLine {
-            id: c_lin8_0
-            x1: 156
-            y1: 50
-            x2: 156
-            y2: 96
-        }
-        VbLine {
-            id: c_lin9_0
-            x1: 191
-            y1: 50
-            x2: 191
-            y2: 96
-        }
-        VbLabel {
-            id: c_lab_num_0
-            x: 194
-            y: 51
-            width: 85
-            height: 16
-            backColor: "#6d8d83"
-            foreColor: "#000000"
-            text: "totale scatole"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_lab_nom_0
-            x: 361
-            y: 5
-            width: 123
-            height: 16
-            backColor: "#7a857c"
-            foreColor: "#000000"
-            text: "nome cliente"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_lin1_0
-            x1: 1
-            y1: 2
-            x2: 1
-            y2: 97
-            borderWidth: 2
-        }
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
     }
     VbFrame {
         id: c_frm_tes
@@ -1740,37 +64,235 @@ VbForm {
         z: 1
         backColor: "#ffffff"
         borderStyle: 0
-        VbTextBox {
-            id: c_txt_id
-            x: 208
-            y: 7
-            width: 45
-            height: 14
-            z: 1
+        VbLabel {
+            id: c_Label25
+            x: 617
+            y: 5
+            width: 68
+            height: 16
             backColor: "#ffffff"
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 11
-            font.bold: false
-            KeyNavigation.tab: c_txt_cod_abb
-            KeyNavigation.backtab: c_txt_fin_dop_2
-            text: "9005/00"
-            alignment: 1
-            maxLength: 11
+            foreColor: "#000000"
+            text: "alt. bobina"
+            opaque: false
+            autoSize: true
         }
-        VbTextBox {
-            id: c_txt_met
+        VbLine {
+            id: c_Line9
+            x1: 136
+            y1: 5
+            x2: 136
+            y2: 55
+            borderColor: "#000000"
+        }
+        VbLabel {
+            id: c_Label20
+            x: 91
+            y: 5
+            width: 39
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            text: "indice"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_Label2
+            x: 323
+            y: 5
+            width: 60
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            text: "tipo carta"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_Label4
+            x: 257
+            y: 5
+            width: 32
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            text: "onda"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_Label5
+            x: 141
+            y: 5
+            width: 42
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            text: "codice"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_Line6
+            x1: 320
+            y1: 3
+            x2: 320
+            y2: 55
+            borderColor: "#000000"
+        }
+        VbLine {
+            id: c_Line7_1
+            x1: 254
+            y1: 5
+            x2: 254
+            y2: 55
+            borderColor: "#000000"
+        }
+        VbShape {
+            id: c_Shape6_1
+            x: 88
+            y: 2
+            width: 709
+            height: 5
+            shape: 0
+            fillColor: "#000000"
+        }
+        VbShape {
+            id: c_Shape12
+            x: -10
+            y: 53
+            width: 807
+            height: 5
+            shape: 0
+            fillColor: "#000000"
+        }
+        VbLine {
+            id: c_Line10_1
+            x1: 613
+            y1: 3
+            x2: 613
+            y2: 55
+            borderColor: "#000000"
+        }
+        VbLine {
+            id: c_Line1
+            x1: 795
+            y1: 3
+            x2: 795
+            y2: 55
+            borderColor: "#000000"
+            borderWidth: 3
+        }
+        VbLine {
+            id: c_Line10_0
+            x1: 700
+            y1: 3
+            x2: 700
+            y2: 55
+            borderColor: "#000000"
+        }
+        VbLabel {
+            id: c_Label1
             x: 704
-            y: 24
-            width: 89
-            height: 23
+            y: 5
+            width: 64
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            text: "lungh. tot."
+            opaque: false
+            autoSize: true
+        }
+        VbCombo {
+            id: c_cmb_carta
+            x: 323
+            y: 20
+            width: 289
+            height: 31
             z: 1
             backColor: "#ffffff"
             foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: true
+            KeyNavigation.tab: c_txt_alt_bob
+            KeyNavigation.backtab: c_cmb_onda
+        }
+        VbCombo {
+            id: c_cmb_onda
+            x: 257
+            y: 20
+            width: 62
+            height: 31
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: true
+            KeyNavigation.tab: c_cmb_carta
+            KeyNavigation.backtab: c_txt_cod_abb
+        }
+        VbTextBox {
+            id: c_txt_cod_abb
+            x: 141
+            y: 24
+            width: 111
+            height: 23
+            z: 1
+            backColor: "#ffffff"
             borderStyle: 0
             font.family: "Arial"
             font.pixelSize: 19
             font.bold: true
+            KeyNavigation.tab: c_cmb_onda
+            KeyNavigation.backtab: c_txt_id
+            maxLength: 11
+        }
+        VbFrame {
+            id: c_Frame1
+            x: 0
+            y: 2
+            width: 83
+            height: 51
+            z: 1
+            backColor: "#000000"
+            borderStyle: 0
+            VbLabel {
+                id: c_label9_1
+                x: 24
+                y: 12
+                width: 57
+                height: 32
+                foreColor: "#ffffff"
+                text: "  DATI ORDINE"
+                alignment: 2
+                opaque: false
+            }
+            VbImage {
+                id: c_Image1
+                x: 0
+                y: -1
+                width: 24
+                height: 52
+                stretch: true
+                picture: Qt.resolvedUrl("../assets/b5f08916fee0ceb3.bmp")
+            }
+        }
+        VbTextBox {
+            id: c_txt_alt_bob
+            x: 618
+            y: 24
+            width: 79
+            height: 23
+            z: 1
+            backColor: "#ffffff"
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: true
+            KeyNavigation.tab: c_txt_liv_0
+            KeyNavigation.backtab: c_cmb_carta
         }
         VbTextBox {
             id: c_txt_indice
@@ -1789,279 +311,1757 @@ VbForm {
             maxLength: 3
         }
         VbTextBox {
-            id: c_txt_alt_bob
-            x: 618
+            id: c_txt_met
+            x: 704
             y: 24
-            width: 79
+            width: 89
             height: 23
             z: 1
             backColor: "#ffffff"
+            foreColor: "#000000"
             borderStyle: 0
             font.family: "Arial"
             font.pixelSize: 19
             font.bold: true
-            KeyNavigation.tab: c_txt_liv_0
-            KeyNavigation.backtab: c_cmb_carta
-        }
-        VbFrame {
-            id: c_Frame1
-            x: 0
-            y: 2
-            width: 83
-            height: 51
-            z: 1
-            backColor: "#000000"
-            borderStyle: 0
-            VbImage {
-                id: c_Image1
-                x: 0
-                y: -1
-                width: 24
-                height: 52
-                stretch: true
-                picture: Qt.resolvedUrl("../assets/b5f08916fee0ceb3.bmp")
-            }
-            VbLabel {
-                id: c_label9_1
-                x: 24
-                y: 12
-                width: 57
-                height: 32
-                foreColor: "#ffffff"
-                text: "  DATI ORDINE"
-                alignment: 2
-                opaque: false
-            }
         }
         VbTextBox {
-            id: c_txt_cod_abb
-            x: 141
-            y: 24
-            width: 111
-            height: 23
+            id: c_txt_id
+            x: 208
+            y: 7
+            width: 45
+            height: 14
             z: 1
             backColor: "#ffffff"
             borderStyle: 0
             font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: true
-            KeyNavigation.tab: c_cmb_onda
-            KeyNavigation.backtab: c_txt_id
+            font.pixelSize: 11
+            font.bold: false
+            KeyNavigation.tab: c_txt_cod_abb
+            KeyNavigation.backtab: c_txt_fin_dop_2
+            text: "9005/00"
+            alignment: 1
             maxLength: 11
         }
-        VbCombo {
-            id: c_cmb_onda
-            x: 257
-            y: 20
-            width: 62
-            height: 31
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: true
-            KeyNavigation.tab: c_cmb_carta
-            KeyNavigation.backtab: c_txt_cod_abb
-        }
-        VbCombo {
-            id: c_cmb_carta
-            x: 323
-            y: 20
-            width: 289
-            height: 31
-            z: 1
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: true
-            KeyNavigation.tab: c_txt_alt_bob
-            KeyNavigation.backtab: c_cmb_onda
-        }
-        VbLabel {
-            id: c_Label1
-            x: 704
-            y: 5
-            width: 64
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            text: "lungh. tot."
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_Line10_0
-            x1: 700
-            y1: 3
-            x2: 700
-            y2: 55
-            borderColor: "#000000"
-        }
-        VbLine {
-            id: c_Line1
-            x1: 795
-            y1: 3
-            x2: 795
-            y2: 55
-            borderColor: "#000000"
-            borderWidth: 3
-        }
-        VbLine {
-            id: c_Line10_1
-            x1: 613
-            y1: 3
-            x2: 613
-            y2: 55
-            borderColor: "#000000"
-        }
-        VbShape {
-            id: c_Shape12
-            x: -10
-            y: 53
-            width: 807
-            height: 5
-            shape: 0
-            fillColor: "#000000"
-        }
-        VbShape {
-            id: c_Shape6_1
-            x: 88
-            y: 2
-            width: 709
-            height: 5
-            shape: 0
-            fillColor: "#000000"
-        }
-        VbLine {
-            id: c_Line7_1
-            x1: 254
-            y1: 5
-            x2: 254
-            y2: 55
-            borderColor: "#000000"
-        }
-        VbLine {
-            id: c_Line6
-            x1: 320
-            y1: 3
-            x2: 320
-            y2: 55
-            borderColor: "#000000"
-        }
-        VbLabel {
-            id: c_Label5
-            x: 141
-            y: 5
-            width: 42
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            text: "codice"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_Label4
-            x: 257
-            y: 5
-            width: 32
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            text: "onda"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_Label2
-            x: 323
-            y: 5
-            width: 60
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            text: "tipo carta"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_Label20
-            x: 91
-            y: 5
-            width: 39
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            text: "indice"
-            opaque: false
-            autoSize: true
-        }
-        VbLine {
-            id: c_Line9
-            x1: 136
-            y1: 5
-            x2: 136
-            y2: 55
-            borderColor: "#000000"
-        }
-        VbLabel {
-            id: c_Label25
-            x: 617
-            y: 5
-            width: 68
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            text: "alt. bobina"
-            opaque: false
-            autoSize: true
-        }
     }
-    VbTextBox {
-        id: c_txt_idle
-        x: 0
-        y: -67
-        width: 51
-        height: 24
+    VbFrame {
+        id: c_frm_liv0_0
+        x: 35
+        y: 102
+        width: 735
+        height: 98
         z: 1
-        backColor: "#ff0000"
-        foreColor: "#000080"
-        borderStyle: 0
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-    }
-    VbData {
-        id: c_dat_ond
-        recordSource: "select distinct onda from onde order by onda"
-    }
-    VbData {
-        id: c_dat_car
-        recordSource: "Onde"
-    }
-    VbLabel {
-        id: c_Pag_title
-        x: 0
-        y: 0
-        width: 531
-        height: 29
         backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 21
-        font.bold: true
-        text: "GESTIONE ORDINI"
-        opaque: false
+        borderStyle: 0
+        VbLine {
+            id: c_lin1_0
+            x1: 1
+            y1: 2
+            x2: 1
+            y2: 97
+            borderWidth: 2
+        }
+        VbLabel {
+            id: c_lab_nom_0
+            x: 361
+            y: 5
+            width: 123
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "nome cliente"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_num_0
+            x: 194
+            y: 51
+            width: 85
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "totale scatole"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin9_0
+            x1: 191
+            y1: 50
+            x2: 191
+            y2: 96
+        }
+        VbLine {
+            id: c_lin8_0
+            x1: 156
+            y1: 50
+            x2: 156
+            y2: 96
+        }
+        VbLine {
+            id: c_lin6_0
+            x1: 734
+            y1: 2
+            x2: 734
+            y2: 51
+            borderWidth: 2
+        }
+        VbLine {
+            id: c_lin2_0
+            x1: 88
+            y1: 4
+            x2: 88
+            y2: 51
+        }
+        VbLine {
+            id: c_lin4_0
+            x1: 352
+            y1: 4
+            x2: 352
+            y2: 51
+        }
+        VbShape {
+            id: c_shp_liv2_0
+            x: -2
+            y: 50
+            width: 735
+            height: 2
+            shape: 0
+            fillColor: "#000000"
+        }
+        VbLabel {
+            id: c_lab_res_0
+            x: 159
+            y: 51
+            width: 31
+            height: 16
+            backColor: "#748b7c"
+            foreColor: "#000000"
+            text: "resa"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_lar_0
+            x: 3
+            y: 51
+            width: 63
+            height: 16
+            backColor: "#748b7c"
+            foreColor: "#000000"
+            text: "larghezza"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_cod_cli_0
+            x: 238
+            y: 5
+            width: 119
+            height: 16
+            backColor: "#748b7c"
+            foreColor: "#000000"
+            text: "codice cliente"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_liv_0
+            x: 4
+            y: 5
+            width: 43
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "Livello"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_com_0
+            x: 93
+            y: 5
+            width: 107
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "commessa"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_lun_0
+            x: 82
+            y: 51
+            width: 66
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "lunghezza"
+            opaque: false
+            autoSize: true
+        }
+        VbShape {
+            id: c_shp_liv_0
+            x: 0
+            y: 2
+            width: 735
+            height: 3
+            shape: 0
+            fillColor: "#000000"
+            borderWidth: 2
+        }
+        VbLine {
+            id: c_lin3_0
+            x1: 233
+            y1: 4
+            x2: 233
+            y2: 51
+        }
+        VbLine {
+            id: c_lin7_0
+            x1: 78
+            y1: 50
+            x2: 78
+            y2: 96
+        }
+        VbShape {
+            id: c_shp_liv1_0
+            x: 0
+            y: 95
+            width: 735
+            height: 3
+            shape: 0
+            fillColor: "#000000"
+            borderWidth: 2
+        }
+        VbLine {
+            id: c_lin10_0
+            x1: 282
+            y1: 51
+            x2: 282
+            y2: 97
+        }
+        VbLine {
+            id: c_lin10_3
+            x1: 378
+            y1: 50
+            x2: 378
+            y2: 96
+        }
+        VbLabel {
+            id: c_lab_cut_to_mark_0
+            x: 286
+            y: 51
+            width: 88
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "taglio registro"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin10_6
+            x1: 734
+            y1: 50
+            x2: 734
+            y2: 96
+            borderWidth: 2
+        }
+        VbLabel {
+            id: c_lab_lun_for_0
+            x: 644
+            y: 5
+            width: 73
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "lun.formato"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin10_9
+            x1: 634
+            y1: 50
+            x2: 634
+            y2: 96
+        }
+        VbLine {
+            id: c_lin10_10
+            x1: 638
+            y1: 4
+            x2: 638
+            y2: 50
+        }
+        VbLabel {
+            id: c_lab_pos_lat_pattern_0
+            x: 552
+            y: 51
+            width: 46
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "pos.pat"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_fin_pri_0
+            x: 638
+            y: 51
+            width: 45
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "f.prima"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin10_11
+            x1: 686
+            y1: 50
+            x2: 686
+            y2: 96
+        }
+        VbLabel {
+            id: c_lab_fin_dop_0
+            x: 690
+            y: 51
+            width: 40
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "f.dopo"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin10_12
+            x1: 548
+            y1: 50
+            x2: 548
+            y2: 96
+        }
+        VbLabel {
+            id: c_lab_pat_cod_0
+            x: 382
+            y: 51
+            width: 91
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "codice pattern"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin10_13
+            x1: 600
+            y1: 52
+            x2: 600
+            y2: 98
+        }
+        VbLabel {
+            id: c_lab_pat_con_0
+            x: 604
+            y: 51
+            width: 29
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "con."
+            opaque: false
+            autoSize: true
+        }
+        VbCombo {
+            id: c_cmb_pat_cod_0
+            x: 384
+            y: 66
+            width: 162
+            height: 28
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_pos_lat_pat_0
+            KeyNavigation.backtab: c_cmb_cut_to_mark_0
+        }
+        VbTextBox {
+            id: c_txt_nom_cli_0
+            x: 361
+            y: 25
+            width: 270
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_sca_lar_0
+            KeyNavigation.backtab: c_txt_cod_cli_0
+            text: "123456789012345678901234567890"
+            maxLength: 30
+        }
+        VbTextBox {
+            id: c_txt_num_tot_fog_0
+            x: 194
+            y: 70
+            width: 82
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_cmb_cut_to_mark_0
+            KeyNavigation.backtab: c_txt_resa_0
+            text: "123456"
+            maxLength: 6
+        }
+        VbTextBox {
+            id: c_txt_resa_0
+            x: 159
+            y: 70
+            width: 26
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_num_tot_fog_0
+            KeyNavigation.backtab: c_txt_sca_lun_0
+            maxLength: 1
+        }
+        VbTextBox {
+            id: c_txt_sca_lar_0
+            x: 3
+            y: 70
+            width: 73
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_sca_lun_0
+            KeyNavigation.backtab: c_txt_nom_cli_0
+            text: "12345678"
+        }
+        VbTextBox {
+            id: c_txt_sca_lun_0
+            x: 82
+            y: 70
+            width: 73
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_resa_0
+            KeyNavigation.backtab: c_txt_sca_lar_0
+            text: "12345678"
+        }
+        VbTextBox {
+            id: c_txt_cod_cli_0
+            x: 238
+            y: 25
+            width: 107
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_nom_cli_0
+            KeyNavigation.backtab: c_txt_cod_com_0
+            text: "123456789012"
+            maxLength: 12
+        }
+        VbTextBox {
+            id: c_txt_cod_com_0
+            x: 93
+            y: 25
+            width: 135
+            height: 20
+            z: 1
+            backColor: "#ffffff"
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_cod_cli_0
+            KeyNavigation.backtab: c_txt_liv_0
+            text: "123456789012345"
+            maxLength: 15
+        }
+        VbCombo {
+            id: c_txt_liv_0
+            x: 4
+            y: 22
+            width: 81
+            height: 27
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#0000ff"
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_cod_com_0
+            KeyNavigation.backtab: c_txt_alt_bob
+            items: []
+        }
+        VbCombo {
+            id: c_cmb_cut_to_mark_0
+            x: 287
+            y: 67
+            width: 90
+            height: 27
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_cmb_pat_cod_0
+            KeyNavigation.backtab: c_txt_num_tot_fog_0
+            items: []
+        }
+        VbTextBox {
+            id: c_txt_lun_for_0
+            x: 644
+            y: 24
+            width: 71
+            height: 20
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            text: "12345678"
+        }
+        VbTextBox {
+            id: c_txt_pos_lat_pat_0
+            x: 552
+            y: 70
+            width: 44
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_pat_con_0
+            KeyNavigation.backtab: c_cmb_pat_cod_0
+            text: "12345"
+            maxLength: 5
+        }
+        VbTextBox {
+            id: c_txt_fin_pri_0
+            x: 638
+            y: 70
+            width: 38
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_fin_dop_0
+            KeyNavigation.backtab: c_txt_pat_con_0
+            text: "1234"
+            maxLength: 4
+        }
+        VbTextBox {
+            id: c_txt_fin_dop_0
+            x: 690
+            y: 70
+            width: 38
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_liv_1
+            KeyNavigation.backtab: c_txt_fin_pri_0
+            text: "1234"
+            maxLength: 4
+        }
+        VbTextBox {
+            id: c_txt_pat_con_0
+            x: 604
+            y: 70
+            width: 16
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_fin_pri_0
+            KeyNavigation.backtab: c_txt_pos_lat_pat_0
+            text: "1"
+            maxLength: 1
+        }
     }
-    VbImage {
-        id: c_Image3
-        x: 0
-        y: 1
-        width: 798
-        height: 20
-        stretch: true
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
+    VbFrame {
+        id: c_frm_liv0_1
+        x: 35
+        y: 204
+        width: 735
+        height: 98
+        z: 1
+        backColor: "#ffffff"
+        borderStyle: 0
+        VbLine {
+            id: c_lin10_1
+            x1: 282
+            y1: 51
+            x2: 282
+            y2: 97
+        }
+        VbShape {
+            id: c_shp_liv1_1
+            x: 0
+            y: 95
+            width: 735
+            height: 3
+            shape: 0
+            fillColor: "#000000"
+            borderWidth: 2
+        }
+        VbLine {
+            id: c_lin7_1
+            x1: 78
+            y1: 50
+            x2: 78
+            y2: 96
+        }
+        VbLine {
+            id: c_lin3_1
+            x1: 233
+            y1: 4
+            x2: 233
+            y2: 51
+        }
+        VbShape {
+            id: c_shp_liv_1
+            x: 0
+            y: 2
+            width: 735
+            height: 3
+            shape: 0
+            fillColor: "#000000"
+            borderWidth: 2
+        }
+        VbLabel {
+            id: c_lab_lun_1
+            x: 82
+            y: 51
+            width: 66
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "lunghezza"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_com_1
+            x: 93
+            y: 5
+            width: 107
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "commessa"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_liv_1
+            x: 4
+            y: 5
+            width: 43
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "Livello"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_cod_cli_1
+            x: 238
+            y: 5
+            width: 119
+            height: 16
+            backColor: "#748b7c"
+            foreColor: "#000000"
+            text: "codice cliente"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_lar_1
+            x: 5
+            y: 51
+            width: 63
+            height: 16
+            backColor: "#748b7c"
+            foreColor: "#000000"
+            text: "larghezza"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_res_1
+            x: 159
+            y: 51
+            width: 27
+            height: 16
+            backColor: "#748b7c"
+            foreColor: "#000000"
+            text: "resa"
+            opaque: false
+            autoSize: true
+        }
+        VbShape {
+            id: c_shp_liv2_1
+            x: 0
+            y: 50
+            width: 735
+            height: 2
+            shape: 0
+            fillColor: "#000000"
+        }
+        VbLine {
+            id: c_lin4_1
+            x1: 352
+            y1: 4
+            x2: 352
+            y2: 51
+        }
+        VbLine {
+            id: c_lin2_1
+            x1: 88
+            y1: 4
+            x2: 88
+            y2: 51
+        }
+        VbLine {
+            id: c_lin6_1
+            x1: 734
+            y1: 2
+            x2: 734
+            y2: 51
+            borderWidth: 2
+        }
+        VbLine {
+            id: c_lin8_1
+            x1: 156
+            y1: 50
+            x2: 156
+            y2: 96
+        }
+        VbLine {
+            id: c_lin9_1
+            x1: 191
+            y1: 50
+            x2: 191
+            y2: 96
+        }
+        VbLabel {
+            id: c_lab_num_1
+            x: 194
+            y: 51
+            width: 85
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "totale scatole"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_nom_1
+            x: 361
+            y: 5
+            width: 123
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "nome cliente"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin1_1
+            x1: 1
+            y1: 2
+            x2: 1
+            y2: 97
+            borderWidth: 2
+        }
+        VbLine {
+            id: c_lin10_4
+            x1: 378
+            y1: 50
+            x2: 378
+            y2: 96
+        }
+        VbLabel {
+            id: c_lab_cut_to_mark_1
+            x: 286
+            y: 51
+            width: 90
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "taglio registro"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin10_7
+            x1: 734
+            y1: 50
+            x2: 734
+            y2: 96
+            borderWidth: 2
+        }
+        VbLabel {
+            id: c_lab_lun_for_1
+            x: 644
+            y: 5
+            width: 73
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "lun.formato"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_pat_cod_1
+            x: 382
+            y: 51
+            width: 91
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "codice pattern"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin10_14
+            x1: 638
+            y1: 4
+            x2: 638
+            y2: 50
+        }
+        VbLine {
+            id: c_lin10_15
+            x1: 0
+            y1: 0
+            x2: 0
+            y2: 46
+        }
+        VbLine {
+            id: c_lin10_16
+            x1: 0
+            y1: 0
+            x2: 0
+            y2: 46
+        }
+        VbLine {
+            id: c_lin10_17
+            x1: 0
+            y1: 0
+            x2: 0
+            y2: 46
+        }
+        VbLine {
+            id: c_lin10_18
+            x1: 548
+            y1: 50
+            x2: 548
+            y2: 96
+        }
+        VbLine {
+            id: c_lin10_19
+            x1: 600
+            y1: 50
+            x2: 600
+            y2: 96
+        }
+        VbLine {
+            id: c_lin10_20
+            x1: 634
+            y1: 50
+            x2: 634
+            y2: 96
+        }
+        VbLine {
+            id: c_lin10_21
+            x1: 686
+            y1: 50
+            x2: 686
+            y2: 96
+        }
+        VbLabel {
+            id: c_lab_pat_con_1
+            x: 604
+            y: 51
+            width: 29
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "con."
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_fin_dop_1
+            x: 690
+            y: 51
+            width: 40
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "f.dopo"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_fin_pri_1
+            x: 638
+            y: 51
+            width: 45
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "f.prima"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_pos_lat_pattern_1
+            x: 552
+            y: 51
+            width: 46
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "pos.pat"
+            opaque: false
+            autoSize: true
+        }
+        VbCombo {
+            id: c_cmb_pat_cod_1
+            x: 384
+            y: 66
+            width: 162
+            height: 28
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_pos_lat_pat_1
+            KeyNavigation.backtab: c_cmb_cut_to_mark_1
+        }
+        VbCombo {
+            id: c_txt_liv_1
+            x: 4
+            y: 22
+            width: 81
+            height: 27
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#0000ff"
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_cod_com_1
+            KeyNavigation.backtab: c_txt_fin_dop_0
+            items: []
+        }
+        VbTextBox {
+            id: c_txt_cod_com_1
+            x: 93
+            y: 25
+            width: 135
+            height: 20
+            z: 1
+            backColor: "#ffffff"
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_cod_cli_1
+            KeyNavigation.backtab: c_txt_liv_1
+            maxLength: 15
+        }
+        VbTextBox {
+            id: c_txt_cod_cli_1
+            x: 238
+            y: 25
+            width: 107
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_nom_cli_1
+            KeyNavigation.backtab: c_txt_cod_com_1
+            maxLength: 12
+        }
+        VbTextBox {
+            id: c_txt_sca_lun_1
+            x: 82
+            y: 70
+            width: 73
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_resa_1
+            KeyNavigation.backtab: c_txt_sca_lar_1
+        }
+        VbTextBox {
+            id: c_txt_sca_lar_1
+            x: 5
+            y: 70
+            width: 73
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_sca_lun_1
+            KeyNavigation.backtab: c_txt_nom_cli_1
+        }
+        VbTextBox {
+            id: c_txt_resa_1
+            x: 159
+            y: 70
+            width: 26
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_num_tot_fog_1
+            KeyNavigation.backtab: c_txt_sca_lun_1
+            maxLength: 1
+        }
+        VbTextBox {
+            id: c_txt_num_tot_fog_1
+            x: 194
+            y: 70
+            width: 82
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_cmb_cut_to_mark_1
+            KeyNavigation.backtab: c_txt_resa_1
+            maxLength: 6
+        }
+        VbTextBox {
+            id: c_txt_nom_cli_1
+            x: 361
+            y: 25
+            width: 270
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_sca_lar_1
+            KeyNavigation.backtab: c_txt_cod_cli_1
+            maxLength: 30
+        }
+        VbCombo {
+            id: c_cmb_cut_to_mark_1
+            x: 287
+            y: 67
+            width: 90
+            height: 27
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_cmb_pat_cod_1
+            KeyNavigation.backtab: c_txt_num_tot_fog_1
+            items: []
+        }
+        VbTextBox {
+            id: c_txt_lun_for_1
+            x: 644
+            y: 24
+            width: 71
+            height: 20
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+        }
+        VbTextBox {
+            id: c_txt_pat_con_1
+            x: 604
+            y: 70
+            width: 16
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_fin_pri_1
+            KeyNavigation.backtab: c_txt_pos_lat_pat_1
+            text: "1"
+            maxLength: 1
+        }
+        VbTextBox {
+            id: c_txt_fin_dop_1
+            x: 690
+            y: 70
+            width: 38
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_liv_2
+            KeyNavigation.backtab: c_txt_fin_pri_1
+            text: "1234"
+            maxLength: 4
+        }
+        VbTextBox {
+            id: c_txt_fin_pri_1
+            x: 638
+            y: 70
+            width: 38
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_fin_dop_1
+            KeyNavigation.backtab: c_txt_pat_con_1
+            text: "1234"
+            maxLength: 4
+        }
+        VbTextBox {
+            id: c_txt_pos_lat_pat_1
+            x: 552
+            y: 70
+            width: 44
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_pat_con_1
+            KeyNavigation.backtab: c_cmb_pat_cod_1
+            text: "12345"
+            maxLength: 5
+        }
+    }
+    VbFrame {
+        id: c_frm_liv0_2
+        x: 35
+        y: 306
+        width: 735
+        height: 98
+        z: 1
+        backColor: "#ffffff"
+        borderStyle: 0
+        VbLine {
+            id: c_lin10_2
+            x1: 282
+            y1: 51
+            x2: 282
+            y2: 97
+        }
+        VbShape {
+            id: c_shp_liv1_2
+            x: 0
+            y: 95
+            width: 735
+            height: 3
+            shape: 0
+            fillColor: "#000000"
+            borderWidth: 2
+        }
+        VbLine {
+            id: c_lin7_2
+            x1: 78
+            y1: 50
+            x2: 78
+            y2: 96
+        }
+        VbLine {
+            id: c_lin3_2
+            x1: 233
+            y1: 4
+            x2: 233
+            y2: 51
+        }
+        VbShape {
+            id: c_shp_liv_2
+            x: 0
+            y: 2
+            width: 735
+            height: 3
+            shape: 0
+            fillColor: "#000000"
+            borderWidth: 2
+        }
+        VbLabel {
+            id: c_lab_lun_2
+            x: 82
+            y: 51
+            width: 66
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "lunghezza"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_com_2
+            x: 93
+            y: 5
+            width: 107
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "commessa"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_liv_2
+            x: 4
+            y: 5
+            width: 43
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "Livello"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_cod_cli_2
+            x: 238
+            y: 5
+            width: 119
+            height: 16
+            backColor: "#748b7c"
+            foreColor: "#000000"
+            text: "codice cliente"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_lar_2
+            x: 5
+            y: 51
+            width: 63
+            height: 16
+            backColor: "#748b7c"
+            foreColor: "#000000"
+            text: "larghezza"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_res_2
+            x: 159
+            y: 51
+            width: 27
+            height: 16
+            backColor: "#748b7c"
+            foreColor: "#000000"
+            text: "resa"
+            opaque: false
+            autoSize: true
+        }
+        VbShape {
+            id: c_shp_liv2_2
+            x: 0
+            y: 50
+            width: 735
+            height: 2
+            shape: 0
+            fillColor: "#000000"
+        }
+        VbLine {
+            id: c_lin4_2
+            x1: 352
+            y1: 4
+            x2: 352
+            y2: 51
+        }
+        VbLine {
+            id: c_lin2_2
+            x1: 88
+            y1: 4
+            x2: 88
+            y2: 51
+        }
+        VbLine {
+            id: c_lin6_2
+            x1: 734
+            y1: 2
+            x2: 734
+            y2: 51
+            borderWidth: 2
+        }
+        VbLine {
+            id: c_lin8_2
+            x1: 156
+            y1: 50
+            x2: 156
+            y2: 96
+        }
+        VbLine {
+            id: c_lin9_2
+            x1: 191
+            y1: 50
+            x2: 191
+            y2: 96
+        }
+        VbLabel {
+            id: c_lab_num_2
+            x: 194
+            y: 51
+            width: 85
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "totale scatole"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_nom_2
+            x: 361
+            y: 5
+            width: 123
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "nome cliente"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin1_2
+            x1: 1
+            y1: 2
+            x2: 1
+            y2: 97
+            borderWidth: 2
+        }
+        VbLine {
+            id: c_lin10_5
+            x1: 378
+            y1: 50
+            x2: 378
+            y2: 96
+        }
+        VbLabel {
+            id: c_lab_cut_to_mark_2
+            x: 286
+            y: 51
+            width: 90
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "taglio registro"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin10_8
+            x1: 734
+            y1: 50
+            x2: 734
+            y2: 96
+            borderWidth: 2
+        }
+        VbLabel {
+            id: c_lab_lun_for_2
+            x: 644
+            y: 5
+            width: 75
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "lun.formato"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_pat_cod_2
+            x: 382
+            y: 51
+            width: 91
+            height: 16
+            backColor: "#6d8d83"
+            foreColor: "#000000"
+            text: "codice pattern"
+            opaque: false
+            autoSize: true
+        }
+        VbLine {
+            id: c_lin10_22
+            x1: 638
+            y1: 4
+            x2: 638
+            y2: 50
+        }
+        VbLine {
+            id: c_lin10_23
+            x1: 548
+            y1: 50
+            x2: 548
+            y2: 96
+        }
+        VbLine {
+            id: c_lin10_24
+            x1: 600
+            y1: 50
+            x2: 600
+            y2: 96
+        }
+        VbLine {
+            id: c_lin10_25
+            x1: 634
+            y1: 50
+            x2: 634
+            y2: 96
+        }
+        VbLine {
+            id: c_lin10_26
+            x1: 686
+            y1: 50
+            x2: 686
+            y2: 96
+        }
+        VbLabel {
+            id: c_lab_pat_con_2
+            x: 604
+            y: 51
+            width: 29
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "con."
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_fin_dop_2
+            x: 690
+            y: 51
+            width: 40
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "f.dopo"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_fin_pri_2
+            x: 638
+            y: 51
+            width: 45
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "f.prima"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_pos_lat_pattern_2
+            x: 552
+            y: 51
+            width: 46
+            height: 16
+            backColor: "#7a857c"
+            foreColor: "#000000"
+            text: "pos.pat"
+            opaque: false
+            autoSize: true
+        }
+        VbCombo {
+            id: c_cmb_pat_cod_2
+            x: 384
+            y: 66
+            width: 162
+            height: 28
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_pos_lat_pat_2
+            KeyNavigation.backtab: c_cmb_cut_to_mark_2
+        }
+        VbCombo {
+            id: c_txt_liv_2
+            x: 4
+            y: 22
+            width: 81
+            height: 27
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#0000ff"
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_cod_com_2
+            KeyNavigation.backtab: c_txt_fin_dop_1
+            items: []
+        }
+        VbTextBox {
+            id: c_txt_cod_com_2
+            x: 93
+            y: 25
+            width: 135
+            height: 20
+            z: 1
+            backColor: "#ffffff"
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_cod_cli_2
+            KeyNavigation.backtab: c_txt_liv_2
+            maxLength: 15
+        }
+        VbTextBox {
+            id: c_txt_cod_cli_2
+            x: 238
+            y: 25
+            width: 107
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_nom_cli_2
+            KeyNavigation.backtab: c_txt_cod_com_2
+            maxLength: 12
+        }
+        VbTextBox {
+            id: c_txt_sca_lun_2
+            x: 82
+            y: 70
+            width: 73
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_resa_2
+            KeyNavigation.backtab: c_txt_sca_lar_2
+        }
+        VbTextBox {
+            id: c_txt_sca_lar_2
+            x: 5
+            y: 70
+            width: 73
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_sca_lun_2
+            KeyNavigation.backtab: c_txt_nom_cli_2
+        }
+        VbTextBox {
+            id: c_txt_resa_2
+            x: 159
+            y: 70
+            width: 26
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_num_tot_fog_2
+            KeyNavigation.backtab: c_txt_sca_lun_2
+            maxLength: 1
+        }
+        VbTextBox {
+            id: c_txt_num_tot_fog_2
+            x: 194
+            y: 70
+            width: 82
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_cmb_cut_to_mark_2
+            KeyNavigation.backtab: c_txt_resa_2
+            maxLength: 6
+        }
+        VbTextBox {
+            id: c_txt_nom_cli_2
+            x: 361
+            y: 25
+            width: 270
+            height: 20
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_sca_lar_2
+            KeyNavigation.backtab: c_txt_cod_cli_2
+            maxLength: 30
+        }
+        VbCombo {
+            id: c_cmb_cut_to_mark_2
+            x: 287
+            y: 67
+            width: 90
+            height: 27
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_cmb_pat_cod_2
+            KeyNavigation.backtab: c_txt_num_tot_fog_2
+            items: []
+        }
+        VbTextBox {
+            id: c_txt_lun_for_2
+            x: 644
+            y: 24
+            width: 71
+            height: 20
+            z: 1
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+        }
+        VbTextBox {
+            id: c_txt_pat_con_2
+            x: 604
+            y: 70
+            width: 16
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_fin_pri_2
+            KeyNavigation.backtab: c_txt_pos_lat_pat_2
+            text: "1"
+            maxLength: 1
+        }
+        VbTextBox {
+            id: c_txt_fin_dop_2
+            x: 690
+            y: 70
+            width: 38
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_id
+            KeyNavigation.backtab: c_txt_fin_pri_2
+            text: "1234"
+            maxLength: 4
+        }
+        VbTextBox {
+            id: c_txt_fin_pri_2
+            x: 638
+            y: 70
+            width: 38
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_fin_dop_2
+            KeyNavigation.backtab: c_txt_pat_con_2
+            text: "1234"
+            maxLength: 4
+        }
+        VbTextBox {
+            id: c_txt_pos_lat_pat_2
+            x: 552
+            y: 70
+            width: 44
+            height: 19
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            KeyNavigation.tab: c_txt_pat_con_2
+            KeyNavigation.backtab: c_cmb_pat_cod_2
+            text: "12345"
+            maxLength: 5
+        }
+    }
+    VbData {
+        id: c_dat_pat
+        recordSource: "select * from PATTERN order by CODICE"
     }
 }

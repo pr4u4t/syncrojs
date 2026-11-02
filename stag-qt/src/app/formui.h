@@ -31,6 +31,28 @@ public:
     // The ported logic of a form; null while the form still only shows its layout.
     Q_INVOKABLE QObject *formModel(const QString &form) const { return m_models.value(form.toLower()); }
 
+    // Function key, control event, key up and Form_Activate of a form's model, kept from taking the program down.
+    Q_INVOKABLE bool functionKey(QObject *model, const QString &key, int shift)
+    {
+        auto *form = qobject_cast<FormModel *>(model);
+        return form && guardedFormCall(QStringLiteral("eve_key_") + key, [&] { return form->functionKey(key, shift); }, true);
+    }
+    Q_INVOKABLE void controlEvent(QObject *model, const QString &control, int index, const QString &event, const QVariantMap &args)
+    {
+        if (auto *form = qobject_cast<FormModel *>(model))
+            guardedFormCall(control + u'_' + event, [&] { form->controlEvent(control, index, event, args); return true; }, false);
+    }
+    Q_INVOKABLE void keyUp(QObject *model, int key)
+    {
+        if (auto *form = qobject_cast<FormModel *>(model))
+            guardedFormCall(QStringLiteral("Form_KeyUp"), [&] { form->keyUp(key); return true; }, false);
+    }
+    Q_INVOKABLE void activate(QObject *model, const QString &previous)
+    {
+        if (auto *form = qobject_cast<FormModel *>(model))
+            guardedFormCall(QStringLiteral("Form_Activate"), [&] { form->activate(previous); return true; }, false);
+    }
+
     // pag_pre, for the Form_Activate of the page being shown.
     Q_INVOKABLE void setPreviousForm(const QString &form) { m_previousForm = form; }
     Q_INVOKABLE QString previousForm() const { return m_previousForm; }
@@ -39,6 +61,8 @@ public:
     {
         return Messages::instance().controlText(form, control, index);
     }
+
+    Q_INVOKABLE QString captionText(const QString &italian) const { return Messages::instance().captionText(italian); }
 
     // Show_tas_des: captions of F1-F10 for a page and the held Shift/Ctrl/Alt mask.
     Q_INVOKABLE QStringList functionLabels(const QString &form, int shift) const
@@ -49,12 +73,9 @@ public:
         return labels;
     }
 
-    // Function keys whose VB behaviour has not been ported yet do nothing but say so.
-    Q_INVOKABLE void notPorted(const QString &form, const QString &key)
-    {
-        if (m_staBar)
-            m_staBar->messaggio(msg(QStringLiteral("imp_ese_ope")) + QStringLiteral(" (%1 %2)").arg(form, key), true, false);
-    }
+signals:
+    void languageChanged();
+    void overlayRequested(const QString &form);
 
 private:
     StaBarModel *m_staBar;

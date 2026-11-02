@@ -1,5 +1,11 @@
 #include "stagapp.h"
 
+#include "schtagpages.h"
+#include "miscpages.h"
+#include "stabarform.h"
+#include "setparmodels.h"
+#include "spdelink.h"
+
 #include "gesord.h"
 #include "inibas.h"
 #include "inifile.h"
@@ -109,6 +115,85 @@ void StagApp::start()
         log_str(QStringLiteral("PlcLink: scrittura verso PLC disabilitata"), MED_PRIORITY, CosLog::Plc);
 
     m_timComPlc.start();
+
+    // Principale: tim_com_spde. Like the PLC writes, the supervisor link only opens with the flag.
+    m_spde = new SpdeLink(&m_ordMac, &m_ordMacEse, &m_staTag, m_db, this);
+    m_spde->setEnabled(m_options.plcWrites);
+    connect(m_spde, &SpdeLink::received, m_staBarForm, &StaBarFormModel::ledSpdeRx);
+    connect(m_spde, &SpdeLink::sent, m_staBarForm, &StaBarFormModel::ledSpdeTx);
+    connect(m_spde, &SpdeLink::lost, m_staBarForm, &StaBarFormModel::ledSpdeLost);
+    connect(&m_timComSpde, &QTimer::timeout, m_spde, &SpdeLink::tick);
+    m_timComSpde.setInterval(300);
+    m_timComSpde.start();
+}
+
+void StagApp::loadSchTagPages()
+{
+    using namespace stag;
+    m_plc.setDatabase(&m_db);
+    auto *config = new SchTagConfig(m_db, &m_plc, &m_ordMac, this);
+    QHash<int, SetParSchTagModel *> pages;
+    for (const int number : {1, 2, 4, 5}) {
+        auto *page = new SetParSchTagModel(number, m_db, &m_plc, &m_staTag, this);
+        page->setCommand(new Rmt(QStringLiteral("set_par_sch_%1").arg(number, 2, 10, QLatin1Char('0')), ChannelCards, &m_plc, page));
+        if (number == 1)
+            page->setPlcCommand(new Rmt(QStringLiteral("set_par_plc_01"), ChannelPlc, &m_plc, page));
+        connect(config, &SchTagConfig::valuesChanged, page, &SetParSchTagModel::filAtt);
+        m_pageModels.insert(QStringLiteral("Set_par_sch_tag%1").arg(number), page);
+    }
+    auto *page3 = new SetParSchTag3Model(m_db, &m_plc, &m_staTag, this);
+    page3->setCommand(new Rmt(QStringLiteral("set_par_sch_03"), ChannelCards, &m_plc, page3));
+    connect(config, &SchTagConfig::configurationChanged, page3, [page3](int liv, bool defaults) {
+        if (liv != Livello)
+            return;
+        if (defaults)
+            page3->filDef(liv);
+        else
+            page3->filAtt(liv);
+    });
+    m_pageModels.insert(QStringLiteral("Set_par_sch_tag3"), page3);
+
+    auto *sal = new SalCfgModel(m_db, &m_plc, this);
+    sal->setCommand(new Rmt(QStringLiteral("sal_cfg_sch"), ChannelCards, &m_plc, sal));
+    m_pageModels.insert(QStringLiteral("Sal_cfg"), sal);
+    auto *leg = new LegCfgModel(m_db, &m_plc, this);
+    leg->setCommand(new Rmt(QStringLiteral("leg_cfg_sch"), ChannelCards, &m_plc, leg));
+    m_pageModels.insert(QStringLiteral("Leg_cfg"), leg);
+    m_pageModels.insert(QStringLiteral("Del_cfg"), new DelCfgModel(m_db, this));
+    auto *parMac = new SetParMacModel(m_db, &m_staTag, this);
+    parMac->setCommands(new Rmt(QStringLiteral("rmt_set_par_mac_plc"), ChannelPlc, &m_plc, parMac),
+                        new Rmt(QStringLiteral("rmt_set_par_mac_macro"), ChannelMacro, &m_plc, parMac));
+    m_pageModels.insert(QStringLiteral("Set_par_mac"), parMac);
+    auto *parRul = new SetParRulModel(&m_staTag, this);
+    parRul->setCommand(new Rmt(QStringLiteral("rmt_set_par_rul_plc"), ChannelPlc, &m_plc, parRul));
+    m_pageModels.insert(QStringLiteral("Set_par_rul"), parRul);
+    auto *parCom = new SetParComModel(&m_plc, &m_staTag, this);
+    connect(parCom, &SetParComModel::plcAddressChanged, this, [this] {
+        m_fins.setEnabled(false);
+        m_fins.closeSocket();
+        const TipPlcLan &lan = par_mac.com_plc_lan;
+        m_fins.setRemoteHost(m_options.plcHostOverride.isEmpty() ? lan.ind_rem : m_options.plcHostOverride);
+        m_fins.setRemotePort(m_options.plcPortOverride ? m_options.plcPortOverride : quint16(lan.por_rem.val()));
+        m_fins.setTimeOut(int(lan.TimeOut.val()));
+        m_fins.setEnabled(true);
+        m_staTag.setComOK(true);
+    });
+    m_pageModels.insert(QStringLiteral("Set_par_com"), parCom);
+
+    auto *adj = new AdjPatConModel(m_db, &m_plc, &m_staTag, this);
+    adj->setCommand(new Rmt(QStringLiteral("rmt_adj_pat_con_macro"), ChannelMacro, &m_plc, adj));
+    m_pageModels.insert(QStringLiteral("Adj_pat_con"), adj);
+    m_pageModels.insert(QStringLiteral("Sel_lin"), new SelLinModel(m_db, &m_staTag, this));
+    m_pageModels.insert(QStringLiteral("Pag_pro_day"), new PagProDayModel(&m_staTag, this));
+    m_pageModels.insert(QStringLiteral("Cam_tur"), new ShiftDialogModel(ShiftDialogModel::CamTur, &m_staTag, this));
+    m_pageModels.insert(QStringLiteral("Con_azz"), new ShiftDialogModel(ShiftDialogModel::ConAzz, &m_staTag, this));
+    auto *dia = new DiaSchTagModel(&m_plc, this);
+    dia->setCommand(new Rmt(QStringLiteral("dia_sch_tag_sch"), ChannelCards, &m_plc, dia));
+    m_pageModels.insert(QStringLiteral("Dia_sch_tag"), dia);
+    m_pageModels.insert(QStringLiteral("Frm_debug"), new FrmDebugModel(false, &m_fins, &m_staTag, this));
+    m_pageModels.insert(QStringLiteral("Frm_debug_des"), new FrmDebugModel(true, &m_fins, &m_staTag, this));
+    m_pageModels.insert(QStringLiteral("Frm_data"), new FrmDataModel(this));
+    m_pageModels.insert(QStringLiteral("Imp_all"), new ImpAllModel(m_db, this));
 }
 
 void StagApp::loadPages()
@@ -144,8 +229,27 @@ void StagApp::loadPages()
     m_pageModels.insert(QStringLiteral("Ins_ord"), insOrd);
 
     m_pageModels.insert(QStringLiteral("Pwd_frm"), new PwdModel(this));
+
+    m_staBarForm = new StaBarFormModel(&m_staBar, this);
+    connect(&m_staTag, &ClasseStato::err, m_staBarForm, &StaBarFormModel::eveTagErr);
+    connect(&m_staTag, &ClasseStato::num, m_staBarForm, &StaBarFormModel::eveTagNum);
+    connect(&m_staTag, &ClasseStato::numerr, m_staBarForm, &StaBarFormModel::eveTagNumErr);
+    connect(&m_ordMac, &CollezioneOrdini::Refresh, m_staBarForm, [this] {
+        if (m_ordMac.Count() == 0)
+            m_staBarForm->clearCounters();
+    });
+    stag::messagWinHook = [this](const QString &text, bool abiMot) { m_staBarForm->messagWin(text, abiMot); };
+    stag::messagWinTextHook = [this] { return m_staBarForm->messagWinText(); };
+    m_pageModels.insert(QStringLiteral("Sta_bar"), m_staBarForm);
+
+    m_pagMsg = new PagMsgModel(this);
+    stag::messaggioLivHook = [this](const QString &text, bool isAll, int liv) { m_pagMsg->show(text, isAll, liv); };
+    m_pageModels.insert(QStringLiteral("Pag_msg"), m_pagMsg);
+    loadSchTagPages();
     auto *abilitazioni = new AbilitazioniModel(&m_ordMac, this);
     abilitazioni->setCommand(new Rmt(QStringLiteral("abilitazioni_plc"), stag::ChannelPlc, &m_plc, abilitazioni));
+    abilitazioni->setMotorCommands(new Rmt(QStringLiteral("abilitazioni_sch"), stag::ChannelCards, &m_plc, abilitazioni),
+                                   new Rmt(QStringLiteral("abilitazioni_macro"), stag::ChannelMacro, &m_plc, abilitazioni), &m_plc, m_db);
     m_pageModels.insert(QStringLiteral("Abilitazioni"), abilitazioni);
     m_pagPro.setCommand(new Rmt(QStringLiteral("rmt_plc_pag_pro"), stag::ChannelPlc, &m_plc, &m_pagPro));
 

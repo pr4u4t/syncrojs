@@ -10,31 +10,49 @@ VbForm {
     backColor: "#ffffff"
     dialog: true
     controls: ({ "tas_f1": c_tas_F1, "txt_des": c_txt_des, "lab_avv_1": c_lab_avv_1, "pag_title": c_Pag_title, "label1": c_Label1, "txt_f1": c_txt_F1 })
-    VbButton {
-        id: c_tas_F1
-        x: 229
-        y: 110
-        width: 81
-        height: 25
-        z: 1
-        backColor: "#ffffff"
+    VbLabel {
+        id: c_txt_F1
+        x: 256
+        y: 140
+        width: 29
+        height: 14
+        backColor: "#c0c0c0"
+        foreColor: "#000000"
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "F11"
+        text: "Salva"
+        alignment: 2
+        opaque: false
+        autoSize: true
     }
-    VbTextBox {
-        id: c_txt_des
-        x: 131
-        y: 70
-        width: 369
-        height: 24
-        z: 1
+    VbLabel {
+        id: c_Label1
+        x: 3
+        y: 72
+        width: 117
+        height: 17
+        backColor: "#ffffff"
         font.family: "Arial"
         font.pixelSize: 13
         font.bold: true
-        text: "12345678901234567890123456789012345678901234567890"
-        maxLength: 50
+        text: "Descrizione"
+        alignment: 1
+        opaque: false
+    }
+    VbLabel {
+        id: c_Pag_title
+        x: 71
+        y: 19
+        width: 401
+        height: 25
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Immisione descrizione nuovo parametro"
+        alignment: 2
+        opaque: false
     }
     VbLabel {
         id: c_lab_avv_1
@@ -52,48 +70,30 @@ VbForm {
         opaque: false
         wordWrap: true
     }
-    VbLabel {
-        id: c_Pag_title
-        x: 71
-        y: 19
-        width: 401
-        height: 25
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Immisione descrizione nuovo parametro"
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label1
-        x: 3
-        y: 72
-        width: 117
-        height: 17
-        backColor: "#ffffff"
+    VbTextBox {
+        id: c_txt_des
+        x: 131
+        y: 70
+        width: 369
+        height: 24
+        z: 1
         font.family: "Arial"
         font.pixelSize: 13
         font.bold: true
-        text: "Descrizione"
-        alignment: 1
-        opaque: false
+        text: "12345678901234567890123456789012345678901234567890"
+        maxLength: 50
     }
-    VbLabel {
-        id: c_txt_F1
-        x: 256
-        y: 140
-        width: 29
-        height: 14
-        backColor: "#c0c0c0"
-        foreColor: "#000000"
+    VbButton {
+        id: c_tas_F1
+        x: 229
+        y: 110
+        width: 81
+        height: 25
+        z: 1
+        backColor: "#ffffff"
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "Salva"
-        alignment: 2
-        opaque: false
-        autoSize: true
+        text: "F11"
     }
 }

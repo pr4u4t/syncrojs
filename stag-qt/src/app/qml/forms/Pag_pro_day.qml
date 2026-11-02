@@ -10,32 +10,41 @@ VbForm {
     backColor: "#ffffff"
     dialog: false
     controls: ({ "txt_tur": c_txt_tur, "txt_idle": c_txt_idle, "frm_grid": c_Frm_grid, "tim_ref": c_tim_ref, "lis_pro": c_lis_pro, "lab_tur": c_Lab_tur, "pag_title": c_Pag_title, "image3": c_Image3 })
-    VbTextBox {
-        id: c_txt_tur
-        x: 80
-        y: 120
-        width: 41
-        height: 24
-        z: 1
-        backColor: "#ffffc0"
-        font.family: "Arial"
-        font.pixelSize: 13
-        font.bold: true
-        KeyNavigation.tab: c_lis_pro
-        KeyNavigation.backtab: c_txt_idle
-        text: "1"
-        maxLength: 35
+    VbImage {
+        id: c_Image3
+        x: 0
+        y: 1
+        width: 798
+        height: 20
+        stretch: true
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
     }
-    VbTextBox {
-        id: c_txt_idle
-        x: 96
-        y: -67
-        width: 25
-        height: 21
-        z: 1
-        KeyNavigation.tab: c_txt_tur
-        KeyNavigation.backtab: c_lis_pro
-        text: "Text1"
+    VbLabel {
+        id: c_Pag_title
+        x: 0
+        y: 0
+        width: 455
+        height: 29
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 21
+        font.bold: true
+        text: "PRODUZIONE GIORNALIERA"
+        opaque: false
+    }
+    VbLabel {
+        id: c_Lab_tur
+        x: 0
+        y: 120
+        width: 76
+        height: 25
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Turno"
+        opaque: false
     }
     VbFrame {
         id: c_Frm_grid
@@ -48,11 +57,6 @@ VbForm {
         foreColor: "#000000"
         borderStyle: 0
         text: "Frame1"
-        VbTimer {
-            id: c_tim_ref
-            interval: 5000
-            running: true
-        }
         VbGrid {
             id: c_lis_pro
             x: -3
@@ -71,41 +75,37 @@ VbForm {
             fixedRows: 0
             fixedCols: 0
         }
+        VbTimer {
+            id: c_tim_ref
+            interval: 5000
+            running: true
+        }
     }
-    VbLabel {
-        id: c_Lab_tur
-        x: 0
+    VbTextBox {
+        id: c_txt_idle
+        x: 96
+        y: -67
+        width: 25
+        height: 21
+        z: 1
+        KeyNavigation.tab: c_txt_tur
+        KeyNavigation.backtab: c_lis_pro
+        text: "Text1"
+    }
+    VbTextBox {
+        id: c_txt_tur
+        x: 80
         y: 120
-        width: 76
-        height: 25
-        backColor: "#ffffff"
+        width: 41
+        height: 24
+        z: 1
+        backColor: "#ffffc0"
         font.family: "Arial"
-        font.pixelSize: 16
+        font.pixelSize: 13
         font.bold: true
-        text: "Turno"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Pag_title
-        x: 0
-        y: 0
-        width: 455
-        height: 29
-        backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 21
-        font.bold: true
-        text: "PRODUZIONE GIORNALIERA"
-        opaque: false
-    }
-    VbImage {
-        id: c_Image3
-        x: 0
-        y: 1
-        width: 798
-        height: 20
-        stretch: true
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
+        KeyNavigation.tab: c_lis_pro
+        KeyNavigation.backtab: c_txt_idle
+        text: "1"
+        maxLength: 35
     }
 }

@@ -23,6 +23,7 @@ public:
     void orderStatus(int event, int order);
 
 private:
+    void startOrEndProduction();
     void showOrder(const QString &prefix, const OrdinePtr &order);
     void setColor(int index, const QString &text, quint32 color);
 

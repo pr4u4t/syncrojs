@@ -10,514 +10,489 @@ VbForm {
     backColor: "#ffffff"
     dialog: true
     controls: ({ "command1": c_Command1, "txt_idle": c_txt_idle, "frame1": c_Frame1, "frame2": c_Frame2, "l_gra_car": c_l_gra_car, "l_for_mac": c_l_for_mac, "l_num_mot_liv": c_l_num_mot_liv, "l_num_mot_abi": c_l_num_mot_abi, "label21": c_Label21, "lab_gra_car": c_lab_gra_car, "l_liv(1)": c_l_liv_1, "label13": c_Label13, "lab_cfg": c_lab_cfg, "label1": c_Label1, "label4": c_Label4, "label3": c_Label3, "label2": c_Label2, "lab_num_mot_abi": c_lab_num_mot_abi, "lab_num_mot_liv": c_lab_num_mot_liv, "lab_for_mac": c_lab_for_mac, "tas_f1": c_tas_F1, "label7": c_Label7, "lab_max_gir(0)": c_lab_max_gir_0, "lab_max_gir(1)": c_lab_max_gir_1, "lab_max_gir(2)": c_lab_max_gir_2, "lab_lim_lav_kv(2)": c_lab_lim_lav_kv_2, "lab_lim_lav_kv(1)": c_lab_lim_lav_kv_1, "lab_lim_lav_kv(0)": c_lab_lim_lav_kv_0, "label18": c_Label18, "lab_kv_nor(2)": c_lab_kv_nor_2, "lab_kv_nor(1)": c_lab_kv_nor_1, "lab_kv_nor(0)": c_lab_kv_nor_0, "label17": c_Label17, "lab_fil_kp(2)": c_lab_fil_kp_2, "lab_fil_kp(1)": c_lab_fil_kp_1, "lab_fil_kp(0)": c_lab_fil_kp_0, "label16": c_Label16, "image1": c_Image1, "label15": c_Label15, "lab_att(2)": c_lab_att_2, "lab_att(1)": c_lab_att_1, "lab_att(0)": c_lab_att_0, "l_liv(0)": c_l_liv_0, "label14": c_Label14, "label6": c_Label6, "label5": c_Label5, "label39": c_Label39, "label38": c_Label38, "label8": c_Label8, "label9": c_Label9, "label10": c_Label10, "label29": c_Label29, "lab_liv(0)": c_lab_liv_0, "lab_liv(1)": c_lab_liv_1, "lab_liv(2)": c_lab_liv_2, "lab_vel_mas_tag(0)": c_lab_vel_mas_tag_0, "lab_vel_mas_tag(1)": c_lab_vel_mas_tag_1, "lab_vel_mas_tag(2)": c_lab_vel_mas_tag_2, "lab_tem_acc_tag_lun(0)": c_lab_tem_acc_tag_lun_0, "lab_tem_acc_tag_lun(1)": c_lab_tem_acc_tag_lun_1, "lab_tem_acc_tag_lun(2)": c_lab_tem_acc_tag_lun_2, "lab_tem_dec_tag_lun(0)": c_lab_tem_dec_tag_lun_0, "lab_tem_dec_tag_lun(1)": c_lab_tem_dec_tag_lun_1, "lab_tem_dec_tag_lun(2)": c_lab_tem_dec_tag_lun_2, "lab_tem_acc_tag_cor(0)": c_lab_tem_acc_tag_cor_0, "lab_tem_acc_tag_cor(1)": c_lab_tem_acc_tag_cor_1, "lab_tem_acc_tag_cor(2)": c_lab_tem_acc_tag_cor_2, "lab_tem_dec_tag_cor(0)": c_lab_tem_dec_tag_cor_0, "lab_tem_dec_tag_cor(1)": c_lab_tem_dec_tag_cor_1, "lab_tem_dec_tag_cor(2)": c_lab_tem_dec_tag_cor_2, "lab_kp_nor(0)": c_lab_kp_nor_0, "lab_kp_nor(1)": c_lab_kp_nor_1, "lab_kp_nor(2)": c_lab_kp_nor_2, "lab_ki_nor(0)": c_lab_ki_nor_0, "lab_ki_nor(1)": c_lab_ki_nor_1, "lab_ki_nor(2)": c_lab_ki_nor_2, "txt_f1": c_txt_F1, "pag_title": c_Pag_title })
-    VbButton {
-        id: c_Command1
-        x: 215
-        y: 541
-        width: 71
+    VbLabel {
+        id: c_Pag_title
+        x: 7
+        y: 1
+        width: 359
         height: 25
-        z: 1
         backColor: "#ffffff"
+        foreColor: "#000080"
         font.family: "Arial"
-        font.pixelSize: 11
+        font.pixelSize: 21
         font.bold: true
-        text: "ESC"
-    }
-    VbTextBox {
-        id: c_txt_idle
-        x: 55
-        y: -333
-        width: 75
-        height: 25
-        z: 1
-        text: "Text1"
-    }
-    VbFrame {
-        id: c_Frame1
-        x: 8
-        y: 70
-        width: 577
-        height: 164
-        z: 1
-        backColor: "#ffc0c0"
-        borderStyle: 0
-        VbFrame {
-            id: c_Frame2
-            x: 32
-            y: 120
-            width: 504
-            height: 34
-            z: 1
-            backColor: "#ff8080"
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            VbLabel {
-                id: c_l_gra_car
-                x: 440
-                y: 3
-                width: 56
-                height: 27
-                backColor: "#ffffc0"
-                foreColor: "#000000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 21
-                font.bold: true
-                alignment: 2
-            }
-            VbLabel {
-                id: c_l_for_mac
-                x: 8
-                y: 3
-                width: 56
-                height: 27
-                backColor: "#ffffc0"
-                foreColor: "#000000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 21
-                font.bold: true
-                alignment: 2
-            }
-            VbLabel {
-                id: c_l_num_mot_liv
-                x: 168
-                y: 3
-                width: 24
-                height: 27
-                backColor: "#ffffc0"
-                foreColor: "#000000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 21
-                font.bold: true
-                alignment: 2
-            }
-            VbLabel {
-                id: c_l_num_mot_abi
-                x: 312
-                y: 3
-                width: 24
-                height: 27
-                backColor: "#ffffc0"
-                foreColor: "#000000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 21
-                font.bold: true
-                alignment: 2
-            }
-        }
-        VbLabel {
-            id: c_Label21
-            x: 432
-            y: 48
-            width: 130
-            height: 39
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-            text: "Grammatura max  cartone"
-            alignment: 2
-            opaque: false
-        }
-        VbLabel {
-            id: c_lab_gra_car
-            x: 472
-            y: 88
-            width: 56
-            height: 27
-            backColor: "#ffffff"
-            borderStyle: 1
-            font.family: "Arial"
-            font.pixelSize: 21
-            font.bold: true
-            alignment: 2
-        }
-        VbLabel {
-            id: c_l_liv_1
-            x: 216
-            y: 32
-            width: 11
-            height: 16
-            backColor: "#0000ff"
-            foreColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: true
-            text: "3"
-            alignment: 2
-        }
-        VbLabel {
-            id: c_Label13
-            x: 8
-            y: 32
-            width: 201
-            height: 15
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: true
-            text: "Attuale stato macchina per il livello:"
-            opaque: false
-        }
-        VbLabel {
-            id: c_lab_cfg
-            x: 237
-            y: 9
-            width: 315
-            height: 22
-            backColor: "#c0ffff"
-            borderStyle: 1
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-        }
-        VbLabel {
-            id: c_Label1
-            x: 24
-            y: 8
-            width: 209
-            height: 23
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: true
-            text: "Configurazione livello"
-            opaque: false
-        }
-        VbLabel {
-            id: c_Label4
-            x: 296
-            y: 48
-            width: 134
-            height: 38
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-            text: "Num. mot. abilitati per livello"
-            alignment: 2
-            opaque: false
-        }
-        VbLabel {
-            id: c_Label3
-            x: 152
-            y: 48
-            width: 134
-            height: 40
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-            text: "Numero motori per livello"
-            alignment: 2
-            opaque: false
-        }
-        VbLabel {
-            id: c_Label2
-            x: 8
-            y: 48
-            width: 130
-            height: 31
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-            text: "Formato macchina"
-            opaque: false
-        }
-        VbLabel {
-            id: c_lab_num_mot_abi
-            x: 344
-            y: 88
-            width: 24
-            height: 27
-            backColor: "#ffffff"
-            borderStyle: 1
-            font.family: "Arial"
-            font.pixelSize: 21
-            font.bold: true
-            alignment: 2
-        }
-        VbLabel {
-            id: c_lab_num_mot_liv
-            x: 200
-            y: 88
-            width: 24
-            height: 27
-            backColor: "#ffffff"
-            borderStyle: 1
-            font.family: "Arial"
-            font.pixelSize: 21
-            font.bold: true
-            alignment: 2
-        }
-        VbLabel {
-            id: c_lab_for_mac
-            x: 40
-            y: 88
-            width: 56
-            height: 27
-            backColor: "#ffffff"
-            borderStyle: 1
-            font.family: "Arial"
-            font.pixelSize: 21
-            font.bold: true
-            alignment: 2
-        }
-    }
-    VbButton {
-        id: c_tas_F1
-        x: 301
-        y: 541
-        width: 71
-        height: 25
-        z: 1
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "F11"
-    }
-    VbLabel {
-        id: c_Label7
-        x: 67
-        y: 511
-        width: 155
-        height: 17
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Giri massimi motore lame"
+        text: "Carica configurazione per il livello"
         opaque: false
     }
     VbLabel {
-        id: c_lab_max_gir_0
-        x: 282
-        y: 509
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_max_gir_1
-        x: 365
-        y: 509
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_max_gir_2
-        x: 448
-        y: 509
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_lim_lav_kv_2
-        x: 448
-        y: 486
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_lim_lav_kv_1
-        x: 365
-        y: 486
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_lim_lav_kv_0
-        x: 282
-        y: 486
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_Label18
-        x: 67
-        y: 490
-        width: 155
-        height: 17
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Limite di lavoro del Kv"
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_kv_nor_2
-        x: 448
-        y: 463
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_kv_nor_1
-        x: 365
-        y: 463
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_kv_nor_0
-        x: 282
-        y: 463
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_Label17
-        x: 67
-        y: 467
-        width: 155
-        height: 17
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Kv normalizzato"
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_fil_kp_2
-        x: 448
-        y: 440
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_fil_kp_1
-        x: 365
-        y: 440
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_fil_kp_0
-        x: 282
-        y: 440
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_Label16
-        x: 67
-        y: 444
-        width: 155
-        height: 17
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Filtro Kp"
-        opaque: false
-    }
-    VbImage {
-        id: c_Image1
-        x: 438
-        y: 52
-        width: 79
-        height: 23
-        picture: Qt.resolvedUrl("../assets/8cf0c1ff65cefc66.bmp")
-    }
-    VbLabel {
-        id: c_Label15
-        x: 232
+        id: c_txt_F1
+        x: 310
         y: 566
-        width: 43
+        width: 57
         height: 15
         backColor: "#c0c0c0"
         foreColor: "#000000"
         font.family: "Arial"
         font.pixelSize: 12
         font.bold: true
-        text: "Annulla"
+        text: "Conferma"
         alignment: 2
         opaque: false
         autoSize: true
     }
     VbLabel {
-        id: c_lab_att_2
-        x: 439
+        id: c_lab_ki_nor_2
+        x: 448
+        y: 417
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_ki_nor_1
+        x: 365
+        y: 417
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_ki_nor_0
+        x: 282
+        y: 417
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_kp_nor_2
+        x: 448
+        y: 394
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_kp_nor_1
+        x: 365
+        y: 394
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_kp_nor_0
+        x: 282
+        y: 394
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_dec_tag_cor_2
+        x: 448
+        y: 371
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_dec_tag_cor_1
+        x: 365
+        y: 371
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_dec_tag_cor_0
+        x: 282
+        y: 371
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_acc_tag_cor_2
+        x: 448
+        y: 348
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_acc_tag_cor_1
+        x: 365
+        y: 348
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_acc_tag_cor_0
+        x: 282
+        y: 348
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_dec_tag_lun_2
+        x: 448
+        y: 325
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_dec_tag_lun_1
+        x: 365
+        y: 325
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_dec_tag_lun_0
+        x: 282
+        y: 325
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_acc_tag_lun_2
+        x: 448
+        y: 302
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_acc_tag_lun_1
+        x: 365
+        y: 302
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_tem_acc_tag_lun_0
+        x: 282
+        y: 302
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_vel_mas_tag_2
+        x: 448
+        y: 279
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_vel_mas_tag_1
+        x: 365
+        y: 279
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_vel_mas_tag_0
+        x: 282
+        y: 279
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_liv_2
+        x: 443
+        y: 259
+        width: 72
+        height: 18
+        foreColor: "#800000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Livello 3"
+        alignment: 2
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_liv_1
+        x: 360
+        y: 259
+        width: 72
+        height: 18
+        foreColor: "#800000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Livello 2"
+        alignment: 2
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_liv_0
+        x: 277
+        y: 259
+        width: 73
+        height: 18
+        foreColor: "#800000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Livello 1"
+        alignment: 2
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label29
+        x: 67
+        y: 329
+        width: 199
+        height: 17
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Tempo decelerazione tagli lunghi"
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label10
+        x: 67
+        y: 352
+        width: 199
+        height: 17
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Tempo accelerazione tagli corti"
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label9
+        x: 67
+        y: 375
+        width: 199
+        height: 17
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Tempo decelerazione tagli corti"
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label8
+        x: 67
+        y: 306
+        width: 198
+        height: 17
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Tempo accelerazione tagli lunghi"
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label38
+        x: 67
+        y: 421
+        width: 155
+        height: 17
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Ki normalizzato"
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label39
+        x: 67
+        y: 398
+        width: 155
+        height: 17
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Kp normalizzato"
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label5
+        x: 67
+        y: 283
+        width: 180
+        height: 17
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Velocità massima taglierina"
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label6
+        x: 10
+        y: 24
+        width: 578
+        height: 29
+        backColor: "#c0c0c0"
+        foreColor: "#804040"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "E' possibile caricare una qualsiasi configurazione avente formato macchina, numero di motori per livello e numero di motori abilitati per livello coincidenti con l'attuale stato macchina"
+        alignment: 2
+        opaque: false
+        wordWrap: true
+    }
+    VbLabel {
+        id: c_Label14
+        x: 44
+        y: 54
+        width: 384
+        height: 14
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 12
+        font.bold: true
+        text: "Utilizzare i tasti freccia per visualizzare le diverse configurazioni"
+        alignment: 1
+        opaque: false
+    }
+    VbLabel {
+        id: c_l_liv_0
+        x: 369
+        y: 1
+        width: 24
+        height: 24
+        backColor: "#0000ff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 21
+        font.bold: true
+        text: "3"
+        alignment: 2
+    }
+    VbLabel {
+        id: c_lab_att_0
+        x: 273
         y: 245
         width: 78
         height: 14
@@ -546,8 +521,8 @@ VbForm {
         opaque: false
     }
     VbLabel {
-        id: c_lab_att_0
-        x: 273
+        id: c_lab_att_2
+        x: 439
         y: 245
         width: 78
         height: 14
@@ -561,483 +536,508 @@ VbForm {
         opaque: false
     }
     VbLabel {
-        id: c_l_liv_0
-        x: 369
-        y: 1
-        width: 24
-        height: 24
-        backColor: "#0000ff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 21
-        font.bold: true
-        text: "3"
-        alignment: 2
-    }
-    VbLabel {
-        id: c_Label14
-        x: 44
-        y: 54
-        width: 384
-        height: 14
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 12
-        font.bold: true
-        text: "Utilizzare i tasti freccia per visualizzare le diverse configurazioni"
-        alignment: 1
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label6
-        x: 10
-        y: 24
-        width: 578
-        height: 29
-        backColor: "#c0c0c0"
-        foreColor: "#804040"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "E' possibile caricare una qualsiasi configurazione avente formato macchina, numero di motori per livello e numero di motori abilitati per livello coincidenti con l'attuale stato macchina"
-        alignment: 2
-        opaque: false
-        wordWrap: true
-    }
-    VbLabel {
-        id: c_Label5
-        x: 67
-        y: 283
-        width: 180
-        height: 17
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Velocità massima taglierina"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label39
-        x: 67
-        y: 398
-        width: 155
-        height: 17
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Kp normalizzato"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label38
-        x: 67
-        y: 421
-        width: 155
-        height: 17
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Ki normalizzato"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label8
-        x: 67
-        y: 306
-        width: 198
-        height: 17
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Tempo accelerazione tagli lunghi"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label9
-        x: 67
-        y: 375
-        width: 199
-        height: 17
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Tempo decelerazione tagli corti"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label10
-        x: 67
-        y: 352
-        width: 199
-        height: 17
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Tempo accelerazione tagli corti"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label29
-        x: 67
-        y: 329
-        width: 199
-        height: 17
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Tempo decelerazione tagli lunghi"
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_liv_0
-        x: 277
-        y: 259
-        width: 73
-        height: 18
-        foreColor: "#800000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Livello 1"
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_liv_1
-        x: 360
-        y: 259
-        width: 72
-        height: 18
-        foreColor: "#800000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Livello 2"
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_liv_2
-        x: 443
-        y: 259
-        width: 72
-        height: 18
-        foreColor: "#800000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Livello 3"
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_vel_mas_tag_0
-        x: 282
-        y: 279
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_vel_mas_tag_1
-        x: 365
-        y: 279
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_vel_mas_tag_2
-        x: 448
-        y: 279
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_acc_tag_lun_0
-        x: 282
-        y: 302
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_acc_tag_lun_1
-        x: 365
-        y: 302
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_acc_tag_lun_2
-        x: 448
-        y: 302
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_dec_tag_lun_0
-        x: 282
-        y: 325
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_dec_tag_lun_1
-        x: 365
-        y: 325
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_dec_tag_lun_2
-        x: 448
-        y: 325
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_acc_tag_cor_0
-        x: 282
-        y: 348
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_acc_tag_cor_1
-        x: 365
-        y: 348
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_acc_tag_cor_2
-        x: 448
-        y: 348
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_dec_tag_cor_0
-        x: 282
-        y: 371
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_dec_tag_cor_1
-        x: 365
-        y: 371
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_tem_dec_tag_cor_2
-        x: 448
-        y: 371
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_kp_nor_0
-        x: 282
-        y: 394
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_kp_nor_1
-        x: 365
-        y: 394
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_kp_nor_2
-        x: 448
-        y: 394
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_ki_nor_0
-        x: 282
-        y: 417
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_ki_nor_1
-        x: 365
-        y: 417
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_lab_ki_nor_2
-        x: 448
-        y: 417
-        width: 58
-        height: 23
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        alignment: 1
-    }
-    VbLabel {
-        id: c_txt_F1
-        x: 310
+        id: c_Label15
+        x: 232
         y: 566
-        width: 57
+        width: 43
         height: 15
         backColor: "#c0c0c0"
         foreColor: "#000000"
         font.family: "Arial"
         font.pixelSize: 12
         font.bold: true
-        text: "Conferma"
+        text: "Annulla"
         alignment: 2
         opaque: false
         autoSize: true
     }
+    VbImage {
+        id: c_Image1
+        x: 438
+        y: 52
+        width: 79
+        height: 23
+        picture: Qt.resolvedUrl("../assets/8cf0c1ff65cefc66.bmp")
+    }
     VbLabel {
-        id: c_Pag_title
-        x: 7
-        y: 1
-        width: 359
-        height: 25
+        id: c_Label16
+        x: 67
+        y: 444
+        width: 155
+        height: 17
         backColor: "#ffffff"
-        foreColor: "#000080"
         font.family: "Arial"
-        font.pixelSize: 21
+        font.pixelSize: 11
         font.bold: true
-        text: "Carica configurazione per il livello"
+        text: "Filtro Kp"
         opaque: false
+    }
+    VbLabel {
+        id: c_lab_fil_kp_0
+        x: 282
+        y: 440
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_fil_kp_1
+        x: 365
+        y: 440
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_fil_kp_2
+        x: 448
+        y: 440
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_Label17
+        x: 67
+        y: 467
+        width: 155
+        height: 17
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Kv normalizzato"
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_kv_nor_0
+        x: 282
+        y: 463
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_kv_nor_1
+        x: 365
+        y: 463
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_kv_nor_2
+        x: 448
+        y: 463
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_Label18
+        x: 67
+        y: 490
+        width: 155
+        height: 17
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Limite di lavoro del Kv"
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_lim_lav_kv_0
+        x: 282
+        y: 486
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_lim_lav_kv_1
+        x: 365
+        y: 486
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_lim_lav_kv_2
+        x: 448
+        y: 486
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_max_gir_2
+        x: 448
+        y: 509
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_max_gir_1
+        x: 365
+        y: 509
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_lab_max_gir_0
+        x: 282
+        y: 509
+        width: 58
+        height: 23
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        alignment: 1
+    }
+    VbLabel {
+        id: c_Label7
+        x: 67
+        y: 511
+        width: 155
+        height: 17
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Giri massimi motore lame"
+        opaque: false
+    }
+    VbButton {
+        id: c_tas_F1
+        x: 301
+        y: 541
+        width: 71
+        height: 25
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "F11"
+    }
+    VbFrame {
+        id: c_Frame1
+        x: 8
+        y: 70
+        width: 577
+        height: 164
+        z: 1
+        backColor: "#ffc0c0"
+        borderStyle: 0
+        VbLabel {
+            id: c_lab_for_mac
+            x: 40
+            y: 88
+            width: 56
+            height: 27
+            backColor: "#ffffff"
+            borderStyle: 1
+            font.family: "Arial"
+            font.pixelSize: 21
+            font.bold: true
+            alignment: 2
+        }
+        VbLabel {
+            id: c_lab_num_mot_liv
+            x: 200
+            y: 88
+            width: 24
+            height: 27
+            backColor: "#ffffff"
+            borderStyle: 1
+            font.family: "Arial"
+            font.pixelSize: 21
+            font.bold: true
+            alignment: 2
+        }
+        VbLabel {
+            id: c_lab_num_mot_abi
+            x: 344
+            y: 88
+            width: 24
+            height: 27
+            backColor: "#ffffff"
+            borderStyle: 1
+            font.family: "Arial"
+            font.pixelSize: 21
+            font.bold: true
+            alignment: 2
+        }
+        VbLabel {
+            id: c_Label2
+            x: 8
+            y: 48
+            width: 130
+            height: 31
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: true
+            text: "Formato macchina"
+            opaque: false
+        }
+        VbLabel {
+            id: c_Label3
+            x: 152
+            y: 48
+            width: 134
+            height: 40
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: true
+            text: "Numero motori per livello"
+            alignment: 2
+            opaque: false
+        }
+        VbLabel {
+            id: c_Label4
+            x: 296
+            y: 48
+            width: 134
+            height: 38
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: true
+            text: "Num. mot. abilitati per livello"
+            alignment: 2
+            opaque: false
+        }
+        VbLabel {
+            id: c_Label1
+            x: 24
+            y: 8
+            width: 209
+            height: 23
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: true
+            text: "Configurazione livello"
+            opaque: false
+        }
+        VbLabel {
+            id: c_lab_cfg
+            x: 237
+            y: 9
+            width: 315
+            height: 22
+            backColor: "#c0ffff"
+            borderStyle: 1
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: true
+        }
+        VbLabel {
+            id: c_Label13
+            x: 8
+            y: 32
+            width: 201
+            height: 15
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: true
+            text: "Attuale stato macchina per il livello:"
+            opaque: false
+        }
+        VbLabel {
+            id: c_l_liv_1
+            x: 216
+            y: 32
+            width: 11
+            height: 16
+            backColor: "#0000ff"
+            foreColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: true
+            text: "3"
+            alignment: 2
+        }
+        VbLabel {
+            id: c_lab_gra_car
+            x: 472
+            y: 88
+            width: 56
+            height: 27
+            backColor: "#ffffff"
+            borderStyle: 1
+            font.family: "Arial"
+            font.pixelSize: 21
+            font.bold: true
+            alignment: 2
+        }
+        VbLabel {
+            id: c_Label21
+            x: 432
+            y: 48
+            width: 130
+            height: 39
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: true
+            text: "Grammatura max  cartone"
+            alignment: 2
+            opaque: false
+        }
+        VbFrame {
+            id: c_Frame2
+            x: 32
+            y: 120
+            width: 504
+            height: 34
+            z: 1
+            backColor: "#ff8080"
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 13
+            font.bold: true
+            VbLabel {
+                id: c_l_num_mot_abi
+                x: 312
+                y: 3
+                width: 24
+                height: 27
+                backColor: "#ffffc0"
+                foreColor: "#000000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 21
+                font.bold: true
+                alignment: 2
+            }
+            VbLabel {
+                id: c_l_num_mot_liv
+                x: 168
+                y: 3
+                width: 24
+                height: 27
+                backColor: "#ffffc0"
+                foreColor: "#000000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 21
+                font.bold: true
+                alignment: 2
+            }
+            VbLabel {
+                id: c_l_for_mac
+                x: 8
+                y: 3
+                width: 56
+                height: 27
+                backColor: "#ffffc0"
+                foreColor: "#000000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 21
+                font.bold: true
+                alignment: 2
+            }
+            VbLabel {
+                id: c_l_gra_car
+                x: 440
+                y: 3
+                width: 56
+                height: 27
+                backColor: "#ffffc0"
+                foreColor: "#000000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 21
+                font.bold: true
+                alignment: 2
+            }
+        }
+    }
+    VbTextBox {
+        id: c_txt_idle
+        x: 55
+        y: -333
+        width: 75
+        height: 25
+        z: 1
+        text: "Text1"
+    }
+    VbButton {
+        id: c_Command1
+        x: 215
+        y: 541
+        width: 71
+        height: 25
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "ESC"
     }
 }

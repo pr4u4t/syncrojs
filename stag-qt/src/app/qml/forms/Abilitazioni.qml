@@ -10,10 +10,423 @@ VbForm {
     backColor: "#ffffff"
     dialog: false
     controls: ({ "tim_frm_abi": c_tim_frm_abi, "frm_err_abi": c_frm_err_abi, "desc2": c_Desc2, "title": c_Title, "desc1": c_Desc1, "img_war": c_Img_war, "abi_com_pu": c_abi_com_PU, "fun_mot(33)": c_fun_mot_33, "fun_mot(23)": c_fun_mot_23, "fun_mot(13)": c_fun_mot_13, "fun_mot(32)": c_fun_mot_32, "fun_mot(22)": c_fun_mot_22, "fun_mot(12)": c_fun_mot_12, "fun_mot(31)": c_fun_mot_31, "fun_mot(21)": c_fun_mot_21, "fun_mot(11)": c_fun_mot_11, "liv(3)": c_liv_3, "liv(2)": c_liv_2, "liv(1)": c_liv_1, "line1": c_Line1, "lab_abi_com_pu": c_lab_abi_com_PU, "line7": c_Line7, "line6": c_Line6, "line5": c_Line5, "line4": c_Line4, "lab_fun_mot(2)": c_lab_fun_mot_2, "lab_fun_mot(1)": c_lab_fun_mot_1, "lab_fun_mot(0)": c_lab_fun_mot_0, "lab_abi_liv": c_lab_abi_liv, "label1": c_Label1, "lab_liv(0)": c_lab_liv_0, "lab_liv(1)": c_lab_liv_1, "lab_liv(2)": c_lab_liv_2, "pag_title": c_Pag_title, "image3": c_Image3 })
-    VbTimer {
-        id: c_tim_frm_abi
-        interval: 500
-        running: true
+    VbImage {
+        id: c_Image3
+        x: 0
+        y: 1
+        width: 798
+        height: 20
+        stretch: true
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
+    }
+    VbLabel {
+        id: c_Pag_title
+        x: 0
+        y: 0
+        width: 531
+        height: 29
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 21
+        font.bold: true
+        text: "ABILITAZIONI"
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_liv_2
+        x: 646
+        y: 31
+        width: 95
+        height: 22
+        backColor: "#ffffff"
+        foreColor: "#0000c0"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Livello 3"
+        alignment: 2
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_liv_1
+        x: 493
+        y: 31
+        width: 95
+        height: 22
+        backColor: "#ffffff"
+        foreColor: "#0000c0"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Livello 2"
+        alignment: 2
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_liv_0
+        x: 340
+        y: 31
+        width: 95
+        height: 22
+        backColor: "#ffffff"
+        foreColor: "#0000c0"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Livello 1"
+        alignment: 2
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label1
+        x: 51
+        y: 31
+        width: 155
+        height: 25
+        backColor: "#ffffff"
+        foreColor: "#0000c0"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "DESCRIZIONE"
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_abi_liv
+        x: 51
+        y: 62
+        width: 241
+        height: 17
+        backColor: "#0000ff"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 15
+        font.bold: true
+        text: "Abilitazione livello"
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_fun_mot_0
+        x: 51
+        y: 90
+        width: 241
+        height: 17
+        backColor: "#0000ff"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 15
+        font.bold: true
+        text: "Funzionamento motore M1"
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_fun_mot_1
+        x: 51
+        y: 118
+        width: 241
+        height: 17
+        backColor: "#0000ff"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 15
+        font.bold: true
+        text: "Funzionamento motore M2"
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_fun_mot_2
+        x: 51
+        y: 146
+        width: 241
+        height: 17
+        backColor: "#0000ff"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 15
+        font.bold: true
+        text: "Funzionamento motore M3"
+        opaque: false
+    }
+    VbLine {
+        id: c_Line4
+        x1: 51
+        y1: 85
+        x2: 713
+        y2: 85
+        borderColor: "#800000"
+        borderWidth: 2
+    }
+    VbLine {
+        id: c_Line5
+        x1: 51
+        y1: 113
+        x2: 713
+        y2: 113
+        borderColor: "#800000"
+        borderWidth: 2
+    }
+    VbLine {
+        id: c_Line6
+        x1: 51
+        y1: 141
+        x2: 713
+        y2: 141
+        borderColor: "#800000"
+        borderWidth: 2
+    }
+    VbLine {
+        id: c_Line7
+        x1: 51
+        y1: 169
+        x2: 713
+        y2: 169
+        borderColor: "#800000"
+        borderWidth: 2
+    }
+    VbLabel {
+        id: c_lab_abi_com_PU
+        x: 51
+        y: 173
+        width: 293
+        height: 17
+        backColor: "#0000ff"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 15
+        font.bold: true
+        text: "Abilitazione comunicazione Punto Unico"
+        opaque: false
+    }
+    VbLine {
+        id: c_Line1
+        x1: 51
+        y1: 196
+        x2: 713
+        y2: 196
+        borderColor: "#800000"
+        borderWidth: 2
+    }
+    VbCheck {
+        id: c_liv_1
+        x: 362
+        y: 59
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_liv_2
+        KeyNavigation.backtab: c_Desc2
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_liv_2
+        x: 515
+        y: 59
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_liv_3
+        KeyNavigation.backtab: c_liv_1
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_liv_3
+        x: 669
+        y: 59
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_fun_mot_11
+        KeyNavigation.backtab: c_liv_2
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_fun_mot_11
+        x: 362
+        y: 87
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_fun_mot_21
+        KeyNavigation.backtab: c_liv_3
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_fun_mot_21
+        x: 515
+        y: 87
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_fun_mot_31
+        KeyNavigation.backtab: c_fun_mot_11
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_fun_mot_31
+        x: 669
+        y: 87
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_fun_mot_12
+        KeyNavigation.backtab: c_fun_mot_21
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_fun_mot_12
+        x: 362
+        y: 115
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_fun_mot_22
+        KeyNavigation.backtab: c_fun_mot_31
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_fun_mot_22
+        x: 515
+        y: 115
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_fun_mot_32
+        KeyNavigation.backtab: c_fun_mot_12
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_fun_mot_32
+        x: 669
+        y: 115
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_fun_mot_13
+        KeyNavigation.backtab: c_fun_mot_22
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_fun_mot_13
+        x: 362
+        y: 143
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_fun_mot_23
+        KeyNavigation.backtab: c_fun_mot_32
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_fun_mot_23
+        x: 515
+        y: 143
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_fun_mot_33
+        KeyNavigation.backtab: c_fun_mot_13
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_fun_mot_33
+        x: 669
+        y: 143
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_abi_com_PU
+        KeyNavigation.backtab: c_fun_mot_23
+        exclusive: false
+        graphical: true
+    }
+    VbCheck {
+        id: c_abi_com_PU
+        x: 362
+        y: 170
+        width: 43
+        height: 24
+        z: 1
+        backColor: "#00ff00"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_Desc1
+        KeyNavigation.backtab: c_fun_mot_33
+        exclusive: false
+        graphical: true
     }
     VbFrame {
         id: c_frm_err_abi
@@ -22,10 +435,18 @@ VbForm {
         width: 769
         height: 193
         z: 1
-        VbTextBox {
-            id: c_Desc2
+        VbImage {
+            id: c_Img_war
             x: 8
-            y: 128
+            y: 14
+            width: 42
+            height: 39
+            picture: Qt.resolvedUrl("../assets/e12571004a8e7de2.bmp")
+        }
+        VbTextBox {
+            id: c_Desc1
+            x: 8
+            y: 64
             width: 753
             height: 63
             z: 1
@@ -35,8 +456,8 @@ VbForm {
             font.family: "MS Sans Serif"
             font.pixelSize: 24
             font.bold: true
-            KeyNavigation.tab: c_liv_1
-            KeyNavigation.backtab: c_Title
+            KeyNavigation.tab: c_Title
+            KeyNavigation.backtab: c_abi_com_PU
             text: "Descrizione\r\n"
             multiLine: true
         }
@@ -59,9 +480,9 @@ VbForm {
             multiLine: true
         }
         VbTextBox {
-            id: c_Desc1
+            id: c_Desc2
             x: 8
-            y: 64
+            y: 128
             width: 753
             height: 63
             z: 1
@@ -71,436 +492,15 @@ VbForm {
             font.family: "MS Sans Serif"
             font.pixelSize: 24
             font.bold: true
-            KeyNavigation.tab: c_Title
-            KeyNavigation.backtab: c_abi_com_PU
+            KeyNavigation.tab: c_liv_1
+            KeyNavigation.backtab: c_Title
             text: "Descrizione\r\n"
             multiLine: true
         }
-        VbImage {
-            id: c_Img_war
-            x: 8
-            y: 14
-            width: 42
-            height: 39
-            picture: Qt.resolvedUrl("../assets/e12571004a8e7de2.bmp")
-        }
     }
-    VbCheck {
-        id: c_abi_com_PU
-        x: 362
-        y: 170
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_Desc1
-        KeyNavigation.backtab: c_fun_mot_33
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_fun_mot_33
-        x: 669
-        y: 143
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_abi_com_PU
-        KeyNavigation.backtab: c_fun_mot_23
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_fun_mot_23
-        x: 515
-        y: 143
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_fun_mot_33
-        KeyNavigation.backtab: c_fun_mot_13
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_fun_mot_13
-        x: 362
-        y: 143
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_fun_mot_23
-        KeyNavigation.backtab: c_fun_mot_32
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_fun_mot_32
-        x: 669
-        y: 115
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_fun_mot_13
-        KeyNavigation.backtab: c_fun_mot_22
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_fun_mot_22
-        x: 515
-        y: 115
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_fun_mot_32
-        KeyNavigation.backtab: c_fun_mot_12
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_fun_mot_12
-        x: 362
-        y: 115
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_fun_mot_22
-        KeyNavigation.backtab: c_fun_mot_31
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_fun_mot_31
-        x: 669
-        y: 87
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_fun_mot_12
-        KeyNavigation.backtab: c_fun_mot_21
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_fun_mot_21
-        x: 515
-        y: 87
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_fun_mot_31
-        KeyNavigation.backtab: c_fun_mot_11
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_fun_mot_11
-        x: 362
-        y: 87
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_fun_mot_21
-        KeyNavigation.backtab: c_liv_3
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_liv_3
-        x: 669
-        y: 59
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_fun_mot_11
-        KeyNavigation.backtab: c_liv_2
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_liv_2
-        x: 515
-        y: 59
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_liv_3
-        KeyNavigation.backtab: c_liv_1
-        exclusive: false
-        graphical: true
-    }
-    VbCheck {
-        id: c_liv_1
-        x: 362
-        y: 59
-        width: 43
-        height: 24
-        z: 1
-        backColor: "#00ff00"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_liv_2
-        KeyNavigation.backtab: c_Desc2
-        exclusive: false
-        graphical: true
-    }
-    VbLine {
-        id: c_Line1
-        x1: 51
-        y1: 196
-        x2: 713
-        y2: 196
-        borderColor: "#800000"
-        borderWidth: 2
-    }
-    VbLabel {
-        id: c_lab_abi_com_PU
-        x: 51
-        y: 173
-        width: 293
-        height: 17
-        backColor: "#0000ff"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 15
-        font.bold: true
-        text: "Abilitazione comunicazione Punto Unico"
-        opaque: false
-    }
-    VbLine {
-        id: c_Line7
-        x1: 51
-        y1: 169
-        x2: 713
-        y2: 169
-        borderColor: "#800000"
-        borderWidth: 2
-    }
-    VbLine {
-        id: c_Line6
-        x1: 51
-        y1: 141
-        x2: 713
-        y2: 141
-        borderColor: "#800000"
-        borderWidth: 2
-    }
-    VbLine {
-        id: c_Line5
-        x1: 51
-        y1: 113
-        x2: 713
-        y2: 113
-        borderColor: "#800000"
-        borderWidth: 2
-    }
-    VbLine {
-        id: c_Line4
-        x1: 51
-        y1: 85
-        x2: 713
-        y2: 85
-        borderColor: "#800000"
-        borderWidth: 2
-    }
-    VbLabel {
-        id: c_lab_fun_mot_2
-        x: 51
-        y: 146
-        width: 241
-        height: 17
-        backColor: "#0000ff"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 15
-        font.bold: true
-        text: "Funzionamento motore M3"
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_fun_mot_1
-        x: 51
-        y: 118
-        width: 241
-        height: 17
-        backColor: "#0000ff"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 15
-        font.bold: true
-        text: "Funzionamento motore M2"
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_fun_mot_0
-        x: 51
-        y: 90
-        width: 241
-        height: 17
-        backColor: "#0000ff"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 15
-        font.bold: true
-        text: "Funzionamento motore M1"
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_abi_liv
-        x: 51
-        y: 62
-        width: 241
-        height: 17
-        backColor: "#0000ff"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 15
-        font.bold: true
-        text: "Abilitazione livello"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label1
-        x: 51
-        y: 31
-        width: 155
-        height: 25
-        backColor: "#ffffff"
-        foreColor: "#0000c0"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "DESCRIZIONE"
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_liv_0
-        x: 340
-        y: 31
-        width: 95
-        height: 22
-        backColor: "#ffffff"
-        foreColor: "#0000c0"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Livello 1"
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_liv_1
-        x: 493
-        y: 31
-        width: 95
-        height: 22
-        backColor: "#ffffff"
-        foreColor: "#0000c0"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Livello 2"
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_liv_2
-        x: 646
-        y: 31
-        width: 95
-        height: 22
-        backColor: "#ffffff"
-        foreColor: "#0000c0"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Livello 3"
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_Pag_title
-        x: 0
-        y: 0
-        width: 531
-        height: 29
-        backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 21
-        font.bold: true
-        text: "ABILITAZIONI"
-        opaque: false
-    }
-    VbImage {
-        id: c_Image3
-        x: 0
-        y: 1
-        width: 798
-        height: 20
-        stretch: true
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
+    VbTimer {
+        id: c_tim_frm_abi
+        interval: 500
+        running: true
     }
 }

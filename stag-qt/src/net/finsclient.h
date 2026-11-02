@@ -21,7 +21,7 @@ public:
     bool isEnabled() const { return m_timer.isActive(); }
     void setEnabled(bool enabled);
 
-    QString remoteHost() const { return m_host; }
+    const QString &remoteHost() const { return m_host; }
     void setRemoteHost(const QString &host) { m_host = host; }
     quint16 remotePort() const { return m_port; }
     void setRemotePort(quint16 port) { m_port = port; }

@@ -178,12 +178,14 @@ private slots:
 
     void historyGridShowsNewestFirstInThePlantDateFormat()
     {
+        // Other tests store alarms at the current time: this one must be newer than any of them.
+        ins_sto(m_db, QStringLiteral("newest"), QDateTime(QDate(2099, 12, 31), QTime(8, 0, 0)));
         AlarmTableModel model(QStringLiteral("dbgrid_sto_all"), QStringLiteral("SELECT ALLARME, DATA_ALL, ORA_ALL FROM STO ORDER BY DATA_ALL DESC, ORA_ALL DESC"),
                               {QStringLiteral("ALLARME"), QStringLiteral("DATA"), QStringLiteral("ORA")}, {560, 120, 100}, m_db);
         model.activate(QString());
         const QVariantList cells = model.value(QStringLiteral("dbgrid_sto_all"), QStringLiteral("cells")).toList();
         QCOMPARE(cells.size(), NUM_REC_STO + 1);
-        QCOMPARE(cells.at(1).toStringList().at(1), QStringLiteral("10/30/2026"));
+        QCOMPARE(cells.at(1).toStringList().at(1), QStringLiteral("12/31/2099"));
     }
 };
 

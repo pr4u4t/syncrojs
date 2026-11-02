@@ -45,7 +45,7 @@ private:
     void enableFrames(bool enabled);
     void applyCutPatternStops();
     void setCutStops(int format, bool enabled);
-    void setText(const QString &control, const QString &value);
+    void keepText(const QString &control, const QString &value);
     void setListIndex(const QString &control, int index);
     void setDbCombo(const QString &control, const QStringList &items, const QString &text);
     void reloadFlutes();

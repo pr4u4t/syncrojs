@@ -1,4 +1,5 @@
 #include "parcurtag.h"
+#include "sqlcheck.h"
 
 #include "parcfgschtag.h"
 #include "parmac.h"
@@ -35,7 +36,7 @@ void clear(int liv)
 void resCurTag(QSqlDatabase &db, int liv)
 {
     QSqlQuery q(db);
-    q.exec(QStringLiteral("UPDATE CUR_TAG SET \"LIVELLO%1\" = '0' WHERE trim(coalesce(\"LIVELLO%1\", '')) <> '' AND CAST(trim(\"LIVELLO%1\") AS REAL) = 1").arg(liv));
+    sqlExec(q, QStringLiteral("UPDATE CUR_TAG SET \"LIVELLO%1\" = '0' WHERE trim(coalesce(\"LIVELLO%1\", '')) <> '' AND CAST(trim(\"LIVELLO%1\") AS REAL) = 1").arg(liv));
 }
 
 void leggiParCurTag(QSqlDatabase &db)
@@ -53,7 +54,7 @@ void leggiParCurTag(QSqlDatabase &db)
         }
         resCurTag(db, i);
         QSqlQuery q(db);
-        q.prepare(QStringLiteral("SELECT * FROM CUR_TAG WHERE FOR_MAC = ? AND GRA_CAR = ? AND N_MOT_L = ? AND N_MOT_AB = ? ORDER BY rec_no LIMIT 1"));
+        sqlPrepare(q, QStringLiteral("SELECT * FROM CUR_TAG WHERE FOR_MAC = ? AND GRA_CAR = ? AND N_MOT_L = ? AND N_MOT_AB = ? ORDER BY rec_no LIMIT 1"));
         q.addBindValue(forMac);
         q.addBindValue(graCar);
         q.addBindValue(numMotLiv);
@@ -61,9 +62,9 @@ void leggiParCurTag(QSqlDatabase &db)
         if (q.exec() && q.next()) {
             rieValCurTag(i, q.record());
             QSqlQuery u(db);
-            u.prepare(QStringLiteral("UPDATE CUR_TAG SET \"LIVELLO%1\" = '1' WHERE rec_no = ?").arg(i));
+            sqlPrepare(u, QStringLiteral("UPDATE CUR_TAG SET \"LIVELLO%1\" = '1' WHERE rec_no = ?").arg(i));
             u.addBindValue(q.value(QStringLiteral("rec_no")));
-            u.exec();
+            sqlExec(u);
             cur_tag(i).descr = QString::number(forMac) + QString::number(graCar) + QString::number(numMotLiv) + QString::number(par_abi.num_mot_abi(i));
         } else {
             log_str(QStringLiteral("Sub leggi_par_cur_tag del Modulo par_cur_tag: non \u00E8 presente alcun record con formato, num. motori e num. motori abilitati = %1 %2 %3 %4")
@@ -72,6 +73,60 @@ void leggiParCurTag(QSqlDatabase &db)
             clear(i);
         }
     }
+}
+
+bool caricaNewParCurTag(QSqlDatabase &db, int liv)
+{
+    const int forMac = forMacMm(par_mac.car_tec.for_mac);
+    const int graCar = getGraCar(par_mac.car_tec.gra_car);
+    const int numMotLiv = int(par_mac.car_tec.num_mot_liv_tag.val());
+    const int numMotAbi = par_abi.num_mot_abi(liv);
+    QSqlQuery count(db);
+    if (!count.exec(QStringLiteral("SELECT COUNT(*) FROM CUR_TAG")) || !count.next() || count.value(0).toInt() == 0) {
+        log_str(QStringLiteral("Sub carica_new_par_cur_tag del Modulo par_cur_tag: il file cur_tag.dbf \u00E8 vuoto"), MED_PRIORITY, CosLog::Cur);
+        return false;
+    }
+    QSqlQuery q(db);
+    sqlPrepare(q, QStringLiteral("SELECT * FROM CUR_TAG WHERE FOR_MAC = ? AND GRA_CAR = ? AND N_MOT_L = ? AND N_MOT_AB = ? ORDER BY rec_no LIMIT 1"));
+    q.addBindValue(forMac);
+    q.addBindValue(graCar);
+    q.addBindValue(numMotLiv);
+    q.addBindValue(numMotAbi);
+    if (!q.exec() || !q.next()) {
+        log_str(QStringLiteral("Sub carica_new_par_cur_tag del Modulo par_cur_tag: non esiste alcun record con formato, num. motori e num. motori abilitati per il livello %1").arg(liv), MED_PRIORITY, CosLog::Cur);
+        return false;
+    }
+    rieValCurTag(liv, q.record());
+    resCurTag(db, liv);
+    QSqlQuery u(db);
+    sqlPrepare(u, QStringLiteral("UPDATE CUR_TAG SET \"LIVELLO%1\" = '1' WHERE rec_no = ?").arg(liv));
+    u.addBindValue(q.value(QStringLiteral("rec_no")));
+    sqlExec(u);
+    cur_tag(liv).descr = QString::number(forMac) + QString::number(graCar) + QString::number(numMotLiv) + QString::number(numMotAbi);
+    return true;
+}
+
+// VB's fallback for a record not marked active writes ds("LIVELLO" & i) with i never assigned: there is
+// no LIVELLO0, so it raises an error instead of saving. Here that path logs and saves nothing.
+void scrParCurTagDbf(QSqlDatabase &db, int liv)
+{
+    QSqlQuery q(db);
+    sqlPrepare(q, QStringLiteral("SELECT rec_no FROM CUR_TAG WHERE CAST(\"LIVELLO%1\" AS INTEGER) = 1 AND FOR_MAC = ? AND GRA_CAR = ? AND N_MOT_L = ? AND N_MOT_AB = ? ORDER BY rec_no LIMIT 1").arg(liv));
+    q.addBindValue(forMacMm(par_mac.car_tec.for_mac));
+    q.addBindValue(getGraCar(par_mac.car_tec.gra_car));
+    q.addBindValue(int(par_mac.car_tec.num_mot_liv_tag.val()));
+    q.addBindValue(int(par_abi.num_mot_abi(liv)));
+    if (!q.exec() || !q.next()) {
+        log_str(QStringLiteral("Sub scr_par_cur_tag_dbf del Modulo par_cur_tag: non era settato alcun record per il livello %1").arg(liv), MED_PRIORITY, CosLog::Cur);
+        return;
+    }
+    QStringList assignments;
+    for (int m = 0; m <= 14; ++m)
+        assignments << QStringLiteral("\"LUN_TAG%1\" = '%2', \"VEL_TAG%1\" = '%3'").arg(m).arg(cur_tag(liv).Lun_tag(m + 1)).arg(cur_tag(liv).vel_max(m + 1));
+    QSqlQuery u(db);
+    sqlPrepare(u, QStringLiteral("UPDATE CUR_TAG SET %1 WHERE rec_no = ?").arg(assignments.join(QStringLiteral(", "))));
+    u.addBindValue(q.value(0));
+    sqlExec(u);
 }
 
 int calLiv(int liv)

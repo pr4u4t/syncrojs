@@ -74,17 +74,17 @@ void StaBarModel::eveTagReset(int staRes)
 {
     switch (staRes) {
     case ClasseStato::e_stop:
-        m_txtStaRes = QStringLiteral("Emergency Stop");
+        m_txtStaRes = msg(QStringLiteral("sta_e_stop"));
         m_txtStaResFore = vbColor(COL_ALL_Red);
         m_frmStaResBack = vbColor(COL_ALL_Red);
         break;
     case ClasseStato::f_stop:
         // The VB code sets frm_sta_res.ForeColor here, so the frame keeps its colour.
-        m_txtStaRes = QStringLiteral("Fast Stop");
+        m_txtStaRes = msg(QStringLiteral("sta_f_stop"));
         m_txtStaResFore = vbColor(COL_ALL_Red);
         break;
     case ClasseStato::n_stop:
-        m_txtStaRes = QStringLiteral("Normal Stop");
+        m_txtStaRes = msg(QStringLiteral("sta_n_stop"));
         m_txtStaResFore = vbColor(vbBlack);
         m_frmStaResBack = vbColor(COL_DARK_Green);
         break;

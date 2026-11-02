@@ -1,10 +1,20 @@
 #include "classestato.h"
 #include "formui.h"
+#include "miscpages.h"
+#include "uihooks.h"
 #include "stagglobals.h"
 #include "stagapp.h"
 
 #include <QCommandLineParser>
+#include <cstdio>
+
 #include <QDir>
+#include <QTimer>
+#include <QFile>
+#include <QFileInfo>
+#include <QFont>
+#include <QSqlDatabase>
+#include <QSqlError>
 #include <QGuiApplication>
 #include <QImage>
 #include <QQmlApplicationEngine>
@@ -55,6 +65,28 @@ static int renderForms(const QString &outputDir, FormUi *ui)
         }
     }
     return failures == 0 ? 0 : 1;
+}
+
+// What is missing to start for real, empty when nothing is.
+static QString startProblem(const QString &dataDir, const QString &sqlitePath)
+{
+    if (!QFile::exists(QDir(dataDir).filePath(QStringLiteral("stag.ini"))))
+        return QStringLiteral("No stag.ini in the data directory: ") + QDir(dataDir).absolutePath();
+    if (!QFile::exists(sqlitePath))
+        return QStringLiteral("Database not found: ") + QFileInfo(sqlitePath).absoluteFilePath();
+    QString problem;
+    {
+        QSqlDatabase db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("stag-check"));
+        db.setDatabaseName(sqlitePath);
+        db.setConnectOptions(QStringLiteral("QSQLITE_OPEN_READONLY"));
+        if (!db.open())
+            problem = QStringLiteral("Cannot open the database: ") + db.lastError().text();
+        else if (!db.tables().contains(QStringLiteral("MESSAGGI")))
+            problem = QStringLiteral("Not a STAG database, it has no MESSAGGI table: ") + QFileInfo(sqlitePath).absoluteFilePath();
+        db.close();
+    }
+    QSqlDatabase::removeDatabase(QStringLiteral("stag-check"));
+    return problem;
 }
 
 // Starts the shell without the PLC loop, presses each function key from the main page and
@@ -165,6 +197,9 @@ int main(int argc, char *argv[])
     QGuiApplication::setApplicationName(QStringLiteral("stag"));
     QGuiApplication::setOrganizationName(QStringLiteral("Fosber"));
 
+    // The forms ask for the font of Windows 9x; Qt searches for it at every start and warns.
+    QFont::insertSubstitution(QStringLiteral("MS Sans Serif"), QStringLiteral("Arial"));
+
     QCommandLineParser parser;
     parser.addHelpOption();
     QCommandLineOption dataOption(QStringLiteral("data"), QStringLiteral("Directory with stag.ini and the .dat files"), QStringLiteral("dir"), QStringLiteral("."));
@@ -174,7 +209,9 @@ int main(int argc, char *argv[])
     QCommandLineOption shellOption(QStringLiteral("render-shell"), QStringLiteral("Walk the function keys without the PLC, write PNGs to this directory and exit"), QStringLiteral("dir"));
     QCommandLineOption languageOption(QStringLiteral("language"), QStringLiteral("With a render option: MESSAGGI language number"), QStringLiteral("number"), QStringLiteral("1"));
     QCommandLineOption writesOption(QStringLiteral("enable-plc-writes"), QStringLiteral("Allow writing to the PLC; without it the program only reads"));
-    parser.addOptions({dataOption, dbOption, plcOption, renderOption, shellOption, languageOption, writesOption});
+    QCommandLineOption screenshotOption(QStringLiteral("screenshot"), QStringLiteral("Normal start: write the window to this PNG after 2 s and quit"), QStringLiteral("file"));
+    QCommandLineOption sizeOption(QStringLiteral("window-size"), QStringLiteral("Normal start: size of the window"), QStringLiteral("WxH"));
+    parser.addOptions({dataOption, dbOption, plcOption, renderOption, shellOption, languageOption, writesOption, screenshotOption, sizeOption});
     parser.process(app);
     if (parser.isSet(renderOption) || parser.isSet(shellOption)) {
         // With --data the shell shows those orders; the PLC loop is never started here.
@@ -201,8 +238,19 @@ int main(int argc, char *argv[])
     }
 
     StagApp::Options options;
-    options.dataDir = parser.value(dataOption);
-    options.sqlitePath = parser.value(dbOption);
+    // What is not on the command line comes from next to the program, where the build puts it, or else from
+    // the current directory.
+    const QDir programDir(QCoreApplication::applicationDirPath());
+    if (parser.isSet(dataOption))
+        options.dataDir = parser.value(dataOption);
+    else if (QFile::exists(programDir.filePath(QStringLiteral("dati/stag.ini"))))
+        options.dataDir = programDir.filePath(QStringLiteral("dati"));
+    else
+        options.dataDir = QDir::currentPath();
+    if (parser.isSet(dbOption) || !QFile::exists(programDir.filePath(QStringLiteral("stag.sqlite"))))
+        options.sqlitePath = parser.value(dbOption);
+    else
+        options.sqlitePath = programDir.filePath(QStringLiteral("stag.sqlite"));
     options.plcWrites = parser.isSet(writesOption);
     if (parser.isSet(plcOption)) {
         const QString plc = parser.value(plcOption);
@@ -212,10 +260,18 @@ int main(int argc, char *argv[])
             options.plcPortOverride = quint16(plc.mid(colon + 1).toUInt());
     }
 
+    // Without these the program would create an empty database and ini in the current directory and start
+    // with no texts, no orders and language 0.
+    if (const QString problem = startProblem(options.dataDir, options.sqlitePath); !problem.isEmpty()) {
+        fprintf(stderr, "%s\n\nUsage: stag --data <directory with stag.ini> --db <stag.sqlite> [--plc host:port] [--enable-plc-writes]\n", qPrintable(problem));
+        return 2;
+    }
+
     StagApp stag(options);
+    // ui before the engine: QML still evaluates bindings on stagUi while the engine is being destroyed.
+    FormUi ui(stag.staBar());
     // Models are registered after load(), which start() runs.
     QQmlApplicationEngine engine;
-    FormUi ui(stag.staBar());
     ui.addModel(QStringLiteral("Pag_pro"), stag.pagPro());
     ui.addModel(QStringLiteral("Pag_lis_ord"), stag.pagLisOrd());
     ui.addModel(QStringLiteral("Pag_lis_ese"), stag.pagLisEse());
@@ -225,7 +281,27 @@ int main(int argc, char *argv[])
     stag.start();
     for (auto model = stag.pageModels().cbegin(); model != stag.pageModels().cend(); ++model)
         ui.addModel(model.key(), model.value());
+    QObject::connect(stag.pagMsg(), &PagMsgModel::opened, &ui, [&ui] { emit ui.overlayRequested(QStringLiteral("Pag_msg")); });
+    stag::languageChangedHook = [&ui] { emit ui.languageChanged(); };
     engine.loadFromModule("Stag", "Main");
     QObject::connect(&app, &QCoreApplication::aboutToQuit, &stag, &StagApp::shutdown);
-    return app.exec();
+    if (parser.isSet(sizeOption)) {
+        const QStringList size = parser.value(sizeOption).split(u'x');
+        if (auto *window = qobject_cast<QQuickWindow *>(engine.rootObjects().value(0)); window && size.size() == 2)
+            window->resize(size[0].toInt(), size[1].toInt());
+    }
+    if (parser.isSet(screenshotOption)) {
+        QTimer::singleShot(2000, &app, [&] {
+            if (auto *window = qobject_cast<QQuickWindow *>(engine.rootObjects().value(0)))
+                window->grabWindow().save(parser.value(screenshotOption));
+            QCoreApplication::quit();
+        });
+    }
+    const int code = app.exec();
+    // These capture ui and the models, which end with this function.
+    stag::languageChangedHook = nullptr;
+    stag::messagWinHook = nullptr;
+    stag::messagWinTextHook = nullptr;
+    stag::messaggioLivHook = nullptr;
+    return code;
 }

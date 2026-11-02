@@ -10,203 +10,261 @@ VbForm {
     backColor: "#ffffff"
     dialog: false
     controls: ({ "tim_fins": c_tim_fins, "sck_fins": c_sck_Fins, "tim_com_spde_lan": c_Tim_com_spde_lan, "frm_com": c_frm_com, "lab_sta_mac": c_lab_sta_mac, "lin_no_com_plc": c_lin_no_com_plc, "lin_no_com_spde": c_lin_no_com_spde, "ima_mas": c_ima_mas, "led_spde_tx": c_led_spde_tx, "led_spde_rx": c_led_spde_rx, "led_plc_tx": c_led_plc_tx, "led_plc_rx": c_led_plc_rx, "lab_t_plc": c_lab_t_plc, "lab_r_plc": c_lab_r_plc, "lab_t_spde": c_lab_t_spde, "lab_r_spde": c_lab_r_spde, "ima_spde": c_ima_spde, "label4": c_Label4, "frm_tem_co": c_frm_tem_co, "txt_tem_co": c_txt_tem_co, "label7": c_Label7, "label3": c_Label3, "sck_tim": c_sck_tim, "com_spde_lan": c_com_spde_lan, "frm_scarti": c_frm_scarti, "txt_sca(3)": c_txt_sca_3, "txt_sca(2)": c_txt_sca_2, "txt_sca(1)": c_txt_sca_1, "lab_gray_med(2)": c_lab_gray_med_2, "lab_sca": c_lab_sca, "label2": c_Label2, "frm_liv": c_frm_liv, "lab_liv(1)": c_lab_liv_1, "lab_liv(2)": c_lab_liv_2, "lab_liv(3)": c_lab_liv_3, "label6": c_Label6, "liv(1)": c_liv_1, "liv(2)": c_liv_2, "liv(3)": c_liv_3, "label23": c_label23, "frm_sta_res": c_frm_sta_res, "txt_sta_res": c_txt_sta_res, "lab_sta_res": c_lab_sta_res, "label32": c_Label32, "frm_sta_run": c_frm_sta_run, "txt_sta_run": c_txt_sta_run, "lab_run": c_lab_run, "lab_sta_run": c_lab_sta_run, "frm_num_sca": c_frm_num_sca, "txt_num_sca(1)": c_txt_num_sca_1, "txt_num_sca(2)": c_txt_num_sca_2, "txt_num_sca(3)": c_txt_num_sca_3, "lab_gray_med(0)": c_lab_gray_med_0, "lab_numero_sca": c_lab_numero_sca, "label22": c_Label22, "label16": c_Label16, "frm_err": c_frm_err, "txt_err(1)": c_txt_err_1, "txt_err(2)": c_txt_err_2, "txt_err(3)": c_txt_err_3, "lab_gray_med(1)": c_lab_gray_med_1, "label21": c_Label21, "lab_errore": c_lab_errore, "fra_ora(0)": c_fra_ora_0, "txt_dat": c_txt_dat, "txt_ora": c_txt_ora, "frm_mod": c_frm_mod, "txt_mod": c_txt_mod, "lab_mod": c_lab_mod, "label5": c_Label5, "txt_idle": c_txt_idle, "ssp_mes_all": c_SSP_mes_all, "mes_all": c_mes_all, "tim_com_plc": c_Tim_com_PLC, "tim_all": c_Tim_all, "tim_com_spde": c_tim_com_spde, "tim_com_azi": c_tim_com_azi, "frm_met_man": c_frm_met_man, "txt_met_man": c_txt_met_man, "lab_metri_man": c_Lab_metri_man, "label17": c_Label17, "fra_vel_max": c_Fra_vel_max, "txt_vel_max": c_txt_vel_max, "lab_velocita_max": c_Lab_velocita_max, "label1": c_Label1, "frm_vel": c_frm_vel, "txt_vel": c_txt_vel, "label9": c_Label9, "lab_velocita": c_lab_velocita, "frm_all": c_frm_all, "lab_bm": c_lab_bm, "lbl_con": c_lbl_con, "lbl_qe": c_lbl_qe, "lab_har": c_Lab_har, "lab_mal": c_Lab_mal, "shp_all_qe": c_Shp_all_qe, "shp_all_bm": c_Shp_all_bm, "shp_all_con": c_Shp_all_con, "shp_all_har": c_Shp_all_har, "shp_all_mal": c_Shp_all_mal, "lab_all": c_lab_all, "com_sch_tag(2)": c_com_sch_tag_2, "com_sch_tag(1)": c_com_sch_tag_1, "com_sch_tag(0)": c_com_sch_tag_0, "com_spde_ser": c_com_spde_ser, "sck_sch_tag(0)": c_sck_sch_tag_0, "sck_sch_tag(1)": c_sck_sch_tag_1, "sck_sch_tag(2)": c_sck_sch_tag_2, "line1": c_Line1, "shape3": c_Shape3, "shape2": c_Shape2, "shape1": c_Shape1, "lab_msg": c_lab_msg })
-    VbTimer {
-        id: c_tim_fins
-        interval: 0
-        running: false
+    VbLabel {
+        id: c_lab_msg
+        x: 7
+        y: 2
+        width: 780
+        height: 24
+        backColor: "#ffffff"
+        foreColor: "#c00000"
+        font.family: "Arial"
+        font.pixelSize: 21
+        font.bold: true
+        opaque: false
+        autoSize: true
+    }
+    VbShape {
+        id: c_Shape1
+        x: -2
+        y: 26
+        width: 858
+        height: 4
+        shape: 0
+        fillColor: "#000000"
+    }
+    VbShape {
+        id: c_Shape2
+        x: -2
+        y: 0
+        width: 858
+        height: 4
+        shape: 0
+        fillColor: "#000000"
+    }
+    VbShape {
+        id: c_Shape3
+        x: 1
+        y: 30
+        width: 80
+        height: 46
+        shape: 0
+        borderWidth: 2
+    }
+    VbLine {
+        id: c_Line1
+        x1: 387
+        y1: 92
+        x2: 528
+        y2: 92
+        borderColor: "#000000"
+        borderWidth: 2
     }
     VbInert {
-        id: c_sck_Fins
+        id: c_sck_sch_tag_2
         kind: "Winsock"
     }
-    VbTimer {
-        id: c_Tim_com_spde_lan
-        interval: 1000
-        running: false
+    VbInert {
+        id: c_sck_sch_tag_1
+        kind: "Winsock"
+    }
+    VbInert {
+        id: c_sck_sch_tag_0
+        kind: "Winsock"
+    }
+    VbInert {
+        id: c_com_spde_ser
+        kind: "MSComm"
+    }
+    VbInert {
+        id: c_com_sch_tag_0
+        kind: "MSComm"
+    }
+    VbInert {
+        id: c_com_sch_tag_1
+        kind: "MSComm"
+    }
+    VbInert {
+        id: c_com_sch_tag_2
+        kind: "MSComm"
     }
     VbFrame {
-        id: c_frm_com
-        x: -9
-        y: 75
-        width: 126
-        height: 50
+        id: c_frm_all
+        x: 117
+        y: 78
+        width: 279
+        height: 47
         enabled: false
         z: 1
         backColor: "#008000"
         borderStyle: 0
         VbLabel {
-            id: c_lab_sta_mac
-            x: 74
-            y: 6
-            width: 26
-            height: 27
-            visible: false
-            foreColor: "#ffff00"
+            id: c_lab_all
+            x: 0
+            y: -1
+            width: 280
+            height: 40
+            backColor: "#ffffff"
+            foreColor: "#000000"
             font.family: "Arial"
-            font.pixelSize: 27
+            font.pixelSize: 24
             font.bold: true
-            text: "S"
+            wordWrap: true
+        }
+        VbShape {
+            id: c_Shp_all_mal
+            x: 241
+            y: 4
+            width: 39
+            height: 33
+            shape: 3
+            fillColor: "#00ff00"
+            borderWidth: 0
+        }
+        VbShape {
+            id: c_Shp_all_har
+            x: 191
+            y: 4
+            width: 35
+            height: 33
+            shape: 3
+            fillColor: "#00ff00"
+            borderWidth: 0
+        }
+        VbShape {
+            id: c_Shp_all_con
+            x: 75
+            y: 4
+            width: 35
+            height: 33
+            shape: 3
+            fillColor: "#00ff00"
+            borderWidth: 0
+        }
+        VbShape {
+            id: c_Shp_all_bm
+            x: 14
+            y: 4
+            width: 35
+            height: 33
+            shape: 3
+            fillColor: "#00ff00"
+            borderWidth: 0
+        }
+        VbShape {
+            id: c_Shp_all_qe
+            x: 133
+            y: 4
+            width: 35
+            height: 33
+            shape: 3
+            fillColor: "#00ff00"
+            borderWidth: 0
+        }
+        VbLabel {
+            id: c_Lab_mal
+            x: 257
+            y: 8
+            width: 7
+            height: 22
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: true
+            text: "!"
             alignment: 2
             opaque: false
         }
-        VbLine {
-            id: c_lin_no_com_plc
-            x1: 69
-            y1: 38
-            x2: 103
-            y2: 6
-            borderWidth: 3
-            visible: false
-        }
-        VbLine {
-            id: c_lin_no_com_spde
-            x1: 14
-            y1: 38
-            x2: 47
-            y2: 6
-            borderWidth: 3
-            visible: false
-        }
-        VbImage {
-            id: c_ima_mas
-            x: 71
-            y: 6
-            width: 32
-            height: 32
-            stretch: true
-            picture: Qt.resolvedUrl("../assets/aede054ae578a359.bmp")
-        }
-        VbShape {
-            id: c_led_spde_tx
-            x: 50
+        VbLabel {
+            id: c_Lab_har
+            x: 179
             y: 11
-            width: 7
-            height: 7
-            shape: 3
-            fillColor: "#ff0000"
-        }
-        VbShape {
-            id: c_led_spde_rx
-            x: 50
-            y: 24
-            width: 7
-            height: 7
-            shape: 3
-            fillColor: "#ff0000"
-        }
-        VbShape {
-            id: c_led_plc_tx
-            x: 105
-            y: 11
-            width: 7
-            height: 7
-            shape: 3
-            fillColor: "#ff0000"
-        }
-        VbShape {
-            id: c_led_plc_rx
-            x: 105
-            y: 24
-            width: 7
-            height: 7
-            shape: 3
-            fillColor: "#ff0000"
-        }
-        VbLabel {
-            id: c_lab_t_plc
-            x: 114
-            y: 6
-            width: 17
-            height: 17
-            font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: true
-            text: "T"
-            opaque: false
-        }
-        VbLabel {
-            id: c_lab_r_plc
-            x: 114
-            y: 21
-            width: 17
-            height: 17
-            font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: true
-            text: "R"
-            opaque: false
-        }
-        VbLabel {
-            id: c_lab_t_spde
-            x: 59
-            y: 6
-            width: 17
-            height: 17
-            font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: true
-            text: "T"
-            opaque: false
-        }
-        VbLabel {
-            id: c_lab_r_spde
-            x: 59
-            y: 21
-            width: 12
-            height: 13
-            font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: true
-            text: "R"
-            opaque: false
-        }
-        VbImage {
-            id: c_ima_spde
-            x: 16
-            y: 6
-            width: 32
-            height: 32
-            stretch: true
-            picture: Qt.resolvedUrl("../assets/cce5a38e029d2af7.bmp")
-        }
-        VbLabel {
-            id: c_Label4
-            x: 12
-            y: 3
-            width: 112
-            height: 39
+            width: 58
+            height: 14
             backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: true
+            text: "Hardware"
+            alignment: 2
+            opaque: false
+        }
+        VbLabel {
+            id: c_lbl_qe
+            x: 122
+            y: 4
+            width: 57
+            height: 28
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: true
+            text: "Quadri elettrici"
+            alignment: 2
+            opaque: false
+        }
+        VbLabel {
+            id: c_lbl_con
+            x: 67
+            y: 11
+            width: 50
+            height: 14
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: true
+            text: "Consolle"
+            alignment: 2
+            opaque: false
+        }
+        VbLabel {
+            id: c_lab_bm
+            x: 0
+            y: 4
+            width: 65
+            height: 28
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: true
+            text: "Bordo macchina"
+            alignment: 2
+            opaque: false
         }
     }
     VbFrame {
-        id: c_frm_tem_co
-        x: 312
+        id: c_frm_vel
+        x: 128
         y: 30
-        width: 82
+        width: 50
         height: 49
+        enabled: false
         z: 1
         backColor: "#008000"
         borderStyle: 0
-        text: "Frame1"
-        VbTextBox {
-            id: c_txt_tem_co
-            x: 2
-            y: 15
-            width: 81
-            height: 31
-            z: 1
-            borderStyle: 0
+        VbLabel {
+            id: c_lab_velocita
+            x: 3
+            y: 0
+            width: 25
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#ffffff"
             font.family: "Arial"
-            font.pixelSize: 20
+            font.pixelSize: 13
             font.bold: true
-            KeyNavigation.tab: c_txt_vel
-            KeyNavigation.backtab: c_txt_sca_3
-            text: "01:45:60"
-            alignment: 2
+            text: "Vel."
+            opaque: false
+            autoSize: true
         }
         VbLabel {
-            id: c_Label7
-            x: 76
+            id: c_Label9
+            x: 43
             y: 0
             width: 7
             height: 42
@@ -216,90 +274,333 @@ VbForm {
             font.pixelSize: 24
             font.bold: true
             wordWrap: true
+            visible: false
+        }
+        VbTextBox {
+            id: c_txt_vel
+            x: 2
+            y: 15
+            width: 48
+            height: 31
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 21
+            font.bold: true
+            KeyNavigation.tab: c_txt_vel_max
+            KeyNavigation.backtab: c_txt_tem_co
+            text: "230"
+        }
+    }
+    VbFrame {
+        id: c_Fra_vel_max
+        x: 178
+        y: 30
+        width: 56
+        height: 49
+        z: 1
+        backColor: "#008000"
+        borderStyle: 0
+        text: "Frame1"
+        VbLabel {
+            id: c_Label1
+            x: 49
+            y: 0
+            width: 7
+            height: 42
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 24
+            font.bold: true
+            wordWrap: true
+            visible: false
         }
         VbLabel {
-            id: c_Label3
-            x: 2
+            id: c_Lab_velocita_max
+            x: 3
             y: 0
-            width: 67
+            width: 45
             height: 16
             backColor: "#ffffff"
             foreColor: "#ffffff"
             font.family: "Arial"
             font.pixelSize: 13
             font.bold: true
-            text: "Tempo CO"
+            text: "V. max"
             opaque: false
             autoSize: true
         }
-    }
-    VbInert {
-        id: c_sck_tim
-        kind: "Winsock"
-    }
-    VbInert {
-        id: c_com_spde_lan
-        kind: "Winsock"
+        VbTextBox {
+            id: c_txt_vel_max
+            x: 2
+            y: 15
+            width: 54
+            height: 31
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 21
+            font.bold: true
+            KeyNavigation.tab: c_txt_met_man
+            KeyNavigation.backtab: c_txt_vel
+            text: "260"
+        }
     }
     VbFrame {
-        id: c_frm_scarti
-        x: 731
+        id: c_frm_met_man
+        x: 234
         y: 30
-        width: 61
+        width: 78
+        height: 49
+        z: 1
+        backColor: "#008000"
+        borderStyle: 0
+        text: "Frame1"
+        VbLabel {
+            id: c_Label17
+            x: 72
+            y: 0
+            width: 7
+            height: 42
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 24
+            font.bold: true
+            wordWrap: true
+            visible: false
+        }
+        VbLabel {
+            id: c_Lab_metri_man
+            x: 2
+            y: 0
+            width: 32
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 13
+            font.bold: true
+            text: "Metri"
+            opaque: false
+            autoSize: true
+        }
+        VbTextBox {
+            id: c_txt_met_man
+            x: 2
+            y: 15
+            width: 77
+            height: 31
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 21
+            font.bold: true
+            KeyNavigation.tab: c_txt_idle
+            KeyNavigation.backtab: c_txt_vel_max
+            text: "155712"
+        }
+    }
+    VbTimer {
+        id: c_tim_com_azi
+        interval: 200
+        running: false
+    }
+    VbTimer {
+        id: c_tim_com_spde
+        interval: 300
+        running: false
+    }
+    VbTimer {
+        id: c_Tim_all
+        interval: 500
+        running: false
+    }
+    VbTimer {
+        id: c_Tim_com_PLC
+        interval: 300
+        running: false
+    }
+    VbPicture {
+        id: c_SSP_mes_all
+        x: 176
+        y: 5
+        width: 74
+        height: 21
+        z: 1
+        backColor: "#c00000"
+        VbLabel {
+            id: c_mes_all
+            x: 10
+            y: 4
+            width: 53
+            height: 13
+            backColor: "#ffffff"
+            foreColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 16
+            font.bold: true
+            text: "Indirizzo C-Compolet errato"
+            opaque: false
+        }
+    }
+    VbTextBox {
+        id: c_txt_idle
+        x: 305
+        y: -330
+        width: 43
+        height: 19
+        z: 1
+        KeyNavigation.tab: c_txt_ora
+        KeyNavigation.backtab: c_txt_met_man
+    }
+    VbFrame {
+        id: c_frm_mod
+        x: 81
+        y: 30
+        width: 48
+        height: 49
+        enabled: false
+        z: 1
+        backColor: "#008000"
+        borderStyle: 0
+        VbLabel {
+            id: c_Label5
+            x: 41
+            y: 0
+            width: 7
+            height: 43
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 24
+            font.bold: true
+            wordWrap: true
+            visible: false
+        }
+        VbLabel {
+            id: c_lab_mod
+            x: 3
+            y: 0
+            width: 35
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 13
+            font.bold: true
+            text: "Modo"
+            opaque: false
+            autoSize: true
+        }
+        VbTextBox {
+            id: c_txt_mod
+            x: 3
+            y: 15
+            width: 45
+            height: 31
+            z: 1
+            foreColor: "#0000ff"
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: true
+            KeyNavigation.tab: c_txt_sta_res
+            KeyNavigation.backtab: c_txt_sta_run
+            text: "Auto"
+        }
+    }
+    VbFrame {
+        id: c_fra_ora_0
+        x: 5
+        y: 33
+        width: 72
+        height: 39
+        enabled: false
+        z: 1
+        backColor: "#000000"
+        borderStyle: 0
+        VbTextBox {
+            id: c_txt_ora
+            x: 4
+            y: 0
+            width: 64
+            height: 18
+            z: 1
+            backColor: "#000000"
+            foreColor: "#ffffff"
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: true
+            KeyNavigation.tab: c_txt_dat
+            KeyNavigation.backtab: c_txt_idle
+            text: "14:25:30"
+            alignment: 2
+        }
+        VbTextBox {
+            id: c_txt_dat
+            x: 3
+            y: 23
+            width: 69
+            height: 17
+            z: 1
+            backColor: "#000000"
+            foreColor: "#ffffff"
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 13
+            font.bold: true
+            KeyNavigation.tab: c_txt_err_3
+            KeyNavigation.backtab: c_txt_ora
+            text: "22/09/2000"
+            alignment: 2
+        }
+    }
+    VbFrame {
+        id: c_frm_err
+        x: 667
+        y: 30
+        width: 64
         height: 95
         enabled: false
         z: 1
         backColor: "#008000"
         borderStyle: 0
-        VbTextBox {
-            id: c_txt_sca_3
+        VbLabel {
+            id: c_lab_errore
             x: 2
-            y: 15
-            width: 60
-            height: 23
-            z: 1
-            borderStyle: 0
+            y: 0
+            width: 22
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#ffffff"
             font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: false
-            KeyNavigation.tab: c_txt_tem_co
-            KeyNavigation.backtab: c_txt_sca_2
-            text: "23"
-        }
-        VbTextBox {
-            id: c_txt_sca_2
-            x: 2
-            y: 40
-            width: 60
-            height: 23
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: false
-            KeyNavigation.tab: c_txt_sca_3
-            KeyNavigation.backtab: c_txt_sca_1
-            text: "351"
-        }
-        VbTextBox {
-            id: c_txt_sca_1
-            x: 2
-            y: 65
-            width: 60
-            height: 23
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: false
-            KeyNavigation.tab: c_txt_sca_2
-            KeyNavigation.backtab: c_txt_sta_res
-            text: "4810"
+            font.pixelSize: 13
+            font.bold: true
+            text: "Err."
+            opaque: false
+            autoSize: true
         }
         VbLabel {
-            id: c_lab_gray_med_2
-            x: 55
-            y: 30
+            id: c_Label21
+            x: 58
+            y: 0
+            width: 7
+            height: 86
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 24
+            font.bold: true
+            wordWrap: true
+            visible: false
+        }
+        VbLabel {
+            id: c_lab_gray_med_1
+            x: 58
+            y: 34
             width: 7
             height: 38
             backColor: "#c0c0c0"
@@ -310,33 +611,274 @@ VbForm {
             toolTip: "0"
             wordWrap: true
         }
-        VbLabel {
-            id: c_lab_sca
+        VbTextBox {
+            id: c_txt_err_3
             x: 2
-            y: 0
-            width: 37
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#ffffff"
+            y: 15
+            width: 63
+            height: 23
+            z: 1
+            borderStyle: 0
             font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            text: "Scarti"
-            opaque: false
-            autoSize: true
+            font.pixelSize: 19
+            font.bold: false
+            KeyNavigation.tab: c_txt_err_2
+            KeyNavigation.backtab: c_txt_dat
+            text: "23"
         }
+        VbTextBox {
+            id: c_txt_err_2
+            x: 2
+            y: 40
+            width: 63
+            height: 23
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: false
+            KeyNavigation.tab: c_txt_err_1
+            KeyNavigation.backtab: c_txt_err_3
+            text: "351"
+        }
+        VbTextBox {
+            id: c_txt_err_1
+            x: 2
+            y: 65
+            width: 63
+            height: 23
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: false
+            KeyNavigation.tab: c_txt_num_sca_3
+            KeyNavigation.backtab: c_txt_err_2
+            text: "4810"
+        }
+    }
+    VbFrame {
+        id: c_frm_num_sca
+        x: 581
+        y: 30
+        width: 86
+        height: 95
+        enabled: false
+        z: 1
+        backColor: "#008000"
+        borderStyle: 0
         VbLabel {
-            id: c_Label2
-            x: 55
+            id: c_Label16
+            x: 80
             y: 0
             width: 7
-            height: 86
+            height: 82
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 24
+            font.bold: true
+            toolTip: "0"
+            wordWrap: true
+            visible: false
+        }
+        VbLabel {
+            id: c_Label22
+            x: 202
+            y: -4
+            width: 6
+            height: 33
             backColor: "#ffffff"
             foreColor: "#000000"
             font.family: "Arial"
             font.pixelSize: 24
             font.bold: true
             wordWrap: true
+            visible: false
+        }
+        VbLabel {
+            id: c_lab_numero_sca
+            x: 2
+            y: 0
+            width: 48
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 13
+            font.bold: true
+            text: "Scatole"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_gray_med_0
+            x: 80
+            y: 32
+            width: 7
+            height: 38
+            backColor: "#c0c0c0"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 24
+            font.bold: true
+            toolTip: "0"
+            wordWrap: true
+        }
+        VbTextBox {
+            id: c_txt_num_sca_3
+            x: 2
+            y: 15
+            width: 85
+            height: 23
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: false
+            KeyNavigation.tab: c_txt_num_sca_2
+            KeyNavigation.backtab: c_txt_err_1
+            text: "125420"
+        }
+        VbTextBox {
+            id: c_txt_num_sca_2
+            x: 2
+            y: 40
+            width: 85
+            height: 23
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: false
+            KeyNavigation.tab: c_txt_num_sca_1
+            KeyNavigation.backtab: c_txt_num_sca_3
+            text: "4586022"
+        }
+        VbTextBox {
+            id: c_txt_num_sca_1
+            x: 2
+            y: 65
+            width: 85
+            height: 23
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: false
+            KeyNavigation.tab: c_txt_sta_run
+            KeyNavigation.backtab: c_txt_num_sca_2
+            text: "78500"
+        }
+    }
+    VbFrame {
+        id: c_frm_sta_run
+        x: 394
+        y: 30
+        width: 122
+        height: 45
+        enabled: false
+        z: 1
+        backColor: "#008000"
+        borderStyle: 0
+        VbLabel {
+            id: c_lab_sta_run
+            x: 2
+            y: 0
+            width: 86
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 13
+            font.bold: true
+            text: "Stato running"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_lab_run
+            x: 116
+            y: 0
+            width: 7
+            height: 41
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 24
+            font.bold: true
+            wordWrap: true
+            visible: false
+        }
+        VbTextBox {
+            id: c_txt_sta_run
+            x: 2
+            y: 15
+            width: 121
+            height: 26
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 13
+            font.bold: true
+            KeyNavigation.tab: c_txt_mod
+            KeyNavigation.backtab: c_txt_num_sca_1
+            text: "Pronta alla marcia"
+        }
+    }
+    VbFrame {
+        id: c_frm_sta_res
+        x: 394
+        y: 75
+        width: 122
+        height: 50
+        enabled: false
+        z: 1
+        backColor: "#008000"
+        borderStyle: 0
+        VbLabel {
+            id: c_Label32
+            x: 116
+            y: 0
+            width: 7
+            height: 39
+            backColor: "#ffffff"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 24
+            font.bold: true
+            wordWrap: true
+            visible: false
+        }
+        VbLabel {
+            id: c_lab_sta_res
+            x: 2
+            y: 1
+            width: 68
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 13
+            font.bold: true
+            text: "Stato reset"
+            opaque: false
+            autoSize: true
+        }
+        VbTextBox {
+            id: c_txt_sta_res
+            x: 2
+            y: 16
+            width: 121
+            height: 26
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 13
+            font.bold: true
+            KeyNavigation.tab: c_txt_sca_1
+            KeyNavigation.backtab: c_txt_mod
+            text: "Emergency Stop"
         }
     }
     VbFrame {
@@ -350,9 +892,73 @@ VbForm {
         backColor: "#008000"
         borderStyle: 0
         VbLabel {
-            id: c_lab_liv_1
+            id: c_label23
+            x: 2
+            y: 0
+            width: 43
+            height: 16
+            backColor: "#008000"
+            foreColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 13
+            font.bold: true
+            text: "Livello"
+            opaque: false
+            autoSize: true
+        }
+        VbLabel {
+            id: c_liv_3
+            x: 2
+            y: 15
+            width: 64
+            height: 23
+            backColor: "#ffff80"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: true
+        }
+        VbLabel {
+            id: c_liv_2
+            x: 2
+            y: 40
+            width: 64
+            height: 23
+            backColor: "#ffff80"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: true
+        }
+        VbLabel {
+            id: c_liv_1
+            x: 2
+            y: 65
+            width: 64
+            height: 23
+            backColor: "#ffff80"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: true
+        }
+        VbLabel {
+            id: c_Label6
+            x: 59
+            y: 0
+            width: 7
+            height: 17
+            backColor: "#ffff80"
+            foreColor: "#000000"
+            font.family: "Arial"
+            font.pixelSize: 24
+            font.bold: true
+            wordWrap: true
+        }
+        VbLabel {
+            id: c_lab_liv_3
             x: 4
-            y: 67
+            y: 17
             width: 62
             height: 18
             backColor: "#008000"
@@ -376,9 +982,9 @@ VbForm {
             opaque: false
         }
         VbLabel {
-            id: c_lab_liv_3
+            id: c_lab_liv_1
             x: 4
-            y: 17
+            y: 67
             width: 62
             height: 18
             backColor: "#008000"
@@ -388,363 +994,20 @@ VbForm {
             font.bold: true
             opaque: false
         }
-        VbLabel {
-            id: c_Label6
-            x: 59
-            y: 0
-            width: 7
-            height: 17
-            backColor: "#ffff80"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 24
-            font.bold: true
-            wordWrap: true
-        }
-        VbLabel {
-            id: c_liv_1
-            x: 2
-            y: 65
-            width: 64
-            height: 23
-            backColor: "#ffff80"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-        }
-        VbLabel {
-            id: c_liv_2
-            x: 2
-            y: 40
-            width: 64
-            height: 23
-            backColor: "#ffff80"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-        }
-        VbLabel {
-            id: c_liv_3
-            x: 2
-            y: 15
-            width: 64
-            height: 23
-            backColor: "#ffff80"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-        }
-        VbLabel {
-            id: c_label23
-            x: 2
-            y: 0
-            width: 43
-            height: 16
-            backColor: "#008000"
-            foreColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            text: "Livello"
-            opaque: false
-            autoSize: true
-        }
     }
     VbFrame {
-        id: c_frm_sta_res
-        x: 394
-        y: 75
-        width: 122
-        height: 50
-        enabled: false
-        z: 1
-        backColor: "#008000"
-        borderStyle: 0
-        VbTextBox {
-            id: c_txt_sta_res
-            x: 2
-            y: 16
-            width: 121
-            height: 26
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            KeyNavigation.tab: c_txt_sca_1
-            KeyNavigation.backtab: c_txt_mod
-            text: "Emergency Stop"
-        }
-        VbLabel {
-            id: c_lab_sta_res
-            x: 2
-            y: 1
-            width: 68
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            text: "Stato reset"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_Label32
-            x: 116
-            y: 0
-            width: 7
-            height: 39
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 24
-            font.bold: true
-            wordWrap: true
-        }
-    }
-    VbFrame {
-        id: c_frm_sta_run
-        x: 394
+        id: c_frm_scarti
+        x: 731
         y: 30
-        width: 122
-        height: 45
-        enabled: false
-        z: 1
-        backColor: "#008000"
-        borderStyle: 0
-        VbTextBox {
-            id: c_txt_sta_run
-            x: 2
-            y: 15
-            width: 121
-            height: 26
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            KeyNavigation.tab: c_txt_mod
-            KeyNavigation.backtab: c_txt_num_sca_1
-            text: "Pronta alla marcia"
-        }
-        VbLabel {
-            id: c_lab_run
-            x: 116
-            y: 0
-            width: 7
-            height: 41
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 24
-            font.bold: true
-            wordWrap: true
-        }
-        VbLabel {
-            id: c_lab_sta_run
-            x: 2
-            y: 0
-            width: 86
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            text: "Stato running"
-            opaque: false
-            autoSize: true
-        }
-    }
-    VbFrame {
-        id: c_frm_num_sca
-        x: 581
-        y: 30
-        width: 86
+        width: 61
         height: 95
         enabled: false
         z: 1
         backColor: "#008000"
         borderStyle: 0
-        VbTextBox {
-            id: c_txt_num_sca_1
-            x: 2
-            y: 65
-            width: 85
-            height: 23
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: false
-            KeyNavigation.tab: c_txt_sta_run
-            KeyNavigation.backtab: c_txt_num_sca_2
-            text: "78500"
-        }
-        VbTextBox {
-            id: c_txt_num_sca_2
-            x: 2
-            y: 40
-            width: 85
-            height: 23
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: false
-            KeyNavigation.tab: c_txt_num_sca_1
-            KeyNavigation.backtab: c_txt_num_sca_3
-            text: "4586022"
-        }
-        VbTextBox {
-            id: c_txt_num_sca_3
-            x: 2
-            y: 15
-            width: 85
-            height: 23
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: false
-            KeyNavigation.tab: c_txt_num_sca_2
-            KeyNavigation.backtab: c_txt_err_1
-            text: "125420"
-        }
         VbLabel {
-            id: c_lab_gray_med_0
-            x: 80
-            y: 32
-            width: 7
-            height: 38
-            backColor: "#c0c0c0"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 24
-            font.bold: true
-            toolTip: "0"
-            wordWrap: true
-        }
-        VbLabel {
-            id: c_lab_numero_sca
-            x: 2
-            y: 0
-            width: 48
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            text: "Scatole"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_Label22
-            x: 202
-            y: -4
-            width: 6
-            height: 33
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 24
-            font.bold: true
-            wordWrap: true
-        }
-        VbLabel {
-            id: c_Label16
-            x: 80
-            y: 0
-            width: 7
-            height: 82
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 24
-            font.bold: true
-            toolTip: "0"
-            wordWrap: true
-        }
-    }
-    VbFrame {
-        id: c_frm_err
-        x: 667
-        y: 30
-        width: 64
-        height: 95
-        enabled: false
-        z: 1
-        backColor: "#008000"
-        borderStyle: 0
-        VbTextBox {
-            id: c_txt_err_1
-            x: 2
-            y: 65
-            width: 63
-            height: 23
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: false
-            KeyNavigation.tab: c_txt_num_sca_3
-            KeyNavigation.backtab: c_txt_err_2
-            text: "4810"
-        }
-        VbTextBox {
-            id: c_txt_err_2
-            x: 2
-            y: 40
-            width: 63
-            height: 23
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: false
-            KeyNavigation.tab: c_txt_err_1
-            KeyNavigation.backtab: c_txt_err_3
-            text: "351"
-        }
-        VbTextBox {
-            id: c_txt_err_3
-            x: 2
-            y: 15
-            width: 63
-            height: 23
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 19
-            font.bold: false
-            KeyNavigation.tab: c_txt_err_2
-            KeyNavigation.backtab: c_txt_dat
-            text: "23"
-        }
-        VbLabel {
-            id: c_lab_gray_med_1
-            x: 58
-            y: 34
-            width: 7
-            height: 38
-            backColor: "#c0c0c0"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 24
-            font.bold: true
-            toolTip: "0"
-            wordWrap: true
-        }
-        VbLabel {
-            id: c_Label21
-            x: 58
+            id: c_Label2
+            x: 55
             y: 0
             width: 7
             height: 86
@@ -754,565 +1017,313 @@ VbForm {
             font.pixelSize: 24
             font.bold: true
             wordWrap: true
+            visible: false
         }
         VbLabel {
-            id: c_lab_errore
+            id: c_lab_sca
             x: 2
             y: 0
-            width: 22
+            width: 37
             height: 16
             backColor: "#ffffff"
             foreColor: "#ffffff"
             font.family: "Arial"
             font.pixelSize: 13
             font.bold: true
-            text: "Err."
-            opaque: false
-            autoSize: true
-        }
-    }
-    VbFrame {
-        id: c_fra_ora_0
-        x: 5
-        y: 33
-        width: 72
-        height: 39
-        enabled: false
-        z: 1
-        backColor: "#000000"
-        borderStyle: 0
-        VbTextBox {
-            id: c_txt_dat
-            x: 3
-            y: 23
-            width: 69
-            height: 17
-            z: 1
-            backColor: "#000000"
-            foreColor: "#ffffff"
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            KeyNavigation.tab: c_txt_err_3
-            KeyNavigation.backtab: c_txt_ora
-            text: "22/09/2000"
-            alignment: 2
-        }
-        VbTextBox {
-            id: c_txt_ora
-            x: 4
-            y: 0
-            width: 64
-            height: 18
-            z: 1
-            backColor: "#000000"
-            foreColor: "#ffffff"
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-            KeyNavigation.tab: c_txt_dat
-            KeyNavigation.backtab: c_txt_idle
-            text: "14:25:30"
-            alignment: 2
-        }
-    }
-    VbFrame {
-        id: c_frm_mod
-        x: 81
-        y: 30
-        width: 48
-        height: 49
-        enabled: false
-        z: 1
-        backColor: "#008000"
-        borderStyle: 0
-        VbTextBox {
-            id: c_txt_mod
-            x: 3
-            y: 15
-            width: 45
-            height: 31
-            z: 1
-            foreColor: "#0000ff"
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-            KeyNavigation.tab: c_txt_sta_res
-            KeyNavigation.backtab: c_txt_sta_run
-            text: "Auto"
-        }
-        VbLabel {
-            id: c_lab_mod
-            x: 3
-            y: 0
-            width: 35
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            text: "Modo"
+            text: "Scarti"
             opaque: false
             autoSize: true
         }
         VbLabel {
-            id: c_Label5
-            x: 41
-            y: 0
+            id: c_lab_gray_med_2
+            x: 55
+            y: 30
             width: 7
-            height: 43
-            backColor: "#ffffff"
+            height: 38
+            backColor: "#c0c0c0"
             foreColor: "#000000"
             font.family: "Arial"
             font.pixelSize: 24
             font.bold: true
+            toolTip: "0"
             wordWrap: true
         }
-    }
-    VbTextBox {
-        id: c_txt_idle
-        x: 305
-        y: -330
-        width: 43
-        height: 19
-        z: 1
-        KeyNavigation.tab: c_txt_ora
-        KeyNavigation.backtab: c_txt_met_man
-    }
-    VbPicture {
-        id: c_SSP_mes_all
-        x: 176
-        y: 5
-        width: 74
-        height: 21
-        z: 1
-        backColor: "#c00000"
-        VbLabel {
-            id: c_mes_all
-            x: 11
-            y: 4
-            width: 56
-            height: 14
-            backColor: "#ffffff"
-            foreColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 16
-            font.bold: true
-            text: "Indirizzo C-Compolet errato"
-            opaque: false
-        }
-    }
-    VbTimer {
-        id: c_Tim_com_PLC
-        interval: 300
-        running: false
-    }
-    VbTimer {
-        id: c_Tim_all
-        interval: 500
-        running: false
-    }
-    VbTimer {
-        id: c_tim_com_spde
-        interval: 300
-        running: false
-    }
-    VbTimer {
-        id: c_tim_com_azi
-        interval: 200
-        running: false
-    }
-    VbFrame {
-        id: c_frm_met_man
-        x: 234
-        y: 30
-        width: 78
-        height: 49
-        z: 1
-        backColor: "#008000"
-        borderStyle: 0
-        text: "Frame1"
         VbTextBox {
-            id: c_txt_met_man
+            id: c_txt_sca_1
             x: 2
-            y: 15
-            width: 77
-            height: 31
+            y: 65
+            width: 60
+            height: 23
             z: 1
             borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 21
-            font.bold: true
-            KeyNavigation.tab: c_txt_idle
-            KeyNavigation.backtab: c_txt_vel_max
-            text: "155712"
-        }
-        VbLabel {
-            id: c_Lab_metri_man
-            x: 2
-            y: 0
-            width: 32
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            text: "Metri"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_Label17
-            x: 72
-            y: 0
-            width: 7
-            height: 42
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 24
-            font.bold: true
-            wordWrap: true
-        }
-    }
-    VbFrame {
-        id: c_Fra_vel_max
-        x: 178
-        y: 30
-        width: 56
-        height: 49
-        z: 1
-        backColor: "#008000"
-        borderStyle: 0
-        text: "Frame1"
-        VbTextBox {
-            id: c_txt_vel_max
-            x: 2
-            y: 15
-            width: 54
-            height: 31
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 21
-            font.bold: true
-            KeyNavigation.tab: c_txt_met_man
-            KeyNavigation.backtab: c_txt_vel
-            text: "260"
-        }
-        VbLabel {
-            id: c_Lab_velocita_max
-            x: 3
-            y: 0
-            width: 45
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            text: "V. max"
-            opaque: false
-            autoSize: true
-        }
-        VbLabel {
-            id: c_Label1
-            x: 49
-            y: 0
-            width: 7
-            height: 42
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 24
-            font.bold: true
-            wordWrap: true
-        }
-    }
-    VbFrame {
-        id: c_frm_vel
-        x: 128
-        y: 30
-        width: 50
-        height: 49
-        enabled: false
-        z: 1
-        backColor: "#008000"
-        borderStyle: 0
-        VbTextBox {
-            id: c_txt_vel
-            x: 2
-            y: 15
-            width: 48
-            height: 31
-            z: 1
-            borderStyle: 0
-            font.family: "Arial"
-            font.pixelSize: 21
-            font.bold: true
-            KeyNavigation.tab: c_txt_vel_max
-            KeyNavigation.backtab: c_txt_tem_co
-            text: "230"
-        }
-        VbLabel {
-            id: c_Label9
-            x: 43
-            y: 0
-            width: 7
-            height: 42
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 24
-            font.bold: true
-            wordWrap: true
-        }
-        VbLabel {
-            id: c_lab_velocita
-            x: 3
-            y: 0
-            width: 25
-            height: 16
-            backColor: "#ffffff"
-            foreColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 13
-            font.bold: true
-            text: "Vel."
-            opaque: false
-            autoSize: true
-        }
-    }
-    VbFrame {
-        id: c_frm_all
-        x: 117
-        y: 78
-        width: 279
-        height: 47
-        enabled: false
-        z: 1
-        backColor: "#008000"
-        borderStyle: 0
-        VbLabel {
-            id: c_lab_bm
-            x: 0
-            y: 4
-            width: 65
-            height: 28
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: true
-            text: "Bordo macchina"
-            alignment: 2
-            opaque: false
-        }
-        VbLabel {
-            id: c_lbl_con
-            x: 67
-            y: 11
-            width: 50
-            height: 14
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: true
-            text: "Consolle"
-            alignment: 2
-            opaque: false
-        }
-        VbLabel {
-            id: c_lbl_qe
-            x: 122
-            y: 4
-            width: 57
-            height: 28
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: true
-            text: "Quadri elettrici"
-            alignment: 2
-            opaque: false
-        }
-        VbLabel {
-            id: c_Lab_har
-            x: 179
-            y: 11
-            width: 58
-            height: 14
-            backColor: "#ffffff"
-            foreColor: "#000000"
-            font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: true
-            text: "Hardware"
-            alignment: 2
-            opaque: false
-        }
-        VbLabel {
-            id: c_Lab_mal
-            x: 257
-            y: 8
-            width: 7
-            height: 22
-            backColor: "#ffffff"
-            foreColor: "#000000"
             font.family: "Arial"
             font.pixelSize: 19
+            font.bold: false
+            KeyNavigation.tab: c_txt_sca_2
+            KeyNavigation.backtab: c_txt_sta_res
+            text: "4810"
+        }
+        VbTextBox {
+            id: c_txt_sca_2
+            x: 2
+            y: 40
+            width: 60
+            height: 23
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: false
+            KeyNavigation.tab: c_txt_sca_3
+            KeyNavigation.backtab: c_txt_sca_1
+            text: "351"
+        }
+        VbTextBox {
+            id: c_txt_sca_3
+            x: 2
+            y: 15
+            width: 60
+            height: 23
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 19
+            font.bold: false
+            KeyNavigation.tab: c_txt_tem_co
+            KeyNavigation.backtab: c_txt_sca_2
+            text: "23"
+        }
+    }
+    VbInert {
+        id: c_com_spde_lan
+        kind: "Winsock"
+    }
+    VbInert {
+        id: c_sck_tim
+        kind: "Winsock"
+    }
+    VbFrame {
+        id: c_frm_tem_co
+        x: 312
+        y: 30
+        width: 82
+        height: 49
+        z: 1
+        backColor: "#008000"
+        borderStyle: 0
+        text: "Frame1"
+        VbLabel {
+            id: c_Label3
+            x: 2
+            y: 0
+            width: 67
+            height: 16
+            backColor: "#ffffff"
+            foreColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 13
             font.bold: true
-            text: "!"
-            alignment: 2
+            text: "Tempo CO"
             opaque: false
-        }
-        VbShape {
-            id: c_Shp_all_qe
-            x: 133
-            y: 4
-            width: 35
-            height: 33
-            shape: 3
-            fillColor: "#00ff00"
-            borderWidth: 0
-        }
-        VbShape {
-            id: c_Shp_all_bm
-            x: 14
-            y: 4
-            width: 35
-            height: 33
-            shape: 3
-            fillColor: "#00ff00"
-            borderWidth: 0
-        }
-        VbShape {
-            id: c_Shp_all_con
-            x: 75
-            y: 4
-            width: 35
-            height: 33
-            shape: 3
-            fillColor: "#00ff00"
-            borderWidth: 0
-        }
-        VbShape {
-            id: c_Shp_all_har
-            x: 191
-            y: 4
-            width: 35
-            height: 33
-            shape: 3
-            fillColor: "#00ff00"
-            borderWidth: 0
-        }
-        VbShape {
-            id: c_Shp_all_mal
-            x: 241
-            y: 4
-            width: 39
-            height: 33
-            shape: 3
-            fillColor: "#00ff00"
-            borderWidth: 0
+            autoSize: true
         }
         VbLabel {
-            id: c_lab_all
-            x: 0
-            y: -1
-            width: 280
-            height: 40
+            id: c_Label7
+            x: 76
+            y: 0
+            width: 7
+            height: 42
             backColor: "#ffffff"
             foreColor: "#000000"
             font.family: "Arial"
             font.pixelSize: 24
             font.bold: true
             wordWrap: true
+            visible: false
+        }
+        VbTextBox {
+            id: c_txt_tem_co
+            x: 2
+            y: 15
+            width: 81
+            height: 31
+            z: 1
+            borderStyle: 0
+            font.family: "Arial"
+            font.pixelSize: 20
+            font.bold: true
+            KeyNavigation.tab: c_txt_vel
+            KeyNavigation.backtab: c_txt_sca_3
+            text: "01:45:60"
+            alignment: 2
         }
     }
-    VbInert {
-        id: c_com_sch_tag_2
-        kind: "MSComm"
+    VbFrame {
+        id: c_frm_com
+        x: -9
+        y: 75
+        width: 126
+        height: 50
+        enabled: false
+        z: 1
+        backColor: "#008000"
+        borderStyle: 0
+        VbLabel {
+            id: c_Label4
+            x: 12
+            y: 3
+            width: 112
+            height: 39
+            backColor: "#ffffff"
+        }
+        VbImage {
+            id: c_ima_spde
+            x: 16
+            y: 6
+            width: 32
+            height: 32
+            stretch: true
+            picture: Qt.resolvedUrl("../assets/cce5a38e029d2af7.bmp")
+        }
+        VbLabel {
+            id: c_lab_r_spde
+            x: 59
+            y: 21
+            width: 12
+            height: 13
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: true
+            text: "R"
+            opaque: false
+        }
+        VbLabel {
+            id: c_lab_t_spde
+            x: 59
+            y: 6
+            width: 17
+            height: 17
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: true
+            text: "T"
+            opaque: false
+        }
+        VbLabel {
+            id: c_lab_r_plc
+            x: 114
+            y: 21
+            width: 17
+            height: 17
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: true
+            text: "R"
+            opaque: false
+        }
+        VbLabel {
+            id: c_lab_t_plc
+            x: 114
+            y: 6
+            width: 17
+            height: 17
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: true
+            text: "T"
+            opaque: false
+        }
+        VbShape {
+            id: c_led_plc_rx
+            x: 105
+            y: 24
+            width: 7
+            height: 7
+            shape: 3
+            fillColor: "#ff0000"
+        }
+        VbShape {
+            id: c_led_plc_tx
+            x: 105
+            y: 11
+            width: 7
+            height: 7
+            shape: 3
+            fillColor: "#ff0000"
+        }
+        VbShape {
+            id: c_led_spde_rx
+            x: 50
+            y: 24
+            width: 7
+            height: 7
+            shape: 3
+            fillColor: "#ff0000"
+        }
+        VbShape {
+            id: c_led_spde_tx
+            x: 50
+            y: 11
+            width: 7
+            height: 7
+            shape: 3
+            fillColor: "#ff0000"
+        }
+        VbImage {
+            id: c_ima_mas
+            x: 71
+            y: 6
+            width: 32
+            height: 32
+            stretch: true
+            picture: Qt.resolvedUrl("../assets/aede054ae578a359.bmp")
+        }
+        VbLine {
+            id: c_lin_no_com_spde
+            x1: 14
+            y1: 38
+            x2: 47
+            y2: 6
+            borderWidth: 3
+            visible: false
+        }
+        VbLine {
+            id: c_lin_no_com_plc
+            x1: 69
+            y1: 38
+            x2: 103
+            y2: 6
+            borderWidth: 3
+            visible: false
+        }
+        VbLabel {
+            id: c_lab_sta_mac
+            x: 74
+            y: 6
+            width: 26
+            height: 27
+            visible: false
+            foreColor: "#ffff00"
+            font.family: "Arial"
+            font.pixelSize: 27
+            font.bold: true
+            text: "S"
+            alignment: 2
+            opaque: false
+        }
+    }
+    VbTimer {
+        id: c_Tim_com_spde_lan
+        interval: 1000
+        running: false
     }
     VbInert {
-        id: c_com_sch_tag_1
-        kind: "MSComm"
-    }
-    VbInert {
-        id: c_com_sch_tag_0
-        kind: "MSComm"
-    }
-    VbInert {
-        id: c_com_spde_ser
-        kind: "MSComm"
-    }
-    VbInert {
-        id: c_sck_sch_tag_0
+        id: c_sck_Fins
         kind: "Winsock"
     }
-    VbInert {
-        id: c_sck_sch_tag_1
-        kind: "Winsock"
-    }
-    VbInert {
-        id: c_sck_sch_tag_2
-        kind: "Winsock"
-    }
-    VbLine {
-        id: c_Line1
-        x1: 387
-        y1: 92
-        x2: 528
-        y2: 92
-        borderColor: "#000000"
-        borderWidth: 2
-    }
-    VbShape {
-        id: c_Shape3
-        x: 1
-        y: 30
-        width: 80
-        height: 46
-        shape: 0
-        borderWidth: 2
-    }
-    VbShape {
-        id: c_Shape2
-        x: -2
-        y: 0
-        width: 858
-        height: 4
-        shape: 0
-        fillColor: "#000000"
-    }
-    VbShape {
-        id: c_Shape1
-        x: -2
-        y: 26
-        width: 858
-        height: 4
-        shape: 0
-        fillColor: "#000000"
-    }
-    VbLabel {
-        id: c_lab_msg
-        x: 7
-        y: 2
-        width: 780
-        height: 24
-        backColor: "#ffffff"
-        foreColor: "#c00000"
-        font.family: "Arial"
-        font.pixelSize: 21
-        font.bold: true
-        opaque: false
-        autoSize: true
+    VbTimer {
+        id: c_tim_fins
+        interval: 0
+        running: false
     }
 }

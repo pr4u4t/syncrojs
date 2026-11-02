@@ -10,118 +10,21 @@ VbForm {
     backColor: "#ffffff"
     dialog: true
     controls: ({ "chk_div": c_chk_div, "txt_cod": c_txt_cod, "tas_f1": c_tas_F1, "txt_sot_cod": c_txt_sot_cod, "txt_f1": c_txt_F1, "label2": c_Label2, "label1": c_Label1, "pag_title": c_Pag_title, "lab_avv": c_lab_avv, "lab_avv_1": c_lab_avv_1 })
-    VbCheck {
-        id: c_chk_div
-        x: 24
-        y: 136
-        width: 160
-        height: 23
-        z: 1
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        KeyNavigation.tab: c_txt_cod
-        KeyNavigation.backtab: c_txt_sot_cod
-        text: "Dividi il valore per 10000"
-        exclusive: false
-        checked: true
-    }
-    VbTextBox {
-        id: c_txt_cod
-        x: 104
-        y: 76
-        width: 43
-        height: 24
-        z: 1
-        font.family: "Arial"
-        font.pixelSize: 13
-        font.bold: true
-        KeyNavigation.tab: c_txt_sot_cod
-        KeyNavigation.backtab: c_chk_div
-        maxLength: 5
-    }
-    VbButton {
-        id: c_tas_F1
-        x: 232
-        y: 104
-        width: 81
-        height: 25
-        z: 1
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "F11"
-    }
-    VbTextBox {
-        id: c_txt_sot_cod
-        x: 104
-        y: 105
-        width: 31
-        height: 24
-        z: 1
-        font.family: "Arial"
-        font.pixelSize: 13
-        font.bold: true
-        KeyNavigation.tab: c_chk_div
-        KeyNavigation.backtab: c_txt_cod
-        maxLength: 3
-    }
     VbLabel {
-        id: c_txt_F1
-        x: 252
-        y: 140
-        width: 39
-        height: 14
+        id: c_lab_avv_1
+        x: 26
+        y: 47
+        width: 281
+        height: 13
         backColor: "#c0c0c0"
-        foreColor: "#000000"
+        foreColor: "#804040"
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "Esegui"
+        text: "(Esc per annullare)"
         alignment: 2
         opaque: false
-        autoSize: true
-    }
-    VbLabel {
-        id: c_Label2
-        x: 24
-        y: 109
-        width: 83
-        height: 13
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Sottocodice"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label1
-        x: 24
-        y: 80
-        width: 75
-        height: 13
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Codice"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Pag_title
-        x: 22
-        y: 5
-        width: 243
-        height: 25
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Immisione nuovo parametro"
-        opaque: false
+        wordWrap: true
     }
     VbLabel {
         id: c_lab_avv
@@ -140,19 +43,116 @@ VbForm {
         wordWrap: true
     }
     VbLabel {
-        id: c_lab_avv_1
-        x: 26
-        y: 47
-        width: 281
+        id: c_Pag_title
+        x: 22
+        y: 5
+        width: 243
+        height: 25
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Immisione nuovo parametro"
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label1
+        x: 24
+        y: 80
+        width: 75
         height: 13
-        backColor: "#c0c0c0"
-        foreColor: "#804040"
+        backColor: "#ffffff"
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "(Esc per annullare)"
+        text: "Codice"
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label2
+        x: 24
+        y: 109
+        width: 83
+        height: 13
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Sottocodice"
+        opaque: false
+    }
+    VbLabel {
+        id: c_txt_F1
+        x: 252
+        y: 140
+        width: 39
+        height: 14
+        backColor: "#c0c0c0"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Esegui"
         alignment: 2
         opaque: false
-        wordWrap: true
+        autoSize: true
+    }
+    VbTextBox {
+        id: c_txt_sot_cod
+        x: 104
+        y: 105
+        width: 31
+        height: 24
+        z: 1
+        font.family: "Arial"
+        font.pixelSize: 13
+        font.bold: true
+        KeyNavigation.tab: c_chk_div
+        KeyNavigation.backtab: c_txt_cod
+        maxLength: 3
+    }
+    VbButton {
+        id: c_tas_F1
+        x: 232
+        y: 104
+        width: 81
+        height: 25
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "F11"
+    }
+    VbTextBox {
+        id: c_txt_cod
+        x: 104
+        y: 76
+        width: 43
+        height: 24
+        z: 1
+        font.family: "Arial"
+        font.pixelSize: 13
+        font.bold: true
+        KeyNavigation.tab: c_txt_sot_cod
+        KeyNavigation.backtab: c_chk_div
+        maxLength: 5
+    }
+    VbCheck {
+        id: c_chk_div
+        x: 24
+        y: 136
+        width: 160
+        height: 23
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        KeyNavigation.tab: c_txt_cod
+        KeyNavigation.backtab: c_txt_sot_cod
+        text: "Dividi il valore per 10000"
+        exclusive: false
+        checked: true
     }
 }

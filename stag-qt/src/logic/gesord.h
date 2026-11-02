@@ -11,6 +11,8 @@ namespace stag {
 // uti_stag.ordineVuoto (checkDatiTestata = False).
 bool ordineVuoto(const ClasseOrdine &rec);
 int Shifta();
+// ins_ord_ese_per_fine_prod
+void insOrdEsePerFineProd();
 void Log_lst(const CollezioneOrdini &ord);
 void iniVelMax();
 void leggiPro();

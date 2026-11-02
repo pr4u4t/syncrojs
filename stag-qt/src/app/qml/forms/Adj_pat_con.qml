@@ -10,93 +10,18 @@ VbForm {
     backColor: "#ffffff"
     dialog: false
     controls: ({ "cmb_pat_con_sel": c_cmb_pat_con_sel, "lab_proc_acq": c_Lab_proc_acq, "sha_proc_acq": c_Sha_proc_acq, "shape2": c_Shape2, "shape1": c_Shape1, "pag_title": c_Pag_title, "image3": c_Image3, "lab_liv": c_Lab_liv, "txt_liv_tag": c_txt_liv_tag, "lab_con_memo": c_Lab_con_memo })
-    VbCombo {
-        id: c_cmb_pat_con_sel
-        x: 284
-        y: 117
-        width: 73
-        height: 37
-        z: 1
-        foreColor: "#008000"
-        font.family: "Arial"
-        font.pixelSize: 24
-        font.bold: true
-    }
     VbLabel {
-        id: c_Lab_proc_acq
-        x: 46
-        y: 254
-        width: 699
-        height: 81
-        backColor: "#ffffff"
-        foreColor: "#ff8000"
-        font.family: "Arial"
-        font.pixelSize: 29
-        font.bold: true
-        text: "!! PROCEDURA DI ACQUISIZIONE IN CORSO !!"
-        alignment: 2
-        opaque: false
-    }
-    VbShape {
-        id: c_Sha_proc_acq
-        x: 26
-        y: 234
-        width: 739
-        height: 119
-        shape: 0
-        borderColor: "#000000"
-    }
-    VbShape {
-        id: c_Shape2
-        x: 26
-        y: 56
-        width: 337
-        height: 51
-        shape: 0
-    }
-    VbShape {
-        id: c_Shape1
-        x: 26
-        y: 110
-        width: 337
-        height: 51
-        shape: 0
-    }
-    VbLabel {
-        id: c_Pag_title
-        x: 0
-        y: -2
-        width: 531
-        height: 29
-        backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 21
-        font.bold: true
-        text: "ACQUISIZIONE CONTRASTO PATTERN"
-        opaque: false
-    }
-    VbImage {
-        id: c_Image3
-        x: 0
-        y: -1
-        width: 798
-        height: 20
-        stretch: true
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
-    }
-    VbLabel {
-        id: c_Lab_liv
+        id: c_Lab_con_memo
         x: 33
-        y: 74
-        width: 73
-        height: 29
+        y: 125
+        width: 235
+        height: 27
         backColor: "#ffffff"
         foreColor: "#000080"
         font.family: "Arial"
         font.pixelSize: 16
         font.bold: false
-        text: "Livello"
+        text: "Acquisisci Area Contrasto N. "
         opaque: false
     }
     VbLabel {
@@ -114,17 +39,92 @@ VbForm {
         opaque: false
     }
     VbLabel {
-        id: c_Lab_con_memo
+        id: c_Lab_liv
         x: 33
-        y: 125
-        width: 235
-        height: 27
+        y: 74
+        width: 73
+        height: 29
         backColor: "#ffffff"
         foreColor: "#000080"
         font.family: "Arial"
         font.pixelSize: 16
         font.bold: false
-        text: "Acquisisci Area Contrasto N. "
+        text: "Livello"
         opaque: false
+    }
+    VbImage {
+        id: c_Image3
+        x: 0
+        y: -1
+        width: 798
+        height: 20
+        stretch: true
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
+    }
+    VbLabel {
+        id: c_Pag_title
+        x: 0
+        y: -2
+        width: 531
+        height: 29
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 21
+        font.bold: true
+        text: "ACQUISIZIONE CONTRASTO PATTERN"
+        opaque: false
+    }
+    VbShape {
+        id: c_Shape1
+        x: 26
+        y: 110
+        width: 337
+        height: 51
+        shape: 0
+    }
+    VbShape {
+        id: c_Shape2
+        x: 26
+        y: 56
+        width: 337
+        height: 51
+        shape: 0
+    }
+    VbShape {
+        id: c_Sha_proc_acq
+        x: 26
+        y: 234
+        width: 739
+        height: 119
+        shape: 0
+        borderColor: "#000000"
+    }
+    VbLabel {
+        id: c_Lab_proc_acq
+        x: 46
+        y: 254
+        width: 699
+        height: 81
+        backColor: "#ffffff"
+        foreColor: "#ff8000"
+        font.family: "Arial"
+        font.pixelSize: 29
+        font.bold: true
+        text: "!! PROCEDURA DI ACQUISIZIONE IN CORSO !!"
+        alignment: 2
+        opaque: false
+    }
+    VbCombo {
+        id: c_cmb_pat_con_sel
+        x: 284
+        y: 117
+        width: 73
+        height: 37
+        z: 1
+        foreColor: "#008000"
+        font.family: "Arial"
+        font.pixelSize: 24
+        font.bold: true
     }
 }

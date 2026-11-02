@@ -15,6 +15,10 @@
 #include <QSqlDatabase>
 #include <QTimer>
 
+class PagMsgModel;
+class SpdeLink;
+class StaBarFormModel;
+
 // Principale.Main start-up and the Tim_com_PLC loop (dlg_tag_bas.tim_tag_plc), as far as ported.
 class StagApp : public QObject
 {
@@ -33,6 +37,7 @@ public:
     explicit StagApp(const Options &options, QObject *parent = nullptr);
 
     StaBarModel *staBar() { return &m_staBar; }
+    PagMsgModel *pagMsg() const { return m_pagMsg; }
     PagProModel *pagPro() { return &m_pagPro; }
     PagLisOrdModel *pagLisOrd() { return &m_pagLisOrd; }
     PagLisEseModel *pagLisEse() { return &m_pagLisEse; }
@@ -52,6 +57,7 @@ public:
 private:
     void legOrd();
     void loadPages();
+    void loadSchTagPages();
 
     Options m_options;
     QSqlDatabase m_db;
@@ -65,6 +71,10 @@ private:
     PagLisEseModel m_pagLisEse;
     PagAllModel m_pagAll;
     PlcLink m_plc;
+    SpdeLink *m_spde = nullptr;
+    StaBarFormModel *m_staBarForm = nullptr;
+    PagMsgModel *m_pagMsg = nullptr;
+    QTimer m_timComSpde;
     QHash<QString, FormModel *> m_pageModels;
     QTimer m_timComPlc;
     bool m_inTimTagPlc = false;

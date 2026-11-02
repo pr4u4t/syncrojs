@@ -32,6 +32,9 @@ SYSTEM_COLORS = {
 }
 PICTURE_FORMATS = {b"BM": "bmp", b"GI": "gif", b"\xff\xd8": "jpg", b"\x00\x00": "ico"}
 # Windowed VB controls always paint above the lightweight ones of the same container.
+TITLE_STRIP_WIDTH = 798
+TITLE_STRIP_HEIGHT = 20
+TITLE_STRIP_LOGOS_AT = 559
 WINDOWED = {"TextBox", "CommandButton", "Frame", "PictureBox", "ComboBox", "CheckBox", "OptionButton",
             "ListBox", "MSFlexGrid", "DBGrid", "DBCombo", "ProgressBar", "SSPanel", "SSFrame", "SSCommand"}
 FOCUSABLE = {"TextBox", "CommandButton", "ComboBox", "DBCombo", "CheckBox", "OptionButton", "ListBox", "MSFlexGrid", "DBGrid"}
@@ -108,9 +111,10 @@ def parse_form(path):
         stripped = line.strip()
         if stripped.startswith("Attribute VB_Name"):
             break
-        begin = re.match(r"Begin\s+([\w.]+)\s+(\w+)", stripped)
+        # VB allows a degree sign in a name (txt_cor_tag_reg_1°_sog_att); it is not a valid QML id.
+        begin = re.match(r"Begin\s+([\w.]+)\s+([\w\xb0]+)", stripped)
         if begin:
-            control = Control(begin[1].split(".")[-1], begin[2])
+            control = Control(begin[1].split(".")[-1], begin[2].replace("\xb0", "o"))
             if stack:
                 stack[-1].children.append(control)
             else:
@@ -221,6 +225,39 @@ def is_true(value):
     return str(value).split()[0] in ("-1", "True", "1")
 
 
+def is_white_filler(control):
+    """Narrow white labels without text sit at the end of the cells of many forms and cut the lines and
+    headers that run under them. Not as in the .frm: hidden, so lines and cells stay whole."""
+    props = control.props
+    if control.kind != "Label" or props.get("Caption") not in (None, ""):
+        return False
+    if str(props.get("BackStyle", "1")).split()[0] == "0":
+        return False
+    if str(props.get("BackColor", "")).strip().upper() not in ("&H00FFFFFF&", "&H80000005&"):
+        return False
+    return float(props.get("Width", 9999)) <= 120 and float(props.get("Height", 0)) >= 2 * float(props.get("Width", 1))
+
+
+def without_logos(blob):
+    """The title strip of the pages has the DryEvolution and Fosber logos painted into its right end: each row
+    continues in the colour it has before them."""
+    if blob[:2] != b"BM" or len(blob) < 54:
+        return blob
+    offset = int.from_bytes(blob[10:14], "little")
+    width = int.from_bytes(blob[18:22], "little")
+    height = int.from_bytes(blob[22:26], "little")
+    depth = int.from_bytes(blob[28:30], "little")
+    if (width, height, depth) != (TITLE_STRIP_WIDTH, TITLE_STRIP_HEIGHT, 24):
+        return blob
+    pixels = bytearray(blob)
+    stride = (width * 3 + 3) // 4 * 4
+    for row in range(height):
+        start = offset + row * stride
+        colour = pixels[start + (TITLE_STRIP_LOGOS_AT - 1) * 3:start + TITLE_STRIP_LOGOS_AT * 3]
+        pixels[start + TITLE_STRIP_LOGOS_AT * 3:start + width * 3] = bytes(colour) * (width - TITLE_STRIP_LOGOS_AT)
+    return bytes(pixels)
+
+
 def px(twips, scale=1.0):
     return round(float(twips) * scale / TWIPS_PER_PIXEL)
 
@@ -238,6 +275,8 @@ class Converter:
 
     def save_picture(self, ref, form):
         blob = self.frx.picture(ref)
+        if blob:
+            blob = without_logos(blob)
         if not blob:
             form.warnings.append(f"picture {ref[1]}:{ref[2]:04X} not readable")
             return None
@@ -410,8 +449,11 @@ class Converter:
                 lines.append(f"{indent}    visible: false")
         else:
             lines += [f"{indent}    {line}" for line in self.common(control, form, scale, tab_links)]
+            if is_white_filler(control):
+                lines.append(f"{indent}    visible: false")
         child_scale = container_scale(control)
-        for child in control.children:
+        # A .frm lists the topmost control first; in QML the last sibling is on top.
+        for child in reversed(control.children):
             lines += self.emit(child, form, depth + 1, child_scale, tab_links)
         lines.append(f"{indent}}}")
         return lines
@@ -448,7 +490,8 @@ class Converter:
         registry = ", ".join(f"{js(c.key.lower())}: {c.qml_id}" for c in flat if not c.duplicate)
         body.append(f"    controls: ({{ {registry} }})")
         scale = container_scale(root)
-        for child in root.children:
+        # A .frm lists the topmost control first; in QML the last sibling is on top.
+        for child in reversed(root.children):
             body += self.emit(child, form, 1, scale, tab_links)
         body.append("}")
         return "\n".join(body) + "\n"
@@ -466,15 +509,21 @@ def walk(control):
 
 
 def container_scale(control):
-    """A user ScaleMode maps child coordinates through ScaleWidth to the real width."""
+    """A user ScaleMode maps child coordinates through ScaleWidth to the real width. Some forms keep a
+    ScaleWidth from the designer while their children are in twips: those already fit the client area."""
     props = control.props
-    outer = props.get("ClientWidth", props.get("Width"))
+    outer = props.get("ClientWidth") or props.get("Width")
     inner = props.get("ScaleWidth")
-    if not outer or not inner or float(inner) == 0:
+    if props.get("ScaleMode") is None or inner is None or outer is None or float(inner) == float(outer):
         return 1.0
-    if control.kind != "Form" and control.kind != "PictureBox":
+    right = 0.0
+    for child in control.children:
+        if "Left" in child.props and "Width" in child.props:
+            right = max(right, float(child.props["Left"]) + float(child.props["Width"]))
+    if right <= float(outer) * 1.05:
         return 1.0
     return float(outer) / float(inner)
+
 
 
 def build_tab_links(controls):

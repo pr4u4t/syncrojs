@@ -1,4 +1,5 @@
 #include "validazioneordini.h"
+#include "sqlcheck.h"
 
 #include "gesord.h"
 #include "parmac.h"
@@ -331,7 +332,7 @@ bool con_uff_ass_cod(const ClasseOrdine &ord, int format, QSqlDatabase &db, bool
         return false;
 
     QSqlQuery find(db);
-    find.prepare(QStringLiteral("SELECT rec_no FROM PATTERN WHERE upper(CODICE) = ?"));
+    sqlPrepare(find, QStringLiteral("SELECT rec_no FROM PATTERN WHERE upper(CODICE) = ?"));
     find.addBindValue(code.toUpper());
     const bool exists = find.exec() && find.next();
     const QString recNo = exists ? find.value(0).toString() : QString();
@@ -352,14 +353,14 @@ bool con_uff_ass_cod(const ClasseOrdine &ord, int format, QSqlDatabase &db, bool
 
     QSqlQuery write(db);
     if (exists) {
-        write.prepare(QStringLiteral("UPDATE PATTERN SET %1 = ? WHERE rec_no = ?").arg(columns.join(QStringLiteral(" = ?, "))));
+        sqlPrepare(write, QStringLiteral("UPDATE PATTERN SET %1 = ? WHERE rec_no = ?").arg(columns.join(QStringLiteral(" = ?, "))));
         for (const QVariant &value : values)
             write.addBindValue(value);
         write.addBindValue(recNo);
     } else {
         columns.prepend(QStringLiteral("CODICE"));
         values.prepend(vb::trim(field(ord, format, "pat_cod")));
-        write.prepare(QStringLiteral("INSERT INTO PATTERN (%1) VALUES (%2)").arg(columns.join(u',')).arg(QStringList(columns.size(), QStringLiteral("?")).join(u',')));
+        sqlPrepare(write, QStringLiteral("INSERT INTO PATTERN (%1) VALUES (%2)").arg(columns.join(u',')).arg(QStringList(columns.size(), QStringLiteral("?")).join(u',')));
         for (const QVariant &value : values)
             write.addBindValue(value);
     }

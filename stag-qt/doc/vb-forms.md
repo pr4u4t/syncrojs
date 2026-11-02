@@ -65,7 +65,7 @@ behaviour that has to be ported to C++ by hand (they drive the PLC and the order
 | Set_par_sch_tag1 | set_par_sch_tag1.frm | 797x415 | 103 | 61 | 358 | 0 |
 | Set_par_sch_tag2 | set_par_sch_tag2.frm | 797x437 | 69 | 37 | 273 | 0 |
 | Set_par_sch_tag3 | set_par_sch_tag3.frm | 797x416 | 75 | 34 | 275 | 0 |
-| Set_par_sch_tag4 | set_par_sch_tag4.frm | 797x437 | 68 | 30 | 335 | 2 |
+| Set_par_sch_tag4 | set_par_sch_tag4.frm | 797x437 | 68 | 30 | 335 | 0 |
 | Set_par_sch_tag5 | set_par_sch_tag5.frm | 792x522 | 102 | 44 | 424 | 0 |
 | Sta_bar | sta_bar.frm | 800x121 | 113 | 33 | 655 | 0 |
 | Stato_IO | stato_IO.frm | 792x381 | 158 | 1 | 4 | 0 |
@@ -73,11 +73,6 @@ behaviour that has to be ported to C++ by hand (they drive the PLC and the order
 | Tasti | tasti_stag.frm | 795x60 | 50 | 2 | 7 | 0 |
 | Tro_ord | tro_ord.frm | 333x173 | 7 | 5 | 35 | 0 |
 | Tro_ord_ese | tro_ord_ese.frm | 325x173 | 7 | 6 | 37 | 0 |
-
-## Warnings
-
-- Set_par_sch_tag4: txt_cor_tag_reg_2: repeated in the form, later copy is c_txt_cor_tag_reg_2_dup2
-- Set_par_sch_tag4: txt_cor_tag_reg_1: repeated in the form, later copy is c_txt_cor_tag_reg_1_dup2
 
 ## Handlers per form
 

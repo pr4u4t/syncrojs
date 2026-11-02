@@ -10,106 +10,28 @@ VbForm {
     backColor: "#ffffff"
     dialog: true
     controls: ({ "picture1": c_Picture1, "txt_dst": c_txt_dst, "txt_from": c_txt_from, "txt_to": c_txt_to, "tas_f1": c_tas_F1, "lab_avv_1": c_lab_avv_1, "lab_dst": c_lab_dst, "lab_avv": c_lab_avv, "lab_from": c_lab_from, "lab_to": c_lab_to, "txt_f1": c_txt_F1, "pag_title": c_Pag_title })
-    VbPicture {
-        id: c_Picture1
-        x: 183
-        y: 77
-        width: 33
-        height: 33
-        z: 1
-        backColor: "#ffffff"
-        foreColor: "#000000"
-        borderStyle: 0
-        picture: Qt.resolvedUrl("../assets/83db03ab116522f0.ico")
-    }
-    VbTextBox {
-        id: c_txt_dst
-        x: 239
-        y: 85
-        width: 53
-        height: 17
-        z: 1
-        KeyNavigation.tab: c_txt_from
-        KeyNavigation.backtab: c_txt_to
-    }
-    VbTextBox {
-        id: c_txt_from
-        x: 23
-        y: 85
-        width: 53
-        height: 17
-        z: 1
-        KeyNavigation.tab: c_txt_to
-        KeyNavigation.backtab: c_txt_dst
-    }
-    VbTextBox {
-        id: c_txt_to
-        x: 103
-        y: 85
-        width: 53
-        height: 17
-        z: 1
-        KeyNavigation.tab: c_txt_dst
-        KeyNavigation.backtab: c_txt_from
-    }
-    VbButton {
-        id: c_tas_F1
-        x: 119
-        y: 117
-        width: 81
+    VbLabel {
+        id: c_Pag_title
+        x: 17
+        y: 9
+        width: 301
         height: 25
-        z: 1
         backColor: "#ffffff"
-        text: "F11"
-    }
-    VbLabel {
-        id: c_lab_avv_1
-        x: 17
-        y: 47
-        width: 281
-        height: 14
-        backColor: "#ffffff"
-        foreColor: "#804040"
-        text: "(Esc per annullare)"
-        alignment: 2
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Copia ordini"
         opaque: false
-        wordWrap: true
     }
     VbLabel {
-        id: c_lab_dst
-        x: 227
-        y: 69
-        width: 73
+        id: c_txt_F1
+        x: 140
+        y: 149
+        width: 39
         height: 14
         backColor: "#c0c0c0"
         foreColor: "#000000"
-        text: "destinazione"
-        alignment: 2
-        opaque: false
-        autoSize: true
-    }
-    VbLabel {
-        id: c_lab_avv
-        x: 17
-        y: 33
-        width: 281
-        height: 14
-        backColor: "#ffffff"
-        foreColor: "#804040"
-        text: "Indicare il record iniziale, finale"
-        alignment: 2
-        opaque: false
-        wordWrap: true
-    }
-    VbLabel {
-        id: c_lab_from
-        x: 34
-        y: 69
-        width: 31
-        height: 14
-        backColor: "#c0c0c0"
-        foreColor: "#000000"
-        text: "Inizio"
+        text: "Esegui"
         alignment: 2
         opaque: false
         autoSize: true
@@ -128,29 +50,107 @@ VbForm {
         autoSize: true
     }
     VbLabel {
-        id: c_txt_F1
-        x: 140
-        y: 149
-        width: 39
+        id: c_lab_from
+        x: 34
+        y: 69
+        width: 31
         height: 14
         backColor: "#c0c0c0"
         foreColor: "#000000"
-        text: "Esegui"
+        text: "Inizio"
         alignment: 2
         opaque: false
         autoSize: true
     }
     VbLabel {
-        id: c_Pag_title
+        id: c_lab_avv
         x: 17
-        y: 9
-        width: 301
-        height: 25
+        y: 33
+        width: 281
+        height: 14
         backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Copia ordini"
+        foreColor: "#804040"
+        text: "Indicare il record iniziale, finale"
+        alignment: 2
         opaque: false
+        wordWrap: true
+    }
+    VbLabel {
+        id: c_lab_dst
+        x: 227
+        y: 69
+        width: 73
+        height: 14
+        backColor: "#c0c0c0"
+        foreColor: "#000000"
+        text: "destinazione"
+        alignment: 2
+        opaque: false
+        autoSize: true
+    }
+    VbLabel {
+        id: c_lab_avv_1
+        x: 17
+        y: 47
+        width: 281
+        height: 14
+        backColor: "#ffffff"
+        foreColor: "#804040"
+        text: "(Esc per annullare)"
+        alignment: 2
+        opaque: false
+        wordWrap: true
+    }
+    VbButton {
+        id: c_tas_F1
+        x: 119
+        y: 117
+        width: 81
+        height: 25
+        z: 1
+        backColor: "#ffffff"
+        text: "F11"
+    }
+    VbTextBox {
+        id: c_txt_to
+        x: 103
+        y: 85
+        width: 53
+        height: 17
+        z: 1
+        KeyNavigation.tab: c_txt_dst
+        KeyNavigation.backtab: c_txt_from
+    }
+    VbTextBox {
+        id: c_txt_from
+        x: 23
+        y: 85
+        width: 53
+        height: 17
+        z: 1
+        KeyNavigation.tab: c_txt_to
+        KeyNavigation.backtab: c_txt_dst
+    }
+    VbTextBox {
+        id: c_txt_dst
+        x: 239
+        y: 85
+        width: 53
+        height: 17
+        z: 1
+        KeyNavigation.tab: c_txt_from
+        KeyNavigation.backtab: c_txt_to
+    }
+    VbPicture {
+        id: c_Picture1
+        x: 183
+        y: 77
+        width: 33
+        height: 33
+        z: 1
+        backColor: "#ffffff"
+        foreColor: "#000000"
+        borderStyle: 0
+        picture: Qt.resolvedUrl("../assets/83db03ab116522f0.ico")
     }
 }

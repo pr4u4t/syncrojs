@@ -58,14 +58,13 @@ Window {
     function press(key, shift) {
         const form = activeForm()
         const active = overlayForm !== "" ? overlay.item : page.item
-        if (active && active.model && active.model.functionKey(key, shift))
+        if (active && active.model && stagUi.functionKey(active.model, key, shift))
             return
         const entry = Nav.forms[form] ? Nav.forms[form].keys[key] : undefined
         const targets = entry ? entry[String(shift)] : undefined
-        if (!targets || targets.length === 0) {
-            stagUi.notPorted(form, key)
+        // A key VB gives no action does nothing.
+        if (!targets || targets.length === 0)
             return
-        }
         const chosen = active && active.model ? active.model.navigationTarget(key, shift) : ""
         const target = chosen !== "" ? { to: chosen, keep: false } : targets[0]
         if (target.to === "@back") {
@@ -114,7 +113,7 @@ Window {
         Keys.onReleased: (event) => {
             const active = root.overlayForm !== "" ? overlay.item : page.item
             if (active && active.model)
-                active.model.keyUp(event.key)
+                stagUi.keyUp(active.model, event.key)
             const shift = (event.modifiers & Qt.ShiftModifier ? 1 : 0)
                         | (event.modifiers & Qt.ControlModifier ? 2 : 0)
                         | (event.modifiers & Qt.AltModifier ? 4 : 0)
@@ -133,7 +132,27 @@ Window {
                 if (control === "des_fun" && event === "Click")
                     root.press("F" + index, root.shiftMask)
             }
-            Component.onCompleted: root.updateLabels()
+            Component.onCompleted: {
+                // Not as in the .frm: key and text centered in the whole cell, and the purple
+                // separators whole, without the white pieces the form puts over their top.
+                for (let key = 1; key <= 10; ++key) {
+                    const name = ctl("tas_fun", key)
+                    const text = ctl("des_fun", key)
+                    name.x = text.x
+                    name.width = text.width
+                    name.alignment = 2
+                    // Below the purple bar, which ends at 12.
+                    name.y = 13
+                    name.font.pixelSize = 17
+                    text.y = 33
+                    text.height = 28
+                    text.alignment = 2
+                    const white = ctl("shp_bianca", key - 1)
+                    if (white)
+                        white.visible = false
+                }
+                Qt.callLater(root.updateLabels)
+            }
         }
 
         Loader {
@@ -144,7 +163,7 @@ Window {
             height: 600 - tasti.height
             clip: true
             source: root.formUrl(root.currentForm)
-            onLoaded: root.updateLabels()
+            onLoaded: Qt.callLater(root.updateLabels)
         }
 
         Rectangle {
@@ -171,10 +190,22 @@ Window {
             function onCloseRequested() { root.press("ESC", 0) }
         }
 
-        StatusBar {
+        Sta_bar {
             id: statusBar
-            anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
+            anchors { left: parent.left; bottom: parent.bottom }
             z: 1
+            // txt_idle, which only holds the focus in VB, lies far above the form.
+            clip: true
+        }
+
+        // messaggio with vis_for opens pag_msg over the page, and a new language renews the captions.
+        Connections {
+            target: stagUi
+            function onOverlayRequested(form) {
+                root.overlayForm = form
+                root.updateLabels()
+            }
+            function onLanguageChanged() { root.updateLabels() }
         }
     }
 }

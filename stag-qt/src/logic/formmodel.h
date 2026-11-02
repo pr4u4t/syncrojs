@@ -1,7 +1,24 @@
 #pragma once
 
+#include "staglog.h"
+
 #include <QObject>
 #include <QVariantMap>
+
+#include <exception>
+
+// The handler of key.cls Ges_Key and the On Error of the forms: a VB runtime error in a form's code ends
+// in the log and the program goes on. An exception crossing into QML would end the process.
+template <typename Fn>
+auto guardedFormCall(const QString &where, Fn &&fn, decltype(fn()) fallback)
+{
+    try {
+        return fn();
+    } catch (const std::exception &e) {
+        log_str(QStringLiteral("on error intervenuta in ") + where + QStringLiteral(": ") + QString::fromUtf8(e.what()), MED_PRIORITY, CosLog::Gen);
+    }
+    return fallback;
+}
 
 // The VB code of a form assigns control properties (lab_ord(1).Caption = ...). A model does the
 // same into state, keyed "control" or "control(index)", and VbForm copies it onto the controls.

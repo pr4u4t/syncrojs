@@ -49,8 +49,7 @@ void AlarmGridModel::legAll()
 {
     m_address.fill(QString());
     QSqlQuery query(m_db);
-    int position = 0;
-    if (query.exec(QStringLiteral("SELECT DM FROM \"ALL_%1\" ORDER BY rec_no").arg(m_code.toUpper()))) {
+    if (int position = 0; query.exec(QStringLiteral("SELECT DM FROM \"ALL_%1\" ORDER BY rec_no").arg(m_code.toUpper()))) {
         while (query.next() && position < RIG_ALL * COL_ALL)
             m_address[size_t(position++)] = query.value(0).toString().trimmed();
     }

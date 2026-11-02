@@ -6,6 +6,8 @@ add_library(stagcore STATIC
     inifile.cpp inifile.h
     dbf.cpp dbf.h
     sqlitemigration.cpp sqlitemigration.h
+    sqlcheck.h
+    translations.inc
     staglog.cpp staglog.h
     messages.cpp messages.h
     vbtypes.cpp vbtypes.h

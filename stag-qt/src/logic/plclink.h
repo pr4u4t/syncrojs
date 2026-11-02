@@ -2,6 +2,7 @@
 
 #include "collezioneordini.h"
 #include "plcframes.h"
+#include "schtaglink.h"
 
 #include <QElapsedTimer>
 #include <QObject>
@@ -11,6 +12,7 @@
 
 class ClasseStato;
 class FinsClient;
+class QSqlDatabase;
 class PlcLink;
 
 namespace stag {
@@ -37,7 +39,12 @@ public:
     bool esegui(int ric, int liv, int numOrd, const QVariant &dat = QVariant());
     void resetta();
     void rispondi(int ret, const QString &text);
-    QString name() const { return m_name; }
+    const QString &name() const { return m_name; }
+    int ric() const;
+    int liv() const;
+    // err_cod = ROLL_BACK_PLC of the macro: PARAM_CFG_MAC was written and its curve was not found.
+    bool rollBackPlc() const { return m_rollBackPlc; }
+    void setRollBackPlc(bool on) { m_rollBackPlc = on; }
 
 signals:
     void retok(const QString &text);
@@ -47,6 +54,7 @@ private:
     QString m_name;
     stag::RmtChannel m_channel;
     PlcLink *m_link;
+    bool m_rollBackPlc = false;
 };
 
 // What tim_tag_plc does towards the machine once the state is read: start-up parameters, keeping the
@@ -59,7 +67,7 @@ class PlcLink : public QObject
 public:
     PlcLink(FinsClient *fins, ClasseStato *state, CollezioneOrdini *orders, QObject *parent = nullptr);
 
-    void setWritesEnabled(bool enabled) { m_writes = enabled; }
+    void setWritesEnabled(bool enabled) { m_writes = enabled; m_boards.setEnabled(enabled); }
     bool writesEnabled() const { return m_writes; }
 
     // invio_ini_par_mac and ini_plc_lan, when the connection comes up.
@@ -69,6 +77,10 @@ public:
 
     // inv_ord_plc: forces sending the current (1) or next (2) order again.
     void forceOrder(int which, bool force) { m_force[size_t(which)] = force; }
+
+    SchTagLink &boards() { return m_boards; }
+    // db of VB, for carica_new_par_cur_tag.
+    void setDatabase(QSqlDatabase *db) { m_db = db; }
 
 private:
     friend class Rmt;
@@ -89,10 +101,17 @@ private:
     void serveCardQueue();
     void serveMacroQueue();
     void setStartDate(int order);
+    void readBoards();
+    void alignBoards();
+    bool sendBoardConfirm();
 
     FinsClient *m_fins;
     ClasseStato *m_state;
     CollezioneOrdini *m_orders;
+    SchTagLink m_boards;
+    QSqlDatabase *m_db = nullptr;
+    std::array<QElapsedTimer, 4> m_lastBoardRead;
+    QElapsedTimer m_lastBoardAlign;
     std::array<Queue, 4> m_queues;
     std::array<bool, 3> m_force{};
     bool m_writes = false;

@@ -1,10 +1,13 @@
 #include "abilitazionimodel.h"
 
 #include "classestato.h"
+#include "inibas.h"
 #include "inistore.h"
 #include "messages.h"
+#include "parcfgschtag.h"
 #include "parmac.h"
 #include "stabarmodel.h"
+#include "staglog.h"
 #include "stagglobals.h"
 #include "uihooks.h"
 #include "vbcompat.h"
@@ -40,17 +43,20 @@ void AbilitazioniModel::setCommand(Rmt *command)
     m_command = command;
     connect(command, &Rmt::retok, this, [this](const QString &text) {
         par_abi = par_abi_ute;
+        m_plcRollBack = false;
         if (!text.isEmpty())
             messaggio(text, false);
         m_command->resetta();
         commit();
     });
     connect(command, &Rmt::retbad, this, [this](const QString &text) {
-        // Back to the values before the change, in the ini file and on the page.
+        // Back to the values before the change, in the ini file and on the page; not on the roll back of a
+        // macro, which has already refreshed the page.
         par_abi_ute = par_abi;
         scrParAbi(false);
-        if (!m_pendingKey.isEmpty())
+        if (!m_plcRollBack && !m_pendingKey.isEmpty())
             revert(m_pendingKey);
+        m_plcRollBack = false;
         if (!text.isEmpty())
             messaggio(text, true);
         m_command->resetta();
@@ -58,17 +64,121 @@ void AbilitazioniModel::setCommand(Rmt *command)
     });
 }
 
-// scr_par_abi
 void AbilitazioniModel::scrParAbi(bool useUser)
 {
-    const TipAbi &values = useUser ? par_abi_ute : par_abi;
-    const auto bit = [](bool on) { return on ? QStringLiteral("1") : QStringLiteral("0"); };
-    setFileINIString(QStringLiteral("abilitazioni"), QStringLiteral("abi_com_pu"), bit(values.abi_com_PU));
+    stag::scrParAbi(useUser);
+}
+
+void AbilitazioniModel::rollBackMotor()
+{
+    par_abi_ute = par_abi;
+    scrParAbi(false);
+    activate(QString());
+}
+
+void AbilitazioniModel::setMotorCommands(Rmt *board, Rmt *macro, PlcLink *link, QSqlDatabase db)
+{
+    m_board = board;
+    m_macro = macro;
+    m_link = link;
+    m_db = db;
+    connect(board, &Rmt::retok, this, [this](const QString &text) {
+        par_abi = par_abi_ute;
+        if (!text.isEmpty())
+            messaggio(text, false);
+        m_board->resetta();
+    });
+    connect(board, &Rmt::retbad, this, [this](const QString &text) {
+        rollBackMotor();
+        if (!text.isEmpty())
+            messaggio(text, true);
+        m_board->resetta();
+    });
+    connect(macro, &Rmt::retok, this, [this](const QString &text) {
+        par_abi = par_abi_ute;
+        scrParAbi(false);
+        if (!text.isEmpty())
+            messaggio(text, false);
+        m_macro->resetta();
+    });
+    connect(macro, &Rmt::retbad, this, [this](const QString &text) {
+        rollBackMotor();
+        if (!text.isEmpty())
+            messaggio(text, true);
+        if (m_macro->rollBackPlc() && m_command && m_command->esegui(PARAM_CFG_MAC, m_macro->liv(), 0, true)) {
+            m_plcRollBack = true;
+            log_str(QStringLiteral("Abilitazioni: ATTENZIONE - Roll Back configurazione PLC"), MED_PRIORITY, CosLog::Cfg);
+        }
+        m_macro->resetta();
+    });
+}
+
+// check_dis_mot
+void AbilitazioniModel::checkDisMot()
+{
     for (int i = 1; i <= int(par_mac.car_tec.num_liv_tag.val()); ++i) {
-        const QString section = QStringLiteral("abi_liv_%1").arg(i);
-        setFileINIString(section, QStringLiteral("liv"), bit(values.liv(i)));
-        for (int m = 1; m <= int(par_mac.car_tec.num_mot_liv_tag.val()); ++m)
-            setFileINIString(section, QStringLiteral("fun_mot%1").arg(m), bit(values.fun_mot_liv(i).fun_mot_mot(m)));
+        if (par_abi_ute.num_mot_abi(i) == 0 && par_abi_ute.liv(i)) {
+            messagWin(msg(QStringLiteral("abi_un_mot")), true);
+            return;
+        }
+    }
+    clearMessagWin(msg(QStringLiteral("abi_un_mot")));
+}
+
+// fun_mot_Click, once ver_ese_ope is satisfied.
+void AbilitazioniModel::switchMotor(const QString &key, int index)
+{
+    const int level = index / 10;
+    const int motor = index % 10;
+    if (!par_abi.liv(level)) {
+        messaggio(msg(QStringLiteral("abi_il_liv")) + QStringLiteral(" %1").arg(level), true, false);
+        par_abi_ute = par_abi;
+        revert(key);
+        scrParAbi(false);
+        return;
+    }
+    const bool on = isOn(key);
+    par_abi_ute.fun_mot_liv(level).fun_mot_mot(motor) = on;
+    showSwitch(key, on);
+    int enabled = 0;
+    for (int m = 1; m <= int(par_mac.car_tec.num_mot_liv_tag.val()); ++m) {
+        if (par_abi_ute.fun_mot_liv(level).fun_mot_mot(m))
+            ++enabled;
+    }
+    par_abi_ute.num_mot_abi(level) = qint16(enabled);
+    if (enabled == 0) {
+        messaggio(msg(QStringLiteral("imp_dis_all_mot")), true, false);
+        par_abi_ute = par_abi;
+        showSwitch(key, true);
+        return;
+    }
+    if (!m_db.isValid() || !m_board || !m_macro) {
+        par_abi_ute = par_abi;
+        revert(key);
+        messaggio(msg(QStringLiteral("imp_ese_ope")), true);
+        return;
+    }
+    if (!dbfVuo(m_db)) {
+        messaggio(msg(QStringLiteral("let_par_cfg")), false, false);
+        if (!trovaCfgAdatta(m_db, enabled, level)) {
+            messaggio(msg(QStringLiteral("par_cfg_non_tro")) + QStringLiteral(" %1").arg(level), true, false);
+            par_abi_ute = par_abi;
+            revert(key);
+            return;
+        }
+        num_com_sch_tag = 1;
+        m_link->boards().setSendCase(CAMBIO_STATO_MACCHINA);
+        scrParAbi(true);
+        if (m_board->esegui(CONFIGURA, level, 0))
+            messaggio(msg(QStringLiteral("ope_in_cor")), false);
+        else
+            messaggio(msg(QStringLiteral("imp_ese_ope")), true);
+    } else {
+        scrParAbi(true);
+        if (m_macro->esegui(PLC_PARAM_CFG_MAC_PARAM_CUR_TAG, level, 0))
+            messaggio(msg(QStringLiteral("ope_incor")), false);
+        else
+            messaggio(msg(QStringLiteral("imp_ese_ope")), true);
     }
 }
 
@@ -86,6 +196,7 @@ void AbilitazioniModel::switchLevel(const QString &key, int level)
         }
         par_abi_ute.num_mot_abi(level) = 0;
     }
+    checkDisMot();
     messaggio(msg(QStringLiteral("msg_inv_par_mac")), false);
     scrParAbi(true);
     m_pendingKey = key;
@@ -211,11 +322,9 @@ void AbilitazioniModel::toggled(const QString &key, const QString &control, int 
             return;
         }
     } else {
-        const int level = index / 10;
-        if (!par_abi.liv(level))
-            messaggio(msg(QStringLiteral("abi_il_liv")) + QStringLiteral(" %1").arg(level), true, false);
-        else
-            messaggio(msg(QStringLiteral("imp_ese_ope")) + QStringLiteral(" (PLC)"), true, false);
+        switchMotor(key, index);
+        chkAbiMot();
+        return;
     }
     revert(key);
     chkAbiMot();

@@ -26,4 +26,9 @@ inline QString con_met_to_fet(const QString &met)
     return QString::number(std::llround(vb::val(met) * FEETMT));
 }
 
+inline QString con_met_qua_to_squ_fet(const QString &metQua)
+{
+    return QString::number(std::llround(vb::val(metQua) * FEETMT * FEETMT));
+}
+
 } // namespace stag

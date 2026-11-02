@@ -1,4 +1,5 @@
 #include "recordeditmodel.h"
+#include "sqlcheck.h"
 
 #include "stabarmodel.h"
 #include "uihooks.h"
@@ -194,9 +195,9 @@ bool RecordEditModel::writeRecord(bool isNew)
     }
     QSqlQuery write(m_db);
     if (isNew)
-        write.prepare(QStringLiteral("INSERT INTO %1 (%2) VALUES (%3)").arg(m_table, m_fields.join(u','), marks.join(u',')));
+        sqlPrepare(write, QStringLiteral("INSERT INTO %1 (%2) VALUES (%3)").arg(m_table, m_fields.join(u','), marks.join(u',')));
     else
-        write.prepare(QStringLiteral("UPDATE %1 SET %2 WHERE rec_no = ?").arg(m_table, assignments.join(u',')));
+        sqlPrepare(write, QStringLiteral("UPDATE %1 SET %2 WHERE rec_no = ?").arg(m_table, assignments.join(u',')));
     for (const QString &name : m_fields)
         write.addBindValue(m_values.value(name));
     if (!isNew)
@@ -211,7 +212,7 @@ bool RecordEditModel::writeRecord(bool isNew)
 bool RecordEditModel::deleteCurrent()
 {
     QSqlQuery remove(m_db);
-    remove.prepare(QStringLiteral("DELETE FROM %1 WHERE rec_no = ?").arg(m_table));
+    sqlPrepare(remove, QStringLiteral("DELETE FROM %1 WHERE rec_no = ?").arg(m_table));
     remove.addBindValue(m_records.at(m_current).value(QStringLiteral("REC_NO")));
     if (!remove.exec()) {
         messaggio(remove.lastError().text(), true);

@@ -317,6 +317,8 @@ inline bool Prb_lis_ord = false;
 inline Array<bool, 1, 3> com_ini_sch_tag{false};
 inline Array<qint16, 1, 3> vel_max_tag_liv{0};
 inline Array<bool, 1, 2> inv_ord_sch_tag{false};
+inline int Livello = 1;
+inline int num_com_sch_tag = 0;
 
 // Format$(v, "000"): zero padded integer.
 inline QString ft(qint64 value, int digits)

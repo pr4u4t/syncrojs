@@ -10,49 +10,10 @@ VbForm {
     backColor: "#ffffff"
     dialog: true
     controls: ({ "tas_f1": c_tas_F1, "txt_to": c_txt_to, "txt_from": c_txt_from, "lab_avv_1": c_lab_avv_1, "pag_title": c_Pag_title, "txt_f1": c_txt_F1, "lab_to": c_lab_to, "lab_from": c_lab_from, "lab_avv": c_lab_avv })
-    VbButton {
-        id: c_tas_F1
-        x: 120
-        y: 118
-        width: 81
-        height: 25
-        z: 1
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "F11"
-    }
-    VbTextBox {
-        id: c_txt_to
-        x: 198
-        y: 86
-        width: 53
-        height: 17
-        z: 1
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        KeyNavigation.tab: c_txt_from
-        KeyNavigation.backtab: c_txt_from
-    }
-    VbTextBox {
-        id: c_txt_from
-        x: 64
-        y: 86
-        width: 53
-        height: 17
-        z: 1
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        KeyNavigation.tab: c_txt_to
-        KeyNavigation.backtab: c_txt_to
-    }
     VbLabel {
-        id: c_lab_avv_1
+        id: c_lab_avv
         x: 18
-        y: 50
+        y: 36
         width: 281
         height: 14
         backColor: "#ffffff"
@@ -60,36 +21,23 @@ VbForm {
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "(Esc per annullare)"
+        text: "Attenzione verranno CANCELLATI i seguenti ordini"
         alignment: 2
         opaque: false
         wordWrap: true
     }
     VbLabel {
-        id: c_Pag_title
-        x: 16
-        y: 10
-        width: 301
-        height: 25
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Cancellazione ordini"
-        opaque: false
-    }
-    VbLabel {
-        id: c_txt_F1
-        x: 141
-        y: 150
-        width: 39
+        id: c_lab_from
+        x: 83
+        y: 70
+        width: 15
         height: 14
         backColor: "#ffffff"
         foreColor: "#000000"
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "Esegui"
+        text: "Da"
         alignment: 2
         opaque: false
         autoSize: true
@@ -111,25 +59,38 @@ VbForm {
         autoSize: true
     }
     VbLabel {
-        id: c_lab_from
-        x: 83
-        y: 70
-        width: 15
+        id: c_txt_F1
+        x: 141
+        y: 150
+        width: 39
         height: 14
         backColor: "#ffffff"
         foreColor: "#000000"
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "Da"
+        text: "Esegui"
         alignment: 2
         opaque: false
         autoSize: true
     }
     VbLabel {
-        id: c_lab_avv
+        id: c_Pag_title
+        x: 16
+        y: 10
+        width: 301
+        height: 25
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Cancellazione ordini"
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_avv_1
         x: 18
-        y: 36
+        y: 50
         width: 281
         height: 14
         backColor: "#ffffff"
@@ -137,9 +98,48 @@ VbForm {
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "Attenzione verranno CANCELLATI i seguenti ordini"
+        text: "(Esc per annullare)"
         alignment: 2
         opaque: false
         wordWrap: true
+    }
+    VbTextBox {
+        id: c_txt_from
+        x: 64
+        y: 86
+        width: 53
+        height: 17
+        z: 1
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        KeyNavigation.tab: c_txt_to
+        KeyNavigation.backtab: c_txt_to
+    }
+    VbTextBox {
+        id: c_txt_to
+        x: 198
+        y: 86
+        width: 53
+        height: 17
+        z: 1
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        KeyNavigation.tab: c_txt_from
+        KeyNavigation.backtab: c_txt_from
+    }
+    VbButton {
+        id: c_tas_F1
+        x: 120
+        y: 118
+        width: 81
+        height: 25
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "F11"
     }
 }

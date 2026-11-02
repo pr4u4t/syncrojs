@@ -10,32 +10,18 @@ VbForm {
     backColor: "#ffffff"
     dialog: true
     controls: ({ "txt_idle": c_txt_idle, "txt_msg_dia": c_txt_msg_dia, "lab_avv_1": c_lab_avv_1, "pag_title": c_Pag_title })
-    VbTextBox {
-        id: c_txt_idle
-        x: 352
-        y: -333
-        width: 33
-        height: 21
-        z: 1
-        KeyNavigation.tab: c_txt_msg_dia
-        KeyNavigation.backtab: c_txt_msg_dia
-        text: "Text1"
-    }
-    VbTextBox {
-        id: c_txt_msg_dia
-        x: 12
-        y: 64
-        width: 513
-        height: 113
-        z: 1
+    VbLabel {
+        id: c_Pag_title
+        x: 24
+        y: 8
+        width: 265
+        height: 25
         backColor: "#ffffff"
-        foreColor: "#0000ff"
         font.family: "Arial"
-        font.pixelSize: 12
+        font.pixelSize: 19
         font.bold: true
-        KeyNavigation.tab: c_txt_idle
-        KeyNavigation.backtab: c_txt_idle
-        multiLine: true
+        text: "Diagnosi della rete CAN"
+        opaque: false
     }
     VbLabel {
         id: c_lab_avv_1
@@ -53,17 +39,31 @@ VbForm {
         opaque: false
         wordWrap: true
     }
-    VbLabel {
-        id: c_Pag_title
-        x: 24
-        y: 8
-        width: 265
-        height: 25
+    VbTextBox {
+        id: c_txt_msg_dia
+        x: 12
+        y: 64
+        width: 513
+        height: 113
+        z: 1
         backColor: "#ffffff"
+        foreColor: "#0000ff"
         font.family: "Arial"
-        font.pixelSize: 19
+        font.pixelSize: 12
         font.bold: true
-        text: "Diagnosi della rete CAN"
-        opaque: false
+        KeyNavigation.tab: c_txt_idle
+        KeyNavigation.backtab: c_txt_idle
+        multiLine: true
+    }
+    VbTextBox {
+        id: c_txt_idle
+        x: 352
+        y: -333
+        width: 33
+        height: 21
+        z: 1
+        KeyNavigation.tab: c_txt_msg_dia
+        KeyNavigation.backtab: c_txt_msg_dia
+        text: "Text1"
     }
 }

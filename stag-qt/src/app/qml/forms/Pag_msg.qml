@@ -11,26 +11,9 @@ VbForm {
     dialog: false
     controls: ({ "lab_avv_1": c_lab_avv_1, "lab_msg(2)": c_lab_msg_2, "lab_msg(1)": c_lab_msg_1, "lab_msg(0)": c_lab_msg_0 })
     VbLabel {
-        id: c_lab_avv_1
-        x: 202
-        y: 111
-        width: 347
-        height: 19
-        backColor: "#c0c0c0"
-        foreColor: "#804040"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "(Esc per ritornare alla pagina precedente)"
-        alignment: 2
-        opaque: false
-        autoSize: true
-        wordWrap: true
-    }
-    VbLabel {
-        id: c_lab_msg_2
+        id: c_lab_msg_0
         x: 366
-        y: 70
+        y: 12
         width: 6
         height: 24
         font.family: "Arial"
@@ -52,9 +35,9 @@ VbForm {
         autoSize: true
     }
     VbLabel {
-        id: c_lab_msg_0
+        id: c_lab_msg_2
         x: 366
-        y: 12
+        y: 70
         width: 6
         height: 24
         font.family: "Arial"
@@ -62,5 +45,22 @@ VbForm {
         font.bold: true
         opaque: false
         autoSize: true
+    }
+    VbLabel {
+        id: c_lab_avv_1
+        x: 202
+        y: 111
+        width: 347
+        height: 19
+        backColor: "#c0c0c0"
+        foreColor: "#804040"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "(Esc per ritornare alla pagina precedente)"
+        alignment: 2
+        opaque: false
+        autoSize: true
+        wordWrap: true
     }
 }

@@ -10,71 +10,17 @@ VbForm {
     backColor: "#ffffff"
     dialog: true
     controls: ({ "tas_f1": c_tas_F1, "txt_cod": c_txt_cod, "lab_avv_1": c_lab_avv_1, "txt_f1": c_txt_F1, "label1": c_Label1, "lab_avv": c_lab_avv, "pag_title": c_Pag_title })
-    VbButton {
-        id: c_tas_F1
-        x: 123
-        y: 120
-        width: 81
+    VbLabel {
+        id: c_Pag_title
+        x: 22
+        y: 4
+        width: 187
         height: 25
-        z: 1
         backColor: "#ffffff"
         font.family: "Arial"
-        font.pixelSize: 11
+        font.pixelSize: 16
         font.bold: true
-        text: "F11"
-    }
-    VbTextBox {
-        id: c_txt_cod
-        x: 124
-        y: 82
-        width: 79
-        height: 17
-        z: 1
-    }
-    VbLabel {
-        id: c_lab_avv_1
-        x: 26
-        y: 40
-        width: 281
-        height: 13
-        backColor: "#c0c0c0"
-        foreColor: "#804040"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "(Esc per annullare)"
-        alignment: 2
-        opaque: false
-        wordWrap: true
-    }
-    VbLabel {
-        id: c_txt_F1
-        x: 143
-        y: 154
-        width: 39
-        height: 14
-        backColor: "#c0c0c0"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Esegui"
-        alignment: 2
-        opaque: false
-        autoSize: true
-    }
-    VbLabel {
-        id: c_Label1
-        x: 103
-        y: 62
-        width: 123
-        height: 21
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Codice"
-        alignment: 2
+        text: "Trova ordine"
         opaque: false
     }
     VbLabel {
@@ -94,16 +40,70 @@ VbForm {
         wordWrap: true
     }
     VbLabel {
-        id: c_Pag_title
-        x: 22
-        y: 4
-        width: 187
-        height: 25
+        id: c_Label1
+        x: 103
+        y: 62
+        width: 123
+        height: 21
         backColor: "#ffffff"
         font.family: "Arial"
-        font.pixelSize: 16
+        font.pixelSize: 11
         font.bold: true
-        text: "Trova ordine"
+        text: "Codice"
+        alignment: 2
         opaque: false
+    }
+    VbLabel {
+        id: c_txt_F1
+        x: 143
+        y: 154
+        width: 39
+        height: 14
+        backColor: "#c0c0c0"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Esegui"
+        alignment: 2
+        opaque: false
+        autoSize: true
+    }
+    VbLabel {
+        id: c_lab_avv_1
+        x: 26
+        y: 40
+        width: 281
+        height: 13
+        backColor: "#c0c0c0"
+        foreColor: "#804040"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "(Esc per annullare)"
+        alignment: 2
+        opaque: false
+        wordWrap: true
+    }
+    VbTextBox {
+        id: c_txt_cod
+        x: 124
+        y: 82
+        width: 79
+        height: 17
+        z: 1
+    }
+    VbButton {
+        id: c_tas_F1
+        x: 123
+        y: 120
+        width: 81
+        height: 25
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "F11"
     }
 }

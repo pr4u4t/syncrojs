@@ -11,6 +11,9 @@ void leggiNumLivTag(IniFile &ini);
 // proPatOverride replaces the Windows pro_pat of stag.ini (logs and data files are relative to it).
 void legParSup(IniFile &ini, const QString &command, const QString &proPatOverride);
 void legParMac(IniFile &ini);
+// scr_par_mac and scr_par_abi: the machine parameters back to stag.ini.
+void scrParMac();
+void scrParAbi(bool useUser = false);
 void iniValNonUti();
 // Principale.ini_liv
 void iniLiv();

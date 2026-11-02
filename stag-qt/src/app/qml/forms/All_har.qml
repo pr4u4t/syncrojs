@@ -10,18 +10,28 @@ VbForm {
     backColor: "#ffffff"
     dialog: false
     controls: ({ "har_det_all": c_har_det_all, "har_griglia": c_har_griglia, "pag_title": c_Pag_title, "image3": c_Image3 })
-    VbTextBox {
-        id: c_har_det_all
-        x: 2
-        y: 376
-        width: 793
-        height: 34
-        z: 1
+    VbImage {
+        id: c_Image3
+        x: 0
+        y: 1
+        width: 798
+        height: 20
+        stretch: true
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
+    }
+    VbLabel {
+        id: c_Pag_title
+        x: 0
+        y: 0
+        width: 531
+        height: 29
         backColor: "#ffffff"
-        font.family: "Comic Sans MS"
-        font.pixelSize: 19
-        font.bold: false
-        text: "Text1"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 21
+        font.bold: true
+        text: "ALLARMI HARDWARE"
+        opaque: false
     }
     VbGrid {
         id: c_har_griglia
@@ -38,27 +48,17 @@ VbForm {
         fixedRows: 0
         fixedCols: 0
     }
-    VbLabel {
-        id: c_Pag_title
-        x: 0
-        y: 0
-        width: 531
-        height: 29
+    VbTextBox {
+        id: c_har_det_all
+        x: 2
+        y: 376
+        width: 793
+        height: 34
+        z: 1
         backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 21
-        font.bold: true
-        text: "ALLARMI HARDWARE"
-        opaque: false
-    }
-    VbImage {
-        id: c_Image3
-        x: 0
-        y: 1
-        width: 798
-        height: 20
-        stretch: true
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
+        font.family: "Comic Sans MS"
+        font.pixelSize: 19
+        font.bold: false
+        text: "Text1"
     }
 }

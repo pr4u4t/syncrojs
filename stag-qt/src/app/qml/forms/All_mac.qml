@@ -10,30 +10,14 @@ VbForm {
     backColor: "#ffffff"
     dialog: false
     controls: ({ "mac_det_all": c_mac_det_all, "mac_griglia": c_mac_griglia, "pag_title": c_Pag_title, "image3": c_Image3 })
-    VbTextBox {
-        id: c_mac_det_all
-        x: 2
-        y: 376
-        width: 793
-        height: 34
-        z: 1
-        backColor: "#ffffff"
-        font.family: "Comic Sans MS"
-        font.pixelSize: 19
-        font.bold: false
-        text: "Text1"
-    }
-    VbGrid {
-        id: c_mac_griglia
-        x: 2
-        y: 28
-        width: 792
-        height: 347
-        z: 1
-        backColor: "#ffffff"
-        foreColor: "#400000"
-        fixedRows: 0
-        fixedCols: 0
+    VbImage {
+        id: c_Image3
+        x: 0
+        y: 1
+        width: 798
+        height: 20
+        stretch: true
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
     }
     VbLabel {
         id: c_Pag_title
@@ -49,13 +33,29 @@ VbForm {
         text: "ALLARMI BORDO MACCHINA"
         opaque: false
     }
-    VbImage {
-        id: c_Image3
-        x: 0
-        y: 1
-        width: 798
-        height: 20
-        stretch: true
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
+    VbGrid {
+        id: c_mac_griglia
+        x: 2
+        y: 28
+        width: 792
+        height: 347
+        z: 1
+        backColor: "#ffffff"
+        foreColor: "#400000"
+        fixedRows: 0
+        fixedCols: 0
+    }
+    VbTextBox {
+        id: c_mac_det_all
+        x: 2
+        y: 376
+        width: 793
+        height: 34
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Comic Sans MS"
+        font.pixelSize: 19
+        font.bold: false
+        text: "Text1"
     }
 }

@@ -10,48 +10,32 @@ VbForm {
     backColor: "#ffffff"
     dialog: true
     controls: ({ "tas_f1": c_tas_F1, "txt_des": c_txt_des, "lab_avv_1": c_lab_avv_1, "txt_f1": c_txt_F1, "label1": c_Label1, "pag_title": c_Pag_title })
-    VbButton {
-        id: c_tas_F1
-        x: 194
-        y: 114
-        width: 81
+    VbLabel {
+        id: c_Pag_title
+        x: 13
+        y: 9
+        width: 295
         height: 25
-        z: 1
         backColor: "#ffffff"
+        foreColor: "#000080"
         font.family: "Arial"
-        font.pixelSize: 11
+        font.pixelSize: 19
         font.bold: true
-        text: "F11"
-    }
-    VbTextBox {
-        id: c_txt_des
-        x: 163
-        y: 55
-        width: 257
-        height: 24
-        z: 1
-        backColor: "#ffffc0"
-        font.family: "Arial"
-        font.pixelSize: 13
-        font.bold: true
-        text: "12345678901234567890123456789012345"
-        maxLength: 35
+        text: "Salva configurazione"
+        opaque: false
     }
     VbLabel {
-        id: c_lab_avv_1
-        x: 143
-        y: 94
-        width: 183
-        height: 13
-        backColor: "#c0c0c0"
-        foreColor: "#804040"
+        id: c_Label1
+        x: 21
+        y: 56
+        width: 124
+        height: 25
+        backColor: "#ffffff"
         font.family: "Arial"
-        font.pixelSize: 11
+        font.pixelSize: 16
         font.bold: true
-        text: "(Esc per annullare)"
-        alignment: 2
+        text: "DESCRIZIONE"
         opaque: false
-        wordWrap: true
     }
     VbLabel {
         id: c_txt_F1
@@ -70,30 +54,46 @@ VbForm {
         autoSize: true
     }
     VbLabel {
-        id: c_Label1
-        x: 21
-        y: 56
-        width: 124
-        height: 25
-        backColor: "#ffffff"
+        id: c_lab_avv_1
+        x: 143
+        y: 94
+        width: 183
+        height: 13
+        backColor: "#c0c0c0"
+        foreColor: "#804040"
         font.family: "Arial"
-        font.pixelSize: 16
+        font.pixelSize: 11
         font.bold: true
-        text: "DESCRIZIONE"
+        text: "(Esc per annullare)"
+        alignment: 2
         opaque: false
+        wordWrap: true
     }
-    VbLabel {
-        id: c_Pag_title
-        x: 13
-        y: 9
-        width: 295
-        height: 25
-        backColor: "#ffffff"
-        foreColor: "#000080"
+    VbTextBox {
+        id: c_txt_des
+        x: 163
+        y: 55
+        width: 257
+        height: 24
+        z: 1
+        backColor: "#ffffc0"
         font.family: "Arial"
-        font.pixelSize: 19
+        font.pixelSize: 13
         font.bold: true
-        text: "Salva configurazione"
-        opaque: false
+        text: "12345678901234567890123456789012345"
+        maxLength: 35
+    }
+    VbButton {
+        id: c_tas_F1
+        x: 194
+        y: 114
+        width: 81
+        height: 25
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "F11"
     }
 }

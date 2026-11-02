@@ -19,6 +19,8 @@ inline vb::Array<TipCurTag, 1, 3> cur_tag;
 
 void leggiParCurTag(QSqlDatabase &db);
 void resCurTag(QSqlDatabase &db, int liv);
+bool caricaNewParCurTag(QSqlDatabase &db, int liv);
+void scrParCurTagDbf(QSqlDatabase &db, int liv);
 
 int calLiv(int liv);
 int calVelCurTag(int liv, qint32 l);

@@ -10,6 +10,29 @@ VbForm {
     backColor: "#ffffff"
     dialog: false
     controls: ({ "frm_grid": c_Frm_grid, "frm_det": c_frm_det, "txt_lun_tot": c_txt_lun_tot, "txt_cut_to_mark(2)": c_txt_cut_to_mark_2, "txt_cut_to_mark(1)": c_txt_cut_to_mark_1, "txt_cut_to_mark(0)": c_txt_cut_to_mark_0, "txt_alt_bob": c_txt_alt_bob, "txt_cod_com_car": c_txt_cod_com_car, "label2": c_Label2, "line1": c_Line1, "image1": c_Image1, "lab_cut_to_mark": c_lab_cut_to_mark, "label1": c_Label1, "shape1": c_Shape1, "lab_cod_com_car": c_lab_cod_com_car, "lab_alt_bob": c_lab_alt_bob, "txt_idle": c_txt_idle, "lis_ord": c_lis_ord, "pag_title": c_Pag_title, "image3": c_Image3 })
+    VbImage {
+        id: c_Image3
+        x: 0
+        y: 1
+        width: 798
+        height: 20
+        stretch: true
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
+    }
+    VbLabel {
+        id: c_Pag_title
+        x: 0
+        y: 0
+        width: 607
+        height: 29
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 21
+        font.bold: true
+        text: "LISTA ORDINI"
+        opaque: false
+    }
     VbFrame {
         id: c_Frm_grid
         x: 0
@@ -21,6 +44,31 @@ VbForm {
         foreColor: "#000000"
         borderStyle: 0
         text: "Frame1"
+        VbGrid {
+            id: c_lis_ord
+            x: 0
+            y: 0
+            width: 803
+            height: 325
+            z: 1
+            backColor: "#ffffff"
+            KeyNavigation.tab: c_txt_idle
+            KeyNavigation.backtab: c_txt_lun_tot
+            rows: 1
+            cols: 11
+            fixedRows: 0
+            fixedCols: 0
+        }
+        VbTextBox {
+            id: c_txt_idle
+            x: 486
+            y: -67
+            width: 83
+            height: 23
+            z: 1
+            KeyNavigation.tab: c_txt_cod_com_car
+            KeyNavigation.backtab: c_lis_ord
+        }
         VbFrame {
             id: c_frm_det
             x: -2
@@ -32,11 +80,105 @@ VbForm {
             backColor: "#ffffff"
             borderStyle: 0
             text: "Frame1"
+            VbLabel {
+                id: c_lab_alt_bob
+                x: 114
+                y: 18
+                width: 133
+                height: 19
+                foreColor: "#008080"
+                font.family: "Arial"
+                font.pixelSize: 13
+                font.bold: true
+                text: "Altezza bobina:"
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_cod_com_car
+                x: 114
+                y: 1
+                width: 199
+                height: 19
+                foreColor: "#008080"
+                font.family: "Arial"
+                font.pixelSize: 13
+                font.bold: true
+                text: "Codice composizione carta:"
+                opaque: false
+            }
+            VbShape {
+                id: c_Shape1
+                x: 31
+                y: 3
+                width: 69
+                height: 25
+                shape: 0
+                fillColor: "#008080"
+                borderColor: "#008080"
+                borderWidth: 0
+            }
+            VbLabel {
+                id: c_Label1
+                x: 38
+                y: 5
+                width: 61
+                height: 19
+                backColor: "#ffffff"
+                foreColor: "#ffffff"
+                font.family: "Arial"
+                font.pixelSize: 16
+                font.bold: true
+                text: "Dettagli"
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_cut_to_mark
+                x: 114
+                y: 52
+                width: 133
+                height: 19
+                foreColor: "#008080"
+                font.family: "Arial"
+                font.pixelSize: 13
+                font.bold: true
+                text: "Cut-to-mark:"
+                opaque: false
+            }
+            VbImage {
+                id: c_Image1
+                x: 6
+                y: 3
+                width: 26
+                height: 24
+                stretch: true
+                picture: Qt.resolvedUrl("../assets/b5af3cd250300252.bmp")
+            }
+            VbLine {
+                id: c_Line1
+                x1: -9
+                y1: 0
+                x2: 994
+                y2: 0
+                borderWidth: 2
+            }
+            VbLabel {
+                id: c_Label2
+                x: 114
+                y: 35
+                width: 133
+                height: 19
+                foreColor: "#008080"
+                font.family: "Arial"
+                font.pixelSize: 13
+                font.bold: true
+                text: "Lunghezza totale:"
+                opaque: false
+            }
             VbTextBox {
-                id: c_txt_lun_tot
+                id: c_txt_cod_com_car
                 x: 313
-                y: 36
-                width: 142
+                y: 2
+                width: 395
                 height: 18
                 z: 1
                 backColor: "#ffffff"
@@ -44,53 +186,8 @@ VbForm {
                 font.family: "Arial"
                 font.pixelSize: 13
                 font.bold: true
-                KeyNavigation.tab: c_lis_ord
-                KeyNavigation.backtab: c_txt_cut_to_mark_2
-            }
-            VbTextBox {
-                id: c_txt_cut_to_mark_2
-                x: 527
-                y: 53
-                width: 90
-                height: 18
-                z: 1
-                backColor: "#ffffff"
-                borderStyle: 0
-                font.family: "Arial"
-                font.pixelSize: 13
-                font.bold: true
-                KeyNavigation.tab: c_txt_lun_tot
-                KeyNavigation.backtab: c_txt_cut_to_mark_1
-            }
-            VbTextBox {
-                id: c_txt_cut_to_mark_1
-                x: 420
-                y: 53
-                width: 90
-                height: 18
-                z: 1
-                backColor: "#ffffff"
-                borderStyle: 0
-                font.family: "Arial"
-                font.pixelSize: 13
-                font.bold: true
-                KeyNavigation.tab: c_txt_cut_to_mark_2
-                KeyNavigation.backtab: c_txt_cut_to_mark_0
-            }
-            VbTextBox {
-                id: c_txt_cut_to_mark_0
-                x: 313
-                y: 53
-                width: 90
-                height: 18
-                z: 1
-                backColor: "#ffffff"
-                borderStyle: 0
-                font.family: "Arial"
-                font.pixelSize: 13
-                font.bold: true
-                KeyNavigation.tab: c_txt_cut_to_mark_1
-                KeyNavigation.backtab: c_txt_alt_bob
+                KeyNavigation.tab: c_txt_alt_bob
+                KeyNavigation.backtab: c_txt_idle
             }
             VbTextBox {
                 id: c_txt_alt_bob
@@ -108,10 +205,10 @@ VbForm {
                 KeyNavigation.backtab: c_txt_cod_com_car
             }
             VbTextBox {
-                id: c_txt_cod_com_car
+                id: c_txt_cut_to_mark_0
                 x: 313
-                y: 2
-                width: 395
+                y: 53
+                width: 90
                 height: 18
                 z: 1
                 backColor: "#ffffff"
@@ -119,151 +216,54 @@ VbForm {
                 font.family: "Arial"
                 font.pixelSize: 13
                 font.bold: true
-                KeyNavigation.tab: c_txt_alt_bob
-                KeyNavigation.backtab: c_txt_idle
+                KeyNavigation.tab: c_txt_cut_to_mark_1
+                KeyNavigation.backtab: c_txt_alt_bob
             }
-            VbLabel {
-                id: c_Label2
-                x: 114
-                y: 35
-                width: 133
-                height: 19
-                foreColor: "#008080"
-                font.family: "Arial"
-                font.pixelSize: 13
-                font.bold: true
-                text: "Lunghezza totale:"
-                opaque: false
-            }
-            VbLine {
-                id: c_Line1
-                x1: -9
-                y1: 0
-                x2: 994
-                y2: 0
-                borderWidth: 2
-            }
-            VbImage {
-                id: c_Image1
-                x: 6
-                y: 3
-                width: 26
-                height: 24
-                stretch: true
-                picture: Qt.resolvedUrl("../assets/b5af3cd250300252.bmp")
-            }
-            VbLabel {
-                id: c_lab_cut_to_mark
-                x: 114
-                y: 52
-                width: 133
-                height: 19
-                foreColor: "#008080"
-                font.family: "Arial"
-                font.pixelSize: 13
-                font.bold: true
-                text: "Cut-to-mark:"
-                opaque: false
-            }
-            VbLabel {
-                id: c_Label1
-                x: 38
-                y: 5
-                width: 61
-                height: 19
+            VbTextBox {
+                id: c_txt_cut_to_mark_1
+                x: 420
+                y: 53
+                width: 90
+                height: 18
+                z: 1
                 backColor: "#ffffff"
-                foreColor: "#ffffff"
-                font.family: "Arial"
-                font.pixelSize: 16
-                font.bold: true
-                text: "Dettagli"
-                opaque: false
-            }
-            VbShape {
-                id: c_Shape1
-                x: 31
-                y: 3
-                width: 69
-                height: 25
-                shape: 0
-                fillColor: "#008080"
-                borderColor: "#008080"
-                borderWidth: 0
-            }
-            VbLabel {
-                id: c_lab_cod_com_car
-                x: 114
-                y: 1
-                width: 199
-                height: 19
-                foreColor: "#008080"
+                borderStyle: 0
                 font.family: "Arial"
                 font.pixelSize: 13
                 font.bold: true
-                text: "Codice composizione carta:"
-                opaque: false
+                KeyNavigation.tab: c_txt_cut_to_mark_2
+                KeyNavigation.backtab: c_txt_cut_to_mark_0
             }
-            VbLabel {
-                id: c_lab_alt_bob
-                x: 114
-                y: 18
-                width: 133
-                height: 19
-                foreColor: "#008080"
+            VbTextBox {
+                id: c_txt_cut_to_mark_2
+                x: 527
+                y: 53
+                width: 90
+                height: 18
+                z: 1
+                backColor: "#ffffff"
+                borderStyle: 0
                 font.family: "Arial"
                 font.pixelSize: 13
                 font.bold: true
-                text: "Altezza bobina:"
-                opaque: false
+                KeyNavigation.tab: c_txt_lun_tot
+                KeyNavigation.backtab: c_txt_cut_to_mark_1
+            }
+            VbTextBox {
+                id: c_txt_lun_tot
+                x: 313
+                y: 36
+                width: 142
+                height: 18
+                z: 1
+                backColor: "#ffffff"
+                borderStyle: 0
+                font.family: "Arial"
+                font.pixelSize: 13
+                font.bold: true
+                KeyNavigation.tab: c_lis_ord
+                KeyNavigation.backtab: c_txt_cut_to_mark_2
             }
         }
-        VbTextBox {
-            id: c_txt_idle
-            x: 486
-            y: -67
-            width: 83
-            height: 23
-            z: 1
-            KeyNavigation.tab: c_txt_cod_com_car
-            KeyNavigation.backtab: c_lis_ord
-        }
-        VbGrid {
-            id: c_lis_ord
-            x: 0
-            y: 0
-            width: 803
-            height: 325
-            z: 1
-            backColor: "#ffffff"
-            KeyNavigation.tab: c_txt_idle
-            KeyNavigation.backtab: c_txt_lun_tot
-            rows: 1
-            cols: 11
-            fixedRows: 0
-            fixedCols: 0
-        }
-    }
-    VbLabel {
-        id: c_Pag_title
-        x: 0
-        y: 0
-        width: 607
-        height: 29
-        backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 21
-        font.bold: true
-        text: "LISTA ORDINI"
-        opaque: false
-    }
-    VbImage {
-        id: c_Image3
-        x: 0
-        y: 1
-        width: 798
-        height: 20
-        stretch: true
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
     }
 }

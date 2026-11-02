@@ -133,7 +133,7 @@ public:
     static constexpr int ubound() { return Hi; }
 
 private:
-    std::array<T, N> m_items;
+    std::array<T, N> m_items{};
 };
 
 } // namespace vb

@@ -10,133 +10,21 @@ VbForm {
     backColor: "#ffffff"
     dialog: true
     controls: ({ "txt_idle": c_txt_idle, "tas_f1": c_tas_F1, "image1": c_Image1, "l_liv": c_L_LIV, "lab_liv": c_lab_liv, "lab_att": c_lab_att, "label14": c_Label14, "lab_cfg": c_lab_cfg, "pag_title": c_Pag_title, "label1": c_Label1, "txt_f1": c_txt_F1, "lab_avv_1": c_lab_avv_1 })
-    VbTextBox {
-        id: c_txt_idle
-        x: 36
-        y: -333
-        width: 37
-        height: 19
-        z: 1
-        text: "Text1"
-    }
-    VbButton {
-        id: c_tas_F1
-        x: 199
-        y: 155
-        width: 81
-        height: 25
-        z: 1
-        backColor: "#ffffff"
+    VbLabel {
+        id: c_lab_avv_1
+        x: 149
+        y: 44
+        width: 183
+        height: 13
+        backColor: "#c0c0c0"
+        foreColor: "#804040"
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "F11"
-    }
-    VbImage {
-        id: c_Image1
-        x: 382
-        y: 64
-        width: 79
-        height: 23
-        picture: Qt.resolvedUrl("../assets/8cf0c1ff65cefc66.bmp")
-    }
-    VbLabel {
-        id: c_L_LIV
-        x: 311
-        y: 125
-        width: 39
-        height: 22
-        visible: false
-        backColor: "#ffffff"
-        foreColor: "#ff0000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "LIV."
+        text: "(Esc per annullare)"
+        alignment: 2
         opaque: false
-    }
-    VbLabel {
-        id: c_lab_liv
-        x: 370
-        y: 125
-        width: 45
-        height: 22
-        visible: false
-        backColor: "#ffffff"
-        foreColor: "#ff0000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_att
-        x: 53
-        y: 125
-        width: 265
-        height: 22
-        visible: false
-        backColor: "#ffffff"
-        foreColor: "#ff0000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "CONFIGURAZIONE ATTIVA"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label14
-        x: 3
-        y: 67
-        width: 368
-        height: 14
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Utilizzare i tasti freccia per visualizzare le diverse configurazioni"
-        alignment: 1
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_cfg
-        x: 169
-        y: 94
-        width: 257
-        height: 20
-        backColor: "#ffffff"
-        borderStyle: 1
-        font.family: "Arial"
-        font.pixelSize: 13
-        font.bold: true
-        text: "12345678901234567890123456789012345"
-    }
-    VbLabel {
-        id: c_Pag_title
-        x: 10
-        y: 11
-        width: 239
-        height: 25
-        backColor: "#ffffff"
-        foreColor: "#000080"
-        font.family: "Arial"
-        font.pixelSize: 19
-        font.bold: true
-        text: "Elimina configurazione"
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label1
-        x: 42
-        y: 93
-        width: 124
-        height: 22
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "DESCRIZIONE"
-        opaque: false
+        wordWrap: true
     }
     VbLabel {
         id: c_txt_F1
@@ -155,19 +43,131 @@ VbForm {
         autoSize: true
     }
     VbLabel {
-        id: c_lab_avv_1
-        x: 149
-        y: 44
-        width: 183
-        height: 13
-        backColor: "#c0c0c0"
-        foreColor: "#804040"
+        id: c_Label1
+        x: 42
+        y: 93
+        width: 124
+        height: 22
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "DESCRIZIONE"
+        opaque: false
+    }
+    VbLabel {
+        id: c_Pag_title
+        x: 10
+        y: 11
+        width: 239
+        height: 25
+        backColor: "#ffffff"
+        foreColor: "#000080"
+        font.family: "Arial"
+        font.pixelSize: 19
+        font.bold: true
+        text: "Elimina configurazione"
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_cfg
+        x: 169
+        y: 94
+        width: 257
+        height: 20
+        backColor: "#ffffff"
+        borderStyle: 1
+        font.family: "Arial"
+        font.pixelSize: 13
+        font.bold: true
+        text: "12345678901234567890123456789012345"
+    }
+    VbLabel {
+        id: c_Label14
+        x: 3
+        y: 67
+        width: 368
+        height: 14
+        backColor: "#ffffff"
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "(Esc per annullare)"
-        alignment: 2
+        text: "Utilizzare i tasti freccia per visualizzare le diverse configurazioni"
+        alignment: 1
         opaque: false
-        wordWrap: true
+    }
+    VbLabel {
+        id: c_lab_att
+        x: 53
+        y: 125
+        width: 265
+        height: 22
+        visible: false
+        backColor: "#ffffff"
+        foreColor: "#ff0000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "CONFIGURAZIONE ATTIVA"
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_liv
+        x: 370
+        y: 125
+        width: 45
+        height: 22
+        visible: false
+        backColor: "#ffffff"
+        foreColor: "#ff0000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        opaque: false
+    }
+    VbLabel {
+        id: c_L_LIV
+        x: 311
+        y: 125
+        width: 39
+        height: 22
+        visible: false
+        backColor: "#ffffff"
+        foreColor: "#ff0000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "LIV."
+        opaque: false
+    }
+    VbImage {
+        id: c_Image1
+        x: 382
+        y: 64
+        width: 79
+        height: 23
+        picture: Qt.resolvedUrl("../assets/8cf0c1ff65cefc66.bmp")
+    }
+    VbButton {
+        id: c_tas_F1
+        x: 199
+        y: 155
+        width: 81
+        height: 25
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "F11"
+    }
+    VbTextBox {
+        id: c_txt_idle
+        x: 36
+        y: -333
+        width: 37
+        height: 19
+        z: 1
+        text: "Text1"
     }
 }

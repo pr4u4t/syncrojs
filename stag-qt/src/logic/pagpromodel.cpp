@@ -1,4 +1,6 @@
 #include "pagpromodel.h"
+#include "inistore.h"
+#include "gesord.h"
 
 #include "classestato.h"
 #include "messages.h"
@@ -100,6 +102,30 @@ bool PagProModel::sendCommand(int request, int order)
     return true;
 }
 
+// eve_key_F7: start or end of the production report.
+void PagProModel::startOrEndProduction()
+{
+    if (!stag::sta_tag || !stag::sta_tag->comOK()) {
+        stag::messaggio(msg(QStringLiteral("com_int_con_mac")), true, false);
+        return;
+    }
+    if (pro_set.abi_reg_rep_pro == QLatin1String(STR_FALSE)) {
+        pro_set.abi_reg_rep_pro = QString::fromLatin1(STR_TRUE);
+        pro_set.ini_prod = QString::fromLatin1(STR_TRUE);
+        setFileINIString(QStringLiteral("PRO_SET"), QStringLiteral("ini_prod"), pro_set.ini_prod);
+        setFileINIString(QStringLiteral("PRO_SET"), QStringLiteral("abi_reg_rep_pro"), pro_set.abi_reg_rep_pro);
+        stag::messaggio(msg(QStringLiteral("reg_pro_ini")), false);
+    } else if (!stag::sta_tag->bit(ClasseStato::MAC_IN_MARCIA, 1) && m_orders->Count() > 0) {
+        stag::insOrdEsePerFineProd();
+        stag::sta_tag->rea_dat_ord_pro(true);
+        pro_set.abi_reg_rep_pro = QString::fromLatin1(STR_FALSE);
+        setFileINIString(QStringLiteral("PRO_SET"), QStringLiteral("abi_reg_rep_pro"), pro_set.abi_reg_rep_pro);
+        stag::messaggio(msg(QStringLiteral("reg_pro_int")), false);
+    } else {
+        stag::messaggio(msg(QStringLiteral("imp_ese_ope")) + u' ' + msg(QStringLiteral("msg_in_mar")), true, false);
+    }
+}
+
 bool PagProModel::functionKey(const QString &key, int shift)
 {
     if (shift == 2) {
@@ -114,6 +140,10 @@ bool PagProModel::functionKey(const QString &key, int shift)
         if (key == QLatin1String("F4"))
             return sendCommand(stag::AZZERAMENTO_CONTATORI, 0);
         return false;
+    }
+    if (key == QLatin1String("F7") && shift == 0) {
+        startOrEndProduction();
+        return true;
     }
     // eve_key_F6: the pattern list only exists on a machine with cut to pattern.
     if (key != QLatin1String("F6") || shift != 0)

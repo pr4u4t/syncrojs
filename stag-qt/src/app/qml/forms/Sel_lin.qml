@@ -10,52 +10,6 @@ VbForm {
     backColor: "#ffffff"
     dialog: true
     controls: ({ "cmb_lin": c_cmb_lin, "tas_f1": c_tas_F1, "pag_title": c_Pag_title, "img_title": c_img_title, "lab_ese": c_lab_ese })
-    VbCombo {
-        id: c_cmb_lin
-        x: 130
-        y: 39
-        width: 213
-        height: 24
-        z: 1
-        font.family: "Arial"
-        font.pixelSize: 13
-        font.bold: true
-    }
-    VbButton {
-        id: c_tas_F1
-        x: 193
-        y: 77
-        width: 81
-        height: 25
-        z: 1
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "F5"
-    }
-    VbLabel {
-        id: c_Pag_title
-        x: 1
-        y: 0
-        width: 291
-        height: 29
-        backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 21
-        font.bold: true
-        text: "SELEZIONE LINGUA"
-        opaque: false
-    }
-    VbImage {
-        id: c_img_title
-        x: -336
-        y: 1
-        width: 798
-        height: 20
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
-    }
     VbLabel {
         id: c_lab_ese
         x: 210
@@ -71,5 +25,51 @@ VbForm {
         alignment: 2
         opaque: false
         autoSize: true
+    }
+    VbImage {
+        id: c_img_title
+        x: -336
+        y: 1
+        width: 798
+        height: 20
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
+    }
+    VbLabel {
+        id: c_Pag_title
+        x: 1
+        y: 0
+        width: 291
+        height: 29
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 21
+        font.bold: true
+        text: "SELEZIONE LINGUA"
+        opaque: false
+    }
+    VbButton {
+        id: c_tas_F1
+        x: 193
+        y: 77
+        width: 81
+        height: 25
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "F5"
+    }
+    VbCombo {
+        id: c_cmb_lin
+        x: 130
+        y: 39
+        width: 213
+        height: 24
+        z: 1
+        font.family: "Arial"
+        font.pixelSize: 13
+        font.bold: true
     }
 }

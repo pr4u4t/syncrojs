@@ -74,11 +74,11 @@ public:
     void setLinNoComPlc(bool visible);
     void setFrmComBack(quint32 color);
     void setLedPlc(quint32 rx, quint32 tx);
-    QString ledPlcRx() const { return m_ledPlcRx; }
+    const QString &ledPlcRx() const { return m_ledPlcRx; }
     // uti_stag.messaggio (sta_bar.lab_msg); stay is kept in lab_msg.Tag.
     void messaggio(const QString &text, bool isAll, bool stay);
     bool labMsgStay() const { return m_labMsgStay; }
-    QString txtVel() const { return m_txtVel; }
+    const QString &txtVel() const { return m_txtVel; }
     void setMetMan(const QString &temCo, const QString &metMan, bool negative);
 
 signals:

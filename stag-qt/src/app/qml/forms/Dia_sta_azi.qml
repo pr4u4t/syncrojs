@@ -10,100 +10,397 @@ VbForm {
     backColor: "#0000a0"
     dialog: false
     controls: ({ "txt_idle": c_txt_idle, "frame3": c_Frame3, "frm_azi_usc(35)": c_frm_azi_usc_35, "shp(15)": c_shp_15, "shp(25)": c_shp_25, "shp(35)": c_shp_35, "lab_azi(15)": c_lab_azi_15, "lab_azi(25)": c_lab_azi_25, "lab_azi(35)": c_lab_azi_35, "lab_des_err(15)": c_lab_des_err_15, "lab_sta_azi(15)": c_lab_sta_azi_15, "lab_sta_azi(25)": c_lab_sta_azi_25, "lab_sta_azi(35)": c_lab_sta_azi_35, "lab_cod_err(15)": c_lab_cod_err_15, "lab_cod_err(25)": c_lab_cod_err_25, "lab_cod_err(35)": c_lab_cod_err_35, "lab_dis(15)": c_lab_dis_15, "lab_dis(25)": c_lab_dis_25, "lab_dis(35)": c_lab_dis_35, "lab_des_err(25)": c_lab_des_err_25, "lab_des_err(35)": c_lab_des_err_35, "lab_sta_des(15)": c_lab_sta_des_15, "lab_sta_des(25)": c_lab_sta_des_25, "lab_sta_des(35)": c_lab_sta_des_35, "lab_par_nuo(15)": c_lab_par_nuo_15, "lab_par_nuo(25)": c_lab_par_nuo_25, "lab_par_nuo(35)": c_lab_par_nuo_35, "frame2": c_Frame2, "frm_azi_rul(2)": c_frm_azi_rul_2, "chk_abi(33)": c_chk_abi_33, "chk_abi(31)": c_chk_abi_31, "chk_abi(32)": c_chk_abi_32, "lab_liv(2)": c_lab_liv_2, "shp(31)": c_shp_31, "shp(32)": c_shp_32, "shp(33)": c_shp_33, "lab_azi(31)": c_lab_azi_31, "lab_azi(32)": c_lab_azi_32, "lab_azi(33)": c_lab_azi_33, "lab_des_err(31)": c_lab_des_err_31, "lab_sta_azi(31)": c_lab_sta_azi_31, "lab_sta_azi(32)": c_lab_sta_azi_32, "lab_sta_azi(33)": c_lab_sta_azi_33, "lab_cod_err(31)": c_lab_cod_err_31, "lab_cod_err(32)": c_lab_cod_err_32, "lab_cod_err(33)": c_lab_cod_err_33, "lab_dis(31)": c_lab_dis_31, "lab_dis(32)": c_lab_dis_32, "lab_dis(33)": c_lab_dis_33, "lab_des_err(32)": c_lab_des_err_32, "lab_des_err(33)": c_lab_des_err_33, "lab_sta_des(31)": c_lab_sta_des_31, "lab_sta_des(32)": c_lab_sta_des_32, "lab_sta_des(33)": c_lab_sta_des_33, "lab_par_nuo(31)": c_lab_par_nuo_31, "lab_par_nuo(32)": c_lab_par_nuo_32, "lab_par_nuo(33)": c_lab_par_nuo_33, "frm_azi_rul(1)": c_frm_azi_rul_1, "chk_abi(23)": c_chk_abi_23, "chk_abi(21)": c_chk_abi_21, "chk_abi(22)": c_chk_abi_22, "lab_liv(1)": c_lab_liv_1, "shp(21)": c_shp_21, "shp(22)": c_shp_22, "shp(23)": c_shp_23, "lab_azi(21)": c_lab_azi_21, "lab_azi(22)": c_lab_azi_22, "lab_azi(23)": c_lab_azi_23, "lab_des_err(21)": c_lab_des_err_21, "lab_sta_azi(21)": c_lab_sta_azi_21, "lab_sta_azi(22)": c_lab_sta_azi_22, "lab_sta_azi(23)": c_lab_sta_azi_23, "lab_cod_err(21)": c_lab_cod_err_21, "lab_cod_err(22)": c_lab_cod_err_22, "lab_cod_err(23)": c_lab_cod_err_23, "lab_dis(21)": c_lab_dis_21, "lab_dis(22)": c_lab_dis_22, "lab_dis(23)": c_lab_dis_23, "lab_des_err(22)": c_lab_des_err_22, "lab_des_err(23)": c_lab_des_err_23, "lab_sta_des(21)": c_lab_sta_des_21, "lab_sta_des(22)": c_lab_sta_des_22, "lab_sta_des(23)": c_lab_sta_des_23, "lab_par_nuo(21)": c_lab_par_nuo_21, "lab_par_nuo(22)": c_lab_par_nuo_22, "lab_par_nuo(23)": c_lab_par_nuo_23, "frm_azi_rul(0)": c_frm_azi_rul_0, "chk_abi(13)": c_chk_abi_13, "chk_abi(11)": c_chk_abi_11, "chk_abi(12)": c_chk_abi_12, "lab_liv(0)": c_lab_liv_0, "shp(11)": c_shp_11, "shp(12)": c_shp_12, "shp(13)": c_shp_13, "lab_azi(11)": c_lab_azi_11, "lab_azi(12)": c_lab_azi_12, "lab_azi(13)": c_lab_azi_13, "lab_des_err(11)": c_lab_des_err_11, "lab_sta_azi(11)": c_lab_sta_azi_11, "lab_sta_azi(12)": c_lab_sta_azi_12, "lab_sta_azi(13)": c_lab_sta_azi_13, "lab_cod_err(11)": c_lab_cod_err_11, "lab_cod_err(12)": c_lab_cod_err_12, "lab_cod_err(13)": c_lab_cod_err_13, "lab_dis(11)": c_lab_dis_11, "lab_dis(12)": c_lab_dis_12, "lab_dis(13)": c_lab_dis_13, "lab_des_err(12)": c_lab_des_err_12, "lab_des_err(13)": c_lab_des_err_13, "lab_sta_des(11)": c_lab_sta_des_11, "lab_sta_des(12)": c_lab_sta_des_12, "lab_sta_des(13)": c_lab_sta_des_13, "lab_par_nuo(11)": c_lab_par_nuo_11, "lab_par_nuo(12)": c_lab_par_nuo_12, "lab_par_nuo(13)": c_lab_par_nuo_13, "frame1": c_Frame1, "frm_azi_ing(15)": c_frm_azi_ing_15, "shp(1)": c_shp_1, "shp(2)": c_shp_2, "lab_azi(1)": c_lab_azi_1, "lab_azi(2)": c_lab_azi_2, "lab_des_err(1)": c_lab_des_err_1, "lab_sta_azi(1)": c_lab_sta_azi_1, "lab_sta_azi(2)": c_lab_sta_azi_2, "lab_cod_err(1)": c_lab_cod_err_1, "lab_cod_err(2)": c_lab_cod_err_2, "lab_dis(1)": c_lab_dis_1, "lab_dis(2)": c_lab_dis_2, "lab_des_err(2)": c_lab_des_err_2, "lab_sta_des(1)": c_lab_sta_des_1, "lab_sta_des(2)": c_lab_sta_des_2, "lab_par_nuo(1)": c_lab_par_nuo_1, "lab_par_nuo(2)": c_lab_par_nuo_2, "lab_des_par": c_lab_des_par, "ln_no_com2": c_ln_no_com2, "ln_no_com1": c_ln_no_com1, "lab_com": c_lab_com, "shp_com2": c_shp_com2, "shp_com1": c_shp_com1, "lin_par_nuo": c_lin_par_nuo, "line2": c_Line2, "label3": c_Label3, "line1": c_Line1, "label2": c_Label2, "lab_par_imp": c_lab_par_imp, "label5": c_Label5, "label6": c_Label6, "label23": c_Label23, "label1": c_Label1, "label4": c_Label4 })
-    VbTextBox {
-        id: c_txt_idle
-        x: 280
-        y: -56
-        width: 68
+    VbLabel {
+        id: c_Label4
+        x: 418
+        y: 20
+        width: 75
+        height: 13
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        text: "Descr. err."
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label1
+        x: 257
+        y: 16
+        width: 73
         height: 19
-        z: 1
-        KeyNavigation.tab: c_chk_abi_32
-        KeyNavigation.backtab: c_chk_abi_13
-        text: "Text1"
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Val. 168/1"
+        alignment: 2
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label23
+        x: 102
+        y: 16
+        width: 76
+        height: 19
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Val. 183/0"
+        alignment: 2
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label6
+        x: 340
+        y: 16
+        width: 65
+        height: 19
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Display"
+        alignment: 2
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label5
+        x: 171
+        y: 16
+        width: 89
+        height: 19
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Stato"
+        alignment: 2
+        opaque: false
+    }
+    VbLabel {
+        id: c_lab_par_imp
+        x: 685
+        y: 0
+        width: 105
+        height: 19
+        backColor: "#ffffff"
+        foreColor: "#ffff00"
+        font.family: "Arial"
+        font.pixelSize: 13
+        font.bold: true
+        alignment: 2
+        opaque: false
+    }
+    VbLabel {
+        id: c_Label2
+        x: 147
+        y: -2
+        width: 113
+        height: 17
+        foreColor: "#00ff00"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Par. C 183 / 0"
+        opaque: false
+    }
+    VbLine {
+        id: c_Line1
+        x1: 129
+        y1: 13
+        x2: 258
+        y2: 13
+        borderColor: "#00ff00"
+        borderWidth: 3
+    }
+    VbLabel {
+        id: c_Label3
+        x: 435
+        y: -2
+        width: 113
+        height: 17
+        foreColor: "#00ff00"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        text: "Par. C 168 / 1"
+        opaque: false
+    }
+    VbLine {
+        id: c_Line2
+        x1: 277
+        y1: 13
+        x2: 684
+        y2: 13
+        borderColor: "#00ff00"
+        borderWidth: 3
+    }
+    VbLine {
+        id: c_lin_par_nuo
+        x1: 690
+        y1: 13
+        x2: 783
+        y2: 13
+        borderColor: "#ffff00"
+        borderWidth: 3
+        visible: false
+    }
+    VbShape {
+        id: c_shp_com1
+        x: 10
+        y: 5
+        width: 34
+        height: 25
+        shape: 2
+        fillColor: "#000000"
+    }
+    VbShape {
+        id: c_shp_com2
+        x: 10
+        y: 4
+        width: 34
+        height: 25
+        shape: 2
+        borderColor: "#ff00ff"
+        borderWidth: 3
+    }
+    VbLabel {
+        id: c_lab_com
+        x: 3
+        y: 9
+        width: 49
+        height: 17
+        foreColor: "#ffff00"
+        font.family: "Arial"
+        font.pixelSize: 12
+        font.bold: true
+        font.italic: true
+        text: "COM"
+        alignment: 2
+        opaque: false
+    }
+    VbLine {
+        id: c_ln_no_com1
+        x1: 11
+        y1: 3
+        x2: 45
+        y2: 27
+        borderColor: "#ffffff"
+        borderWidth: 2
+    }
+    VbLine {
+        id: c_ln_no_com2
+        x1: 11
+        y1: 27
+        x2: 45
+        y2: 3
+        borderColor: "#ffffff"
+        borderWidth: 2
+    }
+    VbLabel {
+        id: c_lab_des_par
+        x: 500
+        y: 20
+        width: 295
+        height: 15
+        backColor: "#ffffff"
+        foreColor: "#ffff00"
+        font.family: "Arial"
+        font.pixelSize: 11
+        font.bold: true
+        alignment: 1
+        opaque: false
     }
     VbFrame {
-        id: c_Frame3
+        id: c_Frame1
         x: 0
-        y: 33
+        y: 122
         width: 797
-        height: 89
+        height: 65
         z: 1
         backColor: "#c0c0c0"
         foreColor: "#800000"
         font.family: "Arial"
         font.pixelSize: 17
         font.bold: true
-        text: "AZIONAMENTI MOTORI RULLI DI USCITA"
+        text: "AZIONAMENTI MOTORI RULLI DI INGRESSO"
         VbFrame {
-            id: c_frm_azi_usc_35
+            id: c_frm_azi_ing_15
             x: 3
             y: 16
             width: 791
-            height: 69
+            height: 45
             z: 1
-            backColor: "#ffffff"
+            backColor: "#008000"
             borderStyle: 0
             text: "Frame1"
-            VbShape {
-                id: c_shp_15
-                x: 784
-                y: 56
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
-            }
-            VbShape {
-                id: c_shp_25
-                x: 784
-                y: 32
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
-            }
-            VbShape {
-                id: c_shp_35
-                x: 784
-                y: 8
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
+            VbLabel {
+                id: c_lab_par_nuo_2
+                x: 685
+                y: 2
+                width: 97
+                height: 18
+                backColor: "#ffffff"
+                foreColor: "#008000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
             }
             VbLabel {
-                id: c_lab_azi_15
-                x: 1
-                y: 51
-                width: 67
-                height: 19
+                id: c_lab_par_nuo_1
+                x: 685
+                y: 26
+                width: 97
+                height: 18
                 backColor: "#ffffff"
-                foreColor: "#000000"
+                foreColor: "#008000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_2
+                x: 169
+                y: 2
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_1
+                x: 169
+                y: 26
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_des_err_2
+                x: 419
+                y: 3
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
                 font.family: "Arial"
                 font.pixelSize: 12
                 font.bold: true
-                text: "Mot. liv. 1"
                 opaque: false
             }
             VbLabel {
-                id: c_lab_azi_25
-                x: 1
+                id: c_lab_dis_2
+                x: 326
+                y: 2
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_dis_1
+                x: 326
+                y: 26
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_2
+                x: 272
+                y: 2
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_1
+                x: 272
+                y: 26
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_2
+                x: 122
+                y: 2
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_1
+                x: 122
+                y: 26
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_des_err_1
+                x: 419
                 y: 27
-                width: 67
-                height: 19
+                width: 271
+                height: 27
                 backColor: "#ffffff"
-                foreColor: "#000000"
+                foreColor: "#ff0000"
                 font.family: "Arial"
                 font.pixelSize: 12
                 font.bold: true
-                text: "Mot. liv. 2"
                 opaque: false
             }
             VbLabel {
-                id: c_lab_azi_35
+                id: c_lab_azi_2
                 x: 1
                 y: 3
                 width: 67
@@ -117,241 +414,38 @@ VbForm {
                 opaque: false
             }
             VbLabel {
-                id: c_lab_des_err_15
-                x: 419
-                y: 51
-                width: 271
-                height: 27
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_sta_azi_15
-                x: 122
-                y: 50
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_azi_25
-                x: 122
-                y: 26
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_azi_35
-                x: 122
-                y: 2
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_15
-                x: 272
-                y: 50
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_25
-                x: 272
-                y: 26
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_35
-                x: 272
-                y: 2
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_15
-                x: 326
-                y: 50
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_25
-                x: 326
-                y: 26
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_35
-                x: 326
-                y: 2
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_des_err_25
-                x: 419
+                id: c_lab_azi_1
+                x: 1
                 y: 27
-                width: 271
-                height: 27
+                width: 92
+                height: 19
                 backColor: "#ffffff"
-                foreColor: "#ff0000"
+                foreColor: "#000000"
                 font.family: "Arial"
                 font.pixelSize: 12
                 font.bold: true
+                text: "Mot. liv. 1 - 2"
                 opaque: false
             }
-            VbLabel {
-                id: c_lab_des_err_35
-                x: 419
-                y: 3
-                width: 271
-                height: 27
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                opaque: false
+            VbShape {
+                id: c_shp_2
+                x: 784
+                y: 8
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
             }
-            VbLabel {
-                id: c_lab_sta_des_15
-                x: 169
-                y: 50
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_des_25
-                x: 169
-                y: 26
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_des_35
-                x: 169
-                y: 2
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_par_nuo_15
-                x: 685
-                y: 50
-                width: 97
-                height: 18
-                backColor: "#ffffff"
-                foreColor: "#008000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_par_nuo_25
-                x: 685
-                y: 26
-                width: 97
-                height: 18
-                backColor: "#ffffff"
-                foreColor: "#008000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_par_nuo_35
-                x: 685
-                y: 2
-                width: 97
-                height: 18
-                backColor: "#ffffff"
-                foreColor: "#008000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
+            VbShape {
+                id: c_shp_1
+                x: 784
+                y: 32
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
             }
         }
     }
@@ -369,774 +463,6 @@ VbForm {
         font.bold: true
         text: "AZIONAMENTI MOTORI RULLI DI TAGLIO"
         VbFrame {
-            id: c_frm_azi_rul_2
-            x: 3
-            y: 16
-            width: 791
-            height: 69
-            z: 1
-            backColor: "#ffffff"
-            borderStyle: 0
-            text: "Frame1"
-            VbCheck {
-                id: c_chk_abi_33
-                x: 64
-                y: 2
-                width: 55
-                height: 16
-                z: 1
-                backColor: "#008000"
-                foreColor: "#ffffff"
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                KeyNavigation.tab: c_chk_abi_22
-                KeyNavigation.backtab: c_chk_abi_31
-                exclusive: false
-                graphical: true
-            }
-            VbCheck {
-                id: c_chk_abi_31
-                x: 64
-                y: 50
-                width: 55
-                height: 16
-                z: 1
-                backColor: "#008000"
-                foreColor: "#ffffff"
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                KeyNavigation.tab: c_chk_abi_33
-                KeyNavigation.backtab: c_chk_abi_32
-                exclusive: false
-                graphical: true
-            }
-            VbCheck {
-                id: c_chk_abi_32
-                x: 64
-                y: 26
-                width: 55
-                height: 16
-                z: 1
-                backColor: "#008000"
-                foreColor: "#ffffff"
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                KeyNavigation.tab: c_chk_abi_31
-                KeyNavigation.backtab: c_txt_idle
-                exclusive: false
-                graphical: true
-            }
-            VbLabel {
-                id: c_lab_liv_2
-                x: 43
-                y: 17
-                width: 18
-                height: 33
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 29
-                font.bold: true
-                text: "3"
-                opaque: false
-            }
-            VbShape {
-                id: c_shp_31
-                x: 784
-                y: 56
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
-            }
-            VbShape {
-                id: c_shp_32
-                x: 784
-                y: 32
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
-            }
-            VbShape {
-                id: c_shp_33
-                x: 784
-                y: 8
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
-            }
-            VbLabel {
-                id: c_lab_azi_31
-                x: 1
-                y: 51
-                width: 48
-                height: 19
-                backColor: "#ffffff"
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                text: "Mot. 1"
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_azi_32
-                x: 1
-                y: 27
-                width: 48
-                height: 19
-                backColor: "#ffffff"
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                text: "Mot. 2"
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_azi_33
-                x: 1
-                y: 3
-                width: 48
-                height: 19
-                backColor: "#ffffff"
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                text: "Mot. 3"
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_des_err_31
-                x: 419
-                y: 51
-                width: 271
-                height: 27
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_sta_azi_31
-                x: 122
-                y: 50
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_azi_32
-                x: 122
-                y: 26
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_azi_33
-                x: 122
-                y: 2
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_31
-                x: 272
-                y: 50
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_32
-                x: 272
-                y: 26
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_33
-                x: 272
-                y: 2
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_31
-                x: 326
-                y: 50
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_32
-                x: 326
-                y: 26
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_33
-                x: 326
-                y: 2
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_des_err_32
-                x: 419
-                y: 27
-                width: 271
-                height: 27
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_des_err_33
-                x: 419
-                y: 3
-                width: 271
-                height: 27
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_sta_des_31
-                x: 169
-                y: 50
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_des_32
-                x: 169
-                y: 26
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_des_33
-                x: 169
-                y: 2
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_par_nuo_31
-                x: 685
-                y: 50
-                width: 97
-                height: 18
-                backColor: "#ffffff"
-                foreColor: "#008000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_par_nuo_32
-                x: 685
-                y: 26
-                width: 97
-                height: 18
-                backColor: "#ffffff"
-                foreColor: "#008000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_par_nuo_33
-                x: 685
-                y: 2
-                width: 97
-                height: 18
-                backColor: "#ffffff"
-                foreColor: "#008000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-        }
-        VbFrame {
-            id: c_frm_azi_rul_1
-            x: 3
-            y: 88
-            width: 791
-            height: 69
-            z: 1
-            backColor: "#008000"
-            borderStyle: 0
-            text: "Frame1"
-            VbCheck {
-                id: c_chk_abi_23
-                x: 64
-                y: 2
-                width: 55
-                height: 16
-                z: 1
-                backColor: "#008000"
-                foreColor: "#ffffff"
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                KeyNavigation.tab: c_chk_abi_12
-                KeyNavigation.backtab: c_chk_abi_21
-                exclusive: false
-                graphical: true
-            }
-            VbCheck {
-                id: c_chk_abi_21
-                x: 64
-                y: 50
-                width: 55
-                height: 16
-                z: 1
-                backColor: "#008000"
-                foreColor: "#ffffff"
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                KeyNavigation.tab: c_chk_abi_23
-                KeyNavigation.backtab: c_chk_abi_22
-                exclusive: false
-                graphical: true
-            }
-            VbCheck {
-                id: c_chk_abi_22
-                x: 64
-                y: 26
-                width: 55
-                height: 16
-                z: 1
-                backColor: "#008000"
-                foreColor: "#ffffff"
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                KeyNavigation.tab: c_chk_abi_21
-                KeyNavigation.backtab: c_chk_abi_33
-                exclusive: false
-                graphical: true
-            }
-            VbLabel {
-                id: c_lab_liv_1
-                x: 43
-                y: 17
-                width: 21
-                height: 33
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 29
-                font.bold: true
-                text: "2"
-                opaque: false
-            }
-            VbShape {
-                id: c_shp_21
-                x: 784
-                y: 56
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
-            }
-            VbShape {
-                id: c_shp_22
-                x: 784
-                y: 32
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
-            }
-            VbShape {
-                id: c_shp_23
-                x: 784
-                y: 8
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
-            }
-            VbLabel {
-                id: c_lab_azi_21
-                x: 1
-                y: 51
-                width: 47
-                height: 19
-                backColor: "#ffffff"
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                text: "Mot. 1"
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_azi_22
-                x: 1
-                y: 27
-                width: 47
-                height: 19
-                backColor: "#ffffff"
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                text: "Mot. 2"
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_azi_23
-                x: 1
-                y: 3
-                width: 47
-                height: 19
-                backColor: "#ffffff"
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                text: "Mot. 3"
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_des_err_21
-                x: 419
-                y: 51
-                width: 271
-                height: 27
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_sta_azi_21
-                x: 122
-                y: 50
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_azi_22
-                x: 122
-                y: 26
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_azi_23
-                x: 122
-                y: 2
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_21
-                x: 272
-                y: 50
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_22
-                x: 272
-                y: 26
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_23
-                x: 272
-                y: 2
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_21
-                x: 326
-                y: 50
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_22
-                x: 326
-                y: 26
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_23
-                x: 326
-                y: 2
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_des_err_22
-                x: 419
-                y: 27
-                width: 271
-                height: 27
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_des_err_23
-                x: 419
-                y: 3
-                width: 271
-                height: 23
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_sta_des_21
-                x: 169
-                y: 50
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_des_22
-                x: 169
-                y: 26
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_des_23
-                x: 169
-                y: 2
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_par_nuo_21
-                x: 685
-                y: 50
-                width: 97
-                height: 18
-                backColor: "#ffffff"
-                foreColor: "#008000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_par_nuo_22
-                x: 685
-                y: 26
-                width: 97
-                height: 18
-                backColor: "#ffffff"
-                foreColor: "#008000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_par_nuo_23
-                x: 685
-                y: 2
-                width: 97
-                height: 18
-                backColor: "#ffffff"
-                foreColor: "#008000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-        }
-        VbFrame {
             id: c_frm_azi_rul_0
             x: 3
             y: 160
@@ -1146,341 +472,10 @@ VbForm {
             backColor: "#ffffff"
             borderStyle: 0
             text: "Frame1"
-            VbCheck {
-                id: c_chk_abi_13
-                x: 64
-                y: 2
-                width: 55
-                height: 16
-                z: 1
-                backColor: "#008000"
-                foreColor: "#ffffff"
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                KeyNavigation.tab: c_txt_idle
-                KeyNavigation.backtab: c_chk_abi_11
-                exclusive: false
-                graphical: true
-            }
-            VbCheck {
-                id: c_chk_abi_11
-                x: 64
-                y: 50
-                width: 55
-                height: 16
-                z: 1
-                backColor: "#008000"
-                foreColor: "#ffffff"
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                KeyNavigation.tab: c_chk_abi_13
-                KeyNavigation.backtab: c_chk_abi_12
-                exclusive: false
-                graphical: true
-            }
-            VbCheck {
-                id: c_chk_abi_12
-                x: 64
-                y: 26
-                width: 55
-                height: 16
-                z: 1
-                backColor: "#008000"
-                foreColor: "#ffffff"
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                KeyNavigation.tab: c_chk_abi_11
-                KeyNavigation.backtab: c_chk_abi_23
-                exclusive: false
-                graphical: true
-            }
             VbLabel {
-                id: c_lab_liv_0
-                x: 43
-                y: 17
-                width: 17
-                height: 32
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 29
-                font.bold: true
-                text: "1"
-                opaque: false
-            }
-            VbShape {
-                id: c_shp_11
-                x: 784
-                y: 56
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
-            }
-            VbShape {
-                id: c_shp_12
-                x: 784
-                y: 32
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
-            }
-            VbShape {
-                id: c_shp_13
-                x: 784
-                y: 8
-                width: 5
-                height: 5
-                shape: 3
-                fillColor: "#ff0000"
-                borderColor: "#ff0000"
-            }
-            VbLabel {
-                id: c_lab_azi_11
-                x: 1
-                y: 51
-                width: 49
-                height: 19
-                backColor: "#ffffff"
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                text: "Mot. 1"
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_azi_12
-                x: 1
-                y: 27
-                width: 49
-                height: 19
-                backColor: "#ffffff"
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                text: "Mot. 2"
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_azi_13
-                x: 1
-                y: 3
-                width: 49
-                height: 19
-                backColor: "#ffffff"
-                foreColor: "#000000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                text: "Mot. 3"
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_des_err_11
-                x: 419
-                y: 51
-                width: 271
-                height: 27
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_sta_azi_11
-                x: 122
-                y: 50
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_azi_12
-                x: 122
-                y: 26
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_azi_13
-                x: 122
-                y: 2
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_11
-                x: 272
-                y: 50
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_12
-                x: 272
-                y: 26
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_13
-                x: 272
-                y: 2
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_11
-                x: 326
-                y: 50
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_12
-                x: 326
-                y: 26
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_13
-                x: 326
-                y: 2
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_des_err_12
-                x: 419
-                y: 27
-                width: 271
-                height: 27
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_des_err_13
-                x: 419
-                y: 3
-                width: 271
-                height: 27
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
-                font.family: "Arial"
-                font.pixelSize: 12
-                font.bold: true
-                opaque: false
-            }
-            VbLabel {
-                id: c_lab_sta_des_11
-                x: 169
-                y: 50
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_des_12
-                x: 169
-                y: 26
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_des_13
-                x: 169
-                y: 2
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_par_nuo_11
+                id: c_lab_par_nuo_13
                 x: 685
-                y: 50
+                y: 2
                 width: 97
                 height: 18
                 backColor: "#ffffff"
@@ -1506,7 +501,363 @@ VbForm {
                 alignment: 1
             }
             VbLabel {
-                id: c_lab_par_nuo_13
+                id: c_lab_par_nuo_11
+                x: 685
+                y: 50
+                width: 97
+                height: 18
+                backColor: "#ffffff"
+                foreColor: "#008000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_13
+                x: 169
+                y: 2
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_12
+                x: 169
+                y: 26
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_11
+                x: 169
+                y: 50
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_des_err_13
+                x: 419
+                y: 3
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_des_err_12
+                x: 419
+                y: 27
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_dis_13
+                x: 326
+                y: 2
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_dis_12
+                x: 326
+                y: 26
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_dis_11
+                x: 326
+                y: 50
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_13
+                x: 272
+                y: 2
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_12
+                x: 272
+                y: 26
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_11
+                x: 272
+                y: 50
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_13
+                x: 122
+                y: 2
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_12
+                x: 122
+                y: 26
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_11
+                x: 122
+                y: 50
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_des_err_11
+                x: 419
+                y: 51
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_azi_13
+                x: 1
+                y: 3
+                width: 49
+                height: 19
+                backColor: "#ffffff"
+                foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                text: "Mot. 3"
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_azi_12
+                x: 1
+                y: 27
+                width: 49
+                height: 19
+                backColor: "#ffffff"
+                foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                text: "Mot. 2"
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_azi_11
+                x: 1
+                y: 51
+                width: 49
+                height: 19
+                backColor: "#ffffff"
+                foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                text: "Mot. 1"
+                opaque: false
+            }
+            VbShape {
+                id: c_shp_13
+                x: 784
+                y: 8
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
+            }
+            VbShape {
+                id: c_shp_12
+                x: 784
+                y: 32
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
+            }
+            VbShape {
+                id: c_shp_11
+                x: 784
+                y: 56
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
+            }
+            VbLabel {
+                id: c_lab_liv_0
+                x: 43
+                y: 17
+                width: 17
+                height: 32
+                foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 29
+                font.bold: true
+                text: "1"
+                opaque: false
+            }
+            VbCheck {
+                id: c_chk_abi_12
+                x: 64
+                y: 26
+                width: 55
+                height: 16
+                z: 1
+                backColor: "#008000"
+                foreColor: "#ffffff"
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                KeyNavigation.tab: c_chk_abi_11
+                KeyNavigation.backtab: c_chk_abi_23
+                exclusive: false
+                graphical: true
+            }
+            VbCheck {
+                id: c_chk_abi_11
+                x: 64
+                y: 50
+                width: 55
+                height: 16
+                z: 1
+                backColor: "#008000"
+                foreColor: "#ffffff"
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                KeyNavigation.tab: c_chk_abi_13
+                KeyNavigation.backtab: c_chk_abi_12
+                exclusive: false
+                graphical: true
+            }
+            VbCheck {
+                id: c_chk_abi_13
+                x: 64
+                y: 2
+                width: 55
+                height: 16
+                z: 1
+                backColor: "#008000"
+                foreColor: "#ffffff"
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                KeyNavigation.tab: c_txt_idle
+                KeyNavigation.backtab: c_chk_abi_11
+                exclusive: false
+                graphical: true
+            }
+        }
+        VbFrame {
+            id: c_frm_azi_rul_1
+            x: 3
+            y: 88
+            width: 791
+            height: 69
+            z: 1
+            backColor: "#008000"
+            borderStyle: 0
+            text: "Frame1"
+            VbLabel {
+                id: c_lab_par_nuo_23
                 x: 685
                 y: 2
                 width: 97
@@ -1519,33 +870,283 @@ VbForm {
                 font.bold: true
                 alignment: 1
             }
-        }
-    }
-    VbFrame {
-        id: c_Frame1
-        x: 0
-        y: 122
-        width: 797
-        height: 65
-        z: 1
-        backColor: "#c0c0c0"
-        foreColor: "#800000"
-        font.family: "Arial"
-        font.pixelSize: 17
-        font.bold: true
-        text: "AZIONAMENTI MOTORI RULLI DI INGRESSO"
-        VbFrame {
-            id: c_frm_azi_ing_15
-            x: 3
-            y: 16
-            width: 791
-            height: 45
-            z: 1
-            backColor: "#008000"
-            borderStyle: 0
-            text: "Frame1"
+            VbLabel {
+                id: c_lab_par_nuo_22
+                x: 685
+                y: 26
+                width: 97
+                height: 18
+                backColor: "#ffffff"
+                foreColor: "#008000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_par_nuo_21
+                x: 685
+                y: 50
+                width: 97
+                height: 18
+                backColor: "#ffffff"
+                foreColor: "#008000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_23
+                x: 169
+                y: 2
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_22
+                x: 169
+                y: 26
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_21
+                x: 169
+                y: 50
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_des_err_23
+                x: 419
+                y: 3
+                width: 271
+                height: 23
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_des_err_22
+                x: 419
+                y: 27
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_dis_23
+                x: 326
+                y: 2
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_dis_22
+                x: 326
+                y: 26
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_dis_21
+                x: 326
+                y: 50
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_23
+                x: 272
+                y: 2
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_22
+                x: 272
+                y: 26
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_21
+                x: 272
+                y: 50
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_23
+                x: 122
+                y: 2
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_22
+                x: 122
+                y: 26
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_21
+                x: 122
+                y: 50
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_des_err_21
+                x: 419
+                y: 51
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_azi_23
+                x: 1
+                y: 3
+                width: 47
+                height: 19
+                backColor: "#ffffff"
+                foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                text: "Mot. 3"
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_azi_22
+                x: 1
+                y: 27
+                width: 47
+                height: 19
+                backColor: "#ffffff"
+                foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                text: "Mot. 2"
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_azi_21
+                x: 1
+                y: 51
+                width: 47
+                height: 19
+                backColor: "#ffffff"
+                foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                text: "Mot. 1"
+                opaque: false
+            }
             VbShape {
-                id: c_shp_1
+                id: c_shp_23
+                x: 784
+                y: 8
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
+            }
+            VbShape {
+                id: c_shp_22
                 x: 784
                 y: 32
                 width: 5
@@ -1555,7 +1156,371 @@ VbForm {
                 borderColor: "#ff0000"
             }
             VbShape {
-                id: c_shp_2
+                id: c_shp_21
+                x: 784
+                y: 56
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
+            }
+            VbLabel {
+                id: c_lab_liv_1
+                x: 43
+                y: 17
+                width: 21
+                height: 33
+                foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 29
+                font.bold: true
+                text: "2"
+                opaque: false
+            }
+            VbCheck {
+                id: c_chk_abi_22
+                x: 64
+                y: 26
+                width: 55
+                height: 16
+                z: 1
+                backColor: "#008000"
+                foreColor: "#ffffff"
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                KeyNavigation.tab: c_chk_abi_21
+                KeyNavigation.backtab: c_chk_abi_33
+                exclusive: false
+                graphical: true
+            }
+            VbCheck {
+                id: c_chk_abi_21
+                x: 64
+                y: 50
+                width: 55
+                height: 16
+                z: 1
+                backColor: "#008000"
+                foreColor: "#ffffff"
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                KeyNavigation.tab: c_chk_abi_23
+                KeyNavigation.backtab: c_chk_abi_22
+                exclusive: false
+                graphical: true
+            }
+            VbCheck {
+                id: c_chk_abi_23
+                x: 64
+                y: 2
+                width: 55
+                height: 16
+                z: 1
+                backColor: "#008000"
+                foreColor: "#ffffff"
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                KeyNavigation.tab: c_chk_abi_12
+                KeyNavigation.backtab: c_chk_abi_21
+                exclusive: false
+                graphical: true
+            }
+        }
+        VbFrame {
+            id: c_frm_azi_rul_2
+            x: 3
+            y: 16
+            width: 791
+            height: 69
+            z: 1
+            backColor: "#ffffff"
+            borderStyle: 0
+            text: "Frame1"
+            VbLabel {
+                id: c_lab_par_nuo_33
+                x: 685
+                y: 2
+                width: 97
+                height: 18
+                backColor: "#ffffff"
+                foreColor: "#008000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_par_nuo_32
+                x: 685
+                y: 26
+                width: 97
+                height: 18
+                backColor: "#ffffff"
+                foreColor: "#008000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_par_nuo_31
+                x: 685
+                y: 50
+                width: 97
+                height: 18
+                backColor: "#ffffff"
+                foreColor: "#008000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_33
+                x: 169
+                y: 2
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_32
+                x: 169
+                y: 26
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_31
+                x: 169
+                y: 50
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_des_err_33
+                x: 419
+                y: 3
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_des_err_32
+                x: 419
+                y: 27
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_dis_33
+                x: 326
+                y: 2
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_dis_32
+                x: 326
+                y: 26
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_dis_31
+                x: 326
+                y: 50
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_33
+                x: 272
+                y: 2
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_32
+                x: 272
+                y: 26
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_31
+                x: 272
+                y: 50
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_33
+                x: 122
+                y: 2
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_32
+                x: 122
+                y: 26
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_31
+                x: 122
+                y: 50
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_des_err_31
+                x: 419
+                y: 51
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_azi_33
+                x: 1
+                y: 3
+                width: 48
+                height: 19
+                backColor: "#ffffff"
+                foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                text: "Mot. 3"
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_azi_32
+                x: 1
+                y: 27
+                width: 48
+                height: 19
+                backColor: "#ffffff"
+                foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                text: "Mot. 2"
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_azi_31
+                x: 1
+                y: 51
+                width: 48
+                height: 19
+                backColor: "#ffffff"
+                foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                text: "Mot. 1"
+                opaque: false
+            }
+            VbShape {
+                id: c_shp_33
                 x: 784
                 y: 8
                 width: 5
@@ -1564,22 +1529,354 @@ VbForm {
                 fillColor: "#ff0000"
                 borderColor: "#ff0000"
             }
+            VbShape {
+                id: c_shp_32
+                x: 784
+                y: 32
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
+            }
+            VbShape {
+                id: c_shp_31
+                x: 784
+                y: 56
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
+            }
             VbLabel {
-                id: c_lab_azi_1
-                x: 1
-                y: 27
-                width: 92
-                height: 19
-                backColor: "#ffffff"
+                id: c_lab_liv_2
+                x: 43
+                y: 17
+                width: 18
+                height: 33
                 foreColor: "#000000"
+                font.family: "Arial"
+                font.pixelSize: 29
+                font.bold: true
+                text: "3"
+                opaque: false
+            }
+            VbCheck {
+                id: c_chk_abi_32
+                x: 64
+                y: 26
+                width: 55
+                height: 16
+                z: 1
+                backColor: "#008000"
+                foreColor: "#ffffff"
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                KeyNavigation.tab: c_chk_abi_31
+                KeyNavigation.backtab: c_txt_idle
+                exclusive: false
+                graphical: true
+            }
+            VbCheck {
+                id: c_chk_abi_31
+                x: 64
+                y: 50
+                width: 55
+                height: 16
+                z: 1
+                backColor: "#008000"
+                foreColor: "#ffffff"
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                KeyNavigation.tab: c_chk_abi_33
+                KeyNavigation.backtab: c_chk_abi_32
+                exclusive: false
+                graphical: true
+            }
+            VbCheck {
+                id: c_chk_abi_33
+                x: 64
+                y: 2
+                width: 55
+                height: 16
+                z: 1
+                backColor: "#008000"
+                foreColor: "#ffffff"
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                KeyNavigation.tab: c_chk_abi_22
+                KeyNavigation.backtab: c_chk_abi_31
+                exclusive: false
+                graphical: true
+            }
+        }
+    }
+    VbFrame {
+        id: c_Frame3
+        x: 0
+        y: 33
+        width: 797
+        height: 89
+        z: 1
+        backColor: "#c0c0c0"
+        foreColor: "#800000"
+        font.family: "Arial"
+        font.pixelSize: 17
+        font.bold: true
+        text: "AZIONAMENTI MOTORI RULLI DI USCITA"
+        VbFrame {
+            id: c_frm_azi_usc_35
+            x: 3
+            y: 16
+            width: 791
+            height: 69
+            z: 1
+            backColor: "#ffffff"
+            borderStyle: 0
+            text: "Frame1"
+            VbLabel {
+                id: c_lab_par_nuo_35
+                x: 685
+                y: 2
+                width: 97
+                height: 18
+                backColor: "#ffffff"
+                foreColor: "#008000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_par_nuo_25
+                x: 685
+                y: 26
+                width: 97
+                height: 18
+                backColor: "#ffffff"
+                foreColor: "#008000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_par_nuo_15
+                x: 685
+                y: 50
+                width: 97
+                height: 18
+                backColor: "#ffffff"
+                foreColor: "#008000"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_35
+                x: 169
+                y: 2
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_25
+                x: 169
+                y: 26
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_des_15
+                x: 169
+                y: 50
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_des_err_35
+                x: 419
+                y: 3
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
                 font.family: "Arial"
                 font.pixelSize: 12
                 font.bold: true
-                text: "Mot. liv. 1 - 2"
                 opaque: false
             }
             VbLabel {
-                id: c_lab_azi_2
+                id: c_lab_des_err_25
+                x: 419
+                y: 27
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_dis_35
+                x: 326
+                y: 2
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_dis_25
+                x: 326
+                y: 26
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_dis_15
+                x: 326
+                y: 50
+                width: 89
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_35
+                x: 272
+                y: 2
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_25
+                x: 272
+                y: 26
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_cod_err_15
+                x: 272
+                y: 50
+                width: 41
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_35
+                x: 122
+                y: 2
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_25
+                x: 122
+                y: 26
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_sta_azi_15
+                x: 122
+                y: 50
+                width: 33
+                height: 18
+                backColor: "#ffffff"
+                borderStyle: 1
+                font.family: "Arial"
+                font.pixelSize: 11
+                font.bold: true
+                alignment: 1
+            }
+            VbLabel {
+                id: c_lab_des_err_15
+                x: 419
+                y: 51
+                width: 271
+                height: 27
+                backColor: "#ffffff"
+                foreColor: "#ff0000"
+                font.family: "Arial"
+                font.pixelSize: 12
+                font.bold: true
+                opaque: false
+            }
+            VbLabel {
+                id: c_lab_azi_35
                 x: 1
                 y: 3
                 width: 67
@@ -1593,371 +1890,74 @@ VbForm {
                 opaque: false
             }
             VbLabel {
-                id: c_lab_des_err_1
-                x: 419
+                id: c_lab_azi_25
+                x: 1
                 y: 27
-                width: 271
-                height: 27
+                width: 67
+                height: 19
                 backColor: "#ffffff"
-                foreColor: "#ff0000"
+                foreColor: "#000000"
                 font.family: "Arial"
                 font.pixelSize: 12
                 font.bold: true
+                text: "Mot. liv. 2"
                 opaque: false
             }
             VbLabel {
-                id: c_lab_sta_azi_1
-                x: 122
-                y: 26
-                width: 33
-                height: 18
+                id: c_lab_azi_15
+                x: 1
+                y: 51
+                width: 67
+                height: 19
                 backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_sta_azi_2
-                x: 122
-                y: 2
-                width: 33
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_1
-                x: 272
-                y: 26
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_cod_err_2
-                x: 272
-                y: 2
-                width: 41
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_1
-                x: 326
-                y: 26
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_dis_2
-                x: 326
-                y: 2
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_des_err_2
-                x: 419
-                y: 3
-                width: 271
-                height: 27
-                backColor: "#ffffff"
-                foreColor: "#ff0000"
+                foreColor: "#000000"
                 font.family: "Arial"
                 font.pixelSize: 12
                 font.bold: true
+                text: "Mot. liv. 1"
                 opaque: false
             }
-            VbLabel {
-                id: c_lab_sta_des_1
-                x: 169
-                y: 26
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
+            VbShape {
+                id: c_shp_35
+                x: 784
+                y: 8
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
             }
-            VbLabel {
-                id: c_lab_sta_des_2
-                x: 169
-                y: 2
-                width: 89
-                height: 18
-                backColor: "#ffffff"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
+            VbShape {
+                id: c_shp_25
+                x: 784
+                y: 32
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
             }
-            VbLabel {
-                id: c_lab_par_nuo_1
-                x: 685
-                y: 26
-                width: 97
-                height: 18
-                backColor: "#ffffff"
-                foreColor: "#008000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
-            }
-            VbLabel {
-                id: c_lab_par_nuo_2
-                x: 685
-                y: 2
-                width: 97
-                height: 18
-                backColor: "#ffffff"
-                foreColor: "#008000"
-                borderStyle: 1
-                font.family: "Arial"
-                font.pixelSize: 11
-                font.bold: true
-                alignment: 1
+            VbShape {
+                id: c_shp_15
+                x: 784
+                y: 56
+                width: 5
+                height: 5
+                shape: 3
+                fillColor: "#ff0000"
+                borderColor: "#ff0000"
             }
         }
     }
-    VbLabel {
-        id: c_lab_des_par
-        x: 500
-        y: 20
-        width: 295
-        height: 15
-        backColor: "#ffffff"
-        foreColor: "#ffff00"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        alignment: 1
-        opaque: false
-    }
-    VbLine {
-        id: c_ln_no_com2
-        x1: 11
-        y1: 27
-        x2: 45
-        y2: 3
-        borderColor: "#ffffff"
-        borderWidth: 2
-    }
-    VbLine {
-        id: c_ln_no_com1
-        x1: 11
-        y1: 3
-        x2: 45
-        y2: 27
-        borderColor: "#ffffff"
-        borderWidth: 2
-    }
-    VbLabel {
-        id: c_lab_com
-        x: 3
-        y: 9
-        width: 49
-        height: 17
-        foreColor: "#ffff00"
-        font.family: "Arial"
-        font.pixelSize: 12
-        font.bold: true
-        font.italic: true
-        text: "COM"
-        alignment: 2
-        opaque: false
-    }
-    VbShape {
-        id: c_shp_com2
-        x: 10
-        y: 4
-        width: 34
-        height: 25
-        shape: 2
-        borderColor: "#ff00ff"
-        borderWidth: 3
-    }
-    VbShape {
-        id: c_shp_com1
-        x: 10
-        y: 5
-        width: 34
-        height: 25
-        shape: 2
-        fillColor: "#000000"
-    }
-    VbLine {
-        id: c_lin_par_nuo
-        x1: 690
-        y1: 13
-        x2: 783
-        y2: 13
-        borderColor: "#ffff00"
-        borderWidth: 3
-        visible: false
-    }
-    VbLine {
-        id: c_Line2
-        x1: 277
-        y1: 13
-        x2: 684
-        y2: 13
-        borderColor: "#00ff00"
-        borderWidth: 3
-    }
-    VbLabel {
-        id: c_Label3
-        x: 435
-        y: -2
-        width: 113
-        height: 17
-        foreColor: "#00ff00"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Par. C 168 / 1"
-        opaque: false
-    }
-    VbLine {
-        id: c_Line1
-        x1: 129
-        y1: 13
-        x2: 258
-        y2: 13
-        borderColor: "#00ff00"
-        borderWidth: 3
-    }
-    VbLabel {
-        id: c_Label2
-        x: 147
-        y: -2
-        width: 113
-        height: 17
-        foreColor: "#00ff00"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Par. C 183 / 0"
-        opaque: false
-    }
-    VbLabel {
-        id: c_lab_par_imp
-        x: 685
-        y: 0
-        width: 105
+    VbTextBox {
+        id: c_txt_idle
+        x: 280
+        y: -56
+        width: 68
         height: 19
-        backColor: "#ffffff"
-        foreColor: "#ffff00"
-        font.family: "Arial"
-        font.pixelSize: 13
-        font.bold: true
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label5
-        x: 171
-        y: 16
-        width: 89
-        height: 19
-        backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Stato"
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label6
-        x: 340
-        y: 16
-        width: 65
-        height: 19
-        backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Display"
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label23
-        x: 102
-        y: 16
-        width: 76
-        height: 19
-        backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Val. 183/0"
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label1
-        x: 257
-        y: 16
-        width: 73
-        height: 19
-        backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        text: "Val. 168/1"
-        alignment: 2
-        opaque: false
-    }
-    VbLabel {
-        id: c_Label4
-        x: 418
-        y: 20
-        width: 75
-        height: 13
-        backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 11
-        font.bold: true
-        text: "Descr. err."
-        opaque: false
+        z: 1
+        KeyNavigation.tab: c_chk_abi_32
+        KeyNavigation.backtab: c_chk_abi_13
+        text: "Text1"
     }
 }

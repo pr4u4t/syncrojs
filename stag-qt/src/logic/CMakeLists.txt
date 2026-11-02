@@ -1,12 +1,19 @@
 add_library(staglogic STATIC
     classestato.cpp classestato.h
     stabarmodel.cpp stabarmodel.h
+    stabarform.cpp stabarform.h
     stagapp.cpp stagapp.h
     collezioneordini.cpp collezioneordini.h
     gesord.cpp gesord.h
     formmodel.h
     plcframes.cpp plcframes.h
     plclink.cpp plclink.h
+    schtagframes.cpp schtagframes.h
+    schtaglink.cpp schtaglink.h
+    schtagpages.cpp schtagpages.h schtagtables.inc
+    setparmodels.cpp setparmodels.h
+    miscpages.cpp miscpages.h debugdes.inc
+    spdelink.cpp spdelink.h
     pagpromodel.cpp pagpromodel.h
     orderlistmodel.cpp orderlistmodel.h
     paglisordmodel.cpp paglisordmodel.h

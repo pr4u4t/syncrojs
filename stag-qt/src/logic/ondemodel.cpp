@@ -1,4 +1,5 @@
 #include "ondemodel.h"
+#include "sqlcheck.h"
 
 #include "messages.h"
 #include "parmac.h"
@@ -74,7 +75,7 @@ bool OndeModel::validateField(const QString &last)
         if (m_nuoOnd) {
             m_ond = m_values.value(last);
             QSqlQuery same(m_db);
-            same.prepare(QStringLiteral("SELECT GRAMMATURA, VELDIPROD, VELDICAMBI, SPESSORE, CODONDA FROM ONDE WHERE ONDA = ?"));
+            sqlPrepare(same, QStringLiteral("SELECT GRAMMATURA, VELDIPROD, VELDICAMBI, SPESSORE, CODONDA FROM ONDE WHERE ONDA = ?"));
             same.addBindValue(m_ond);
             if (same.exec() && same.next()) {
                 for (int i = 0; i < same.record().count(); ++i)
@@ -89,7 +90,7 @@ bool OndeModel::validateField(const QString &last)
         }
         if (m_nuoOnd) {
             QSqlQuery same(m_db);
-            same.prepare(QStringLiteral("SELECT 1 FROM ONDE WHERE ONDA = ? AND CARTA = ?"));
+            sqlPrepare(same, QStringLiteral("SELECT 1 FROM ONDE WHERE ONDA = ? AND CARTA = ?"));
             same.addBindValue(m_ond);
             same.addBindValue(paper);
             if (same.exec() && same.next()) {

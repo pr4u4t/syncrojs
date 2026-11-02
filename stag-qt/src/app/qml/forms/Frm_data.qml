@@ -10,62 +10,158 @@ VbForm {
     backColor: "#ffffff"
     dialog: true
     controls: ({ "txt_sec": c_txt_sec, "tim_ora": c_tim_ora, "tas_f1": c_tas_F1, "txt_min": c_txt_min, "txt_ore": c_txt_ore, "txt_year": c_txt_year, "txt_month": c_txt_month, "txt_day": c_txt_day, "line6": c_Line6, "line5": c_Line5, "image3": c_Image3, "line3": c_Line3, "lab_sec": c_lab_sec, "txt_f1": c_txt_F1, "line4": c_Line4, "lab_min": c_lab_min, "lab_ore": c_lab_ore, "line1": c_Line1, "line2": c_Line2, "lab_year": c_lab_year, "lab_month": c_lab_month, "lab_day": c_lab_day })
-    VbTextBox {
-        id: c_txt_sec
-        x: 168
-        y: 94
-        width: 43
-        height: 21
-        z: 1
-        borderStyle: 0
-        KeyNavigation.tab: c_txt_day
-        KeyNavigation.backtab: c_txt_min
-        text: "Text1"
-        alignment: 2
-        maxLength: 2
-    }
-    VbTimer {
-        id: c_tim_ora
-        interval: 1000
-        running: false
-    }
-    VbButton {
-        id: c_tas_F1
-        x: 84
-        y: 134
-        width: 81
-        height: 25
-        z: 1
+    VbLabel {
+        id: c_lab_day
+        x: 12
+        y: 31
+        width: 83
+        height: 17
         backColor: "#ffffff"
+        text: "giorno"
+        alignment: 2
+    }
+    VbLabel {
+        id: c_lab_month
+        x: 80
+        y: 31
+        width: 83
+        height: 17
+        backColor: "#ffffff"
+        text: "mese"
+        alignment: 2
+    }
+    VbLabel {
+        id: c_lab_year
+        x: 148
+        y: 31
+        width: 83
+        height: 17
+        backColor: "#ffffff"
+        text: "anno"
+        alignment: 2
+    }
+    VbLine {
+        id: c_Line2
+        x1: 152
+        y1: 60
+        x2: 160
+        y2: 60
+    }
+    VbLine {
+        id: c_Line1
+        x1: 84
+        y1: 60
+        x2: 92
+        y2: 60
+    }
+    VbLabel {
+        id: c_lab_ore
+        x: 12
+        y: 75
+        width: 83
+        height: 17
+        backColor: "#ffffff"
+        text: "ore"
+        alignment: 2
+    }
+    VbLabel {
+        id: c_lab_min
+        x: 81
+        y: 75
+        width: 83
+        height: 17
+        backColor: "#ffffff"
+        text: "minuti"
+        alignment: 2
+    }
+    VbLine {
+        id: c_Line4
+        x1: 84
+        y1: 104
+        x2: 92
+        y2: 104
+    }
+    VbLabel {
+        id: c_txt_F1
+        x: 105
+        y: 163
+        width: 39
+        height: 14
+        backColor: "#ffffff"
+        foreColor: "#000000"
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "F3"
+        text: "Esegui"
+        alignment: 2
+        autoSize: true
+    }
+    VbLabel {
+        id: c_lab_sec
+        x: 148
+        y: 75
+        width: 83
+        height: 17
+        backColor: "#ffffff"
+        text: "secondi"
+        alignment: 2
+    }
+    VbLine {
+        id: c_Line3
+        x1: 152
+        y1: 104
+        x2: 160
+        y2: 104
+    }
+    VbImage {
+        id: c_Image3
+        x: -560
+        y: 0
+        width: 798
+        height: 20
+        stretch: true
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
+    }
+    VbLine {
+        id: c_Line5
+        x1: 6
+        y1: 46
+        x2: 236
+        y2: 46
+        borderWidth: 2
+    }
+    VbLine {
+        id: c_Line6
+        x1: 6
+        y1: 90
+        x2: 236
+        y2: 90
+        borderWidth: 2
     }
     VbTextBox {
-        id: c_txt_min
-        x: 100
-        y: 94
+        id: c_txt_day
+        x: 32
+        y: 50
         width: 43
         height: 21
         z: 1
         borderStyle: 0
-        KeyNavigation.tab: c_txt_sec
-        KeyNavigation.backtab: c_txt_ore
+        KeyNavigation.tab: c_txt_month
+        KeyNavigation.backtab: c_txt_sec
         text: "Text1"
         alignment: 2
         maxLength: 2
     }
     VbTextBox {
-        id: c_txt_ore
-        x: 32
-        y: 94
+        id: c_txt_month
+        x: 100
+        y: 50
         width: 43
         height: 21
         z: 1
         borderStyle: 0
-        KeyNavigation.tab: c_txt_min
-        KeyNavigation.backtab: c_txt_year
+        KeyNavigation.tab: c_txt_year
+        KeyNavigation.backtab: c_txt_day
         text: "Text1"
         alignment: 2
         maxLength: 2
@@ -85,159 +181,63 @@ VbForm {
         maxLength: 4
     }
     VbTextBox {
-        id: c_txt_month
-        x: 100
-        y: 50
+        id: c_txt_ore
+        x: 32
+        y: 94
         width: 43
         height: 21
         z: 1
         borderStyle: 0
-        KeyNavigation.tab: c_txt_year
-        KeyNavigation.backtab: c_txt_day
+        KeyNavigation.tab: c_txt_min
+        KeyNavigation.backtab: c_txt_year
         text: "Text1"
         alignment: 2
         maxLength: 2
     }
     VbTextBox {
-        id: c_txt_day
-        x: 32
-        y: 50
+        id: c_txt_min
+        x: 100
+        y: 94
         width: 43
         height: 21
         z: 1
         borderStyle: 0
-        KeyNavigation.tab: c_txt_month
-        KeyNavigation.backtab: c_txt_sec
+        KeyNavigation.tab: c_txt_sec
+        KeyNavigation.backtab: c_txt_ore
         text: "Text1"
         alignment: 2
         maxLength: 2
     }
-    VbLine {
-        id: c_Line6
-        x1: 6
-        y1: 90
-        x2: 236
-        y2: 90
-        borderWidth: 2
-    }
-    VbLine {
-        id: c_Line5
-        x1: 6
-        y1: 46
-        x2: 236
-        y2: 46
-        borderWidth: 2
-    }
-    VbImage {
-        id: c_Image3
-        x: -560
-        y: 0
-        width: 798
-        height: 20
-        stretch: true
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
-    }
-    VbLine {
-        id: c_Line3
-        x1: 152
-        y1: 104
-        x2: 160
-        y2: 104
-    }
-    VbLabel {
-        id: c_lab_sec
-        x: 148
-        y: 75
-        width: 83
-        height: 17
+    VbButton {
+        id: c_tas_F1
+        x: 84
+        y: 134
+        width: 81
+        height: 25
+        z: 1
         backColor: "#ffffff"
-        text: "secondi"
-        alignment: 2
-    }
-    VbLabel {
-        id: c_txt_F1
-        x: 105
-        y: 163
-        width: 39
-        height: 14
-        backColor: "#ffffff"
-        foreColor: "#000000"
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "Esegui"
+        text: "F3"
+    }
+    VbTimer {
+        id: c_tim_ora
+        interval: 1000
+        running: false
+    }
+    VbTextBox {
+        id: c_txt_sec
+        x: 168
+        y: 94
+        width: 43
+        height: 21
+        z: 1
+        borderStyle: 0
+        KeyNavigation.tab: c_txt_day
+        KeyNavigation.backtab: c_txt_min
+        text: "Text1"
         alignment: 2
-        autoSize: true
-    }
-    VbLine {
-        id: c_Line4
-        x1: 84
-        y1: 104
-        x2: 92
-        y2: 104
-    }
-    VbLabel {
-        id: c_lab_min
-        x: 81
-        y: 75
-        width: 83
-        height: 17
-        backColor: "#ffffff"
-        text: "minuti"
-        alignment: 2
-    }
-    VbLabel {
-        id: c_lab_ore
-        x: 12
-        y: 75
-        width: 83
-        height: 17
-        backColor: "#ffffff"
-        text: "ore"
-        alignment: 2
-    }
-    VbLine {
-        id: c_Line1
-        x1: 84
-        y1: 60
-        x2: 92
-        y2: 60
-    }
-    VbLine {
-        id: c_Line2
-        x1: 152
-        y1: 60
-        x2: 160
-        y2: 60
-    }
-    VbLabel {
-        id: c_lab_year
-        x: 148
-        y: 31
-        width: 83
-        height: 17
-        backColor: "#ffffff"
-        text: "anno"
-        alignment: 2
-    }
-    VbLabel {
-        id: c_lab_month
-        x: 80
-        y: 31
-        width: 83
-        height: 17
-        backColor: "#ffffff"
-        text: "mese"
-        alignment: 2
-    }
-    VbLabel {
-        id: c_lab_day
-        x: 12
-        y: 31
-        width: 83
-        height: 17
-        backColor: "#ffffff"
-        text: "giorno"
-        alignment: 2
+        maxLength: 2
     }
 }

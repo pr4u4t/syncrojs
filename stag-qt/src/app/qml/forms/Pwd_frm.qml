@@ -10,6 +10,81 @@ VbForm {
     backColor: "#ffffc0"
     dialog: true
     controls: ({ "frm_set": c_frm_set, "text22": c_Text22, "text21": c_Text21, "text20": c_Text20, "text19": c_Text19, "text18": c_Text18, "text17": c_Text17, "text16": c_Text16, "text15": c_Text15, "text14": c_Text14, "text13": c_Text13, "text12": c_Text12, "text11": c_Text11, "text10": c_Text10, "text9": c_Text9, "text8": c_Text8, "text7": c_Text7, "text6": c_Text6, "text5": c_Text5, "text4": c_Text4, "text3": c_Text3, "text2": c_Text2, "text1": c_Text1, "frm_chg_pwd": c_frm_chg_pwd, "txt_msg_chg_pwd": c_txt_msg_chg_pwd, "txt_chg_pwd": c_txt_chg_pwd, "frm_pwd": c_frm_pwd, "txt_pwd": c_txt_pwd, "txt_msg": c_txt_msg, "img_title": c_img_title })
+    VbImage {
+        id: c_img_title
+        x: -497
+        y: 0
+        width: 798
+        height: 20
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
+    }
+    VbFrame {
+        id: c_frm_pwd
+        x: 2
+        y: 24
+        width: 295
+        height: 73
+        z: 1
+        backColor: "#ffffc0"
+        VbTextBox {
+            id: c_txt_msg
+            x: 4
+            y: 16
+            width: 285
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#c00000"
+            borderStyle: 0
+            text: "Inserire la password"
+            alignment: 2
+        }
+        VbTextBox {
+            id: c_txt_pwd
+            x: 8
+            y: 44
+            width: 281
+            height: 19
+            z: 1
+            KeyNavigation.tab: c_txt_chg_pwd
+            KeyNavigation.backtab: c_txt_chg_pwd
+            password: true
+        }
+    }
+    VbFrame {
+        id: c_frm_chg_pwd
+        x: 2
+        y: 24
+        width: 295
+        height: 57
+        visible: false
+        z: 1
+        backColor: "#ffffc0"
+        VbTextBox {
+            id: c_txt_chg_pwd
+            x: 8
+            y: 32
+            width: 281
+            height: 19
+            z: 1
+            KeyNavigation.tab: c_txt_pwd
+            KeyNavigation.backtab: c_txt_pwd
+            password: true
+        }
+        VbTextBox {
+            id: c_txt_msg_chg_pwd
+            x: 4
+            y: 16
+            width: 285
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#c00000"
+            borderStyle: 0
+            text: "Inserire la password corrente"
+            alignment: 2
+        }
+    }
     VbFrame {
         id: c_frm_set
         x: 2
@@ -21,129 +96,159 @@ VbForm {
         backColor: "#ffffc0"
         borderStyle: 0
         VbTextBox {
-            id: c_Text22
-            x: 39
-            y: 141
-            width: 253
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#0000ff"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "Avvia SysWin"
-        }
-        VbTextBox {
-            id: c_Text21
+            id: c_Text1
             x: 6
-            y: 227
-            width: 253
+            y: 14
+            width: 33
             height: 17
             z: 1
             backColor: "#ffffc0"
-            foreColor: "#0000ff"
+            foreColor: "#000000"
             borderStyle: 0
             font.family: "MS Sans Serif"
             font.pixelSize: 11
             font.bold: true
-            text: "Ctrl+Shift+X per uscire dal programma"
+            text: "F1"
         }
         VbTextBox {
-            id: c_Text20
-            x: 38
-            y: 206
-            width: 253
+            id: c_Text2
+            x: 6
+            y: 185
+            width: 33
             height: 17
             z: 1
             backColor: "#ffffc0"
-            foreColor: "#0000ff"
+            foreColor: "#000000"
             borderStyle: 0
             font.family: "MS Sans Serif"
             font.pixelSize: 11
             font.bold: true
-            text: "Riabilita tutte le protezioni"
+            text: "F9"
         }
         VbTextBox {
-            id: c_Text19
-            x: 38
-            y: 35
-            width: 253
+            id: c_Text3
+            x: 6
+            y: 163
+            width: 33
             height: 17
             z: 1
             backColor: "#ffffc0"
-            foreColor: "#0000ff"
+            foreColor: "#000000"
             borderStyle: 0
             font.family: "MS Sans Serif"
             font.pixelSize: 11
             font.bold: true
-            text: "Avvia NT Explorer"
+            text: "F8"
         }
         VbTextBox {
-            id: c_Text18
-            x: 38
-            y: 57
-            width: 253
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#0000ff"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "Apri sessione Dos"
-        }
-        VbTextBox {
-            id: c_Text17
-            x: 38
-            y: 78
-            width: 253
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#0000ff"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "Avvia Task Manager di Windows NT"
-        }
-        VbTextBox {
-            id: c_Text16
-            x: 38
-            y: 99
-            width: 253
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#0000ff"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "Avvia PcAnyWhere"
-        }
-        VbTextBox {
-            id: c_Text15
-            x: 38
-            y: 121
-            width: 253
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#0000ff"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "Apri file sorgenti in Visual Basic"
-        }
-        VbTextBox {
-            id: c_Text14
-            x: 38
+            id: c_Text4
+            x: 6
             y: 142
+            width: 33
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#000000"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "F7"
+        }
+        VbTextBox {
+            id: c_Text5
+            x: 6
+            y: 121
+            width: 33
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#000000"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "F6"
+        }
+        VbTextBox {
+            id: c_Text6
+            x: 6
+            y: 99
+            width: 33
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#000000"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "F5"
+        }
+        VbTextBox {
+            id: c_Text7
+            x: 6
+            y: 78
+            width: 33
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#000000"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "F4"
+        }
+        VbTextBox {
+            id: c_Text8
+            x: 6
+            y: 57
+            width: 33
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#000000"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "F3"
+        }
+        VbTextBox {
+            id: c_Text9
+            x: 6
+            y: 35
+            width: 33
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#000000"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "F2"
+        }
+        VbTextBox {
+            id: c_Text10
+            x: 6
+            y: 206
+            width: 33
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#000000"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "F10"
+        }
+        VbTextBox {
+            id: c_Text11
+            x: 38
+            y: 14
             width: 253
             height: 17
             z: 1
@@ -153,7 +258,22 @@ VbForm {
             font.family: "MS Sans Serif"
             font.pixelSize: 11
             font.bold: true
-            text: " "
+            text: "Abilita mouse"
+        }
+        VbTextBox {
+            id: c_Text12
+            x: 36
+            y: 185
+            width: 253
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#0000ff"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: " Modifica Password"
         }
         VbTextBox {
             id: c_Text13
@@ -172,24 +292,9 @@ VbForm {
             text: "Modifica Password Livello 1"
         }
         VbTextBox {
-            id: c_Text12
-            x: 36
-            y: 185
-            width: 253
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#0000ff"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: " Modifica Password"
-        }
-        VbTextBox {
-            id: c_Text11
+            id: c_Text14
             x: 38
-            y: 14
+            y: 142
             width: 253
             height: 17
             z: 1
@@ -199,232 +304,127 @@ VbForm {
             font.family: "MS Sans Serif"
             font.pixelSize: 11
             font.bold: true
-            text: "Abilita mouse"
+            text: " "
         }
         VbTextBox {
-            id: c_Text10
-            x: 6
-            y: 206
-            width: 33
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#000000"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "F10"
-        }
-        VbTextBox {
-            id: c_Text9
-            x: 6
-            y: 35
-            width: 33
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#000000"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "F2"
-        }
-        VbTextBox {
-            id: c_Text8
-            x: 6
-            y: 57
-            width: 33
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#000000"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "F3"
-        }
-        VbTextBox {
-            id: c_Text7
-            x: 6
-            y: 78
-            width: 33
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#000000"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "F4"
-        }
-        VbTextBox {
-            id: c_Text6
-            x: 6
-            y: 99
-            width: 33
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#000000"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "F5"
-        }
-        VbTextBox {
-            id: c_Text5
-            x: 6
+            id: c_Text15
+            x: 38
             y: 121
-            width: 33
+            width: 253
             height: 17
             z: 1
             backColor: "#ffffc0"
-            foreColor: "#000000"
+            foreColor: "#0000ff"
             borderStyle: 0
             font.family: "MS Sans Serif"
             font.pixelSize: 11
             font.bold: true
-            text: "F6"
+            text: "Apri file sorgenti in Visual Basic"
         }
         VbTextBox {
-            id: c_Text4
+            id: c_Text16
+            x: 38
+            y: 99
+            width: 253
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#0000ff"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "Avvia PcAnyWhere"
+        }
+        VbTextBox {
+            id: c_Text17
+            x: 38
+            y: 78
+            width: 253
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#0000ff"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "Avvia Task Manager di Windows NT"
+        }
+        VbTextBox {
+            id: c_Text18
+            x: 38
+            y: 57
+            width: 253
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#0000ff"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "Apri sessione Dos"
+        }
+        VbTextBox {
+            id: c_Text19
+            x: 38
+            y: 35
+            width: 253
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#0000ff"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "Avvia NT Explorer"
+        }
+        VbTextBox {
+            id: c_Text20
+            x: 38
+            y: 206
+            width: 253
+            height: 17
+            z: 1
+            backColor: "#ffffc0"
+            foreColor: "#0000ff"
+            borderStyle: 0
+            font.family: "MS Sans Serif"
+            font.pixelSize: 11
+            font.bold: true
+            text: "Riabilita tutte le protezioni"
+        }
+        VbTextBox {
+            id: c_Text21
             x: 6
-            y: 142
-            width: 33
+            y: 227
+            width: 253
             height: 17
             z: 1
             backColor: "#ffffc0"
-            foreColor: "#000000"
+            foreColor: "#0000ff"
             borderStyle: 0
             font.family: "MS Sans Serif"
             font.pixelSize: 11
             font.bold: true
-            text: "F7"
+            text: "Ctrl+Shift+X per uscire dal programma"
         }
         VbTextBox {
-            id: c_Text3
-            x: 6
-            y: 163
-            width: 33
+            id: c_Text22
+            x: 39
+            y: 141
+            width: 253
             height: 17
             z: 1
             backColor: "#ffffc0"
-            foreColor: "#000000"
+            foreColor: "#0000ff"
             borderStyle: 0
             font.family: "MS Sans Serif"
             font.pixelSize: 11
             font.bold: true
-            text: "F8"
+            text: "Avvia SysWin"
         }
-        VbTextBox {
-            id: c_Text2
-            x: 6
-            y: 185
-            width: 33
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#000000"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "F9"
-        }
-        VbTextBox {
-            id: c_Text1
-            x: 6
-            y: 14
-            width: 33
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#000000"
-            borderStyle: 0
-            font.family: "MS Sans Serif"
-            font.pixelSize: 11
-            font.bold: true
-            text: "F1"
-        }
-    }
-    VbFrame {
-        id: c_frm_chg_pwd
-        x: 2
-        y: 24
-        width: 295
-        height: 57
-        visible: false
-        z: 1
-        backColor: "#ffffc0"
-        VbTextBox {
-            id: c_txt_msg_chg_pwd
-            x: 4
-            y: 16
-            width: 285
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#c00000"
-            borderStyle: 0
-            text: "Inserire la password corrente"
-            alignment: 2
-        }
-        VbTextBox {
-            id: c_txt_chg_pwd
-            x: 8
-            y: 32
-            width: 281
-            height: 19
-            z: 1
-            KeyNavigation.tab: c_txt_pwd
-            KeyNavigation.backtab: c_txt_pwd
-            password: true
-        }
-    }
-    VbFrame {
-        id: c_frm_pwd
-        x: 2
-        y: 24
-        width: 295
-        height: 73
-        z: 1
-        backColor: "#ffffc0"
-        VbTextBox {
-            id: c_txt_pwd
-            x: 8
-            y: 44
-            width: 281
-            height: 19
-            z: 1
-            KeyNavigation.tab: c_txt_chg_pwd
-            KeyNavigation.backtab: c_txt_chg_pwd
-            password: true
-        }
-        VbTextBox {
-            id: c_txt_msg
-            x: 4
-            y: 16
-            width: 285
-            height: 17
-            z: 1
-            backColor: "#ffffc0"
-            foreColor: "#c00000"
-            borderStyle: 0
-            text: "Inserire la password"
-            alignment: 2
-        }
-    }
-    VbImage {
-        id: c_img_title
-        x: -497
-        y: 0
-        width: 798
-        height: 20
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
     }
 }

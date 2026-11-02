@@ -64,6 +64,34 @@ bool ordineVuoto(const ClasseOrdine &rec)
     return true;
 }
 
+void insOrdEsePerFineProd()
+{
+    if (ord_mac->Count() <= 0) {
+        log_str(QStringLiteral("ins_ord_ese_per_fine_prod: non c'\u00E8 nessun ordine in lista"), MED_PRIORITY, CosLog::Lis);
+        return;
+    }
+    const OrdinePtr cor = ord_mac->item(1);
+    auto tmpOrd = std::make_shared<ClasseOrdine>(*cor);
+    tmpOrd->setText(QStringLiteral("rep_pro.dat_fin"), nowDate());
+    tmpOrd->setText(QStringLiteral("rep_pro.ora_fin"), nowTime());
+    sta_tag->tempi(false, false, false);
+    const FixedRecord ordEse(orderProductionLayout(), sta_tag->get_pro_ese());
+    qint64 d = 0;
+    try {
+        d = vb::dateDiffSeconds(vb::trim(tmpOrd->text(QStringLiteral("rep_pro.dat_ini"))) + u' ' + vb::trim(tmpOrd->text(QStringLiteral("rep_pro.ora_ini"))),
+                                vb::trim(tmpOrd->text(QStringLiteral("rep_pro.dat_fin"))) + u' ' + vb::trim(tmpOrd->text(QStringLiteral("rep_pro.ora_fin"))));
+    } catch (const vb::Error &e) {
+        log_str(QStringLiteral("ins_ord_ese_per_fine_prod: errore %1, %2").arg(e.number).arg(QString::fromLatin1(e.what())), MED_PRIORITY, CosLog::Lis);
+    }
+    tmpOrd->setText(QStringLiteral("rep_pro.tem_mar"), vb::cStr(double(d) - vb::val(ordEse.text(QStringLiteral("tem_fer")))));
+    tmpOrd->setText(QStringLiteral("rep_pro.num_fer"), ordEse.text(QStringLiteral("num_fer")));
+    sta_tag->tempi(true, false, false);
+    tmpOrd->setText(QStringLiteral("old_stag_id"), vb::fixedLength(cor->stag_id(), 4));
+    tmpOrd->setText(QStringLiteral("old_mod_id"), vb::fixedLength(cor->mod_id(), 2));
+    if (ord_mac_ese->add(tmpOrd) != RET_OK)
+        log_str(QStringLiteral("ins_ord_ese_per_fine_prod: ordine non inserito nella collezione degli eseguiti"), MED_PRIORITY, CosLog::Lis);
+}
+
 int Shifta()
 {
     int shifta = RET_BAD;

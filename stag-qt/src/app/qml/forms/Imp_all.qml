@@ -10,85 +10,19 @@ VbForm {
     backColor: "#ffffff"
     dialog: false
     controls: ({ "txt_pag_allarmi": c_txt_pag_allarmi, "add": c_add, "det_all": c_det_all, "all": c_all, "griglia": c_griglia, "label1": c_Label1, "line4": c_Line4, "line3": c_Line3, "line2": c_Line2, "line1": c_Line1, "pag_title": c_Pag_title, "lab_all": c_Lab_all, "lab_det_all": c_Lab_det_all, "image3": c_Image3 })
-    VbCombo {
-        id: c_txt_pag_allarmi
-        x: 220
-        y: 314
-        width: 347
-        height: 27
-        enabled: false
-        z: 1
-        backColor: "#ffffff"
-        foreColor: "#000000"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_griglia
-        KeyNavigation.backtab: c_add
-    }
-    VbGrid {
-        id: c_add
+    VbImage {
+        id: c_Image3
         x: 0
-        y: 0
-        width: 65
-        height: 405
-        enabled: false
-        z: 1
-        backColor: "#ffffff"
-        foreColor: "#000000"
-        KeyNavigation.tab: c_txt_pag_allarmi
-        KeyNavigation.backtab: c_all
-        cols: 1
-        fixedCols: 0
-    }
-    VbTextBox {
-        id: c_det_all
-        x: 222
-        y: 380
-        width: 567
+        y: 1
+        width: 798
         height: 20
-        enabled: false
-        z: 1
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_all
-        KeyNavigation.backtab: c_griglia
-    }
-    VbTextBox {
-        id: c_all
-        x: 222
-        y: 352
-        width: 567
-        height: 20
-        enabled: false
-        z: 1
-        backColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 16
-        font.bold: true
-        KeyNavigation.tab: c_add
-        KeyNavigation.backtab: c_det_all
-    }
-    VbGrid {
-        id: c_griglia
-        x: 63
-        y: 32
-        width: 731
-        height: 269
-        z: 1
-        backColor: "#ffffff"
-        foreColor: "#000000"
-        KeyNavigation.tab: c_det_all
-        KeyNavigation.backtab: c_txt_pag_allarmi
-        fixedRows: 0
-        fixedCols: 0
+        stretch: true
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
     }
     VbLabel {
-        id: c_Label1
-        x: 71
-        y: 322
+        id: c_Lab_det_all
+        x: 70
+        y: 382
         width: 136
         height: 14
         backColor: "#ffffff"
@@ -96,54 +30,10 @@ VbForm {
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "Pagina"
+        text: "Descriz. dettagliata"
         alignment: 1
         opaque: false
         autoSize: true
-    }
-    VbLine {
-        id: c_Line4
-        x1: 64
-        y1: 376
-        x2: 208
-        y2: 376
-    }
-    VbLine {
-        id: c_Line3
-        x1: 214
-        y1: 376
-        x2: 791
-        y2: 376
-    }
-    VbLine {
-        id: c_Line2
-        x1: 793
-        y1: 403
-        x2: 793
-        y2: 297
-        borderWidth: 2
-    }
-    VbLine {
-        id: c_Line1
-        x1: 54
-        y1: 404
-        x2: 793
-        y2: 404
-        borderWidth: 2
-    }
-    VbLabel {
-        id: c_Pag_title
-        x: 73
-        y: 0
-        width: 400
-        height: 29
-        backColor: "#ffffff"
-        foreColor: "#ffffff"
-        font.family: "Arial"
-        font.pixelSize: 21
-        font.bold: true
-        text: "IMPOSTAZIONE ALLARMI"
-        opaque: false
     }
     VbLabel {
         id: c_Lab_all
@@ -162,9 +52,53 @@ VbForm {
         autoSize: true
     }
     VbLabel {
-        id: c_Lab_det_all
-        x: 70
-        y: 382
+        id: c_Pag_title
+        x: 73
+        y: 0
+        width: 400
+        height: 29
+        backColor: "#ffffff"
+        foreColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 21
+        font.bold: true
+        text: "IMPOSTAZIONE ALLARMI"
+        opaque: false
+    }
+    VbLine {
+        id: c_Line1
+        x1: 54
+        y1: 404
+        x2: 793
+        y2: 404
+        borderWidth: 2
+    }
+    VbLine {
+        id: c_Line2
+        x1: 793
+        y1: 403
+        x2: 793
+        y2: 297
+        borderWidth: 2
+    }
+    VbLine {
+        id: c_Line3
+        x1: 214
+        y1: 376
+        x2: 791
+        y2: 376
+    }
+    VbLine {
+        id: c_Line4
+        x1: 64
+        y1: 376
+        x2: 208
+        y2: 376
+    }
+    VbLabel {
+        id: c_Label1
+        x: 71
+        y: 322
         width: 136
         height: 14
         backColor: "#ffffff"
@@ -172,18 +106,84 @@ VbForm {
         font.family: "Arial"
         font.pixelSize: 11
         font.bold: true
-        text: "Descriz. dettagliata"
+        text: "Pagina"
         alignment: 1
         opaque: false
         autoSize: true
     }
-    VbImage {
-        id: c_Image3
-        x: 0
-        y: 1
-        width: 798
+    VbGrid {
+        id: c_griglia
+        x: 63
+        y: 32
+        width: 731
+        height: 269
+        z: 1
+        backColor: "#ffffff"
+        foreColor: "#000000"
+        KeyNavigation.tab: c_det_all
+        KeyNavigation.backtab: c_txt_pag_allarmi
+        fixedRows: 0
+        fixedCols: 0
+    }
+    VbTextBox {
+        id: c_all
+        x: 222
+        y: 352
+        width: 567
         height: 20
-        stretch: true
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
+        enabled: false
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_add
+        KeyNavigation.backtab: c_det_all
+    }
+    VbTextBox {
+        id: c_det_all
+        x: 222
+        y: 380
+        width: 567
+        height: 20
+        enabled: false
+        z: 1
+        backColor: "#ffffff"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_all
+        KeyNavigation.backtab: c_griglia
+    }
+    VbGrid {
+        id: c_add
+        x: 0
+        y: 0
+        width: 65
+        height: 405
+        enabled: false
+        z: 1
+        backColor: "#ffffff"
+        foreColor: "#000000"
+        KeyNavigation.tab: c_txt_pag_allarmi
+        KeyNavigation.backtab: c_all
+        cols: 1
+        fixedCols: 0
+    }
+    VbCombo {
+        id: c_txt_pag_allarmi
+        x: 220
+        y: 314
+        width: 347
+        height: 27
+        enabled: false
+        z: 1
+        backColor: "#ffffff"
+        foreColor: "#000000"
+        font.family: "Arial"
+        font.pixelSize: 16
+        font.bold: true
+        KeyNavigation.tab: c_griglia
+        KeyNavigation.backtab: c_add
     }
 }

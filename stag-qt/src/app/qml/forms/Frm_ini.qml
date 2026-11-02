@@ -19,204 +19,31 @@ VbForm {
         z: 1
         backColor: "#ffffff"
         borderStyle: 0
-        VbProgress {
-            id: c_prg_bar_ini
-            x: 3
-            y: 260
-            width: 467
-            height: 9
-            visible: false
-            z: 1
-        }
-        VbTextBox {
-            id: c_Text1
-            x: 0
-            y: 0
-            width: 5
-            height: 37
-            enabled: false
-            z: 1
-            borderStyle: 0
-        }
         VbLabel {
-            id: c_Commessa
-            x: 408
-            y: 114
-            width: 57
-            height: 17
+            id: c_lblCompanyProduct
+            x: 161
+            y: 46
+            width: 174
+            height: 25
             backColor: "#ffffff"
             font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: false
-            text: "YYccc"
-        }
-        VbLabel {
-            id: c_LblCommessa
-            x: 361
-            y: 112
-            width: 38
-            height: 17
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: false
-            text: "Order"
-            alignment: 1
+            font.pixelSize: 24
+            font.bold: true
+            text: "Cut Off Control"
+            opaque: false
             autoSize: true
         }
         VbLabel {
-            id: c_JOB
-            x: 408
-            y: 98
-            width: 57
-            height: 17
+            id: c_lblProductName
+            x: 164
+            y: 74
+            width: 120
+            height: 43
             backColor: "#ffffff"
             font.family: "Arial"
-            font.pixelSize: 12
-            font.bold: false
-            text: "XXXX"
-        }
-        VbLabel {
-            id: c_LblJOB
-            x: 376
-            y: 96
-            width: 23
-            height: 17
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: false
-            text: "Job"
-            alignment: 1
-            autoSize: true
-        }
-        VbLabel {
-            id: c_Vrs_Nmb
-            x: 408
-            y: 80
-            width: 57
-            height: 17
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 15
+            font.pixelSize: 43
             font.bold: true
-            text: "4.1.7"
-        }
-        VbImage {
-            id: c_img_title
-            x: -330
-            y: 5
-            width: 798
-            height: 20
-            picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
-        }
-        VbImage {
-            id: c_img_master
-            x: 28
-            y: 51
-            width: 113
-            height: 113
-            stretch: true
-            picture: Qt.resolvedUrl("../assets/bf59ef02d4277e0c.bmp")
-        }
-        VbLabel {
-            id: c_Label2
-            x: 320
-            y: 164
-            width: 138
-            height: 18
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-            text: "with Service Pack 6"
-            alignment: 1
-            autoSize: true
-        }
-        VbLabel {
-            id: c_Label1
-            x: 8
-            y: 232
-            width: 89
-            height: 11
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 11
-            font.bold: false
-            text: "Please wait"
-        }
-        VbLabel {
-            id: c_lab_cod
-            x: 292
-            y: 222
-            width: 142
-            height: 15
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 11
-            font.bold: false
-            text: "55060 Monsagrati (Lucca)"
-        }
-        VbLabel {
-            id: c_lbl_via
-            x: 292
-            y: 208
-            width: 176
-            height: 13
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 11
-            font.bold: false
-            text: "via Provinciale per Camaiore, 27/28"
-        }
-        VbLabel {
-            id: c_lblCopyright
-            x: 292
-            y: 180
-            width: 140
-            height: 13
-            visible: false
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 11
-            font.bold: false
-            text: "Copyright © 2000"
-        }
-        VbLabel {
-            id: c_lblCompany
-            x: 292
-            y: 194
-            width: 92
-            height: 15
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 11
-            font.bold: false
-            text: "Fosber SpA"
-        }
-        VbLabel {
-            id: c_lbl_Wrn
-            x: 8
-            y: 244
-            width: 267
-            height: 13
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 11
-            font.bold: false
-        }
-        VbLabel {
-            id: c_lblVersion
-            x: 336
-            y: 80
-            width: 63
-            height: 18
-            backColor: "#ffffff"
-            font.family: "Arial"
-            font.pixelSize: 15
-            font.bold: true
-            text: "Versione"
-            alignment: 1
+            text: "STAG"
             autoSize: true
         }
         VbLabel {
@@ -234,31 +61,204 @@ VbForm {
             autoSize: true
         }
         VbLabel {
-            id: c_lblProductName
-            x: 164
-            y: 74
-            width: 120
-            height: 43
+            id: c_lblVersion
+            x: 336
+            y: 80
+            width: 63
+            height: 18
             backColor: "#ffffff"
             font.family: "Arial"
-            font.pixelSize: 43
+            font.pixelSize: 15
             font.bold: true
-            text: "STAG"
+            text: "Versione"
+            alignment: 1
             autoSize: true
         }
         VbLabel {
-            id: c_lblCompanyProduct
-            x: 161
-            y: 46
-            width: 174
-            height: 25
+            id: c_lbl_Wrn
+            x: 8
+            y: 244
+            width: 267
+            height: 13
             backColor: "#ffffff"
             font.family: "Arial"
-            font.pixelSize: 24
+            font.pixelSize: 11
+            font.bold: false
+        }
+        VbLabel {
+            id: c_lblCompany
+            x: 292
+            y: 194
+            width: 92
+            height: 15
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 11
+            font.bold: false
+            text: "Fosber SpA"
+        }
+        VbLabel {
+            id: c_lblCopyright
+            x: 292
+            y: 180
+            width: 140
+            height: 13
+            visible: false
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 11
+            font.bold: false
+            text: "Copyright © 2000"
+        }
+        VbLabel {
+            id: c_lbl_via
+            x: 292
+            y: 208
+            width: 176
+            height: 13
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 11
+            font.bold: false
+            text: "via Provinciale per Camaiore, 27/28"
+        }
+        VbLabel {
+            id: c_lab_cod
+            x: 292
+            y: 222
+            width: 142
+            height: 15
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 11
+            font.bold: false
+            text: "55060 Monsagrati (Lucca)"
+        }
+        VbLabel {
+            id: c_Label1
+            x: 8
+            y: 232
+            width: 89
+            height: 11
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 11
+            font.bold: false
+            text: "Please wait"
+        }
+        VbLabel {
+            id: c_Label2
+            x: 320
+            y: 164
+            width: 138
+            height: 18
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 15
             font.bold: true
-            text: "Cut Off Control"
-            opaque: false
+            text: "with Service Pack 6"
+            alignment: 1
             autoSize: true
+        }
+        VbImage {
+            id: c_img_master
+            x: 28
+            y: 51
+            width: 113
+            height: 113
+            stretch: true
+            picture: Qt.resolvedUrl("../assets/bf59ef02d4277e0c.bmp")
+        }
+        VbImage {
+            id: c_img_title
+            x: -330
+            y: 5
+            width: 798
+            height: 20
+            picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
+        }
+        VbLabel {
+            id: c_Vrs_Nmb
+            x: 408
+            y: 80
+            width: 57
+            height: 17
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: true
+            text: "4.1.7"
+        }
+        VbLabel {
+            id: c_LblJOB
+            x: 376
+            y: 96
+            width: 23
+            height: 17
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: false
+            text: "Job"
+            alignment: 1
+            autoSize: true
+        }
+        VbLabel {
+            id: c_JOB
+            x: 408
+            y: 98
+            width: 57
+            height: 17
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: false
+            text: "XXXX"
+        }
+        VbLabel {
+            id: c_LblCommessa
+            x: 361
+            y: 112
+            width: 38
+            height: 17
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 15
+            font.bold: false
+            text: "Order"
+            alignment: 1
+            autoSize: true
+        }
+        VbLabel {
+            id: c_Commessa
+            x: 408
+            y: 114
+            width: 57
+            height: 17
+            backColor: "#ffffff"
+            font.family: "Arial"
+            font.pixelSize: 12
+            font.bold: false
+            text: "YYccc"
+        }
+        VbTextBox {
+            id: c_Text1
+            x: 0
+            y: 0
+            width: 5
+            height: 37
+            enabled: false
+            z: 1
+            borderStyle: 0
+        }
+        VbProgress {
+            id: c_prg_bar_ini
+            x: 3
+            y: 260
+            width: 467
+            height: 9
+            visible: false
+            z: 1
         }
     }
 }

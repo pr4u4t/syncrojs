@@ -1,4 +1,5 @@
 #include "sqlitemigration.h"
+#include "sqlcheck.h"
 
 #include "dbf.h"
 
@@ -71,7 +72,7 @@ bool migrateTable(const QString &connectionName, const QString &tableName, const
         || !exec(query, QStringLiteral("CREATE TABLE %1 (%2)").arg(quoted(tableName), columns.join(QStringLiteral(", "))), error))
         return false;
     QSqlQuery cleanup(database);
-    cleanup.prepare(QStringLiteral("DELETE FROM _dbf_fields WHERE table_name = ?"));
+    sqlPrepare(cleanup, QStringLiteral("DELETE FROM _dbf_fields WHERE table_name = ?"));
     cleanup.addBindValue(tableName);
     if (!cleanup.exec()) {
         if (error)
@@ -80,7 +81,7 @@ bool migrateTable(const QString &connectionName, const QString &tableName, const
     }
 
     QSqlQuery fieldInsert(database);
-    fieldInsert.prepare(QStringLiteral("INSERT INTO _dbf_fields (table_name, position, name, type, length, decimals) VALUES (?, ?, ?, ?, ?, ?)"));
+    sqlPrepare(fieldInsert, QStringLiteral("INSERT INTO _dbf_fields (table_name, position, name, type, length, decimals) VALUES (?, ?, ?, ?, ?, ?)"));
     for (int index = 0; index < table.fields().size(); ++index) {
         const DbfTable::Field &field = table.fields().at(index);
         for (const QVariant &value : {QVariant(tableName), QVariant(index), QVariant(field.name), QVariant(QString(QChar::fromLatin1(field.type))),
@@ -95,7 +96,7 @@ bool migrateTable(const QString &connectionName, const QString &tableName, const
 
     QStringList placeholders(table.fields().size() + 1, QStringLiteral("?"));
     QSqlQuery insert(database);
-    insert.prepare(QStringLiteral("INSERT INTO %1 VALUES (%2)").arg(quoted(tableName), placeholders.join(QStringLiteral(", "))));
+    sqlPrepare(insert, QStringLiteral("INSERT INTO %1 VALUES (%2)").arg(quoted(tableName), placeholders.join(QStringLiteral(", "))));
     for (int record = 0; record < table.recordCount(); ++record) {
         if (table.isDeleted(record))
             continue;
@@ -138,12 +139,16 @@ Result migrateDirectory(const QString &dbfDirectory, const QString &sqlitePath)
                         if (table.fields().at(field).name.compare(QStringLiteral("RUSSO"), Qt::CaseInsensitive) == 0)
                             table.setCodePage(field, vb::OemCodePage::Cp866);
                     }
-                    database.transaction();
+                    if (!database.transaction())
+                        result.errors.append(QStringLiteral("%1: transaction: %2").arg(file.fileName(), database.lastError().text()));
                     if (migrateTable(connectionName, tableName, table, &error)) {
-                        database.commit();
-                        result.migratedTables.append(tableName);
+                        if (database.commit())
+                            result.migratedTables.append(tableName);
+                        else
+                            result.errors.append(QStringLiteral("%1: commit: %2").arg(file.fileName(), database.lastError().text()));
                     } else {
-                        database.rollback();
+                        if (!database.rollback())
+                            result.errors.append(QStringLiteral("%1: rollback: %2").arg(file.fileName(), database.lastError().text()));
                         result.errors.append(QStringLiteral("%1: %2").arg(file.fileName(), error));
                     }
                 }

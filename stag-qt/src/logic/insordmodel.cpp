@@ -1,4 +1,5 @@
 #include "insordmodel.h"
+#include "sqlcheck.h"
 
 #include "classestato.h"
 #include "messages.h"
@@ -46,7 +47,7 @@ InsOrdModel::InsOrdModel(CollezioneOrdini *orders, const QSqlDatabase &db, QObje
     connect(m_orders, &CollezioneOrdini::Refresh, this, [this](bool shift) { refresh(shift); });
 }
 
-void InsOrdModel::setText(const QString &control, const QString &value)
+void InsOrdModel::keepText(const QString &control, const QString &value)
 {
     m_text.insert(control, value);
     FormModel::setText(control, value);
@@ -61,7 +62,7 @@ void InsOrdModel::setListIndex(const QString &control, int index)
 void InsOrdModel::setDbCombo(const QString &control, const QStringList &items, const QString &text)
 {
     set(control, QStringLiteral("items"), items);
-    setText(control, text);
+    keepText(control, text);
 }
 
 void InsOrdModel::focus(const QString &control)
@@ -158,7 +159,7 @@ void InsOrdModel::reloadPapers(const QString &flute)
 {
     QStringList papers;
     QSqlQuery query(m_db);
-    query.prepare(QStringLiteral("SELECT CARTA FROM ONDE WHERE ONDA = ?"));
+    sqlPrepare(query, QStringLiteral("SELECT CARTA FROM ONDE WHERE ONDA = ?"));
     query.addBindValue(vb::trim(flute));
     if (query.exec()) {
         while (query.next())
@@ -195,13 +196,13 @@ void InsOrdModel::clearCell()
         if (control.startsWith(QLatin1String("txt_liv")) || control.startsWith(QLatin1String("cmb_cut_to_mark")))
             setListIndex(control, -1);
         else
-            setText(control, QString());
+            keepText(control, QString());
     }
-    setText(QStringLiteral("txt_met"), QString());
-    setText(QStringLiteral("txt_id"), QString());
-    setText(QStringLiteral("txt_indice"), QString());
+    keepText(QStringLiteral("txt_met"), QString());
+    keepText(QStringLiteral("txt_id"), QString());
+    keepText(QStringLiteral("txt_indice"), QString());
     for (int i = 0; i < 3; ++i)
-        setText(at("txt_lun_for", i), QString());
+        keepText(at("txt_lun_for", i), QString());
 }
 
 // riempi_celle
@@ -210,14 +211,14 @@ void InsOrdModel::riempiCelle(int order)
     const OrdinePtr source = m_orders->item(order);
     m_rec.setOrdine(source->ordine());
     const auto top = [&](const char *name) { return source->text(QLatin1String(name)); };
-    setText(QStringLiteral("txt_alt_bob"), abi_mis_ang ? con_dmm_to_inc(vb::trim(top("alt_bob"))) : QString::number(vb::intDiv(vb::val(top("alt_bob")), TODECMM)));
-    setText(QStringLiteral("txt_met"), abi_mis_ang ? con_met_to_fet(vb::trim(top("met_tot_ord"))) : top("met_tot_ord"));
-    setText(QStringLiteral("txt_cod_abb"), QString(top("cod_ord_abb")).replace(QChar(0), u' '));
-    setText(QStringLiteral("txt_id"), top("stag_id") + u'/' + top("mod_id"));
-    setText(QStringLiteral("cmb_onda"), vb::trim(top("tip_car.Cod_ond")));
+    keepText(QStringLiteral("txt_alt_bob"), abi_mis_ang ? con_dmm_to_inc(vb::trim(top("alt_bob"))) : QString::number(vb::intDiv(vb::val(top("alt_bob")), TODECMM)));
+    keepText(QStringLiteral("txt_met"), abi_mis_ang ? con_met_to_fet(vb::trim(top("met_tot_ord"))) : top("met_tot_ord"));
+    keepText(QStringLiteral("txt_cod_abb"), QString(top("cod_ord_abb")).replace(QChar(0), u' '));
+    keepText(QStringLiteral("txt_id"), top("stag_id") + u'/' + top("mod_id"));
+    keepText(QStringLiteral("cmb_onda"), vb::trim(top("tip_car.Cod_ond")));
     reloadPapers(top("tip_car.Cod_ond"));
-    setText(QStringLiteral("cmb_carta"), vb::trim(top("tip_car.cod_com_car")));
-    setText(QStringLiteral("txt_indice"), QString::number(m_orders->leg_pun_ord()));
+    keepText(QStringLiteral("cmb_carta"), vb::trim(top("tip_car.cod_com_car")));
+    keepText(QStringLiteral("txt_indice"), QString::number(m_orders->leg_pun_ord()));
 
     for (int i = 1; i <= 3; ++i) {
         const int form = i - 1;
@@ -229,8 +230,8 @@ void InsOrdModel::riempiCelle(int order)
             cut = int(vb::val(field("cut_to_mark"))) == 0 ? 0 : int(m_cutData.indexOf(int(vb::val(field("cut_to_mark")))));
         setListIndex(at("cmb_cut_to_mark", form), cut);
 
-        const auto show = [&](const char *control, const QString &value) { setText(at(control, form), used ? value : QString()); };
-        setText(at("txt_lun_for", form), !used ? QString() : abi_mis_ang ? con_met_to_fet(vb::trim(field("met"))) : field("met"));
+        const auto show = [&](const char *control, const QString &value) { keepText(at(control, form), used ? value : QString()); };
+        keepText(at("txt_lun_for", form), !used ? QString() : abi_mis_ang ? con_met_to_fet(vb::trim(field("met"))) : field("met"));
         show("txt_cod_com", field("com.cod_com_ord"));
         show("txt_cod_cli", field("com.cod_cli"));
         show("txt_nom_cli", field("nom_cli"));
@@ -250,11 +251,11 @@ void InsOrdModel::riempiCelle(int order)
         show("txt_resa", field("Sca_per_tag"));
         show("txt_num_tot_fog", field("sca_tot_num"));
         if (!used) {
-            setText(at("cmb_pat_cod", form), QString());
-            setText(at("txt_pos_lat_pat", form), QString());
-            setText(at("txt_pat_con", form), QString());
-            setText(at("txt_fin_pri", form), QString());
-            setText(at("txt_fin_dop", form), QString());
+            keepText(at("cmb_pat_cod", form), QString());
+            keepText(at("txt_pos_lat_pat", form), QString());
+            keepText(at("txt_pat_con", form), QString());
+            keepText(at("txt_fin_pri", form), QString());
+            keepText(at("txt_fin_dop", form), QString());
         }
     }
 }
@@ -317,7 +318,7 @@ void InsOrdModel::getNewDat()
             const QString code = text(at("cmb_pat_cod", i));
             setOrd("pat_cod", code);
             QSqlQuery pattern(m_db);
-            pattern.prepare(QStringLiteral("SELECT * FROM PATTERN WHERE upper(CODICE) = ?"));
+            sqlPrepare(pattern, QStringLiteral("SELECT * FROM PATTERN WHERE upper(CODICE) = ?"));
             pattern.addBindValue(code.toUpper());
             if (pattern.exec() && pattern.next()) {
                 setOrd("fst_FTC", pattern.value(QStringLiteral("PRI_LET_FC")).toString());
@@ -473,7 +474,7 @@ void InsOrdModel::gotFocus(const QString &key, const QString &name, int index)
     if (name == QLatin1String("cmb_pat_cod")) {
         // A code that is not in PATTERN falls back to the first one.
         QSqlQuery same(m_db);
-        same.prepare(QStringLiteral("SELECT 1 FROM PATTERN WHERE upper(CODICE) = ?"));
+        sqlPrepare(same, QStringLiteral("SELECT 1 FROM PATTERN WHERE upper(CODICE) = ?"));
         same.addBindValue(text(key).toUpper());
         if (!(same.exec() && same.next())) {
             reloadPatterns();
@@ -486,7 +487,7 @@ void InsOrdModel::gotFocus(const QString &key, const QString &name, int index)
 
 void InsOrdModel::comboChanged(const QString &key, const QString &value)
 {
-    setText(key, value);
+    keepText(key, value);
     if (key == QLatin1String("cmb_onda")) {
         if (!vb::trim(value).isEmpty())
             reloadPapers(value);
@@ -494,10 +495,10 @@ void InsOrdModel::comboChanged(const QString &key, const QString &value)
         // cmb_pat_cod_Change: the contrast of the new code.
         const int index = key.mid(key.indexOf(u'(') + 1, 1).toInt();
         QSqlQuery contrast(m_db);
-        contrast.prepare(QStringLiteral("SELECT CONTRASTO FROM PATTERN WHERE upper(CODICE) = ?"));
+        sqlPrepare(contrast, QStringLiteral("SELECT CONTRASTO FROM PATTERN WHERE upper(CODICE) = ?"));
         contrast.addBindValue(value.toUpper());
         if (contrast.exec() && contrast.next() && m_oldPattern.value(index) != value)
-            setText(at("txt_pat_con", index), contrast.value(0).toString());
+            keepText(at("txt_pat_con", index), contrast.value(0).toString());
         m_oldPattern.insert(index, value);
     }
 }
@@ -543,7 +544,7 @@ void InsOrdModel::controlEvent(const QString &control, int index, const QString 
         if (control.startsWith(QLatin1String("cmb_")) && control != QLatin1String("cmb_cut_to_mark"))
             comboChanged(key, value);
         else
-            setText(key, value);
+            keepText(key, value);
         set(key, QStringLiteral("foreColor"), StaBarModel::vbColor(StaBarModel::vbBlack));
     } else if (event == QLatin1String("Click")) {
         const int selected = args.value(QStringLiteral("index")).toInt();
@@ -607,7 +608,7 @@ void InsOrdModel::newOrder()
     m_tipOp = OLI_NEW;
     clearCell();
     m_rec.setOrdine(QByteArray(kOrderRecordSize, ' '));
-    setText(QStringLiteral("txt_indice"), QString::number(m_orders->Count() + 1));
+    keepText(QStringLiteral("txt_indice"), QString::number(m_orders->Count() + 1));
     focus(QStringLiteral("txt_cod_abb"));
 }
 
@@ -635,16 +636,16 @@ void InsOrdModel::nullOrder()
     } else {
         comboChanged(QStringLiteral("cmb_onda"), flute);
     }
-    setText(QStringLiteral("txt_cod_abb"), QStringLiteral("1"));
-    setText(QStringLiteral("txt_alt_bob"), QStringLiteral("1800"));
+    keepText(QStringLiteral("txt_cod_abb"), QStringLiteral("1"));
+    keepText(QStringLiteral("txt_alt_bob"), QStringLiteral("1800"));
     setListIndex(at("txt_liv", 0), 0);
-    setText(at("txt_cod_com", 0), QStringLiteral("NULL ORDER"));
-    setText(at("txt_nom_cli", 0), QStringLiteral("NULL ORDER"));
-    setText(at("txt_sca_lar", 0), QStringLiteral("0"));
-    setText(at("txt_sca_lun", 0), QStringLiteral("0"));
-    setText(at("txt_resa", 0), QStringLiteral("0"));
-    setText(at("txt_num_tot_fog", 0), QStringLiteral("0"));
-    setText(QStringLiteral("txt_indice"), QString::number(m_orders->Count() + 1));
+    keepText(at("txt_cod_com", 0), QStringLiteral("NULL ORDER"));
+    keepText(at("txt_nom_cli", 0), QStringLiteral("NULL ORDER"));
+    keepText(at("txt_sca_lar", 0), QStringLiteral("0"));
+    keepText(at("txt_sca_lun", 0), QStringLiteral("0"));
+    keepText(at("txt_resa", 0), QStringLiteral("0"));
+    keepText(at("txt_num_tot_fog", 0), QStringLiteral("0"));
+    keepText(QStringLiteral("txt_indice"), QString::number(m_orders->Count() + 1));
     m_rec.setOrdine(QByteArray(kOrderRecordSize, ' '));
     enableFrames(false);
 }
@@ -779,7 +780,7 @@ void InsOrdModel::refresh(bool shift)
     const int shown = int(vb::val(text(QStringLiteral("txt_indice"))));
     if (m_tipOp == OLI_NUL) {
         if (count > 0 && shown > 1) {
-            setText(QStringLiteral("txt_indice"), QString::number(shown - 1));
+            keepText(QStringLiteral("txt_indice"), QString::number(shown - 1));
             m_orders->scr_pun_ord(shown - 1);
         } else if (count > 0 && shown == 1) {
             riempiCelle(1);

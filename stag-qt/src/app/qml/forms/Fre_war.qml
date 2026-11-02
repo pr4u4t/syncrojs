@@ -10,18 +10,14 @@ VbForm {
     backColor: "#ffffff"
     dialog: false
     controls: ({ "dbgrid_a_w": c_dbgrid_a_w, "data_a_w": c_data_a_w, "pag_title": c_Pag_title, "image3": c_Image3 })
-    VbGrid {
-        id: c_dbgrid_a_w
-        x: 2
-        y: 22
-        width: 797
-        height: 25
-        z: 1
-        rows: 1
-    }
-    VbData {
-        id: c_data_a_w
-        recordSource: ""
+    VbImage {
+        id: c_Image3
+        x: 0
+        y: 1
+        width: 798
+        height: 20
+        stretch: true
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
     }
     VbLabel {
         id: c_Pag_title
@@ -37,13 +33,17 @@ VbForm {
         text: "FREQUENZE  MALFUNZIONAMENTI"
         opaque: false
     }
-    VbImage {
-        id: c_Image3
-        x: 0
-        y: 1
-        width: 798
-        height: 20
-        stretch: true
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
+    VbData {
+        id: c_data_a_w
+        recordSource: ""
+    }
+    VbGrid {
+        id: c_dbgrid_a_w
+        x: 2
+        y: 22
+        width: 797
+        height: 25
+        z: 1
+        rows: 1
     }
 }

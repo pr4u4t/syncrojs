@@ -10,18 +10,14 @@ VbForm {
     backColor: "#ffffff"
     dialog: false
     controls: ({ "data_a_q1": c_data_a_q1, "dbgrid_a_q1": c_dbgrid_a_q1, "pag_title": c_Pag_title, "image3": c_Image3 })
-    VbData {
-        id: c_data_a_q1
-        recordSource: ""
-    }
-    VbGrid {
-        id: c_dbgrid_a_q1
+    VbImage {
+        id: c_Image3
         x: 0
-        y: 22
-        width: 797
-        height: 25
-        z: 1
-        rows: 1
+        y: 1
+        width: 798
+        height: 20
+        stretch: true
+        picture: Qt.resolvedUrl("../assets/d99758855f95eeea.bmp")
     }
     VbLabel {
         id: c_Pag_title
@@ -37,13 +33,17 @@ VbForm {
         text: "FREQUENZE ALLARMI QUADRO ELETTRICO 1"
         opaque: false
     }
-    VbImage {
-        id: c_Image3
+    VbGrid {
+        id: c_dbgrid_a_q1
         x: 0
-        y: 1
-        width: 798
-        height: 20
-        stretch: true
-        picture: Qt.resolvedUrl("../assets/4072f0b65db34f65.bmp")
+        y: 22
+        width: 797
+        height: 25
+        z: 1
+        rows: 1
+    }
+    VbData {
+        id: c_data_a_q1
+        recordSource: ""
     }
 }

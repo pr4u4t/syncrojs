@@ -1,5 +1,7 @@
 #include "inibas.h"
 
+#include "inistore.h"
+
 #include "inifile.h"
 #include "parmac.h"
 #include "staglog.h"
@@ -446,6 +448,119 @@ void iniValNonUti()
         par_mac.lan_sch_tag(i).por_rem = "";
         par_mac.lan_sch_tag(i).ind_rem.clear();
     }
+}
+
+void scrParAbi(bool useUser)
+{
+    const TipAbi &values = useUser ? par_abi_ute : par_abi;
+    const auto bit = [](bool on) { return on ? QStringLiteral("1") : QStringLiteral("0"); };
+    setFileINIString(QStringLiteral("abilitazioni"), QStringLiteral("abi_com_pu"), bit(values.abi_com_PU));
+    for (int i = 1; i <= int(par_mac.car_tec.num_liv_tag.val()); ++i) {
+        const QString section = QStringLiteral("abi_liv_%1").arg(i);
+        setFileINIString(section, QStringLiteral("liv"), bit(values.liv(i)));
+        for (int m = 1; m <= int(par_mac.car_tec.num_mot_liv_tag.val()); ++m)
+            setFileINIString(section, QStringLiteral("fun_mot%1").arg(m), bit(values.fun_mot_liv(i).fun_mot_mot(m)));
+    }
+}
+
+void scrParMac()
+{
+    QString sec;
+    const auto put = [&sec](const QString &key, const QString &value) { setFileINIString(sec, key, value); };
+    const auto fix = [&put](const char *key, const FixStr &value) { put(QLatin1String(key), value.trimmed()); };
+    const auto num = [&put](const char *key, qint64 value) { put(QLatin1String(key), QString::number(value)); };
+    const TipCarTec &car = par_mac.car_tec;
+
+    sec = QStringLiteral("car_tec");
+    fix("num_liv_tag", car.num_liv_tag);
+    fix("num_mot_liv_tag", car.num_mot_liv_tag);
+    num("for_mac", car.for_mac);
+    num("gra_car", car.gra_car);
+    num("nor_mac", car.nor_mac);
+    fix("min_for_mac", car.min_for_mac);
+    fix("min_lun_tag", car.min_lun_tag);
+    fix("max_lun_tag", car.max_lun_tag);
+    fix("lun_tag_sca", car.lun_tag_sca);
+    fix("lun_tag_sca_cut_pat_auto", car.lun_tag_sca_pat_aut);
+    fix("sgl_abi_lin_DC_Bus", car.sgl_abi_lin_DC_Bus);
+    fix("pre_all", car.pre_all);
+    for (int i = 1; i <= 3; ++i) {
+        put(QStringLiteral("sel_usc_liv_%1").arg(i), car.sel_usc_liv(i).trimmed());
+        put(QStringLiteral("pre_con_pom_%1").arg(i), car.pre_con_pom(i).trimmed());
+    }
+    fix("tip_azi_tag", car.tip_azi_tag);
+
+    sec = QStringLiteral("opt");
+    fix("cut_mar", par_mac.opt.cut_mar);
+    for (int i = 1; i <= 3; ++i) {
+        put(QStringLiteral("cut_pat_%1").arg(i), par_mac.opt.cut_pat(i).trimmed());
+        put(QStringLiteral("sca_liv_%1").arg(i), par_mac.opt.sca_liv(i).trimmed());
+        put(QStringLiteral("cut_pat_auto_%1").arg(i), par_mac.opt.cut_pat_auto(i).trimmed());
+    }
+
+    sec = QStringLiteral("rul_ing");
+    fix("vel_max_lin", par_mac.rul_ing.vel_max_lin);
+    for (int i = 1; i <= 2; ++i) {
+        sec = QStringLiteral("rul_ing_%1").arg(i);
+        fix("dis_rot_mas", par_mac.rul_ing.rul_num(i).dis_rot_mas);
+        fix("off_vel_met_min", par_mac.rul_ing.rul_num(i).off_vel_met_min);
+        fix("off_vel_per", par_mac.rul_ing.rul_num(i).off_vel_per);
+        fix("sov_sfi", par_mac.rul_ing.rul_num(i).sov_sfi);
+    }
+    for (int i = 1; i <= 3; ++i) {
+        sec = QStringLiteral("rul_usc_liv_%1").arg(i);
+        const TipRulUscLiv &rul = par_mac.rul_usc.rul_usc_liv(i);
+        fix("dis_lam_fla", rul.dis_lam_fla);
+        fix("gap_tgl_cor", rul.gap_tgl_cor);
+        fix("gap_tgl_lun", rul.gap_tgl_lun);
+        fix("lun_san", rul.lun_san);
+        fix("tem_ape_fla", rul.tem_ape_fla);
+        fix("tem_chi_fla", rul.tem_chi_fla);
+
+        sec = QStringLiteral("com_sch_tag_%1").arg(i);
+        const TipPor &por = par_mac.com_sch_tag(i);
+        fix("porta", por.porta);
+        fix("baud", por.baud);
+        fix("bit_par", por.bit_par);
+        fix("dati", por.dati);
+        fix("bit_stop", por.bit_stop);
+        fix("timeout", por.TimeOut);
+        fix("tip_com", par_mac.tip_com_sch_tag(i));
+        fix("por_loc", par_mac.lan_sch_tag(i).por_loc);
+        fix("por_rem", par_mac.lan_sch_tag(i).por_rem);
+        put(QStringLiteral("ind_rem"), par_mac.lan_sch_tag(i).ind_rem.trimmed());
+        put(QStringLiteral("tip_com_udp"), par_mac.lan_sch_tag_UDP(i) ? QStringLiteral("1") : QStringLiteral("0"));
+    }
+
+    sec = QStringLiteral("com_spde");
+    const TipComSpde &spde = par_mac.com_spde;
+    num("ver_spde", spde.ver_spde);
+    fix("tip_com", spde.tip_com);
+    fix("porta", spde.tip_porta.porta);
+    fix("baud", spde.tip_porta.baud);
+    fix("bit_par", spde.tip_porta.bit_par);
+    fix("dati", spde.tip_porta.dati);
+    fix("bit_stop", spde.tip_porta.bit_stop);
+    fix("por_loc", spde.lan.por_loc);
+    fix("por_rem", spde.lan.por_rem);
+    put(QStringLiteral("ind_rem"), spde.lan.ind_rem.trimmed());
+    fix("err_max", spde.err_max);
+    fix("timeout", spde.TimeOut);
+
+    sec = QStringLiteral("com_plc");
+    num("net_id", par_mac.indirizzo_plc.net_id);
+    num("node_id", par_mac.indirizzo_plc.node_id);
+    num("unit_id", par_mac.indirizzo_plc.unit_id);
+    num("timer_scans_plc", par_mac.indirizzo_plc.TIMER_SCANS_PLC);
+
+    sec = QStringLiteral("com_azi");
+    fix("timeout", par_mac.com_azi.TimeOut);
+    fix("baud", par_mac.com_azi.baud);
+
+    sec = QStringLiteral("com_plc_lan");
+    fix("timeout", par_mac.com_plc_lan.TimeOut);
+    fix("por_rem", par_mac.com_plc_lan.por_rem);
+    put(QStringLiteral("ind_rem"), par_mac.com_plc_lan.ind_rem.trimmed());
 }
 
 } // namespace stag

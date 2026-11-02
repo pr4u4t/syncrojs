@@ -67,7 +67,6 @@ set(STAG_FORM_QML
 set(STAG_FORM_ASSETS
     qml/assets/124c17cd5404ffdd.bmp
     qml/assets/1b0fbcde99888795.bmp
-    qml/assets/4072f0b65db34f65.bmp
     qml/assets/65354dd109d4064e.bmp
     qml/assets/6fc976842c7c0131.bmp
     qml/assets/83db03ab116522f0.ico
@@ -79,6 +78,7 @@ set(STAG_FORM_ASSETS
     qml/assets/b753af420a4c5e94.bmp
     qml/assets/bf59ef02d4277e0c.bmp
     qml/assets/cce5a38e029d2af7.bmp
+    qml/assets/d99758855f95eeea.bmp
     qml/assets/e12571004a8e7de2.bmp
     qml/assets/f689576faa1bb474.bmp
 )
