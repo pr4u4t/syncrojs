@@ -37,6 +37,15 @@ npm test
 
 Production uses `compose.production.yaml` and `.env.production`; see `.env.production.example`, the `Makefile` and `doc/linux-production-updater.md`.
 
+### WSL dev-container certificates
+
+The WSL dev-container configuration in `.devcontainer/` supplies the host's
+`/etc/ssl/certs/ca-certificates.crt` bundle to image builds. This includes corporate
+proxy CAs already trusted by WSL, so Alpine package downloads can verify TLS.
+To use a different PEM certificate or bundle, set `EXTRA_CA_FILE` in `.env` to its
+absolute WSL path. Rebuild the dev container after changing certificate settings.
+Other Compose configurations keep their existing empty-CA default.
+
 ## STAG on Qt
 
 It needs Qt 6.5 or newer with Quick, Sql and Network.

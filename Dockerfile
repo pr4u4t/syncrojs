@@ -11,7 +11,11 @@ FROM node:${IMG_VERSION}
 
 # Optional corporate CA (e.g. TLS-inspecting proxy); empty secret is a no-op.
 RUN --mount=type=secret,id=extra_ca,required=false \
-    if grep -q -- '-----BEGIN CERTIFICATE-----' /run/secrets/extra_ca; then cat /run/secrets/extra_ca >> /etc/ssl/certs/ca-certificates.crt; fi
+        if grep -q -- '-----BEGIN CERTIFICATE-----' /run/secrets/extra_ca; then \
+            mkdir -p /usr/local/share/ca-certificates; \
+            cp /run/secrets/extra_ca /usr/local/share/ca-certificates/extra-ca.crt; \
+            cat /run/secrets/extra_ca >> /etc/ssl/certs/ca-certificates.crt; \
+        fi
 ENV NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
 
 ARG INSTALL_CPP_TOOLS=false

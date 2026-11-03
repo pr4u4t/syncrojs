@@ -11,3 +11,6 @@ services:
     build:
       secrets:
         - extra_ca
+secrets:
+  extra_ca:
+    file: ${EXTRA_CA_FILE:-/etc/ssl/certs/ca-certificates.crt}
