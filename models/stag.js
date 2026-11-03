@@ -25,6 +25,9 @@ const stag_status = function(){
         socket.on('data', (chunk) => chunks.push(chunk));
         socket.once('error', () => finish(null));
         socket.once('close', () => {
+            if(settled){
+                return;
+            }
             try{
                 finish(JSON.parse(Buffer.concat(chunks).toString('utf8')));
             }catch(error){

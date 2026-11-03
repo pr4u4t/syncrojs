@@ -9,5 +9,7 @@ bin/
 obj/
 **/*.kate-swp
 tools/syncro-updater/build/
-stag-qt/build/
+stag-qt/build*/
 __pycache__/
+._*
+.DS_Store

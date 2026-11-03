@@ -99,14 +99,18 @@ void StagApi::accept()
             continue;
         }
         ++m_clients;
+        // Owned by this object, so ~QObject drops the connection below before it deletes the sockets.
+        client->setParent(this);
+        connect(client, &QObject::destroyed, this, [this] { --m_clients; });
         auto *limit = new QTimer(client);
         limit->setSingleShot(true);
-        connect(limit, &QTimer::timeout, client, &QTcpSocket::abort);
-        limit->start(CLIENT_TIMEOUT_MS);
-        connect(client, &QTcpSocket::disconnected, this, [this, client] {
-            --m_clients;
+        connect(limit, &QTimer::timeout, client, [client] {
+            client->abort();
             client->deleteLater();
         });
+        limit->start(CLIENT_TIMEOUT_MS);
+        connect(client, &QTcpSocket::disconnected, client, &QObject::deleteLater);
+        connect(client, &QAbstractSocket::errorOccurred, client, &QObject::deleteLater);
         connect(client, &QTcpSocket::readyRead, client, [this, client] {
             const QByteArray command = client->peek(COMMAND_STATUS.size() + 3).trimmed();
             if (command != COMMAND_STATUS && COMMAND_STATUS.startsWith(command))

@@ -5,7 +5,9 @@ jest.mock('config', () => {
     const values = {};
     return { get: (key) => values[key], __set: (key, value) => { values[key] = value; } };
 });
+jest.mock('../../utils/logger', () => ({ warn: jest.fn() }));
 
+const logger = require('../../utils/logger');
 const stag = require('../../models/stag');
 
 const serve = (onData) => new Promise((resolve) => {
@@ -44,4 +46,13 @@ test('Stag.Status gives up on a program that never answers', async () => {
     await expect(stag.stag_status()).resolves.toBeNull();
     expect(Date.now() - started).toBeLessThan(3000);
     server.close();
+});
+
+test('Stag.Status logs nothing when the program is off or silent', async () => {
+    logger.warn.mockClear();
+    const silent = await serve(() => {});
+    await expect(stag.stag_status()).resolves.toBeNull();
+    await new Promise((resolve) => silent.close(resolve));
+    await expect(stag.stag_status()).resolves.toBeNull();
+    expect(logger.warn).not.toHaveBeenCalled();
 });

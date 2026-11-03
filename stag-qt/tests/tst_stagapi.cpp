@@ -15,6 +15,9 @@
 #include <QTemporaryDir>
 #include <QTest>
 
+#include <memory>
+#include <vector>
+
 class TestStagApi : public QObject
 {
     Q_OBJECT
@@ -54,6 +57,23 @@ private slots:
         QSignalSpy closed(&socket, &QTcpSocket::disconnected);
         socket.connectToHost(QHostAddress::LocalHost, api.port());
         QVERIFY(closed.wait(4000));
+    }
+
+    void droppedClientsFreeTheirPlace()
+    {
+        StagApi api([] { return QByteArrayLiteral("{}"); });
+        QVERIFY(api.listen(QHostAddress::LocalHost, 0));
+        // More silent clients than MAX_CLIENTS, then the server must still answer.
+        for (int round = 0; round < 2; ++round) {
+            std::vector<std::unique_ptr<QTcpSocket>> silent;
+            for (int i = 0; i < 8; ++i) {
+                silent.push_back(std::make_unique<QTcpSocket>());
+                silent.back()->connectToHost(QHostAddress::LocalHost, api.port());
+            }
+            for (auto &socket : silent)
+                QTRY_COMPARE_WITH_TIMEOUT(socket->state(), QAbstractSocket::UnconnectedState, 5000);
+        }
+        QCOMPARE(ask(api.port(), "Stag.Status"), QByteArrayLiteral("{}"));
     }
 
     void statusShowsTheBarAndTheAlarms()
