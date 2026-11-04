@@ -11,6 +11,9 @@ services:
     build:
       secrets:
         - extra_ca
-secrets:
-  extra_ca:
-    file: ${EXTRA_CA_FILE:-/etc/ssl/certs/ca-certificates.crt}
+# extra_ca is defined in compose.yaml: EXTRA_CA_FILE, else an empty placeholder.
+# No system path as the default here: /etc/ssl/certs/ca-certificates.crt
+# exists on WSL/Linux but not on macOS, and compose fails on a missing secret
+# file before building. On WSL behind a TLS-inspecting proxy set
+#   EXTRA_CA_FILE=/etc/ssl/certs/ca-certificates.crt
+# (in .env or the shell).
